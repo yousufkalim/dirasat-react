@@ -30,6 +30,36 @@
   border-radius: 99%;
   left: 95%;
 }
+.InvitecloseButton {
+  background: linear-gradient(
+    265.05deg,
+    #fece24 0%,
+    #ff6d1a 50.66%,
+    #ff29aa 101.84%
+  ) !important;
+  color: white !important;
+  position: relative;
+  bottom: 25px;
+  height: 44px;
+  width: 13%;
+  border-radius: 99%;
+  left: 93%;
+}
+.SharecloseButton {
+  background: linear-gradient(
+    265.05deg,
+    #fece24 0%,
+    #ff6d1a 50.66%,
+    #ff29aa 101.84%
+  ) !important;
+  color: white !important;
+  position: relative;
+  bottom: 26px;
+  height: 44px;
+  width: 11%;
+  border-radius: 99%;
+  left: 93%;
+}
 .modalcontent {
   position: relative;
   bottom: 30px;
@@ -46,6 +76,10 @@
 }
 .dialoginputGrid {
   margin: 18px 0 0 0 !important;
+  text-align: center !important;
+}
+.invitedialoginputGrid {
+  margin: 18px 150px 0 0 !important;
   text-align: center !important;
 }
 .dialoginputField {
@@ -73,6 +107,12 @@
   position: relative !important;
   bottom: 20px !important;
 }
+.invitedialogAction {
+  text-align: center !important;
+  color: white !important;
+  position: relative !important;
+  bottom: 20px !important;
+}
 .modalButon {
   cursor: pointer;
   font-weight: 900;
@@ -81,6 +121,15 @@
   background: linear-gradient(180deg, #ffffff -24.17%, #bac0d6 100%);
   padding: 13px 30px;
   margin: 20px;
+}
+.InvitemodalButon {
+  cursor: pointer;
+  font-weight: 900;
+  border: none;
+  border-radius: 100px;
+  background: linear-gradient(180deg, #ffffff -24.17%, #bac0d6 100%);
+  padding: 13px 30px;
+  width: 40% !important;
 }
 .modalButon:hover {
   background: linear-gradient(1deg, #ffffff -24.17%, #bac0d6 100%);
@@ -91,6 +140,9 @@
 }
 .checkboxpop {
   margin-bottom: 25px !important;
+}
+.socialIcons {
+  font-size: 40px !important;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 812px) {

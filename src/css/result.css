@@ -200,7 +200,7 @@
   .resultText {
     font-size: 14px !important;
     line-height: 1.8 !important;
-    word-break: break-all !important;
+    word-break: break-word !important;
   }
   .textonmobile {
     display: none;

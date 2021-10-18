@@ -9,6 +9,8 @@ import TypeOfCourse from "./TypeOfCourse";
 import userimg from "../assets/icons/user.png";
 import share from "../assets/icons/share.png";
 import Dialog from "./Dialog";
+import InvitePopup from "./InvitePopup";
+import SharePopup from "./Sharepopup";
 
 const Result = () => {
   let typeOfCourses = ["BTS", "BUT", "CPGE", "Ecole Post-Bac", "Licence"];
@@ -18,6 +20,8 @@ const Result = () => {
   const [loading, setLoading] = useState(false);
   const [resultStep, setresultStep] = useState(0);
   const [open, setOpen] = useState(false);
+  const [openinvitepopup, setOpenInvitepopup] = useState(false);
+  const [opensharepopup, setOpenSharepopup] = useState(false);
   useEffect(() => {
     if (resultStep == 1) {
       setTimeout(() => {
@@ -79,7 +83,13 @@ const Result = () => {
                     <br />
                     <b>
                       {" "}
-                      <span style={{ color: "#BCC3CF", fontWeight: "900" }}>
+                      <span
+                        style={{
+                          color: "#BCC3CF",
+                          fontWeight: "900",
+                          wordBreak: "break-word",
+                        }}
+                      >
                         {loading ? (
                           <div>
                             <CircularProgress color="inherit" />
@@ -92,7 +102,13 @@ const Result = () => {
                       </span>
                     </b>{" "}
                     <span style={{ color: "#9198A5" }}>comme par exemple</span>{" "}
-                    <span style={{ color: "#BCC3CF", fontWeight: "900" }}>
+                    <span
+                      style={{
+                        color: "#BCC3CF",
+                        fontWeight: "900",
+                        wordBreak: "break-word",
+                      }}
+                    >
                       {" "}
                       {loading
                         ? "loading"
@@ -125,6 +141,8 @@ const Result = () => {
       {resultStep == 1 && (
         <>
           <Dialog open={open} setOpen={setOpen} />
+          <InvitePopup open={openinvitepopup} setOpen={setOpenInvitepopup} />
+          <SharePopup open={opensharepopup} setOpen={setOpenSharepopup} />
           <Grid container spacing={1} className="mainresultscreen">
             <Grid item xs={12} sm={12} className="">
               <div>
@@ -147,11 +165,17 @@ const Result = () => {
                           </>
                         ))}
                         <div className="buttonDiv">
-                          <button className="sharebutton">
+                          <button
+                            className="sharebutton"
+                            onClick={() => setOpenInvitepopup(true)}
+                          >
                             <img src={userimg} />
                             <b style={{ margin: "12px" }}>Invite un ami</b>
                           </button>
-                          <button className="sharebutton">
+                          <button
+                            className="sharebutton"
+                            onClick={() => setOpenSharepopup(true)}
+                          >
                             <img src={share} />
                             <b style={{ margin: "12px" }}> Partager </b>
                           </button>
