@@ -51,7 +51,7 @@ export default function DialogBox({ open, setOpen }) {
       id: user._id,
     });
     if (res) {
-      toast.error("Mis à jour avec succés");
+      toast.success("Merci, vous serez contacté prochainement");
 
       setOpen(false);
     }

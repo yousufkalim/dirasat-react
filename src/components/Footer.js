@@ -8,7 +8,7 @@ const Footer = () => {
     <>
       <div className="FooterDiv">
         <div className="cguBar">
-          <h3 style={{ textAlign: "center" }}>
+          <h3 className="footeraccueil" style={{ textAlign: "center" }}>
             <AnchorLink
               href="#top"
               style={{
@@ -18,19 +18,19 @@ const Footer = () => {
               Accueil
             </AnchorLink>
           </h3>
-          <p style={{ textAlign: "center" }}>
-            Developed By
+          <p className="developby" style={{ textAlign: "center" }}>
+            Développé par
             <a
               href="https:www.falconconsulting.fr"
               target="_blank"
               style={{ textDecoration: "none", color: " gray", margin: "5px" }}
             >
               {" "}
-              Falcon IT Consulting
+              Falcon Consulting
             </a>{" "}
-            2021. All Rights Reserved
+            2021. Tous droits réservés
           </p>
-          <h3 style={{ textAlign: "center" }}>
+          <h3 className="footercgu" style={{ textAlign: "center" }}>
             <Link to="/CGU" style={{ color: "white" }}>
               CGU
             </Link>

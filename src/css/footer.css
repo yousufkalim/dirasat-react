@@ -9,3 +9,17 @@
   width: 50%;
   margin: auto;
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
+  .cguBar {
+    width: auto;
+  }
+  .developby {
+    margin-top: 40px !important;
+  }
+  .footercgu {
+    margin-right: 10px;
+  }
+  .footeraccueil {
+    margin-left: 10px;
+  }
+}
