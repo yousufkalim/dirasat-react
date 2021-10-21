@@ -28,7 +28,10 @@ const Result = () => {
         setOpen(true);
       }, 30000);
     }
-    getResult();
+    if (resultStep == 0) {
+      getResult();
+    }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [resultStep]);
   // get Result from api
@@ -43,6 +46,7 @@ const Result = () => {
       user_id: user?._id,
       last_answer: lastAnswerId?._id,
     };
+    console.log("api call result");
     let res = await api("post", "/results", userData);
     if (res) {
       updateStore({ result: res?.data?.result });
@@ -85,7 +89,7 @@ const Result = () => {
                       {" "}
                       <span
                         style={{
-                          color: "#BCC3CF",
+                          color: "white",
                           fontWeight: "900",
                           wordBreak: "break-word",
                         }}
@@ -97,14 +101,14 @@ const Result = () => {
                         ) : result?.type_of_job ? (
                           result.type_of_job
                         ) : (
-                          "Currently no job available"
+                          "Il n’y a actuellement pas de job disponible."
                         )}{" "}
                       </span>
                     </b>{" "}
                     <span style={{ color: "#9198A5" }}>comme par exemple</span>{" "}
                     <span
                       style={{
-                        color: "#BCC3CF",
+                        color: "white",
                         fontWeight: "900",
                         wordBreak: "break-word",
                       }}
@@ -118,17 +122,21 @@ const Result = () => {
                     </span>
                   </p>
                 )}
-                <p className="resultText">
-                  <span style={{ color: "#9198A5" }}>
-                    Je te propose une liste de voeux Parcoursup qui
-                    correspondrait à ton profil.
-                  </span>
-                </p>
+                {!loading && (
+                  <p className="resultText">
+                    <span style={{ color: "#9198A5" }}>
+                      Je te propose une liste de voeux Parcoursup qui
+                      correspondrait à ton profil.
+                    </span>
+                  </p>
+                )}
               </div>
               <div className="resultButtondiv">
                 <button
                   className="resultButton"
                   onClick={() => setresultStep(1)}
+                  style={{ opacity: loading ? 0.4 : 1 }}
+                  disabled={loading}
                 >
                   <b> Ma liste Parcoursup</b>
                 </button>

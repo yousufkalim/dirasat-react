@@ -23,6 +23,7 @@ import api from "../api";
 let education = [
   "Quatrième",
   "Troisième",
+  "Lycèe",
   "Seconde Générale",
   "Première Générale",
   "Première STL",
@@ -70,6 +71,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
   });
   // state for address options list
   const [values, setValues] = useState([]);
+  const [flagforSchool, setFlagforSchool] = useState(false);
 
   // state for address details
   const [addressValue, setAddressValue] = useState({
@@ -102,7 +104,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
     getSchoolData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log("values for no option", values);
   const useStyles = makeStyles({
     customTextField: {
       "& input::placeholder": {
@@ -154,6 +155,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
         });
     }
   };
+  const handleBlurSchools = () => {
+    setFlagforSchool(!flagforSchool);
+  };
   // onChange Function for Select institute
   const handleChangeSchool = (event, value) => {
     setFormData({ ...formData, institute: value?._id });
@@ -184,7 +188,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
     if (localStorage.token) {
       axios.defaults.headers.common["x-auth-token"] = localStorage.token;
     }
-    console.log("Res address", res, res?.data?.features?.length);
 
     var addressToSet = []; // //debugger;
     for (var i = 0; i < res?.data?.features?.length; i++) {
@@ -202,10 +205,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
         lng: res?.data?.features[0].geometry.coordinates[0],
       });
     }
-    console.log("addressToSet", addressToSet.length);
-    console.log("check", res?.data?.features.length);
     if (addressToSet.length === res?.data?.features.length) {
-      console.log("aaaaaaaaa");
       setValues(addressToSet);
     }
   };
@@ -326,7 +326,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
                   required
                 />
               </Grid>
-              {console.log("option values", values)}
               <Grid item xs={12} sm={6} className="inputGrid">
                 <Autocomplete
                   options={values}
@@ -387,7 +386,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
               <Grid item xs={12} sm={6} className="inputGrid">
                 <FormControl variant="outlined" className="selectformControl">
                   {/* <InputLabel id="demo-simple-select-outlined-label">
-                    {education_level ? "" : " classe "}
+                    {education_level ? "clsse" : " classe "}
                   </InputLabel> */}
                   <Select
                     labelId="demo-simple-select-outlined-label"
@@ -398,17 +397,22 @@ const UserForm = ({ setStep, setActiveStep }) => {
                     onChange={onChange}
                     className={classes.select}
                     className="selectforeducation"
+                    onFocus={handleBlurSchools}
                   >
                     <MenuItem
                       value="Classe"
                       disabled
                       style={{ textAlign: "left !important" }}
                     >
-                      <em>Classe</em>
+                      <em>{flagforSchool ? "College" : "Classe"}</em>
                     </MenuItem>
-                    {education.map((edu) => (
-                      <MenuItem value={edu}>{edu}</MenuItem>
-                    ))}
+                    {education.map((edu, i) => {
+                      return (
+                        <MenuItem value={edu} disabled={i == 2}>
+                          {edu}
+                        </MenuItem>
+                      );
+                    })}
                   </Select>
                 </FormControl>
               </Grid>

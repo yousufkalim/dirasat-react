@@ -103,6 +103,7 @@ const Questions = ({ setStep, setActiveStep }) => {
     });
     return options;
   };
+
   return (
     <Grid container spacing={2} className="mainquestionscreen">
       <Grid item xs={12} sm={4} className="">

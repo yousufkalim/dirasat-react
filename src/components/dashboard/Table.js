@@ -55,7 +55,7 @@ const AdminTable = ({
             </TableHead>
             {loading ? (
               <div style={{ width: "50%", margin: "auto" }}>
-                <h3>Loading...</h3>
+                <h3>Chargement...</h3>
               </div>
             ) : (
               <TableBody>

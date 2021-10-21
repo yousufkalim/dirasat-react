@@ -5,7 +5,7 @@
   color: white;
   position: relative;
   bottom: 28%;
-  width: 76% !important;
+  width: 80% !important;
   margin: auto !important;
   text-align: left !important;
 }
@@ -20,7 +20,7 @@
 }
 
 .questiontext {
-  padding-left: 30px;
+  padding-left: 40px;
 }
 .answerGrid {
   padding: 1% 6% 0 12% !important;

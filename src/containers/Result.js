@@ -80,14 +80,14 @@ const Result = () => {
             ) : (
               <div className="cardflex" style={{ color: "white" }}>
                 {" "}
-                <h1>No Course Available</h1>
+                <h1>aucun cours disponible</h1>
               </div>
             )}
           </div>
         ) : (
           <div className="cardflex" style={{ color: "white" }}>
             {" "}
-            <h1>Loading...</h1>
+            <h1>Chargement...</h1>
           </div>
         )}
       </div>
