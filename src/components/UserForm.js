@@ -102,7 +102,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
     getSchoolData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log("values for no option", values);
   const useStyles = makeStyles({
     customTextField: {
       "& input::placeholder": {
@@ -184,7 +183,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
     if (localStorage.token) {
       axios.defaults.headers.common["x-auth-token"] = localStorage.token;
     }
-    console.log("Res address", res, res?.data?.features?.length);
 
     var addressToSet = []; // //debugger;
     for (var i = 0; i < res?.data?.features?.length; i++) {
@@ -202,10 +200,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
         lng: res?.data?.features[0].geometry.coordinates[0],
       });
     }
-    console.log("addressToSet", addressToSet.length);
-    console.log("check", res?.data?.features.length);
     if (addressToSet.length === res?.data?.features.length) {
-      console.log("aaaaaaaaa");
       setValues(addressToSet);
     }
   };
@@ -326,7 +321,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
                   required
                 />
               </Grid>
-              {console.log("option values", values)}
               <Grid item xs={12} sm={6} className="inputGrid">
                 <Autocomplete
                   options={values}

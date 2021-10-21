@@ -25,7 +25,6 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
     });
   };
   useEffect(() => {
-    console.log("statetextforscroll", statetextforscroll);
     scrollToTop();
     statetextforscroll == "Accueil" && scrollToTop();
     statetextforscroll == "Comment" &&

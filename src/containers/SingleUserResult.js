@@ -70,13 +70,13 @@ const SingleUserResult = ({}) => {
           ) : (
             <div style={{ padding: "5px", color: "white" }}>
               {" "}
-              <h1>No User Result Available</h1>
+              <h1>Aucun résultat utilisateur disponible</h1>
             </div>
           )
         ) : (
           <div style={{ padding: "5px", color: "white" }}>
             {" "}
-            <h1>Loading...</h1>
+            <h1>Chargement...</h1>
           </div>
         )}
       </div>

@@ -28,7 +28,10 @@ const Result = () => {
         setOpen(true);
       }, 30000);
     }
-    getResult();
+    if (resultStep == 0) {
+      getResult();
+    }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [resultStep]);
   // get Result from api
@@ -43,6 +46,7 @@ const Result = () => {
       user_id: user?._id,
       last_answer: lastAnswerId?._id,
     };
+    console.log("api call result");
     let res = await api("post", "/results", userData);
     if (res) {
       updateStore({ result: res?.data?.result });
@@ -97,7 +101,7 @@ const Result = () => {
                         ) : result?.type_of_job ? (
                           result.type_of_job
                         ) : (
-                          "Currently no job available"
+                          "Il n’y a actuellement pas de job disponible."
                         )}{" "}
                       </span>
                     </b>{" "}
