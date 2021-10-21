@@ -103,6 +103,7 @@ const Questions = ({ setStep, setActiveStep }) => {
     });
     return options;
   };
+  let a = " Pour commencer, dans quel profil te reconnais-tu ?";
   return (
     <Grid container spacing={2} className="mainquestionscreen">
       <Grid item xs={12} sm={4} className="">
@@ -114,9 +115,10 @@ const Questions = ({ setStep, setActiveStep }) => {
           <img src={qarrow} className="qboximg" />
           <div className="questionBox">
             <h1 className="questiontext">
-              {getQuestion()?.question
+              {/* {getQuestion()?.question
                 ? getQuestion()?.question
-                : "There's no Question please try again"}
+                : "There's no Question please try again"} */}
+              {a}
             </h1>
           </div>
           <Grid container spacing={3} className="answerGrid">

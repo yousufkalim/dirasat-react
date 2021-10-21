@@ -89,7 +89,7 @@ const Result = () => {
                       {" "}
                       <span
                         style={{
-                          color: "#BCC3CF",
+                          color: "white",
                           fontWeight: "900",
                           wordBreak: "break-word",
                         }}
@@ -108,7 +108,7 @@ const Result = () => {
                     <span style={{ color: "#9198A5" }}>comme par exemple</span>{" "}
                     <span
                       style={{
-                        color: "#BCC3CF",
+                        color: "white",
                         fontWeight: "900",
                         wordBreak: "break-word",
                       }}
@@ -122,17 +122,21 @@ const Result = () => {
                     </span>
                   </p>
                 )}
-                <p className="resultText">
-                  <span style={{ color: "#9198A5" }}>
-                    Je te propose une liste de voeux Parcoursup qui
-                    correspondrait à ton profil.
-                  </span>
-                </p>
+                {!loading && (
+                  <p className="resultText">
+                    <span style={{ color: "#9198A5" }}>
+                      Je te propose une liste de voeux Parcoursup qui
+                      correspondrait à ton profil.
+                    </span>
+                  </p>
+                )}
               </div>
               <div className="resultButtondiv">
                 <button
                   className="resultButton"
                   onClick={() => setresultStep(1)}
+                  style={{ opacity: loading ? 0.4 : 1 }}
+                  disabled={loading}
                 >
                   <b> Ma liste Parcoursup</b>
                 </button>
