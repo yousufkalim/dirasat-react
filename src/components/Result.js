@@ -11,7 +11,6 @@ import share from "../assets/icons/share.png";
 import Dialog from "./Dialog";
 import InvitePopup from "./InvitePopup";
 import SharePopup from "./Sharepopup";
-
 const Result = () => {
   let typeOfCourses = ["BTS", "BUT", "CPGE", "Ecole Post-Bac", "Licence"];
   // init
@@ -46,7 +45,7 @@ const Result = () => {
       user_id: user?._id,
       last_answer: lastAnswerId?._id,
     };
-    console.log("api call result");
+
     let res = await api("post", "/results", userData);
     if (res) {
       updateStore({ result: res?.data?.result });
@@ -54,10 +53,13 @@ const Result = () => {
     setLoading(false);
   };
   // get courses arrays base on there types
-  const getSingleTypeofCourse = (type) =>
-    result.courses.filter(
+  const getSingleTypeofCourse = (type) => {
+    let b = result.courses.filter(
       (course) => type === course?.courseId?.type_of_course
     );
+
+    return b;
+  };
 
   return (
     <>
@@ -156,22 +158,27 @@ const Result = () => {
               <div>
                 {!loading ? (
                   <div>
-                    {result?.courses && result?.courses.length >= 1 ? (
+                    {result.data ? (
                       <div>
-                        {typeOfCourses.map((type) => (
+                        {result?.data?.map((item) => (
                           <>
-                            {getSingleTypeofCourse(type)[0]?.courseId
-                              ?.type_of_course == type && (
+                            {item.courses ? (
                               <TypeOfCourse
-                                type={type}
-                                percentage={
-                                  getSingleTypeofCourse(type)[0]?.percentage
-                                }
-                                courses={getSingleTypeofCourse(type)}
+                                type={item?.type}
+                                percentage={item?.percentage}
+                                courses={item?.courses}
                               />
+                            ) : (
+                              <div
+                                className=""
+                                style={{ margin: "10px", textAlign: "center" }}
+                              >
+                                <h1> Désolé pas de cours disponible</h1>
+                              </div>
                             )}
                           </>
                         ))}
+
                         <div className="buttonDiv">
                           <button
                             className="sharebutton"
