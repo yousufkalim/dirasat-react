@@ -18,13 +18,13 @@ const TypeOfCourse = ({ type, percentage, courses }) => {
       return "linear-gradient(rgb(40 255 106) 0%, rgb(31 223 212) 100%)";
     } else if (percentage >= 8 && percentage <= 23) {
       // yellow
-      return "linear-gradient(rgb(219 187 103) 0%, rgb(195 179 94) 100%)";
+      return "linear-gradient(90deg, rgba(240,244,99,1) 0%, rgba(247,232,106,1) 50%, rgba(232,236,100,1) 100%)";
     } else if (percentage >= 3 && percentage <= 7) {
       // orange
-      return "linear-gradient(rgb(255 183 51) 0%, rgb(189 165 37) 100%)";
+      return "linear-gradient(90deg, rgba(246,185,8,1) 0%, rgba(242,182,7,1) 50%, rgba(237,174,5,1) 100%)";
     } else {
       // red
-      return "#c98405";
+      return "linear-gradient(90deg, rgba(246,161,8,1) 0%, rgba(242,162,7,1) 50%, rgba(237,162,5,1) 100%)";
     }
   };
 

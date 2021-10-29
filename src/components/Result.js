@@ -13,6 +13,7 @@ import InvitePopup from "./InvitePopup";
 import SharePopup from "./Sharepopup";
 const Result = () => {
   let typeOfCourses = ["BTS", "BUT", "CPGE", "Ecole Post-Bac", "Licence"];
+
   // init
   const updateStore = UpdateStore();
   const { history, user, disc_ans_id, result } = Store();
