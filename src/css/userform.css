@@ -240,6 +240,10 @@
   .mainuserform {
     min-height: 80vh !important;
   }
+  .userformgrid {
+    padding: 10px 0 20px 10px !important;
+    margin: 70px auto !important;
+  }
   .dummyGrid {
     margin-top: 2% !important;
   }
@@ -263,7 +267,7 @@
     padding: 10px;
   }
   .selectformControl {
-    width: 87% !important;
+    width: 89% !important;
   }
   /* education level placeholder */
   .MuiInputLabel-outlined {

@@ -160,7 +160,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
   };
   // onChange Function for Select institute
   const handleChangeSchool = (event, value) => {
-    setFormData({ ...formData, institute: value?._id });
+    setFormData({ ...formData, institute: value?.name });
   };
   // function for Date select
   const onChangeDate = (date) => {
