@@ -20,18 +20,19 @@ const Result = () => {
   const [loading, setLoading] = useState(false);
   const [resultStep, setresultStep] = useState(0);
   const [open, setOpen] = useState(false);
+  const [flagforpopup, setFlagforpopup] = useState(false);
   const [openinvitepopup, setOpenInvitepopup] = useState(false);
   const [opensharepopup, setOpenSharepopup] = useState(false);
   useEffect(() => {
     if (resultStep == 1) {
+      setFlagforpopup(true);
       setTimeout(() => {
-        setOpen(true);
+        !flagforpopup && setOpen(true);
       }, 30000);
     }
     if (resultStep == 0) {
       getResult();
     }
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [resultStep]);
   // get Result from api
@@ -60,6 +61,9 @@ const Result = () => {
     );
 
     return b;
+  };
+  const showResultDetail = () => {
+    setresultStep(1);
   };
 
   return (
@@ -137,7 +141,7 @@ const Result = () => {
               <div className="resultButtondiv">
                 <button
                   className="resultButton"
-                  onClick={() => setresultStep(1)}
+                  onClick={() => showResultDetail()}
                   style={{ opacity: loading ? 0.4 : 1 }}
                   disabled={loading}
                 >
@@ -186,14 +190,22 @@ const Result = () => {
                             onClick={() => setOpenInvitepopup(true)}
                           >
                             <img src={userimg} />
-                            <b style={{ margin: "12px" }}>Invite un ami</b>
+                            <b className="invitetext">Invite un ami</b>
                           </button>
                           <button
-                            className="sharebutton"
+                            className=" partager"
                             onClick={() => setOpenSharepopup(true)}
                           >
                             <img src={share} />
-                            <b style={{ margin: "12px" }}> Partager </b>
+                            <b className="partagertext"> Partager </b>
+                          </button>
+                        </div>
+                        <div className="goback">
+                          <button
+                            className="goBackbutton"
+                            onClick={() => setresultStep(0)}
+                          >
+                            <b className="">Go Back</b>
                           </button>
                         </div>
                       </div>

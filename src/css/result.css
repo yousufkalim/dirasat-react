@@ -86,7 +86,6 @@
 .resultText {
   text-align: center;
   padding: 2px;
-
   line-height: 1.8 !important;
 }
 .resultButtondiv {
@@ -130,6 +129,44 @@
   padding: 15px 27px 15px 27px;
   margin: 20px;
 }
+.partager {
+  cursor: pointer;
+  border: none;
+  border-radius: 100px;
+  background: linear-gradient(#ffffff, #bac0d6);
+  padding: 15px 34px 15px 34px;
+  margin: 20px;
+}
+.invitetext {
+  margin: 12px;
+  position: relative;
+  bottom: 5px;
+}
+.partagertext {
+  margin: 12px;
+  position: relative;
+  bottom: 5px;
+}
+.goback {
+  width: 50%;
+  text-align: center;
+  margin: auto;
+}
+.goBackbutton {
+  cursor: pointer;
+  border: none;
+  border-radius: 100px;
+  background: #343747;
+  color: white;
+  padding: 15px 27px 15px 27px;
+  margin: 20px;
+}
+.goBackbutton:hover {
+  background: linear-gradient(#ffffff, #bac0d6);
+  color: black;
+}
+
+/* Mobile View */
 @media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
   .resultBox {
     width: 80% !important;
@@ -142,6 +179,9 @@
   }
   .typeOfCourses {
     width: 83% !important;
+    margin: 40px auto;
+    box-shadow: 0px 1px 0px 10px rgb(141 121 121 / 10%) !important;
+    padding: 0px;
   }
   .coursediv {
     font-weight: 900 !important;
@@ -151,18 +191,22 @@
   }
   .courseType {
     text-align: left !important;
-    font-size: 20px !important ;
-    padding: 40px 0px 30px 17px !important;
+    font-size: 13px !important ;
+    padding: 40px 0px 30px 5px !important;
   }
   .percentageGrid {
     height: fit-content !important;
     margin: 30px 0px 17px 0px !important;
-    font-size: 12px !important;
+    font-size: 10px !important;
     /* padding: 3px !important; */
   }
   .sharebutton {
-    padding: 15px 20px 15px 20px;
+    padding: 10px 10px 10px 10px;
     margin: 10px;
+  }
+  .partager {
+    padding: 10px 20px 10px 20px;
+    margin: 5px;
   }
   .showhide {
     margin: 25px 0px 0px 10px !important;
@@ -191,7 +235,7 @@
   }
   .searchimg {
     padding: 0px;
-    margin-top: 5px;
+    margin-top: 2px;
   }
   .resultHeading {
     font-size: 21px !important;
