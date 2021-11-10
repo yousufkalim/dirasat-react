@@ -64,8 +64,24 @@
   );
   cursor: pointer !important;
 }
+.infoIcon {
+  margin-right: 10px;
+  width: 38px !important;
+  height: 28px !important;
+  color: white;
+  cursor: pointer;
+}
+.infoIcon:hover {
+  color: #d3c6c6;
+}
+.css-3bmhjh-MuiPaper-root-MuiPopover-paper {
+  width: 50% !important;
+}
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
+  .css-3bmhjh-MuiPaper-root-MuiPopover-paper {
+    width: 100% !important;
+  }
   .questionBox {
     color: white;
     background: #343747;

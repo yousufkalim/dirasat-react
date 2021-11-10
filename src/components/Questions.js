@@ -4,7 +4,10 @@ import { Store, UpdateStore } from "../StoreContext";
 import Dummy from "../assets/img/dummy.png";
 import MainMobile from "../assets/img/mobileform.png";
 import qarrow from "../assets/icons/qarrow.png";
+import Infoicon from "../assets/icons/infoicon.png";
+import InfoIcon from "@mui/icons-material/Info";
 import Grid from "@material-ui/core/Grid";
+import Info from "./Info";
 
 const Questions = ({ setStep, setActiveStep }) => {
   // init context
@@ -14,6 +17,8 @@ const Questions = ({ setStep, setActiveStep }) => {
   const [nextQuestionId, setNextQuestionId] = useState("first");
   const [prevQuestion, setprevQuestion] = useState([]);
   const [currentAnswer, setCurrentAnswer] = useState(null);
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
   useEffect(() => {
     currentans();
@@ -103,42 +108,53 @@ const Questions = ({ setStep, setActiveStep }) => {
     });
     return options;
   };
+  const handleClickinfo = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
 
   return (
-    <Grid container spacing={2} className="mainquestionscreen">
-      <Grid item xs={12} sm={4} className="">
-        <img src={Dummy} className="dummyimgQuestion forweb" />
-        <img src={MainMobile} className="dummyimgforQuestion formobile" />
-      </Grid>
-      <Grid item xs={12} sm={8} className="questionGrid">
-        <div className="questionDiv">
-          <img src={qarrow} className="qboximg" />
-          <div className="questionBox">
-            <h1 className="questiontext">
-              {getQuestion()?.question
-                ? getQuestion()?.question
-                : "There's no Question please try again"}
-            </h1>
-          </div>
-          <Grid container spacing={3} className="answerGrid">
-            {answers &&
-              getOptions(answers)?.map((ans) => (
-                <Grid
-                  item
-                  xs={12}
-                  sm={5}
-                  className={
-                    currentAnswer?.answer === ans?.answer
-                      ? "selectedOption"
-                      : "option"
-                  }
-                  onClick={() => handleSelectOption(ans)}
-                >
-                  {ans?.answer}
-                </Grid>
-              ))}
-          </Grid>
-          {/* {history.length >= 1 && (
+    <>
+      <Info anchorEl={anchorEl} setAnchorEl={setAnchorEl} />
+      <Grid container spacing={2} className="mainquestionscreen">
+        <Grid item xs={12} sm={4} className="">
+          <img src={Dummy} className="dummyimgQuestion forweb" />
+          <img src={MainMobile} className="dummyimgforQuestion formobile" />
+        </Grid>
+        <Grid item xs={12} sm={8} className="questionGrid">
+          <div className="questionDiv">
+            <img src={qarrow} className="qboximg" />
+            <div className="questionBox">
+              <h1 className="questiontext">
+                {getQuestion()?.question
+                  ? getQuestion()?.question
+                  : "There's no Question please try again"}
+                {getQuestion()?.question ==
+                  "Encore une autre question, est-ce que les études payantes sont une option pour toi ?" && (
+                  // <img src={Infoicon} />
+
+                  <InfoIcon className="infoIcon" onClick={handleClickinfo} />
+                )}
+              </h1>
+            </div>
+            <Grid container spacing={3} className="answerGrid">
+              {answers &&
+                getOptions(answers)?.map((ans) => (
+                  <Grid
+                    item
+                    xs={12}
+                    sm={5}
+                    className={
+                      currentAnswer?.answer === ans?.answer
+                        ? "selectedOption"
+                        : "option"
+                    }
+                    onClick={() => handleSelectOption(ans)}
+                  >
+                    {ans?.answer}
+                  </Grid>
+                ))}
+            </Grid>
+            {/* {history.length >= 1 && (
             <Button
               variant="contained"
               color="primary"
@@ -148,9 +164,10 @@ const Questions = ({ setStep, setActiveStep }) => {
               {"Previous"}
             </Button>
           )} */}
-        </div>
+          </div>
+        </Grid>
       </Grid>
-    </Grid>
+    </>
   );
 };
 
