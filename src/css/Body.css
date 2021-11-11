@@ -139,6 +139,7 @@
   }
   .mainbody {
     overflow-x: hidden;
+    overflow-y: hidden;
   }
   .forweb {
     display: none;
@@ -169,17 +170,25 @@
     margin: 0px;
   }
   .p1 {
-    font-size: 12px;
+    font-size: 13px;
     text-align: center;
   }
+  .partibuttondiv {
+    position: relative;
+  }
+
   .partiButton {
-    border: none;
     margin: 0px;
-    padding: 15px 37% 15px 38% !important;
+    padding: 15px 60px 15px 50px;
+    font-size: 20px;
+    /* border: none;
+    margin: 0px;
+    padding: 15px 37% 15px 38% !important; */
   }
   .arrowright {
-    right: -19%;
-    top: -45%;
+    top: 1px;
+    /* right: -19%;
+    top: -45%; */
   }
   .vidoSection {
     margin: -80px 0 0 0;

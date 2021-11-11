@@ -19,7 +19,11 @@ function DetailofCourses({ courses, open, setOpen }) {
         courses?.map((course) => (
           <Grid container spacing={2} className="courseDetail">
             <Grid item xs={12} sm={5}>
-              <p>{course?.courseId?.sub_domains} </p>
+              <p>
+                {course?.courseId?.sub_domains} -{" "}
+                <p>{course?.courseId?.city} </p>
+              </p>
+
               <h2> {course?.courseId?.course_name}</h2>
             </Grid>
             <Grid item xs={12} sm={7} className="ratingGrid">

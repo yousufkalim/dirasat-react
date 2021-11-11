@@ -47,10 +47,12 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
             </p>
           </Grid>
           <Grid item xs={12} sm={3} className="body-rectangleGrid3">
-            <button className="partiButton" onClick={() => setStep(1)}>
-              C'est parti !
-            </button>
-            <img src={arrowright} className="arrowright" />
+            <div className="partibuttondiv">
+              <button className="partiButton" onClick={() => setStep(1)}>
+                C'est parti !
+              </button>
+              <img src={arrowright} className="arrowright" />
+            </div>
           </Grid>
         </Grid>
         <div id="comment" className="vidoSection">
