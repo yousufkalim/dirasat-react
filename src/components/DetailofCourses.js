@@ -21,7 +21,7 @@ function DetailofCourses({ courses, open, setOpen }) {
             <Grid item xs={12} sm={5}>
               <p>
                 {course?.courseId?.sub_domains} -{" "}
-                <p>{course?.courseId?.city} </p>
+                <span>{course?.courseId?.city} </span>
               </p>
 
               <h2> {course?.courseId?.course_name}</h2>
