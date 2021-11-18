@@ -17,6 +17,7 @@ import MainMobile from "../assets/img/mobileform.png";
 import arrowleft from "../assets/img/arrow2.png";
 import scrollToTop from "../utils/ScrollTop";
 import DatePicker from "react-datepicker";
+import ConfirmationPopup from "./ConfirmationPopup";
 
 import api from "../api";
 
@@ -71,6 +72,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
   });
   // state for address options list
   const [values, setValues] = useState([]);
+  const [confirmationOpen, SetconfirmationOpen] = useState(false);
   const [flagforSchool, setFlagforSchool] = useState(false);
 
   // state for address details
@@ -264,13 +266,15 @@ const UserForm = ({ setStep, setActiveStep }) => {
       address: addressValue,
     });
     if (res.status === 200) {
-      updateStore({
-        questions: res?.data?.questions,
-        answers: res?.data?.answers,
-        user: res?.data?.user,
-      });
-      setStep(2);
-      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+      SetconfirmationOpen(true);
+
+      // updateStore({
+      //   questions: res?.data?.questions,
+      //   answers: res?.data?.answers,
+      //   user: res?.data?.user,
+      // });
+      // setStep(2);
+      // setActiveStep((prevActiveStep) => prevActiveStep + 1);
     }
     setLoading(false);
   };
@@ -507,6 +511,11 @@ const UserForm = ({ setStep, setActiveStep }) => {
             </Grid>
           </Grid>
         </form>
+        <ConfirmationPopup
+          confirmationOpen={confirmationOpen}
+          SetconfirmationOpen={SetconfirmationOpen}
+          setStep={setStep}
+        />
       </Grid>
     </Grid>
   );
