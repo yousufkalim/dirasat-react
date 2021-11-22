@@ -99,7 +99,7 @@ export default function InviteBox({
               name="otp"
               value={otp}
               onChange={onChange}
-              placeholder="Enter Verification Code"
+              placeholder="Entrez le code de vérification"
               className="dialoginputField"
               required
             />
