@@ -22,6 +22,10 @@
 .questiontext {
   padding-left: 40px;
 }
+.longquestion {
+  padding-left: 40px;
+  font-size: 26px;
+}
 .answerGrid {
   padding: 1% 6% 0 12% !important;
 }
@@ -103,6 +107,11 @@
     font-size: 22px;
     text-align: left;
   }
+  .longquestion {
+    padding: 10px;
+    font-size: 22px;
+    text-align: left;
+  }
 
   .questionGrid {
     margin-top: -22% !important;
@@ -126,6 +135,9 @@
     width: 64% !important;
   }
   .questiontext {
+    padding-left: 60px;
+  }
+  .longquestion {
     padding-left: 60px;
   }
   .questionDiv {

@@ -59,7 +59,6 @@ const Result = () => {
     let b = result.courses.filter(
       (course) => type === course?.courseId?.type_of_course
     );
-
     return b;
   };
   const showResultDetail = () => {
@@ -183,6 +182,23 @@ const Result = () => {
                             )}
                           </>
                         ))}
+                        <div
+                          style={{
+                            width: "70%",
+                            textAlign: "center",
+                            margin: "auto",
+                            color: "grey",
+                          }}
+                        >
+                          <p>
+                            Tu ne trouves pas ce que tu t’attendais à voir dans
+                            cette liste? Pas de panique! C’est sûrement que la
+                            formation à laquelle tu penses n’est pas sur
+                            Parcousup. Tu seras contacté par la suite pour
+                            compléter cette liste avec d’autres fomations
+                            “hors-parcoursup” qui pourraient te correspondre!
+                          </p>
+                        </div>
 
                         <div className="buttonDiv">
                           <button
