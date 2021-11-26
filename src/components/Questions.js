@@ -8,8 +8,12 @@ import Infoicon from "../assets/icons/infoicon.png";
 import InfoIcon from "@mui/icons-material/Info";
 import Grid from "@material-ui/core/Grid";
 import Info from "./Info";
+import useSound from "use-sound";
+import sound from "../assets/sound/sound.wav";
+import QuestionPopup from "./QuestionPopup";
 
 const Questions = ({ setStep, setActiveStep }) => {
+  const [play] = useSound(sound);
   // init context
   const updateStore = UpdateStore();
   const { questions, answers, history, disc_ans_id } = Store();
@@ -17,8 +21,10 @@ const Questions = ({ setStep, setActiveStep }) => {
   const [nextQuestionId, setNextQuestionId] = useState("first");
   const [prevQuestion, setprevQuestion] = useState([]);
   const [currentAnswer, setCurrentAnswer] = useState(null);
+  const [openQPopup, setOpenQPopup] = useState(false);
 
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [text, setText] = useState(null);
 
   useEffect(() => {
     currentans();
@@ -45,6 +51,12 @@ const Questions = ({ setStep, setActiveStep }) => {
   const classes = useStyles();
   // when  select any option it will set next Q id ,update history , if Q type is discriminating update disc_ans_id
   const handleSelectOption = (ans) => {
+    if (
+      getQuestion()?.question ==
+      "Encore une autre question, est-ce que les études payantes sont une option pour toi ?"
+    ) {
+      setTimeout(() => setOpenQPopup(true), 500);
+    }
     if (ans?.question?.questionType === "discriminating") {
       updateStore({ disc_ans_id: [...disc_ans_id, ans?._id] });
     }
@@ -52,6 +64,7 @@ const Questions = ({ setStep, setActiveStep }) => {
     updateStore({ history: [...history, ans] });
     setprevQuestion([]);
     setCurrentAnswer(null);
+    return play();
   };
 
   // when Click on Previous Button it get previous question
@@ -108,13 +121,14 @@ const Questions = ({ setStep, setActiveStep }) => {
     });
     return options;
   };
-  const handleClickinfo = (event) => {
+  const handleClickinfo = (event, text) => {
     setAnchorEl(event.currentTarget);
-  };
 
+    setText(text);
+  };
   return (
     <>
-      <Info anchorEl={anchorEl} setAnchorEl={setAnchorEl} />
+      <Info anchorEl={anchorEl} setAnchorEl={setAnchorEl} text={text} />
       <Grid container spacing={2} className="mainquestionscreen">
         <Grid item xs={12} sm={4} className="">
           <img src={Dummy} className="dummyimgQuestion forweb" />
@@ -124,15 +138,31 @@ const Questions = ({ setStep, setActiveStep }) => {
           <div className="questionDiv">
             <img src={qarrow} className="qboximg" />
             <div className="questionBox">
-              <h1 className="questiontext">
+              {console.log("getQuestion()?.quesion", getQuestion()?.question)}
+
+              <h1
+                className={`${
+                  getQuestion()?.question.length >= 90
+                    ? "longquestion"
+                    : "questiontext"
+                }`}
+              >
                 {getQuestion()?.question
                   ? getQuestion()?.question
                   : "There's no Question please try again"}
                 {getQuestion()?.question ==
                   "Encore une autre question, est-ce que les études payantes sont une option pour toi ?" && (
-                  // <img src={Infoicon} />
-
-                  <InfoIcon className="infoIcon" onClick={handleClickinfo} />
+                  <InfoIcon
+                    className="infoIcon"
+                    onClick={(e) => handleClickinfo(e, 1)}
+                  />
+                )}
+                {getQuestion()?.question ==
+                  "Enfin, dirais-tu que ta volonté d’étudier à l’étranger soit un plan A ou un plan B par rapport à l’option de débuter ton parcours postbac en France?" && (
+                  <InfoIcon
+                    className="infoIcon"
+                    onClick={(e) => handleClickinfo(e, 2)}
+                  />
                 )}
               </h1>
             </div>
@@ -167,6 +197,7 @@ const Questions = ({ setStep, setActiveStep }) => {
           </div>
         </Grid>
       </Grid>
+      <QuestionPopup open={openQPopup} setOpen={setOpenQPopup} />
     </>
   );
 };

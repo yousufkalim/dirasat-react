@@ -24,6 +24,7 @@
     "react-scripts": "4.0.3",
     "react-share": "^4.4.0",
     "react-toastify": "^7.0.4",
+    "use-sound": "^4.0.1",
     "web-vitals": "^0.2.4",
     "workbox-background-sync": "^5.1.4",
     "workbox-broadcast-update": "^5.1.4",

@@ -44,7 +44,6 @@ export default function InviteBox({
     let res = await api("post", "/users/verify", {
       otp,
     });
-    console.log("res issss ", res.status);
     if (res.status === 200) {
       SetconfirmationOpen(false);
       updateStore({

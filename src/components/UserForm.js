@@ -99,7 +99,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
     newsletter,
     accept_condition,
   } = formData;
-
   // Get institutes data from API
   useEffect(() => {
     scrollToTop();
@@ -285,6 +284,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
         <img src={MainMobile} className=" dummyimgforuserform formobile" />
       </Grid>
       <Grid item xs={12} sm={8} className="responsiveform">
+        {/* <button onClick={play}>play</button> */}
         <form autoComplete="off" onSubmit={handleSubmit} className="userForm">
           <Grid container className="userformgrid">
             <Grid item xs={12} sm={12} className="">
@@ -420,11 +420,19 @@ const UserForm = ({ setStep, setActiveStep }) => {
                   </Select>
                 </FormControl>
               </Grid>
+
               <Grid item xs={12} sm={6} className="inputGrid">
                 <Autocomplete
                   classes={{
                     option: classes.option,
                   }}
+                  noOptionsText={
+                    <div style={{ color: "white", fontSize: "12px" }}>
+                      {" "}
+                      Saisissez le nom de votre établissement s’il n’apparait
+                      pas{" "}
+                    </div>
+                  }
                   PaperComponent={({ children }) => (
                     <Paper style={{ background: "#242635" }}>{children}</Paper>
                   )}
@@ -438,7 +446,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           (institute) => institute.type == "School"
                         )
                   }
-                  freeSolo
+                  // freeSolo
                   getOptionLabel={(option) => option.name}
                   onChange={handleChangeSchool}
                   style={{
