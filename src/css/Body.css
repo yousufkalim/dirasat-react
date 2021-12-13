@@ -86,6 +86,7 @@
 .h4 {
   color: #ffffff;
   margin: 10px 0px 0px 0px;
+  font-size: 18px;
 }
 .p1 {
   font-size: 12px;
@@ -98,7 +99,7 @@
   color: #9198a5;
 }
 .p3 {
-  font-size: 15px;
+  font-size: 17px;
   text-align: center;
   color: #9198a5;
 }

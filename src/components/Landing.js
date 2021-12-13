@@ -4,6 +4,7 @@ import Main from "../assets/img/a.png";
 import MainMobile from "../assets/img/mainmobile.png";
 import VideoImage from "../assets/img/videoimg.png";
 import scrollToTop from "../utils/ScrollTop";
+import video1 from "../assets/video/orientatorVideo.mp4";
 
 import f1 from "../assets/img/f1.png";
 import f2 from "../assets/img/f2.png";
@@ -12,6 +13,7 @@ import arrowright from "../assets/img/arrow.png";
 import Footer from "./Footer";
 
 const Landing = ({ step, setStep, statetextforscroll }) => {
+  const video = document.getElementById("video");
   const scrollToTop = () => {
     window.scrollTo({
       top: 11,
@@ -25,6 +27,7 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
     });
   };
   useEffect(() => {
+    video?.play();
     scrollToTop();
     statetextforscroll == "Accueil" && scrollToTop();
     statetextforscroll == "Comment" &&
@@ -59,7 +62,19 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
           <h2 className="h2">Comment ça marche ?</h2>
         </div>
         <div style={{ margin: "10px" }}>
-          <img src={VideoImage} className="videImage" />
+          <video
+            id="video"
+            src={video1}
+            className="videImage"
+            controls="controls"
+            autoplay={true}
+            type="video/mp4"
+            loop
+
+            // poster={VideoImage}
+          />
+
+          {/* <img src={VideoImage} className="videImage" /> */}
         </div>
         <Grid container spacing={3} className="footerGrid">
           <Grid item xs={12} sm={4}>

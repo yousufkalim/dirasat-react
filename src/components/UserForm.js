@@ -156,6 +156,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
         });
     }
   };
+  console.log("inst is ", institute);
   const handleBlurSchools = () => {
     setFlagforSchool(!flagforSchool);
   };
@@ -464,7 +465,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       onChange={onChange}
                     />
                   )}
-                  value={!education_level && ""}
+                  // value={!education_level && ""}
                   disabled={!education_level || education_level == "Classe"}
                 />
               </Grid>
