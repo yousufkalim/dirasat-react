@@ -3,6 +3,13 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Store, UpdateStore } from "../StoreContext";
 import Dummy from "../assets/img/dummy.png";
 import MainMobile from "../assets/img/mobileform.png";
+import MainCharacter from "../assets/img/MainCharacter.png";
+import winkingFinal from "../assets/img/WinkingFinal.png";
+import encourageFinal from "../assets/img/EncourageFinal.png";
+import arrogantFinal from "../assets/img/ArrogantFinal.png";
+import asthonisedFinal from "../assets/img/AsthonisedFinal.png";
+import thoughtfulFinal from "../assets/img/ThoughtfulFinal.png";
+import victoriousFinal from "../assets/img/VictoriousFinal.png";
 import qarrow from "../assets/icons/qarrow.png";
 import Infoicon from "../assets/icons/infoicon.png";
 import InfoIcon from "@mui/icons-material/Info";
@@ -118,18 +125,89 @@ const Questions = ({ setStep, setActiveStep }) => {
 
     setText(text);
   };
+  const getFacialExpresion = (facialExpression) => {
+    if (facialExpression == 1) {
+      return (
+        <>
+          <img src={thoughtfulFinal} className="facialImgQuestion " />
+          {/* <img
+            src={thoughtfulFinal}
+            className="dummyimgforQuestion formobile"
+          /> */}
+        </>
+      );
+    } else if (facialExpression == 2) {
+      return (
+        <>
+          <img src={thoughtfulFinal} className="facialImgQuestion " />
+          {/* <img
+            src={thoughtfulFinal}
+            className="dummyimgforQuestion formobile"
+          /> */}
+        </>
+      );
+    } else if (facialExpression == 3) {
+      return (
+        <>
+          <img src={asthonisedFinal} className="facialImgQuestion " />
+          {/* <img
+            src={asthonisedFinal}
+            className="dummyimgforQuestion formobile"
+          /> */}
+        </>
+      );
+    } else if (facialExpression == 4) {
+      return (
+        <>
+          <img src={victoriousFinal} className="facialImgQuestion " />
+          {/* <img
+            src={victoriousFinal}
+            className="dummyimgforQuestion formobile"
+          /> */}
+        </>
+      );
+    } else if (facialExpression == 5) {
+      return (
+        <>
+          <img src={winkingFinal} className="facialImgQuestion" />
+          {/* <img src={winkingFinal} className="dummyimgforQuestion formobile" /> */}
+        </>
+      );
+    } else if (facialExpression == 6) {
+      return (
+        <>
+          <img src={arrogantFinal} className="facialImgQuestion " />
+          {/* <img src={arrogantFinal} className="dummyimgforQuestion formobile" /> */}
+        </>
+      );
+    } else if (facialExpression == 7) {
+      return (
+        <>
+          <img src={encourageFinal} className="facialImgQuestion " />
+          {/* <img src={encourageFinal} className="dummyimgforQuestion formobile" /> */}
+        </>
+      );
+    } else if (facialExpression == 8) {
+      return (
+        <>
+          <img src={winkingFinal} className="facialImgQuestion " />
+          {/* <img src={winkingFinal} className="dummyimgforQuestion formobile" /> */}
+        </>
+      );
+    } else {
+      return <img src={Dummy} className="dummyimgQuestion forweb" />;
+    }
+  };
+
   return (
     <>
       <Info anchorEl={anchorEl} setAnchorEl={setAnchorEl} text={text} />
       <Grid container spacing={2} className="mainquestionscreen">
         <Grid item xs={12} sm={4} className="">
-          {console.log(
-            "getQuestion()?.quesion",
-            getQuestion()?.facialExpression
-          )}
-          {console.log("getQuestion()?.quesion", getQuestion())}
-          <img src={Dummy} className="dummyimgQuestion forweb" />
-          <img src={MainMobile} className="dummyimgforQuestion formobile" />
+          {console.log("facial number", getQuestion()?.facialExpression)}
+          {getFacialExpresion(getQuestion()?.facialExpression)}
+          {/* <img src={MainCharacter} className="dummyimgQuestion forweb" /> */}
+          {/* <img src={MainMobile} className="dummyimgforQuestion formobile" /> */}
         </Grid>
         <Grid item xs={12} sm={8} className="questionGrid">
           <div className="questionDiv">

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
 import Main from "../assets/img/a.png";
 import MainMobile from "../assets/img/mainmobile.png";
+import MainCharacter from "../assets/img/MainCharacter.png";
 import VideoImage from "../assets/img/videoimg.png";
 import scrollToTop from "../utils/ScrollTop";
 import video1 from "../assets/video/orientatorVideo.mp4";
@@ -40,7 +41,7 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
     <>
       <div className="main" id="top">
         <img src={Main} className="bodyimg forweb" />
-        <img src={MainMobile} className="bodyimg formobile " />
+        <img src={MainCharacter} className="bodyimg formobile " />
         <Grid container spacing={2} className="body-rectangle">
           <Grid item xs={12} sm={9} className="body-rectangleGrid2">
             <h3 className="h3">Commençons le test d'orientation !</h3>

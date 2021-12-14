@@ -14,6 +14,7 @@ import { Store, UpdateStore } from "../StoreContext";
 import Grid from "@material-ui/core/Grid";
 import Dummy from "../assets/img/dummy.png";
 import MainMobile from "../assets/img/mobileform.png";
+import veryExcited from "../assets/img/VeryExcited.png";
 import arrowleft from "../assets/img/arrow2.png";
 import scrollToTop from "../utils/ScrollTop";
 import DatePicker from "react-datepicker";
@@ -281,8 +282,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
   return (
     <Grid container spacing={2} className="mainuserform">
       <Grid item xs={12} sm={4} className="dummyGrid">
-        <img src={Dummy} className="dummyimg forweb" />
-        <img src={MainMobile} className=" dummyimgforuserform formobile" />
+        <img src={veryExcited} className="veryExitedImg " />
       </Grid>
       <Grid item xs={12} sm={8} className="responsiveform">
         {/* <button onClick={play}>play</button> */}

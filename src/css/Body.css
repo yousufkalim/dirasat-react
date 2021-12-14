@@ -133,7 +133,7 @@
 @media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
   .bodyimg {
     height: auto;
-    width: auto;
+    width: 100% !important;
   }
   .body-rectangleGrid2 {
     padding: 25px 15px 0 15px !important;
@@ -147,9 +147,11 @@
   }
   .formobile {
     display: inherit;
+    width: 100%;
     height: auto;
     margin: auto;
   }
+
   .formobileBodyImg {
     display: inherit;
     height: 62vh;
