@@ -127,73 +127,21 @@ const Questions = ({ setStep, setActiveStep }) => {
   };
   const getFacialExpresion = (facialExpression) => {
     if (facialExpression == 1) {
-      return (
-        <>
-          <img src={thoughtfulFinal} className="facialImgQuestion " />
-          {/* <img
-            src={thoughtfulFinal}
-            className="dummyimgforQuestion formobile"
-          /> */}
-        </>
-      );
+      return <img src={thoughtfulFinal} className="facialImgQuestion " />;
     } else if (facialExpression == 2) {
-      return (
-        <>
-          <img src={thoughtfulFinal} className="facialImgQuestion " />
-          {/* <img
-            src={thoughtfulFinal}
-            className="dummyimgforQuestion formobile"
-          /> */}
-        </>
-      );
+      return <img src={thoughtfulFinal} className="facialImgQuestion " />;
     } else if (facialExpression == 3) {
-      return (
-        <>
-          <img src={asthonisedFinal} className="facialImgQuestion " />
-          {/* <img
-            src={asthonisedFinal}
-            className="dummyimgforQuestion formobile"
-          /> */}
-        </>
-      );
+      return <img src={asthonisedFinal} className="facialImgQuestion " />;
     } else if (facialExpression == 4) {
-      return (
-        <>
-          <img src={victoriousFinal} className="facialImgQuestion " />
-          {/* <img
-            src={victoriousFinal}
-            className="dummyimgforQuestion formobile"
-          /> */}
-        </>
-      );
+      return <img src={victoriousFinal} className="facialImgQuestion " />;
     } else if (facialExpression == 5) {
-      return (
-        <>
-          <img src={winkingFinal} className="facialImgQuestion" />
-          {/* <img src={winkingFinal} className="dummyimgforQuestion formobile" /> */}
-        </>
-      );
+      return <img src={winkingFinal} className="facialImgQuestion" />;
     } else if (facialExpression == 6) {
-      return (
-        <>
-          <img src={arrogantFinal} className="facialImgQuestion " />
-          {/* <img src={arrogantFinal} className="dummyimgforQuestion formobile" /> */}
-        </>
-      );
+      return <img src={arrogantFinal} className="facialImgQuestion " />;
     } else if (facialExpression == 7) {
-      return (
-        <>
-          <img src={encourageFinal} className="facialImgQuestion " />
-          {/* <img src={encourageFinal} className="dummyimgforQuestion formobile" /> */}
-        </>
-      );
+      return <img src={encourageFinal} className="facialImgQuestion " />;
     } else if (facialExpression == 8) {
-      return (
-        <>
-          <img src={winkingFinal} className="facialImgQuestion " />
-          {/* <img src={winkingFinal} className="dummyimgforQuestion formobile" /> */}
-        </>
-      );
+      return <img src={winkingFinal} className="facialImgQuestion " />;
     } else {
       return <img src={Dummy} className="dummyimgQuestion forweb" />;
     }
@@ -204,17 +152,12 @@ const Questions = ({ setStep, setActiveStep }) => {
       <Info anchorEl={anchorEl} setAnchorEl={setAnchorEl} text={text} />
       <Grid container spacing={2} className="mainquestionscreen">
         <Grid item xs={12} sm={4} className="">
-          {console.log("facial number", getQuestion()?.facialExpression)}
           {getFacialExpresion(getQuestion()?.facialExpression)}
-          {/* <img src={MainCharacter} className="dummyimgQuestion forweb" /> */}
-          {/* <img src={MainMobile} className="dummyimgforQuestion formobile" /> */}
         </Grid>
         <Grid item xs={12} sm={8} className="questionGrid">
           <div className="questionDiv">
             <img src={qarrow} className="qboximg" />
             <div className="questionBox">
-              {/* {console.log("getQuestion()?.quesion", getQuestion()?.question)} */}
-
               <h1
                 className={`${
                   getQuestion()?.question.length >= 90
