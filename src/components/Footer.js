@@ -19,14 +19,14 @@ const Footer = () => {
             </AnchorLink>
           </h3>
           <p className="developby" style={{ textAlign: "center" }}>
-            Développé par
+            {/* Développé par */}
             <a
               href="https:www.falconconsulting.fr"
               target="_blank"
               style={{ textDecoration: "none", color: " gray", margin: "5px" }}
             >
               {" "}
-              Falcon Consulting
+              {/* Falcon Consulting */}
             </a>{" "}
             2021. Tous droits réservés
           </p>

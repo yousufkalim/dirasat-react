@@ -3,6 +3,7 @@ import { Store, UpdateStore } from "../StoreContext";
 import api from "../api";
 import Grid from "@material-ui/core/Grid";
 import Dummy from "../assets/img/dummy.png";
+import MainCharacter from "../assets/img/MainCharacter.png";
 import MainMobile from "../assets/img/mobileform.png";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import TypeOfCourse from "./TypeOfCourse";
@@ -70,8 +71,9 @@ const Result = () => {
       {resultStep == 0 && (
         <Grid container spacing={2} className="mainresultscreen">
           <Grid item xs={12} sm={4} className="">
-            <img src={Dummy} className="dummyimgResult forweb" />
-            <img src={MainMobile} className="dummyimgforResult formobile" />
+            {/* <img src={Dummy} className="dummyimgResult forweb" /> */}
+            <img src={MainCharacter} className="facialImgQuestion forweb" />
+            <img src={MainCharacter} className="dummyimgforResult formobile" />
           </Grid>
           <Grid item xs={12} sm={8} className="">
             <div className="resultBox">

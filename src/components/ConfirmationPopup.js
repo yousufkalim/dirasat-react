@@ -59,7 +59,6 @@ export default function InviteBox({
       setFormData({ otp: "" });
       toast.error("Votre OTP n'est pas correct");
     }
-
     // let res = await api("post", "/users/invite", {
     //   ...formData,
     // });
@@ -111,7 +110,7 @@ export default function InviteBox({
             onClick={handleSubmit}
             disabled={loading}
           >
-            Verify
+            vérifier
           </button>
         </div>
       </BootstrapDialog>
