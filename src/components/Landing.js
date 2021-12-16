@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
-import Main from "../assets/img/a.png";
+import Main from "../assets/img/a2.png";
 import MainMobile from "../assets/img/mainmobile.png";
 import MainCharacter from "../assets/img/MainCharacter.png";
 import VideoImage from "../assets/img/videoimg.png";
