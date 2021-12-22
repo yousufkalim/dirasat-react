@@ -147,6 +147,9 @@
   position: relative;
   bottom: 5px;
 }
+.facialImgQuestionforResult {
+  width: 100%;
+}
 .goback {
   width: 50%;
   text-align: center;
@@ -167,7 +170,7 @@
 }
 
 /* Mobile View */
-@media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
+@media only screen and (min-width: 320px) and (max-width: 612px) {
   .resultBox {
     width: 80% !important;
     border-radius: 35px !important;
@@ -255,6 +258,32 @@
   }
   .resultButton {
     padding: 15px 50px 15px 50px;
+  }
+}
+/* for big screens */
+@media only screen and (min-device-width: 613px) and (max-device-width: 959px) {
+  .resultBox {
+    margin: -60px auto !important;
+    width: 90%;
+  }
+  .typeOfCourses {
+    width: 96%;
+  }
+  .coursediv {
+    margin: 0 4px 0 -9px !important;
+  }
+}
+/* for big screens */
+@media only screen and (min-device-width: 960px) and (max-device-width: 1200px) {
+  .resultBox {
+    margin: 10px auto !important;
+    width: 90%;
+  }
+  .typeOfCourses {
+    width: 96%;
+  }
+  .coursediv {
+    margin: 0 4px 0 -9px !important;
   }
 }
 

@@ -70,12 +70,10 @@ const Result = () => {
     <>
       {resultStep == 0 && (
         <Grid container spacing={2} className="mainresultscreen">
-          <Grid item xs={12} sm={4} className="">
-            {/* <img src={Dummy} className="dummyimgResult forweb" /> */}
-            <img src={MainCharacter} className="facialImgQuestion forweb" />
-            <img src={MainCharacter} className="dummyimgforResult formobile" />
+          <Grid item xs={12} sm={12} md={5} className="">
+            <img src={MainCharacter} className="facialImgQuestionforResult" />
           </Grid>
-          <Grid item xs={12} sm={8} className="">
+          <Grid item xs={12} sm={12} md={7} className="">
             <div className="resultBox">
               <div className="resultBoxText">
                 <h1 className="resultHeading" style={{ textAlign: "center" }}>

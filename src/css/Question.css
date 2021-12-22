@@ -1,5 +1,5 @@
 .mainquestionscreen {
-  height: 100vh !important;
+  min-height: 100vh !important;
 }
 .questionBox {
   color: white;
@@ -82,7 +82,7 @@
   width: 50% !important;
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
+@media only screen and (min-width: 320px) and (max-width: 600px) {
   .css-3bmhjh-MuiPaper-root-MuiPopover-paper {
     width: 100% !important;
   }
@@ -114,16 +114,48 @@
   }
 
   .questionGrid {
-    margin-top: -60% !important;
+    margin-top: -80% !important;
   }
   .answerGrid {
     padding: 1% 15% 0 15% !important;
     margin-top: 11% !important;
   }
 }
+/* for big screens */
+@media only screen and (min-width: 601px) and (max-width: 1200px) {
+  .qboximg {
+    width: 100%;
+    /* width: auto; */
+    min-height: 135px;
+    margin-top: auto;
+  }
+  .questionBox {
+    color: white !important;
+    position: relative !important;
+    bottom: 20% !important;
+    width: 100% !important;
+  }
+  .questiontext {
+    font-size: 22px;
+    padding-left: 60px;
+  }
+  .longquestion {
+    padding-left: 40px;
+    font-size: 21px;
+  }
+  .questionDiv {
+    height: 650px !important;
+  }
+  .answerGrid {
+    padding: 0px !important;
+  }
+  .option {
+    font-size: 11px !important;
+  }
+}
 
 /* for big screens */
-@media only screen and (min-device-width: 1500px) and (max-device-width: 1900px) {
+@media only screen and (min-width: 1500px) and (max-width: 1900px) {
   .qboximg {
     width: auto;
     margin-top: auto;

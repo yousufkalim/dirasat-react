@@ -129,8 +129,51 @@
   margin: auto;
 }
 
+@media only screen and (min-width: 613px) and (max-width: 1200px) {
+  .body-rectangle {
+    width: 92% !important;
+    height: 125px !important;
+    bottom: 100px !important;
+  }
+  .arrowright {
+    position: relative;
+    left: -40px;
+    top: 3px;
+  }
+  .h3 {
+    font-size: 21px;
+    text-align: left;
+    margin: 10px 0px 0px 0px;
+  }
+  .p1 {
+    font-size: 11px;
+  }
+  .partibuttondiv {
+    position: relative;
+    margin-left: -33px;
+  }
+
+  .partiButton {
+    border: none;
+    margin: 26px 0px 0px 0px;
+    font-size: 17px;
+    border-radius: 100px;
+    padding: 20px 41px 22px 30px;
+    font-weight: 100;
+  }
+  .videImage {
+    width: 80%;
+  }
+  .footerGrid {
+    width: 100% !important;
+  }
+  .p3 {
+    font-size: 13px;
+  }
+}
+
 /* for mobile */
-@media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
+@media only screen and (min-width: 320px) and (max-width: 612px) {
   .bodyimg {
     height: auto;
     width: 100% !important;
@@ -205,7 +248,7 @@
 }
 
 /* for big screens */
-@media only screen and (min-device-width: 1500px) and (max-device-width: 1900px) {
+@media only screen and (min-width: 1500px) and (max-width: 1900px) {
   .body-rectangle {
     width: 65% !important;
     height: 150px !important;
