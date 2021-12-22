@@ -4,7 +4,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import logo from "../assets/img/logo.png";
+import logo from "../assets/img/logo1.png";
 import Navicon from "../assets/icons/navicon.png";
 import Closeicon from "../assets/icons/closeicon.png";
 
@@ -72,12 +72,14 @@ export default function Header({
               <img src={Navicon} className="navicon" />
             )}
           </div>
-          <img
-            src={logo}
-            width="90%"
-            className="logoImage"
-            onClick={() => window.location.reload()}
-          />
+          <div className="centerizelogo">
+            <img
+              src={logo}
+              width="90%"
+              className="logoImage"
+              onClick={() => window.location.reload()}
+            />
+          </div>
         </div>
 
         <AnchorLink

@@ -61,7 +61,7 @@
   color: white !important;
   background: #343747 !important;
   width: 78% !important;
-  padding: 0 0 10px 10px !important;
+  padding: 0 0 10px 0px !important;
   margin: 40px auto !important;
   border-radius: 18px !important;
   /* box-shadow: 0px 1px 0px 13px rgb(0 0 0 / 12%) !important; */
@@ -238,12 +238,12 @@
   padding: 0px 48px 0px 36px;
 }
 /* for big screens */
-@media only screen and (min-device-width: 1500px) and (max-device-width: 1900px) {
+@media only screen and (min-width: 1500px) and (max-width: 1900px) {
   .mainuserform {
     min-height: 80vh !important;
   }
   .userformgrid {
-    padding: 10px 0 20px 10px !important;
+    padding: 10px 0 20px 0px !important;
     margin: 70px auto !important;
   }
   .dummyGrid {
@@ -293,13 +293,33 @@
 }
 /* for mbile */
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
+@media only screen and (min-width: 613px) and (max-width: 1200px) {
+  .formheading {
+    font-size: 20px;
+  }
+  .userformgrid {
+    width: 100% !important;
+  }
+  .formbackbutton {
+    width: 80%;
+  }
+  .formSubmitButton {
+    margin: 20px 20px 20px 0px;
+    padding: 12px 25px 12px 25px;
+  }
+  .veryExitedImg {
+    width: 100%;
+    margin: 0 0 0 0;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 612px) {
   * {
     /* overflow-x: hidden;  */
     width: auto;
   }
   .facialImgQuestion {
-    width: 80% !important;
+    width: 100% !important;
     margin: auto !important;
   }
   .stepperMain {
@@ -322,8 +342,15 @@
     margin-bottom: 8px !important;
   }
   .dummyGrid {
-    text-align: center !important;
+    text-align: left !important;
     /* margin-top: 6% !important; */
+  }
+  .veryExitedImg {
+    width: 50%;
+  }
+
+  .userForm {
+    padding: 0px !important;
   }
   .dummyimg {
     height: auto;

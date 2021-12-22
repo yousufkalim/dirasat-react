@@ -39,6 +39,10 @@
 .logoImage {
   cursor: pointer;
 }
+.logowithicondiv {
+  width: 15%;
+  padding-top: 10px;
+}
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
   .showToolbar {
@@ -81,18 +85,28 @@
     cursor: pointer;
   }
   .logoImage {
-    margin: 11px 0px 0px 18%;
+    margin: 11px 0px 0px 50%;
     width: 125px;
   }
   .navicon {
     width: 30px;
     height: 30px;
   }
+  .headerRoot {
+    background: #0e0f15 !important;
+  }
+  .centerizelogo {
+    position: absolute;
+    width: 100%;
+    left: -12%;
+  }
 }
 /* for mbile */
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
+@media only screen and (min-width: 813px) and (max-width: 1200px) {
   .headerRoot {
     background: #0e0f15 !important;
+  }
+  .logowithicondiv {
   }
 }
