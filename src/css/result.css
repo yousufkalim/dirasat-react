@@ -149,6 +149,7 @@
 }
 .facialImgQuestionforResult {
   width: 100%;
+  height: 85%;
 }
 .goback {
   width: 50%;
@@ -259,6 +260,9 @@
   .resultButton {
     padding: 15px 50px 15px 50px;
   }
+  .facialImgQuestionforResult {
+    height: auto;
+  }
 }
 /* for big screens */
 @media only screen and (min-device-width: 613px) and (max-device-width: 959px) {
@@ -271,6 +275,9 @@
   }
   .coursediv {
     margin: 0 4px 0 -9px !important;
+  }
+  .facialImgQuestionforResult {
+    height: auto;
   }
 }
 /* for big screens */
