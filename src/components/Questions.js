@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Store, UpdateStore } from "../StoreContext";
-import Dummy from "../assets/img/dummy.png";
-import MainMobile from "../assets/img/mobileform.png";
-import MainCharacter from "../assets/img/MainCharacter.png";
 import winkingFinal from "../assets/img/WinkingFinal.png";
 import encourageFinal from "../assets/img/EncourageFinal.png";
 import arrogantFinal from "../assets/img/ArrogantFinal.png";
@@ -11,7 +8,6 @@ import asthonisedFinal from "../assets/img/AsthonisedFinal.png";
 import thoughtfulFinal from "../assets/img/ThoughtfulFinal.png";
 import victoriousFinal from "../assets/img/VictoriousFinal.png";
 import qarrow from "../assets/icons/qarrow.png";
-import Infoicon from "../assets/icons/infoicon.png";
 import InfoIcon from "@mui/icons-material/Info";
 import Grid from "@material-ui/core/Grid";
 import Info from "./Info";
@@ -23,6 +19,12 @@ const Questions = ({ setStep, setActiveStep }) => {
   // init context
   const updateStore = UpdateStore();
   const { questions, answers, history, disc_ans_id } = Store();
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 60,
+      behavior: "smooth",
+    });
+  };
   // state init
   const [nextQuestionId, setNextQuestionId] = useState("first");
   const [prevQuestion, setprevQuestion] = useState([]);
@@ -33,6 +35,7 @@ const Questions = ({ setStep, setActiveStep }) => {
 
   useEffect(() => {
     currentans();
+    scrollToTop();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [prevQuestion]);
   // stlyes
@@ -122,7 +125,6 @@ const Questions = ({ setStep, setActiveStep }) => {
   };
   const handleClickinfo = (event, text) => {
     setAnchorEl(event.currentTarget);
-
     setText(text);
   };
   const getFacialExpresion = (facialExpression) => {
@@ -131,7 +133,12 @@ const Questions = ({ setStep, setActiveStep }) => {
     } else if (facialExpression == 2) {
       return <img src={thoughtfulFinal} className="facialImgQuestion " />;
     } else if (facialExpression == 3) {
-      return <img src={asthonisedFinal} className="facialImgQuestion " />;
+      return (
+        <img
+          src={asthonisedFinal}
+          className="facialImgQuestion asthonisedFinal"
+        />
+      );
     } else if (facialExpression == 4) {
       return <img src={victoriousFinal} className="facialImgQuestion " />;
     } else if (facialExpression == 5) {
@@ -139,7 +146,12 @@ const Questions = ({ setStep, setActiveStep }) => {
     } else if (facialExpression == 6) {
       return <img src={arrogantFinal} className="facialImgQuestion " />;
     } else if (facialExpression == 7) {
-      return <img src={encourageFinal} className="facialImgQuestion " />;
+      return (
+        <img
+          src={encourageFinal}
+          className="facialImgQuestion encourageFinal"
+        />
+      );
     } else if (facialExpression == 8) {
       return <img src={winkingFinal} className="facialImgQuestion " />;
     } else {

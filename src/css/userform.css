@@ -42,8 +42,8 @@
 }
 .facialImgQuestion {
   width: 100%;
-  height: 72%;
-  margin: auto auto auto 20%;
+  height: 85%;
+  margin: auto auto auto 10%;
 }
 .dummyimgResult {
   height: 75%;
@@ -259,7 +259,7 @@
     /* margin: 0px auto auto 20%; */
   }
   .facialImgQuestion {
-    margin: 0px auto auto 20%;
+    margin: 0px auto auto 13%;
   }
   .dummyimgResult {
     height: 50% !important;
@@ -321,6 +321,7 @@
   .facialImgQuestion {
     width: 100% !important;
     margin: auto !important;
+    height: 70% !important;
   }
   .stepperMain {
     width: 100%;

@@ -25,7 +25,7 @@ export default function Info({ anchorEl, setAnchorEl, text }) {
       >
         <Typography sx={{ p: 2 }}>
           {text == 1 &&
-            "Le savais-tu? il est possible d’envisager des études payantes sans forcément payer par toi-même! En effet, il existe plein d’options pour financer tes études: alternance, apprentissage, job étudiants, bourses, prêts d’honneur, etc. Je te donnerai plein de conseils et de bon plans pour financer tes études si tu le souhaites !"}
+            "Le savais-tu? il est possible d’envisager des études payantes sans forcément payer par toi-même! En effet, il existe plein d’options pour financer tes études: alternance, apprentissage, job étudiants, bourses, prêts d’honneur, etc. Je te donnerai plein de conseils et de bon plans pour financer tes études si tu le souhaites prestige!"}
           {text == 2 &&
             "Après avoir reçu ma proposition de liste Parcoursup, tu seras contacté par la suite pour recevoir le plein de conseils concernant ton projet d’études à l’international!"}
           {text == 3 &&
