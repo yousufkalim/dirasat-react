@@ -12,6 +12,7 @@ import share from "../assets/icons/share.png";
 import Dialog from "./Dialog";
 import InvitePopup from "./InvitePopup";
 import SharePopup from "./Sharepopup";
+import * as html2canvas from "html2canvas";
 const Result = () => {
   let typeOfCourses = ["BTS", "BUT", "CPGE", "Ecole Post-Bac", "Licence"];
 
@@ -20,6 +21,7 @@ const Result = () => {
   const { history, user, disc_ans_id, result } = Store();
   const [loading, setLoading] = useState(false);
   const [resultStep, setresultStep] = useState(0);
+
   const [open, setOpen] = useState(false);
   const [flagforpopup, setFlagforpopup] = useState(false);
   const [openinvitepopup, setOpenInvitepopup] = useState(false);
@@ -65,6 +67,28 @@ const Result = () => {
   const showResultDetail = () => {
     setresultStep(1);
   };
+  const onButtonClick = async () => {
+    // var pdf = new jsPDF();
+    let domElement = document.getElementById("my-node");
+    console.log("domElement", domElement);
+
+    html2canvas(domElement, {
+      ignoreElements: function (element) {
+        if ("MyElementIdHere" === element.id) {
+          return true;
+        }
+      },
+      backgroundColor: "#343747",
+    }).then((canvas) => {
+      console.log("CAN ASFAND VAS result", canvas);
+      // pdf.setFillColor(52, 55, 71);
+      // pdf.rect(0, 0, 350, 350, "F");
+      // pdf.addImage(logo, "PNG", 75, 5, 60, 25);
+      // pdf.addImage(MainCharacter, "PNG", 30, 35, 150, 130);
+      // pdf.save("download.pdf");
+      document.body.appendChild(canvas);
+    });
+  };
 
   return (
     <>
@@ -74,11 +98,12 @@ const Result = () => {
             <img src={MainCharacter} className="facialImgQuestionforResult" />
           </Grid>
           <Grid item xs={12} sm={12} md={7} className="">
-            <div className="resultBox">
+            <div className="resultBox" id="my-node">
               <div className="resultBoxText">
                 <h1 className="resultHeading" style={{ textAlign: "center" }}>
                   Bravo ! Tu as répondu à toutes les questions !
                 </h1>
+                {/* <button onClick={onButtonClick}>Download PDF</button> */}
                 {loading ? (
                   <p className="resultText">
                     <CircularProgress color="inherit" />
@@ -137,7 +162,7 @@ const Result = () => {
                   </p>
                 )}
               </div>
-              <div className="resultButtondiv">
+              <div className="resultButtondiv" id="MyElementIdHere">
                 <button
                   className="resultButton"
                   onClick={() => showResultDetail()}
@@ -155,6 +180,7 @@ const Result = () => {
       {resultStep == 1 && (
         <>
           <Dialog open={open} setOpen={setOpen} />
+
           <InvitePopup open={openinvitepopup} setOpen={setOpenInvitepopup} />
           <SharePopup open={opensharepopup} setOpen={setOpenSharepopup} />
           <Grid container spacing={1} className="mainresultscreen">
