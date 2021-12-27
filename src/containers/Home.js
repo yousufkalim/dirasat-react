@@ -13,7 +13,7 @@ const Home = () => {
   const [statetextforscroll, setStatetextforscroll] = useState("");
 
   return (
-    <>
+    <div className={step == 2 ? "allComponent" : ""}>
       <Header
         step={step}
         setStep={setStep}
@@ -49,7 +49,7 @@ const Home = () => {
         )}
         {step === 3 && <Result />}
       </div>
-    </>
+    </div>
   );
 };
 

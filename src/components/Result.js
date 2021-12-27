@@ -69,18 +69,20 @@ const Result = () => {
   };
   const onButtonClick = async () => {
     // var pdf = new jsPDF();
-    let domElement = document.getElementById("my-node");
+    let domElement = document.getElementById("resultBox");
     console.log("domElement", domElement);
 
     html2canvas(domElement, {
       ignoreElements: function (element) {
-        if ("MyElementIdHere" === element.id) {
+        if ("resultButtondiv" === element.id) {
           return true;
         }
       },
-      backgroundColor: "#343747",
+      // backgroundColor: "#343747",
     }).then((canvas) => {
       console.log("CAN ASFAND VAS result", canvas);
+
+      updateStore({ mainresultPage: canvas });
       // pdf.setFillColor(52, 55, 71);
       // pdf.rect(0, 0, 350, 350, "F");
       // pdf.addImage(logo, "PNG", 75, 5, 60, 25);
@@ -98,7 +100,7 @@ const Result = () => {
             <img src={MainCharacter} className="facialImgQuestionforResult" />
           </Grid>
           <Grid item xs={12} sm={12} md={7} className="">
-            <div className="resultBox" id="my-node">
+            <div className="resultBox" id="resultBox">
               <div className="resultBoxText">
                 <h1 className="resultHeading" style={{ textAlign: "center" }}>
                   Bravo ! Tu as répondu à toutes les questions !
@@ -162,7 +164,7 @@ const Result = () => {
                   </p>
                 )}
               </div>
-              <div className="resultButtondiv" id="MyElementIdHere">
+              <div className="resultButtondiv" id="resultButtondiv">
                 <button
                   className="resultButton"
                   onClick={() => showResultDetail()}

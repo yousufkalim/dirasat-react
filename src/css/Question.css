@@ -15,7 +15,7 @@
 .questionDiv {
   margin: auto !important;
   text-align: center !important;
-  margin-top: 5% !important;
+  margin-top: 1% !important;
   height: 500px !important;
 }
 
@@ -82,10 +82,40 @@
   width: 50% !important;
 }
 .encourageFinal {
+  height: 80% !important;
+  width: 90% !important;
+  margin: auto auto auto 10% !important;
+  margin-top: -19px !important;
+}
+.winkingFinal {
+  height: 77% !important;
+  width: 70% !important;
+  margin: auto auto auto 27% !important;
+  margin-top: -19px !important;
+}
+.thoughtfulFinal {
+  height: 75% !important;
+  width: 77% !important;
+  margin: auto auto auto 20% !important;
+  margin-top: -19px !important;
 }
 .asthonisedFinal {
-  width: 75% !important;
-  margin: auto auto auto 24% !important;
+  width: 72% !important;
+  height: 77% !important;
+  margin: auto auto auto 18% !important;
+  margin-top: -19px !important;
+}
+.arrogantFinal {
+  height: 78% !important;
+  width: 80% !important;
+  margin: auto auto auto 17% !important;
+  margin-top: -19px !important;
+}
+.victoriousFinal {
+  height: 80% !important;
+  width: 80% !important;
+  margin: auto auto auto 15% !important;
+  margin-top: -19px !important;
 }
 .questionsOuterDiv {
   max-height: 64vh !important;
@@ -145,7 +175,28 @@
     padding-left: 10% !important;
   }
   .encourageFinal {
-    margin-left: -8px !important;
+    margin-left: 7px !important;
+    width: 90% !important;
+    height: 70% !important;
+  }
+  .winkingFinal {
+    width: 100% !important;
+    margin: auto !important;
+    height: 70% !important;
+  }
+  .thoughtfulFinal {
+    width: 100% !important;
+    margin: auto !important;
+    height: 70% !important;
+  }
+  .arrogantFinal {
+    width: 80% !important;
+    margin: auto auto auto 12% !important;
+    height: 70% !important;
+  }
+  .victoriousFinal {
+    height: 70% !important;
+    margin: auto auto auto 7% !important;
   }
 }
 /* for big screens */
@@ -184,6 +235,22 @@
   .option {
     font-size: 11px !important;
   }
+  .winkingFinal {
+    height: 73% !important;
+  }
+  .arrogantFinal {
+    height: 73% !important;
+  }
+  .victoriousFinal {
+    height: 73% !important;
+  }
+  .thoughtfulFinal {
+    height: 73% !important;
+  }
+  .encourageFinal {
+    height: 77% !important;
+    margin: auto auto auto 3% !important;
+  }
 }
 
 /* for big screens */
@@ -212,5 +279,27 @@
   }
   .asthonisedFinal {
     margin: auto auto auto 25% !important;
+    height: 81% !important;
+  }
+  .winkingFinal {
+    height: 83% !important;
+    width: 82% !important;
+    margin: auto auto auto 15% !important;
+  }
+
+  .thoughtfulFinal {
+    height: 83% !important;
+  }
+  .encourageFinal {
+    height: 83% !important;
+    margin: auto auto auto 15% !important;
+  }
+  .arrogantFinal {
+    height: 83% !important;
+    margin: auto auto auto 22% !important;
+  }
+  .victoriousFinal {
+    height: 83% !important;
+    margin: auto auto auto 18% !important;
   }
 }
