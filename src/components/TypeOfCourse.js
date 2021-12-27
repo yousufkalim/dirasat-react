@@ -1,13 +1,41 @@
 import React, { useState, useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
 import DetailofCourses from "../components/DetailofCourses";
+import { Store, UpdateStore } from "../StoreContext";
 import search from "../assets/icons/search.png";
 import showhide from "../assets/icons/showhide.png";
 import hide from "../assets/icons/hide.png";
 import * as html2canvas from "html2canvas";
 
 const TypeOfCourse = ({ type, percentage, courses }) => {
-  const [showDetail, setShowDetail] = useState(false);
+  const updateStore = UpdateStore();
+  const [showDetail, setShowDetail] = useState(true);
+  const { deatilResult } = Store();
+  const [data, setdata] = useState();
+
+  useEffect(() => {
+    console.log("deatilResult", deatilResult);
+
+    getresultpageforPdf();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [deatilResult]);
+  const getresultpageforPdf = () => {
+    let domElement = document.getElementById(type);
+    // console.log("domElement", domElement);
+
+    html2canvas(domElement, {
+      // ignoreElements: function (element) {
+      //   if ("resultButtondiv" === element.id) {
+      //     return true;
+      //   }
+      // },
+      backgroundColor: "#282b38",
+    }).then((canvas) => {
+      updateStore({ deatilResult: { ...deatilResult, [type]: canvas } });
+      // document.body.appendChild(canvas);
+      setShowDetail(false);
+    });
+  };
 
   const [open, setOpen] = useState(false);
   const getPercentageColor = (percentage) => {
@@ -31,13 +59,12 @@ const TypeOfCourse = ({ type, percentage, courses }) => {
 
   const onButtonwholeClick = async (e) => {
     e.stopPropagation();
-    console.log("onButtonwholeClick", e, type);
     // var pdf = new jsPDF();
     let domElement = document.getElementById(type);
-    console.log("domElement typeOfCourses", domElement);
+    // console.log("domElement typeOfCourses", domElement);
 
     html2canvas(domElement).then((canvas) => {
-      console.log("CAN ASFAND VAS result", canvas);
+      // console.log("CAN ASFAND VAS result", canvas);
       // pdf.setFillColor(52, 55, 71);
       // pdf.rect(0, 0, 350, 350, "F");
       // pdf.addImage(logo, "PNG", 75, 5, 60, 25);
@@ -93,7 +120,12 @@ const TypeOfCourse = ({ type, percentage, courses }) => {
           </Grid>
         </Grid>
         {showDetail && (
-          <DetailofCourses courses={courses} open={open} setOpen={setOpen} />
+          <DetailofCourses
+            courses={courses}
+            open={open}
+            setOpen={setOpen}
+            id="detailofone"
+          />
         )}
       </div>
     </>
