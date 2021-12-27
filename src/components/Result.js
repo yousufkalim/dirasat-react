@@ -12,13 +12,16 @@ import share from "../assets/icons/share.png";
 import Dialog from "./Dialog";
 import InvitePopup from "./InvitePopup";
 import SharePopup from "./Sharepopup";
+import jsPDF from "jspdf";
 import * as html2canvas from "html2canvas";
+import logo from "../assets/img/logo1.png";
 const Result = () => {
   let typeOfCourses = ["BTS", "BUT", "CPGE", "Ecole Post-Bac", "Licence"];
 
   // init
   const updateStore = UpdateStore();
-  const { history, user, disc_ans_id, result } = Store();
+  const { history, user, disc_ans_id, result, mainresultPage, deatilResult } =
+    Store();
   const [loading, setLoading] = useState(false);
   const [resultStep, setresultStep] = useState(0);
 
@@ -65,12 +68,13 @@ const Result = () => {
     return b;
   };
   const showResultDetail = () => {
+    onButtonClick();
     setresultStep(1);
   };
   const onButtonClick = async () => {
     // var pdf = new jsPDF();
     let domElement = document.getElementById("resultBox");
-    console.log("domElement", domElement);
+    // console.log("domElement", domElement);
 
     html2canvas(domElement, {
       ignoreElements: function (element) {
@@ -78,9 +82,9 @@ const Result = () => {
           return true;
         }
       },
-      // backgroundColor: "#343747",
+      backgroundColor: "#282b38",
     }).then((canvas) => {
-      console.log("CAN ASFAND VAS result", canvas);
+      // console.log("CAN ASFAND VAS result", canvas);
 
       updateStore({ mainresultPage: canvas });
       // pdf.setFillColor(52, 55, 71);
@@ -88,8 +92,24 @@ const Result = () => {
       // pdf.addImage(logo, "PNG", 75, 5, 60, 25);
       // pdf.addImage(MainCharacter, "PNG", 30, 35, 150, 130);
       // pdf.save("download.pdf");
-      document.body.appendChild(canvas);
+      // document.body.appendChild(canvas);
     });
+  };
+  // console.log("mainresultPage", mainresultPage);
+  console.log("deatilResult1", deatilResult);
+
+  const exportPdf = async () => {
+    var pdf = new jsPDF();
+    pdf.setFillColor(40, 43, 56);
+    pdf.rect(0, 0, 350, 350, "F");
+    pdf.addImage(logo, "PNG", 75, 5, 60, 25);
+    pdf.addImage(MainCharacter, "PNG", 30, 35, 150, 130);
+    if (mainresultPage) {
+      pdf.addImage(mainresultPage, "PNG", 30, 165, 150, 130);
+    }
+
+    pdf.save("download.pdf");
+    // document.body.appendChild(canvas);
   };
 
   return (
@@ -226,6 +246,9 @@ const Result = () => {
                             compléter cette liste avec d’autres fomations
                             “hors-parcoursup” qui pourraient te correspondre!
                           </p>
+                        </div>
+                        <div>
+                          <button onClick={exportPdf}>Export PDF</button>
                         </div>
 
                         <div className="buttonDiv">

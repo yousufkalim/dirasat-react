@@ -33,6 +33,7 @@ export function StoreProvider({ children }) {
     disc_ans_id: [],
     result: {},
     mainresultPage: null,
+    deatilResult: {},
   });
 
   const updateStore = (data) => {
