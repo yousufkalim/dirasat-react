@@ -31,14 +31,13 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
           return true;
         }
       },
-      backgroundColor: "blue",
     }).then((canvas) => {
       console.log("CAN ASFAND VAS", canvas);
-      // pdf.setFillColor(52, 55, 71);
-      // pdf.rect(0, 0, 350, 350, "F");
-      // pdf.addImage(logo, "PNG", 75, 5, 60, 25);
-      // pdf.addImage(MainCharacter, "PNG", 30, 35, 150, 130);
-      // pdf.save("download.pdf");
+      pdf.setFillColor(52, 55, 71);
+      pdf.rect(0, 0, 350, 350, "F");
+      pdf.addImage(logo, "PNG", 75, 5, 60, 25);
+      pdf.addImage(MainCharacter, "PNG", 30, 35, 150, 130);
+      pdf.save("download.pdf");
       document.body.appendChild(canvas);
     });
   };

@@ -129,34 +129,24 @@ const Questions = ({ setStep, setActiveStep }) => {
   };
   const getFacialExpresion = (facialExpression) => {
     if (facialExpression == 1) {
-      return <img src={thoughtfulFinal} className="facialImgQuestion " />;
+      return <img src={thoughtfulFinal} className=" thoughtfulFinal" />;
     } else if (facialExpression == 2) {
-      return <img src={thoughtfulFinal} className="facialImgQuestion " />;
+      return <img src={thoughtfulFinal} className=" thoughtfulFinal" />;
     } else if (facialExpression == 3) {
-      return (
-        <img
-          src={asthonisedFinal}
-          className="facialImgQuestion asthonisedFinal"
-        />
-      );
+      return <img src={asthonisedFinal} className=" asthonisedFinal" />;
     } else if (facialExpression == 4) {
-      return <img src={victoriousFinal} className="facialImgQuestion " />;
+      return <img src={victoriousFinal} className=" victoriousFinal " />;
     } else if (facialExpression == 5) {
-      return <img src={winkingFinal} className="facialImgQuestion" />;
+      return <img src={winkingFinal} className=" winkingFinal" />;
     } else if (facialExpression == 6) {
-      return <img src={arrogantFinal} className="facialImgQuestion " />;
+      return <img src={arrogantFinal} className=" arrogantFinal" />;
     } else if (facialExpression == 7) {
-      return (
-        <img
-          src={encourageFinal}
-          className="facialImgQuestion encourageFinal"
-        />
-      );
+      return <img src={encourageFinal} className=" encourageFinal" />;
     } else if (facialExpression == 8) {
-      return <img src={winkingFinal} className="facialImgQuestion " />;
+      return <img src={winkingFinal} className=" winkingFinal" />;
     } else {
       // return <img src={Dummy} className="dummyimgQuestion forweb" />;
-      return <img src={winkingFinal} className="facialImgQuestion " />;
+      return <img src={winkingFinal} className=" winkingFinal" />;
     }
   };
 
