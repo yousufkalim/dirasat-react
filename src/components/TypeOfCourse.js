@@ -4,6 +4,7 @@ import DetailofCourses from "../components/DetailofCourses";
 import search from "../assets/icons/search.png";
 import showhide from "../assets/icons/showhide.png";
 import hide from "../assets/icons/hide.png";
+import * as html2canvas from "html2canvas";
 
 const TypeOfCourse = ({ type, percentage, courses }) => {
   const [showDetail, setShowDetail] = useState(false);
@@ -28,6 +29,24 @@ const TypeOfCourse = ({ type, percentage, courses }) => {
     }
   };
 
+  const onButtonwholeClick = async (e) => {
+    e.stopPropagation();
+    console.log("onButtonwholeClick", e, type);
+    // var pdf = new jsPDF();
+    let domElement = document.getElementById(type);
+    console.log("domElement typeOfCourses", domElement);
+
+    html2canvas(domElement).then((canvas) => {
+      console.log("CAN ASFAND VAS result", canvas);
+      // pdf.setFillColor(52, 55, 71);
+      // pdf.rect(0, 0, 350, 350, "F");
+      // pdf.addImage(logo, "PNG", 75, 5, 60, 25);
+      // pdf.addImage(MainCharacter, "PNG", 30, 35, 150, 130);
+      // pdf.save("download.pdf");
+      // document.body.appendChild(canvas);
+    });
+  };
+
   useEffect(() => {
     setTimeout(() => {
       setOpen(true);
@@ -36,7 +55,7 @@ const TypeOfCourse = ({ type, percentage, courses }) => {
   }, []);
   return (
     <>
-      <div className="typeOfCourses">
+      <div className="typeOfCourses" id={type}>
         <Grid
           container
           spacing={3}
@@ -49,6 +68,11 @@ const TypeOfCourse = ({ type, percentage, courses }) => {
           <Grid item xs={4} sm={8} className="courseType">
             {" "}
             {type}
+            {/* {showDetail && (
+              <button onClick={(e) => onButtonwholeClick(e, type)}>
+                Download whole PDF
+              </button>
+            )} */}
           </Grid>
           <Grid
             item

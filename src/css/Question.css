@@ -87,8 +87,19 @@
   width: 75% !important;
   margin: auto auto auto 24% !important;
 }
+.questionsOuterDiv {
+  max-height: 64vh !important;
+  overflow: hidden;
+}
+.imgGrid {
+  padding: 0px !important;
+}
 
 @media only screen and (min-width: 320px) and (max-width: 600px) {
+  .questionsOuterDiv {
+    max-height: inherit !important;
+    overflow: inherit !important;
+  }
   .css-3bmhjh-MuiPaper-root-MuiPopover-paper {
     width: 100% !important;
   }
@@ -139,6 +150,11 @@
 }
 /* for big screens */
 @media only screen and (min-width: 601px) and (max-width: 1200px) {
+  .questionsOuterDiv {
+    max-height: inherit !important;
+    overflow: inherit !important;
+  }
+
   .qboximg {
     width: 100%;
     /* width: auto; */

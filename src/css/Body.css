@@ -18,6 +18,9 @@
   /* height: 100vh; */
   width: 70%;
 }
+.myStyleColor {
+  background-color: red;
+}
 
 .body-rectangle {
   color: white !important;

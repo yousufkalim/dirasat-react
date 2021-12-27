@@ -3,9 +3,14 @@ import Grid from "@material-ui/core/Grid";
 import Main from "../assets/img/a2.png";
 import MainMobile from "../assets/img/mainmobile.png";
 import MainCharacter from "../assets/img/MainCharacter.png";
+import logo from "../assets/img/logo1.png";
 import VideoImage from "../assets/img/videoimg.png";
 import scrollToTop from "../utils/ScrollTop";
 import video1 from "../assets/video/orientatorVideo.mp4";
+
+import jsPDF from "jspdf";
+import * as htmlToImage from "html-to-image";
+import * as html2canvas from "html2canvas";
 
 import f1 from "../assets/img/f1.png";
 import f2 from "../assets/img/f2.png";
@@ -14,6 +19,30 @@ import arrowright from "../assets/img/arrow.png";
 import Footer from "./Footer";
 
 const Landing = ({ step, setStep, statetextforscroll }) => {
+  const capture1 = React.createRef();
+  const onButtonClick = async () => {
+    var pdf = new jsPDF();
+    let domElement = document.getElementById("my-node");
+    console.log("domElement", domElement);
+
+    html2canvas(domElement, {
+      ignoreElements: function (element) {
+        if ("MyElementIdHere" === element.id) {
+          return true;
+        }
+      },
+      backgroundColor: "blue",
+    }).then((canvas) => {
+      console.log("CAN ASFAND VAS", canvas);
+      // pdf.setFillColor(52, 55, 71);
+      // pdf.rect(0, 0, 350, 350, "F");
+      // pdf.addImage(logo, "PNG", 75, 5, 60, 25);
+      // pdf.addImage(MainCharacter, "PNG", 30, 35, 150, 130);
+      // pdf.save("download.pdf");
+      document.body.appendChild(canvas);
+    });
+  };
+
   const video = document.getElementById("video");
   const scrollToTop = () => {
     window.scrollTo({
@@ -77,7 +106,13 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
 
           {/* <img src={VideoImage} className="videImage" /> */}
         </div>
-        <Grid container spacing={3} className="footerGrid">
+        <Grid
+          container
+          spacing={3}
+          className="footerGrid"
+          id="my-node"
+          ref={capture1}
+        >
           <Grid item xs={12} sm={4}>
             <img src={f1} className="footerimg" />
             <h4 className="h4">Étape 1</h4>
@@ -88,7 +123,7 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
             <h4 className="h4">Étape 2</h4>
             <p className="p3">Réponds aux questions d'Orientator.</p>
           </Grid>
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={12} sm={4} id="MyElementIdHere">
             <img src={f3} className="footerimg" />
             <h4 className="h4">Étape 3</h4>
             <p className="p3">
@@ -96,6 +131,7 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
             </p>
           </Grid>
         </Grid>
+        {/* <button onClick={onButtonClick}>Download PDF</button> */}
       </div>
       <Footer />
     </>

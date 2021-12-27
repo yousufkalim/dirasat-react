@@ -35,7 +35,7 @@ const Questions = ({ setStep, setActiveStep }) => {
 
   useEffect(() => {
     currentans();
-    scrollToTop();
+    // scrollToTop();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [prevQuestion]);
   // stlyes
@@ -163,8 +163,12 @@ const Questions = ({ setStep, setActiveStep }) => {
   return (
     <>
       <Info anchorEl={anchorEl} setAnchorEl={setAnchorEl} text={text} />
-      <Grid container spacing={2} className="mainquestionscreen">
-        <Grid item xs={12} sm={4} className="">
+      <Grid
+        container
+        spacing={2}
+        className="mainquestionscreen questionsOuterDiv"
+      >
+        <Grid item xs={12} sm={4} className="imgGrid">
           {getFacialExpresion(getQuestion()?.facialExpression)}
         </Grid>
         <Grid item xs={12} sm={8} className="questionGrid">
