@@ -10,28 +10,38 @@ import * as html2canvas from "html2canvas";
 const TypeOfCourse = ({ type, percentage, courses }) => {
   const updateStore = UpdateStore();
   const [showDetail, setShowDetail] = useState(true);
-  const { deatilResult } = Store();
-  const [data, setdata] = useState();
 
   useEffect(() => {
-    console.log("deatilResult", deatilResult);
-
     getresultpageforPdf();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [deatilResult]);
+  }, []);
   const getresultpageforPdf = () => {
     let domElement = document.getElementById(type);
-    // console.log("domElement", domElement);
-
     html2canvas(domElement, {
       // ignoreElements: function (element) {
       //   if ("resultButtondiv" === element.id) {
       //     return true;
       //   }
       // },
+      width: 1000,
+      height: 1670,
       backgroundColor: "#282b38",
     }).then((canvas) => {
-      updateStore({ deatilResult: { ...deatilResult, [type]: canvas } });
+      if (type == "BUT") {
+        updateStore({ butResult: canvas });
+      }
+      if (type == "Licence") {
+        updateStore({ licenceResult: canvas });
+      }
+      if (type == "BTS") {
+        updateStore({ btsResult: canvas });
+      }
+      if (type == "Ecole Post-Bac") {
+        updateStore({ ecoleResult: canvas });
+      }
+      if (type == "CPGE") {
+        updateStore({ cpgeResult: canvas });
+      }
       // document.body.appendChild(canvas);
       setShowDetail(false);
     });
@@ -57,23 +67,6 @@ const TypeOfCourse = ({ type, percentage, courses }) => {
     }
   };
 
-  const onButtonwholeClick = async (e) => {
-    e.stopPropagation();
-    // var pdf = new jsPDF();
-    let domElement = document.getElementById(type);
-    // console.log("domElement typeOfCourses", domElement);
-
-    html2canvas(domElement).then((canvas) => {
-      // console.log("CAN ASFAND VAS result", canvas);
-      // pdf.setFillColor(52, 55, 71);
-      // pdf.rect(0, 0, 350, 350, "F");
-      // pdf.addImage(logo, "PNG", 75, 5, 60, 25);
-      // pdf.addImage(MainCharacter, "PNG", 30, 35, 150, 130);
-      // pdf.save("download.pdf");
-      // document.body.appendChild(canvas);
-    });
-  };
-
   useEffect(() => {
     setTimeout(() => {
       setOpen(true);
@@ -95,11 +88,6 @@ const TypeOfCourse = ({ type, percentage, courses }) => {
           <Grid item xs={4} sm={8} className="courseType">
             {" "}
             {type}
-            {/* {showDetail && (
-              <button onClick={(e) => onButtonwholeClick(e, type)}>
-                Download whole PDF
-              </button>
-            )} */}
           </Grid>
           <Grid
             item

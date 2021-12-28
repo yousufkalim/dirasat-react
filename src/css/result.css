@@ -1,6 +1,15 @@
 .mainresultscreen {
   min-height: 100vh !important;
 }
+.mobileView {
+  display: none !important;
+}
+.lessopacity {
+  opacity: 0.6;
+}
+.desktopView {
+  display: inherit !important;
+}
 .resultBox {
   color: white;
   margin: 40px auto;
@@ -172,6 +181,12 @@
 
 /* Mobile View */
 @media only screen and (min-width: 320px) and (max-width: 612px) {
+  .mobileView {
+    display: inherit !important;
+  }
+  .desktopView {
+    display: none !important;
+  }
   .resultBox {
     width: 80% !important;
     border-radius: 35px !important;

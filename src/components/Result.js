@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Store, UpdateStore } from "../StoreContext";
 import api from "../api";
 import Grid from "@material-ui/core/Grid";
-import Dummy from "../assets/img/dummy.png";
 import MainCharacter from "../assets/img/MainCharacter.png";
 import MainMobile from "../assets/img/mobileform.png";
 import CircularProgress from "@material-ui/core/CircularProgress";
@@ -20,10 +19,22 @@ const Result = () => {
 
   // init
   const updateStore = UpdateStore();
-  const { history, user, disc_ans_id, result, mainresultPage, deatilResult } =
-    Store();
+  const {
+    history,
+    user,
+    disc_ans_id,
+    result,
+    mainresultPage,
+    btsResult,
+    butResult,
+    licenceResult,
+    ecoleResult,
+    cpgeResult,
+  } = Store();
   const [loading, setLoading] = useState(false);
   const [resultStep, setresultStep] = useState(0);
+  const [exportLoading, setExportLoading] = useState(false);
+  const [screenshootloading, setScreenshootloading] = useState(false);
 
   const [open, setOpen] = useState(false);
   const [flagforpopup, setFlagforpopup] = useState(false);
@@ -60,7 +71,7 @@ const Result = () => {
     }
     setLoading(false);
   };
-  // get courses arrays base on there types
+  // get courses arrays base on there type
   const getSingleTypeofCourse = (type) => {
     let b = result.courses.filter(
       (course) => type === course?.courseId?.type_of_course
@@ -68,13 +79,15 @@ const Result = () => {
     return b;
   };
   const showResultDetail = () => {
-    onButtonClick();
-    setresultStep(1);
+    setScreenshootloading(true);
+    setTimeout(() => {
+      onButtonClick();
+      setresultStep(1);
+    }, 500);
   };
+
   const onButtonClick = async () => {
-    // var pdf = new jsPDF();
     let domElement = document.getElementById("resultBox");
-    // console.log("domElement", domElement);
 
     html2canvas(domElement, {
       ignoreElements: function (element) {
@@ -84,28 +97,133 @@ const Result = () => {
       },
       backgroundColor: "#282b38",
     }).then((canvas) => {
-      // console.log("CAN ASFAND VAS result", canvas);
-
       updateStore({ mainresultPage: canvas });
-      // pdf.setFillColor(52, 55, 71);
-      // pdf.rect(0, 0, 350, 350, "F");
-      // pdf.addImage(logo, "PNG", 75, 5, 60, 25);
-      // pdf.addImage(MainCharacter, "PNG", 30, 35, 150, 130);
-      // pdf.save("download.pdf");
+      setScreenshootloading(false);
       // document.body.appendChild(canvas);
     });
   };
-  // console.log("mainresultPage", mainresultPage);
-  console.log("deatilResult1", deatilResult);
+
+  console.log("licenceResult", licenceResult);
+  console.log("setExportLoading", exportLoading);
 
   const exportPdf = async () => {
+    setExportLoading(true);
+    setTimeout(() => {
+      var pdf = new jsPDF();
+      pdf.setFillColor(40, 43, 56);
+      pdf.rect(0, 0, 350, 350, "F");
+      pdf.addImage(logo, "PNG", 75, 5, 60, 25);
+      pdf.addImage(MainCharacter, "PNG", 30, 35, 150, 130);
+      if (mainresultPage) {
+        pdf.addImage(mainresultPage, "PNG", 30, 165, 150, 130);
+      }
+      if (btsResult) {
+        pdf.addPage();
+        // for specific width height
+        pdf.addImage(btsResult, "PNG", 0, 0, 210, 300);
+        // for desktop
+        // pdf.addImage(btsResult, "PNG", 0, 0, 210, 375);
+        // for ten result
+        // pdf.addImage(btsResult, "PNG", 0, 0, 210, 300);
+      }
+      if (licenceResult) {
+        pdf.addPage();
+        // for specific width height
+        pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
+        // for desktop
+        // pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
+        // for ten result
+        // pdf.addImage(btsResult, "PNG", 0, 0, 210, 300);
+      }
+      if (butResult) {
+        pdf.addPage();
+        // for specific width height
+        pdf.addImage(butResult, "PNG", 0, 0, 210, 300);
+        // for desktop
+        // pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
+        // for ten result
+        // pdf.addImage(btsResult, "PNG", 0, 0, 210, 300);
+      }
+      if (cpgeResult) {
+        pdf.addPage();
+        // for specific width height
+        pdf.addImage(cpgeResult, "PNG", 0, 0, 210, 300);
+        // for desktop
+        // pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
+        // for ten result
+        // pdf.addImage(btsResult, "PNG", 0, 0, 210, 300);
+      }
+      if (ecoleResult) {
+        pdf.addPage();
+        // for specific width height
+        pdf.addImage(ecoleResult, "PNG", 0, 0, 210, 300);
+        // for desktop
+        // pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
+        // for ten result
+        // pdf.addImage(btsResult, "PNG", 0, 0, 210, 300);
+      }
+
+      pdf.save("download.pdf");
+      setExportLoading(false);
+      // document.body.appendChild(canvas);
+    }, 500);
+  };
+
+  // mobile view pdf
+
+  const exportPdfM = async () => {
     var pdf = new jsPDF();
     pdf.setFillColor(40, 43, 56);
     pdf.rect(0, 0, 350, 350, "F");
     pdf.addImage(logo, "PNG", 75, 5, 60, 25);
-    pdf.addImage(MainCharacter, "PNG", 30, 35, 150, 130);
+    pdf.addImage(MainCharacter, "PNG", 40, 35, 120, 100);
     if (mainresultPage) {
-      pdf.addImage(mainresultPage, "PNG", 30, 165, 150, 130);
+      pdf.addImage(mainresultPage, "PNG", 70, 100, 60, 200);
+    }
+    if (btsResult) {
+      pdf.addPage();
+      // for specific width height
+      pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
+      // for desktop
+      // pdf.addImage(btsResult, "PNG", 0, 0, 210, 375);
+      // for ten result
+      // pdf.addImage(btsResult, "PNG", 0, 0, 210, 300);
+    }
+    if (licenceResult) {
+      pdf.addPage();
+      // for specific width height
+      pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
+      // for desktop
+      // pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
+      // for ten result
+      // pdf.addImage(btsResult, "PNG", 0, 0, 210, 300);
+    }
+    if (butResult) {
+      pdf.addPage();
+      // for specific width height
+      pdf.addImage(butResult, "PNG", 0, 0, 210, 300);
+      // for desktop
+      // pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
+      // for ten result
+      // pdf.addImage(btsResult, "PNG", 0, 0, 210, 300);
+    }
+    if (cpgeResult) {
+      pdf.addPage();
+      // for specific width height
+      pdf.addImage(cpgeResult, "PNG", 0, 0, 210, 300);
+      // for desktop
+      // pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
+      // for ten result
+      // pdf.addImage(btsResult, "PNG", 0, 0, 210, 300);
+    }
+    if (ecoleResult) {
+      pdf.addPage();
+      // for specific width height
+      pdf.addImage(ecoleResult, "PNG", 0, 0, 210, 300);
+      // for desktop
+      // pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
+      // for ten result
+      // pdf.addImage(btsResult, "PNG", 0, 0, 210, 300);
     }
 
     pdf.save("download.pdf");
@@ -120,7 +238,10 @@ const Result = () => {
             <img src={MainCharacter} className="facialImgQuestionforResult" />
           </Grid>
           <Grid item xs={12} sm={12} md={7} className="">
-            <div className="resultBox" id="resultBox">
+            <div
+              className={`resultBox ${screenshootloading ? "lessopacity" : ""}`}
+              id="resultBox"
+            >
               <div className="resultBoxText">
                 <h1 className="resultHeading" style={{ textAlign: "center" }}>
                   Bravo ! Tu as répondu à toutes les questions !
@@ -184,6 +305,7 @@ const Result = () => {
                   </p>
                 )}
               </div>
+
               <div className="resultButtondiv" id="resultButtondiv">
                 <button
                   className="resultButton"
@@ -191,7 +313,12 @@ const Result = () => {
                   style={{ opacity: loading ? 0.4 : 1 }}
                   disabled={loading}
                 >
-                  <b> Ma liste Parcoursup</b>
+                  <b>
+                    {" "}
+                    {screenshootloading
+                      ? "S'il vous plaît, attendez"
+                      : "Ma liste Parcoursup"}
+                  </b>
                 </button>
               </div>
             </div>
@@ -205,7 +332,11 @@ const Result = () => {
 
           <InvitePopup open={openinvitepopup} setOpen={setOpenInvitepopup} />
           <SharePopup open={opensharepopup} setOpen={setOpenSharepopup} />
-          <Grid container spacing={1} className="mainresultscreen">
+          <Grid
+            container
+            spacing={1}
+            className={`mainresultscreen ${exportLoading ? "lessopacity" : ""}`}
+          >
             <Grid item xs={12} sm={12} className="">
               <div>
                 {!loading ? (
@@ -247,9 +378,22 @@ const Result = () => {
                             “hors-parcoursup” qui pourraient te correspondre!
                           </p>
                         </div>
-                        <div>
-                          <button onClick={exportPdf}>Export PDF</button>
+                        <div className="desktopView goback">
+                          <button
+                            className="goBackbutton"
+                            onClick={exportPdf}
+                            disabled={exportLoading}
+                          >
+                            {exportLoading
+                              ? "S'il vous plaît, attendez"
+                              : "Export PDF"}
+                          </button>
                         </div>
+                        {/* <div className="mobileView">
+                          <button onClick={exportPdfM}>
+                            Export PDF mobile
+                          </button>
+                        </div> */}
 
                         <div className="buttonDiv">
                           <button
