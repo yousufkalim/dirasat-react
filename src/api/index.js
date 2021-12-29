@@ -5,7 +5,7 @@ const api = async (method = "get", uri, body) => {
   if (window.location.hostname === "orientator-demo.web.app") {
     axios.defaults.baseURL = "https://orientator.falconconsulting.fr/api";
   } else if (window.location.hostname === "orientator.com") {
-    axios.defaults.baseURL = "https://api.orientator.com";
+    axios.defaults.baseURL = "https://api.orientator.com/api";
   }
 
   // axios.defaults.baseURL = "http://localhost:5000/api/";
