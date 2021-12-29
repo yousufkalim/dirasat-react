@@ -15,7 +15,7 @@
 .questionDiv {
   margin: auto !important;
   text-align: center !important;
-  margin-top: 1% !important;
+  /* margin-top: 1% !important; */
   height: 500px !important;
 }
 
@@ -100,15 +100,15 @@
   margin-top: -19px !important;
 }
 .asthonisedFinal {
-  width: 72% !important;
+  width: 65% !important;
   height: 77% !important;
-  margin: auto auto auto 18% !important;
+  margin: auto auto auto 23% !important;
   margin-top: -19px !important;
 }
 .arrogantFinal {
-  height: 78% !important;
-  width: 80% !important;
-  margin: auto auto auto 17% !important;
+  height: 80% !important;
+  width: 73% !important;
+  margin: auto auto auto 23% !important;
   margin-top: -19px !important;
 }
 .victoriousFinal {
@@ -126,6 +126,9 @@
 }
 
 @media only screen and (min-width: 320px) and (max-width: 600px) {
+  .questionDiv {
+    margin-top: 20% !important;
+  }
   .questionsOuterDiv {
     max-height: inherit !important;
     overflow: inherit !important;
@@ -175,9 +178,10 @@
     padding-left: 10% !important;
   }
   .encourageFinal {
-    margin-left: 7px !important;
-    width: 90% !important;
-    height: 70% !important;
+    margin: auto !important;
+    width: 99% !important;
+    height: 60% !important;
+    margin-left: -10px !important;
   }
   .winkingFinal {
     width: 100% !important;
