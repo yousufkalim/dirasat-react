@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "orientator-demo"
+  },
+  "targets": {
+    "orientator-demo": {
+      "hosting": {
+        "dev": [
+          "orientator-demo"
+        ],
+        "prod": [
+          "orientator-prod"
+        ]
+      }
+    }
   }
 }

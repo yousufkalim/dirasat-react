@@ -2,10 +2,12 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const api = async (method = "get", uri, body) => {
-  if (window.location.hostname !== "localhost") {
+  if (window.location.hostname === "orientator-demo.web.app") {
     axios.defaults.baseURL = "https://orientator.falconconsulting.fr/api";
-    axios.defaults.withCredentials = true;
+  } else if (window.location.hostname === "orientator.com") {
+    axios.defaults.baseURL = "https://api.orientator.com";
   }
+
   // axios.defaults.baseURL = "http://localhost:5000/api/";
   axios.defaults.withCredentials = true;
 
