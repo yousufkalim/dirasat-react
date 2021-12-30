@@ -248,7 +248,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (institute == "") {
-      return toast.error("Veuillez entrer votre institut");
+      return toast.error("Veuillez entrer votre établissement.");
     }
     if (addressValue?.city == "") {
       return toast.error("Veuillez entrer votre adresse");
@@ -291,7 +291,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
             <Grid item xs={12} sm={12} className="">
               <h3 className="formheading">
                 Pour mieux te conseiller, j’ai besoin <br className="br" />
-                d’en savoir davantage sur toi !
+                d’en savoir davantage sur toi!
               </h3>
             </Grid>
             <Grid container spacing={2} className="inputgrid1">

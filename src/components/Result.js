@@ -328,7 +328,7 @@ const Result = () => {
       )}
       {resultStep == 1 && (
         <>
-          <Dialog open={open} setOpen={setOpen} />
+          {/* <Dialog open={open} setOpen={setOpen} /> */}
 
           <InvitePopup open={openinvitepopup} setOpen={setOpenInvitepopup} />
           <SharePopup open={opensharepopup} setOpen={setOpenSharepopup} />
