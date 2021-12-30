@@ -18,6 +18,18 @@
   /* margin-top: 1% !important; */
   height: 500px !important;
 }
+.nineOptions {
+  margin: auto !important;
+  text-align: center !important;
+  /* margin-top: 1% !important; */
+  height: 500px !important;
+}
+.marginBottomClass {
+  margin: auto !important;
+  text-align: center !important;
+  /* margin-top: 1% !important; */
+  height: 500px !important;
+}
 
 .questiontext {
   padding-left: 40px;
@@ -126,6 +138,13 @@
 }
 
 @media only screen and (min-width: 320px) and (max-width: 600px) {
+  .nineOptions {
+    margin-bottom: 80% !important;
+  }
+  .marginBottomClass {
+    margin-bottom: 50% !important;
+    margin-top: 0% !important;
+  }
   .questionDiv {
     margin-top: 20% !important;
   }
@@ -158,8 +177,8 @@
     text-align: left;
   }
   .longquestion {
-    padding: 10px;
-    font-size: 22px;
+    padding: 0px;
+    font-size: 18px;
     text-align: left;
   }
 
@@ -179,14 +198,16 @@
   }
   .encourageFinal {
     margin: auto !important;
-    width: 99% !important;
+    width: 86% !important;
     height: 60% !important;
-    margin-left: -10px !important;
+    margin-left: 16px !important;
+    margin-bottom: 71px !important;
   }
   .winkingFinal {
-    width: 100% !important;
+    width: 85% !important;
     margin: auto !important;
     height: 70% !important;
+    margin-left: 20px !important;
   }
   .thoughtfulFinal {
     width: 100% !important;
@@ -199,8 +220,9 @@
     height: 70% !important;
   }
   .victoriousFinal {
+    width: 100% !important;
     height: 70% !important;
-    margin: auto auto auto 7% !important;
+    margin: auto auto auto auto !important;
   }
 }
 /* for big screens */
@@ -229,6 +251,12 @@
   .longquestion {
     padding-left: 40px;
     font-size: 21px;
+  }
+  .nineOptions {
+    height: 650px !important;
+  }
+  .marginBottomClass {
+    height: 650px !important;
   }
   .questionDiv {
     height: 650px !important;
@@ -274,6 +302,12 @@
   }
   .longquestion {
     padding-left: 60px;
+  }
+  .nineOptions {
+    height: 650px !important;
+  }
+  .marginBottomClass {
+    height: 650px !important;
   }
   .questionDiv {
     height: 650px !important;

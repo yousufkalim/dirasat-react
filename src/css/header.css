@@ -27,11 +27,11 @@
   font-family: lato;
 }
 .hidetitle {
-  flex-grow: 0.06;
+  /* flex-grow: 0.06;
   text-align: center;
   font-size: 16px;
   padding: 10px;
-  font-family: lato;
+  font-family: lato; */
 }
 .showToolbar {
   margin: 0px 0px 0px 30px !important;
@@ -44,7 +44,7 @@
   padding-top: 10px;
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
+@media only screen (min-width: 613px) and (max-width: 812px) {
   .showToolbar {
     display: block !important;
     margin: 0px !important;
@@ -83,10 +83,11 @@
     margin: 10px 20px 0 12px;
     display: inherit;
     cursor: pointer;
+    z-index: 1;
   }
   .logoImage {
     margin: 11px 0px 0px 50%;
-    width: 125px;
+    width: 125px !important;
   }
   .navicon {
     width: 30px;
@@ -107,6 +108,64 @@
   .headerRoot {
     background: #0e0f15 !important;
   }
+}
+
+/* for safari */
+@media only screen and (min-width: 320px) and (max-width: 612px) {
+  .showToolbar {
+    display: block !important;
+    margin: 0px !important;
+  }
+  .title {
+    flex-grow: 0.06;
+    text-align: center;
+    font-size: 10px !important;
+    padding: 10px 0px 10px 0px;
+    font-family: lato;
+  }
+  .a {
+    margin-top: 17px !important;
+  }
+  .a:hover {
+    background: #46495c;
+  }
+  .b {
+    margin-top: -29px !important;
+    padding-bottom: 25px !important;
+  }
+  .b:hover {
+    background: #46495c;
+  }
+  .menuButton {
+    margin: 0 20px 0 40px !important;
+  }
+  .hidetitle {
+    display: none;
+  }
+
   .logowithicondiv {
+    display: flex;
+  }
+  .navIconbox {
+    margin: 10px 20px 0 12px;
+    display: inherit;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .logoImage {
+    margin: 11px 0px 0px 50%;
+    width: 125px !important;
+  }
+  .navicon {
+    width: 30px;
+    height: 30px;
+  }
+  .headerRoot {
+    background: #0e0f15 !important;
+  }
+  .centerizelogo {
+    position: absolute;
+    width: 100%;
+    left: -12%;
   }
 }

@@ -64,7 +64,10 @@ export default function Header({
             className="navIconbox"
             color="inherit"
             aria-label="menu"
-            onClick={() => setFlag(!flag)}
+            onClick={() => {
+              console.log("aa");
+              setFlag(!flag);
+            }}
           >
             {flag ? (
               <img src={Closeicon} className="navicon" />
@@ -115,7 +118,7 @@ export default function Header({
               step != 0 && setStatetextforscroll("Comment");
             }}
           >
-            Comment ça marche ?
+            Comment ça marche?
           </Typography>
         </AnchorLink>
       </Toolbar>

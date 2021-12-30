@@ -110,7 +110,7 @@ export default function InviteBox({
             onClick={handleSubmit}
             disabled={loading}
           >
-            vérifier
+            Vérifier
           </button>
         </div>
       </BootstrapDialog>

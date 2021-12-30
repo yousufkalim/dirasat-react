@@ -162,7 +162,17 @@ const Questions = ({ setStep, setActiveStep }) => {
           {getFacialExpresion(getQuestion()?.facialExpression)}
         </Grid>
         <Grid item xs={12} sm={8} className="questionGrid">
-          <div className="questionDiv">
+          <div
+            className={` ${
+              getOptions(answers)?.length >= 5 &&
+              getOptions(answers)?.length <= 8
+                ? "marginBottomClass"
+                : "questionDiv"
+            } 
+            ${getOptions(answers)?.length == 9 && "nineOptions"}
+
+            `}
+          >
             <img src={qarrow} className="qboximg" />
             <div className="questionBox">
               <h1
