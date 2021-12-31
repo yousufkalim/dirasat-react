@@ -163,12 +163,15 @@ const Questions = ({ setStep, setActiveStep }) => {
         </Grid>
         <Grid item xs={12} sm={8} className="questionGrid">
           <div
-            className={` ${
+            className={` 
+            ${
               getOptions(answers)?.length >= 5 &&
               getOptions(answers)?.length <= 8
                 ? "marginBottomClass"
-                : "questionDiv"
-            } 
+                : getOptions(answers)?.length != 9
+                ? "questionDiv"
+                : ""
+            }
             ${getOptions(answers)?.length == 9 && "nineOptions"}
             ${getOptions(answers)?.length == 6 && "sixOptions"}
 
