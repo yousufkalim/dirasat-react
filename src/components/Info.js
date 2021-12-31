@@ -29,7 +29,7 @@ export default function Info({ anchorEl, setAnchorEl, text }) {
           {text == 2 &&
             "Après avoir reçu ma proposition de liste Parcoursup, tu seras contacté par la suite pour recevoir le plein de conseils concernant ton projet d’études à l’international!"}
           {text == 3 &&
-            " Le savais-tu? Le mot sélectivité signifie que pour accéder à une formation dite “sélective”, il te sera généralement nécessaire depasser un concours ou un test, ou que ton dossier scolaire (notes,appréciations) sera pris en compte davantage que dans une formation moins sélective. Du coup, sélectivité veut généralement aussi dire "}
+            " Le savais-tu? Le mot sélectivité signifie que pour accéder à une formation dite “sélective”, il te sera généralement nécessaire de passer un concours ou un test, ou que ton dossier scolaire (notes, appréciations) sera pris en compte davantage que dans une formation moins sélective. Du coup, sélectivité veut généralement aussi dire prestige."}
         </Typography>
       </Popover>
     </div>

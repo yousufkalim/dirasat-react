@@ -81,7 +81,8 @@ const Result = () => {
   const showResultDetail = () => {
     setScreenshootloading(true);
     setTimeout(() => {
-      onButtonClick();
+      // onButtonClick();
+      setScreenshootloading(false);
       setresultStep(1);
     }, 500);
   };
@@ -167,67 +168,6 @@ const Result = () => {
       setExportLoading(false);
       // document.body.appendChild(canvas);
     }, 500);
-  };
-
-  // mobile view pdf
-
-  const exportPdfM = async () => {
-    var pdf = new jsPDF();
-    pdf.setFillColor(40, 43, 56);
-    pdf.rect(0, 0, 350, 350, "F");
-    pdf.addImage(logo, "PNG", 75, 5, 60, 25);
-    pdf.addImage(MainCharacter, "PNG", 40, 35, 120, 100);
-    if (mainresultPage) {
-      pdf.addImage(mainresultPage, "PNG", 70, 100, 60, 200);
-    }
-    if (btsResult) {
-      pdf.addPage();
-      // for specific width height
-      pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
-      // for desktop
-      // pdf.addImage(btsResult, "PNG", 0, 0, 210, 375);
-      // for ten result
-      // pdf.addImage(btsResult, "PNG", 0, 0, 210, 300);
-    }
-    if (licenceResult) {
-      pdf.addPage();
-      // for specific width height
-      pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
-      // for desktop
-      // pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
-      // for ten result
-      // pdf.addImage(btsResult, "PNG", 0, 0, 210, 300);
-    }
-    if (butResult) {
-      pdf.addPage();
-      // for specific width height
-      pdf.addImage(butResult, "PNG", 0, 0, 210, 300);
-      // for desktop
-      // pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
-      // for ten result
-      // pdf.addImage(btsResult, "PNG", 0, 0, 210, 300);
-    }
-    if (cpgeResult) {
-      pdf.addPage();
-      // for specific width height
-      pdf.addImage(cpgeResult, "PNG", 0, 0, 210, 300);
-      // for desktop
-      // pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
-      // for ten result
-      // pdf.addImage(btsResult, "PNG", 0, 0, 210, 300);
-    }
-    if (ecoleResult) {
-      pdf.addPage();
-      // for specific width height
-      pdf.addImage(ecoleResult, "PNG", 0, 0, 210, 300);
-      // for desktop
-      // pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
-      // for ten result
-      // pdf.addImage(btsResult, "PNG", 0, 0, 210, 300);
-    }
-
-    pdf.save("download.pdf");
-    // document.body.appendChild(canvas);
   };
 
   return (
@@ -378,7 +318,7 @@ const Result = () => {
                             “hors-parcoursup” qui pourraient te correspondre!
                           </p>
                         </div>
-                        <div className="desktopView goback">
+                        {/* <div className="desktopView goback">
                           <button
                             className="goBackbutton"
                             onClick={exportPdf}
@@ -388,7 +328,7 @@ const Result = () => {
                               ? "S'il vous plaît, attendez"
                               : "Export PDF"}
                           </button>
-                        </div>
+                        </div> */}
                         {/* <div className="mobileView">
                           <button onClick={exportPdfM}>
                             Export PDF mobile
@@ -416,7 +356,7 @@ const Result = () => {
                             className="goBackbutton"
                             onClick={() => setresultStep(0)}
                           >
-                            <b className="">Go Back</b>
+                            <b className="">Précédent</b>
                           </button>
                         </div>
                       </div>
