@@ -159,6 +159,7 @@
 .facialImgQuestionforResult {
   width: 115%;
   height: 100%;
+  object-fit: contain;
 }
 .goback {
   width: 50%;
@@ -181,6 +182,9 @@
 
 /* Mobile View */
 @media only screen and (min-width: 320px) and (max-width: 612px) {
+  ..mainresultscreen {
+    margin-bottom: 5% !important;
+  }
   .mobileView {
     display: inherit !important;
   }
@@ -276,8 +280,8 @@
     padding: 15px 50px 15px 50px;
   }
   .facialImgQuestionforResult {
+    width: 100% !important;
     height: auto;
-    margin-left: -25px;
   }
 }
 /* for big screens */

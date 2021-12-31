@@ -247,6 +247,18 @@ const UserForm = ({ setStep, setActiveStep }) => {
   // handleSubmit Function
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (first_name == "") {
+      return toast.error("Veuillez entrer votre Prénom.");
+    }
+    if (last_name == "") {
+      return toast.error("Veuillez entrer votre nom.");
+    }
+    if (date_of_birth == "") {
+      return toast.error("Veuillez entrer votre date de naissance");
+    }
+    if (email == "") {
+      return toast.error("Veuillez entrer votre e-mail");
+    }
     if (institute == "") {
       return toast.error("Veuillez entrer votre établissement.");
     }
@@ -302,7 +314,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
                   className="inputField"
                   value={first_name}
                   onChange={onChange}
-                  required
                 />
               </Grid>
               <Grid item xs={12} sm={6} className="inputGrid">
@@ -312,7 +323,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
                   onChange={onChange}
                   placeholder="Nom"
                   className="inputField"
-                  required
                 />
               </Grid>
             </Grid>
@@ -328,7 +338,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
                   autoComplete="off"
                   placeholderText="Date de naissance"
                   openToDate={new Date("1999/01/01")}
-                  required
                 />
               </Grid>
               <Grid item xs={12} sm={6} className="inputGrid">
@@ -336,8 +345,14 @@ const UserForm = ({ setStep, setActiveStep }) => {
                   options={values}
                   classes={{
                     option: classes.option,
-                    noOptions: classes.noOptions,
+                    // noOptions: classes.noOptions,
                   }}
+                  noOptionsText={
+                    <div style={{ color: "white", fontSize: "12px" }}>
+                      {" "}
+                      aucune option{" "}
+                    </div>
+                  }
                   PaperComponent={({ children }) => (
                     <Paper style={{ background: "#242635" }}>{children}</Paper>
                   )}
@@ -371,7 +386,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
                   onChange={onChange}
                   placeholder="E-mail"
                   className="inputField"
-                  required
                 />
               </Grid>
               <Grid item xs={12} sm={6} className="inputGrid">
@@ -383,7 +397,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
                   maxlength="10"
                   placeholder="Numéro de téléphone"
                   className="inputField"
-                  required
                 />
               </Grid>
             </Grid>

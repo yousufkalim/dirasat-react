@@ -13,6 +13,7 @@ const Footer = () => {
               href="#top"
               style={{
                 color: "white",
+                textDecoration: "none",
               }}
             >
               Accueil
@@ -31,7 +32,7 @@ const Footer = () => {
             2021. Tous droits réservés
           </p>
           <h3 className="footercgu" style={{ textAlign: "center" }}>
-            <Link to="/CGU" style={{ color: "white" }}>
+            <Link to="/CGU" style={{ color: "white", textDecoration: "none" }}>
               CGU
             </Link>
           </h3>
