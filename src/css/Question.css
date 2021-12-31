@@ -18,6 +18,12 @@
   /* margin-top: 1% !important; */
   height: 500px !important;
 }
+.sixOptions {
+  margin: auto !important;
+  text-align: center !important;
+  /* margin-top: 1% !important; */
+  height: 500px !important;
+}
 .nineOptions {
   margin: auto !important;
   text-align: center !important;
@@ -98,36 +104,42 @@
   width: 90% !important;
   margin: auto auto auto 10% !important;
   margin-top: -19px !important;
+  object-fit: contain !important;
 }
 .winkingFinal {
   height: 80% !important;
   width: 70% !important;
   margin: auto auto auto 27% !important;
   margin-top: -19px !important;
+  object-fit: contain !important;
 }
 .thoughtfulFinal {
   height: 80% !important;
   width: 77% !important;
   margin: auto auto auto 20% !important;
   margin-top: -19px !important;
+  object-fit: contain !important;
 }
 .asthonisedFinal {
   width: 65% !important;
-  height: 77% !important;
+  height: 80% !important;
   margin: auto auto auto 23% !important;
   margin-top: -19px !important;
+  object-fit: contain !important;
 }
 .arrogantFinal {
   height: 80% !important;
   width: 73% !important;
   margin: auto auto auto 23% !important;
   margin-top: -19px !important;
+  object-fit: contain !important;
 }
 .victoriousFinal {
   height: 80% !important;
   width: 80% !important;
   margin: auto auto auto 15% !important;
   margin-top: -19px !important;
+  object-fit: contain !important;
 }
 .questionsOuterDiv {
   max-height: 64vh !important;
@@ -138,8 +150,11 @@
 }
 
 @media only screen and (min-width: 320px) and (max-width: 600px) {
-  .nineOptions {
+  .sixOptions {
     margin-bottom: 80% !important;
+  }
+  .nineOptions {
+    margin-bottom: 90% !important;
   }
   .marginBottomClass {
     margin-bottom: 50% !important;
@@ -147,6 +162,7 @@
   }
   .questionDiv {
     margin-top: 20% !important;
+    margin-bottom: 10% !important;
   }
   .questionsOuterDiv {
     max-height: inherit !important;
@@ -190,11 +206,12 @@
     margin-top: 11% !important;
   }
   .asthonisedFinal {
-    width: 76% !important;
+    width: 50% !important;
     margin: auto !important;
     height: 72% !important;
     padding-bottom: 44% !important;
-    padding-left: 10% !important;
+    padding-left: 23% !important;
+    object-fit: contain !important;
   }
   .encourageFinal {
     margin: auto !important;
@@ -202,27 +219,33 @@
     height: 60% !important;
     margin-left: 16px !important;
     margin-bottom: 71px !important;
+    object-fit: contain !important;
   }
   .winkingFinal {
     width: 85% !important;
     margin: auto !important;
-    height: 70% !important;
+    height: 73% !important;
     margin-left: 20px !important;
+    object-fit: contain !important;
   }
   .thoughtfulFinal {
-    width: 100% !important;
+    width: 85% !important;
     margin: auto !important;
     height: 70% !important;
+    margin-left: 30px !important;
+    object-fit: contain !important;
   }
   .arrogantFinal {
     width: 80% !important;
     margin: auto auto auto 12% !important;
     height: 70% !important;
+    object-fit: contain !important;
   }
   .victoriousFinal {
-    width: 100% !important;
+    width: 85% !important;
     height: 70% !important;
-    margin: auto auto auto auto !important;
+    margin: auto auto auto 17px !important;
+    object-fit: contain !important;
   }
 }
 /* for big screens */
@@ -252,6 +275,9 @@
     padding-left: 40px;
     font-size: 21px;
   }
+  .sixOptions {
+    height: 650px !important;
+  }
   .nineOptions {
     height: 650px !important;
   }
@@ -268,20 +294,47 @@
     font-size: 11px !important;
   }
   .winkingFinal {
-    height: 73% !important;
+    width: 100% !important;
+    margin: auto !important;
+    height: 50% !important;
+    margin-left: 10px !important;
+    object-fit: contain !important;
   }
   .arrogantFinal {
-    height: 73% !important;
+    width: 100% !important;
+    margin: auto !important;
+    height: 50% !important;
+    margin-left: 10px !important;
+    object-fit: contain !important;
   }
   .victoriousFinal {
     height: 73% !important;
+    width: 100% !important;
+    margin: auto !important;
+    height: 50% !important;
+    margin-left: 10px !important;
+    object-fit: contain !important;
   }
   .thoughtfulFinal {
-    height: 73% !important;
+    width: 100% !important;
+    margin: auto !important;
+    height: 50% !important;
+    margin-left: 10px !important;
+    object-fit: contain !important;
   }
   .encourageFinal {
-    height: 77% !important;
-    margin: auto auto auto 3% !important;
+    width: 100% !important;
+    margin: auto !important;
+    height: 40% !important;
+    margin-left: 10px !important;
+    object-fit: contain !important;
+  }
+  .asthonisedFinal {
+    width: 100% !important;
+    margin: auto !important;
+    height: 50% !important;
+    margin-left: 10px !important;
+    object-fit: contain !important;
   }
 }
 
@@ -302,6 +355,9 @@
   }
   .longquestion {
     padding-left: 60px;
+  }
+  .sixOptions {
+    height: 650px !important;
   }
   .nineOptions {
     height: 650px !important;

@@ -170,6 +170,7 @@ const Questions = ({ setStep, setActiveStep }) => {
                 : "questionDiv"
             } 
             ${getOptions(answers)?.length == 9 && "nineOptions"}
+            ${getOptions(answers)?.length == 6 && "sixOptions"}
 
             `}
           >

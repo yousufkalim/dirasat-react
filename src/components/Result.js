@@ -81,8 +81,8 @@ const Result = () => {
   const showResultDetail = () => {
     setScreenshootloading(true);
     setTimeout(() => {
-      // onButtonClick();
-      setScreenshootloading(false);
+      onButtonClick();
+      // setScreenshootloading(false);
       setresultStep(1);
     }, 500);
   };
@@ -113,7 +113,7 @@ const Result = () => {
       var pdf = new jsPDF();
       pdf.setFillColor(40, 43, 56);
       pdf.rect(0, 0, 350, 350, "F");
-      pdf.addImage(logo, "PNG", 75, 5, 60, 25);
+      pdf.addImage(logo, "PNG", 75, 5, 60, 15);
       pdf.addImage(MainCharacter, "PNG", 30, 35, 150, 130);
       if (mainresultPage) {
         pdf.addImage(mainresultPage, "PNG", 30, 165, 150, 130);
@@ -318,17 +318,17 @@ const Result = () => {
                             “hors-parcoursup” qui pourraient te correspondre!
                           </p>
                         </div>
-                        {/* <div className="desktopView goback">
+                        <div className="desktopView goback">
                           <button
                             className="goBackbutton"
                             onClick={exportPdf}
                             disabled={exportLoading}
                           >
                             {exportLoading
-                              ? "S'il vous plaît, attendez"
-                              : "Export PDF"}
+                              ? "Veuillez patienter"
+                              : "exporter le PDF"}
                           </button>
-                        </div> */}
+                        </div>
                         {/* <div className="mobileView">
                           <button onClick={exportPdfM}>
                             Export PDF mobile

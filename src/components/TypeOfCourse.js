@@ -9,10 +9,10 @@ import * as html2canvas from "html2canvas";
 
 const TypeOfCourse = ({ type, percentage, courses }) => {
   const updateStore = UpdateStore();
-  const [showDetail, setShowDetail] = useState(false);
+  const [showDetail, setShowDetail] = useState(true);
 
   useEffect(() => {
-    // getresultpageforPdf();
+    getresultpageforPdf();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const getresultpageforPdf = () => {
