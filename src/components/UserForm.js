@@ -25,7 +25,7 @@ import api from "../api";
 let education = [
   "Quatrième",
   "Troisième",
-  "Lycèe",
+  "Lycée",
   "Seconde Générale",
   "Première Générale",
   "Première STL",
@@ -460,7 +460,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           (institute) => institute.type == "School"
                         )
                   }
-                  // freeSolo
+                  freeSolo
                   getOptionLabel={(option) => option.name}
                   onChange={handleChangeSchool}
                   style={{

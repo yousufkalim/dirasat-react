@@ -326,7 +326,7 @@ const Result = () => {
                           >
                             {exportLoading
                               ? "Veuillez patienter"
-                              : "exporter le PDF"}
+                              : "Exporter le PDF"}
                           </button>
                         </div>
                         {/* <div className="mobileView">
