@@ -113,15 +113,15 @@ const Result = () => {
       var pdf = new jsPDF();
       pdf.setFillColor(40, 43, 56);
       pdf.rect(0, 0, 350, 350, "F");
-      pdf.addImage(logo, "PNG", 75, 5, 60, 15);
-      pdf.addImage(MainCharacter, "PNG", 30, 35, 150, 130);
+      pdf.addImage(logo, "PNG", 65, 15, 80, 15);
+      pdf.addImage(MainCharacter, "PNG", 40, 38, 125, 130);
       if (mainresultPage) {
         pdf.addImage(mainresultPage, "PNG", 30, 165, 150, 130);
       }
       if (btsResult) {
         pdf.addPage();
         // for specific width height
-        pdf.addImage(btsResult, "PNG", 0, 0, 210, 300);
+        pdf.addImage(btsResult, "PNG", 0, 0, 210, 250);
         // for desktop
         // pdf.addImage(btsResult, "PNG", 0, 0, 210, 375);
         // for ten result
@@ -130,7 +130,7 @@ const Result = () => {
       if (licenceResult) {
         pdf.addPage();
         // for specific width height
-        pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
+        pdf.addImage(licenceResult, "PNG", 0, 0, 210, 250);
         // for desktop
         // pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
         // for ten result
