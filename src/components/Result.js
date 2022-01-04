@@ -116,12 +116,12 @@ const Result = () => {
       pdf.addImage(logo, "PNG", 65, 15, 80, 15);
       pdf.addImage(MainCharacter, "PNG", 40, 38, 125, 130);
       if (mainresultPage) {
-        pdf.addImage(mainresultPage, "PNG", 30, 165, 150, 130);
+        pdf.addImage(mainresultPage, "PNG", 30, 165, 150, 100);
       }
       if (btsResult) {
         pdf.addPage();
         // for specific width height
-        pdf.addImage(btsResult, "PNG", 0, 0, 210, 250);
+        pdf.addImage(btsResult, "PNG", 0, 0, 210, 300);
         // for desktop
         // pdf.addImage(btsResult, "PNG", 0, 0, 210, 375);
         // for ten result
@@ -130,7 +130,7 @@ const Result = () => {
       if (licenceResult) {
         pdf.addPage();
         // for specific width height
-        pdf.addImage(licenceResult, "PNG", 0, 0, 210, 250);
+        pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
         // for desktop
         // pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
         // for ten result
@@ -308,6 +308,7 @@ const Result = () => {
                             margin: "auto",
                             color: "grey",
                           }}
+                          className="desktopView"
                         >
                           <p>
                             Tu ne trouves pas ce que tu t’attendais à voir dans
@@ -329,11 +330,21 @@ const Result = () => {
                               : "Exporter le PDF"}
                           </button>
                         </div>
-                        {/* <div className="mobileView">
-                          <button onClick={exportPdfM}>
-                            Export PDF mobile
-                          </button>
-                        </div> */}
+                        <div
+                          style={{
+                            width: "70%",
+                            textAlign: "center",
+                            margin: "auto",
+                            color: "grey",
+                          }}
+                          className="mobileView"
+                        >
+                          <p>
+                            N'hésite pas à prendre des captures d'écran de cette
+                            page. Tu peux aussi te connecter à ton ordinateur
+                            pour obtenir cette liste au format PDF.
+                          </p>
+                        </div>
 
                         <div className="buttonDiv">
                           <button

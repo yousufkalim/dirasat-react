@@ -337,7 +337,11 @@ const UserForm = ({ setStep, setActiveStep }) => {
                   value={date_of_birth}
                   autoComplete="off"
                   placeholderText="Date de naissance"
-                  openToDate={new Date("1999/01/01")}
+                  openToDate={new Date("2003/01/01")}
+                  dropdownMode="select"
+                  showYearDropdown
+                  showMonthDropdown
+                  adjustDateOnChange
                 />
               </Grid>
               <Grid item xs={12} sm={6} className="inputGrid">

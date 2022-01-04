@@ -374,25 +374,31 @@
   }
   .sixOptions {
     height: 650px !important;
+    margin-top: 12% !important;
   }
   .nineOptions {
     height: 650px !important;
+    margin-top: 12% !important;
   }
   .marginBottomClass {
     height: 650px !important;
+    margin-top: 12% !important;
   }
   .uniquefouroptions {
     height: 650px !important;
+    margin-top: 12% !important;
   }
   .questionDiv {
     height: 650px !important;
+    margin-top: 12% !important;
   }
   .answerGrid {
     padding: 1% 11% 0 14% !important;
   }
   .asthonisedFinal {
     margin: auto auto auto 25% !important;
-    height: 81% !important;
+    height: 90% !important;
+    width: 65% !important;
   }
   .winkingFinal {
     height: 83% !important;
@@ -402,17 +408,22 @@
 
   .thoughtfulFinal {
     height: 83% !important;
+    width: 83% !important;
+    margin: auto auto auto 18% !important;
   }
   .encourageFinal {
-    height: 83% !important;
-    margin: auto auto auto 15% !important;
+    height: 87% !important;
+    width: 96% !important;
+    margin: auto auto auto 10% !important;
   }
   .arrogantFinal {
     height: 83% !important;
+    width: 74% !important;
     margin: auto auto auto 22% !important;
   }
   .victoriousFinal {
     height: 83% !important;
+    width: 80% !important;
     margin: auto auto auto 18% !important;
   }
 }

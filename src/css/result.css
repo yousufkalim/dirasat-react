@@ -322,4 +322,7 @@
   .showhideIcon {
     padding: 0px 0px 0px 15px !important;
   }
+  .resultBox {
+    margin-top: 10% !important;
+  }
 }
