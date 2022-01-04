@@ -23,8 +23,8 @@ const TypeOfCourse = ({ type, percentage, courses }) => {
       //     return true;
       //   }
       // },
-      width: 1000,
-      height: 1670,
+      // width: 1300,
+      height: 1750,
       backgroundColor: "#282b38",
     }).then((canvas) => {
       if (type == "BUT") {

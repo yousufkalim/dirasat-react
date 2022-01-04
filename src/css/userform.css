@@ -121,6 +121,14 @@
 .react-datepicker__day-name {
   color: white !important;
 }
+.react-datepicker__month-select {
+  background: #242635 !important;
+  color: white !important;
+}
+.react-datepicker__year-select {
+  background: #242635 !important;
+  color: white !important;
+}
 /* for selelect education level field options */
 .MuiPopover-paper {
   background: #242635 !important;
