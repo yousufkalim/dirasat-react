@@ -42,6 +42,15 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
     });
   };
 
+  const exportPdf = async () => {
+    var pdf = new jsPDF();
+    pdf.setFillColor(40, 43, 56);
+    pdf.rect(0, 0, 350, 350, "F");
+    pdf.addImage(logo, "PNG", 65, 15, 80, 15);
+    pdf.addImage(MainCharacter, "PNG", 40, 38, 125, 130);
+    pdf.save("download.pdf");
+  };
+
   const video = document.getElementById("video");
   const scrollToTop = () => {
     window.scrollTo({
@@ -104,6 +113,11 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
           />
 
           {/* <img src={VideoImage} className="videImage" /> */}
+        </div>
+        <div className="desktopView goback">
+          <button className="goBackbutton" onClick={exportPdf}>
+            Exporter le PDF
+          </button>
         </div>
         <Grid
           container

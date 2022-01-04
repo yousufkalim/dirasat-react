@@ -12,12 +12,19 @@
 .qboximg {
   width: 84%;
 }
+.uniquefouroptions {
+  margin: auto !important;
+  text-align: center !important;
+  /* margin-top: 1% !important; */
+  height: 500px !important;
+}
 .questionDiv {
   margin: auto !important;
   text-align: center !important;
   /* margin-top: 1% !important; */
   height: 500px !important;
 }
+
 .sixOptions {
   margin: auto !important;
   text-align: center !important;
@@ -155,10 +162,15 @@
   }
   .nineOptions {
     margin-bottom: 90% !important;
+    margin-top: 20% !important;
   }
   .marginBottomClass {
     margin-bottom: 50% !important;
     margin-top: 0% !important;
+  }
+  .uniquefouroptions {
+    margin-top: 4% !important;
+    margin-bottom: 10% !important;
   }
   .questionDiv {
     margin-top: 20% !important;
@@ -175,6 +187,7 @@
     color: white;
     background: #343747;
     width: 85%;
+    min-height: 150px;
     margin: 0 auto 30px auto;
     padding: 10px 2px 10px 20px;
     text-align: center;
@@ -189,7 +202,7 @@
 
   .questiontext {
     padding: 10px;
-    font-size: 22px;
+    font-size: 23px;
     text-align: left;
   }
   .longquestion {
@@ -208,37 +221,37 @@
   .asthonisedFinal {
     width: 50% !important;
     margin: auto !important;
-    height: 72% !important;
+    height: 75% !important;
     padding-bottom: 44% !important;
     padding-left: 23% !important;
     object-fit: contain !important;
   }
   .encourageFinal {
     margin: auto !important;
-    width: 86% !important;
-    height: 60% !important;
-    margin-left: 16px !important;
+    width: 90% !important;
+    height: 62% !important;
+    margin-left: 11px !important;
     margin-bottom: 71px !important;
     object-fit: contain !important;
   }
   .winkingFinal {
     width: 85% !important;
     margin: auto !important;
-    height: 73% !important;
-    margin-left: 20px !important;
+    height: 66% !important;
+    margin-left: 25px !important;
     object-fit: contain !important;
   }
   .thoughtfulFinal {
     width: 85% !important;
     margin: auto !important;
-    height: 70% !important;
+    height: 79% !important;
     margin-left: 30px !important;
     object-fit: contain !important;
   }
   .arrogantFinal {
     width: 80% !important;
-    margin: auto auto auto 12% !important;
-    height: 70% !important;
+    margin: auto auto auto 9% !important;
+    height: 79% !important;
     object-fit: contain !important;
   }
   .victoriousFinal {
@@ -282,6 +295,9 @@
     height: 650px !important;
   }
   .marginBottomClass {
+    height: 650px !important;
+  }
+  .uniquefouroptions {
     height: 650px !important;
   }
   .questionDiv {
@@ -363,6 +379,9 @@
     height: 650px !important;
   }
   .marginBottomClass {
+    height: 650px !important;
+  }
+  .uniquefouroptions {
     height: 650px !important;
   }
   .questionDiv {

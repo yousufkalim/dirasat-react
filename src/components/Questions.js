@@ -106,7 +106,7 @@ const Questions = ({ setStep, setActiveStep }) => {
   const getQuestion = () => {
     if (nextQuestionId == null) {
       setStep(3);
-      // setActiveStep((prevActiveStep) => prevActiveStep + 1);
+      // setActiveStep((prevActiveStep) => prevActiveStep + 1)
       setActiveStep(3);
       return;
     }
@@ -168,9 +168,12 @@ const Questions = ({ setStep, setActiveStep }) => {
               getOptions(answers)?.length >= 5 &&
               getOptions(answers)?.length <= 8
                 ? "marginBottomClass"
-                : getOptions(answers)?.length != 9
-                ? "questionDiv"
-                : ""
+                : getOptions(answers)?.length === 9
+                ? ""
+                : getQuestion()?.question ==
+                  "Je vois! Dans ce cas, quel rôle aimerais-tu y jouer?"
+                ? "uniquefouroptions"
+                : "questionDiv"
             }
             ${getOptions(answers)?.length == 9 && "nineOptions"}
             ${getOptions(answers)?.length == 6 && "sixOptions"}
@@ -190,14 +193,14 @@ const Questions = ({ setStep, setActiveStep }) => {
                   ? getQuestion()?.question
                   : "There's no Question please try again"}
                 {getQuestion()?.question ==
-                  "Encore une autre question, est-ce que les études payantes sont une option pour toi ?" && (
+                  "Encore une autre question, est-ce que les études payantes sont une option pour toi?" && (
                   <InfoIcon
                     className="infoIcon"
                     onClick={(e) => handleClickinfo(e, 1)}
                   />
                 )}
                 {getQuestion()?.question ==
-                  "Enfin, dirais-tu que ta volonté d’étudier à l’étranger soit un plan A ou un plan B par rapport à l’option de débuter ton parcours postbac en France?" && (
+                  "Dernière question, étudier à l'étranger est pour toi:" && (
                   <InfoIcon
                     className="infoIcon"
                     onClick={(e) => handleClickinfo(e, 2)}
