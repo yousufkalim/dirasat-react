@@ -157,9 +157,12 @@
   bottom: 5px;
 }
 .facialImgQuestionforResult {
-  width: 115%;
+  width: 43%;
   height: 100%;
   object-fit: contain;
+  position: fixed;
+  top: 14%;
+  bottom: 0;
 }
 .goback {
   width: 50%;
@@ -280,12 +283,18 @@
     padding: 15px 50px 15px 50px;
   }
   .facialImgQuestionforResult {
+    position: relative;
+    left: 0;
+    top: 0;
     width: 100% !important;
     height: auto;
   }
 }
 /* for big screens */
 @media only screen and (min-device-width: 613px) and (max-device-width: 959px) {
+  .desktopView {
+    display: none !important;
+  }
   .resultBox {
     margin: -60px auto !important;
     width: 90%;
@@ -297,11 +306,19 @@
     margin: 0 4px 0 -9px !important;
   }
   .facialImgQuestionforResult {
+    position: relative;
+    width: 100% !important;
     height: auto;
+
+    left: 0;
+    top: 0;
   }
 }
 /* for big screens */
 @media only screen and (min-device-width: 960px) and (max-device-width: 1200px) {
+  .desktopView {
+    display: none !important;
+  }
   .resultBox {
     margin: 10px auto !important;
     width: 90%;
@@ -311,6 +328,12 @@
   }
   .coursediv {
     margin: 0 4px 0 -9px !important;
+  }
+  .facialImgQuestionforResult {
+    width: 51%;
+    height: 108%;
+    object-fit: inherit;
+    position: absolute;
   }
 }
 
