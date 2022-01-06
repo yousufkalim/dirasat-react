@@ -33,6 +33,21 @@ const Questions = ({ setStep, setActiveStep }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [text, setText] = useState(null);
 
+  // Here we will preload all the images
+  useEffect(() => {
+    let imageList = [
+      winkingFinal,
+      encourageFinal,
+      arrogantFinal,
+      thoughtfulFinal,
+      victoriousFinal,
+    ];
+
+    imageList.map((image) => {
+      new Image().src = image;
+    });
+  }, []);
+
   useEffect(() => {
     currentans();
     // scrollToTop();
