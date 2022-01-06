@@ -85,42 +85,50 @@ export default function Header({
           </div>
         </div>
 
-        <AnchorLink
-          href={`${!flag ? "#top" : ""}`}
-          style={{
-            textDecoration: "none",
-            color: "white",
-            padding: "15px 25px 0 0",
-          }}
-        >
-          <Typography
-            className={flag ? "title a" : "hidetitle a"}
-            onClick={() => {
-              flag && scrollToTop();
-              step != 0 && setStep(0);
-              step != 0 && setActiveStep(1);
-              step != 0 && setStatetextforscroll("Accueil");
-            }}
-          >
-            Accueil
-          </Typography>
-        </AnchorLink>
-        <AnchorLink
-          href={`${!flag ? "#comment" : ""}`}
-          style={{ textDecoration: "none", color: "white", paddingTop: "15px" }}
-        >
-          <Typography
-            className={flag ? "title b" : "hidetitle b"}
-            onClick={() => {
-              flag && scrollToTopforComment();
-              step != 0 && setStep(0);
-              step != 0 && setActiveStep(1);
-              step != 0 && setStatetextforscroll("Comment");
-            }}
-          >
-            Comment ça marche?
-          </Typography>
-        </AnchorLink>
+        {(flag || window.innerWidth > 625) && (
+          <>
+            <AnchorLink
+              href={`${!flag ? "#top" : ""}`}
+              style={{
+                textDecoration: "none",
+                color: "white",
+                padding: "15px 25px 0 0",
+              }}
+            >
+              <Typography
+                className={flag ? "title a" : "hidetitle a"}
+                onClick={() => {
+                  flag && scrollToTop();
+                  step != 0 && setStep(0);
+                  step != 0 && setActiveStep(1);
+                  step != 0 && setStatetextforscroll("Accueil");
+                }}
+              >
+                Accueil
+              </Typography>
+            </AnchorLink>
+            <AnchorLink
+              href={`${!flag ? "#comment" : ""}`}
+              style={{
+                textDecoration: "none",
+                color: "white",
+                paddingTop: "15px",
+              }}
+            >
+              <Typography
+                className={flag ? "title b" : "hidetitle b"}
+                onClick={() => {
+                  flag && scrollToTopforComment();
+                  step != 0 && setStep(0);
+                  step != 0 && setActiveStep(1);
+                  step != 0 && setStatetextforscroll("Comment");
+                }}
+              >
+                Comment ça marche?
+              </Typography>
+            </AnchorLink>
+          </>
+        )}
       </Toolbar>
     </AppBar>
   );
