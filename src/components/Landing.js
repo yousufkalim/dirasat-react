@@ -7,6 +7,7 @@ import logo from "../assets/img/logo1.png";
 import VideoImage from "../assets/img/videoimg.png";
 import scrollToTop from "../utils/ScrollTop";
 import video1 from "../assets/video/orientatorVideo.mp4";
+import thumbnail from "../assets/img/thumbnail.jpg";
 
 import jsPDF from "jspdf";
 import * as htmlToImage from "html-to-image";
@@ -103,6 +104,7 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
           <video
             id="video"
             src={video1}
+            poster={thumbnail}
             className="videImage"
             controls="controls"
             autoplay={true}
