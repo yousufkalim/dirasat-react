@@ -116,11 +116,11 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
 
           {/* <img src={VideoImage} className="videImage" /> */}
         </div>
-        <div className="desktopView goback">
+        {/* <div className="desktopView goback">
           <button className="goBackbutton" onClick={exportPdf}>
             Exporter le PDF
           </button>
-        </div>
+        </div> */}
         <Grid
           container
           spacing={3}
