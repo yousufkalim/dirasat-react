@@ -121,7 +121,7 @@ const Result = () => {
       if (btsResult) {
         pdf.addPage();
         // for specific width height
-        pdf.addImage(btsResult, "PNG", 0, 0, 210, 300);
+        pdf.addImage(btsResult, "PNG", 0, 0, 205, 315);
         // for desktop
         // pdf.addImage(btsResult, "PNG", 0, 0, 210, 375);
         // for ten result
@@ -130,7 +130,7 @@ const Result = () => {
       if (licenceResult) {
         pdf.addPage();
         // for specific width height
-        pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
+        pdf.addImage(licenceResult, "PNG", 0, 0, 205, 315);
         // for desktop
         // pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
         // for ten result
@@ -139,7 +139,7 @@ const Result = () => {
       if (butResult) {
         pdf.addPage();
         // for specific width height
-        pdf.addImage(butResult, "PNG", 0, 0, 210, 300);
+        pdf.addImage(butResult, "PNG", 0, 0, 205, 315);
         // for desktop
         // pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
         // for ten result
@@ -148,7 +148,7 @@ const Result = () => {
       if (cpgeResult) {
         pdf.addPage();
         // for specific width height
-        pdf.addImage(cpgeResult, "PNG", 0, 0, 210, 300);
+        pdf.addImage(cpgeResult, "PNG", 0, 0, 205, 315);
         // for desktop
         // pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
         // for ten result
@@ -157,7 +157,7 @@ const Result = () => {
       if (ecoleResult) {
         pdf.addPage();
         // for specific width height
-        pdf.addImage(ecoleResult, "PNG", 0, 0, 210, 300);
+        pdf.addImage(ecoleResult, "PNG", 0, 0, 205, 315);
         // for desktop
         // pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
         // for ten result

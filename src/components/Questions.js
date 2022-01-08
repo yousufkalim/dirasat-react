@@ -222,7 +222,7 @@ const Questions = ({ setStep, setActiveStep }) => {
                   />
                 )}
                 {getQuestion()?.question ==
-                  "Maintenant dis-moi si tu veux inclure les formations sélectives :" && (
+                  "Maintenant dis-moi si tu veux inclure les formations sélectives:" && (
                   <InfoIcon
                     className="infoIcon"
                     onClick={(e) => handleClickinfo(e, 3)}
