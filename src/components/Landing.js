@@ -131,7 +131,7 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
           <Grid item xs={12} sm={4}>
             <img src={f1} className="footerimg" />
             <h4 className="h4">Étape 1</h4>
-            <p className="p3">Dis a Orientator qui tu es.</p>
+            <p className="p3">Dis à Orientator qui tu es.</p>
           </Grid>
           <Grid item xs={12} sm={4}>
             <img src={f2} className="footerimg" />

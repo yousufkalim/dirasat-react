@@ -46,6 +46,31 @@ let education = [
   "Terminale STHR",
   "Terminale STAV",
 ];
+const days = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+const months = [
+  "Janvier",
+  "Février",
+  "Mars",
+  "Avril",
+  "Mai",
+  "Juin",
+  "Juillet",
+  "Août",
+  "Septembre",
+  "Octobre",
+  "Novembre",
+  "Décembre",
+];
+
+const locale = {
+  localize: {
+    day: (n) => days[n],
+    month: (n) => months[n],
+  },
+  formatLong: {
+    date: () => "dd/MM/yyyy",
+  },
+};
 
 const UserForm = ({ setStep, setActiveStep }) => {
   // initialize ContextStore
@@ -331,7 +356,8 @@ const UserForm = ({ setStep, setActiveStep }) => {
                 <DatePicker
                   selected={date_of_birth}
                   // locale={selectedDateLang}
-                  dateFormat="dd/MM/yyyy"
+                  locale={locale}
+                  // dateFormat="dd/MM/yyyy"
                   onChange={onChangeDate}
                   className="inputField"
                   value={date_of_birth}
