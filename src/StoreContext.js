@@ -38,6 +38,8 @@ export function StoreProvider({ children }) {
     licenceResult: null,
     cpgeResult: null,
     ecoleResult: null,
+    ecoleResult: null,
+    screenshoots: [],
   });
 
   const updateStore = (data) => {

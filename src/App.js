@@ -1,5 +1,5 @@
 // Init
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import { ToastContainer, Flip } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -10,11 +10,30 @@ import SetAuthToken from "./utils/SetAuthToken";
 
 // Component
 function App() {
+  useEffect(() => {
+    console.log("window.screen.orientation", window.screen.orientation);
+    window.addEventListener(
+      "orientationchange",
+      function () {
+        // if (window.screen.orientation.angle !== 0) {
+        //   alert("This App Not support to landscape mode");
+        // }
+        let mql = window.matchMedia("(orientation: portrait)");
+        if (mql.matches) {
+          alert(
+            "Veuillez utiliser le mode Portrait pour un meilleur comportement."
+          );
+        }
+      },
+      false
+    );
+  }, []);
   if (localStorage.token) {
     SetAuthToken(localStorage.token);
   }
+
   return (
-    <div className="App">
+    <div className={`App `}>
       {/* tostify Container for Notification */}
       <ToastContainer
         position="bottom-right"

@@ -111,6 +111,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
     label2: "",
   });
   const [loading, setLoading] = useState(false);
+  const [imgloading, setImgLoading] = useState(true);
 
   // Destructuring of UserForm State
   const {
@@ -317,259 +318,283 @@ const UserForm = ({ setStep, setActiveStep }) => {
     setLoading(false);
   };
   return (
-    <Grid container spacing={2} className="mainuserform">
-      <Grid item xs={12} sm={4} className="dummyGrid">
-        <img src={veryExcited} className="veryExitedImg " />
-      </Grid>
-      <Grid item xs={12} sm={8} className="responsiveform">
-        {/* <button onClick={play}>play</button> */}
-        <form autoComplete="off" onSubmit={handleSubmit} className="userForm">
-          <Grid container className="userformgrid">
-            <Grid item xs={12} sm={12} className="">
-              <h3 className="formheading">
-                Pour mieux te conseiller, j’ai besoin <br className="br" />
-                d’en savoir davantage sur toi!
-              </h3>
-            </Grid>
-            <Grid container spacing={2} className="inputgrid1">
-              <Grid item xs={12} sm={6} className="inputGrid">
-                <input
-                  name="first_name"
-                  placeholder="Prénom"
-                  className="inputField"
-                  value={first_name}
-                  onChange={onChange}
-                />
-              </Grid>
-              <Grid item xs={12} sm={6} className="inputGrid">
-                <input
-                  name="last_name"
-                  value={last_name}
-                  onChange={onChange}
-                  placeholder="Nom"
-                  className="inputField"
-                />
-              </Grid>
-            </Grid>
-            <Grid container spacing={2} className="inputgrid1">
-              <Grid item xs={12} sm={6} className="inputGrid">
-                <DatePicker
-                  selected={date_of_birth}
-                  // locale={selectedDateLang}
-                  locale={locale}
-                  // dateFormat="dd/MM/yyyy"
-                  onChange={onChangeDate}
-                  className="inputField"
-                  value={date_of_birth}
-                  autoComplete="off"
-                  placeholderText="Date de naissance"
-                  openToDate={new Date("2003/01/01")}
-                  dropdownMode="select"
-                  showYearDropdown
-                  showMonthDropdown
-                  adjustDateOnChange
-                />
-              </Grid>
-              <Grid item xs={12} sm={6} className="inputGrid">
-                <Autocomplete
-                  options={values}
-                  classes={{
-                    option: classes.option,
-                    // noOptions: classes.noOptions,
-                  }}
-                  noOptionsText={
-                    <div style={{ color: "white", fontSize: "12px" }}>
-                      {" "}
-                      aucune option{" "}
-                    </div>
-                  }
-                  PaperComponent={({ children }) => (
-                    <Paper style={{ background: "#242635" }}>{children}</Paper>
-                  )}
-                  getOptionLabel={(option) => option.label2 || ""}
-                  onChange={SetAddress}
-                  hiddenLabel="true"
-                  style={{
-                    width: "91%",
-                    margin: "auto",
-                  }}
-                  renderInput={(params) => (
-                    <TextField
-                      classes={{ root: classes.customTextField }}
-                      {...params}
-                      placeholder="Adresse"
-                      style={{ color: "white" }}
-                      variant="outlined"
-                      onChange={getAllAdress}
-                      value={address}
-                    />
-                  )}
-                />
-              </Grid>
-            </Grid>
-            <Grid container spacing={2} className="">
-              <Grid item xs={12} sm={6} className="inputGrid">
-                <input
-                  type="email"
-                  name="email"
-                  value={email}
-                  onChange={onChange}
-                  placeholder="E-mail"
-                  className="inputField"
-                />
-              </Grid>
-              <Grid item xs={12} sm={6} className="inputGrid">
-                <input
-                  type="tel"
-                  name="phone"
-                  value={phone}
-                  onChange={onChange}
-                  maxlength="10"
-                  placeholder="Numéro de téléphone"
-                  className="inputField"
-                />
-              </Grid>
-            </Grid>
-            <Grid container spacing={2} className="">
-              <Grid item xs={12} sm={6} className="inputGrid">
-                <FormControl variant="outlined" className="selectformControl">
-                  {/* <InputLabel id="demo-simple-select-outlined-label">
-                    {education_level ? "clsse" : " classe "}
-                  </InputLabel> */}
-                  <Select
-                    labelId="demo-simple-select-outlined-label"
-                    id="demo-simple-select-outlined"
-                    name="education_level"
-                    value={education_level}
-                    defaultValue={education_level}
-                    onChange={onChange}
-                    className={classes.select}
-                    className="selectforeducation"
-                    onFocus={handleBlurSchools}
-                  >
-                    <MenuItem
-                      value="Classe"
-                      disabled
-                      style={{ textAlign: "left !important" }}
-                    >
-                      <em>{flagforSchool ? "College" : "Classe"}</em>
-                    </MenuItem>
-                    {education.map((edu, i) => {
-                      return (
-                        <MenuItem value={edu} disabled={i == 2}>
-                          {edu}
-                        </MenuItem>
-                      );
-                    })}
-                  </Select>
-                </FormControl>
-              </Grid>
-
-              <Grid item xs={12} sm={6} className="inputGrid">
-                <Autocomplete
-                  classes={{
-                    option: classes.option,
-                  }}
-                  noOptionsText={
-                    <div style={{ color: "white", fontSize: "12px" }}>
-                      {" "}
-                      Saisissez le nom de votre établissement s’il n’apparait
-                      pas{" "}
-                    </div>
-                  }
-                  PaperComponent={({ children }) => (
-                    <Paper style={{ background: "#242635" }}>{children}</Paper>
-                  )}
-                  options={
-                    education_level == "Quatrième" ||
-                    education_level == "Troisième"
-                      ? institutes?.filter(
-                          (institute) => institute.type == "College"
-                        )
-                      : institutes?.filter(
-                          (institute) => institute.type == "School"
-                        )
-                  }
-                  freeSolo
-                  getOptionLabel={(option) => option.name}
-                  onChange={handleChangeSchool}
-                  style={{
-                    width: "91%",
-                    margin: "auto",
-                  }}
-                  renderInput={(params) => (
-                    <TextField
-                      classes={{ root: classes.customTextField }}
-                      {...params}
-                      placeholder="Établissement actuel"
-                      variant="outlined"
-                      value={institute}
-                      name="institute"
+    <>
+      <Grid container spacing={2} className="mainuserform">
+        {imgloading && (
+          <div className="formloading">
+            <CircularProgress color="white" size="4rem" />
+          </div>
+        )}
+        <Grid item xs={12} sm={4} className="dummyGrid">
+          <img
+            src={veryExcited}
+            className="veryExitedImg "
+            onLoad={() => setImgLoading(false)}
+          />
+        </Grid>
+        {!imgloading && (
+          <Grid item xs={12} sm={8} className="responsiveform">
+            {/* <button onClick={play}>play</button> */}
+            <form
+              autoComplete="off"
+              onSubmit={handleSubmit}
+              className="userForm"
+            >
+              <Grid container className="userformgrid">
+                <Grid item xs={12} sm={12} className="">
+                  <h3 className="formheading">
+                    Pour mieux te conseiller, j’ai besoin <br className="br" />
+                    d’en savoir davantage sur toi!
+                  </h3>
+                </Grid>
+                <Grid container spacing={2} className="inputgrid1">
+                  <Grid item xs={12} sm={6} className="inputGrid">
+                    <input
+                      name="first_name"
+                      placeholder="Prénom"
+                      className="inputField"
+                      value={first_name}
                       onChange={onChange}
                     />
-                  )}
-                  // value={!education_level && ""}
-                  disabled={!education_level || education_level == "Classe"}
-                />
-              </Grid>
-            </Grid>
-            <Grid container spacing={1} className="termsandconditionGrid">
-              <Checkbox
-                inputProps={{ "aria-label": "secondary checkbox" }}
-                style={{ color: "white" }}
-                name="accept_condition"
-                value={accept_condition}
-                onChange={onChange}
-              />
-              <span className="termsandcondition">
-                J’accepte les termes et les conditions
-              </span>
-            </Grid>
-            <Grid container spacing={2} className="formbuttonsGrid">
-              <Grid xs={12} sm={4}>
-                <div
-                  size="large"
-                  className="formbackbutton"
-                  onClick={() => setStep(0)}
-                >
-                  <img src={arrowleft} className="arrowleft" />
-                  <b> Retour</b>
-                </div>
-              </Grid>
+                  </Grid>
+                  <Grid item xs={12} sm={6} className="inputGrid">
+                    <input
+                      name="last_name"
+                      value={last_name}
+                      onChange={onChange}
+                      placeholder="Nom"
+                      className="inputField"
+                    />
+                  </Grid>
+                </Grid>
+                <Grid container spacing={2} className="inputgrid1">
+                  <Grid item xs={12} sm={6} className="inputGrid">
+                    <DatePicker
+                      selected={date_of_birth}
+                      // locale={selectedDateLang}
+                      locale={locale}
+                      // dateFormat="dd/MM/yyyy"
+                      onChange={onChangeDate}
+                      className="inputField"
+                      value={date_of_birth}
+                      autoComplete="off"
+                      placeholderText="Date de naissance"
+                      openToDate={new Date("2003/01/01")}
+                      dropdownMode="select"
+                      showYearDropdown
+                      showMonthDropdown
+                      adjustDateOnChange
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={6} className="inputGrid">
+                    <Autocomplete
+                      options={values}
+                      classes={{
+                        option: classes.option,
+                        // noOptions: classes.noOptions,
+                      }}
+                      noOptionsText={
+                        <div style={{ color: "white", fontSize: "12px" }}>
+                          {" "}
+                          aucune option{" "}
+                        </div>
+                      }
+                      PaperComponent={({ children }) => (
+                        <Paper style={{ background: "#242635" }}>
+                          {children}
+                        </Paper>
+                      )}
+                      getOptionLabel={(option) => option.label2 || ""}
+                      onChange={SetAddress}
+                      hiddenLabel="true"
+                      style={{
+                        width: "91%",
+                        margin: "auto",
+                      }}
+                      renderInput={(params) => (
+                        <TextField
+                          classes={{ root: classes.customTextField }}
+                          {...params}
+                          placeholder="Adresse"
+                          style={{ color: "white" }}
+                          variant="outlined"
+                          onChange={getAllAdress}
+                          value={address}
+                        />
+                      )}
+                    />
+                  </Grid>
+                </Grid>
+                <Grid container spacing={2} className="">
+                  <Grid item xs={12} sm={6} className="inputGrid">
+                    <input
+                      type="email"
+                      name="email"
+                      value={email}
+                      onChange={onChange}
+                      placeholder="E-mail"
+                      className="inputField"
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={6} className="inputGrid">
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={phone}
+                      onChange={onChange}
+                      maxlength="10"
+                      placeholder="Numéro de téléphone"
+                      className="inputField"
+                    />
+                  </Grid>
+                </Grid>
+                <Grid container spacing={2} className="">
+                  <Grid item xs={12} sm={6} className="inputGrid">
+                    <FormControl
+                      variant="outlined"
+                      className="selectformControl"
+                    >
+                      {/* <InputLabel id="demo-simple-select-outlined-label">
+                    {education_level ? "clsse" : " classe "}
+                  </InputLabel> */}
+                      <Select
+                        labelId="demo-simple-select-outlined-label"
+                        id="demo-simple-select-outlined"
+                        name="education_level"
+                        value={education_level}
+                        defaultValue={education_level}
+                        onChange={onChange}
+                        className={classes.select}
+                        className="selectforeducation"
+                        onFocus={handleBlurSchools}
+                      >
+                        <MenuItem
+                          value="Classe"
+                          disabled
+                          style={{ textAlign: "left !important" }}
+                        >
+                          <em>{flagforSchool ? "College" : "Classe"}</em>
+                        </MenuItem>
+                        {education.map((edu, i) => {
+                          return (
+                            <MenuItem value={edu} disabled={i == 2}>
+                              {edu}
+                            </MenuItem>
+                          );
+                        })}
+                      </Select>
+                    </FormControl>
+                  </Grid>
 
-              <Grid xs={12} sm={4}></Grid>
+                  <Grid item xs={12} sm={6} className="inputGrid">
+                    <Autocomplete
+                      classes={{
+                        option: classes.option,
+                      }}
+                      noOptionsText={
+                        <div style={{ color: "white", fontSize: "12px" }}>
+                          {" "}
+                          Saisissez le nom de votre établissement s’il
+                          n’apparait pas{" "}
+                        </div>
+                      }
+                      PaperComponent={({ children }) => (
+                        <Paper style={{ background: "#242635" }}>
+                          {children}
+                        </Paper>
+                      )}
+                      options={
+                        education_level == "Quatrième" ||
+                        education_level == "Troisième"
+                          ? institutes?.filter(
+                              (institute) => institute.type == "College"
+                            )
+                          : institutes?.filter(
+                              (institute) => institute.type == "School"
+                            )
+                      }
+                      freeSolo
+                      getOptionLabel={(option) => option.name}
+                      onChange={handleChangeSchool}
+                      style={{
+                        width: "91%",
+                        margin: "auto",
+                      }}
+                      renderInput={(params) => (
+                        <TextField
+                          classes={{ root: classes.customTextField }}
+                          {...params}
+                          placeholder="Établissement actuel"
+                          variant="outlined"
+                          value={institute}
+                          name="institute"
+                          onChange={onChange}
+                        />
+                      )}
+                      // value={!education_level && ""}
+                      disabled={!education_level || education_level == "Classe"}
+                    />
+                  </Grid>
+                </Grid>
+                <Grid container spacing={1} className="termsandconditionGrid">
+                  <Checkbox
+                    inputProps={{ "aria-label": "secondary checkbox" }}
+                    style={{ color: "white" }}
+                    name="accept_condition"
+                    value={accept_condition}
+                    onChange={onChange}
+                  />
+                  <span className="termsandcondition">
+                    J’accepte les termes et les conditions
+                  </span>
+                </Grid>
+                <Grid container spacing={2} className="formbuttonsGrid">
+                  <Grid xs={12} sm={4}>
+                    <div
+                      size="large"
+                      className="formbackbutton"
+                      onClick={() => setStep(0)}
+                    >
+                      <img src={arrowleft} className="arrowleft" />
+                      <b> Retour</b>
+                    </div>
+                  </Grid>
 
-              <Grid xs={12} sm={4}>
-                <button
-                  variant="contained"
-                  className="formSubmitButton"
-                  size="large"
-                  type="submit"
-                  disabled={loading}
-                  style={{ opacity: `${loading ? "0.5" : "1"}` }}
-                >
-                  <b>
-                    {" "}
-                    {loading ? (
-                      <div className="circulardiv">
-                        <CircularProgress size={20} className="" />
-                      </div>
-                    ) : (
-                      "Commencer le test"
-                    )}
-                  </b>
-                </button>
+                  <Grid xs={12} sm={4}></Grid>
+
+                  <Grid xs={12} sm={4}>
+                    <button
+                      variant="contained"
+                      className="formSubmitButton"
+                      size="large"
+                      type="submit"
+                      disabled={loading}
+                      style={{ opacity: `${loading ? "0.5" : "1"}` }}
+                    >
+                      <b>
+                        {" "}
+                        {loading ? (
+                          <div className="circulardiv">
+                            <CircularProgress size={20} className="" />
+                          </div>
+                        ) : (
+                          "Commencer le test"
+                        )}
+                      </b>
+                    </button>
+                  </Grid>
+                </Grid>
               </Grid>
-            </Grid>
+            </form>
+            <ConfirmationPopup
+              confirmationOpen={confirmationOpen}
+              SetconfirmationOpen={SetconfirmationOpen}
+              setStep={setStep}
+            />
           </Grid>
-        </form>
-        <ConfirmationPopup
-          confirmationOpen={confirmationOpen}
-          SetconfirmationOpen={SetconfirmationOpen}
-          setStep={setStep}
-        />
+        )}{" "}
       </Grid>
-    </Grid>
+    </>
   );
 };
 export default UserForm;

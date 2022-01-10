@@ -22,3 +22,28 @@ body {
   font-weight: inherit !important;
   font-style: normal !important;
 }
+
+/* @media only screen and (orientation: landscape) {
+  body {
+    height: 100vw;
+    transform: rotate(-90deg);
+  }
+} */
+/* @media screen and (orientation: landscape) {
+  body {
+    height: 100vw;
+    transform-origin: 0 0;
+  }
+} */
+
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  html {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+}
