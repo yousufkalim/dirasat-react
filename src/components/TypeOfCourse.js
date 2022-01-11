@@ -7,7 +7,7 @@ import showhide from "../assets/icons/showhide.png";
 import hide from "../assets/icons/hide.png";
 import * as html2canvas from "html2canvas";
 
-const TypeOfCourse = ({ type, percentage, courses, index }) => {
+const TypeOfCourse = ({ type, percentage, courses, result }) => {
   const updateStore = UpdateStore();
   const { screenshoots } = Store();
 
@@ -18,8 +18,7 @@ const TypeOfCourse = ({ type, percentage, courses, index }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const getresultpageforPdf = () => {
-    console.log("type is ", type, index);
-    getScreenShoot(type);
+    // getScreenShoot(type);
     let domElement = document.getElementById(type);
     html2canvas(domElement, {
       // ignoreElements: function (element) {
@@ -27,7 +26,7 @@ const TypeOfCourse = ({ type, percentage, courses, index }) => {
       //     return true;
       //   }
       // },
-      // width: 1300,
+      width: 1300,
       height: 1750,
       backgroundColor: "#282b38",
     }).then((canvas) => {
@@ -53,10 +52,6 @@ const TypeOfCourse = ({ type, percentage, courses, index }) => {
     });
   };
 
-  const getScreenShoot = (type) => {
-    console.log("screenshot in type", type);
-    updateStore({ screenshoots: [...screenshoots, { type }] });
-  };
   const [open, setOpen] = useState(false);
   const getPercentageColor = (percentage) => {
     if (percentage >= 41) {
