@@ -31,7 +31,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   },
 }));
 export default function InviteBox({ open, setOpen }) {
-  const url = "orientator-demo.web.app";
+  const url = "www.orientator.com";
   const handleClose = () => {
     setOpen(false);
   };
@@ -54,7 +54,10 @@ export default function InviteBox({ open, setOpen }) {
           <h2 className="dialogHeading">Partager sur</h2>
           <Grid container spacing={1} className="invitedialoginputGrid">
             <Grid item sm={3}>
-              <FacebookShareButton url={url} quote="orientator">
+              <FacebookShareButton
+                url={url}
+                quote="Salut! Je viens de faire le test d'Orientator dans le cadre de mon orientation post-bac et je suis fin pr$et pour Parcoursup! À ton tour sur "
+              >
                 <FacebookIcon round={true} className="socialIcons" />
               </FacebookShareButton>
             </Grid>
@@ -65,7 +68,14 @@ export default function InviteBox({ open, setOpen }) {
             </Grid>
 
             <Grid item sm={3}>
-              <EmailShareButton url={url} quote="orientator">
+              <EmailShareButton
+                url={url}
+                subject="À ton tour de faire ton test Orientator!"
+                body={
+                  "Salut! Je viens de faire le test d'Orientator dans le cadre de mon orientation post-bac et je suis fin pr$et pour Parcoursup! \n\n À ton tour sur "
+                }
+                quote="orientator"
+              >
                 <MailOutlineIcon round={true} className="socialIcons" />
               </EmailShareButton>
             </Grid>

@@ -373,7 +373,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       selected={date_of_birth}
                       // locale={selectedDateLang}
                       locale={locale}
-                      // dateFormat="dd/MM/yyyy"
+                      dateFormat="dd/MM/yyyy"
                       onChange={onChangeDate}
                       className="inputField"
                       value={date_of_birth}

@@ -21,7 +21,7 @@ function App() {
         let mql = window.matchMedia("(orientation: portrait)");
         if (mql.matches) {
           alert(
-            "Veuillez utiliser le mode Portrait pour un meilleur comportement."
+            "Pour une meilleure expérieur utilisateur, nous vous conseillons de pivoter votre appareil pour être en mode Portrait."
           );
         }
       },

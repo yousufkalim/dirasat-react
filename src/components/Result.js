@@ -104,8 +104,9 @@ const Result = () => {
       // document.body.appendChild(canvas);
     });
   };
+
   // console.log("licenceResult", licenceResult[0].canvas, licenceResult[0].index);
-  console.log("screenshot in store", screenshoots);
+  console.log("screenshot in store", screenshoots, "res", result?.data);
 
   const exportPdf = async () => {
     setExportLoading(true);
@@ -118,8 +119,13 @@ const Result = () => {
       if (mainresultPage) {
         pdf.addImage(mainresultPage, "PNG", 30, 165, 150, 100);
       }
+
       if (btsResult) {
         pdf.addPage();
+
+        // backgroung Color
+        pdf.setFillColor(40, 43, 56);
+        pdf.rect(0, 0, 350, 350, "F");
         // for specific width height
         pdf.addImage(btsResult, "PNG", 0, 0, 210, 315);
         // for desktop
@@ -129,6 +135,9 @@ const Result = () => {
       }
       if (licenceResult) {
         pdf.addPage();
+        // backgroung Color
+        pdf.setFillColor(40, 43, 56);
+        pdf.rect(0, 0, 350, 350, "F");
         // for specific width height
         pdf.addImage(licenceResult, "PNG", 0, 0, 210, 315);
         // for desktop
@@ -138,6 +147,9 @@ const Result = () => {
       }
       if (butResult) {
         pdf.addPage();
+        // backgroung Color
+        pdf.setFillColor(40, 43, 56);
+        pdf.rect(0, 0, 350, 350, "F");
         // for specific width height
         pdf.addImage(butResult, "PNG", 0, 0, 210, 315);
         // for desktop
@@ -147,6 +159,9 @@ const Result = () => {
       }
       if (cpgeResult) {
         pdf.addPage();
+        // backgroung Color
+        pdf.setFillColor(40, 43, 56);
+        pdf.rect(0, 0, 350, 350, "F");
         // for specific width height
         pdf.addImage(cpgeResult, "PNG", 0, 0, 210, 315);
         // for desktop
@@ -156,6 +171,9 @@ const Result = () => {
       }
       if (ecoleResult) {
         pdf.addPage();
+        // backgroung Color
+        pdf.setFillColor(40, 43, 56);
+        pdf.rect(0, 0, 350, 350, "F");
         // for specific width height
         pdf.addImage(ecoleResult, "PNG", 0, 0, 210, 315);
         // for desktop
@@ -184,7 +202,7 @@ const Result = () => {
             >
               <div className="resultBoxText">
                 <h1 className="resultHeading" style={{ textAlign: "center" }}>
-                  Bravo ! Tu as répondu à toutes les questions !
+                  Bravo! Tu as répondu à toutes les questions!
                 </h1>
                 {/* <button onClick={onButtonClick}>Download PDF</button> */}
                 {loading ? (
@@ -288,7 +306,7 @@ const Result = () => {
                             {item.courses ? (
                               <TypeOfCourse
                                 type={item?.type}
-                                index={index}
+                                result={result?.data}
                                 percentage={item?.percentage}
                                 courses={item?.courses}
                               />
@@ -309,7 +327,7 @@ const Result = () => {
                             margin: "auto",
                             color: "grey",
                           }}
-                          className="desktopView"
+                          // className="desktopView"
                         >
                           <p>
                             Tu ne trouves pas ce que tu t’attendais à voir dans
