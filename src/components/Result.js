@@ -31,6 +31,7 @@ const Result = () => {
     ecoleResult,
     cpgeResult,
     screenshoots,
+    allTypes,
   } = Store();
   const [loading, setLoading] = useState(false);
   const [resultStep, setresultStep] = useState(0);
@@ -106,7 +107,8 @@ const Result = () => {
   };
 
   // console.log("licenceResult", licenceResult[0].canvas, licenceResult[0].index);
-  console.log("screenshot in store", screenshoots, "res", result?.data);
+  console.log("screenshot in store", screenshoots);
+  console.log("allTypes in store", allTypes);
 
   const exportPdf = async () => {
     setExportLoading(true);
@@ -119,68 +121,18 @@ const Result = () => {
       if (mainresultPage) {
         pdf.addImage(mainresultPage, "PNG", 30, 165, 150, 100);
       }
-
-      if (btsResult) {
-        pdf.addPage();
-
-        // backgroung Color
-        pdf.setFillColor(40, 43, 56);
-        pdf.rect(0, 0, 350, 350, "F");
-        // for specific width height
-        pdf.addImage(btsResult, "PNG", 0, 0, 210, 315);
-        // for desktop
-        // pdf.addImage(btsResult, "PNG", 0, 0, 210, 375);
-        // for ten result
-        // pdf.addImage(btsResult, "PNG", 0, 0, 210, 300);
-      }
-      if (licenceResult) {
+      allTypes?.map((type) => {
         pdf.addPage();
         // backgroung Color
         pdf.setFillColor(40, 43, 56);
         pdf.rect(0, 0, 350, 350, "F");
         // for specific width height
-        pdf.addImage(licenceResult, "PNG", 0, 0, 210, 315);
+        pdf.addImage(type?.canvas, "PNG", 0, 0, 210, 315);
         // for desktop
         // pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
         // for ten result
         // pdf.addImage(btsResult, "PNG", 0, 0, 210, 300);
-      }
-      if (butResult) {
-        pdf.addPage();
-        // backgroung Color
-        pdf.setFillColor(40, 43, 56);
-        pdf.rect(0, 0, 350, 350, "F");
-        // for specific width height
-        pdf.addImage(butResult, "PNG", 0, 0, 210, 315);
-        // for desktop
-        // pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
-        // for ten result
-        // pdf.addImage(btsResult, "PNG", 0, 0, 210, 300);
-      }
-      if (cpgeResult) {
-        pdf.addPage();
-        // backgroung Color
-        pdf.setFillColor(40, 43, 56);
-        pdf.rect(0, 0, 350, 350, "F");
-        // for specific width height
-        pdf.addImage(cpgeResult, "PNG", 0, 0, 210, 315);
-        // for desktop
-        // pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
-        // for ten result
-        // pdf.addImage(btsResult, "PNG", 0, 0, 210, 300);
-      }
-      if (ecoleResult) {
-        pdf.addPage();
-        // backgroung Color
-        pdf.setFillColor(40, 43, 56);
-        pdf.rect(0, 0, 350, 350, "F");
-        // for specific width height
-        pdf.addImage(ecoleResult, "PNG", 0, 0, 210, 315);
-        // for desktop
-        // pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
-        // for ten result
-        // pdf.addImage(btsResult, "PNG", 0, 0, 210, 300);
-      }
+      });
 
       pdf.save("download.pdf");
       setExportLoading(false);

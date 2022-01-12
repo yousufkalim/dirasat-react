@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
 import DetailofCourses from "../components/DetailofCourses";
-import { Store, UpdateStore } from "../StoreContext";
+import { Store, UpdateStore, TypeUpdate } from "../StoreContext";
 import search from "../assets/icons/search.png";
 import showhide from "../assets/icons/showhide.png";
 import hide from "../assets/icons/hide.png";
@@ -9,7 +9,8 @@ import * as html2canvas from "html2canvas";
 
 const TypeOfCourse = ({ type, percentage, courses, result }) => {
   const updateStore = UpdateStore();
-  const { screenshoots } = Store();
+  const typeUpdate = TypeUpdate();
+  const { screenshoots, results } = Store();
 
   const [showDetail, setShowDetail] = useState(true);
 
@@ -18,7 +19,7 @@ const TypeOfCourse = ({ type, percentage, courses, result }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const getresultpageforPdf = () => {
-    // getScreenShoot(type);
+    // console.log("type in type of courses", type);
     let domElement = document.getElementById(type);
     html2canvas(domElement, {
       // ignoreElements: function (element) {
@@ -30,24 +31,7 @@ const TypeOfCourse = ({ type, percentage, courses, result }) => {
       height: 1750,
       backgroundColor: "#282b38",
     }).then((canvas) => {
-      if (type == "BUT") {
-        updateStore({ butResult: canvas });
-      }
-      if (type == "Licence") {
-        updateStore({ licenceResult: canvas });
-
-        // updateStore({ licenceResult: [{ index, index, canvas: canvas }] });
-      }
-      if (type == "BTS") {
-        updateStore({ btsResult: canvas });
-      }
-      if (type == "Ecole Post-Bac") {
-        updateStore({ ecoleResult: canvas });
-      }
-      if (type == "CPGE") {
-        updateStore({ cpgeResult: canvas });
-      }
-      // document.body.appendChild(canvas);
+      typeUpdate({ canvas, type });
       setShowDetail(false);
     });
   };

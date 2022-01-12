@@ -292,6 +292,9 @@
 }
 /* for big screens */
 @media only screen and (min-device-width: 613px) and (max-device-width: 959px) {
+  .mobileView {
+    display: inherit !important;
+  }
   .desktopView {
     display: none !important;
   }
@@ -316,6 +319,9 @@
 }
 /* for big screens */
 @media only screen and (min-device-width: 960px) and (max-device-width: 1200px) {
+  .mobileView {
+    display: inherit !important;
+  }
   .desktopView {
     display: none !important;
   }
