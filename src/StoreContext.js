@@ -4,6 +4,7 @@ import React, { useContext, useState, createContext } from "react";
 // Initializing Create Context Hook
 const storeContext = createContext();
 const storeUpdateContext = createContext();
+const typeUpdateContext = createContext();
 
 // We are also initializing useContexts here then we only call these functions where we need that data
 export function Store() {
@@ -12,6 +13,10 @@ export function Store() {
 
 export function UpdateStore() {
   return useContext(storeUpdateContext);
+}
+
+export function TypeUpdate() {
+  return useContext(typeUpdateContext);
 }
 
 // Initializing Store Provider
@@ -32,6 +37,7 @@ export function StoreProvider({ children }) {
     history: [],
     disc_ans_id: [],
     result: {},
+    allTypes: [],
     mainresultPage: null,
     btsResult: null,
     butResult: null,
@@ -51,11 +57,22 @@ export function StoreProvider({ children }) {
     });
   };
 
+  const typeUpdate = (data) => {
+    setStore((prev) => {
+      return {
+        ...prev,
+        allTypes: [...prev.allTypes, data],
+      };
+    });
+  };
+
   // Render
   return (
     <storeContext.Provider value={store}>
       <storeUpdateContext.Provider value={updateStore}>
-        {children}
+        <typeUpdateContext.Provider value={typeUpdate}>
+          {children}
+        </typeUpdateContext.Provider>
       </storeUpdateContext.Provider>
     </storeContext.Provider>
   );

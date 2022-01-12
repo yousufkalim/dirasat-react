@@ -19,6 +19,8 @@ import arrowleft from "../assets/img/arrow2.png";
 import scrollToTop from "../utils/ScrollTop";
 import DatePicker from "react-datepicker";
 import ConfirmationPopup from "./ConfirmationPopup";
+import enGb from "date-fns/locale/fr";
+import { registerLocale } from "react-datepicker";
 
 import api from "../api";
 
@@ -46,7 +48,9 @@ let education = [
   "Terminale STHR",
   "Terminale STAV",
 ];
-const days = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+// const days = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+// const days = ["Di", "Lu", "Ma", "Me", "Je", "Ve", "Sa"];
+const days = ["Lu", "Ma", "Me", "Je", "Ve", "Sa", "Di"];
 const months = [
   "Janvier",
   "Février",
@@ -73,6 +77,7 @@ const locale = {
 };
 
 const UserForm = ({ setStep, setActiveStep }) => {
+  registerLocale("en-gb", enGb);
   // initialize ContextStore
   const updateStore = UpdateStore();
   const { institutes } = Store();
@@ -372,7 +377,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                     <DatePicker
                       selected={date_of_birth}
                       // locale={selectedDateLang}
-                      locale={locale}
+                      locale={"en-gb"}
                       dateFormat="dd/MM/yyyy"
                       onChange={onChangeDate}
                       className="inputField"
@@ -380,8 +385,12 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       autoComplete="off"
                       placeholderText="Date de naissance"
                       openToDate={new Date("2003/01/01")}
-                      dropdownMode="select"
+                      dropdownMode="scroll"
+                      // dropdownMode="select"
+                      scrollableYearDropdown
                       showYearDropdown
+                      yearDropdownItemNumber={18}
+                      // scrollableYearDropdown
                       showMonthDropdown
                       adjustDateOnChange
                     />
