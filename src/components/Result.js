@@ -226,7 +226,7 @@ const Result = () => {
                   <b>
                     {" "}
                     {screenshootloading
-                      ? "S'il vous plaît, attendez"
+                      ? "veuillez patienter"
                       : "Ma liste Parcoursup"}
                   </b>
                 </button>
