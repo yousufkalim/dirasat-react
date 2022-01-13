@@ -25,11 +25,6 @@ const Result = () => {
     disc_ans_id,
     result,
     mainresultPage,
-    btsResult,
-    butResult,
-    licenceResult,
-    ecoleResult,
-    cpgeResult,
     screenshoots,
     allTypes,
   } = Store();
@@ -127,7 +122,9 @@ const Result = () => {
         pdf.setFillColor(40, 43, 56);
         pdf.rect(0, 0, 350, 350, "F");
         // for specific width height
-        pdf.addImage(type?.canvas, "PNG", 0, 0, 210, 315);
+        var width = pdf.internal.pageSize.getWidth();
+        var height = pdf.internal.pageSize.getHeight();
+        pdf.addImage(type?.canvas, "PNG", 0, 0, width, height);
         // for desktop
         // pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
         // for ten result

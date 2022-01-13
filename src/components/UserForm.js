@@ -49,8 +49,8 @@ let education = [
   "Terminale STAV",
 ];
 // const days = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
-// const days = ["Di", "Lu", "Ma", "Me", "Je", "Ve", "Sa"];
-const days = ["Lu", "Ma", "Me", "Je", "Ve", "Sa", "Di"];
+const days = ["Di", "Lu", "Ma", "Me", "Je", "Ve", "Sa"];
+// const days = ["Lu", "Ma", "Me", "Je", "Ve", "Sa", "Di"];
 const months = [
   "Janvier",
   "Février",
@@ -377,6 +377,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                     <DatePicker
                       selected={date_of_birth}
                       // locale={selectedDateLang}
+                      // locale={locale}
                       locale={"en-gb"}
                       dateFormat="dd/MM/yyyy"
                       onChange={onChangeDate}

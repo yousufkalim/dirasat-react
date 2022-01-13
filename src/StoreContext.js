@@ -39,12 +39,6 @@ export function StoreProvider({ children }) {
     result: {},
     allTypes: [],
     mainresultPage: null,
-    btsResult: null,
-    butResult: null,
-    licenceResult: null,
-    cpgeResult: null,
-    ecoleResult: null,
-    ecoleResult: null,
     screenshoots: [],
   });
 

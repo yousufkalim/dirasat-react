@@ -27,7 +27,7 @@ const TypeOfCourse = ({ type, percentage, courses, result }) => {
       //     return true;
       //   }
       // },
-      width: 1300,
+      // width: 1300,
       height: 1750,
       backgroundColor: "#282b38",
     }).then((canvas) => {
