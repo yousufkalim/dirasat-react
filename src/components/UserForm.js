@@ -188,7 +188,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
         });
     }
   };
-  console.log("inst is ", institute);
   const handleBlurSchools = () => {
     setFlagforSchool(!flagforSchool);
   };
@@ -225,7 +224,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
 
     var addressToSet = []; // //debugger;
     for (var i = 0; i < res?.data?.features?.length; i++) {
-      console.log("address api response", res?.data);
       addressToSet.push({
         id: i,
         label: res?.data?.features[i].properties.label,
@@ -246,8 +244,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
   };
   // Set Address in  setAddressValue State
   const SetAddress = async (item) => {
-    console.log("values is in setAddress", values);
-    console.log("item is in setAddress", item.target.textContent);
     if (item.target.textContent) {
       const selectedItem = item.target.textContent;
       for (var i = 0; i < values.length; i++) {
