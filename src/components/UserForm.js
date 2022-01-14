@@ -225,6 +225,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
 
     var addressToSet = []; // //debugger;
     for (var i = 0; i < res?.data?.features?.length; i++) {
+      console.log("address api response", res?.data);
       addressToSet.push({
         id: i,
         label: res?.data?.features[i].properties.label,
@@ -235,8 +236,8 @@ const UserForm = ({ setStep, setActiveStep }) => {
         }`,
         city: res?.data?.features[i].properties.city,
         PostalCode: res?.data?.features[i].properties.postcode,
-        lat: res?.data?.features[0].geometry.coordinates[1],
-        lng: res?.data?.features[0].geometry.coordinates[0],
+        lat: res?.data?.features[i].geometry.coordinates[1],
+        lng: res?.data?.features[i].geometry.coordinates[0],
       });
     }
     if (addressToSet.length === res?.data?.features.length) {
@@ -245,6 +246,8 @@ const UserForm = ({ setStep, setActiveStep }) => {
   };
   // Set Address in  setAddressValue State
   const SetAddress = async (item) => {
+    console.log("values is in setAddress", values);
+    console.log("item is in setAddress", item.target.textContent);
     if (item.target.textContent) {
       const selectedItem = item.target.textContent;
       for (var i = 0; i < values.length; i++) {
