@@ -188,7 +188,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
         });
     }
   };
-  console.log("inst is ", institute);
   const handleBlurSchools = () => {
     setFlagforSchool(!flagforSchool);
   };
@@ -235,8 +234,8 @@ const UserForm = ({ setStep, setActiveStep }) => {
         }`,
         city: res?.data?.features[i].properties.city,
         PostalCode: res?.data?.features[i].properties.postcode,
-        lat: res?.data?.features[0].geometry.coordinates[1],
-        lng: res?.data?.features[0].geometry.coordinates[0],
+        lat: res?.data?.features[i].geometry.coordinates[1],
+        lng: res?.data?.features[i].geometry.coordinates[0],
       });
     }
     if (addressToSet.length === res?.data?.features.length) {

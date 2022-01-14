@@ -56,7 +56,7 @@ export default function InviteBox({ open, setOpen }) {
       ...formData,
     });
     if (res) {
-      toast.success("invitation envoyée avec succès");
+      toast.success("Invitation envoyée avec succès");
       setFormData({ email: "" });
       setLoading(false);
       setOpen(false);
