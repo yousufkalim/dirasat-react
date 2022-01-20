@@ -29,7 +29,7 @@ export default function InviteBox({ open, setOpen }) {
     lastName: user?.last_name,
   });
   // Destructuring of UserForm State
-  const { phone, email, advice, contact } = formData;
+  const { phone, email, advice, contact, firstName } = formData;
   // onChange Function for Input Field
   const onChange = (e) => {
     if (e.target.name === "advice" || e.target.name === "contact") {
@@ -45,18 +45,24 @@ export default function InviteBox({ open, setOpen }) {
     var mailFormat =
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!email.match(mailFormat)) {
-      return toast.error("email invalide");
-    }
-    if (!email) {
       return toast.error("s'il vous plaît entrez l'e-mail");
     }
 
+    if (!email) {
+      return toast.error("s'il vous plaît entrez l'e-mail");
+    }
+    let newData = {
+      email,
+      firstName: user?.first_name,
+      lastName: user?.last_name,
+    };
+
     setLoading(true);
     let res = await api("post", "/users/invite", {
-      ...formData,
+      ...newData,
     });
     if (res) {
-      toast.success("Invitation envoyée avec succès");
+      toast.info("Invitation envoyée avec succès");
       setFormData({ email: "" });
       setLoading(false);
       setOpen(false);
