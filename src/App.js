@@ -7,9 +7,11 @@ import Index from "./routes/index";
 import "./css/index.css";
 
 import SetAuthToken from "./utils/SetAuthToken";
+import Cookies from "./utils/Cookies";
 
 // Component
 function App() {
+  const [checkCookies, setCookies] = useState(true);
   useEffect(() => {
     console.log("window.screen.orientation", window.screen.orientation);
     window.addEventListener(
@@ -42,6 +44,10 @@ function App() {
         transition={Flip}
       />
       {/* Routes */}
+      {checkCookies
+        ? !localStorage.cookies && <Cookies setCookies={setCookies} />
+        : ""}
+
       <Index />
     </div>
   );
