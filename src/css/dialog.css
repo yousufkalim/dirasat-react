@@ -144,6 +144,14 @@
 .socialIcons {
   font-size: 40px !important;
 }
+.fb {
+}
+.whatsapp {
+}
+.twitter {
+}
+.mail {
+}
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
   .invitedialoginputGrid {
