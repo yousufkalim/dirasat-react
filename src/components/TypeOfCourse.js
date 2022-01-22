@@ -28,7 +28,7 @@ const TypeOfCourse = ({ type, percentage, courses, result }) => {
       //   }
       // },
       // width: 1300,
-      height: 1750,
+      // height: 1750,
       backgroundColor: "#282b38",
     }).then((canvas) => {
       typeUpdate({ canvas, type });

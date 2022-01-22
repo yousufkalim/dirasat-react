@@ -157,11 +157,11 @@
   bottom: 5px;
 }
 .facialImgQuestionforResult {
-  width: 43%;
-  height: 100%;
-  object-fit: contain;
+  /* width: 43%; */
+  height: 80%;
+  /* object-fit: contain; */
   position: fixed;
-  top: 14%;
+  /* top: 14%; */
   bottom: 0;
 }
 .goback {
