@@ -56,32 +56,43 @@ export default function InviteBox({ open, setOpen }) {
             <Grid item sm={3}>
               <FacebookShareButton
                 url={url}
-                quote="Salut! Je viens de faire le test d'Orientator dans le cadre de mon orientation post-bac et je suis fin pr$et pour Parcoursup! À ton tour sur "
+                target="_blank"
+                quote="Salut! Je viens de faire le test d’Orientator dans le cadre de mon orientation post-bac et je suis fin prêt pour Parcoursup! À votre tour sur"
               >
-                <FacebookIcon round={true} className="socialIcons" />
+                <FacebookIcon round={true} className="socialIcons fb" />
               </FacebookShareButton>
             </Grid>
             <Grid item sm={3}>
-              <WhatsappShareButton url={url} quote="orientator">
-                <WhatsAppIcon round={true} className="socialIcons" />
+              <WhatsappShareButton
+                url={url}
+                target="_blank"
+                title="Salut! Je viens de faire le test d’Orientator dans le cadre de mon orientation post-bac et je suis fin prêt pour Parcoursup! À votre tour sur"
+                quote="orientator"
+              >
+                <WhatsAppIcon round={true} className="socialIcons whatsapp" />
               </WhatsappShareButton>
             </Grid>
 
             <Grid item sm={3}>
               <EmailShareButton
                 url={url}
+                target="_blank"
                 subject="À ton tour de faire ton test Orientator!"
                 body={
                   "Salut! Je viens de faire le test d'Orientator dans le cadre de mon orientation post-bac et je suis fin pr$et pour Parcoursup! \n\n À ton tour sur "
                 }
                 quote="orientator"
               >
-                <MailOutlineIcon round={true} className="socialIcons" />
+                <MailOutlineIcon round={true} className="socialIcons mail" />
               </EmailShareButton>
             </Grid>
             <Grid item sm={3}>
-              <TwitterShareButton url={url} quote="orientator">
-                <TwitterIcon round={true} className="socialIcons" />
+              <TwitterShareButton
+                url={url}
+                target="_blank"
+                title="Salut! Je viens de faire le test d’Orientator dans le cadre de mon orientation post-bac et je suis fin prêt pour Parcoursup! À votre tour sur"
+              >
+                <TwitterIcon round={true} className="socialIcons twitter" />
               </TwitterShareButton>
             </Grid>
           </Grid>

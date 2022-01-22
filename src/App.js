@@ -11,8 +11,11 @@ import Cookies from "./utils/Cookies";
 
 // Component
 function App() {
-  const [checkCookies, setCookies] = useState(true);
+  const [checkCookies, setCookies] = useState(false);
   useEffect(() => {
+    setTimeout(() => {
+      setCookies(true);
+    }, 5000);
     console.log("window.screen.orientation", window.screen.orientation);
     window.addEventListener(
       "orientationchange",
@@ -44,6 +47,7 @@ function App() {
         transition={Flip}
       />
       {/* Routes */}
+
       {checkCookies
         ? !localStorage.cookies && <Cookies setCookies={setCookies} />
         : ""}
