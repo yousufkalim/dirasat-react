@@ -57,7 +57,7 @@ export default function InviteBox({ open, setOpen }) {
               <FacebookShareButton
                 url={url}
                 target="_blank"
-                quote="Salut! Je viens de faire le test d’Orientator dans le cadre de mon orientation post-bac et je suis fin prêt pour Parcoursup! À votre tour sur"
+                quote="Salut! Je viens de faire le test d’Orientator dans le cadre de mon orientation post-bac et je suis fin prêt pour Parcoursup! À votre tour sur:"
               >
                 <FacebookIcon round={true} className="socialIcons fb" />
               </FacebookShareButton>
