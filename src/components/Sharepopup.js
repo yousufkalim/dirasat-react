@@ -79,7 +79,7 @@ export default function InviteBox({ open, setOpen }) {
                 target="_blank"
                 subject="À ton tour de faire ton test Orientator!"
                 body={
-                  "Salut! Je viens de faire le test d'Orientator dans le cadre de mon orientation post-bac et je suis fin pr$et pour Parcoursup! \n\n À ton tour sur "
+                  "Salut! Je viens de faire le test d'Orientator dans le cadre de mon orientation post-bac et je suis fin prêt pour Parcoursup! \n\n À ton tour sur "
                 }
                 quote="orientator"
               >
