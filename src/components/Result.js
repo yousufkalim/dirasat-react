@@ -102,8 +102,8 @@ const Result = () => {
   };
 
   // console.log("licenceResult", licenceResult[0].canvas, licenceResult[0].index);
-  console.log("screenshot in store", screenshoots);
-  console.log("allTypes in store", allTypes);
+
+  console.log("useris", user);
 
   const exportPdf = async () => {
     setExportLoading(true);
@@ -258,6 +258,7 @@ const Result = () => {
                                 result={result?.data}
                                 percentage={item?.percentage}
                                 courses={item?.courses}
+                                user={user}
                               />
                             ) : (
                               <div

@@ -12,7 +12,7 @@ import StarIcon from "@material-ui/icons/Star";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
 
 //Component
-function DetailofCourses({ courses, open, setOpen }) {
+function DetailofCourses({ courses, open, setOpen, user }) {
   return (
     <>
       {courses?.length >= 1 ? (
@@ -20,8 +20,9 @@ function DetailofCourses({ courses, open, setOpen }) {
           <Grid container spacing={2} className="courseDetail">
             <Grid item xs={12} sm={5}>
               <p>
-                {course?.courseId?.sub_domains} -{" "}
-                <span>{course?.courseId?.city} </span>
+                {/* {course?.courseId?.sub_domains} -{" "}
+                <span>{course?.courseId?.city} </span> */}
+                {user?.institute}
               </p>
 
               <h2> {course?.courseId?.course_name}</h2>

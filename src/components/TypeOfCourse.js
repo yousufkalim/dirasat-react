@@ -7,7 +7,7 @@ import showhide from "../assets/icons/showhide.png";
 import hide from "../assets/icons/hide.png";
 import * as html2canvas from "html2canvas";
 
-const TypeOfCourse = ({ type, percentage, courses, result }) => {
+const TypeOfCourse = ({ type, percentage, courses, result, user }) => {
   const updateStore = UpdateStore();
   const typeUpdate = TypeUpdate();
   const { screenshoots, results } = Store();
@@ -102,6 +102,7 @@ const TypeOfCourse = ({ type, percentage, courses, result }) => {
             open={open}
             setOpen={setOpen}
             id="detailofone"
+            user={user}
           />
         )}
       </div>
