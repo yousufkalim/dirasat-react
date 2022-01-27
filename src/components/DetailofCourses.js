@@ -20,9 +20,9 @@ function DetailofCourses({ courses, open, setOpen, user }) {
           <Grid container spacing={2} className="courseDetail">
             <Grid item xs={12} sm={5}>
               <p>
-                {/* {course?.courseId?.sub_domains} -{" "}
-                <span>{course?.courseId?.city} </span> */}
-                {user?.institute}
+                {course?.courseId?.sub_domains} -{" "}
+                <span>{course?.courseId?.city} </span>
+                {/* {user?.institute} */}
               </p>
 
               <h2> {course?.courseId?.course_name}</h2>
