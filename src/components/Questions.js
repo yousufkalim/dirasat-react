@@ -208,7 +208,7 @@ const Questions = ({ setStep, setActiveStep }) => {
                   ? getQuestion()?.question
                   : "There's no Question please try again"}
                 {getQuestion()?.question ==
-                  "Encore une autre question, est-ce que les études payantes sont une option pour toi?" && (
+                  "Encore une question, veux-tu inclure les études payantes?" && (
                   <InfoIcon
                     className="infoIcon"
                     onClick={(e) => handleClickinfo(e, 1)}

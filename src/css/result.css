@@ -327,7 +327,7 @@
     display: none !important;
   }
   .resultBox {
-    margin: 10px auto !important;
+    margin: 100px auto !important;
     width: 90%;
   }
   .typeOfCourses {
@@ -338,9 +338,11 @@
   }
   .facialImgQuestionforResult {
     width: 51%;
-    height: 108%;
+    height: 700px;
     object-fit: inherit;
-    position: absolute;
+    position: fixed;
+    top: 14%;
+    left: -3%;
   }
 }
 
