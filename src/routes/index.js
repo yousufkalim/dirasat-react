@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Home from "../containers/Home.js";
 import Login from "../containers/Login";
 import CGU from "../containers/CGU";
+import MentionsLegal from "../containers/MentionsLegal"
 import Admin from "./Admin";
 
 const index = () => {
@@ -11,6 +12,7 @@ const index = () => {
       <Route exact path="/" component={Home} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/CGU" component={CGU} />
+      <Route exact path="/MentionsLegal" component={MentionsLegal} />
       <Route exact path="/*" render={() => <Admin />} />
     </Switch>
   );

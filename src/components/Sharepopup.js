@@ -90,7 +90,7 @@ export default function InviteBox({ open, setOpen }) {
               <TwitterShareButton
                 url={url}
                 target="_blank"
-                title="Salut! Je viens de faire le test d’Orientator dans le cadre de mon orientation post-bac et je suis fin prêt pour Parcoursup! À votre tour sur"
+                title="Salut! Je viens de faire le test d’Orientator dans le cadre de mon #orientation post #bac et je suis fin prêt pour #Parcoursup! À votre tour sur"
               >
                 <TwitterIcon round={true} className="socialIcons twitter" />
               </TwitterShareButton>

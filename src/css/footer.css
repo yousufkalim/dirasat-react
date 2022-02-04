@@ -5,19 +5,46 @@
 }
 .cguBar {
   display: flex;
-  justify-content: space-between;
-  width: 50%;
+  justify-content: space-around;
+  width: 90%;
   margin: auto;
 }
+.developbydiv{
+  width: 27%;
+  margin-top: 10px;
+}
+.cguDiv{
+  width: 10%;
+}
+.cgufont{
+  font-weight: 900 !important;
+  font-size: 18px;
+}
+.footercgu {
+  margin-top: 26px;
+}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
+  .FooterDiv {
+    padding: 15px;
+  }
   .cguBar {
     width: auto;
+    flex-direction: column;
+    text-align: center;
   }
   .developby {
     margin-top: 40px !important;
   }
+  .developbydiv{
+    width: 100%;
+    
+  }
   .footercgu {
     margin-right: 10px;
+  }
+  .cguDiv{
+    width: 100%;
   }
   .footeraccueil {
     margin-left: 10px;
