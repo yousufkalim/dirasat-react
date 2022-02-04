@@ -8,8 +8,9 @@ const Footer = () => {
     <>
       <div className="FooterDiv">
         <div className="cguBar">
-          <h3 className="footeraccueil" style={{ textAlign: "center" }}>
-            <AnchorLink
+          <div>
+          <h3 className="footeraccueil" style={{ textAlign: "" }}>
+            {/* <AnchorLink
               href="#top"
               style={{
                 color: "white",
@@ -17,9 +18,19 @@ const Footer = () => {
               }}
             >
               Accueil
-            </AnchorLink>
-          </h3>
-          <p className="developby" style={{ textAlign: "center" }}>
+            </AnchorLink> */}
+            </h3>
+            
+            <div>
+              <p>ORIENTATOR</p>
+              <p>Adresse postale : 55 avenue Marceau, 75116 Paris</p>
+              <p>E-mail : contact@orientator.com</p>
+              <p>Téléphone : 01 84 80 74 81</p>
+            </div>
+          
+          </div>
+          <div className="developbydiv">
+          <p className="developby" style={{ textAlign: "" }}>
             {/* Développé par */}
             <a
               href="https:www.falconconsulting.fr"
@@ -31,11 +42,18 @@ const Footer = () => {
             </a>{" "}
             2021. Tous droits réservés
           </p>
-          <h3 className="footercgu" style={{ textAlign: "center" }}>
-            <Link to="/CGU" style={{ color: "white", textDecoration: "none" }}>
+          </div>
+          <div className="cguDiv">
+          <div className="footercgu" style={{ textAlign: "" }}>
+            <Link to="/CGU"  className="cgufont" style={{ color: "white", textDecoration: "none" }}>
               CGU
             </Link>
-          </h3>
+            <p style={{margin:"7px"}}/>
+            <Link to="/MentionsLegal" style={{ color: "white", textDecoration: "none" }}>
+            Mentions légales
+            </Link>
+          </div>
+          </div>
         </div>
       </div>
     </>
