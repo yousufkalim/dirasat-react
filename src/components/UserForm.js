@@ -599,6 +599,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
               confirmationOpen={confirmationOpen}
               SetconfirmationOpen={SetconfirmationOpen}
               setStep={setStep}
+              setActiveStep={setActiveStep}
             />
           </Grid>
         )}{" "}

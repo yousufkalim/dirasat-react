@@ -22,6 +22,7 @@ export default function InviteBox({
   confirmationOpen,
   SetconfirmationOpen,
   setStep,
+  setActiveStep
 }) {
   const updateStore = UpdateStore();
   const { user } = Store();
@@ -54,6 +55,7 @@ export default function InviteBox({
       setLoading(false);
       setFormData({ otp: "" });
       setStep(2);
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);
     } else {
       setLoading(false);
       setFormData({ otp: "" });
