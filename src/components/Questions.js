@@ -13,6 +13,7 @@ import Grid from "@material-ui/core/Grid";
 import Info from "./Info";
 import useSound from "use-sound";
 import sound from "../assets/sound/sound.wav";
+import arrowleft from "../assets/img/arrow2.png";
 
 const Questions = ({ setStep, setActiveStep }) => {
   const [play] = useSound(sound);
@@ -83,31 +84,10 @@ const Questions = ({ setStep, setActiveStep }) => {
     setCurrentAnswer(null);
     return play();
   };
+  console.log("history",history)
+  console.log("prevQuestion",prevQuestion)
 
-  // when Click on Previous Button it get previous question
-  // by match nextquestion from history saved with current question and remove from history
-  // if Q is discriminating it pop from disc_ans_id
-  // it set next question id that is basically previous one which will show
-  // create previous q array to get seleceted
-  const handlePrev = () => {
-    const getprev = history?.find(
-      (his) => his?.next_question === getQuestion()?._id
-    );
-    if (getprev) {
-      if (getprev?.question?.questionType === "discriminating") {
-        const disans = [...disc_ans_id];
-        disans.pop();
-        updateStore({
-          disc_ans_id: disans,
-        });
-      }
-      updateStore({
-        history: history.slice(0, history.length - 1),
-      });
-      setNextQuestionId(getprev?.question?._id);
-      setprevQuestion([...prevQuestion, getprev]);
-    }
-  };
+  
   //it set the current answer which will be selected
   const currentans = () => {
     let currentans = prevQuestion?.find(
@@ -165,6 +145,33 @@ const Questions = ({ setStep, setActiveStep }) => {
     }
   };
 
+  // for previos Button
+
+  // when Click on Previous Button it get previous question
+  // by match nextquestion from history saved with current question and remove from history
+  // if Q is discriminating it pop from disc_ans_id
+  // it set next question id that is basically previous one which will show
+  // create previous q array to get seleceted
+  const handlePrev = () => {
+    const getprev = history?.find(
+      (his) => his?.next_question === getQuestion()?._id
+    );
+    if (getprev) {
+      if (getprev?.question?.questionType === "discriminating") {
+        const disans = [...disc_ans_id];
+        disans.pop();
+        updateStore({
+          disc_ans_id: disans,
+        });
+      }
+      updateStore({
+        history: history.slice(0, history.length - 1),
+      });
+      setNextQuestionId(getprev?.question?._id);
+      setprevQuestion([...prevQuestion, getprev]);
+    }
+  };
+
   return (
     <>
       <Info anchorEl={anchorEl} setAnchorEl={setAnchorEl} text={text} />
@@ -192,7 +199,6 @@ const Questions = ({ setStep, setActiveStep }) => {
             }
             ${getOptions(answers)?.length == 9 && "nineOptions"}
             ${getOptions(answers)?.length == 6 && "sixOptions"}
-
             `}
           >
             <img src={qarrow} className="qboximg" />
@@ -248,17 +254,18 @@ const Questions = ({ setStep, setActiveStep }) => {
                   </Grid>
                 ))}
             </Grid>
-            {/* {history.length >= 1 && (
-            <Button
-              variant="contained"
-              color="primary"
-              size="large"
-              onClick={handlePrev}
-            >
-              {"Previous"}
-            </Button>
-          )} */}
+            {history.length >= 1 ? (
+             <div
+             size="large"
+             className="prevButton"
+             onClick={handlePrev}
+           >
+             <img src={arrowleft} className="arrowleft" />
+             <b> Retour</b>
+           </div>
+          ):""}
           </div>
+          
         </Grid>
       </Grid>
     </>
