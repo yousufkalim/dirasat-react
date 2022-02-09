@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
 import Main from "../assets/img/a2.png";
-import MainMobile from "../assets/img/mainmobile.png";
 import MainCharacter from "../assets/img/MainCharacter.png";
-import logo from "../assets/img/logo1.png";
 import VideoImage from "../assets/img/videoimg.png";
 import scrollToTop from "../utils/ScrollTop";
 import video1 from "../assets/video/orientatorVideo.mp4";
 import thumbnail from "../assets/img/thumbnail.jpg";
-
-import jsPDF from "jspdf";
-import * as htmlToImage from "html-to-image";
-import * as html2canvas from "html2canvas";
+import Cookies from "../utils/Cookies";
+import CookiesPopup from "../utils/CookiesPopup"
+import CookiesPopup2 from "../utils/CookiesPopup2"
 
 import f1 from "../assets/img/f1.png";
 import f2 from "../assets/img/f2.png";
@@ -20,37 +17,26 @@ import arrowright from "../assets/img/arrow.png";
 import Footer from "./Footer";
 
 const Landing = ({ step, setStep, statetextforscroll }) => {
+  const [openCookieePopup, setOpenCookieePopup] = useState(false);
+  const [openCookieePopup2, setOpenCookieePopup2] = useState(false);
+  const [checkCookies, setCookies] = useState(false);
+  const items = [
+    // { text: "Fonctionnalités basiques de navigation requises", accept:false,refuse:false },
+    { text: "Fonctionnalités liées aux réseaux sociaux", accept:false,refuse:false },
+    { text: "Mesure d'audience", accept:false,refuse:false },
+    { text: "Fonctionnalités liées à l'amélioration de votre expérience", accept:false,refuse:false },
+    { text: "Stocker et/ou accéder à des informations sur un terminal", accept:false,refuse:false },
+    { text: "Personnalisation du contenu éditorial et mesure de la performance", accept:false,refuse:false },
+    { text: "Personnalisation des publicités et mesure de la performance", accept:false,refuse:false },
+    { text: "Développer et améliorer les produits", accept:false,refuse:false },
+    { text: "Utiliser des données de géolocalisation précises", accept:false,refuse:false },
+    { text: "Analyser activement les caractéristiques du terminal pour l’identification", accept:false,refuse:false },
+  ];
+  const [data, setData] = useState(items);
   const capture1 = React.createRef();
-  const onButtonClick = async () => {
-    var pdf = new jsPDF();
-    let domElement = document.getElementById("my-node");
-    console.log("domElement", domElement);
+ 
 
-    html2canvas(domElement, {
-      ignoreElements: function (element) {
-        if ("MyElementIdHere" === element.id) {
-          return true;
-        }
-      },
-    }).then((canvas) => {
-      console.log("CAN ASFAND VAS", canvas);
-      pdf.setFillColor(52, 55, 71);
-      pdf.rect(0, 0, 350, 350, "F");
-      pdf.addImage(logo, "PNG", 75, 5, 60, 25);
-      pdf.addImage(MainCharacter, "PNG", 30, 35, 150, 130);
-      pdf.save("download.pdf");
-      document.body.appendChild(canvas);
-    });
-  };
-
-  const exportPdf = async () => {
-    var pdf = new jsPDF();
-    pdf.setFillColor(40, 43, 56);
-    pdf.rect(0, 0, 350, 350, "F");
-    pdf.addImage(logo, "PNG", 65, 15, 80, 15);
-    pdf.addImage(MainCharacter, "PNG", 40, 38, 125, 130);
-    pdf.save("download.pdf");
-  };
+ 
 
   const video = document.getElementById("video");
   const scrollToTop = () => {
@@ -65,6 +51,13 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
       behavior: "smooth",
     });
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      setCookies(true);
+    }, 5000)
+  })
+  
   useEffect(() => {
     video?.play();
     scrollToTop();
@@ -90,7 +83,8 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
           </Grid>
           <Grid item xs={12} sm={3} className="body-rectangleGrid3">
             <div className="partibuttondiv">
-              <button className="partiButton" onClick={() => setStep(1)}>
+              {console.log("localStorage.cookies ",localStorage.cookies )}
+              <button className="partiButton" onClick={() =>localStorage.cookies? setStep(1):setOpenCookieePopup(true)}>
                 C'est parti!
               </button>
               <img src={arrowright} className="arrowright" />
@@ -110,7 +104,6 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
             autoplay={true}
             type="video/mp4"
             loop
-
             // poster={VideoImage}
           />
 
@@ -149,6 +142,21 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
         {/* <button onClick={onButtonClick}>Download PDF</button> */}
       </div>
       <Footer />
+      <CookiesPopup
+        open={openCookieePopup}
+        setOpen={setOpenCookieePopup}
+        setOpenCookieePopup2={setOpenCookieePopup2}
+        data={data}
+        setData={setData}
+        />
+        <CookiesPopup2
+        open={openCookieePopup2}
+        setOpen={setOpenCookieePopup2}
+        setData={setData}
+        />
+        {checkCookies
+        ? !localStorage.cookies && <Cookies setCookies={setCookies} setOpenCookieePopup={setOpenCookieePopup}/>
+        : ""}
     </>
   );
 };

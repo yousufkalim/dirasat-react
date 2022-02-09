@@ -533,7 +533,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         <TextField
                           classes={{ root: classes.customTextField }}
                           {...params}
-                          placeholder="Établissement actuel"
+                          placeholder="Établissement actuel (commencer par la ville)"
                           variant="outlined"
                           value={institute}
                           name="institute"

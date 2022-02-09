@@ -6,12 +6,97 @@
   ) !important; */
   text-align: center;
 }
+.MuiDialog-paperWidthSm {
+  max-width: 650px !important;
+}
+.popupli{
+  text-align: left;
+  font-size: 13px;
+}
 .cookies {
   background-color: #0a0808;
   position: fixed;
   bottom: 0;
   z-index: 1;
   width: 100%;
+}
+.popupbtndiv{
+  width: 95%;
+  text-align: right;
+}
+.popupsavebtn{
+  background: linear-gradient(180deg, #ffffff -24.17%, #bac0d6 100%);
+border-radius: 6px;
+border: none;
+padding: 10px;
+}
+.popupsavebtn:hover {
+  background: linear-gradient(1deg, #ffffff -24.17%, #bac0d6 100%);
+}
+.secondpopupbutton{
+  background: linear-gradient(180deg, #ffffff -24.17%, #bac0d6 100%);
+  border-radius: 6px;
+  border: none;
+  padding: 10px;
+}
+.secondpopupbutton:hover {
+  background: #66a566;
+  color: white;
+}
+.popuptext2{
+  text-align: left;
+  padding: 10px 30px;
+  font-size: 14px;
+}
+.rejectbtnActive{
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  background-color: #d55d5d;
+  color: white;
+}
+
+.rejectbtn{
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+}
+.rejectbtn:hover{
+  background: linear-gradient(1deg, #ffffff -24.17%, #bac0d6 100%);
+}
+.acceptbtnActive{
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  background-color: #66a566;
+  color: white;
+}
+.acceptbtn{
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+}
+.acceptbtn:hover{
+  background: linear-gradient(1deg, #ffffff -24.17%, #bac0d6 100%);
+}
+.cookieeDiv{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  margin: auto;
+}
+.cookieeLink{
+  color: white;
+  font-weight: bolder !important;
 }
 .cookiesDiv {
   margin-left: 20%;
@@ -21,6 +106,19 @@
 .cookiesButtonDiv {
   display: flex;
   align-items: center;
+}
+.cookieButtonParameter{
+  cursor: pointer;
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  font-size: 15px;
+  border-radius: 5px;
+  color: black;
+  background: linear-gradient(180deg, #ffffff -24.17);
+}
+.cookieButtonParameter:hover{
+  background: linear-gradient(1deg, #ffffff -24.17%, #bac0d6 100%);
 }
 .cookieButtonaccept {
   cursor: pointer;

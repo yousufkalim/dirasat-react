@@ -7,16 +7,25 @@ import Index from "./routes/index";
 import "./css/index.css";
 
 import SetAuthToken from "./utils/SetAuthToken";
-import Cookies from "./utils/Cookies";
 
 // Component
 function App() {
-  const [checkCookies, setCookies] = useState(false);
+  
+
+  const items = [
+    // { text: "Fonctionnalités basiques de navigation requises", accept:false,refuse:false },
+    { text: "Fonctionnalités liées aux réseaux sociaux", accept:false,refuse:false },
+    { text: "Mesure d'audience", accept:false,refuse:false },
+    { text: "Fonctionnalités liées à l'amélioration de votre expérience", accept:false,refuse:false },
+    { text: "Stocker et/ou accéder à des informations sur un terminal", accept:false,refuse:false },
+    { text: "Personnalisation du contenu éditorial et mesure de la performance", accept:false,refuse:false },
+    { text: "Personnalisation des publicités et mesure de la performance", accept:false,refuse:false },
+    { text: "Développer et améliorer les produits", accept:false,refuse:false },
+    { text: "Utiliser des données de géolocalisation précises", accept:false,refuse:false },
+    { text: "Analyser activement les caractéristiques du terminal pour l’identification", accept:false,refuse:false },
+  ];
+  const [data, setData] = useState(items);
   useEffect(() => {
-    setTimeout(() => {
-      setCookies(true);
-    }, 5000);
-    console.log("window.screen.orientation", window.screen.orientation);
     window.addEventListener(
       "orientationchange",
       function () {
@@ -48,11 +57,9 @@ function App() {
       />
       {/* Routes */}
 
-      {checkCookies
-        ? !localStorage.cookies && <Cookies setCookies={setCookies} />
-        : ""}
 
-      <Index />
+      <Index
+      />
     </div>
   );
 }
