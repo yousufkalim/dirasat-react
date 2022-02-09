@@ -47,16 +47,16 @@ const MentionsLegal = () => {
           </p>
           <p className="pmargin">
             
-Le site Orientator est édité par la SAS Orientator ayant son siège social à l'adresse suivante : 55 avenue Marceau 751116 Paris, et immatriculée au numéro suivant : en cours d’immatriculation RCS Paris XXX.
+Le site Orientator est édité par la SAS Orientator ayant son siège social à l'adresse suivante : 55 avenue Marceau 751116 Paris, et immatriculée au numéro suivant : en cours d’immatriculation RCS Paris.
           </p>
           <p className="pmargin">
           Capital social : 1 000 euros
           </p>
           <p className="pmargin">
-          Téléphone : XXX
+          Téléphone : 01 84 80 74 81
           </p>
           <p className="pmargin">
-          Adresse e-mail : XXX
+          Adresse e-mail : contact@orientator.com
           </p>
           <p className="pmargin">
           ci-après " l'Éditeur "
@@ -68,7 +68,7 @@ Le site Orientator est édité par la SAS Orientator ayant son siège social à
           Le Directeur de publication est M. Bilel Rhabi
           </p>
           <p className="pmargin">
-          Adresse e-mail de contact : XXX
+          Adresse e-mail de contact :  direction@orientator.com
           </p>
           <p className="pmargin">
           ci-après " le Directeur de publication "
@@ -78,16 +78,16 @@ Le site Orientator est édité par la SAS Orientator ayant son siège social à
         <span className="boldText">  C.</span> Hébergeur du site
           </p>
           <p className="pmargin">
-          Le site Orientator est hébergé par Demander au développeur XXX
+          Le site Orientator est hébergé par  SCALEWAY
           </p>
           <p className="pmargin">
-          dont le siège est situé à l'adresse suivante : XXX
+          dont le siège est situé à l'adresse suivante : SCALEWAY SAS BP 438 75366 PARIS CEDEX 08 FRANCE
           </p>
           <p className="pmargin">
-          Téléphone : XXX
+          Téléphone : 01 84 13 00 00
           </p>
           <p className="pmargin">
-          Adresse e-mail : XXX.
+          Contact : https://contact.scaleway.com/contactus/s/?language=en_US
           </p>
           <p className="pmargin">
           ci-après " l'Hébergeur "

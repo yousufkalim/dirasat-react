@@ -2,7 +2,7 @@ import * as React from "react";
 import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
 
-export default function Cookies({ setCookies }) {
+export default function Cookies({ setCookies,setOpenCookieePopup }) {
   const handleCookies = () => {
     localStorage.setItem("cookies", true);
     setCookies(false);
@@ -31,6 +31,9 @@ export default function Cookies({ setCookies }) {
         </div>
       </Grid>
       <Grid item xs={12} sm={3} className="cookiesButtonDiv">
+      <button onClick={()=>setOpenCookieePopup(true)} className="cookieButtonParameter">
+      Paramétrer
+        </button>
         <button onClick={handleCancelCookies} className="cookieButtoncancel">
           Refuser
         </button>
