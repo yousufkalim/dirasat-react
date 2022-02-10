@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { styled } from "@material-ui/core/styles";
 import Dialog from "@material-ui/core/Dialog";
-import { toast } from "react-toastify";
 import DialogContent from "@material-ui/core/DialogContent";
 import IconButton from "@material-ui/core/IconButton";
-import Grid from "@material-ui/core/Grid"
 import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
 import { Store, UpdateStore } from "../StoreContext";
-import api from "../api";
-import { Link } from "react-router-dom";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuDialogContent-root": {
@@ -33,17 +29,6 @@ export default function CookiesPopup({ open, setOpen,setData }) {
     { text: "Utiliser des données de géolocalisation précises", accept:true,refuse:false },
     { text: "Analyser activement les caractéristiques du terminal pour l’identification", accept:true,refuse:false },
   ];
-  
-  const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState({
-    email: "",
-    inviteBy: user?.email,
-    firstName: user?.first_name,
-    lastName: user?.last_name,
-  });
-  // Destructuring of UserForm State
-
- 
   const handleClose = () => {
     setOpen(false);
   };
@@ -69,20 +54,17 @@ export default function CookiesPopup({ open, setOpen,setData }) {
           onClick={handleClose}
         >
           <HorizontalRuleIcon fontSize="large" />
-          {/* <img src={close} className="closeimg" /> */}
         </IconButton>
         <DialogContent className="modalcontent"> 
           <p style={{margin:"0"}}>Vous avez choisi de refuser les cookies , notamment ceux nécessaires au bon déroulement de votre expérience avec Orientator. Vous ne pourrez pas avoir accès au test, êtes-vous sûr(e) de votre choix ?"</p>
-          
           
         </DialogContent>
         <div className="invitedialogAction">
           <div>
               <button className={`${"secondpopupbutton "}`  } style={{margin:"10px"}}
-              onClick={()=>handleAcceptAll()}>Je change d'avis et j'accepte tous les cookies. </button>
-              
+              onClick={()=>handleAcceptAll()}>Je change d'avis et j'accepte tous les cookies. </button>              
               <button  className={`${"secondpopupbutton "}`} style={{margin:"10px"}} onClick={handleRefuse}>Je refuse toujours les cookies </button>
-                            </div>
+</div>
 </div>
       </BootstrapDialog>
     </div>
