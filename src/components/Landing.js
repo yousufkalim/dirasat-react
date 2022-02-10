@@ -52,7 +52,7 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
     setTimeout(() => {
       setCookies(true);
     }, 5000)
-  })
+  },[])
   
   useEffect(() => {
     video?.play();

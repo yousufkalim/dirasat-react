@@ -100,6 +100,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
     email: "",
     newsletter: false,
     accept_condition: false,
+    accept_condition2: false,
   });
   // state for address options list
   const [values, setValues] = useState([]);
@@ -130,6 +131,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
     email,
     newsletter,
     accept_condition,
+    accept_condition2,
   } = formData;
   // Get institutes data from API
   useEffect(() => {
@@ -171,7 +173,8 @@ const UserForm = ({ setStep, setActiveStep }) => {
   const onChange = (e) => {
     if (
       e.target.name === "newsletter" ||
-      e.target.name === "accept_condition"
+      e.target.name === "accept_condition" ||
+      e.target.name === "accept_condition2"
     ) {
       setFormData({ ...formData, [e.target.name]: e.target.checked });
     } else {
@@ -302,6 +305,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
     }
     if (!accept_condition) {
       return toast.error("Veuillez accepter les termes et conditions");
+    }
+    if (!accept_condition2) {
+      return toast.error("Merci d'accepter les conditions pour démarrer le test");
     }
     setLoading(true);
     let res = await api("post", "/users/create", {
@@ -494,7 +500,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       </Select>
                     </FormControl>
                   </Grid>
-
                   <Grid item xs={12} sm={6} className="inputGrid">
                     <Autocomplete
                       classes={{
@@ -555,6 +560,18 @@ const UserForm = ({ setStep, setActiveStep }) => {
                   />
                   <span className="termsandcondition">
                     J’accepte les termes et les conditions
+                  </span>
+                </Grid>
+                <Grid container spacing={1} className="termsandconditionGrid">
+                  <Checkbox
+                    inputProps={{ "aria-label": "secondary checkbox" }}
+                    style={{ color: "white" }}
+                    name="accept_condition2"
+                    value={accept_condition2}
+                    onChange={onChange}
+                  />
+                  <span className="termsandcondition">
+                  J'accepte que mes données soient transmises à des partenaires d'Orientato
                   </span>
                 </Grid>
                 <Grid container spacing={2} className="formbuttonsGrid">
