@@ -14,33 +14,64 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     padding: theme.spacing(1),
   },
 }));
-export default function CookiesPopup({ open, setOpen,setData }) {
+export default function CookiesPopup({ open, setOpen, setData }) {
   const { user } = Store();
-  
+
   const items = [
     // { text: "Fonctionnalités basiques de navigation requises", accept:false,refuse:false },
-    { text: "Fonctionnalités liées aux réseaux sociaux", accept:true,refuse:false },
-    { text: "Mesure d'audience", accept:true,refuse:false },
-    { text: "Fonctionnalités liées à l'amélioration de votre expérience", accept:true,refuse:false },
-    { text: "Stocker et/ou accéder à des informations sur un terminal", accept:true,refuse:false },
-    { text: "Personnalisation du contenu éditorial et mesure de la performance", accept:true,refuse:false },
-    { text: "Personnalisation des publicités et mesure de la performance", accept:true,refuse:false },
-    { text: "Développer et améliorer les produits", accept:true,refuse:false },
-    { text: "Utiliser des données de géolocalisation précises", accept:true,refuse:false },
-    { text: "Analyser activement les caractéristiques du terminal pour l’identification", accept:true,refuse:false },
+    {
+      text: "Fonctionnalités liées aux réseaux sociaux",
+      accept: true,
+      refuse: false,
+    },
+    { text: "Mesure d'audience", accept: true, refuse: false },
+    {
+      text: "Fonctionnalités liées à l'amélioration de votre expérience",
+      accept: true,
+      refuse: false,
+    },
+    {
+      text: "Stocker et/ou accéder à des informations sur un terminal",
+      accept: true,
+      refuse: false,
+    },
+    {
+      text: "Personnalisation du contenu éditorial et mesure de la performance",
+      accept: true,
+      refuse: false,
+    },
+    {
+      text: "Personnalisation des publicités et mesure de la performance",
+      accept: true,
+      refuse: false,
+    },
+    {
+      text: "Développer et améliorer les produits",
+      accept: true,
+      refuse: false,
+    },
+    {
+      text: "Utiliser des données de géolocalisation précises",
+      accept: true,
+      refuse: false,
+    },
+    {
+      text: "Analyser activement les caractéristiques du terminal pour l’identification",
+      accept: true,
+      refuse: false,
+    },
   ];
   const handleClose = () => {
     setOpen(false);
   };
-  const handleRefuse=(i)=>{
+  const handleRefuse = (i) => {
     setOpen(false);
-  }
-  const handleAcceptAll=()=>{
- 
-    setData(items)
+  };
+  const handleAcceptAll = () => {
+    setData(items);
     setOpen(false);
-  }
- 
+  };
+
   return (
     <div>
       <BootstrapDialog
@@ -55,17 +86,31 @@ export default function CookiesPopup({ open, setOpen,setData }) {
         >
           <HorizontalRuleIcon fontSize="large" />
         </IconButton>
-        <DialogContent className="modalcontent"> 
-          <p style={{margin:"0"}}>Vous avez choisi de refuser les cookies , notamment ceux nécessaires au bon déroulement de votre expérience avec Orientator. Vous ne pourrez pas avoir accès au test, êtes-vous sûr(e) de votre choix?</p>
-          
+        <DialogContent className="modalcontent">
+          <p style={{ margin: "0" }}>
+            Vous avez choisi de refuser les cookies , notamment ceux nécessaires
+            au bon déroulement de votre expérience avec Orientator. Vous ne
+            pourrez pas avoir accès au test, êtes-vous sûr(e) de votre choix?
+          </p>
         </DialogContent>
         <div className="invitedialogAction">
           <div>
-              <button className={`${"secondpopupbutton "}`  } style={{margin:"10px"}}
-              onClick={()=>handleAcceptAll()}>Je change d'avis et j'accepte tous les cookies. </button>              
-              <button  className={`${"secondpopupbutton "}`} style={{margin:"10px"}} onClick={handleRefuse}>Je refuse toujours les cookies </button>
-</div>
-</div>
+            <button
+              className={`${"secondpopupbutton "}`}
+              style={{ margin: "10px" }}
+              onClick={() => handleAcceptAll()}
+            >
+              Je change d'avis et j'accepte tous les cookies.{" "}
+            </button>
+            <button
+              className={`${"secondpopupbutton "}`}
+              style={{ margin: "10px" }}
+              onClick={handleRefuse}
+            >
+              Je conserve mes choix
+            </button>
+          </div>
+        </div>
       </BootstrapDialog>
     </div>
   );

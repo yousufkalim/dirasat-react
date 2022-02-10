@@ -7,8 +7,10 @@ import scrollToTop from "../utils/ScrollTop";
 import video1 from "../assets/video/orientatorVideo.mp4";
 import thumbnail from "../assets/img/thumbnail.jpg";
 import Cookies from "../utils/Cookies";
-import CookiesPopup from "../utils/CookiesPopup"
-import CookiesPopup2 from "../utils/CookiesPopup2"
+import CookiesPopup from "../utils/CookiesPopup";
+import CookiesPopup2 from "../utils/CookiesPopup2";
+import Contactus from "../utils/Contactus";
+import RefuserPopup from "../utils/RefuserPopup";
 
 import f1 from "../assets/img/f1.png";
 import f2 from "../assets/img/f2.png";
@@ -18,19 +20,52 @@ import Footer from "./Footer";
 
 const Landing = ({ step, setStep, statetextforscroll }) => {
   const [openCookieePopup, setOpenCookieePopup] = useState(false);
+  const [reuserPopup, setRefuserPopup] = useState(false);
   const [openCookieePopup2, setOpenCookieePopup2] = useState(false);
   const [checkCookies, setCookies] = useState(false);
   const items = [
     // { text: "Fonctionnalités basiques de navigation requises", accept:false,refuse:false },
-    { text: "Fonctionnalités liées aux réseaux sociaux", accept:false,refuse:false },
-    { text: "Mesure d'audience", accept:false,refuse:false },
-    { text: "Fonctionnalités liées à l'amélioration de votre expérience", accept:false,refuse:false },
-    { text: "Stocker et/ou accéder à des informations sur un terminal", accept:false,refuse:false },
-    { text: "Personnalisation du contenu éditorial et mesure de la performance", accept:false,refuse:false },
-    { text: "Personnalisation des publicités et mesure de la performance", accept:false,refuse:false },
-    { text: "Développer et améliorer les produits", accept:false,refuse:false },
-    { text: "Utiliser des données de géolocalisation précises", accept:false,refuse:false },
-    { text: "Analyser activement les caractéristiques du terminal pour l’identification", accept:false,refuse:false },
+    {
+      text: "Fonctionnalités liées aux réseaux sociaux",
+      accept: false,
+      refuse: false,
+    },
+    { text: "Mesure d'audience", accept: false, refuse: false },
+    {
+      text: "Fonctionnalités liées à l'amélioration de votre expérience",
+      accept: false,
+      refuse: false,
+    },
+    {
+      text: "Stocker et/ou accéder à des informations sur un terminal",
+      accept: false,
+      refuse: false,
+    },
+    {
+      text: "Personnalisation du contenu éditorial et mesure de la performance",
+      accept: false,
+      refuse: false,
+    },
+    {
+      text: "Personnalisation des publicités et mesure de la performance",
+      accept: false,
+      refuse: false,
+    },
+    {
+      text: "Développer et améliorer les produits",
+      accept: false,
+      refuse: false,
+    },
+    {
+      text: "Utiliser des données de géolocalisation précises",
+      accept: false,
+      refuse: false,
+    },
+    {
+      text: "Analyser activement les caractéristiques du terminal pour l’identification",
+      accept: false,
+      refuse: false,
+    },
   ];
   const [data, setData] = useState(items);
   const capture1 = React.createRef();
@@ -51,9 +86,9 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
   useEffect(() => {
     setTimeout(() => {
       setCookies(true);
-    }, 5000)
-  },[])
-  
+    }, 5000);
+  }, []);
+
   useEffect(() => {
     video?.play();
     scrollToTop();
@@ -79,8 +114,13 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
           </Grid>
           <Grid item xs={12} sm={3} className="body-rectangleGrid3">
             <div className="partibuttondiv">
-              {console.log("localStorage.cookies ",localStorage.cookies )}
-              <button className="partiButton" onClick={() =>localStorage.cookies? setStep(1):setOpenCookieePopup(true)}>
+              {console.log("localStorage.cookies ", localStorage.cookies)}
+              <button
+                className="partiButton"
+                onClick={() =>
+                  localStorage.cookies ? setStep(1) : setOpenCookieePopup(true)
+                }
+              >
                 C'est parti!
               </button>
               <img src={arrowright} className="arrowright" />
@@ -137,6 +177,7 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
         </Grid>
         {/* <button onClick={onButtonClick}>Download PDF</button> */}
       </div>
+      <Contactus />
       <Footer />
       <CookiesPopup
         open={openCookieePopup}
@@ -144,15 +185,27 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
         setOpenCookieePopup2={setOpenCookieePopup2}
         data={data}
         setData={setData}
-        />
-        <CookiesPopup2
+      />
+      <CookiesPopup2
         open={openCookieePopup2}
         setOpen={setOpenCookieePopup2}
         setData={setData}
-        />
-        {checkCookies
-        ? !localStorage.cookies && <Cookies setCookies={setCookies} setOpenCookieePopup={setOpenCookieePopup}/>
+      />
+      {checkCookies
+        ? !localStorage.cookies && (
+            <Cookies
+              setCookies={setCookies}
+              setOpenCookieePopup={setOpenCookieePopup}
+              setRefuserPopup={setRefuserPopup}
+            />
+          )
         : ""}
+      <RefuserPopup
+        open={reuserPopup}
+        setOpen={setRefuserPopup}
+        setData={setData}
+        setOpenCookieePopup={setOpenCookieePopup}
+      />
     </>
   );
 };

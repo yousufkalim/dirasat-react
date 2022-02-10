@@ -9,8 +9,8 @@ const Footer = () => {
       <div className="FooterDiv">
         <div className="cguBar">
           <div>
-          <h3 className="footeraccueil" style={{ textAlign: "" }}>
-            {/* <AnchorLink
+            <h3 className="footeraccueil" style={{ textAlign: "" }}>
+              {/* <AnchorLink
               href="#top"
               style={{
                 color: "white",
@@ -20,39 +20,49 @@ const Footer = () => {
               Accueil
             </AnchorLink> */}
             </h3>
-            
+
             <div>
               <p>ORIENTATOR</p>
               <p>Adresse postale : 55 avenue Marceau, 75116 Paris</p>
-              <p>E-mail : contact@orientator.com</p>
-              <p>Téléphone : 01 84 80 74 81</p>
+              {/* <p>E-mail : contact@orientator.com</p>
+              <p>Téléphone : 01 84 80 74 81</p> */}
             </div>
-          
           </div>
           <div className="developbydiv">
-          <p className="developby" style={{ textAlign: "" }}>
-            {/* Développé par */}
-            <a
-              href="https:www.falconconsulting.fr"
-              target="_blank"
-              style={{ textDecoration: "none", color: " gray", margin: "5px" }}
-            >
-              {" "}
-              {/* Falcon Consulting */}
-            </a>{" "}
-            2021. Tous droits réservés
-          </p>
+            <p className="developby" style={{ textAlign: "" }}>
+              {/* Développé par */}
+              <a
+                href="https:www.falconconsulting.fr"
+                target="_blank"
+                style={{
+                  textDecoration: "none",
+                  color: " gray",
+                  margin: "5px",
+                }}
+              >
+                {" "}
+                {/* Falcon Consulting */}
+              </a>{" "}
+              2021. Tous droits réservés
+            </p>
           </div>
           <div className="cguDiv">
-          <div className="footercgu" style={{ textAlign: "" }}>
-            <Link to="/CGU"  className="cgufont" style={{ color: "white", textDecoration: "none" }}>
-              CGU
-            </Link>
-            <p style={{margin:"7px"}}/>
-            <Link to="/MentionsLegal" style={{ color: "white", textDecoration: "none" }}>
-            Mentions légales
-            </Link>
-          </div>
+            <div className="footercgu" style={{ textAlign: "" }}>
+              <Link
+                to="/CGU"
+                className="cgufont"
+                style={{ color: "white", textDecoration: "none" }}
+              >
+                CGU
+              </Link>
+              <p style={{ margin: "7px" }} />
+              <Link
+                to="/MentionsLegal"
+                style={{ color: "white", textDecoration: "none" }}
+              >
+                Mentions légales
+              </Link>
+            </div>
           </div>
         </div>
       </div>
