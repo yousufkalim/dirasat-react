@@ -428,6 +428,37 @@ padding: 10px;
   .footerGrid {
     width: 75% !important;
   }
+  .toptextpopup{
+    font-size: 11px;
+  }
+  .popuptext2{
+    font-size: 11px;
+  }
+  .rejectbtn{
+    margin: 2px 2px;
+    font-size: 8px;
+  }
+  .rejectbtndisabled{
+    margin: 2px 2px;
+    font-size: 8px;
+ }
+  .acceptbtnActive{
+    margin: 2px 2px;
+    font-size: 8px;
+   
+  }
+  .acceptbtn{
+    margin: 2px 2px;
+    font-size: 8px;
+  }
+  .rejectbtnActive{
+    margin: 2px 2px;
+    font-size: 8px;
+  }
+  .popupli{
+    font-size: 8px;
+    width: 65%;
+  }
 }
 /* for big screens */
 @media only screen and (min-width: 1201px) and (max-width: 1536px) {
