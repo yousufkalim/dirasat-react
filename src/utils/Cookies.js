@@ -12,7 +12,7 @@ export default function Cookies({ setCookies,setOpenCookieePopup }) {
   };
   return (
     <Grid container spacing={2} className="cookies">
-      <Grid item xs={12} sm={9} className="">
+      <Grid item xs={12} sm={9} md={8} className="cookieeGrid">
         <div className="cookiesDiv">
           <p>
             En poursuivant votre navigation sur ce site, vous acceptez
@@ -30,7 +30,8 @@ export default function Cookies({ setCookies,setOpenCookieePopup }) {
           </p>
         </div>
       </Grid>
-      <Grid item xs={12} sm={3} className="cookiesButtonDiv">
+      <Grid item xs={12} sm={3} md={4} className="cookiesButtonDiv">
+
       <button onClick={()=>setOpenCookieePopup(true)} className="cookieButtonParameter">
       Paramétrer
         </button>
@@ -40,6 +41,7 @@ export default function Cookies({ setCookies,setOpenCookieePopup }) {
         <button onClick={handleCookies} className="cookieButtonaccept">
           Accepter
         </button>
+
       </Grid>
     </Grid>
   );

@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { styled } from "@material-ui/core/styles";
 import Dialog from "@material-ui/core/Dialog";
-import { toast } from "react-toastify";
 import DialogContent from "@material-ui/core/DialogContent";
 import IconButton from "@material-ui/core/IconButton";
-import Grid from "@material-ui/core/Grid"
 import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
 import { Store, UpdateStore } from "../StoreContext";
-import api from "../api";
 import { Link } from "react-router-dom";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
@@ -21,16 +18,6 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 export default function CookiesPopup({ open, setOpen,setOpenCookieePopup2,data,setData }) {
   const { user } = Store();
   
-  const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState({
-    email: "",
-    inviteBy: user?.email,
-    firstName: user?.first_name,
-    lastName: user?.last_name,
-  });
-  // Destructuring of UserForm State
-
- 
   const handleClose = () => {
     setOpen(false);
   };
@@ -60,21 +47,16 @@ export default function CookiesPopup({ open, setOpen,setOpenCookieePopup2,data,s
       }
       if(!item.accept){
         accept=false
-      }
-      
-     
+      } 
     })
-    console.log(refuse,"checkRefuse")
     if(refuse){
        return setOpenCookieePopup2(true)
     }
     if(accept){
-      
       localStorage.setItem("cookies", true)
       setOpen(false);
     }
     setOpen(false);
-
   }
   return (
     <div>
@@ -91,9 +73,9 @@ export default function CookiesPopup({ open, setOpen,setOpenCookieePopup2,data,s
           <HorizontalRuleIcon fontSize="large" />
           {/* <img src={close} className="closeimg" /> */}
         </IconButton>
-        <DialogContent className="modalcontent"> 
-          <p style={{margin:"0"}}>Orientator et ses partenaires sélectionnés traitent des données personnelles en lien avec votre navigation sur nos contenus pour les finalités listées ci-dessous.</p>
-          <p style={{margin:"0"}}>Pour en savoir plus sur nos pratiques en matière de protection des données personnelles et la façon dont nous utilisons vos données, vous pouvez consulter<Link to="/confidentialite"  target="_blank" className="cookieeLink"> politique de confidentialité</Link></p>
+        <DialogContent className="modalcontentcookie"> 
+          <p style={{margin:"0"}} className="toptextpopup">Orientator et ses partenaires sélectionnés traitent des données personnelles en lien avec votre navigation sur nos contenus pour les finalités listées ci-dessous.</p>
+          <p style={{margin:"0"}} className="toptextpopup">Pour en savoir plus sur nos pratiques en matière de protection des données personnelles et la façon dont nous utilisons vos données, vous pouvez consulter<Link to="/confidentialite"  target="_blank" className="cookieeLink"> politique de confidentialité</Link></p>
           
         </DialogContent>
         <div className="invitedialogAction">
@@ -116,10 +98,10 @@ export default function CookiesPopup({ open, setOpen,setOpenCookieePopup2,data,s
               </div>
             </div>
           ))}
-
+<div>
           <p className="popuptext2">Ce site et ses partenaires pourront également réaliser les traitements de données suivants : Assurer la sécurité, Prévenir la fraude et débogguer, diffuser techniquement les publicités ou le contenu, mettre en correspondance et combiner des sources de données hors ligne, recevoir et utiliser des caractéristiques d’identification d’appareil envoyées automatiquement, et relier différents terminaux.</p>
         <div className="popupbtndiv">  <button  className="popupsavebtn" onClick={handleSavepopup}>Enregistrer</button></div>
-
+</div>
         </div>
       </BootstrapDialog>
     </div>

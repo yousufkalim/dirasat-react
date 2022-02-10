@@ -8,10 +8,16 @@
 }
 .MuiDialog-paperWidthSm {
   max-width: 650px !important;
+  justify-content: space-evenly !important;
 }
 .popupli{
   text-align: left;
   font-size: 13px;
+}
+.modalcontentcookie {
+  position: relative;
+  bottom: 30px;
+  overflow-y: inherit !important;
 }
 .cookies {
   background-color: #0a0808;
@@ -414,6 +420,39 @@ padding: 10px;
   .footerGrid {
     width: 75% !important;
   }
+}
+/* for big screens */
+@media only screen and (min-width: 1201px) and (max-width: 1536px) {
+  .toptextpopup{
+    font-size: 13px;
+  }
+  .popuptext2{
+    
+    font-size: 12px;
+  }
+  .rejectbtn{
+    margin: 2px 5px;
+    
+  }
+  .acceptbtnActive{
+    margin: 3px 4px;
+   
+  }
+  .acceptbtn{
+    margin: 3px 4px;
+  }
+  .rejectbtnActive{
+    margin: 3px 4px;
+  }
+ 
+  .InvitecloseButton {
+  
+    top:-7 !important
+  }
+ 
+  
+
+  
 }
 
 /* for big screens */

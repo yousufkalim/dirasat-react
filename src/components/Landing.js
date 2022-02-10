@@ -34,10 +34,6 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
   ];
   const [data, setData] = useState(items);
   const capture1 = React.createRef();
- 
-
- 
-
   const video = document.getElementById("video");
   const scrollToTop = () => {
     window.scrollTo({
