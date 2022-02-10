@@ -10,6 +10,7 @@
   max-width: 650px !important;
   justify-content: space-evenly !important;
 }
+
 .popupli{
   text-align: left;
   font-size: 13px;
@@ -63,7 +64,13 @@ padding: 10px;
   background-color: #d55d5d;
   color: white;
 }
-
+.rejectbtndisabled{
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+}
 .rejectbtn{
   margin: 5px;
   padding: 5px 10px;
@@ -71,6 +78,7 @@ padding: 10px;
   border: none;
   cursor: pointer;
 }
+
 .rejectbtn:hover{
   background: linear-gradient(1deg, #ffffff -24.17%, #bac0d6 100%);
 }
@@ -433,6 +441,10 @@ padding: 10px;
   .rejectbtn{
     margin: 2px 5px;
     
+  }
+  .rejectbtndisabled{
+    margin: 2px 5px;
+
   }
   .acceptbtnActive{
     margin: 3px 4px;
