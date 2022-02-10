@@ -83,7 +83,7 @@ export default function CookiesPopup({ open, setOpen,setOpenCookieePopup2,data,s
           <div className="cookieeDiv">
               <li className="popupli">Fonctionnalités basiques de navigation requises</li>
               <div>
-              <button className={`${"rejectbtn"}` }
+              <button className={`${"rejectbtndisabled"}` }
                disabled>Refuser</button>
               <button  className={`${"acceptbtnActive"}`} >Accepter</button>
               </div>
