@@ -20,7 +20,6 @@ const Confidential = () => {
           <p className="cguHeading">
           POLITIQUE DE CONFIDENTIALITÉ
             <br />
-            
           </p>
           <p>DU SITE :</p>
           <h1>Orientator.com</h1>
@@ -33,11 +32,9 @@ const Confidential = () => {
           <p className="pmargin">
           La présente politique de confidentialité a pour but d'exposer aux utilisateurs du site :
           </p>
-         
           <p className="pmargin">
           ● La manière dont sont collectées et traitées leurs données à caractère personnel. Doivent être considérées comme données personnelles toutes les données étant susceptibles d'identifier un utilisateur. Il s'agit notamment du prénom et du nom, de l'âge, de l'adresse postale, l'adresse mail, la localisation de l'utilisateur ou encore son adresse IP ;
           </p>
-          
           <p className="pmargin">
           ● Quels sont les droits des utilisateurs concernant ces données ;
           </p>
@@ -45,7 +42,6 @@ const Confidential = () => {
           ● Qui est responsable du traitement des données à caractère personnel collectées et traitées ;
           </p>
           <p className="pmargin">
-            
           ● A qui ces données sont transmises ;
           </p>
           <p className="pmargin">
@@ -73,7 +69,6 @@ const Confidential = () => {
           <p className="pmargin">
           ● Intégrité et confidentialité des données collectées et traitées : le responsable du traitement des données s'engage à garantir l'intégrité et la confidentialité des données collectées.
           </p>
-        
           <p className="pmargin">
           Afin d'être licites, et ce conformément aux exigences de l'article 6 du règlement européen 2016/679, la collecte et le traitement des données à caractère personnel ne pourront intervenir que s'ils respectent au moins l'une des conditions ci-après énumérées :
           </p>
@@ -92,7 +87,6 @@ const Confidential = () => {
           <p className="pmargin">
           ● Le traitement peut s'expliquer par une nécessité liée à l'exécution d'une mission d'intérêt public ou qui relève de l'exercice de l'autorité publique ;
           </p>
-
           <p className="pmargin">
           ● Le traitement et la collecte des données à caractère personnel sont nécessaires aux fins des intérêts légitimes et privés poursuivis par le responsable du traitement ou par un tiers.
           </p>
@@ -127,7 +121,57 @@ const Confidential = () => {
           <p className="pmargin">
           - Adresse IP
           </p>
-          
+          <p className="pmargin">
+          Ces données sont collectées lorsque l'utilisateur remplit le formulaire destiné à lui indiquer le meilleur parcours professionnel. 
+          </p>
+          <p className="pmargin">
+          Le responsable du traitement conservera dans ses systèmes informatiques du site et dans des conditions raisonnables de sécurité l'ensemble des données collectées pour les durées suivantes : 
+          </p>
+          <p className="pmargin">
+          - données personnelles : 10 ans	 
+          </p>
+          <p className="pmargin">
+          - cookies d'analyses du site : 6 mois.	 
+          </p>
+          <p className="pmargin">
+          La collecte et le traitement des données ont pour objet de permettre de répondre à la demande des utilisateurs du site afin de leur proposer la meilleure solution possible. Ces données pourront ensuite, si l’utilisateur donne son accord express, être transmises à des écoles publiques ou privées ou à des acteurs proposant des services éducatifs. La collecte des données permet également une meilleure efficacité du site pour l’utilisateur avec une plus grande facilité d’utilisation et une plus grande rapidité de celui-ci.
+          </p>
+          <p className="pmargin">
+          Les traitements de données effectués sont fondés sur le consentement express de l'Utilisateur. 
+          </p>
+          <p className="pmargin">
+        <span className="boldText">  B.</span>TRANSMISSION DES DONNÉES À DES TIERS
+          </p>
+          <p className="pmargin">
+          Les données peuvent être transmises aux tiers ci-après énumérés : Facebook Ads, Google Ads, Google Analytics.
+          </p>
+          <p className="pmargin">
+          Elles sont également susceptibles d’être transmises, sous accord express de l’Utilisateur, à des écoles et des plateformes de recrutement. 
+          </p>
+          <p className="pmargin">
+        <span className="boldText">  C. </span>HÉBERGEMENT DES DONNÉES
+          </p>
+          <p className="pmargin">
+          Le site Orientator est hébergé par SCALEWAY, dont le siège est situé à l'adresse ci-après : SCALEWAY SAS BP 438 75366 PARIS CEDEX 08 France.
+          </p>
+          <p className="pmargin">
+          L'hébergeur peut être contacté au numéro de téléphone suivant : +33 (0)1 84 13 00 00. 
+          </p>
+          <p className="pmargin">
+          Les données collectées et traitées par le site sont exclusivement hébergées et traitées en France.
+          </p>
+          <h1>
+          ARTICLE 4 : RESPONSABLE DU TRAITEMENT DES DONNÉES
+          </h1>
+          <p className="pmargin">
+        <span className="boldText">  A. </span>LE RESPONSABLE DU TRAITEMENT DES DONNÉES
+          </p>
+          <p className="pmargin">
+          Le responsable du traitement des données à caractère personnel est M. Bilel Rabhi. Il peut être contacté par mail (contact@orientator.com) et par téléphone (01 84 80 74 81) lundi au vendredi de 9h à 19h. 
+          </p>
+          <p className="pmargin" style={{paddingBottom:"30px"}}>
+          Le responsable du traitement des données est chargé de déterminer les finalités et les moyens mis au service du traitement des données à caractère personnel.
+          </p>
         </div>
       </div>
    

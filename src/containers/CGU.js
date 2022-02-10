@@ -22,17 +22,14 @@ const CGU = () => {
             <br />
             <p>Orientator.com</p>  
           </p>
-          
         </div>
         <div style={{ width: "60%", margin: "auto" }}>
-
         <h1>
         ARTICLE 1. INFORMATIONS LÉGALES
           </h1>        
           <p className="pmargin">
           En vertu de l'article 6 de la Loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, il est précisé dans cet article l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi.
           </p>
-
           <p className="pmargin">
           Le site Orientator.com est édité par :
           </p>
@@ -60,22 +57,18 @@ const CGU = () => {
             <p className="pmargin">
             Adresse e mail :  https://contact.scaleway.com/contactus/s/?language=en_US
             </p>
-
-
             <h1>
             ARTICLE 2. PRÉSENTATION DU SITE
           </h1>        
           <p className="pmargin">
           Le site Orientator.com a pour objet d’être une plateforme d’orientation pour les étudiants afin de les diriger au mieux vers le cursus le plus adapté à leur choix et leurs envies.
           </p>
-
           <h1>
           ARTICLE 3. CONTACT
           </h1>        
           <p className="pmargin">
           Pour toute question ou demande d'information concernant le site, ou tout signalement de contenu ou d'activités illicites, l'utilisateur peut contacter l'éditeur à l'adresse e-mail suivante: contact@orientator.com. ou adresser un courrier recommandé avec accusé de réception à : Orientator, 55 avenue Marceau 75116 Paris. 
           </p>
-
           <h1>
           ARTICLE 4. ACCEPTATION DES CONDITIONS D'UTILISATION
           </h1>        
@@ -88,7 +81,6 @@ const CGU = () => {
           <p className="pmargin">
           Il est donc conseillé à l'utilisateur de se référer avant toute navigation à la dernière version des CGU, accessible à tout moment sur le site. En cas de désaccord avec les CGU, aucun usage du site ne saurait être effectué par l'utilisateur.
           </p>
-
           <h1>
           ARTICLE 5. ACCÈS ET NAVIGATION
           </h1>        
@@ -98,7 +90,6 @@ const CGU = () => {
           <p className="pmargin">
           Les présentes CGU s'appliquent, en tant que de besoin, à toute déclinaison ou extension du site sur les réseaux sociaux et/ou communautaires existants ou à venir.
           </p>
-
           <h1>
           ARTICLE 6. GESTION DU SITE
           </h1>        
@@ -170,7 +161,6 @@ const CGU = () => {
               <p className="pmargin">
               Enfin, Orientator.com se réserve le droit de faire supprimer à tout moment un lien hypertexte pointant vers son site, si le site l'estime non conforme à sa politique éditoriale.
               </p>
-
               <h1>
               ARTICLE 9 : CONFIDENTIALITÉ
           </h1>        
@@ -180,7 +170,6 @@ const CGU = () => {
           <p className="pmargin">
           En naviguant sur le site, l'utilisateur déclare avoir également pris connaissance de la politique de confidentialité susmentionnée.
               </p>
-
               <h1>
               ARTICLE 10. PROPRIÉTÉ INTELLECTUELLE
           </h1>        
@@ -196,15 +185,12 @@ const CGU = () => {
           <p className="pmargin">
           Il est interdit à l'utilisateur d'introduire des données sur le site qui modifieraient ou qui seraient susceptibles d'en modifier le contenu ou l'apparence.
               </p>
-
               <h1>
               ARTICLE 11. LOI APPLICABLE ET JURIDICTION COMPÉTENTE
           </h1>        
           <p className="pmargin"  style={{paddingBottom:"30px"}}>
           Les présentes Conditions Générales d'Utilisation sont régies par la loi française. En cas de différend et à défaut d'accord amiable, le litige sera porté devant les tribunaux français conformément aux règles de compétence en vigueur.
           </p>
-            
-
         </div>
         {/* <div style={{ width: "60%", margin: "auto" }}>
           <h1 className="cguHeading">

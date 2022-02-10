@@ -19,20 +19,17 @@ const MentionsLegal = () => {
         <div style={{ width: "60%", margin: "auto" }}>
           <p className="cguHeading">
           MENTIONS LÉGALES DU SITE
-            <br />
-            
+            <br />  
           </p>
           <h1>Orientator</h1>
         </div>
         <div style={{ width: "60%", margin: "auto" }}>
-          
           <p>
           Conformément aux dispositions des Articles 6-III et 19 de la Loi n°2004-575 du 21 juin 2004 pour la Confiance dans l'économie numérique, dite L.C.E.N., il est porté à la connaissance des utilisateurs et visiteurs du site Orientator les présentes mentions légales.
           </p>
           <p className="pmargin">
           Le site Orientator est accessible à l'adresse suivante : www.orientator.com (ci-après "le Site"). L'accès et l'utilisation du Site sont soumis aux présentes " Mentions légales" détaillées ci-après ainsi qu'aux lois et/ou règlements applicables
           </p>
-         
           <p className="pmargin">
           La connexion, l'utilisation et l'accès à ce Site impliquent l'acceptation intégrale et sans réserve de l'internaute de toutes les dispositions des présentes Mentions Légales.
           </p>
@@ -45,9 +42,8 @@ const MentionsLegal = () => {
           <p className="pmargin">
         <span className="boldText">  A.</span> Editeur du site
           </p>
-          <p className="pmargin">
-            
-Le site Orientator est édité par la SAS Orientator ayant son siège social à l'adresse suivante : 55 avenue Marceau 751116 Paris, et immatriculée au numéro suivant : en cours d’immatriculation RCS Paris.
+          <p className="pmargin">  
+          Le site Orientator est édité par la SAS Orientator ayant son siège social à l'adresse suivante : 55 avenue Marceau 751116 Paris, et immatriculée au numéro suivant : en cours d’immatriculation RCS Paris.
           </p>
           <p className="pmargin">
           Capital social : 1 000 euros
@@ -73,7 +69,6 @@ Le site Orientator est édité par la SAS Orientator ayant son siège social à
           <p className="pmargin">
           ci-après " le Directeur de publication "
           </p>
-        
           <p className="pmargin">
         <span className="boldText">  C.</span> Hébergeur du site
           </p>
@@ -92,7 +87,6 @@ Le site Orientator est édité par la SAS Orientator ayant son siège social à
           <p className="pmargin">
           ci-après " l'Hébergeur "
           </p>
-
           <p className="pmargin">
         <span className="boldText">  D.</span> Utilisateurs
           </p>
@@ -102,7 +96,6 @@ Le site Orientator est édité par la SAS Orientator ayant son siège social à
           <p className="pmargin">
           ci-après les " Utilisateurs "
           </p>
-      
          <p className="boldText">ARTICLE 2 - ACCESSIBILITÉ</p>
          <p className="pmargin">
          Le Site est par principe accessible aux Utilisateurs 24/24h et 7/7j, sauf interruption, programmée ou non, pour des besoins de maintenance ou en cas de force majeure.
@@ -110,7 +103,6 @@ Le site Orientator est édité par la SAS Orientator ayant son siège social à
           <p className="pmargin">
           En cas d'impossibilité d'accès au Site, celui-ci s'engage à faire son maximum afin d'en rétablir l'accès. Le Site ne saurait être tenu pour responsable de tout dommage, quelle qu'en soit la nature, résultant de son indisponibilité.
           </p>
-
           <p className="boldText">ARTICLE 3 - LOI APPLICABLE ET JURIDICTION</p>
          <p className="pmargin">
          Les présentes Mentions Légales sont régies par la loi française. En cas de différend et à défaut d'accord amiable, le litige sera porté devant les tribunaux français conformément aux règles de compétence en vigueur.
