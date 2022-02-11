@@ -35,10 +35,10 @@ function App() {
         autoClose={3000}
         hideProgressBar={true}
         transition={Flip}
+        limit={2}
       />
       {/* Routes */}
-      <Index
-      />
+      <Index />
     </div>
   );
 }
