@@ -8,6 +8,7 @@ const Contactus = () => {
   const {} = Store();
 
   // initialize States
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -24,22 +25,28 @@ const Contactus = () => {
   // handleSubmit Function
   const handleSubmit = async (e) => {
     console.log("formData", formData);
-    // setLoading(true);
-    // let res = await api("post", "/users/create", {
-    //   ...formData,
-    //   address: addressValue,
-    // });
-    // if (res.status === 200) {
-    //   SetconfirmationOpen(true);
-    // updateStore({
-    //   questions: res?.data?.questions,
-    //   answers: res?.data?.answers,
-    //   user: res?.data?.user,
-    // });
-    // setStep(2);
-    // setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    // }
-    // setLoading(false);
+    if (name == "") {
+      return toast.error("Veuillez entrer Prénom et nom");
+    }
+    if (email == "") {
+      return toast.error("Veuillez entrer votre e-mail");
+    }
+    if (message == "") {
+      return toast.error("Veuillez entrer Objet de votre message");
+    }
+    if (description == "") {
+      return toast.error("Veuillez entrer Votre message");
+    }
+
+    setLoading(true);
+    let res = await api("post", "/users/contact", {
+      ...formData,
+    });
+    if (res.status === 200) {
+      toast.success("Soumis avec succès");
+      setFormData({ name: "", email: "", message: "", description: "" });
+    }
+    setLoading(false);
   };
   return (
     <>
@@ -93,7 +100,7 @@ const Contactus = () => {
         </div>
         <div className="contactsave">
           <button className="contactsavebtn" onClick={handleSubmit}>
-            Envoyer
+            {loading ? "Chargement en cours" : "Envoyer"}
           </button>
         </div>
       </div>

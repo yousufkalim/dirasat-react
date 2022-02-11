@@ -145,6 +145,14 @@ const UserForm = ({ setStep, setActiveStep }) => {
         color: "white",
       },
     },
+    customTextFieldestablish: {
+      "& input::placeholder": {
+        color: "white",
+        "@media (max-width: 780px)": {
+          fontSize: "12px",
+        },
+      },
+    },
     option: {
       background: "#242635 ",
       color: "white",
@@ -307,7 +315,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
       return toast.error("Veuillez accepter les termes et conditions");
     }
     if (!accept_condition2) {
-      return toast.error("Merci d'accepter les conditions pour démarrer le test");
+      return toast.error(
+        "Merci d'accepter les conditions pour démarrer le test"
+      );
     }
     setLoading(true);
     let res = await api("post", "/users/create", {
@@ -536,7 +546,8 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       }}
                       renderInput={(params) => (
                         <TextField
-                          classes={{ root: classes.customTextField }}
+                          classes={{ root: classes.customTextFieldestablish }}
+                          className="establish"
                           {...params}
                           placeholder="Établissement actuel (commencer par la ville)"
                           variant="outlined"
@@ -571,7 +582,8 @@ const UserForm = ({ setStep, setActiveStep }) => {
                     onChange={onChange}
                   />
                   <span className="termsandcondition">
-                  J'accepte que mes données soient transmises à des partenaires d'Orientato
+                    J'accepte que mes données soient transmises à des
+                    partenaires d'Orientator
                   </span>
                 </Grid>
                 <Grid container spacing={2} className="formbuttonsGrid">
