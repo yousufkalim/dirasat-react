@@ -143,13 +143,18 @@ const UserForm = ({ setStep, setActiveStep }) => {
     customTextField: {
       "& input::placeholder": {
         color: "white",
+        "@media (max-width: 780px)": {
+          paddingLeft: "-2px",
+        },
       },
     },
     customTextFieldestablish: {
       "& input::placeholder": {
         color: "white",
+        fontSize: "13px",
         "@media (max-width: 780px)": {
           fontSize: "12px",
+          paddingLeft: "-2px",
         },
       },
     },

@@ -92,8 +92,8 @@
   color: #9198a5;
   font-size: 15px;
   border-radius: 10px;
-  padding: 0 0 0 20px;
-  width: 85%;
+  padding: 0 0 0 13px;
+  width: 86%;
   height: 45px;
   margin: 2px;
 }
@@ -181,6 +181,7 @@
 .MuiInputLabel-outlined {
   color: #9198a5 !important;
   margin: -5px 0 0 0 !important;
+  background-color: green !important;
 }
 .MuiOutlinedInput-notchedOutline {
   border: none !important;
