@@ -53,7 +53,7 @@ export default function InviteBox({ open, setOpen }) {
         <DialogContent className="modalcontent">
           <h2 className="dialogHeading">Partager sur</h2>
           <Grid container spacing={1} className="invitedialoginputGrid">
-            <Grid item sm={3}>
+            <Grid item sm={4}>
               <FacebookShareButton
                 url={url}
                 target="_blank"
@@ -62,7 +62,7 @@ export default function InviteBox({ open, setOpen }) {
                 <FacebookIcon round={true} className="socialIcons fb" />
               </FacebookShareButton>
             </Grid>
-            <Grid item sm={3}>
+            {/* <Grid item sm={3}>
               <WhatsappShareButton
                 url={url}
                 target="_blank"
@@ -71,9 +71,9 @@ export default function InviteBox({ open, setOpen }) {
               >
                 <WhatsAppIcon round={true} className="socialIcons whatsapp" />
               </WhatsappShareButton>
-            </Grid>
+            </Grid> */}
 
-            <Grid item sm={3}>
+            <Grid item sm={4}>
               <EmailShareButton
                 url={url}
                 target="_blank"
@@ -86,7 +86,7 @@ export default function InviteBox({ open, setOpen }) {
                 <MailOutlineIcon round={true} className="socialIcons mail" />
               </EmailShareButton>
             </Grid>
-            <Grid item sm={3}>
+            <Grid item sm={4}>
               <TwitterShareButton
                 url={url}
                 target="_blank"
