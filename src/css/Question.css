@@ -9,7 +9,7 @@
   margin: auto !important;
   text-align: left !important;
 }
-.prevButton{
+.prevButton {
   background: linear-gradient(180deg, #ffffff -24.17%, #bac0d6 100%);
   border-radius: 100px;
   width: 10%;
@@ -212,13 +212,12 @@
     margin-bottom: 107% !important;
     margin-top: 20% !important;
   }
-  .prevButton{
+  .prevButton {
     width: 70%;
     margin: 10px auto;
     padding: 13px 0px 13px 0px;
     cursor: pointer;
     position: inherit;
-    
   }
   .marginBottomClass {
     margin-bottom: 50% !important;
@@ -319,7 +318,7 @@
 }
 /* for big screens */
 @media only screen and (min-width: 601px) and (max-width: 1200px) {
-  .prevButton{
+  .prevButton {
     width: 60%;
     margin: 80px auto;
     position: relative;
@@ -328,7 +327,7 @@
   .questionsOuterDiv {
     max-height: inherit !important;
     overflow: inherit !important;
-    margin-top: 8% !important;
+    margin-top: 0% !important;
   }
 
   .qboximg {
@@ -372,6 +371,7 @@
   }
   .option {
     font-size: 11px !important;
+    margin-bottom: 4px !important;
   }
   .winkingFinal {
     width: 100% !important;
@@ -417,9 +417,24 @@
     object-fit: unset !important;
   }
 }
+@media only screen and (min-width: 1201px) and (max-width: 1700px) {
+  .answerGrid {
+    padding: 1% 7% 0 13% !important;
+  }
+  .prevButton {
+    margin: 0px 20px 20px -10px;
+    padding: 13px 0px 13px 0px;
+  }
+  .ninthoption {
+    margin-bottom: 12px !important;
+    font-size: 13px !important;
+    position: relative !important;
+    bottom: 35px !important;
+  }
+}
 
 /* for big screens */
-@media only screen and (min-width: 1500px) and (max-width: 1900px) {
+@media only screen and (min-width: 1701px) and (max-width: 1900px) {
   .qboximg {
     width: auto;
     margin-top: auto;

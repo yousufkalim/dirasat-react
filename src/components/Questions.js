@@ -84,10 +84,9 @@ const Questions = ({ setStep, setActiveStep }) => {
     setCurrentAnswer(null);
     return play();
   };
-  console.log("history",history)
-  console.log("prevQuestion",prevQuestion)
+  console.log("history", history);
+  console.log("prevQuestion", prevQuestion);
 
-  
   //it set the current answer which will be selected
   const currentans = () => {
     let currentans = prevQuestion?.find(
@@ -243,11 +242,11 @@ const Questions = ({ setStep, setActiveStep }) => {
                     item
                     xs={12}
                     sm={5}
-                    className={
+                    className={`${
                       currentAnswer?.answer === ans?.answer
                         ? "selectedOption"
                         : "option"
-                    }
+                    } ${getOptions(answers)?.length == 9 && "ninthoption"}`}
                     onClick={() => handleSelectOption(ans)}
                   >
                     {ans?.answer}
@@ -255,17 +254,14 @@ const Questions = ({ setStep, setActiveStep }) => {
                 ))}
             </Grid>
             {history.length >= 1 ? (
-             <div
-             size="large"
-             className="prevButton"
-             onClick={handlePrev}
-           >
-             <img src={arrowleft} className="arrowleft" />
-             <b> Retour</b>
-           </div>
-          ):""}
+              <div size="large" className="prevButton" onClick={handlePrev}>
+                <img src={arrowleft} className="arrowleft" />
+                <b> Retour</b>
+              </div>
+            ) : (
+              ""
+            )}
           </div>
-          
         </Grid>
       </Grid>
     </>
