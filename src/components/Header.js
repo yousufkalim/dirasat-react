@@ -7,6 +7,8 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import logo from "../assets/img/logo1.png";
 import Navicon from "../assets/icons/navicon.png";
 import Closeicon from "../assets/icons/closeicon.png";
+import { useHistory, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,6 +28,8 @@ export default function Header({
   setActiveStep,
   setStatetextforscroll,
 }) {
+  const history = useHistory();
+  console.log("history", history);
   const classes = useStyles();
   const [flag, setFlag] = useState(false);
   // Show navbar when page is scorlled upto given distance
@@ -80,7 +84,12 @@ export default function Header({
               src={logo}
               width="90%"
               className="logoImage"
-              onClick={() => window.location.reload()}
+              onClick={() => {
+                history.push("/");
+                if (history.location.pathname == "/") {
+                  window.location.reload("/");
+                }
+              }}
             />
           </div>
         </div>
@@ -127,6 +136,17 @@ export default function Header({
                 Comment ça marche?
               </Typography>
             </AnchorLink>
+            <div
+              style={{ width: "60%", textAlign: "right", marginTop: "10px" }}
+            >
+              <Link
+                to="/blog"
+                style={{ color: "white", textDecoration: "none" }}
+                className={flag ? "title b" : "hidetitle b"}
+              >
+                Blog
+              </Link>
+            </div>
           </>
         )}
       </Toolbar>
