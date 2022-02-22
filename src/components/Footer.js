@@ -23,6 +23,7 @@ const Footer = () => {
 
             <div>
               <p>ORIENTATOR</p>
+
               <p>Adresse postale : 55 avenue Marceau, 75116 Paris</p>
               {/* <p>E-mail : contact@orientator.com</p>
               <p>Téléphone : 01 84 80 74 81</p> */}

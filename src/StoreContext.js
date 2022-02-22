@@ -40,6 +40,8 @@ export function StoreProvider({ children }) {
     allTypes: [],
     mainresultPage: null,
     screenshoots: [],
+    blogs: [],
+    singleBlog: {},
   });
 
   const updateStore = (data) => {

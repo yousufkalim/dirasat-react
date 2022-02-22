@@ -3,8 +3,10 @@ import { Route, Switch } from "react-router-dom";
 import Home from "../containers/Home.js";
 import Login from "../containers/Login";
 import CGU from "../containers/CGU";
-import Confidential from "../containers/Confidential"
-import MentionsLegal from "../containers/MentionsLegal"
+import Confidential from "../containers/Confidential";
+import MentionsLegal from "../containers/MentionsLegal";
+import Blog from "../containers/Blog";
+import Article from "../containers/Article";
 import Admin from "./Admin";
 
 const index = () => {
@@ -15,6 +17,8 @@ const index = () => {
       <Route exact path="/CGU" component={CGU} />
       <Route exact path="/confidentialite" component={Confidential} />
       <Route exact path="/MentionsLegal" component={MentionsLegal} />
+      <Route exact path="/blog" component={Blog} />
+      <Route exact path="/blog/:id" component={Article} />
       <Route exact path="/*" render={() => <Admin />} />
     </Switch>
   );

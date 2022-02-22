@@ -25,14 +25,12 @@ const Result = () => {
       setLoading(false);
     }
   };
-
   // get courses arrays base on there types
   const getSingleTypeofCourse = (type) => {
     return singleUserResult?.courses.filter(
       (course) => type === course?.courseId?.type_of_course
     );
   };
-
   return (
     <div
       style={{
