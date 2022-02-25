@@ -55,8 +55,9 @@ export default function ArticleBody({ singlBlog, loading, blogs }) {
                 <img src={Avatar2} className="articleavatar" alt="img" />
                 <div className="articlediv2">
                   <p className="articlep1">
-                    {singlBlog?.blog_author?.name.charAt(0).toUpperCase() +
-                      singlBlog?.blog_author?.name.slice(1)}
+                    {/* {singlBlog?.blog_author?.name.charAt(0).toUpperCase() +
+                      singlBlog?.blog_author?.name.slice(1)} */}
+                    Orientator
                   </p>
                   {/* <p className="articlep2">May 15・1 min read</p> */}
                   <p className="articlep2">

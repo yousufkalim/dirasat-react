@@ -31,17 +31,18 @@ const Admin = () => {
     <>
       {localStorage.token ? (
         <>
-          <Header />
+          {(window.location = "/")}
+          {/* <Header />
           <SideBar />
           <Switch>
             <Route exact path="/users/:id" component={SingleUserResult} />
             <Route exact path="/singleresult/:id" component={Result} />
             <Route exact path="/users" component={Users} />
             <Route exact path="/results" component={Results} />
-          </Switch>
+          </Switch> */}
         </>
       ) : (
-        <>{(window.location = "/login")}</>
+        <>{(window.location = "/")}</>
       )}
     </>
   );
