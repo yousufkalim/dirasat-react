@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
 import blogImg from "../../assets/3.png";
+import { url } from "../../config";
 
 export default function LatestArticle({ blogs, loading, setLoading }) {
   let newdata = [];
@@ -32,7 +33,7 @@ export default function LatestArticle({ blogs, loading, setLoading }) {
                 <div className="latestArticleLeft">
                   <img
                     // src={blogImg}
-                    src={process.env.REACT_APP_baseURL + blogs[0]?.blog_images}
+                    src={url + blogs[0]?.blog_images}
                     className="article1img"
                   />
                   <div className="articledetail">
@@ -73,7 +74,7 @@ export default function LatestArticle({ blogs, loading, setLoading }) {
                       {" "}
                       <img
                         // src={blogImg}
-                        src={process.env.REACT_APP_baseURL + item.blog_images}
+                        src={url + item.blog_images}
                         className="article2img"
                       />
                       <div className="articleText">
