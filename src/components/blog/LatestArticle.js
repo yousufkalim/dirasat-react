@@ -31,8 +31,8 @@ export default function LatestArticle({ blogs, loading, setLoading }) {
                 )}
                 <div className="latestArticleLeft">
                   <img
-                    src={blogImg}
-                    // src={process.env.REACT_APP_baseURL + blogs[0]?.blog_images}
+                    // src={blogImg}
+                    src={process.env.REACT_APP_baseURL + blogs[0]?.blog_images}
                     className="article1img"
                   />
                   <div className="articledetail">
@@ -72,8 +72,8 @@ export default function LatestArticle({ blogs, loading, setLoading }) {
                     <div className="latestArticleRight">
                       {" "}
                       <img
-                        src={blogImg}
-                        // src={process.env.REACT_APP_baseURL + item.blog_images}
+                        // src={blogImg}
+                        src={process.env.REACT_APP_baseURL + item.blog_images}
                         className="article2img"
                       />
                       <div className="articleText">

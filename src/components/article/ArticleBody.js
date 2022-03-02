@@ -41,8 +41,8 @@ export default function ArticleBody({ singlBlog, loading, blogs }) {
       ) : (
         <div className="articleBodycontainer">
           <img
-            src={blogImg}
-            // src={process.env.REACT_APP_baseURL + singlBlog?.blog_images}
+            // src={blogImg}
+            src={process.env.REACT_APP_baseURL + singlBlog?.blog_images}
             className="articleimg"
             alt="img"
           />
