@@ -3,6 +3,7 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
 import blogImg from "../../assets/3.png";
+import { url } from "../../config";
 
 export default function YouMayLike({ blogs, loading }) {
   let newblog = [];
@@ -31,7 +32,7 @@ export default function YouMayLike({ blogs, loading }) {
                       >
                         <img
                           // src={blogImg}
-                          src={process.env.REACT_APP_baseURL + item.blog_images}
+                          src={url + item.blog_images}
                           className="blogdivimg"
                           alt="img"
                         />

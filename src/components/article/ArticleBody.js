@@ -10,6 +10,7 @@ import LinkedinIcon from "../../assets/icons/linkedin2.svg";
 import YouMayLike from "./YouMayLike";
 import { useParams } from "react-router-dom";
 import blogImg from "../../assets/3.png";
+import { url } from "../../config";
 
 import moment from "moment";
 
@@ -42,7 +43,7 @@ export default function ArticleBody({ singlBlog, loading, blogs }) {
         <div className="articleBodycontainer">
           <img
             // src={blogImg}
-            src={process.env.REACT_APP_baseURL + singlBlog?.blog_images}
+            src={url + singlBlog?.blog_images}
             className="articleimg"
             alt="img"
           />

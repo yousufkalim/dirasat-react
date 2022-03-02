@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
 import blogImg from "../../assets/3.png";
+import { url } from "../../config";
 
 import { Link } from "react-router-dom";
 
@@ -34,7 +35,7 @@ export default function YouMayLike({ blogs, loading, setLoading }) {
                       >
                         <img
                           // src={blogImg}
-                          src={process.env.REACT_APP_baseURL + item.blog_images}
+                          src={url + item.blog_images}
                           className="blogdivimg"
                         />
                       </Link>
