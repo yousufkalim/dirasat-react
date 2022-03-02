@@ -33,8 +33,8 @@ export default function YouMayLike({ blogs, loading, setLoading }) {
                         style={{ textDecoration: "none", cursor: "pointer" }}
                       >
                         <img
-                          src={blogImg}
-                          // src={process.env.REACT_APP_baseURL + item.blog_images}
+                          // src={blogImg}
+                          src={process.env.REACT_APP_baseURL + item.blog_images}
                           className="blogdivimg"
                         />
                       </Link>
