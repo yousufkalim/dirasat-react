@@ -131,7 +131,7 @@ const Result = () => {
         // pdf.addImage(btsResult, "PNG", 0, 0, 210, 300);
       });
 
-      pdf.save("download.pdf");
+      pdf.save("Ma liste Orientator.pdf");
       setExportLoading(false);
       // document.body.appendChild(canvas);
     }, 500);
