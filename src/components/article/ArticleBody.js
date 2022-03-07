@@ -62,7 +62,7 @@ export default function ArticleBody({ singlBlog, loading, blogs }) {
                   </p>
                   {/* <p className="articlep2">May 15・1 min read</p> */}
                   <p className="articlep2">
-                    {moment(singlBlog?.createdAt).format("MMMM DD HH:s")}
+                    {moment(singlBlog?.createdAt).format("DD/MM/YYYY")}
                   </p>
                 </div>
               </div>

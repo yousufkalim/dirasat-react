@@ -1,4 +1,3 @@
-
 .articleBodycontainer {
   width: 68%;
   margin: auto;
@@ -7,7 +6,7 @@
 .articlebodyImage {
   width: 70%;
 }
-.h1article{
+.h1article {
   margin-top: 30px;
   font-family: "Mulish";
   font-weight: 100;
@@ -20,8 +19,6 @@
 .articleavatardiv {
   display: flex;
   margin: 35px 0px 20px 7px;
-  
-  
 }
 .articleavatardiv2 {
   display: flex;
@@ -38,7 +35,6 @@
 }
 .articlep1 {
   font-size: 14px;
-  
 }
 .a_h3 {
   font-weight: 100;
@@ -54,7 +50,6 @@
   margin-left: 10px;
   margin-top: 5px;
   font-family: "Mulish";
-  
 }
 .articleSocialicon {
   display: flex;
@@ -85,8 +80,9 @@
   width: 90%;
   font-family: "Mulish";
   font-weight: 100;
-  color: #DFDFDF;
+  color: #dfdfdf;
 }
+
 .htmlp1 {
   font-size: 16px;
   line-height: 1.6;
@@ -126,7 +122,6 @@
   }
   .h1article {
     font-size: 20px;
-    ;
   }
   .articleavatardiv2 {
     width: 140%;

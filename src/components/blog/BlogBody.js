@@ -1,6 +1,6 @@
 // Init
 import React, { useState, useEffect } from "react";
-import BlogBodyimg from "../../assets/img/cover.jpeg";
+import BlogBodyimg from "../../assets/img/blogcover1.png";
 import LatestArticle from "./LatestArticle";
 import YouMayLike from "./YouMayLike";
 import api from "../../api";
@@ -42,7 +42,7 @@ export default function BlogBody() {
       <div className="BlogBodycontainer">
         <img src={BlogBodyimg} className="BlogbodyImage" />
         <div className="BlogtextonImg">
-          <h1 className="BlogtextimgH1">Blog</h1>
+          {/* <h1 className="BlogtextimgH1">Blog</h1> */}
           {/* <p className="BlogtextonImgP">Tag Line Here</p> */}
         </div>
       </div>

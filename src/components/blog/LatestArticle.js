@@ -37,14 +37,12 @@ export default function LatestArticle({ blogs, loading, setLoading }) {
                     className="article1img"
                   />
                   <div className="articledetail">
-                    <p>
-                      {/* {moment(blogs[0]?.createdAt).format("dddd DD, YYYY")} */}
-                      {/* <span className="commentSpan">' 2 Comments</span> */}
-                      <br />
-                    </p>
-                    <h2 className="articleheading">{blogs[0]?.blog_title}</h2>
+                    <h2 className="articleheading">
+                      {blogs[0]?.blog_title.length > 50
+                        ? blogs[0]?.blog_title.substring(0, 49) + "..."
+                        : blogs[0]?.blog_title}
+                    </h2>
                     <p className="textdescription1">
-                      {blogs[0]?.blog_desc}
                       {blogs[0]?.blog_desc.length > 150
                         ? blogs[0]?.blog_desc.substring(0, 180) + "..."
                         : blogs[0]?.blog_desc}{" "}
