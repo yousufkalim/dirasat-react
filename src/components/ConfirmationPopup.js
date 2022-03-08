@@ -18,11 +18,12 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     padding: theme.spacing(1),
   },
 }));
-export default function InviteBox({
+export default function ConfirmationPop({
   confirmationOpen,
   SetconfirmationOpen,
   setStep,
-  setActiveStep
+  setActiveStep,
+  otpbyemail,
 }) {
   const updateStore = UpdateStore();
   const { user } = Store();
@@ -91,7 +92,9 @@ export default function InviteBox({
         </IconButton>
         <DialogContent className="modalcontent">
           <h3 className="dialogHeading">
-            Entrez le code de vérification à six chiffres
+            {otpbyemail
+              ? "Entrez le code de vérification reçu par e-mail"
+              : "Entrez le code de vérification à six chiffres"}
           </h3>
           <Grid container spacing={1} className="invitedialoginputGrid">
             <input
