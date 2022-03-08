@@ -65,6 +65,251 @@ const months = [
   "Novembre",
   "Décembre",
 ];
+let countries = [
+  { name: "Afghanistan", code: "AF" },
+  { name: "Åland Islands", code: "AX" },
+  { name: "Albania", code: "AL" },
+  { name: "Algeria", code: "DZ" },
+  { name: "American Samoa", code: "AS" },
+  { name: "AndorrA", code: "AD" },
+  { name: "Angola", code: "AO" },
+  { name: "Anguilla", code: "AI" },
+  { name: "Antarctica", code: "AQ" },
+  { name: "Antigua and Barbuda", code: "AG" },
+  { name: "Argentina", code: "AR" },
+  { name: "Armenia", code: "AM" },
+  { name: "Aruba", code: "AW" },
+  { name: "Australia", code: "AU" },
+  { name: "Austria", code: "AT" },
+  { name: "Azerbaijan", code: "AZ" },
+  { name: "Bahamas", code: "BS" },
+  { name: "Bahrain", code: "BH" },
+  { name: "Bangladesh", code: "BD" },
+  { name: "Barbados", code: "BB" },
+  { name: "Belarus", code: "BY" },
+  { name: "Belgium", code: "BE" },
+  { name: "Belize", code: "BZ" },
+  { name: "Benin", code: "BJ" },
+  { name: "Bermuda", code: "BM" },
+  { name: "Bhutan", code: "BT" },
+  { name: "Bolivia", code: "BO" },
+  { name: "Bosnia and Herzegovina", code: "BA" },
+  { name: "Botswana", code: "BW" },
+  { name: "Bouvet Island", code: "BV" },
+  { name: "Brazil", code: "BR" },
+  { name: "British Indian Ocean Territory", code: "IO" },
+  { name: "Brunei Darussalam", code: "BN" },
+  { name: "Bulgaria", code: "BG" },
+  { name: "Burkina Faso", code: "BF" },
+  { name: "Burundi", code: "BI" },
+  { name: "Cambodia", code: "KH" },
+  { name: "Cameroon", code: "CM" },
+  { name: "Canada", code: "CA" },
+  { name: "Cape Verde", code: "CV" },
+  { name: "Cayman Islands", code: "KY" },
+  { name: "Central African Republic", code: "CF" },
+  { name: "Chad", code: "TD" },
+  { name: "Chile", code: "CL" },
+  { name: "China", code: "CN" },
+  { name: "Christmas Island", code: "CX" },
+  { name: "Cocos (Keeling) Islands", code: "CC" },
+  { name: "Colombia", code: "CO" },
+  { name: "Comoros", code: "KM" },
+  { name: "Congo", code: "CG" },
+  { name: "Congo, The Democratic Republic of the", code: "CD" },
+  { name: "Cook Islands", code: "CK" },
+  { name: "Costa Rica", code: "CR" },
+  { name: "Cote D'Ivoire", code: "CI" },
+  { name: "Croatia", code: "HR" },
+  { name: "Cuba", code: "CU" },
+  { name: "Cyprus", code: "CY" },
+  { name: "Czech Republic", code: "CZ" },
+  { name: "Denmark", code: "DK" },
+  { name: "Djibouti", code: "DJ" },
+  { name: "Dominica", code: "DM" },
+  { name: "Dominican Republic", code: "DO" },
+  { name: "Ecuador", code: "EC" },
+  { name: "Egypt", code: "EG" },
+  { name: "El Salvador", code: "SV" },
+  { name: "Equatorial Guinea", code: "GQ" },
+  { name: "Eritrea", code: "ER" },
+  { name: "Estonia", code: "EE" },
+  { name: "Ethiopia", code: "ET" },
+  { name: "Falkland Islands (Malvinas)", code: "FK" },
+  { name: "Faroe Islands", code: "FO" },
+  { name: "Fiji", code: "FJ" },
+  { name: "Finland", code: "FI" },
+  { name: "France", code: "FR" },
+  { name: "French Guiana", code: "GF" },
+  { name: "French Polynesia", code: "PF" },
+  { name: "French Southern Territories", code: "TF" },
+  { name: "Gabon", code: "GA" },
+  { name: "Gambia", code: "GM" },
+  { name: "Georgia", code: "GE" },
+  { name: "Germany", code: "DE" },
+  { name: "Ghana", code: "GH" },
+  { name: "Gibraltar", code: "GI" },
+  { name: "Greece", code: "GR" },
+  { name: "Greenland", code: "GL" },
+  { name: "Grenada", code: "GD" },
+  { name: "Guadeloupe", code: "GP" },
+  { name: "Guam", code: "GU" },
+  { name: "Guatemala", code: "GT" },
+  { name: "Guernsey", code: "GG" },
+  { name: "Guinea", code: "GN" },
+  { name: "Guinea-Bissau", code: "GW" },
+  { name: "Guyana", code: "GY" },
+  { name: "Haiti", code: "HT" },
+  { name: "Heard Island and Mcdonald Islands", code: "HM" },
+  { name: "Holy See (Vatican City State)", code: "VA" },
+  { name: "Honduras", code: "HN" },
+  { name: "Hong Kong", code: "HK" },
+  { name: "Hungary", code: "HU" },
+  { name: "Iceland", code: "IS" },
+  { name: "India", code: "IN" },
+  { name: "Indonesia", code: "ID" },
+  { name: "Iran, Islamic Republic Of", code: "IR" },
+  { name: "Iraq", code: "IQ" },
+  { name: "Ireland", code: "IE" },
+  { name: "Isle of Man", code: "IM" },
+  { name: "Israel", code: "IL" },
+  { name: "Italy", code: "IT" },
+  { name: "Jamaica", code: "JM" },
+  { name: "Japan", code: "JP" },
+  { name: "Jersey", code: "JE" },
+  { name: "Jordan", code: "JO" },
+  { name: "Kazakhstan", code: "KZ" },
+  { name: "Kenya", code: "KE" },
+  { name: "Kiribati", code: "KI" },
+  { name: "Korea, Democratic People'S Republic of", code: "KP" },
+  { name: "Korea, Republic of", code: "KR" },
+  { name: "Kuwait", code: "KW" },
+  { name: "Kyrgyzstan", code: "KG" },
+  { name: "Lao People'S Democratic Republic", code: "LA" },
+  { name: "Latvia", code: "LV" },
+  { name: "Lebanon", code: "LB" },
+  { name: "Lesotho", code: "LS" },
+  { name: "Liberia", code: "LR" },
+  { name: "Libyan Arab Jamahiriya", code: "LY" },
+  { name: "Liechtenstein", code: "LI" },
+  { name: "Lithuania", code: "LT" },
+  { name: "Luxembourg", code: "LU" },
+  { name: "Macao", code: "MO" },
+  { name: "Macedonia, The Former Yugoslav Republic of", code: "MK" },
+  { name: "Madagascar", code: "MG" },
+  { name: "Malawi", code: "MW" },
+  { name: "Malaysia", code: "MY" },
+  { name: "Maldives", code: "MV" },
+  { name: "Mali", code: "ML" },
+  { name: "Malta", code: "MT" },
+  { name: "Marshall Islands", code: "MH" },
+  { name: "Martinique", code: "MQ" },
+  { name: "Mauritania", code: "MR" },
+  { name: "Mauritius", code: "MU" },
+  { name: "Mayotte", code: "YT" },
+  { name: "Mexico", code: "MX" },
+  { name: "Micronesia, Federated States of", code: "FM" },
+  { name: "Moldova, Republic of", code: "MD" },
+  { name: "Monaco", code: "MC" },
+  { name: "Mongolia", code: "MN" },
+  { name: "Montserrat", code: "MS" },
+  { name: "Morocco", code: "MA" },
+  { name: "Mozambique", code: "MZ" },
+  { name: "Myanmar", code: "MM" },
+  { name: "Namibia", code: "NA" },
+  { name: "Nauru", code: "NR" },
+  { name: "Nepal", code: "NP" },
+  { name: "Netherlands", code: "NL" },
+  { name: "Netherlands Antilles", code: "AN" },
+  { name: "New Caledonia", code: "NC" },
+  { name: "New Zealand", code: "NZ" },
+  { name: "Nicaragua", code: "NI" },
+  { name: "Niger", code: "NE" },
+  { name: "Nigeria", code: "NG" },
+  { name: "Niue", code: "NU" },
+  { name: "Norfolk Island", code: "NF" },
+  { name: "Northern Mariana Islands", code: "MP" },
+  { name: "Norway", code: "NO" },
+  { name: "Oman", code: "OM" },
+  { name: "Pakistan", code: "PK" },
+  { name: "Palau", code: "PW" },
+  { name: "Palestinian Territory, Occupied", code: "PS" },
+  { name: "Panama", code: "PA" },
+  { name: "Papua New Guinea", code: "PG" },
+  { name: "Paraguay", code: "PY" },
+  { name: "Peru", code: "PE" },
+  { name: "Philippines", code: "PH" },
+  { name: "Pitcairn", code: "PN" },
+  { name: "Poland", code: "PL" },
+  { name: "Portugal", code: "PT" },
+  { name: "Puerto Rico", code: "PR" },
+  { name: "Qatar", code: "QA" },
+  { name: "Reunion", code: "RE" },
+  { name: "Romania", code: "RO" },
+  { name: "Russian Federation", code: "RU" },
+  { name: "RWANDA", code: "RW" },
+  { name: "Saint Helena", code: "SH" },
+  { name: "Saint Kitts and Nevis", code: "KN" },
+  { name: "Saint Lucia", code: "LC" },
+  { name: "Saint Pierre and Miquelon", code: "PM" },
+  { name: "Saint Vincent and the Grenadines", code: "VC" },
+  { name: "Samoa", code: "WS" },
+  { name: "San Marino", code: "SM" },
+  { name: "Sao Tome and Principe", code: "ST" },
+  { name: "Saudi Arabia", code: "SA" },
+  { name: "Senegal", code: "SN" },
+  { name: "Serbia and Montenegro", code: "CS" },
+  { name: "Seychelles", code: "SC" },
+  { name: "Sierra Leone", code: "SL" },
+  { name: "Singapore", code: "SG" },
+  { name: "Slovakia", code: "SK" },
+  { name: "Slovenia", code: "SI" },
+  { name: "Solomon Islands", code: "SB" },
+  { name: "Somalia", code: "SO" },
+  { name: "South Africa", code: "ZA" },
+  { name: "South Georgia and the South Sandwich Islands", code: "GS" },
+  { name: "Spain", code: "ES" },
+  { name: "Sri Lanka", code: "LK" },
+  { name: "Sudan", code: "SD" },
+  { name: "Suriname", code: "SR" },
+  { name: "Svalbard and Jan Mayen", code: "SJ" },
+  { name: "Swaziland", code: "SZ" },
+  { name: "Sweden", code: "SE" },
+  { name: "Switzerland", code: "CH" },
+  { name: "Syrian Arab Republic", code: "SY" },
+  { name: "Taiwan, Province of China", code: "TW" },
+  { name: "Tajikistan", code: "TJ" },
+  { name: "Tanzania, United Republic of", code: "TZ" },
+  { name: "Thailand", code: "TH" },
+  { name: "Timor-Leste", code: "TL" },
+  { name: "Togo", code: "TG" },
+  { name: "Tokelau", code: "TK" },
+  { name: "Tonga", code: "TO" },
+  { name: "Trinidad and Tobago", code: "TT" },
+  { name: "Tunisia", code: "TN" },
+  { name: "Turkey", code: "TR" },
+  { name: "Turkmenistan", code: "TM" },
+  { name: "Turks and Caicos Islands", code: "TC" },
+  { name: "Tuvalu", code: "TV" },
+  { name: "Uganda", code: "UG" },
+  { name: "Ukraine", code: "UA" },
+  { name: "United Arab Emirates", code: "AE" },
+  { name: "United Kingdom", code: "GB" },
+  { name: "United States", code: "US" },
+  { name: "United States Minor Outlying Islands", code: "UM" },
+  { name: "Uruguay", code: "UY" },
+  { name: "Uzbekistan", code: "UZ" },
+  { name: "Vanuatu", code: "VU" },
+  { name: "Venezuela", code: "VE" },
+  { name: "Viet Nam", code: "VN" },
+  { name: "Virgin Islands, British", code: "VG" },
+  { name: "Virgin Islands, U.S.", code: "VI" },
+  { name: "Wallis and Futuna", code: "WF" },
+  { name: "Western Sahara", code: "EH" },
+  { name: "Yemen", code: "YE" },
+  { name: "Zambia", code: "ZM" },
+  { name: "Zimbabwe", code: "ZW" },
+];
 
 const locale = {
   localize: {
@@ -96,6 +341,8 @@ const UserForm = ({ setStep, setActiveStep }) => {
     institute: "",
     address: "",
     education_level: "Classe",
+    country: "France",
+    customeAddress: "",
     phone: "",
     email: "",
     newsletter: false,
@@ -118,6 +365,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
   });
   const [loading, setLoading] = useState(false);
   const [imgloading, setImgLoading] = useState(true);
+  const [otpbyemail, setOtpByemail] = useState(false);
 
   // Destructuring of UserForm State
   const {
@@ -132,6 +380,8 @@ const UserForm = ({ setStep, setActiveStep }) => {
     newsletter,
     accept_condition,
     accept_condition2,
+    country,
+    customeAddress,
   } = formData;
   // Get institutes data from API
   useEffect(() => {
@@ -204,12 +454,37 @@ const UserForm = ({ setStep, setActiveStep }) => {
         });
     }
   };
+  // onChange Function for Input Field
+  const onChangeCountry = (e) => {
+    console.log("onchange", e.target.value);
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   const handleBlurSchools = () => {
     setFlagforSchool(!flagforSchool);
   };
   // onChange Function for Select institute
   const handleChangeSchool = (event, value) => {
     setFormData({ ...formData, institute: value?.name });
+  };
+  const handleChangecountry = (event, value) => {
+    setFormData({ ...formData, country: value?.name });
+    console.log("addess", value.name);
+    if (value.name == "France") {
+      setAddressValue({
+        ...addressValue,
+        address: "",
+        zip_code: "",
+        lat: "",
+        long: "",
+        city: "",
+      });
+    }
+
+    // setFormData({ ...formData, customeAddress: "" });
   };
   // function for Date select
   const onChangeDate = (date) => {
@@ -290,6 +565,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
       });
     }
   };
+  console.log("add", address);
   // handleSubmit Function
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -299,48 +575,83 @@ const UserForm = ({ setStep, setActiveStep }) => {
     if (last_name == "") {
       return toast.error("Veuillez entrer votre nom.");
     }
-    if (date_of_birth == "") {
-      return toast.error("Veuillez entrer votre date de naissance");
-    }
+
     if (email == "") {
       return toast.error("Veuillez entrer votre e-mail");
+    }
+
+    if (country == "") {
+      return toast.error("veuillez d'abord ajouter le pays");
+    }
+    if (country == "France") {
+      if (addressValue?.city == "") {
+        return toast.error("Veuillez entrer votre adresse");
+      }
+      if (phone.length != 10 || phone[0] != 0) {
+        return toast.error(
+          "Le numéro de téléphone doit être composé de 10 chiffres et commencer par 0"
+        );
+      }
+    } else {
+      if (customeAddress == "") {
+        return toast.error("entrer l'adresse personnalisée");
+      }
     }
     if (institute == "") {
       return toast.error("Veuillez entrer votre établissement.");
     }
-    if (addressValue?.city == "") {
-      return toast.error("Veuillez entrer votre adresse");
-    }
-    if (phone.length != 10 || phone[0] != 0) {
-      return toast.error(
-        "Le numéro de téléphone doit être composé de 10 chiffres et commencer par 0"
-      );
+    if (date_of_birth == "") {
+      return toast.error("Veuillez entrer votre date de naissance");
     }
     if (!accept_condition) {
       return toast.error("Veuillez accepter les termes et conditions");
     }
-    if (!accept_condition2) {
-      return toast.error(
-        "Merci d'accepter les conditions pour démarrer le test"
-      );
+    if (country == "France") {
+      console.log("france", {
+        ...formData,
+        addressValue,
+      });
+      // setLoading(true);
+      let res = await api("post", "/users/create", {
+        ...formData,
+        address: addressValue,
+      });
+      if (res.status === 200) {
+        setOtpByemail(false);
+        SetconfirmationOpen(true);
+      }
+      // setLoading(false);
+    } else {
+      console.log("other country", {
+        ...formData,
+        customeAddress: customeAddress + " " + country,
+      });
+      // setLoading(true);
+      let res = await api("post", "/users/create", {
+        ...formData,
+        customenewAddress: customeAddress + " " + country,
+      });
+      if (res.status === 200) {
+        setOtpByemail(true);
+        SetconfirmationOpen(true);
+      }
+      // setLoading(false);
     }
-    setLoading(true);
-    let res = await api("post", "/users/create", {
-      ...formData,
-      address: addressValue,
-    });
-    if (res.status === 200) {
-      SetconfirmationOpen(true);
 
-      // updateStore({
-      //   questions: res?.data?.questions,
-      //   answers: res?.data?.answers,
-      //   user: res?.data?.user,
-      // });
-      // setStep(2);
-      // setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    }
-    setLoading(false);
+    // if (!accept_condition2) {
+    //   return toast.error(
+    //     "Merci d'accepter les conditions pour démarrer le test"
+    //   );
+    // }
+    // setLoading(true);
+    // let res = await api("post", "/users/create", {
+    //   ...formData,
+    //   address: addressValue,
+    // });
+    // if (res.status === 200) {
+    //   SetconfirmationOpen(true);
+    // }
+    // setLoading(false);
   };
   return (
     <>
@@ -394,39 +705,15 @@ const UserForm = ({ setStep, setActiveStep }) => {
                 </Grid>
                 <Grid container spacing={2} className="inputgrid1">
                   <Grid item xs={12} sm={6} className="inputGrid">
-                    <DatePicker
-                      selected={date_of_birth}
-                      // locale={selectedDateLang}
-                      // locale={locale}
-                      locale={"en-gb"}
-                      dateFormat="dd/MM/yyyy"
-                      onChange={onChangeDate}
-                      className="inputField"
-                      value={date_of_birth}
-                      autoComplete="off"
-                      placeholderText="Date de naissance"
-                      openToDate={new Date("2003/01/01")}
-                      dropdownMode="scroll"
-                      // dropdownMode="select"
-                      scrollableYearDropdown
-                      showYearDropdown
-                      yearDropdownItemNumber={18}
-                      // scrollableYearDropdown
-                      showMonthDropdown
-                      adjustDateOnChange
-                    />
-                  </Grid>
-                  <Grid item xs={12} sm={6} className="inputGrid">
                     <Autocomplete
-                      options={values}
                       classes={{
                         option: classes.option,
-                        // noOptions: classes.noOptions,
                       }}
                       noOptionsText={
                         <div style={{ color: "white", fontSize: "12px" }}>
                           {" "}
-                          aucune option{" "}
+                          Saisissez le nom de votre établissement s’il
+                          n’apparait pas{" "}
                         </div>
                       }
                       PaperComponent={({ children }) => (
@@ -434,25 +721,78 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           {children}
                         </Paper>
                       )}
-                      getOptionLabel={(option) => option.label2 || ""}
-                      onChange={SetAddress}
-                      hiddenLabel="true"
+                      disableClearable
+                      options={countries}
+                      defaultValue={{ name: "France", code: "FR" }}
+                      freeSolo
+                      getOptionLabel={(option) => option.name}
+                      onChange={handleChangecountry}
                       style={{
                         width: "91%",
                         margin: "auto",
                       }}
                       renderInput={(params) => (
                         <TextField
-                          classes={{ root: classes.customTextField }}
+                          classes={{ root: classes.customTextFieldestablish }}
+                          className="establish"
                           {...params}
-                          placeholder="Adresse"
-                          style={{ color: "white" }}
+                          placeholder="Pays"
                           variant="outlined"
-                          onChange={getAllAdress}
-                          value={address}
+                          value={country}
+                          name="country"
+                          onChange={onChangeCountry}
                         />
                       )}
+                      // value={!education_level && ""}
                     />
+                  </Grid>
+                  <Grid item xs={12} sm={6} className="inputGrid">
+                    {country == "France" ? (
+                      <Autocomplete
+                        options={values}
+                        classes={{
+                          option: classes.option,
+                          // noOptions: classes.noOptions,
+                        }}
+                        noOptionsText={
+                          <div style={{ color: "white", fontSize: "12px" }}>
+                            {" "}
+                            aucune option{" "}
+                          </div>
+                        }
+                        PaperComponent={({ children }) => (
+                          <Paper style={{ background: "#242635" }}>
+                            {children}
+                          </Paper>
+                        )}
+                        getOptionLabel={(option) => option.label2 || ""}
+                        onChange={SetAddress}
+                        hiddenLabel="true"
+                        style={{
+                          width: "91%",
+                          margin: "auto",
+                        }}
+                        renderInput={(params) => (
+                          <TextField
+                            classes={{ root: classes.customTextField }}
+                            {...params}
+                            placeholder="Adresse"
+                            style={{ color: "white" }}
+                            variant="outlined"
+                            onChange={getAllAdress}
+                            value={address}
+                          />
+                        )}
+                      />
+                    ) : (
+                      <input
+                        name="customeAddress"
+                        value={customeAddress}
+                        onChange={onChange}
+                        placeholder="Adresse"
+                        className="inputField"
+                      />
+                    )}
                   </Grid>
                 </Grid>
                 <Grid container spacing={2} className="">
@@ -472,7 +812,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       name="phone"
                       value={phone}
                       onChange={onChange}
-                      maxlength="10"
+                      maxlength={country == "France" ? "10" : "100"}
                       placeholder="Numéro de téléphone"
                       className="inputField"
                     />
@@ -516,55 +856,79 @@ const UserForm = ({ setStep, setActiveStep }) => {
                     </FormControl>
                   </Grid>
                   <Grid item xs={12} sm={6} className="inputGrid">
-                    <Autocomplete
-                      classes={{
-                        option: classes.option,
-                      }}
-                      noOptionsText={
-                        <div style={{ color: "white", fontSize: "12px" }}>
-                          {" "}
-                          Saisissez le nom de votre établissement s’il
-                          n’apparait pas{" "}
-                        </div>
-                      }
-                      PaperComponent={({ children }) => (
-                        <Paper style={{ background: "#242635" }}>
-                          {children}
-                        </Paper>
-                      )}
-                      options={
-                        education_level == "Quatrième" ||
-                        education_level == "Troisième"
-                          ? institutes?.filter(
-                              (institute) => institute.type == "College"
-                            )
-                          : institutes?.filter(
-                              (institute) => institute.type == "School"
-                            )
-                      }
-                      freeSolo
-                      getOptionLabel={(option) => option.name}
-                      onChange={handleChangeSchool}
-                      style={{
-                        width: "91%",
-                        margin: "auto",
-                      }}
-                      renderInput={(params) => (
-                        <TextField
-                          classes={{ root: classes.customTextFieldestablish }}
-                          className="establish"
-                          {...params}
-                          placeholder="Établissement actuel (commencer par la ville)"
-                          variant="outlined"
-                          value={institute}
-                          name="institute"
-                          onChange={onChange}
-                        />
-                      )}
-                      // value={!education_level && ""}
-                      disabled={!education_level || education_level == "Classe"}
+                    <DatePicker
+                      selected={date_of_birth}
+                      // locale={selectedDateLang}
+                      // locale={locale}
+                      locale={"en-gb"}
+                      dateFormat="dd/MM/yyyy"
+                      onChange={onChangeDate}
+                      className="inputField"
+                      value={date_of_birth}
+                      autoComplete="off"
+                      placeholderText="Date de naissance"
+                      openToDate={new Date("2003/01/01")}
+                      dropdownMode="scroll"
+                      // dropdownMode="select"
+                      scrollableYearDropdown
+                      showYearDropdown
+                      yearDropdownItemNumber={18}
+                      // scrollableYearDropdown
+                      showMonthDropdown
+                      adjustDateOnChange
                     />
                   </Grid>
+                </Grid>
+                <Grid container spacing={1} className="establishGrid">
+                  <Autocomplete
+                    classes={{
+                      option: classes.option,
+                    }}
+                    noOptionsText={
+                      <div style={{ color: "white", fontSize: "12px" }}>
+                        {" "}
+                        Saisissez le nom de votre établissement s’il n’apparait
+                        pas{" "}
+                      </div>
+                    }
+                    PaperComponent={({ children }) => (
+                      <Paper style={{ background: "#242635" }}>
+                        {children}
+                      </Paper>
+                    )}
+                    options={
+                      education_level == "Quatrième" ||
+                      education_level == "Troisième"
+                        ? institutes?.filter(
+                            (institute) => institute.type == "College"
+                          )
+                        : institutes?.filter(
+                            (institute) => institute.type == "School"
+                          )
+                    }
+                    freeSolo
+                    getOptionLabel={(option) => option.name}
+                    onChange={handleChangeSchool}
+                    style={{
+                      width: "94%",
+                      margin: "auto",
+                      padding: "15px",
+                    }}
+                    renderInput={(params) => (
+                      <TextField
+                        classes={{ root: classes.customTextFieldestablish }}
+                        className="establish"
+                        {...params}
+                        placeholder="Établissement actuel (commencer par la ville)"
+                        variant="outlined"
+                        value={institute}
+                        name="institute"
+                        onChange={onChange}
+                      />
+                    )}
+                    // value={!education_level && ""}
+                    disabled={!education_level || education_level == "Classe"}
+                  />
                 </Grid>
                 <Grid container spacing={1} className="termsandconditionGrid">
                   <Checkbox
@@ -578,7 +942,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                     J’accepte les termes et les conditions
                   </span>
                 </Grid>
-                <Grid container spacing={1} className="termsandconditionGrid">
+                {/* <Grid container spacing={1} className="termsandconditionGrid">
                   <Checkbox
                     inputProps={{ "aria-label": "secondary checkbox" }}
                     style={{ color: "white" }}
@@ -590,7 +954,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                     J'accepte que mes données soient transmises à des
                     partenaires d'Orientator
                   </span>
-                </Grid>
+                </Grid> */}
                 <Grid container spacing={2} className="formbuttonsGrid">
                   <Grid xs={12} sm={4}>
                     <div
@@ -634,6 +998,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
               SetconfirmationOpen={SetconfirmationOpen}
               setStep={setStep}
               setActiveStep={setActiveStep}
+              otpbyemail={otpbyemail}
             />
           </Grid>
         )}{" "}
