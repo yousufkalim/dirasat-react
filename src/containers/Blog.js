@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 import BlogBody from "../components/blog/BlogBody";
+import Contactus from "../utils/Contactus";
 
 export default function Blog() {
   const [activeStep, setActiveStep] = useState(1);
@@ -19,6 +20,7 @@ export default function Blog() {
       />
 
       <BlogBody />
+      <Contactus />
       <Footer />
     </div>
   );
