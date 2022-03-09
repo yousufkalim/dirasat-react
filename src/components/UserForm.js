@@ -575,11 +575,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
     if (last_name == "") {
       return toast.error("Veuillez entrer votre nom.");
     }
-
     if (email == "") {
       return toast.error("Veuillez entrer votre e-mail");
     }
-
     if (country == "") {
       return toast.error("veuillez d'abord ajouter le pays");
     }

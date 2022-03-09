@@ -18,7 +18,7 @@ export default function YouMayLike({ blogs, loading, setLoading }) {
     <div className="youMayLikecontainer">
       <p className="youMayLikeheading">You may Like this:</p>
       {loading ? (
-        <h1>Loading...</h1>
+        <h1>Chargement en cours...</h1>
       ) : (
         <Grid container spacing={1}>
           {getblogs()
