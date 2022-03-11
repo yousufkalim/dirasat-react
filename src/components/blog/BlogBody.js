@@ -1,6 +1,6 @@
 // Init
 import React, { useState, useEffect } from "react";
-import BlogBodyimg from "../../assets/img/blogcover1.png";
+import BlogBodyimg from "../../assets/img/blogcover2.png";
 import LatestArticle from "./LatestArticle";
 import YouMayLike from "./YouMayLike";
 import api from "../../api";
@@ -47,32 +47,11 @@ export default function BlogBody() {
       ) : (
         <>
           <div className="BlogBodycontainer">
-            <Carousel
-              className="topcoursecarousal"
-              indicators={false}
-              interval={3000}
-              autoPlay={true}
-              animation={"fade"}
-            >
-              {blogs?.map((item, i) => (
-                <>
-                  <Link
-                    to={`blog/${item._id}`}
-                    style={{ textDecoration: "none", color: "white" }}
-                  >
-                    <img
-                      src={url + item.blog_images}
-                      className="BlogbodyImage"
-                    />
-                    <div className="BlogtextonImg">
-                      <h1 className="BlogtextimgH1"> NOTRE BLOG</h1>
-                      {/* <p className="BlogtextonImgP">Tag Line Here</p> */}
-                    </div>
-                  </Link>
-                  <items key={i} item={item} />
-                </>
-              ))}
-            </Carousel>
+            <img src={BlogBodyimg} className="BlogbodyImage" />
+            <div className="BlogtextonImg">
+              <h1 className="BlogtextimgH1">NOTRE BLOG</h1>
+              {/* <p className="BlogtextonImgP">Tag Line Here</p> */}
+            </div>
           </div>
         </>
       )}
@@ -82,11 +61,3 @@ export default function BlogBody() {
     </>
   );
 }
-
-//  <div className="BlogBodycontainer">
-//         <img src={BlogBodyimg} className="BlogbodyImage" />
-//         <div className="BlogtextonImg">
-//           {/* <h1 className="BlogtextimgH1">Blog</h1> */}
-//           {/* <p className="BlogtextonImgP">Tag Line Here</p> */}
-//         </div>
-//       </div>
