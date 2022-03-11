@@ -6,14 +6,14 @@
 }
 .BlogtextonImg {
   position: absolute;
-  top: 56%;
-  left: 62%;
+  top: 47%;
+  left: 64%;
   transform: translate(-50%, -50%);
 }
 
 .BlogtextimgH1 {
   font-size: 2.7em;
-  font-weight: 100;
+  font-weight: 900 !important;
 }
 .BlogtextonImgP {
   padding: 5px 0px 5px 0px;
