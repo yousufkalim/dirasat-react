@@ -5,6 +5,9 @@ import LatestArticle from "./LatestArticle";
 import YouMayLike from "./YouMayLike";
 import api from "../../api";
 import { Store, UpdateStore } from "../../StoreContext";
+import Carousel from "react-material-ui-carousel";
+import { url } from "../../config";
+import { Link } from "react-router-dom";
 
 export default function BlogBody() {
   const [loading, setLoading] = useState(false);
@@ -39,15 +42,51 @@ export default function BlogBody() {
   console.log("blogs are", blogs);
   return (
     <>
-      <div className="BlogBodycontainer">
-        <img src={BlogBodyimg} className="BlogbodyImage" />
-        <div className="BlogtextonImg">
-          {/* <h1 className="BlogtextimgH1">Blog</h1> */}
-          {/* <p className="BlogtextonImgP">Tag Line Here</p> */}
-        </div>
-      </div>
+      {loading ? (
+        "Chargement en cours..."
+      ) : (
+        <>
+          <div className="BlogBodycontainer">
+            <Carousel
+              className="topcoursecarousal"
+              indicators={false}
+              interval={3000}
+              autoPlay={true}
+              animation={"fade"}
+            >
+              {blogs?.map((item, i) => (
+                <>
+                  <Link
+                    to={`blog/${item._id}`}
+                    style={{ textDecoration: "none", color: "white" }}
+                  >
+                    <img
+                      src={url + item.blog_images}
+                      className="BlogbodyImage"
+                    />
+                    <div className="BlogtextonImg">
+                      <h1 className="BlogtextimgH1"> NOTRE BLOG</h1>
+                      {/* <p className="BlogtextonImgP">Tag Line Here</p> */}
+                    </div>
+                  </Link>
+                  <items key={i} item={item} />
+                </>
+              ))}
+            </Carousel>
+          </div>
+        </>
+      )}
+
       <LatestArticle blogs={blogs} loading={loading} setLoading={setLoading} />
       <YouMayLike blogs={blogs} loading={loading} setLoading={setLoading} />
     </>
   );
 }
+
+//  <div className="BlogBodycontainer">
+//         <img src={BlogBodyimg} className="BlogbodyImage" />
+//         <div className="BlogtextonImg">
+//           {/* <h1 className="BlogtextimgH1">Blog</h1> */}
+//           {/* <p className="BlogtextonImgP">Tag Line Here</p> */}
+//         </div>
+//       </div>
