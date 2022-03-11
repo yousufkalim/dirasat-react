@@ -1,7 +1,7 @@
 // Init
 import React, { useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
-import Avatar2 from "../../assets/icons/avatar2.png";
+import Avatar2 from "../../assets/icons/logo.png";
 import FbIcon from "../../assets/icons/fb2.svg";
 import TwitterIcon from "../../assets/icons/twittericon.svg";
 import PintrestIcon from "../../assets/icons/pin2.svg";
@@ -78,7 +78,7 @@ export default function ArticleBody({ singlBlog, loading, blogs }) {
                 </div>
               </div> */}
             </Grid>
-            <Grid item xs={3} sm={3}>
+            {/* <Grid item xs={3} sm={3}>
               <div className="articleSocialicon">
                 <img
                   src={TwitterIcon}
@@ -98,7 +98,7 @@ export default function ArticleBody({ singlBlog, loading, blogs }) {
                 />
                 <img src={Dot} className="articlesocialicon" alt="img" />
               </div>
-            </Grid>
+            </Grid> */}
           </Grid>
           <div dangerouslySetInnerHTML={htmlfile()} />
           <YouMayLike blogs={blogs} loading={loading} />
