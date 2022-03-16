@@ -136,19 +136,17 @@ export default function Header({
                 Comment ça marche?
               </Typography>
             </AnchorLink>
-            {window.location.hostname != "orientator.com" && (
-              <div
-                style={{ width: "60%", textAlign: "right", marginTop: "10px" }}
+            <div
+              style={{ width: "60%", textAlign: "right", marginTop: "10px" }}
+            >
+              <Link
+                to="/blog"
+                style={{ color: "white", textDecoration: "none" }}
+                className={flag ? "title b" : "hidetitle b"}
               >
-                <Link
-                  to="/blog"
-                  style={{ color: "white", textDecoration: "none" }}
-                  className={flag ? "title b" : "hidetitle b"}
-                >
-                  Blog
-                </Link>
-              </div>
-            )}
+                Blog
+              </Link>
+            </div>
           </>
         )}
       </Toolbar>
