@@ -5,8 +5,12 @@ import { useParams } from "react-router-dom";
 // import Blog1 from "../assets/img/1.jpeg";
 import api from "../api";
 import { Store, UpdateStore } from "../StoreContext";
+import Header from "../components/Header";
 
 export default function Article() {
+  const [activeStep, setActiveStep] = useState(1);
+  const [step, setStep] = useState(0);
+  const [statetextforscroll, setStatetextforscroll] = useState("");
   const [loading, setLoading] = useState(false);
   // init
   const updateStore = UpdateStore();
@@ -40,6 +44,13 @@ export default function Article() {
         overflowY: "hidden",
       }}
     >
+      <Header
+        step={step}
+        setStep={setStep}
+        setActiveStep={setActiveStep}
+        setStatetextforscroll={setStatetextforscroll}
+      />
+
       <ArticleBody singlBlog={singlBlog} loading={loading} blogs={blogs} />
       {/* <Footer /> */}
     </div>
