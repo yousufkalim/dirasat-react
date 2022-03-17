@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import api from "../api";
 import { Store, UpdateStore } from "../StoreContext";
 import Header from "../components/Header";
+import Contactus from "../utils/Contactus";
 
 export default function Article() {
   const [activeStep, setActiveStep] = useState(1);
@@ -52,6 +53,8 @@ export default function Article() {
       />
 
       <ArticleBody singlBlog={singlBlog} loading={loading} blogs={blogs} />
+      <Contactus />
+
       {/* <Footer /> */}
     </div>
   );
