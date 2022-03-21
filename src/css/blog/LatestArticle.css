@@ -27,6 +27,7 @@
   width: 100%;
   padding-top: 5px;
   height: 360px;
+  object-fit: cover;
 }
 
 .latestArticleRight {
@@ -60,6 +61,7 @@
   width: 30%;
   height: 193px;
   border-radius: 20px;
+  object-fit: cover;
 }
 .commentSpan {
   margin-left: 20px;
