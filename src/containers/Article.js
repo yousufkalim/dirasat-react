@@ -37,6 +37,7 @@ export default function Article() {
     setLoading(false);
   };
   return (
+    <>
     <div
       style={{
         backgroundColor: "black",
@@ -52,10 +53,11 @@ export default function Article() {
         setStatetextforscroll={setStatetextforscroll}
       />
 
-      <ArticleBody singlBlog={singlBlog} loading={loading} blogs={blogs} />
+      <ArticleBody singlBlog={singlBlog} loading={loading} blogs={blogs.filter(_ => _._id != singlBlog._id)} />
       <Contactus />
 
       {/* <Footer /> */}
     </div>
+    </>
   );
 }

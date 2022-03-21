@@ -12,6 +12,7 @@
 @import url("./article/article.css");
 @import url("./blog/LatestArticle.css");
 @import url("./blog/YouMayLike.css");
+@import url("./blog/JoditStyles.css");
 body {
   font-family: "lato", sans-serif !important;
   overflow-x: hidden;

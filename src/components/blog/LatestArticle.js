@@ -38,8 +38,8 @@ export default function LatestArticle({ blogs, loading, setLoading }) {
                   />
                   <div className="articledetail">
                     <h2 className="articleheading">
-                      {blogs[0]?.blog_title.length > 50
-                        ? blogs[0]?.blog_title.substring(0, 49) + "..."
+                      {blogs[0]?.blog_title.length > 100
+                        ? blogs[0]?.blog_title.substring(0, 99) + "..."
                         : blogs[0]?.blog_title}
                     </h2>
                     <p className="textdescription1">
@@ -77,8 +77,8 @@ export default function LatestArticle({ blogs, loading, setLoading }) {
                       />
                       <div className="articleText">
                         <h3>
-                          {item.blog_title.length > 40
-                            ? item.blog_title.substring(0, 40) + "..."
+                          {item.blog_title.length > 80
+                            ? item.blog_title.substring(0, 79) + "..."
                             : item?.blog_title}
                         </h3>
                         <p className="textdescription">
