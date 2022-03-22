@@ -41,8 +41,8 @@ export default function YouMayLike({ blogs, loading, setLoading }) {
                     </Link>
                     <div className="blogdiv1text">
                       <h3 className="blogdiv1heading">
-                        {item?.blog_title.length > 60
-                          ? item?.blog_title.substring(0, 59) + "..."
+                        {item?.blog_title.length > 90
+                          ? item?.blog_title.substring(0, 89) + "..."
                           : item?.blog_title}
                       </h3>
                       <p className="bloddiv1detail">
