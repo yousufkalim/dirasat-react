@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import api from "../api";
 import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const Footer = () => {
+
+  const [siteViews, setSiteViews] = useState(null);
+
+  useEffect(() => {
+    updateSiteViews();
+  }, []);
+
+  const updateSiteViews = async () => {
+    const data = await api("post", "/siteViews");
+    if (data.data) {
+      setSiteViews(data.data.siteViews);
+    }
+  };
+
   return (
     <>
       <div className="FooterDiv">
@@ -63,6 +78,13 @@ const Footer = () => {
               >
                 Mentions légales
               </Link>
+              {
+                !siteViews
+                ? <></>
+                : <p style={{ color: "white", textDecoration: "none" }}>
+                    {`Views: ${siteViews.count}`}
+                  </p>
+              }
             </div>
           </div>
         </div>
