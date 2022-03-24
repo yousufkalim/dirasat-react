@@ -19,10 +19,33 @@ export default function ArticleBody({ singlBlog, loading, blogs }) {
   console.log("id in articl body", id);
   function htmlfile() {
     return {
-      __html: `<div class="htmlmaindiv">
-      <p class="htmlp1">${singlBlog?.blog_desc}</p>
-      <p class="htmlp1">${singlBlog?.blog_content}</p>
-      </div>`,
+      __html:
+      `
+      <div class="htmlmaindiv">
+        <p class="htmlp1">${singlBlog?.blog_desc}</p>
+        <p class="htmlp1">${singlBlog?.blog_content}</p>
+        ${
+          singlBlog?.yt_link ?
+          `
+          <iframe
+            width="560"
+            height="315"
+            src=${singlBlog?.yt_link}
+            title="YouTube video player"
+            frameborder="0"
+            allow=
+            "accelerometer;
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture"
+            allowfullscreen
+          />
+          ` : ""
+        }
+      </div>
+      `,
     };
   }
   const scrollToTop = () => {
