@@ -25,7 +25,6 @@ const Home = () => {
           step={step}
           setStep={setStep}
           statetextforscroll={statetextforscroll}
-          
         />
       )}
       <div className="mainbody">
