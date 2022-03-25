@@ -18,13 +18,16 @@ import f3 from "../assets/img/f3.png";
 import arrowright from "../assets/img/arrow.png";
 import Footer from "./Footer";
 
+import api from "../api";
+
+import CountUp from 'react-countup';
+
 const Landing = ({ step, setStep, statetextforscroll }) => {
   const [openCookieePopup, setOpenCookieePopup] = useState(false);
   const [reuserPopup, setRefuserPopup] = useState(false);
   const [openCookieePopup2, setOpenCookieePopup2] = useState(false);
   const [checkCookies, setCookies] = useState(false);
   const items = [
-    // { text: "Fonctionnalités basiques de navigation requises", accept:false,refuse:false },
     {
       text: "Fonctionnalités liées aux réseaux sociaux",
       accept: false,
@@ -68,6 +71,7 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
     },
   ];
   const [data, setData] = useState(items);
+  const [siteViews, setSiteViews] = useState(null);
   const capture1 = React.createRef();
   const video = document.getElementById("video");
   const scrollToTop = () => {
@@ -99,6 +103,18 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
       }, 50);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step]);
+
+  useEffect(() => {
+    updateSiteViews();
+  }, []);
+
+  const updateSiteViews = async () => {
+    const data = await api("post", "/siteViews");
+    if (data.data) {
+      setSiteViews(data.data.siteViews);
+    }
+  };
+
   return (
     <>
       <div className="main" id="top">
@@ -177,6 +193,41 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
         </Grid>
         {/* <button onClick={onButtonClick}>Download PDF</button> */}
       </div>
+      {
+        !siteViews ?
+        <></> :
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center"
+          }}
+        >
+          <p
+            style={{
+              fontSize: "30px",
+              fontWeight: "600",
+              color: "#D4D8E5"
+            }}
+          >
+            Nombre de visiteurs
+          </p>
+          <CountUp
+            start={1}
+            end={siteViews.count > 800 ? siteViews.count : (siteViews.count + 800) }
+            duration={5}
+            style={{
+              fontSize: "100px",
+              color: "#FFFFFF",
+              alignSelf: "center",
+              background: "#010F2C",
+              letterSpacing: "18px",
+              textIndent: "18px"
+            }}
+          />
+        </div>
+      }
       <Contactus />
       <Footer />
       <CookiesPopup
