@@ -62,7 +62,8 @@ const Footer = () => {
               2021. Tous droits réservés
             </p>
           </div>
-          <div className="cguDiv">
+          {/* <div className="cguDiv"> */}
+          <div>
             <div className="footercgu" style={{ textAlign: "" }}>
               <Link
                 to="/CGU"
@@ -82,7 +83,7 @@ const Footer = () => {
                 !siteViews
                 ? <></>
                 : <p style={{ color: "white", textDecoration: "none" }}>
-                    {`Views: ${siteViews.count}`}
+                    {`Nombre total de visites: ${siteViews.count}`}
                   </p>
               }
             </div>
