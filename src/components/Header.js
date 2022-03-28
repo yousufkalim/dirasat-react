@@ -136,27 +136,17 @@ export default function Header({
                 Comment ça marche?
               </Typography>
             </AnchorLink>
-            <AnchorLink
-              
-              style={{
-                textDecoration: "none",
-                color: "white",
-                padding: "15px 25px 0 0",
-              }}
-            >
-              <div
-               className={flag ? "title c" : "hidetitle c"}
-              
+            <div
+             className="BlogMobileView" style={{width: "60%", textAlign: "right", marginTop: "10px"}}
             >
               <Link
                 to="/blog"
                 style={{ color: "white", textDecoration: "none" }}
-                
+                className={flag ? "title c" : "hidetitle c"}
               >
                 Blog
               </Link>
             </div>
-            </AnchorLink>
     
           </>
         )}
