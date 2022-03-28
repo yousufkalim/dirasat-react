@@ -23,7 +23,7 @@ export default function YouMayLike({ blogs, loading, setLoading }) {
         <h1>Chargement en cours...</h1>
       ) : (
         <Grid container spacing={1}>
-          {getblogs()?.map((item) => (
+          {blogs?.slice(4).map((item) => (
             <>
               <Grid item xs={12} sm={3}>
                 <>

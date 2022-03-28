@@ -17,6 +17,7 @@ export default function BlogBody() {
   useEffect(() => {
     // get blogs
     getBlogs();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   let getBlogs = async () => {
@@ -39,7 +40,7 @@ export default function BlogBody() {
     scrollToTop();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log("blogs are", blogs);
+
   return (
     <>
       {loading ? (
