@@ -76,6 +76,7 @@
   .c:hover {
     background: #46495c;
   }
+ 
   .menuButton {
     margin: 0 20px 0 40px !important;
   }
@@ -182,5 +183,9 @@
     position: absolute;
     width: 100%;
     left: -12%;
+  }
+  .BlogMobileView{
+    text-align: center !important;
+    width: 100% !important;
   }
 }
