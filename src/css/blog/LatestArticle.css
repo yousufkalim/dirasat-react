@@ -17,8 +17,8 @@
 .latestArticleLeft {
   background: linear-gradient(
     90.12deg,
-    #202342 22.77%,
-    rgba(38, 38, 72, 0) 129.88%
+    rgb(48, 48, 184) 22.77%,
+    rgba(57, 57, 82, 0.952) 129.88%
   ) !important;
   border-radius: 20px !important;
   margin-top: 20px;
@@ -33,8 +33,8 @@
 .latestArticleRight {
   background: linear-gradient(
     90.12deg,
-    #202342 22.77%,
-    rgba(38, 38, 72, 0) 129.88%
+    rgb(48, 48, 184) 22.77%,
+    rgba(57, 57, 82, 0.952) 129.88%
   ) !important;
   display: flex;
   margin-top: 25px;
