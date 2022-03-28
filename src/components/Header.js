@@ -121,7 +121,7 @@ export default function Header({
               style={{
                 textDecoration: "none",
                 color: "white",
-                paddingTop: "15px",
+                padding: "15px 25px 0 0",
               }}
             >
               <Typography
@@ -136,17 +136,28 @@ export default function Header({
                 Comment ça marche?
               </Typography>
             </AnchorLink>
-            <div
-              style={{ width: "60%", textAlign: "right", marginTop: "10px" }}
+            <AnchorLink
+              
+              style={{
+                textDecoration: "none",
+                color: "white",
+                padding: "15px 25px 0 0",
+              }}
+            >
+              <div
+               className={flag ? "title c" : "hidetitle c"}
+              
             >
               <Link
                 to="/blog"
                 style={{ color: "white", textDecoration: "none" }}
-                className={flag ? "title b" : "hidetitle b"}
+                
               >
                 Blog
               </Link>
             </div>
+            </AnchorLink>
+    
           </>
         )}
       </Toolbar>
