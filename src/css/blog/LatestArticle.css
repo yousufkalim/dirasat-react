@@ -39,7 +39,7 @@
   display: flex;
   margin-top: 25px;
   border-radius: 20px !important;
-  height: 193px;
+  height: fit-content;
 }
 .articleText {
   padding: 0px 15px 0px 30px;

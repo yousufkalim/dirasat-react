@@ -46,7 +46,7 @@ export default function LatestArticle({ blogs, loading, setLoading }) {
                       {blogs[0]?.blog_desc.length > 150
                         ? blogs[0]?.blog_desc.substring(0, 180) + "..."
                         : blogs[0]?.blog_desc}{" "}
-                      <span className="seemore"> See more</span>
+                      <span className="seemore"> Lire la suite</span>
                     </p>
                     <p className="articleBy">
                       Lire l’article

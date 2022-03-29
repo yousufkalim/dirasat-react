@@ -25,7 +25,7 @@ export default function YouMayLike({ blogs, loading, setLoading }) {
         <Grid container spacing={1}>
           {blogs?.slice(4).map((item) => (
             <>
-              <Grid item xs={12} sm={3}>
+              <Grid item xs={12} sm={6}  lg={3}>
                 <>
                   <div className="blogdiv1">
                     <Link
