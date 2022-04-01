@@ -11,7 +11,7 @@ import YouMayLike from "./YouMayLike";
 import { useParams } from "react-router-dom";
 import blogImg from "../../assets/3.png";
 import { url } from "../../config";
-
+import { Helmet } from "react-helmet";
 import moment from "moment";
 
 export default function ArticleBody({ singlBlog, loading, blogs }) {
@@ -19,14 +19,13 @@ export default function ArticleBody({ singlBlog, loading, blogs }) {
   console.log("id in articl body", id);
   function htmlfile() {
     return {
-      __html:
-      `
+      __html: `
       <div class="htmlmaindiv">
         <p class="htmlp1">${singlBlog?.blog_desc}</p>
         <p class="htmlp1">${singlBlog?.blog_content}</p>
         ${
-          singlBlog?.yt_link ?
-          `
+          singlBlog?.yt_link
+            ? `
           <iframe
             width="560"
             height="315"
@@ -42,7 +41,8 @@ export default function ArticleBody({ singlBlog, loading, blogs }) {
             picture-in-picture"
             allowfullscreen
           />
-          ` : ""
+          `
+            : ""
         }
       </div>
       `,
@@ -64,6 +64,17 @@ export default function ArticleBody({ singlBlog, loading, blogs }) {
         <h1>Chargement en cours...</h1>
       ) : (
         <div className="articleBodycontainer">
+          <Helmet>
+            <title>Orientator</title>
+            <meta
+              name="description"
+              content="Commençons le test d'orientation! À la fin de ce questionnaire, une proposition de voeux pour Parcoursup te sera formulée!"
+            />
+            <meta
+              name="keywords"
+              content="Orientator, Dis à Orientator qui tu es, Réponds aux questions d'Orientator, Orientator te propose une liste de voeux pour ton Parcoursup!"
+            />
+          </Helmet>
           <img
             // src={blogImg}
             src={url + singlBlog?.blog_images}

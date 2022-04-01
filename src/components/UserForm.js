@@ -21,7 +21,6 @@ import DatePicker from "react-datepicker";
 import ConfirmationPopup from "./ConfirmationPopup";
 import enGb from "date-fns/locale/fr";
 import { registerLocale } from "react-datepicker";
-
 import api from "../api";
 
 let education = [
@@ -609,7 +608,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
         ...formData,
         addressValue,
       });
-      // setLoading(true);
+      setLoading(true);
       let res = await api("post", "/users/create", {
         ...formData,
         address: addressValue,
@@ -617,8 +616,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
       if (res.status === 200) {
         setOtpByemail(false);
         SetconfirmationOpen(true);
+        toast.success("OTP envoyé");
       }
-      // setLoading(false);
+      setLoading(false);
     } else {
       console.log("other country", {
         ...formData,
@@ -632,8 +632,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
       if (res.status === 200) {
         setOtpByemail(true);
         SetconfirmationOpen(true);
+        toast.success("OTP envoyé");
       }
-      // setLoading(false);
+      setLoading(false);
     }
 
     // if (!accept_condition2) {
@@ -997,6 +998,8 @@ const UserForm = ({ setStep, setActiveStep }) => {
               setStep={setStep}
               setActiveStep={setActiveStep}
               otpbyemail={otpbyemail}
+              handleSubmit={handleSubmit}
+              loadingresend={loading}
             />
           </Grid>
         )}{" "}
