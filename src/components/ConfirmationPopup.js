@@ -24,10 +24,14 @@ export default function ConfirmationPop({
   setStep,
   setActiveStep,
   otpbyemail,
+  userformdata,
+  handleSubmit,
+  loadingresend,
 }) {
   const updateStore = UpdateStore();
   const { user } = Store();
   const [loading, setLoading] = useState(false);
+  const [resendloading, setResendloading] = useState(false);
   const [formData, setFormData] = useState({
     otp: "",
   });
@@ -40,7 +44,10 @@ export default function ConfirmationPop({
       [e.target.name]: e.target.value,
     });
   };
-  const handleSubmit = async () => {
+  const handleResend = () => {
+    console.log("formdata for resend", userformdata);
+  };
+  const handleSubmitverify = async () => {
     setLoading(true);
 
     let res = await api("post", "/users/verify", {
@@ -108,11 +115,19 @@ export default function ConfirmationPop({
             />
           </Grid>
         </DialogContent>
+
         <div className="invitedialogAction">
+          <button
+            className="resendButton"
+            onClick={handleSubmit}
+            disabled={loadingresend}
+          >
+            Renvoyer
+          </button>
           <button
             size="Large"
             className="InvitemodalButon"
-            onClick={handleSubmit}
+            onClick={handleSubmitverify}
             disabled={loading}
           >
             Vérifier

@@ -8,6 +8,7 @@ import { Store, UpdateStore } from "../../StoreContext";
 import Carousel from "react-material-ui-carousel";
 import { url } from "../../config";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 export default function BlogBody() {
   const [loading, setLoading] = useState(false);
@@ -47,6 +48,17 @@ export default function BlogBody() {
         "Chargement en cours..."
       ) : (
         <>
+          <Helmet>
+            <title>NOTRE BLOG</title>
+            <meta
+              name="description"
+              content="Commençons le test d'orientation! À la fin de ce questionnaire, une proposition de voeux pour Parcoursup te sera formulée!"
+            />
+            <meta
+              name="keywords"
+              content="Orientator, Dis à Orientator qui tu es, Réponds aux questions d'Orientator, Orientator te propose une liste de voeux pour ton Parcoursup!"
+            />
+          </Helmet>
           <div className="BlogBodycontainer">
             <img src={BlogBodyimg} className="BlogbodyImage" />
             <div className="BlogtextonImg">
