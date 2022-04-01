@@ -319,7 +319,7 @@ const locale = {
     date: () => "dd/MM/yyyy",
   },
 };
-
+let timeInterval;
 const UserForm = ({ setStep, setActiveStep }) => {
   registerLocale("en-gb", enGb);
   // initialize ContextStore
@@ -363,7 +363,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
     label2: "",
   });
   const [loading, setLoading] = useState(false);
+  const [resendloading, setresendLoading] = useState(false);
   const [imgloading, setImgLoading] = useState(true);
+  const [timeLeft, setTimeLeft] = useState(30);
   const [otpbyemail, setOtpByemail] = useState(false);
 
   // Destructuring of UserForm State
@@ -609,6 +611,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
         addressValue,
       });
       setLoading(true);
+      setresendLoading(true);
       let res = await api("post", "/users/create", {
         ...formData,
         address: addressValue,
@@ -619,6 +622,15 @@ const UserForm = ({ setStep, setActiveStep }) => {
         toast.success("OTP envoyé");
       }
       setLoading(false);
+
+      timeInterval = setInterval(() => {
+        setTimeLeft((prev) => prev - 1);
+      }, 1000);
+      setTimeout(() => {
+        clearInterval(timeInterval);
+        setTimeLeft(30);
+        setresendLoading(false);
+      }, 30000);
     } else {
       console.log("other country", {
         ...formData,
@@ -635,6 +647,16 @@ const UserForm = ({ setStep, setActiveStep }) => {
         toast.success("OTP envoyé");
       }
       setLoading(false);
+
+      timeInterval = setInterval(() => {
+        setTimeLeft((prev) => prev - 1);
+      }, 1000);
+
+      setTimeout(() => {
+        clearInterval(timeInterval);
+        setTimeLeft(30);
+        setresendLoading(false);
+      }, 30000);
     }
 
     // if (!accept_condition2) {
@@ -999,7 +1021,8 @@ const UserForm = ({ setStep, setActiveStep }) => {
               setActiveStep={setActiveStep}
               otpbyemail={otpbyemail}
               handleSubmit={handleSubmit}
-              loadingresend={loading}
+              loadingresend={resendloading}
+              timeLeft={timeLeft}
             />
           </Grid>
         )}{" "}
