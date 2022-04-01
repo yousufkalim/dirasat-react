@@ -27,6 +27,7 @@ export default function ConfirmationPop({
   userformdata,
   handleSubmit,
   loadingresend,
+  timeLeft,
 }) {
   const updateStore = UpdateStore();
   const { user } = Store();
@@ -122,7 +123,7 @@ export default function ConfirmationPop({
             onClick={handleSubmit}
             disabled={loadingresend}
           >
-            Renvoyer
+            {loadingresend && timeLeft}Renvoyer
           </button>
           <button
             size="Large"
