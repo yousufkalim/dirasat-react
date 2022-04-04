@@ -123,24 +123,52 @@ const Questions = ({ setStep, setActiveStep }) => {
   };
   const getFacialExpresion = (facialExpression) => {
     if (facialExpression == 1) {
-      return <img src={thoughtfulFinal} className=" thoughtfulFinal" />;
+      return (
+        <img
+          src={thoughtfulFinal}
+          className=" thoughtfulFinal"
+          alt="thougtful"
+        />
+      );
     } else if (facialExpression == 2) {
-      return <img src={thoughtfulFinal} className=" thoughtfulFinal" />;
+      return (
+        <img
+          src={thoughtfulFinal}
+          className=" thoughtfulFinal"
+          alt="thoughtful"
+        />
+      );
     } else if (facialExpression == 3) {
-      return <img src={asthonisedFinal} className=" asthonisedFinal" />;
+      return (
+        <img
+          src={asthonisedFinal}
+          className=" asthonisedFinal"
+          alt="asthonised"
+        />
+      );
     } else if (facialExpression == 4) {
-      return <img src={victoriousFinal} className=" victoriousFinal " />;
+      return (
+        <img
+          src={victoriousFinal}
+          className=" victoriousFinal "
+          alt="victorious"
+        />
+      );
     } else if (facialExpression == 5) {
-      return <img src={winkingFinal} className=" winkingFinal" />;
+      return <img src={winkingFinal} className=" winkingFinal" alt="winking" />;
     } else if (facialExpression == 6) {
-      return <img src={arrogantFinal} className=" arrogantFinal" />;
+      return (
+        <img src={arrogantFinal} className=" arrogantFinal" alt="arrogant" />
+      );
     } else if (facialExpression == 7) {
-      return <img src={encourageFinal} className=" encourageFinal" />;
+      return (
+        <img src={encourageFinal} className=" encourageFinal" alt="encourage" />
+      );
     } else if (facialExpression == 8) {
-      return <img src={winkingFinal} className=" winkingFinal" />;
+      return <img src={winkingFinal} className=" winkingFinal" alt="winking" />;
     } else {
       // return <img src={Dummy} className="dummyimgQuestion forweb" />;
-      return <img src={winkingFinal} className=" winkingFinal" />;
+      return <img src={winkingFinal} className=" winkingFinal" alt="winking" />;
     }
   };
 
@@ -200,7 +228,7 @@ const Questions = ({ setStep, setActiveStep }) => {
             ${getOptions(answers)?.length == 6 && "sixOptions"}
             `}
           >
-            <img src={qarrow} className="qboximg" />
+            <img src={qarrow} className="qboximg" alt="box" />
             <div className="questionBox">
               <h1
                 className={`${
@@ -255,7 +283,7 @@ const Questions = ({ setStep, setActiveStep }) => {
             </Grid>
             {history.length >= 1 ? (
               <div size="large" className="prevButton" onClick={handlePrev}>
-                <img src={arrowleft} className="arrowleft" />
+                <img src={arrowleft} className="arrowleft" alt="leftarrow" />
                 <b> Retour</b>
               </div>
             ) : (

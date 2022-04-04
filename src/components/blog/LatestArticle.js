@@ -35,6 +35,7 @@ export default function LatestArticle({ blogs, loading, setLoading }) {
                     // src={blogImg}
                     src={url + blogs[0]?.blog_images}
                     className="article1img"
+                    alt="blogimage"
                   />
                   <div className="articledetail">
                     <h2 className="articleheading">
@@ -74,6 +75,7 @@ export default function LatestArticle({ blogs, loading, setLoading }) {
                         // src={blogImg}
                         src={url + item.blog_images}
                         className="article2img"
+                        alt="blogimage"
                       />
                       <div className="articleText">
                         <h3>

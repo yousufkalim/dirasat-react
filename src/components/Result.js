@@ -142,7 +142,7 @@ const Result = () => {
       {resultStep == 0 && (
         <Grid container spacing={2} className="mainresultscreen">
           <Grid item xs={12} sm={12} md={5} className="">
-            <img src={MainCharacter} className="facialImgQuestionforResult" />
+            <img src={MainCharacter} className="facialImgQuestionforResult" alt="maincharacter"/>
           </Grid>
           <Grid item xs={12} sm={12} md={7} className="">
             <div
@@ -320,14 +320,14 @@ const Result = () => {
                             className="sharebutton"
                             onClick={() => setOpenInvitepopup(true)}
                           >
-                            <img src={userimg} />
+                            <img src={userimg} alt="userImage" />
                             <b className="invitetext">Invite un ami</b>
                           </button>
                           <button
                             className=" partager"
                             onClick={() => setOpenSharepopup(true)}
                           >
-                            <img src={share} />
+                            <img src={share} alt="share" />
                             <b className="partagertext"> Partager </b>
                           </button>
                         </div>

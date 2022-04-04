@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import InstagramIcon from "@mui/icons-material/Instagram";
 
 const Footer = () => {
   return (
@@ -46,6 +50,57 @@ const Footer = () => {
               </a>{" "}
               2021. Tous droits réservés
             </p>
+            <div>
+              <a
+                href="https://mobile.twitter.com/Orientator_FR"
+                target="_blank"
+              >
+                <TwitterIcon
+                  style={{
+                    padding: "0 9px",
+                    cursor: "pointer",
+                    color: "white",
+                  }}
+                />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/orientator/"
+                target="_blank"
+              >
+                <LinkedInIcon
+                  style={{
+                    padding: "0 9px",
+                    cursor: "pointer",
+                    color: "white",
+                  }}
+                />
+              </a>
+
+              <a
+                href="https://www.facebook.com/OrientatorFrance/"
+                target="_blank"
+              >
+                <FacebookIcon
+                  style={{
+                    padding: "0 9px",
+                    cursor: "pointer",
+                    color: "white",
+                  }}
+                />
+              </a>
+              <a
+                href="https://www.instagram.com/orientator_france/"
+                target="_blank"
+              >
+                <InstagramIcon
+                  style={{
+                    padding: "0 9px",
+                    cursor: "pointer",
+                    color: "white",
+                  }}
+                />
+              </a>
+            </div>
           </div>
           {/* <div className="cguDiv"> */}
           <div>

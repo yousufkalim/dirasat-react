@@ -17,7 +17,7 @@ const Confidential = () => {
       <div style={{ minHeight: "100vh", marginTop: "-2%", color: "white" }}>
         <div style={{ width: "60%", margin: "auto" }}>
           <p className="cguHeading">
-            <img src={logo} className="cgulogo" />
+            <img src={logo} className="cgulogo" alt="logo" />
             <br />
             POLITIQUE DE CONFIDENTIALITÉ
             <br />

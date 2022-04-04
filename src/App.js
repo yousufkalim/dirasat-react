@@ -38,7 +38,7 @@ function App() {
         />
         <meta
           name="keywords"
-          content="Orientator, Dis à Orientator qui tu es, Réponds aux questions d'Orientator, Orientator te propose une liste de voeux pour ton Parcoursup!"
+          content="ParcourSup,Orientator,Post-bac,études,formation,Orientator te propose une liste de voeux pour ton Parcoursup!"
         />
       </Helmet>
       {/* tostify Container for Notification */}

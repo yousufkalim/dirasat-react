@@ -123,7 +123,7 @@ export default function ConfirmationPop({
             onClick={handleSubmit}
             disabled={loadingresend}
           >
-            {loadingresend && timeLeft}Renvoyer
+            Renvoyer {loadingresend && timeLeft}
           </button>
           <button
             size="Large"

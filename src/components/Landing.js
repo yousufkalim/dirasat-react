@@ -11,6 +11,7 @@ import CookiesPopup from "../utils/CookiesPopup";
 import CookiesPopup2 from "../utils/CookiesPopup2";
 import Contactus from "../utils/Contactus";
 import RefuserPopup from "../utils/RefuserPopup";
+import { useLocation } from "react-router-dom";
 
 import f1 from "../assets/img/f1.png";
 import f2 from "../assets/img/f2.png";
@@ -20,7 +21,7 @@ import Footer from "./Footer";
 
 import api from "../api";
 
-import CountUp from 'react-countup';
+import CountUp from "react-countup";
 
 const Landing = ({ step, setStep, statetextforscroll }) => {
   const [openCookieePopup, setOpenCookieePopup] = useState(false);
@@ -72,8 +73,10 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
   ];
   const [data, setData] = useState(items);
   const [siteViews, setSiteViews] = useState(null);
+  const { state } = useLocation();
   const capture1 = React.createRef();
   const video = document.getElementById("video");
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 11,
@@ -96,11 +99,13 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
   useEffect(() => {
     video?.play();
     scrollToTop();
+    console.log("sssssssssssssss", state);
     statetextforscroll == "Accueil" && scrollToTop();
-    statetextforscroll == "Comment" &&
-      setTimeout(() => {
-        scrollToTopforComment();
-      }, 50);
+    statetextforscroll == "Comment" ||
+      (state == "Comment" &&
+        setTimeout(() => {
+          scrollToTopforComment();
+        }, 50));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step]);
 
@@ -119,10 +124,14 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
     <>
       <div className="main" id="top">
         <img src={Main} className="bodyimg forweb" />
-        <img src={MainCharacter} className="bodyimg formobile " />
+        <img
+          src={MainCharacter}
+          alt="Orientator's Mian charachter"
+          className="bodyimg formobile "
+        />
         <Grid container spacing={2} className="body-rectangle">
           <Grid item xs={12} sm={9} className="body-rectangleGrid2">
-            <h3 className="h3">Commençons le test d'orientation!</h3>
+            <h1 className="h3">Commençons le test d'orientation!</h1>
             <p className="p1">
               À la fin de ce questionnaire, une proposition de voeux pour
               Parcoursup te sera formulée!
@@ -139,7 +148,7 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
               >
                 C'est parti!
               </button>
-              <img src={arrowright} className="arrowright" />
+              <img src={arrowright} className="arrowright" alt="arrowIcon" />
             </div>
           </Grid>
         </Grid>
@@ -174,17 +183,17 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
           ref={capture1}
         >
           <Grid item xs={12} sm={4}>
-            <img src={f1} className="footerimg" />
+            <img src={f1} className="footerimg" alt="footerImg" />
             <h4 className="h4">Étape 1</h4>
             <p className="p3">Dis à Orientator qui tu es.</p>
           </Grid>
           <Grid item xs={12} sm={4}>
-            <img src={f2} className="footerimg" />
+            <img src={f2} className="footerimg" alt="etape2" />
             <h4 className="h4">Étape 2</h4>
             <p className="p3">Réponds aux questions d'Orientator.</p>
           </Grid>
           <Grid item xs={12} sm={4} id="MyElementIdHere">
-            <img src={f3} className="footerimg" />
+            <img src={f3} className="footerimg" alt="etape3" />
             <h4 className="h4">Étape 3</h4>
             <p className="p3">
               Orientator te propose une liste de voeux pour ton Parcoursup!
@@ -193,29 +202,31 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
         </Grid>
         {/* <button onClick={onButtonClick}>Download PDF</button> */}
       </div>
-      {
-        !siteViews ?
-        <></> :
+      {!siteViews ? (
+        <></>
+      ) : (
         <div
           style={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            justifyContent: "center"
+            justifyContent: "center",
           }}
         >
           <p
             style={{
               fontSize: "30px",
               fontWeight: "600",
-              color: "#D4D8E5"
+              color: "#D4D8E5",
             }}
           >
             Nombre de visiteurs
           </p>
           <CountUp
             start={1}
-            end={siteViews.count > 800 ? siteViews.count : (siteViews.count + 800) }
+            end={
+              siteViews.count > 800 ? siteViews.count : siteViews.count + 800
+            }
             duration={5}
             style={{
               fontSize: "100px",
@@ -223,11 +234,11 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
               alignSelf: "center",
               background: "#010F2C",
               letterSpacing: "18px",
-              textIndent: "18px"
+              textIndent: "18px",
             }}
           />
         </div>
-      }
+      )}
       <Contactus />
       <Footer />
       <CookiesPopup
