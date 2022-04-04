@@ -74,9 +74,9 @@ export default function Header({
             }}
           >
             {flag ? (
-              <img src={Closeicon} className="navicon" />
+              <img src={Closeicon} className="navicon" alt="closeIcon" />
             ) : (
-              <img src={Navicon} className="navicon" />
+              <img src={Navicon} className="navicon" alt="navIcon" />
             )}
           </div>
           <div className="centerizelogo">
@@ -90,6 +90,7 @@ export default function Header({
                   window.location.reload("/");
                 }
               }}
+              alt="logo"
             />
           </div>
         </div>
@@ -97,20 +98,22 @@ export default function Header({
         {(flag || window.innerWidth > 625) && (
           <>
             <AnchorLink
-              href={`${!flag ? "#top" : ""}`}
+              href={`${!flag && "#top"}`}
               style={{
                 textDecoration: "none",
                 color: "white",
                 padding: "15px 25px 0 0",
               }}
             >
+              {console.log("step issss", step, flag)}
               <Typography
                 className={flag ? "title a" : "hidetitle a"}
                 onClick={() => {
                   flag && scrollToTop();
                   step != 0 && setStep(0);
                   step != 0 && setActiveStep(1);
-                  step != 0 && setStatetextforscroll("Accueil");
+                  setStatetextforscroll("Accueil");
+                  history.push("/");
                 }}
               >
                 Accueil
@@ -130,14 +133,17 @@ export default function Header({
                   flag && scrollToTopforComment();
                   step != 0 && setStep(0);
                   step != 0 && setActiveStep(1);
-                  step != 0 && setStatetextforscroll("Comment");
+                  setStatetextforscroll("Comment");
+                  console.log("aaalhlbkbbi");
+                  history.push("/", "Comment");
                 }}
               >
                 Comment ça marche?
               </Typography>
             </AnchorLink>
             <div
-             className="BlogMobileView" style={{width: "60%", textAlign: "right", marginTop: "10px"}}
+              className="BlogMobileView"
+              style={{ width: "60%", textAlign: "right", marginTop: "10px" }}
             >
               <Link
                 to="/blog"
@@ -147,7 +153,6 @@ export default function Header({
                 Blog
               </Link>
             </div>
-    
           </>
         )}
       </Toolbar>

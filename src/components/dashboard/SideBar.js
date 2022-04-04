@@ -6,7 +6,11 @@ const SideBar = () => {
   return (
     <div class="sidebar">
       <div class="profile_info">
-        <img src={Logo} style={{ width: "25%", margin: "10px" }} alt="" />
+        <img
+          src={Logo}
+          style={{ width: "25%", margin: "10px" }}
+          alt="logosidebar"
+        />
         <h4>Orientator</h4>
       </div>
       <div className="options">

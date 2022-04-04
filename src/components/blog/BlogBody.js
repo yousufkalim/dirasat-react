@@ -56,11 +56,11 @@ export default function BlogBody() {
             />
             <meta
               name="keywords"
-              content="Orientator, Dis à Orientator qui tu es, Réponds aux questions d'Orientator, Orientator te propose une liste de voeux pour ton Parcoursup!"
+              content="ParcourSup,Orientator,Post-bac,études,formation,Orientator te propose une liste de voeux pour ton Parcoursup!"
             />
           </Helmet>
           <div className="BlogBodycontainer">
-            <img src={BlogBodyimg} className="BlogbodyImage" />
+            <img src={BlogBodyimg} className="BlogbodyImage" alt="blogbody" />
             <div className="BlogtextonImg">
               <h1 className="BlogtextimgH1">NOTRE BLOG</h1>
               {/* <p className="BlogtextonImgP">Tag Line Here</p> */}

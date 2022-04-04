@@ -29,7 +29,7 @@ function DetailofCourses({ courses, open, setOpen, user }) {
             </Grid>
             <Grid item xs={12} sm={7} className="ratingGrid">
               <div className="selectivitydiv">
-                <img src={selectivity} />
+                <img src={selectivity} alt="selectivity" />
                 <p className="textonmobile">Séléctivité</p>
                 <div>
                   <b style={{ fontSize: "15px" }}>
@@ -42,7 +42,7 @@ function DetailofCourses({ courses, open, setOpen, user }) {
                 </div>
               </div>
               <div className="costRating">
-                <img src={cost} />
+                <img src={cost} alt="coût" />
                 <p className="textonmobile">Coût</p>
                 <div>
                   {course?.courseId?.cost ? (
@@ -68,7 +68,7 @@ function DetailofCourses({ courses, open, setOpen, user }) {
                 </div>
               </div>
               <div className="languageRating">
-                <img src={language} />
+                <img src={language} alt="langue" />
                 <p className="textonmobile">Langue</p>
                 <div>
                   {" "}
@@ -95,7 +95,7 @@ function DetailofCourses({ courses, open, setOpen, user }) {
                 </div>
               </div>
               <div>
-                <img src={duration} />
+                <img src={duration} alt="durée" />
                 <p className="textonmobile">Durée</p>
                 <div>
                   {course?.courseId?.duration ? (
@@ -121,7 +121,7 @@ function DetailofCourses({ courses, open, setOpen, user }) {
                 </div>
               </div>
               <div>
-                <img src={proximate} />
+                <img src={proximate} alt="proximaté" />
                 <p className="textonmobile">Proximité</p>
                 <div>
                   {course?.distancerating ? (

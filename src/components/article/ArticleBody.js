@@ -72,14 +72,14 @@ export default function ArticleBody({ singlBlog, loading, blogs }) {
             />
             <meta
               name="keywords"
-              content="Orientator, Dis à Orientator qui tu es, Réponds aux questions d'Orientator, Orientator te propose une liste de voeux pour ton Parcoursup!"
+              content="ParcourSup,Orientator,Post-bac,études,formation,Orientator te propose une liste de voeux pour ton Parcoursup!"
             />
           </Helmet>
           <img
             // src={blogImg}
             src={url + singlBlog?.blog_images}
             className="articleimg"
-            alt="img"
+            alt="blog"
           />
           <div style={{ width: "85%" }}>
             <h1 className="h1article">{singlBlog?.blog_title}</h1>
@@ -87,7 +87,7 @@ export default function ArticleBody({ singlBlog, loading, blogs }) {
           <Grid container spacing={2}>
             <Grid item xs={8} sm={9}>
               <div className="articleavatardiv">
-                <img src={Avatar2} className="articleavatar" alt="img" />
+                <img src={Avatar2} className="articleavatar" alt="avatar" />
                 <div className="articlediv2">
                   <p className="articlep1">
                     {/* {singlBlog?.blog_author?.name.charAt(0).toUpperCase() +

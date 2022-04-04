@@ -65,10 +65,10 @@ function ColorlibStepIcon(props) {
   const { active, completed } = props;
 
   const icons = {
-    1: <img src={step1} />,
-    2: <img src={editicon} />,
+    1: <img src={step1} alt="stepicon" />,
+    2: <img src={editicon} alt="editIcon" />,
     3: <HelpIcon />,
-    4: <img src={step4} />,
+    4: <img src={step4} alt="step4" />,
   };
 
   return (

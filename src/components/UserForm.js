@@ -636,7 +636,8 @@ const UserForm = ({ setStep, setActiveStep }) => {
         ...formData,
         customeAddress: customeAddress + " " + country,
       });
-      // setLoading(true);
+      setLoading(true);
+      setresendLoading(true);
       let res = await api("post", "/users/create", {
         ...formData,
         customenewAddress: customeAddress + " " + country,
@@ -687,6 +688,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
             src={veryExcited}
             className="veryExitedImg "
             onLoad={() => setImgLoading(false)}
+            alt="exited"
           />
         </Grid>
         {!imgloading && (
@@ -983,7 +985,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       className="formbackbutton"
                       onClick={() => setStep(0)}
                     >
-                      <img src={arrowleft} className="arrowleft" />
+                      <img src={arrowleft} className="arrowleft" alt="arrow" />
                       <b> Retour</b>
                     </div>
                   </Grid>
