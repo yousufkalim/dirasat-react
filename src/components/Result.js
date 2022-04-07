@@ -131,7 +131,7 @@ const Result = () => {
         // pdf.addImage(btsResult, "PNG", 0, 0, 210, 300);
       });
 
-      pdf.save("Ma liste Orientator.pdf");
+      pdf.save("Ma liste Dirasat.pdf");
       setExportLoading(false);
       // document.body.appendChild(canvas);
     }, 500);
@@ -142,7 +142,11 @@ const Result = () => {
       {resultStep == 0 && (
         <Grid container spacing={2} className="mainresultscreen">
           <Grid item xs={12} sm={12} md={5} className="">
-            <img src={MainCharacter} className="facialImgQuestionforResult" alt="maincharacter"/>
+            <img
+              src={MainCharacter}
+              className="facialImgQuestionforResult"
+              alt="maincharacter"
+            />
           </Grid>
           <Grid item xs={12} sm={12} md={7} className="">
             <div

@@ -65,14 +65,14 @@ export default function ArticleBody({ singlBlog, loading, blogs }) {
       ) : (
         <div className="articleBodycontainer">
           <Helmet>
-            <title>Orientator</title>
+            <title>Dirasat</title>
             <meta
               name="description"
               content="Commençons le test d'orientation! À la fin de ce questionnaire, une proposition de voeux pour Parcoursup te sera formulée!"
             />
             <meta
               name="keywords"
-              content="ParcourSup,Orientator,Post-bac,études,formation,Orientator te propose une liste de voeux pour ton Parcoursup!"
+              content="ParcourSup,Dirasat,Post-bac,études,formation,Dirasat te propose une liste de voeux pour ton Parcoursup!"
             />
           </Helmet>
           <img
@@ -92,7 +92,7 @@ export default function ArticleBody({ singlBlog, loading, blogs }) {
                   <p className="articlep1">
                     {/* {singlBlog?.blog_author?.name.charAt(0).toUpperCase() +
                       singlBlog?.blog_author?.name.slice(1)} */}
-                    Orientator
+                    Dirasat
                   </p>
                   {/* <p className="articlep2">May 15・1 min read</p> */}
                   <p className="articlep2">

@@ -89,8 +89,8 @@ export default function CookiesPopup({ open, setOpen, setData }) {
         <DialogContent className="modalcontent">
           <p style={{ margin: "0" }}>
             Vous avez choisi de refuser les cookies , notamment ceux nécessaires
-            au bon déroulement de votre expérience avec Orientator. Vous ne
-            pourrez pas avoir accès au test, êtes-vous sûr(e) de votre choix?
+            au bon déroulement de votre expérience avec Dirasat. Vous ne pourrez
+            pas avoir accès au test, êtes-vous sûr(e) de votre choix?
           </p>
         </DialogContent>
         <div className="invitedialogAction">

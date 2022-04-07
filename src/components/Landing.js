@@ -126,7 +126,7 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
         <img src={Main} className="bodyimg forweb" />
         <img
           src={MainCharacter}
-          alt="Orientator's Mian charachter"
+          alt="Dirasat's Mian charachter"
           className="bodyimg formobile "
         />
         <Grid container spacing={2} className="body-rectangle">
@@ -185,18 +185,18 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
           <Grid item xs={12} sm={4}>
             <img src={f1} className="footerimg" alt="footerImg" />
             <h4 className="h4">Étape 1</h4>
-            <p className="p3">Dis à Orientator qui tu es.</p>
+            <p className="p3">Dis à Dirasat qui tu es.</p>
           </Grid>
           <Grid item xs={12} sm={4}>
             <img src={f2} className="footerimg" alt="etape2" />
             <h4 className="h4">Étape 2</h4>
-            <p className="p3">Réponds aux questions d'Orientator.</p>
+            <p className="p3">Réponds aux questions d'Dirasat.</p>
           </Grid>
           <Grid item xs={12} sm={4} id="MyElementIdHere">
             <img src={f3} className="footerimg" alt="etape3" />
             <h4 className="h4">Étape 3</h4>
             <p className="p3">
-              Orientator te propose une liste de voeux pour ton Parcoursup!
+              Dirasat te propose une liste de voeux pour ton Parcoursup!
             </p>
           </Grid>
         </Grid>

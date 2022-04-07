@@ -106,9 +106,9 @@ export default function DialogBox({ open, setOpen }) {
               onChange={onChange}
             />
             <span className="dialogcheckboxtext">
-              Je souhaite être contacté gratuitement par un conseiller
-              Orientator pour répondre davantage à mes questions ou clarifier
-              certains aspects de mon
+              Je souhaite être contacté gratuitement par un conseiller Dirasat
+              pour répondre davantage à mes questions ou clarifier certains
+              aspects de mon
               <br className="br" /> projet.
             </span>
           </Grid>

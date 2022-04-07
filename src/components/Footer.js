@@ -26,7 +26,7 @@ const Footer = () => {
             </h3>
 
             <div>
-              <p>ORIENTATOR</p>
+              <p>DIRASAT</p>
               <p>01 84 80 74 81</p>
               <p>75116 Paris, France</p>
               {/* <p>E-mail : contact@orientator.com</p>

@@ -28,8 +28,7 @@ const Confidential = () => {
         <div style={{ width: "80%", margin: "auto" }}>
           <h1 className="cguH1">ARTICLE 1 : PRÉAMBULE</h1>
           <p>
-            Cette politique de confidentialité s'applique au site :
-            Orientator.com.
+            Cette politique de confidentialité s'applique au site : Dirasat.com.
           </p>
           <p className="pmargin">
             La présente politique de confidentialité a pour but d'exposer aux
@@ -58,7 +57,7 @@ const Confidential = () => {
           <p className="pmargin">
             Cette politique de confidentialité complète les mentions légales et
             les Conditions Générales d'Utilisation que les utilisateurs peuvent
-            consulter à l'adresse ci-après : www.orientator.com
+            consulter à l'adresse ci-après : www.Dirasat.com
           </p>
           <h1 className="cguH1">
             ARTICLE 2 : PRINCIPES GÉNÉRAUX EN MATIÈRE DE COLLECTE ET DE
@@ -135,7 +134,7 @@ const Confidential = () => {
           </h1>
           <p className="pmargin">
             Sont considérés comme utilisateurs tous les internautes qui
-            naviguent, lisent, visionnent et utilisent le site Orientator.
+            naviguent, lisent, visionnent et utilisent le site Dirasat.
           </p>
           <p className="pmargin">
             <span className="boldText"> A.</span> DONNÉES COLLECTÉES ET TRAITÉES
@@ -198,8 +197,8 @@ const Confidential = () => {
             <span className="boldText"> C. </span>HÉBERGEMENT DES DONNÉES
           </p>
           <p className="pmargin">
-            Le site Orientator est hébergé par SCALEWAY, dont le siège est situé
-            à l'adresse ci-après : SCALEWAY SAS BP 438 75366 PARIS CEDEX 08
+            Le site Dirasat est hébergé par SCALEWAY, dont le siège est situé à
+            l'adresse ci-après : SCALEWAY SAS BP 438 75366 PARIS CEDEX 08
             France.
           </p>
           <p className="pmargin">
@@ -220,7 +219,7 @@ const Confidential = () => {
           <p className="pmargin">
             Le responsable du traitement des données à caractère personnel
             est M. Bilel Rabhi. Il peut être contacté par mail
-            (contact@orientator.com) et par téléphone (01 84 80 74 81) lundi au
+            (contact@Dirasat.com) et par téléphone (01 84 80 74 81) lundi au
             vendredi de 9h à 19h.
           </p>
           <p className="pmargin" style={{ paddingBottom: "30px" }}>

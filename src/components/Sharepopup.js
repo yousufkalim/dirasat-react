@@ -57,7 +57,7 @@ export default function InviteBox({ open, setOpen }) {
               <FacebookShareButton
                 url={url}
                 target="_blank"
-                quote="Salut! Je viens de faire le test d’Orientator dans le cadre de mon orientation post-bac et je suis fin prêt pour Parcoursup! À votre tour sur:"
+                quote="Salut! Je viens de faire le test Dirasat dans le cadre de mon orientation post-bac et je suis fin prêt pour Parcoursup! À votre tour sur:"
               >
                 <FacebookIcon round={true} className="socialIcons fb" />
               </FacebookShareButton>
@@ -77,11 +77,11 @@ export default function InviteBox({ open, setOpen }) {
               <EmailShareButton
                 url={url}
                 target="_blank"
-                subject="À ton tour de faire ton test Orientator!"
+                subject="À ton tour de faire ton test Dirasat!"
                 body={
-                  "Salut! Je viens de faire le test d'Orientator dans le cadre de mon orientation post-bac et je suis fin prêt pour Parcoursup! \n\n À ton tour sur "
+                  "Salut! Je viens de faire le test d'Dirasat dans le cadre de mon orientation post-bac et je suis fin prêt pour Parcoursup! \n\n À ton tour sur "
                 }
-                quote="orientator"
+                quote="Dirasat"
               >
                 <MailOutlineIcon round={true} className="socialIcons mail" />
               </EmailShareButton>
@@ -90,7 +90,7 @@ export default function InviteBox({ open, setOpen }) {
               <TwitterShareButton
                 url={url}
                 target="_blank"
-                title="Salut! Je viens de faire le test d’Orientator dans le cadre de mon #orientation post #bac et je suis fin prêt pour #Parcoursup! À votre tour sur"
+                title="Salut! Je viens de faire le test Dirasat dans le cadre de mon #Dirasat post #bac et je suis fin prêt pour #Parcoursup! À votre tour sur"
               >
                 <TwitterIcon round={true} className="socialIcons twitter" />
               </TwitterShareButton>

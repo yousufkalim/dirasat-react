@@ -32,9 +32,9 @@ const CGU = () => {
             article l'identité des différents intervenants dans le cadre de sa
             réalisation et de son suivi.
           </p>
-          <p className="pmargin">Le site Orientator.com est édité par :</p>
+          <p className="pmargin">Le site Dirasat.com est édité par :</p>
           <p className="pmargin">
-            Orientator SAS, dont le siège siège social est situé à l'adresse
+            Dirasat SAS, dont le siège siège social est situé à l'adresse
             suivante : 55 avenue Marceau 75116 Paris et en cours
             d’immatriculation.
           </p>
@@ -42,12 +42,12 @@ const CGU = () => {
             Elle est représentée par son Président M. Bilel Rabhi.
           </p>
           <p className="pmargin">
-            Téléphone : 01 84 80 74 81/ Adresse e-mail : contact@orientator.com.
+            Téléphone : 01 84 80 74 81/ Adresse e-mail : contact@Dirasat.com.
           </p>
           <p className="pmargin">
             Le directeur de publication du site est : Bilel Rabhi.
           </p>
-          <p className="pmargin">Le site Orientator.com est hébergé par :</p>
+          <p className="pmargin">Le site Dirasat.com est hébergé par :</p>
           <p className="pmargin">
             SCALEWAY, dont le siège est situé à l'adresse ci-après : SCALEWAY
             SAS BP 438 75366 PARIS CEDEX 08 FRANCE
@@ -59,17 +59,17 @@ const CGU = () => {
           </p>
           <h1 className="cguH1">ARTICLE 2. PRÉSENTATION DU SITE</h1>
           <p className="pmargin">
-            Le site Orientator.com a pour objet d’être une plateforme
-            d’orientation pour les étudiants afin de les diriger au mieux vers
-            le cursus le plus adapté à leur choix et leurs envies.
+            Le site Dirasat.com a pour objet d’être une plateforme d’orientation
+            pour les étudiants afin de les diriger au mieux vers le cursus le
+            plus adapté à leur choix et leurs envies.
           </p>
           <h1 className="cguH1">ARTICLE 3. CONTACT</h1>
           <p className="pmargin">
             Pour toute question ou demande d'information concernant le site, ou
             tout signalement de contenu ou d'activités illicites, l'utilisateur
             peut contacter l'éditeur à l'adresse e-mail suivante:
-            contact@orientator.com. ou adresser un courrier recommandé avec
-            accusé de réception à : Orientator, 55 avenue Marceau 75116 Paris.
+            contact@Dirasat.com. ou adresser un courrier recommandé avec accusé
+            de réception à : Dirasat, 55 avenue Marceau 75116 Paris.
           </p>
           <h1 className="cguH1">
             ARTICLE 4. ACCEPTATION DES CONDITIONS D'UTILISATION
@@ -168,7 +168,7 @@ const CGU = () => {
           <h1 className="cguH1">ARTICLE 8. LIENS HYPERTEXTES</h1>
           <p className="pmargin">
             Le site peut contenir des liens hypertextes pointant vers d'autres
-            sites internet sur lesquels Orientator.com n'exerce pas de contrôle.
+            sites internet sur lesquels Dirasat.com n'exerce pas de contrôle.
             Malgré les vérifications préalables et régulières réalisés par
             l'éditeur, celui-ci décline tout responsabilité quant aux contenus
             qu'il est possible de trouver sur ces sites.
@@ -190,7 +190,7 @@ const CGU = () => {
             sensibilité du plus grand nombre.
           </p>
           <p className="pmargin">
-            Enfin, Orientator.com se réserve le droit de faire supprimer à tout
+            Enfin, Dirasat.com se réserve le droit de faire supprimer à tout
             moment un lien hypertexte pointant vers son site, si le site
             l'estime non conforme à sa politique éditoriale.
           </p>
@@ -253,18 +253,18 @@ const CGU = () => {
         <div style={{ width: "60%", margin: "auto" }}>
           <h2 style={{ textDecoration: "underline" }}>Définitions :</h2>
           <p>
-            <span className="boldText"> Orientator : </span> La personne,
+            <span className="boldText"> Dirasat : </span> La personne,
             physique ou morale, qui édite les services de communication au
             public en ligne.
             <br /> <span className="boldText"> Le Site :</span> L'ensemble des
-            sites, pages Internet et services en ligne proposés par Orientator.
+            sites, pages Internet et services en ligne proposés par Dirasat.
             <br />
             <span className="boldText"> L'Utilisateur :</span> La personne
             utilisant le Site et les services.
           </p>
           <h2>Nature des données collectées</h2>
           <p className="boldText">
-            Dans le cadre de l'utilisation des Sites, Orientator est susceptible
+            Dans le cadre de l'utilisation des Sites, Dirasat est susceptible
             de collecter les catégories de données suivantes concernant ses
             Utilisateurs :
           </p>
@@ -563,7 +563,7 @@ const CGU = () => {
             réalisées et les informations consultées.
           </p>
           <p>
-            Vous êtes informé que Orientator est susceptible de déposer des
+            Vous êtes informé que Dirasat est susceptible de déposer des
             cookies sur votre terminal. Le cookie enregistre des informations
             relatives à la navigation sur le service (les pages que vous avez
             consultées, la date et l'heure de la consultation...) que nous pour-
@@ -574,7 +574,7 @@ const CGU = () => {
             entraînant un fonctionnement dégradé du service
           </p>
           <p className="pmargin">
-            Vous reconnaissez avoir été informé que Orientator peut avoir
+            Vous reconnaissez avoir été informé que Dirasat peut avoir
             recours à des cookies, et l'y autorisez. Si vous ne souhaitez pas
             que des cookies soient utilisés sur votre terminal, la plupart des
             navigateurs vous permettent de désactiver les cookies en passant par
@@ -586,7 +586,7 @@ const CGU = () => {
             permettre le fonctionnement du service
           </p>
           <p className="pmargin">
-            Orientator peut être amenée à recueillir des informations de
+            Dirasat peut être amenée à recueillir des informations de
             navigation via l'utilisation de cookies.
           </p>
           <h2>Conservation des données techniques</h2>
@@ -634,7 +634,7 @@ const CGU = () => {
             1978 relative à l'informatique, aux fichiers et aux libertés, vous
             disposezpar ailleurs d'un droit de suppression sur vos données que
             vous pouvez exercer à tout moment en prenant contact avec
-            Orientator.
+            Dirasat.
           </p>
           <p className="boldText">
             Suppression des données après 3 ans d'inactivité
@@ -649,7 +649,7 @@ const CGU = () => {
           <p className="boldText">Suppression du compte à la demande</p>
           <p className="pmargin">
             L'Utilisateur a la possibilité de supprimer son Compte à tout
-            moment, par simple demande à Orientator OU par le menu de
+            moment, par simple demande à Dirasat OU par le menu de
             suppression de Compte présent dans les paramètres du Compte le cas
             échéant.
           </p>
@@ -659,12 +659,12 @@ const CGU = () => {
           <p className="pmargin">
             En cas de violation d'une ou de plusieurs dispositions des CGU ou de
             tout autre document incorporé aux présentes par référence,
-            Orientator se réserve le droit de mettre finou restreindre sans
+            Dirasat se réserve le droit de mettre finou restreindre sans
             aucun avertissement préalable et à sa seule discrétion, votre
             usageet accès aux services, à votre compte et à tous les Sites.
           </p>
           <h2>
-            Indications en cas de faille de sécurité décelée par Orientator.
+            Indications en cas de faille de sécurité décelée par Dirasat.
           </h2>
           <p className="boldText">
             Information de l'Utilisateur en cas de faille de sécurité

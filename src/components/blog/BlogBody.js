@@ -56,7 +56,7 @@ export default function BlogBody() {
             />
             <meta
               name="keywords"
-              content="ParcourSup,Orientator,Post-bac,études,formation,Orientator te propose une liste de voeux pour ton Parcoursup!"
+              content="ParcourSup,Dirasat,Post-bac,études,formation,Dirasat te propose une liste de voeux pour ton Parcoursup!"
             />
           </Helmet>
           <div className="BlogBodycontainer">

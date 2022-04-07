@@ -29,11 +29,11 @@ const MentionsLegal = () => {
             Conformément aux dispositions des Articles 6-III et 19 de la Loi
             n°2004-575 du 21 juin 2004 pour la Confiance dans l'économie
             numérique, dite L.C.E.N., il est porté à la connaissance des
-            utilisateurs et visiteurs du site Orientator les présentes mentions
+            utilisateurs et visiteurs du site Dirasat les présentes mentions
             légales.
           </p>
           <p className="pmargin">
-            Le site Orientator est accessible à l'adresse suivante :
+            Le site Dirasat est accessible à l'adresse suivante :
             www.orientator.com (ci-après "le Site"). L'accès et l'utilisation du
             Site sont soumis aux présentes " Mentions légales" détaillées
             ci-après ainsi qu'aux lois et/ou règlements applicables
@@ -54,14 +54,14 @@ const MentionsLegal = () => {
             <span className="boldText"> A.</span> Editeur du site
           </p>
           <p className="pmargin">
-            Le site Orientator est édité par la SAS Orientator ayant son siège
-            social à l'adresse suivante : 55 avenue Marceau 751116 Paris, et
-            immatriculée au numéro suivant : en cours d’immatriculation RCS
+            Le site OrDirasatientator est édité par la SAS Dirasat ayant son
+            siège social à l'adresse suivante : 55 avenue Marceau 751116 Paris,
+            et immatriculée au numéro suivant : en cours d’immatriculation RCS
             Paris.
           </p>
           <p className="pmargin">Capital social : 1 000 euros</p>
           <p className="pmargin">Téléphone : 01 84 80 74 81</p>
-          <p className="pmargin">Adresse e-mail : contact@orientator.com</p>
+          <p className="pmargin">Adresse e-mail : contact@Dirasat.com</p>
           <p className="pmargin">ci-après " l'Éditeur "</p>
           <p className="pmargin">
             <span className="boldText"> B.</span> Directeur de publication
@@ -70,15 +70,13 @@ const MentionsLegal = () => {
             Le Directeur de publication est M. Bilel Rhabi
           </p>
           <p className="pmargin">
-            Adresse e-mail de contact : direction@orientator.com
+            Adresse e-mail de contact : direction@Dirasat.com
           </p>
           <p className="pmargin">ci-après " le Directeur de publication "</p>
           <p className="pmargin">
             <span className="boldText"> C.</span> Hébergeur du site
           </p>
-          <p className="pmargin">
-            Le site Orientator est hébergé par  SCALEWAY
-          </p>
+          <p className="pmargin">Le site Dirasat est hébergé par  SCALEWAY</p>
           <p className="pmargin">
             dont le siège est situé à l'adresse suivante : SCALEWAY SAS BP 438
             75366 PARIS CEDEX 08 FRANCE
@@ -93,7 +91,7 @@ const MentionsLegal = () => {
           </p>
           <p className="pmargin">
             Sont considérés comme utilisateurs tous les internautes qui
-            naviguent, lisent, visionnent et utilisent le site Orientator.
+            naviguent, lisent, visionnent et utilisent le site Dirasat.
           </p>
           <p className="pmargin">ci-après les " Utilisateurs "</p>
           <h1 className="cguH1 legalh1">ARTICLE 2 - ACCESSIBILITÉ</h1>
