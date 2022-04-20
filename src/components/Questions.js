@@ -84,8 +84,6 @@ const Questions = ({ setStep, setActiveStep }) => {
     setCurrentAnswer(null);
     return play();
   };
-  console.log("history", history);
-  console.log("prevQuestion", prevQuestion);
 
   //it set the current answer which will be selected
   const currentans = () => {

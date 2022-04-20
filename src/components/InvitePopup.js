@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { styled } from "@material-ui/core/styles";
 import Dialog from "@material-ui/core/Dialog";
 import { toast } from "react-toastify";
 import DialogContent from "@material-ui/core/DialogContent";
 import IconButton from "@material-ui/core/IconButton";
 import Grid from "@material-ui/core/Grid";
-import { Checkbox } from "@material-ui/core";
-import close from "../assets/icons/close.png";
 import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
-import { Store, UpdateStore } from "../StoreContext";
+import { Store } from "../StoreContext";
 import api from "../api";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({

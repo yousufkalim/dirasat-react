@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react";
-import Grid from "@material-ui/core/Grid";
+import React from "react";
 import { Link } from "react-router-dom";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -29,8 +27,6 @@ const Footer = () => {
               <p>DIRASAT</p>
               <p>01 84 80 74 81</p>
               <p>75116 Paris, France</p>
-              {/* <p>E-mail : contact@orientator.com</p>
-              <p>Téléphone : 01 84 80 74 81</p> */}
             </div>
           </div>
           <div className="developbydiv">
@@ -42,7 +38,7 @@ const Footer = () => {
                 style={{
                   textDecoration: "none",
                   color: " gray",
-                  margin: "5px",
+                  margin: "5px"
                 }}
               >
                 {" "}
@@ -59,7 +55,7 @@ const Footer = () => {
                   style={{
                     padding: "0 9px",
                     cursor: "pointer",
-                    color: "white",
+                    color: "white"
                   }}
                 />
               </a>
@@ -71,7 +67,7 @@ const Footer = () => {
                   style={{
                     padding: "0 9px",
                     cursor: "pointer",
-                    color: "white",
+                    color: "white"
                   }}
                 />
               </a>
@@ -84,7 +80,7 @@ const Footer = () => {
                   style={{
                     padding: "0 9px",
                     cursor: "pointer",
-                    color: "white",
+                    color: "white"
                   }}
                 />
               </a>
@@ -96,7 +92,7 @@ const Footer = () => {
                   style={{
                     padding: "0 9px",
                     cursor: "pointer",
-                    color: "white",
+                    color: "white"
                   }}
                 />
               </a>

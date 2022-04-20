@@ -3,31 +3,20 @@ import { Store, UpdateStore } from "../StoreContext";
 import api from "../api";
 import Grid from "@material-ui/core/Grid";
 import MainCharacter from "../assets/img/MainCharacter.png";
-import MainMobile from "../assets/img/mobileform.png";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import TypeOfCourse from "./TypeOfCourse";
 import userimg from "../assets/icons/user.png";
 import share from "../assets/icons/share.png";
-import Dialog from "./Dialog";
 import InvitePopup from "./InvitePopup";
 import SharePopup from "./Sharepopup";
 import jsPDF from "jspdf";
 import * as html2canvas from "html2canvas";
 import logo from "../assets/img/logo1.png";
 const Result = () => {
-  let typeOfCourses = ["BTS", "BUT", "CPGE", "Ecole Post-Bac", "Licence"];
-
   // init
   const updateStore = UpdateStore();
-  const {
-    history,
-    user,
-    disc_ans_id,
-    result,
-    mainresultPage,
-    screenshoots,
-    allTypes,
-  } = Store();
+  const { history, user, disc_ans_id, result, mainresultPage, allTypes } =
+    Store();
   const [loading, setLoading] = useState(false);
   const [resultStep, setresultStep] = useState(0);
   const [exportLoading, setExportLoading] = useState(false);
@@ -68,13 +57,6 @@ const Result = () => {
     }
     setLoading(false);
   };
-  // get courses arrays base on there type
-  const getSingleTypeofCourse = (type) => {
-    let b = result.courses.filter(
-      (course) => type === course?.courseId?.type_of_course
-    );
-    return b;
-  };
   const showResultDetail = () => {
     setScreenshootloading(true);
     setTimeout(() => {
@@ -100,10 +82,6 @@ const Result = () => {
       // document.body.appendChild(canvas);
     });
   };
-
-  // console.log("licenceResult", licenceResult[0].canvas, licenceResult[0].index);
-
-  console.log("useris", user);
 
   const exportPdf = async () => {
     setExportLoading(true);

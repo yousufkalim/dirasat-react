@@ -5,7 +5,7 @@ const Confidential = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 11,
-      behavior: "smooth",
+      behavior: "smooth"
     });
   };
   useEffect(() => {
@@ -22,8 +22,6 @@ const Confidential = () => {
             POLITIQUE DE CONFIDENTIALITÉ
             <br />
           </p>
-          {/* <p>DU SITE :</p>
-          <h1>Orientator.com</h1> */}
         </div>
         <div style={{ width: "80%", margin: "auto" }}>
           <h1 className="cguH1">ARTICLE 1 : PRÉAMBULE</h1>

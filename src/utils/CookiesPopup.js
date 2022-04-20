@@ -28,7 +28,6 @@ export default function CookiesPopup({
     setOpen(false);
   };
   const handleRefuse = (i) => {
-    console.log("item", i);
     let newitems = data.map((item) =>
       item.text === i.text ? { ...item, refuse: true, accept: false } : item
     );

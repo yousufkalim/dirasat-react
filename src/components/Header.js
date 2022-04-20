@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
@@ -7,20 +6,8 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import logo from "../assets/img/logo1.png";
 import Navicon from "../assets/icons/navicon.png";
 import Closeicon from "../assets/icons/closeicon.png";
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    boxShadow: "none",
-    // background:'radial-gradient(97.47% 66.83% at 50% 50%, #0e0f14 0%,   #000000 100%)',
-    // background:"linear-gradient(240deg, #0a0a0f, #000000f0)",
-    background: "transparent",
-    color: "white",
-    fontFamily: "lato",
-  },
-}));
 
 export default function Header({
   step,
@@ -29,8 +16,7 @@ export default function Header({
   setStatetextforscroll,
 }) {
   const history = useHistory();
-  console.log("history", history);
-  const classes = useStyles();
+
   const [flag, setFlag] = useState(false);
   // Show navbar when page is scorlled upto given distance
 
@@ -69,7 +55,6 @@ export default function Header({
             color="inherit"
             aria-label="menu"
             onClick={() => {
-              console.log("aa");
               setFlag(!flag);
             }}
           >
@@ -86,7 +71,7 @@ export default function Header({
               className="logoImage"
               onClick={() => {
                 history.push("/");
-                if (history.location.pathname == "/") {
+                if (history.location.pathname === "/") {
                   window.location.reload("/");
                 }
               }}
@@ -105,13 +90,12 @@ export default function Header({
                 padding: "15px 25px 0 0",
               }}
             >
-              {console.log("step issss", step, flag)}
               <Typography
                 className={flag ? "title a" : "hidetitle a"}
                 onClick={() => {
                   flag && scrollToTop();
-                  step != 0 && setStep(0);
-                  step != 0 && setActiveStep(1);
+                  step !== 0 && setStep(0);
+                  step !== 0 && setActiveStep(1);
                   setStatetextforscroll("Accueil");
                   history.push("/");
                 }}
@@ -131,10 +115,10 @@ export default function Header({
                 className={flag ? "title b" : "hidetitle b"}
                 onClick={() => {
                   flag && scrollToTopforComment();
-                  step != 0 && setStep(0);
-                  step != 0 && setActiveStep(1);
+                  step !== 0 && setStep(0);
+                  step !== 0 && setActiveStep(1);
                   setStatetextforscroll("Comment");
-                  console.log("aaalhlbkbbi");
+
                   history.push("/", "Comment");
                 }}
               >

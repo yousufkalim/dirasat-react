@@ -5,7 +5,7 @@ const CGU = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 11,
-      behavior: "smooth",
+      behavior: "smooth"
     });
   };
   useEffect(() => {
@@ -21,7 +21,6 @@ const CGU = () => {
             <br />
             CONDITIONS GÉNÉRALES D'UTILISATION DU SITE
             <br />
-            {/* <p>Orientator.com</p> */}
           </p>
         </div>
         <div style={{ width: "85%", margin: "auto" }}>

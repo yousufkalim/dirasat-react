@@ -4,10 +4,7 @@ import clsx from "clsx";
 import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
-import ViewQuiltIcon from "@material-ui/icons/ViewQuilt";
 import HelpIcon from "@material-ui/icons/Help";
-import FlagIcon from "@material-ui/icons/Flag";
-import CreateIcon from "@material-ui/icons/Create";
 import StepConnector from "@material-ui/core/StepConnector";
 import editicon from "../assets/icons/Frame.png";
 import step1 from "../assets/icons/step1.png";
@@ -83,25 +80,11 @@ function ColorlibStepIcon(props) {
   );
 }
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: "50%",
-  },
-  button: {
-    marginRight: theme.spacing(1),
-  },
-  instructions: {
-    marginTop: theme.spacing(1),
-    marginBottom: theme.spacing(1),
-  },
-}));
-
 function getSteps() {
   return ["Départ!", "Qui suis-je?", "Mon test", "Mes résultats"];
 }
 
 export default function CustomizedSteppers({ activeStep, setActiveStep }) {
-  const classes = useStyles();
   // const [activeStep, setActiveStep] = React.useState(1);
   const steps = getSteps();
 

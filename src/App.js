@@ -1,5 +1,5 @@
 // Init
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { ToastContainer, Flip } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Index from "./routes/index";

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { styled } from "@material-ui/core/styles";
 import Dialog from "@material-ui/core/Dialog";
 import { toast } from "react-toastify";
@@ -30,9 +30,8 @@ export default function ConfirmationPop({
   timeLeft,
 }) {
   const updateStore = UpdateStore();
-  const { user } = Store();
+  const {} = Store();
   const [loading, setLoading] = useState(false);
-  const [resendloading, setResendloading] = useState(false);
   const [formData, setFormData] = useState({
     otp: "",
   });
@@ -45,9 +44,7 @@ export default function ConfirmationPop({
       [e.target.name]: e.target.value,
     });
   };
-  const handleResend = () => {
-    console.log("formdata for resend", userformdata);
-  };
+
   const handleSubmitverify = async () => {
     setLoading(true);
 

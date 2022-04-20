@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
 import Main from "../assets/img/a2.png";
 import MainCharacter from "../assets/img/MainCharacter.png";
-import VideoImage from "../assets/img/videoimg.png";
-import scrollToTop from "../utils/ScrollTop";
 import video1 from "../assets/video/orientatorVideo.mp4";
 import thumbnail from "../assets/img/thumbnail.jpg";
 import Cookies from "../utils/Cookies";
@@ -99,10 +97,10 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
   useEffect(() => {
     video?.play();
     scrollToTop();
-    console.log("sssssssssssssss", state);
-    statetextforscroll == "Accueil" && scrollToTop();
-    statetextforscroll == "Comment" ||
-      (state == "Comment" &&
+
+    statetextforscroll === "Accueil" && scrollToTop();
+    statetextforscroll === "Comment" ||
+      (state === "Comment" &&
         setTimeout(() => {
           scrollToTopforComment();
         }, 50));
@@ -139,7 +137,6 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
           </Grid>
           <Grid item xs={12} sm={3} className="body-rectangleGrid3">
             <div className="partibuttondiv">
-              {console.log("localStorage.cookies ", localStorage.cookies)}
               <button
                 className="partiButton"
                 onClick={() =>

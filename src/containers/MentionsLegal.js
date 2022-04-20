@@ -5,7 +5,7 @@ const MentionsLegal = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 11,
-      behavior: "smooth",
+      behavior: "smooth"
     });
   };
   useEffect(() => {
@@ -22,7 +22,6 @@ const MentionsLegal = () => {
             MENTIONS LÉGALES DU SITE
             <br />
           </p>
-          {/* <h1>Orientator</h1> */}
         </div>
         <div style={{ width: "85%", margin: "auto" }}>
           <p className="pmargin">
@@ -34,7 +33,7 @@ const MentionsLegal = () => {
           </p>
           <p className="pmargin">
             Le site Dirasat est accessible à l'adresse suivante :
-            www.orientator.com (ci-après "le Site"). L'accès et l'utilisation du
+            www.dirasat.com (ci-après "le Site"). L'accès et l'utilisation du
             Site sont soumis aux présentes " Mentions légales" détaillées
             ci-après ainsi qu'aux lois et/ou règlements applicables
           </p>
