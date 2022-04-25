@@ -23,7 +23,7 @@ const Questions = ({ setStep, setActiveStep }) => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 60,
-      behavior: "smooth",
+      behavior: "smooth"
     });
   };
   // state init
@@ -41,7 +41,7 @@ const Questions = ({ setStep, setActiveStep }) => {
       encourageFinal,
       arrogantFinal,
       thoughtfulFinal,
-      victoriousFinal,
+      victoriousFinal
     ];
 
     imageList.map((image) => {
@@ -59,18 +59,18 @@ const Questions = ({ setStep, setActiveStep }) => {
     root: {
       "& > *": {
         margin: theme.spacing(1),
-        width: "35ch",
-      },
+        width: "35ch"
+      }
     },
     main: {
       margin: "auto",
       textAlign: "center",
       marginTop: "5%",
-      height: "70vh",
+      height: "70vh"
     },
     chekbox: {
-      margin: "auto",
-    },
+      margin: "auto"
+    }
   }));
   const classes = useStyles();
   // when  select any option it will set next Q id ,update history , if Q type is discriminating update disc_ans_id
@@ -186,11 +186,11 @@ const Questions = ({ setStep, setActiveStep }) => {
         const disans = [...disc_ans_id];
         disans.pop();
         updateStore({
-          disc_ans_id: disans,
+          disc_ans_id: disans
         });
       }
       updateStore({
-        history: history.slice(0, history.length - 1),
+        history: history.slice(0, history.length - 1)
       });
       setNextQuestionId(getprev?.question?._id);
       setprevQuestion([...prevQuestion, getprev]);
@@ -215,7 +215,7 @@ const Questions = ({ setStep, setActiveStep }) => {
               getOptions(answers)?.length >= 5 &&
               getOptions(answers)?.length <= 8
                 ? "marginBottomClass"
-                : getOptions(answers)?.length === 9
+                : getOptions(answers)?.length === 11
                 ? ""
                 : getQuestion()?.question ==
                   "Je vois! Dans ce cas, quel rôle aimerais-tu y jouer?"
@@ -227,7 +227,11 @@ const Questions = ({ setStep, setActiveStep }) => {
             `}
           >
             <img src={qarrow} className="qboximg" alt="box" />
-            <div className="questionBox">
+            <div
+              className={`questionBox ${
+                getOptions(answers)?.length == 11 && "ninthoptionquestion"
+              }`}
+            >
               <h1
                 className={`${
                   getQuestion()?.question.length >= 90
@@ -272,7 +276,7 @@ const Questions = ({ setStep, setActiveStep }) => {
                       currentAnswer?.answer === ans?.answer
                         ? "selectedOption"
                         : "option"
-                    } ${getOptions(answers)?.length == 9 && "ninthoption"}`}
+                    } ${getOptions(answers)?.length == 11 && "ninthoption"}`}
                     onClick={() => handleSelectOption(ans)}
                   >
                     {ans?.answer}

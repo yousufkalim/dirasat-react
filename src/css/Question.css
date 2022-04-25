@@ -9,6 +9,9 @@
   margin: auto !important;
   text-align: left !important;
 }
+.ninthoptionquestion{
+  top: -140px !important;
+}
 .prevButton {
   background: linear-gradient(180deg, #ffffff -24.17%, #bac0d6 100%);
   border-radius: 100px;
@@ -95,6 +98,7 @@
   margin-bottom: 25px !important;
   border: 1px solid #6e738c !important;
   border-radius: 100px !important;
+  text-align: center !important
 }
 .option:hover {
   background: linear-gradient(
@@ -169,12 +173,16 @@
 }
 
 @media only screen and (min-width: 320px) and (max-width: 600px) {
+  .ninthoptionquestion{
+    top: 0px !important;
+  }
   .option {
     width: 50% !important;
     margin: auto !important;
     margin-bottom: 25px !important;
     border: 1px solid #6e738c !important;
     border-radius: 100px !important;
+    text-align: center !important;
   }
   .option:hover {
     background: transparent;
@@ -372,6 +380,7 @@
   .option {
     font-size: 11px !important;
     margin-bottom: 4px !important;
+    
   }
   .winkingFinal {
     width: 100% !important;
@@ -505,4 +514,5 @@
     width: 80% !important;
     margin: auto auto auto 18% !important;
   }
+  
 }
