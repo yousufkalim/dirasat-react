@@ -50,7 +50,6 @@ const Result = () => {
       user_id: user?._id,
       last_answer: lastAnswerId?._id,
     };
-
     let res = await api("post", "/results", userData);
     if (res) {
       updateStore({ result: res?.data?.result });
@@ -65,7 +64,6 @@ const Result = () => {
       setresultStep(1);
     }, 500);
   };
-
   const onButtonClick = async () => {
     let domElement = document.getElementById("resultBox");
 
@@ -82,7 +80,6 @@ const Result = () => {
       // document.body.appendChild(canvas);
     });
   };
-
   const exportPdf = async () => {
     setExportLoading(true);
     setTimeout(() => {
@@ -114,10 +111,10 @@ const Result = () => {
       // document.body.appendChild(canvas);
     }, 500);
   };
-
+  console.log("user isss",user)
   return (
     <>
-      {resultStep == 0 && (
+    {user?.level1=="want to change"?<h1> Thanks we will contact u soon</h1>:(<>  {resultStep == 0 && (
         <Grid container spacing={2} className="mainresultscreen">
           <Grid item xs={12} sm={12} md={5} className="">
             <img
@@ -218,7 +215,6 @@ const Result = () => {
       {resultStep == 1 && (
         <>
           {/* <Dialog open={open} setOpen={setOpen} /> */}
-
           <InvitePopup open={openinvitepopup} setOpen={setOpenInvitepopup} />
           <SharePopup open={opensharepopup} setOpen={setOpenSharepopup} />
           <Grid
@@ -343,7 +339,7 @@ const Result = () => {
             </Grid>
           </Grid>
         </>
-      )}
+      )}</>)}
     </>
   );
 };

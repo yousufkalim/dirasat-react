@@ -30,44 +30,44 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
     {
       text: "Fonctionnalités liées aux réseaux sociaux",
       accept: false,
-      refuse: false,
+      refuse: false
     },
     { text: "Mesure d'audience", accept: false, refuse: false },
     {
       text: "Fonctionnalités liées à l'amélioration de votre expérience",
       accept: false,
-      refuse: false,
+      refuse: false
     },
     {
       text: "Stocker et/ou accéder à des informations sur un terminal",
       accept: false,
-      refuse: false,
+      refuse: false
     },
     {
       text: "Personnalisation du contenu éditorial et mesure de la performance",
       accept: false,
-      refuse: false,
+      refuse: false
     },
     {
       text: "Personnalisation des publicités et mesure de la performance",
       accept: false,
-      refuse: false,
+      refuse: false
     },
     {
       text: "Développer et améliorer les produits",
       accept: false,
-      refuse: false,
+      refuse: false
     },
     {
       text: "Utiliser des données de géolocalisation précises",
       accept: false,
-      refuse: false,
+      refuse: false
     },
     {
       text: "Analyser activement les caractéristiques du terminal pour l’identification",
       accept: false,
-      refuse: false,
-    },
+      refuse: false
+    }
   ];
   const [data, setData] = useState(items);
   const [siteViews, setSiteViews] = useState(null);
@@ -78,13 +78,13 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 11,
-      behavior: "smooth",
+      behavior: "smooth"
     });
   };
   const scrollToTopforComment = () => {
     window.scrollTo({
       top: 800,
-      behavior: "smooth",
+      behavior: "smooth"
     });
   };
 
@@ -97,7 +97,6 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
   useEffect(() => {
     video?.play();
     scrollToTop();
-
     statetextforscroll === "Accueil" && scrollToTop();
     statetextforscroll === "Comment" ||
       (state === "Comment" &&
@@ -159,7 +158,7 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
             poster={thumbnail}
             className="videImage"
             controls="controls"
-            autoplay={true}
+            // autoplay={true}
             type="video/mp4"
             loop
             // poster={VideoImage}
@@ -207,14 +206,14 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            justifyContent: "center",
+            justifyContent: "center"
           }}
         >
           <p
             style={{
               fontSize: "30px",
               fontWeight: "600",
-              color: "#D4D8E5",
+              color: "#D4D8E5"
             }}
           >
             Nombre de visiteurs
@@ -231,7 +230,7 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
               alignSelf: "center",
               background: "#010F2C",
               letterSpacing: "18px",
-              textIndent: "18px",
+              textIndent: "18px"
             }}
           />
         </div>

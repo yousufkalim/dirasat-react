@@ -7,16 +7,16 @@ import IconButton from "@material-ui/core/IconButton";
 import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
 import Grid from "@material-ui/core/Grid";
 
-import { Store, UpdateStore } from "../StoreContext";
+import { UpdateStore } from "../StoreContext";
 import api from "../api";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuDialogContent-root": {
-    padding: theme.spacing(2),
+    padding: theme.spacing(2)
   },
   "& .MuDialogActions-root": {
-    padding: theme.spacing(1),
-  },
+    padding: theme.spacing(1)
+  }
 }));
 export default function ConfirmationPop({
   confirmationOpen,
@@ -28,12 +28,15 @@ export default function ConfirmationPop({
   handleSubmit,
   loadingresend,
   timeLeft,
+  setTimeLeft,
+  timeInterval,
+  setresendLoading
 }) {
   const updateStore = UpdateStore();
-  const {} = Store();
+
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
-    otp: "",
+    otp: ""
   });
   // Destructuring of UserForm State
   const { otp } = formData;
@@ -41,7 +44,7 @@ export default function ConfirmationPop({
   const onChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
   };
 
@@ -49,14 +52,15 @@ export default function ConfirmationPop({
     setLoading(true);
 
     let res = await api("post", "/users/verify", {
-      otp,
+      otp
     });
     if (res.status === 200) {
       SetconfirmationOpen(false);
+      console.log("res?.data?.user",res?.data?.user)
       updateStore({
         questions: res?.data?.questions,
         answers: res?.data?.answers,
-        user: res?.data?.user,
+        user: res?.data?.user
       });
       setLoading(false);
       setFormData({ otp: "" });
@@ -79,6 +83,9 @@ export default function ConfirmationPop({
   };
   const handleClose = () => {
     SetconfirmationOpen(false);
+    clearInterval(timeInterval);
+      setTimeLeft(30)
+      setresendLoading(false)
   };
   return (
     <div>

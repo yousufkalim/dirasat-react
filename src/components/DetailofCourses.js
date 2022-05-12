@@ -28,7 +28,7 @@ function DetailofCourses({ courses, open, setOpen, user }) {
               <h2> {course?.courseId?.course_name}</h2>
             </Grid>
             <Grid item xs={12} sm={7} className="ratingGrid">
-              <div className="selectivitydiv">
+              {/* <div className="selectivitydiv">
                 <img src={selectivity} alt="selectivity" />
                 <p className="textonmobile">Séléctivité</p>
                 <div>
@@ -40,7 +40,7 @@ function DetailofCourses({ courses, open, setOpen, user }) {
                       : "N/A"}
                   </b>
                 </div>
-              </div>
+              </div> */}
               <div className="costRating">
                 <img src={cost} alt="coût" />
                 <p className="textonmobile">Coût</p>

@@ -19,7 +19,7 @@ const Questions = ({ setStep, setActiveStep }) => {
   const [play] = useSound(sound);
   // init context
   const updateStore = UpdateStore();
-  const { questions, answers, history, disc_ans_id } = Store();
+  const { questions, answers, history, disc_ans_id ,user} = Store();
   const scrollToTop = () => {
     window.scrollTo({
       top: 60,
@@ -33,6 +33,7 @@ const Questions = ({ setStep, setActiveStep }) => {
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [text, setText] = useState(null);
+
 
   // Here we will preload all the images
   useEffect(() => {
@@ -97,6 +98,8 @@ const Questions = ({ setStep, setActiveStep }) => {
   // if show the questions by filteron the base of nextquestionId
   const getQuestion = () => {
     if (nextQuestionId == null) {
+      
+   
       setStep(3);
       // setActiveStep((prevActiveStep) => prevActiveStep + 1)
       setActiveStep(3);
@@ -111,7 +114,7 @@ const Questions = ({ setStep, setActiveStep }) => {
   // it show the options of question by filter answer on the base of question id
   const getOptions = (answers) => {
     let options = answers?.filter((answer) => {
-      return answer.question._id === getQuestion()?._id;
+      return answer.question?._id === getQuestion()?._id;
     });
     return options;
   };
@@ -293,6 +296,7 @@ const Questions = ({ setStep, setActiveStep }) => {
             )}
           </div>
         </Grid>
+        
       </Grid>
     </>
   );

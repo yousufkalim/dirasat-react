@@ -13,7 +13,7 @@ export default function Header({
   step,
   setStep,
   setActiveStep,
-  setStatetextforscroll,
+  setStatetextforscroll
 }) {
   const history = useHistory();
 
@@ -23,13 +23,13 @@ export default function Header({
   const scrollToTop = () => {
     window.scrollTo({
       top: 115,
-      behavior: "smooth",
+      behavior: "smooth"
     });
   };
   const scrollToTopforComment = () => {
     window.scrollTo({
       top: 700,
-      behavior: "smooth",
+      behavior: "smooth"
     });
   };
   const deviceType = () => {
@@ -46,7 +46,7 @@ export default function Header({
     return "";
   };
   return (
-    <AppBar color="black" position={deviceType()} className="headerRoot">
+    <AppBar color="inherit" position={deviceType()} className="headerRoot">
       <Toolbar color="" className="showToolbar">
         <div className="logowithicondiv">
           <div
@@ -87,7 +87,7 @@ export default function Header({
               style={{
                 textDecoration: "none",
                 color: "white",
-                padding: "15px 25px 0 0",
+                padding: "15px 25px 0 0"
               }}
             >
               <Typography
@@ -108,7 +108,7 @@ export default function Header({
               style={{
                 textDecoration: "none",
                 color: "white",
-                padding: "15px 25px 0 0",
+                padding: "15px 25px 0 0"
               }}
             >
               <Typography

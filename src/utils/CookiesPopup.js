@@ -9,18 +9,18 @@ import { Link } from "react-router-dom";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuDialogContent-root": {
-    padding: theme.spacing(2),
+    padding: theme.spacing(2)
   },
   "& .MuDialogActions-root": {
-    padding: theme.spacing(1),
-  },
+    padding: theme.spacing(1)
+  }
 }));
 export default function CookiesPopup({
   open,
   setOpen,
   setOpenCookieePopup2,
   data,
-  setData,
+  setData
 }) {
   const { user } = Store();
 
@@ -102,8 +102,8 @@ export default function CookiesPopup({
               <button className={`${"acceptbtnActive"}`}>Accepter</button>
             </div>
           </div>
-          {data.map((item) => (
-            <div className="cookieeDiv">
+          {data.map((item, i) => (
+            <div className="cookieeDiv" key={i}>
               <li className="popupli">{item.text}</li>
               <div>
                 <button

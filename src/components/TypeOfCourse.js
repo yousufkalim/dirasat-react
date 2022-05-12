@@ -28,7 +28,7 @@ const TypeOfCourse = ({ type, percentage, courses, result, user }) => {
       // },
       // width: 1300,
       // height: 1750,
-      backgroundColor: "#282b38",
+      backgroundColor: "#282b38"
     }).then((canvas) => {
       typeUpdate({ canvas, type });
       setShowDetail(false);
@@ -77,7 +77,7 @@ const TypeOfCourse = ({ type, percentage, courses, result, user }) => {
             {" "}
             {type}
           </Grid>
-          <Grid
+          {/* <Grid
             item
             xs={5}
             sm={3}
@@ -93,7 +93,7 @@ const TypeOfCourse = ({ type, percentage, courses, result, user }) => {
             ) : (
               <img src={showhide} className="showhideIcon" />
             )}{" "}
-          </Grid>
+          </Grid> */}
         </Grid>
         {showDetail && (
           <DetailofCourses

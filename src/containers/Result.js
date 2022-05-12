@@ -8,7 +8,7 @@ import api from "../api";
 const Result = () => {
   let typeOfCourses = ["BTS", "BUT", "CPGE", "Ecole Post-Bac", "Licence"];
   const updateStore = UpdateStore();
-  const { singleUserResult } = Store();
+  const { singleUserResult,user } = Store();
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
   const [flag, setFlag] = useState(true);
@@ -31,6 +31,7 @@ const Result = () => {
       (course) => type === course?.courseId?.type_of_course
     );
   };
+  
   return (
     <div
       style={{

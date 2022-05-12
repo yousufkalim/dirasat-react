@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { toast } from "react-toastify";
 import "react-datepicker/dist/react-datepicker.css";
 import { Checkbox } from "@material-ui/core";
@@ -98,8 +97,9 @@ let bacseriData = [
   "Langues Etrangères"
 ];
 let languageIs = ["French", "Arabic", "Both"];
-let level1data = ["initial", "medium", "pro"];
-let level2data = ["initial1", "medium1", "pro1"];
+let level1data = ["Pass the test", "Not Pass the test", "Want change School"];
+let level2data = ["1", "2", "3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"];
+let level3data = ["Go to Abroad", "Stay in Algeria"];
 let timeInterval;
 
 const UserForm = ({ setStep, setActiveStep }) => {
@@ -122,7 +122,10 @@ const UserForm = ({ setStep, setActiveStep }) => {
     language: "language",
     accept_condition: false,
     level1: "level1",
-    level2: "level2"
+    score: "score",
+    budget:"",
+    whichCountry:"",
+    stayAlgeria:false
   });
   // state for address options list
   const [values, setValues] = useState([]);
@@ -152,7 +155,10 @@ const UserForm = ({ setStep, setActiveStep }) => {
     accept_condition,
     country,
     level1,
-    level2
+    score,
+    budget,
+    whichCountry,
+    stayAlgeria
   } = formData;
   // Get institutes data from API
   useEffect(() => {
@@ -260,23 +266,45 @@ const UserForm = ({ setStep, setActiveStep }) => {
     if (!accept_condition) {
       return toast.error("Veuillez accepter les termes et conditions");
     }
-    console.log("onsubmit", formData);
+    // console.log("onsubmit", formData);
     setformStep(2);
   };
-  const handleSubmit2 = async (e) => {
+  const handleSubmit3 = async (e,option) => {
     e.preventDefault();
-    if (level1 == "level1") {
-      return toast.error("Please Select  level1");
+    console.log("formdata os ,",formData,option)
+    let newFormData=''
+    if(option==1){
+      newFormData={...formData,level1:"pass",}
+      if (score == "score") {
+      return toast.error("Please select score");
     }
-    if (level2 == "level2") {
-      return toast.error("Please Select  level2");
+    } 
+    if(option==2){
+      newFormData={...formData,level1:"not pass",score:"score"}
+      
     }
-    console.log("onsubmit2", formData);
+    if(option==5){
+      newFormData={...formData,level1:"want to change",score:"score",stayAlgeria:false}
+       if (whichCountry == "") {
+      return toast.error("Please add country ");
+    }
+      if (budget == "") {
+      return toast.error("Please add budget ");
+    }
+      
+    }
+    if(option==6){
+      newFormData={...formData,level1:"want to change",score:"score",stayAlgeria:true}
+            if (budget == "") {
+      return toast.error("Please add budget ");
+    }
+      
+    }
+    console.log("newFormData",newFormData)
+    
     setLoading(true);
     setresendLoading(true);
-    let res = await api("post", "/users/create", {
-      ...formData
-    });
+    let res = await api("post", "/users/create", { ...newFormData});
     if (res.status === 200) {
       SetconfirmationOpen(true);
       toast.success("OTP envoyé");
@@ -290,7 +318,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
       setTimeLeft(30);
       setresendLoading(false);
     }, 30000);
+  
   };
+
   return (
     <>
       <Grid container spacing={2} className="mainuserform">
@@ -601,38 +631,56 @@ const UserForm = ({ setStep, setActiveStep }) => {
                 )}
                 {formStep == 2 && (
                   <>
-                    <Grid container spacing={2} className="">
-                      <Grid item xs={12} sm={6} className="inputGrid">
-                        <FormControl
-                          variant="outlined"
-                          className="selectformControl"
-                        >
-                          {/* <InputLabel id="demo-simple-select-outlined-label">
-                    {education_level ? "clsse" : " classe "}
-                  </InputLabel> */}
-                          <Select
-                            labelId="demo-simple-select-outlined-label"
-                            id="demo-simple-select-outlined"
-                            name="level1"
-                            value={level1}
-                            defaultValue={level1}
-                            onChange={onChange}
-                            className={classes.select}
-                            className="selectforeducation"
-                          >
-                            <MenuItem
-                              value="level1"
-                              disabled
-                              style={{ textAlign: "left !important" }}
-                            >
-                              <em>{"level1"}</em>
-                            </MenuItem>
-                            {level1data.map((list, i) => {
-                              return <MenuItem value={list}>{list}</MenuItem>;
-                            })}
-                          </Select>
-                        </FormControl>
+                    <Grid container spacing={2} className="" style={{marginTop:"20px"}}>
+                      <Grid
+                        item
+                        xs={12}
+                        sm={5}
+                        className="option"
+                        onClick={()=>setformStep(3)}
+                      >
+                        Pass the test
                       </Grid>
+                      <Grid
+                        item
+                        xs={12}
+                        sm={5}
+                        className="option"
+                        onClick={(e)=>handleSubmit3(e,2)}
+                        
+                      >
+                        Not pass the test
+                      </Grid>
+                      <Grid
+                        item
+                        xs={12}
+                        sm={5}
+                        className="option"
+                        onClick={()=>setformStep(4)}
+                      >
+                        Want to change school
+                      </Grid>
+                    </Grid>
+                    <Grid container spacing={1} className="formbuttonsGrid" style={{justifyContent:"center"}}>
+                      <Grid xs={12} sm={4}>
+                        <div
+                          size="large"
+                          className="formbackbutton"
+                          onClick={() => setformStep(1)}
+                        >
+                          <img
+                            src={arrowleft}
+                            className="arrowleft"
+                            alt="arrow"
+                          />
+                          <b> Retour</b>
+                        </div>
+                      </Grid></Grid>
+                  </>
+                )}
+                {formStep == 3 && (
+                  <>
+                    <Grid container spacing={1} className="" style={{justifyContent:"center"}}>
                       <Grid item xs={12} sm={6} className="inputGrid">
                         <FormControl
                           variant="outlined"
@@ -641,21 +689,21 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           <Select
                             labelId="demo-simple-select-outlined-label"
                             id="demo-simple-select-outlined"
-                            name="level2"
-                            name="level2"
-                            value={level2}
-                            defaultValue={level2}
+                            name="score"
+                            name="score"
+                            value={score}
+                            defaultValue={score}
                             onChange={onChange}
                             className={classes.select}
                             className="selectforeducation"
                             // onFocus={handleBlurSchools}
                           >
                             <MenuItem
-                              value="level2"
+                              value="score"
                               disabled
                               style={{ textAlign: "left !important" }}
                             >
-                              <em>{"level2"}</em>
+                              <em>{"score"}</em>
                             </MenuItem>
                             {level2data.map((item, i) => {
                               return <MenuItem value={item}>{item}</MenuItem>;
@@ -663,13 +711,14 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           </Select>
                         </FormControl>
                       </Grid>
+                      
                     </Grid>
                     <Grid container spacing={2} className="formbuttonsGrid">
                       <Grid xs={12} sm={4}>
                         <div
                           size="large"
                           className="formbackbutton"
-                          onClick={() => setformStep(1)}
+                          onClick={() => setformStep(2)}
                         >
                           <img
                             src={arrowleft}
@@ -690,7 +739,191 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           type="submit"
                           disabled={loading}
                           style={{ opacity: `${loading ? "0.5" : "1"}` }}
-                          onClick={handleSubmit2}
+                          onClick={(e)=>handleSubmit3(e,1)}
+                        >
+                          <b>
+                            {" "}
+                            {loading ? (
+                              <div className="circulardiv">
+                                <CircularProgress size={20} className="" />
+                              </div>
+                            ) : (
+                              "Commencer le test"
+                            )}
+                          </b>
+                        </button>
+                      </Grid>
+                    </Grid>
+                  </>
+                )}
+                        {formStep == 4 && (
+                  <>
+                    
+                       <Grid container spacing={2} className="" style={{marginTop:"20px"}}>
+                      <Grid
+                        item
+                        xs={12}
+                        sm={5}
+                        className="option"
+                        onClick={()=>setformStep(5)}
+                      >
+                        Go to Abroad
+                      </Grid>
+                      <Grid
+                        item
+                        xs={12}
+                        sm={5}
+                        className="option"
+                        onClick={()=>setformStep(6)}
+                        
+                      >
+                        Stay in Algeria
+                      </Grid>
+                     
+                    </Grid>
+                    <Grid container spacing={2} className="formbuttonsGrid" style={{justifyContent:"center"}}>
+                      <Grid xs={12} sm={4}>
+                        <div
+                          size="large"
+                          className="formbackbutton"
+                          onClick={() => setformStep(2)}
+                        >
+                          <img
+                            src={arrowleft}
+                            className="arrowleft"
+                            alt="arrow"
+                          />
+                          <b> Retour</b>
+                        </div>
+                      </Grid>
+
+                      
+
+                   
+                    </Grid>
+                  </>
+                )}
+                       {formStep == 5 && (
+                  <>
+                    <Grid container spacing={1} className="" style={{justifyContent:"center"}}>
+                  
+                     
+                      <Grid item xs={12} sm={6} className="inputGrid emailGrid">
+                        <input
+                          type="whichCountry"
+                          name="whichCountry"
+                          value={whichCountry}
+                          onChange={onChange}
+                          placeholder="Which country"
+                          className="inputField"
+                        />
+                      </Grid>
+                      <Grid item xs={12} sm={6} className="inputGrid">
+                        <input
+                          type="text"
+                          name="budget"
+                          value={budget}
+                          onChange={onChange}
+                          
+                          placeholder="budget"
+                          className="inputField"
+                        />
+                      </Grid>
+                    
+                    
+                     
+                    </Grid>
+                    <Grid container spacing={2} className="formbuttonsGrid">
+                      <Grid xs={12} sm={4}>
+                        <div
+                          size="large"
+                          className="formbackbutton"
+                          onClick={() => setformStep(4)}
+                        >
+                          <img
+                            src={arrowleft}
+                            className="arrowleft"
+                            alt="arrow"
+                          />
+                          <b> Retour</b>
+                        </div>
+                      </Grid>
+
+                      <Grid xs={12} sm={4}></Grid>
+
+                      <Grid xs={12} sm={4}>
+                        <button
+                          variant="contained"
+                          className="formSubmitButton"
+                          size="large"
+                          type="submit"
+                          disabled={loading}
+                          style={{ opacity: `${loading ? "0.5" : "1"}` }}
+                          onClick={(e)=>handleSubmit3(e,5)}
+                        >
+                          <b>
+                            {" "}
+                            {loading ? (
+                              <div className="circulardiv">
+                                <CircularProgress size={20} className="" />
+                              </div>
+                            ) : (
+                              "Commencer le test"
+                            )}
+                          </b>
+                        </button>
+                      </Grid>
+                    </Grid>
+                  </>
+                )}
+                      {formStep == 6 && (
+                  <>
+                    <Grid container spacing={1} className="" style={{justifyContent:"center"}}>
+                  
+                     
+                   
+                      <Grid item xs={12} sm={6} className="inputGrid">
+                        <input
+                          type="text"
+                          name="budget"
+                          value={budget}
+                          onChange={onChange}
+                          
+                          placeholder="budget"
+                          className="inputField"
+                        />
+                      </Grid>
+                    
+                    
+                     
+                    </Grid>
+                    <Grid container spacing={2} className="formbuttonsGrid" >
+                      <Grid xs={12} sm={4}>
+                        <div
+                          size="large"
+                          className="formbackbutton"
+                          onClick={() => setformStep(4)}
+                        >
+                          <img
+                            src={arrowleft}
+                            className="arrowleft"
+                            alt="arrow"
+                          />
+                          <b> Retour</b>
+                        </div>
+                      </Grid>
+
+                      <Grid xs={12} sm={4}></Grid>
+
+                      <Grid xs={12} sm={4}>
+                        <button
+                          variant="contained"
+                          className="formSubmitButton"
+                          size="large"
+                          type="submit"
+                          disabled={loading}
+                          style={{ opacity: `${loading ? "0.5" : "1"}` }}
+                          onClick={(e)=>handleSubmit3(e,6)}
                         >
                           <b>
                             {" "}
@@ -715,9 +948,12 @@ const UserForm = ({ setStep, setActiveStep }) => {
               setStep={setStep}
               setActiveStep={setActiveStep}
               otpbyemail={otpbyemail}
-              handleSubmit={handleSubmit2}
+              handleSubmit={handleSubmit3}
               loadingresend={resendloading}
               timeLeft={timeLeft}
+              setTimeLeft={setTimeLeft}
+              timeInterval={timeInterval}
+              setresendLoading={setresendLoading}
             />
           </Grid>
         )}{" "}

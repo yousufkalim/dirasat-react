@@ -82,6 +82,7 @@
     #ff6d1a 50.66%,
     #ff29aa 101.84%
   ) !important;
+  text-align: center !important;
 }
 .selected.resultButtondiv:hover {
   background: linear-gradient(
