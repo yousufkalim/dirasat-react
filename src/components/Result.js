@@ -111,10 +111,18 @@ const Result = () => {
       // document.body.appendChild(canvas);
     }, 500);
   };
-  console.log("user isss",user)
+  console.log("user isss",user,result)
   return (
     <>
-    {user?.level1=="want to change"?<h1> Thanks we will contact u soon</h1>:(<>  {resultStep == 0 && (
+    {user?.level1=="want to change"?<div style={{height:"100vh",textAlign:"center",marginTop:"8%"}}><h1> Thanks we will contact you soon.</h1>  <button
+                            className="sharebutton"
+                            onClick={() =>window.location.reload()}
+                          >
+                            
+                            <b className="invitetext">Proceed</b>
+                          </button>
+    
+    </div>:(<>  {resultStep == 0 && (
         <Grid container spacing={2} className="mainresultscreen">
           <Grid item xs={12} sm={12} md={5} className="">
             <img
@@ -228,14 +236,14 @@ const Result = () => {
                   <div>
                     {result.data ? (
                       <div>
-                        {result?.data?.map((item, index) => (
+                        
                           <>
-                            {item.courses ? (
+                            {result.data ? (
                               <TypeOfCourse
-                                type={item?.type}
+                                type={" Available Courses for the student"}
                                 result={result?.data}
-                                percentage={item?.percentage}
-                                courses={item?.courses}
+                                // percentage={item?.percentage}
+                                courses={result?.data}
                                 user={user}
                               />
                             ) : (
@@ -247,7 +255,7 @@ const Result = () => {
                               </div>
                             )}
                           </>
-                        ))}
+                        
                         <div
                           style={{
                             width: "70%",
@@ -266,7 +274,7 @@ const Result = () => {
                             “hors-parcoursup” qui pourraient te correspondre!
                           </p>
                         </div>
-                        <div className="desktopView goback">
+                        {/* <div className="desktopView goback">
                           <button
                             className="goBackbutton"
                             onClick={exportPdf}
@@ -276,7 +284,7 @@ const Result = () => {
                               ? "Veuillez patienter"
                               : "Exporter le PDF"}
                           </button>
-                        </div>
+                        </div> */}
                         <div
                           style={{
                             width: "70%",

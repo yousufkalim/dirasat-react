@@ -13,6 +13,7 @@ import StarBorderIcon from "@material-ui/icons/StarBorder";
 
 //Component
 function DetailofCourses({ courses, open, setOpen, user }) {
+  console.log("courses",courses)
   return (
     <>
       {courses?.length >= 1 ? (
@@ -20,12 +21,12 @@ function DetailofCourses({ courses, open, setOpen, user }) {
           <Grid container spacing={2} className="courseDetail">
             <Grid item xs={12} sm={5}>
               <p>
-                {course?.courseId?.sub_domains} -{" "}
-                <span>{course?.courseId?.city} </span>
+                {course?.dcourseId?.Establishment} -{" "}
+                <span>{course?.dcourseId?.City+" - "+course?.dcourseId?.wilaya} </span>
                 {/* {user?.institute} */}
               </p>
 
-              <h2> {course?.courseId?.course_name}</h2>
+              <h2> {course?.dcourseId?.Speciality}</h2>
             </Grid>
             <Grid item xs={12} sm={7} className="ratingGrid">
               {/* <div className="selectivitydiv">
@@ -45,10 +46,10 @@ function DetailofCourses({ courses, open, setOpen, user }) {
                 <img src={cost} alt="coût" />
                 <p className="textonmobile">Coût</p>
                 <div>
-                  {course?.courseId?.cost ? (
+                  {course?.dcourseId?.cost ? (
                     <>
                       {[1, 2, 3, 4, 5].map((item) => {
-                        if (course?.courseId?.cost[0] >= item) {
+                        if (course?.dcourseId?.cost[0] >= item) {
                           return (
                             <StarIcon
                               style={{ width: "12px", height: "20px" }}
@@ -72,10 +73,10 @@ function DetailofCourses({ courses, open, setOpen, user }) {
                 <p className="textonmobile">Langue</p>
                 <div>
                   {" "}
-                  {course?.courseId?.languagestar ? (
+                  {course?.dcourseId?.languagestar ? (
                     <>
                       {[1, 2, 3, 4, 5].map((item) => {
-                        if (course?.courseId?.languagestar[0] >= item) {
+                        if (course?.dcourseId?.languagestar[0] >= item) {
                           return (
                             <StarIcon
                               style={{ width: "12px", height: "20px" }}
@@ -98,10 +99,10 @@ function DetailofCourses({ courses, open, setOpen, user }) {
                 <img src={duration} alt="durée" />
                 <p className="textonmobile">Durée</p>
                 <div>
-                  {course?.courseId?.duration ? (
+                  {course?.dcourseId?.duration ? (
                     <>
                       {[1, 2, 3, 4, 5].map((item) => {
-                        if (course?.courseId?.duration[0] >= item) {
+                        if (course?.dcourseId?.duration[0] >= item) {
                           return (
                             <StarIcon
                               style={{ width: "12px", height: "20px" }}
@@ -120,7 +121,7 @@ function DetailofCourses({ courses, open, setOpen, user }) {
                   )}
                 </div>
               </div>
-              <div>
+              {/* <div>
                 <img src={proximate} alt="proximaté" />
                 <p className="textonmobile">Proximité</p>
                 <div>
@@ -145,7 +146,7 @@ function DetailofCourses({ courses, open, setOpen, user }) {
                     "N/A"
                   )}
                 </div>
-              </div>
+              </div> */}
             </Grid>
           </Grid>
         ))

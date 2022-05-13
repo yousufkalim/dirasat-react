@@ -426,7 +426,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                               <em>{"Wilaya"}</em>
                             </MenuItem>
                             {wilayasvalue.map((w, i) => {
-                              return <MenuItem value={w}>{w.name}</MenuItem>;
+                              return <MenuItem value={w}>{w.name+" - "+w.code}</MenuItem>;
                             })}
                           </Select>
                         </FormControl>

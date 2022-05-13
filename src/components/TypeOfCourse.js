@@ -8,14 +8,15 @@ import hide from "../assets/icons/hide.png";
 import * as html2canvas from "html2canvas";
 
 const TypeOfCourse = ({ type, percentage, courses, result, user }) => {
+  console.log("type",type)
   const updateStore = UpdateStore();
   const typeUpdate = TypeUpdate();
   const { screenshoots, results } = Store();
 
-  const [showDetail, setShowDetail] = useState(true);
+  const [showDetail, setShowDetail] = useState(false);
 
   useEffect(() => {
-    getresultpageforPdf();
+    // getresultpageforPdf();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const getresultpageforPdf = () => {
@@ -77,15 +78,15 @@ const TypeOfCourse = ({ type, percentage, courses, result, user }) => {
             {" "}
             {type}
           </Grid>
-          {/* <Grid
+          <Grid
             item
             xs={5}
             sm={3}
-            style={{ background: `${getPercentageColor(percentage)}` }}
+            // style={{ background: `${getPercentageColor(percentage)}` }}
             className="percentageGrid"
           >
-            <img src={search} className="searchimg" />
-            <b style={{ marginTop: "5px" }}>Compatible à {percentage}%</b>
+            {/* <img src={search} className="searchimg" />
+            <b style={{ marginTop: "5px" }}>Compatible à {percentage}%</b> */}
           </Grid>
           <Grid item xs={1} sm={1} className="showhide">
             {showDetail ? (
@@ -93,7 +94,7 @@ const TypeOfCourse = ({ type, percentage, courses, result, user }) => {
             ) : (
               <img src={showhide} className="showhideIcon" />
             )}{" "}
-          </Grid> */}
+          </Grid>
         </Grid>
         {showDetail && (
           <DetailofCourses
