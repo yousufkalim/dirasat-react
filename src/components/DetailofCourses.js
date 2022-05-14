@@ -13,7 +13,7 @@ import StarBorderIcon from "@material-ui/icons/StarBorder";
 
 //Component
 function DetailofCourses({ courses, open, setOpen, user }) {
-  console.log("courses",courses)
+  console.log("courses", courses);
   return (
     <>
       {courses?.length >= 1 ? (
@@ -22,26 +22,15 @@ function DetailofCourses({ courses, open, setOpen, user }) {
             <Grid item xs={12} sm={5}>
               <p>
                 {course?.dcourseId?.Establishment} -{" "}
-                <span>{course?.dcourseId?.City+" - "+course?.dcourseId?.wilaya} </span>
+                <span>
+                  {course?.dcourseId?.City + " - " + course?.dcourseId?.wilaya}{" "}
+                </span>
                 {/* {user?.institute} */}
               </p>
 
               <h2> {course?.dcourseId?.Speciality}</h2>
             </Grid>
             <Grid item xs={12} sm={7} className="ratingGrid">
-              {/* <div className="selectivitydiv">
-                <img src={selectivity} alt="selectivity" />
-                <p className="textonmobile">Séléctivité</p>
-                <div>
-                  <b style={{ fontSize: "15px" }}>
-                    {course?.selectivityrating
-                      ? course?.selectivityrating[0] + "/5"
-                      : course?.courseId?.selectivity[0]
-                      ? course?.courseId?.selectivity[0] + "/5"
-                      : "N/A"}
-                  </b>
-                </div>
-              </div> */}
               <div className="costRating">
                 <img src={cost} alt="coût" />
                 <p className="textonmobile">Coût</p>
