@@ -98,7 +98,28 @@ let bacseriData = [
 ];
 let languageIs = ["French", "Arabic", "Both"];
 let level1data = ["Pass the test", "Not Pass the test", "Want change School"];
-let level2data = ["1", "2", "3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"];
+let level2data = [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "11",
+  "12",
+  "13",
+  "14",
+  "15",
+  "16",
+  "17",
+  "18",
+  "19",
+  "20"
+];
 let level3data = ["Go to Abroad", "Stay in Algeria"];
 let timeInterval;
 
@@ -123,9 +144,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
     accept_condition: false,
     level1: "level1",
     score: "score",
-    budget:"",
-    whichCountry:"",
-    stayAlgeria:false
+    budget: "",
+    whichCountry: "",
+    stayAlgeria: false
   });
   // state for address options list
   const [values, setValues] = useState([]);
@@ -269,42 +290,49 @@ const UserForm = ({ setStep, setActiveStep }) => {
     // console.log("onsubmit", formData);
     setformStep(2);
   };
-  const handleSubmit3 = async (e,option) => {
+  const handleSubmit3 = async (e, option) => {
     e.preventDefault();
-    console.log("formdata os ,",formData,option)
-    let newFormData=''
-    if(option==1){
-      newFormData={...formData,level1:"pass",}
+    console.log("formdata os ,", formData, option);
+    let newFormData = "";
+    if (option == 1) {
+      newFormData = { ...formData, level1: "pass" };
       if (score == "score") {
-      return toast.error("Please select score");
+        return toast.error("Please select score");
+      }
     }
-    } 
-    if(option==2){
-      newFormData={...formData,level1:"not pass",score:"score"}
-      
+    if (option == 2) {
+      newFormData = { ...formData, level1: "not pass", score: "score" };
     }
-    if(option==5){
-      newFormData={...formData,level1:"want to change",score:"score",stayAlgeria:false}
-       if (whichCountry == "") {
-      return toast.error("Please add country ");
-    }
+    if (option == 5) {
+      newFormData = {
+        ...formData,
+        level1: "want to change",
+        score: "score",
+        stayAlgeria: false
+      };
+      if (whichCountry == "") {
+        return toast.error("Please add country ");
+      }
       if (budget == "") {
-      return toast.error("Please add budget ");
+        return toast.error("Please add budget ");
+      }
     }
-      
+    if (option == 6) {
+      newFormData = {
+        ...formData,
+        level1: "want to change",
+        score: "score",
+        stayAlgeria: true
+      };
+      if (budget == "") {
+        return toast.error("Please add budget ");
+      }
     }
-    if(option==6){
-      newFormData={...formData,level1:"want to change",score:"score",stayAlgeria:true}
-            if (budget == "") {
-      return toast.error("Please add budget ");
-    }
-      
-    }
-    console.log("newFormData",newFormData)
-    
+    console.log("newFormData", newFormData);
+
     setLoading(true);
     setresendLoading(true);
-    let res = await api("post", "/users/create", { ...newFormData});
+    let res = await api("post", "/users/create", { ...newFormData });
     if (res.status === 200) {
       SetconfirmationOpen(true);
       toast.success("OTP envoyé");
@@ -318,7 +346,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
       setTimeLeft(30);
       setresendLoading(false);
     }, 30000);
-  
   };
 
   return (
@@ -426,7 +453,11 @@ const UserForm = ({ setStep, setActiveStep }) => {
                               <em>{"Wilaya"}</em>
                             </MenuItem>
                             {wilayasvalue.map((w, i) => {
-                              return <MenuItem value={w}>{w.name+" - "+w.code}</MenuItem>;
+                              return (
+                                <MenuItem value={w}>
+                                  {w.name + " - " + w.code}
+                                </MenuItem>
+                              );
                             })}
                           </Select>
                         </FormControl>
@@ -479,7 +510,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                               disabled
                               style={{ textAlign: "left !important" }}
                             >
-                              <em>{"Class list"}</em>
+                              <em>{"Classe"}</em>
                             </MenuItem>
                             {class_listData.map((list, i) => {
                               return <MenuItem value={list}>{list}</MenuItem>;
@@ -508,7 +539,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                               disabled
                               style={{ textAlign: "left !important" }}
                             >
-                              <em>{"Bac Serie"}</em>
+                              <em>{"Série de Baccalauréat"}</em>
                             </MenuItem>
                             {bacseriData.map((item, i) => {
                               return <MenuItem value={item}>{item}</MenuItem>;
@@ -524,7 +555,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           name="school_city"
                           value={school_city}
                           onChange={onChange}
-                          placeholder="City of your school"
+                          placeholder="Ville de votre école"
                           className="inputField"
                         />
                       </Grid>
@@ -534,7 +565,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           name="school_name"
                           value={school_name}
                           onChange={onChange}
-                          placeholder="Name of your school"
+                          placeholder="Nom de votre école"
                           className="inputField"
                         />
                       </Grid>
@@ -560,7 +591,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             disabled
                             style={{ textAlign: "left !important" }}
                           >
-                            <em>Language</em>
+                            <em>Langue</em>
                           </MenuItem>
                           {languageIs.map((lang, i) => {
                             return <MenuItem value={lang}>{lang}</MenuItem>;
@@ -631,37 +662,46 @@ const UserForm = ({ setStep, setActiveStep }) => {
                 )}
                 {formStep == 2 && (
                   <>
-                    <Grid container spacing={2} className="" style={{marginTop:"20px"}}>
+                    <Grid
+                      container
+                      spacing={2}
+                      className=""
+                      style={{ marginTop: "20px" }}
+                    >
                       <Grid
                         item
                         xs={12}
                         sm={5}
                         className="option"
-                        onClick={()=>setformStep(3)}
+                        onClick={() => setformStep(3)}
                       >
-                        Pass the test
+                        J’ai déjà mon baccalauréat
                       </Grid>
                       <Grid
                         item
                         xs={12}
                         sm={5}
                         className="option"
-                        onClick={(e)=>handleSubmit3(e,2)}
-                        
+                        onClick={(e) => handleSubmit3(e, 2)}
                       >
-                        Not pass the test
+                        Je n’ai pas mon baccalauréat
                       </Grid>
                       <Grid
                         item
                         xs={12}
                         sm={5}
                         className="option"
-                        onClick={()=>setformStep(4)}
+                        onClick={() => setformStep(4)}
                       >
-                        Want to change school
+                        Je veux changer d’école supérieur
                       </Grid>
                     </Grid>
-                    <Grid container spacing={1} className="formbuttonsGrid" style={{justifyContent:"center"}}>
+                    <Grid
+                      container
+                      spacing={1}
+                      className="formbuttonsGrid"
+                      style={{ justifyContent: "center" }}
+                    >
                       <Grid xs={12} sm={4}>
                         <div
                           size="large"
@@ -675,12 +715,18 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           />
                           <b> Retour</b>
                         </div>
-                      </Grid></Grid>
+                      </Grid>
+                    </Grid>
                   </>
                 )}
                 {formStep == 3 && (
                   <>
-                    <Grid container spacing={1} className="" style={{justifyContent:"center"}}>
+                    <Grid
+                      container
+                      spacing={1}
+                      className=""
+                      style={{ justifyContent: "center" }}
+                    >
                       <Grid item xs={12} sm={6} className="inputGrid">
                         <FormControl
                           variant="outlined"
@@ -711,7 +757,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           </Select>
                         </FormControl>
                       </Grid>
-                      
                     </Grid>
                     <Grid container spacing={2} className="formbuttonsGrid">
                       <Grid xs={12} sm={4}>
@@ -739,7 +784,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           type="submit"
                           disabled={loading}
                           style={{ opacity: `${loading ? "0.5" : "1"}` }}
-                          onClick={(e)=>handleSubmit3(e,1)}
+                          onClick={(e) => handleSubmit3(e, 1)}
                         >
                           <b>
                             {" "}
@@ -756,16 +801,20 @@ const UserForm = ({ setStep, setActiveStep }) => {
                     </Grid>
                   </>
                 )}
-                        {formStep == 4 && (
+                {formStep == 4 && (
                   <>
-                    
-                       <Grid container spacing={2} className="" style={{marginTop:"20px"}}>
+                    <Grid
+                      container
+                      spacing={2}
+                      className=""
+                      style={{ marginTop: "20px" }}
+                    >
                       <Grid
                         item
                         xs={12}
                         sm={5}
                         className="option"
-                        onClick={()=>setformStep(5)}
+                        onClick={() => setformStep(5)}
                       >
                         Go to Abroad
                       </Grid>
@@ -774,14 +823,17 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         xs={12}
                         sm={5}
                         className="option"
-                        onClick={()=>setformStep(6)}
-                        
+                        onClick={() => setformStep(6)}
                       >
                         Stay in Algeria
                       </Grid>
-                     
                     </Grid>
-                    <Grid container spacing={2} className="formbuttonsGrid" style={{justifyContent:"center"}}>
+                    <Grid
+                      container
+                      spacing={2}
+                      className="formbuttonsGrid"
+                      style={{ justifyContent: "center" }}
+                    >
                       <Grid xs={12} sm={4}>
                         <div
                           size="large"
@@ -796,18 +848,17 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           <b> Retour</b>
                         </div>
                       </Grid>
-
-                      
-
-                   
                     </Grid>
                   </>
                 )}
-                       {formStep == 5 && (
+                {formStep == 5 && (
                   <>
-                    <Grid container spacing={1} className="" style={{justifyContent:"center"}}>
-                  
-                     
+                    <Grid
+                      container
+                      spacing={1}
+                      className=""
+                      style={{ justifyContent: "center" }}
+                    >
                       <Grid item xs={12} sm={6} className="inputGrid emailGrid">
                         <input
                           type="whichCountry"
@@ -824,14 +875,10 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           name="budget"
                           value={budget}
                           onChange={onChange}
-                          
                           placeholder="budget"
                           className="inputField"
                         />
                       </Grid>
-                    
-                    
-                     
                     </Grid>
                     <Grid container spacing={2} className="formbuttonsGrid">
                       <Grid xs={12} sm={4}>
@@ -859,7 +906,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           type="submit"
                           disabled={loading}
                           style={{ opacity: `${loading ? "0.5" : "1"}` }}
-                          onClick={(e)=>handleSubmit3(e,5)}
+                          onClick={(e) => handleSubmit3(e, 5)}
                         >
                           <b>
                             {" "}
@@ -876,28 +923,26 @@ const UserForm = ({ setStep, setActiveStep }) => {
                     </Grid>
                   </>
                 )}
-                      {formStep == 6 && (
+                {formStep == 6 && (
                   <>
-                    <Grid container spacing={1} className="" style={{justifyContent:"center"}}>
-                  
-                     
-                   
+                    <Grid
+                      container
+                      spacing={1}
+                      className=""
+                      style={{ justifyContent: "center" }}
+                    >
                       <Grid item xs={12} sm={6} className="inputGrid">
                         <input
                           type="text"
                           name="budget"
                           value={budget}
                           onChange={onChange}
-                          
                           placeholder="budget"
                           className="inputField"
                         />
                       </Grid>
-                    
-                    
-                     
                     </Grid>
-                    <Grid container spacing={2} className="formbuttonsGrid" >
+                    <Grid container spacing={2} className="formbuttonsGrid">
                       <Grid xs={12} sm={4}>
                         <div
                           size="large"
@@ -923,7 +968,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           type="submit"
                           disabled={loading}
                           style={{ opacity: `${loading ? "0.5" : "1"}` }}
-                          onClick={(e)=>handleSubmit3(e,6)}
+                          onClick={(e) => handleSubmit3(e, 6)}
                         >
                           <b>
                             {" "}
