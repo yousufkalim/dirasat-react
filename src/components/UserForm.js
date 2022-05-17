@@ -90,7 +90,7 @@ let wilayasvalue = [
 ];
 let bacseriData = [
   "Mathématiques",
-  " Techniques Mathématiques",
+  "Techniques Mathématiques",
   "Sciences Expérimentales",
   "Gestion et Economie",
   "Lettre et Philosophie",
@@ -816,7 +816,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         className="option"
                         onClick={() => setformStep(5)}
                       >
-                        Go to Abroad
+                        Partir à l'étranger
                       </Grid>
                       <Grid
                         item
@@ -825,7 +825,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         className="option"
                         onClick={() => setformStep(6)}
                       >
-                        Stay in Algeria
+                        Séjour en Algérie
                       </Grid>
                     </Grid>
                     <Grid
@@ -865,7 +865,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           name="whichCountry"
                           value={whichCountry}
                           onChange={onChange}
-                          placeholder="Which country"
+                          placeholder="Quel pays"
                           className="inputField"
                         />
                       </Grid>
