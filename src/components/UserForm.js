@@ -20,15 +20,7 @@ import enGb from "date-fns/locale/fr";
 import { registerLocale } from "react-datepicker";
 import api from "../api";
 
-let class_listData = [
-  "class list1",
-  "class list2",
-  "class list3",
-  "class list4",
-  "class list5",
-  "class list6",
-  "class list7"
-];
+let class_listData = ["Seconde", "Première", "Terminal"];
 let wilayasvalue = [
   { name: "Adrar", code: "01" },
   { name: "Chlef", code: "02" },
