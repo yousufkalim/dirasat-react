@@ -20,15 +20,7 @@ import enGb from "date-fns/locale/fr";
 import { registerLocale } from "react-datepicker";
 import api from "../api";
 
-let class_listData = [
-  "class list1",
-  "class list2",
-  "class list3",
-  "class list4",
-  "class list5",
-  "class list6",
-  "class list7"
-];
+let class_listData = ["Seconde", "Première", "Terminal"];
 let wilayasvalue = [
   { name: "Adrar", code: "01" },
   { name: "Chlef", code: "02" },
@@ -90,7 +82,7 @@ let wilayasvalue = [
 ];
 let bacseriData = [
   "Mathématiques",
-  " Techniques Mathématiques",
+  "Techniques Mathématiques",
   "Sciences Expérimentales",
   "Gestion et Economie",
   "Lettre et Philosophie",
@@ -816,7 +808,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         className="option"
                         onClick={() => setformStep(5)}
                       >
-                        Go to Abroad
+                        Partir à l'étranger
                       </Grid>
                       <Grid
                         item
@@ -825,7 +817,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         className="option"
                         onClick={() => setformStep(6)}
                       >
-                        Stay in Algeria
+                        Séjour en Algérie
                       </Grid>
                     </Grid>
                     <Grid
@@ -865,7 +857,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           name="whichCountry"
                           value={whichCountry}
                           onChange={onChange}
-                          placeholder="Which country"
+                          placeholder="Quel pays"
                           className="inputField"
                         />
                       </Grid>
