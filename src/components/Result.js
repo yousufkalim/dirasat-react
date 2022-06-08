@@ -48,7 +48,7 @@ const Result = () => {
     const userData = {
       disc_answers: disc_ans_id,
       user_id: user?._id,
-      last_answer: lastAnswerId?._id,
+      last_answer: lastAnswerId?._id
     };
     let res = await api("post", "/results", userData);
     if (res) {
@@ -73,7 +73,7 @@ const Result = () => {
           return true;
         }
       },
-      backgroundColor: "#282b38",
+      backgroundColor: "#282b38"
     }).then((canvas) => {
       updateStore({ mainresultPage: canvas });
       setScreenshootloading(false);
@@ -111,170 +111,190 @@ const Result = () => {
       // document.body.appendChild(canvas);
     }, 500);
   };
-  console.log("user isss",user,result)
+  console.log("user isss", user, result);
   return (
     <>
-    {user?.level1=="want to change"?<div style={{height:"100vh",textAlign:"center",marginTop:"8%"}}><h1> Thanks we will contact you soon.</h1>  <button
-                            className="sharebutton"
-                            onClick={() =>window.location.reload()}
-                          >
-                            
-                            <b className="invitetext">Proceed</b>
-                          </button>
-    
-    </div>:(<>  {resultStep == 0 && (
-        <Grid container spacing={2} className="mainresultscreen">
-          <Grid item xs={12} sm={12} md={5} className="">
-            <img
-              src={MainCharacter}
-              className="facialImgQuestionforResult"
-              alt="maincharacter"
-            />
-          </Grid>
-          <Grid item xs={12} sm={12} md={7} className="">
-            <div
-              className={`resultBox ${screenshootloading ? "lessopacity" : ""}`}
-              id="resultBox"
-            >
-              <div className="resultBoxText">
-                <h1 className="resultHeading" style={{ textAlign: "center" }}>
-                  Bravo! Tu as répondu à toutes les questions!
-                </h1>
-                {/* <button onClick={onButtonClick}>Download PDF</button> */}
-                {loading ? (
-                  <p className="resultText">
-                    <CircularProgress color="inherit" />
-                  </p>
-                ) : (
-                  <p className="resultText">
-                    <span style={{ color: "#9198A5" }}>
-                      {" "}
-                      D'après tes réponses, je pense que ton profil est tourné
-                      vers
-                    </span>
-                    <br />
-                    <b>
-                      {" "}
-                      <span
-                        style={{
-                          color: "white",
-                          fontWeight: "900",
-                          wordBreak: "break-word",
-                        }}
-                      >
-                        {loading ? (
-                          <div>
-                            <CircularProgress color="inherit" />
-                          </div>
-                        ) : result?.type_of_job ? (
-                          result.type_of_job
-                        ) : (
-                          "Il n’y a actuellement pas de job disponible."
-                        )}{" "}
-                      </span>
-                    </b>{" "}
-                    <span style={{ color: "#9198A5" }}>comme par exemple</span>{" "}
-                    <span
-                      style={{
-                        color: "white",
-                        fontWeight: "900",
-                        wordBreak: "break-word",
-                      }}
-                    >
-                      {" "}
-                      {loading
-                        ? "loading"
-                        : result?.example_of_job
-                        ? result.example_of_job
-                        : "Currently no example available"}
-                    </span>
-                  </p>
-                )}
-                {!loading && (
-                  <p className="resultText">
-                    <span style={{ color: "#9198A5" }}>
-                      Je te propose une liste de voeux Parcoursup qui
-                      correspondrait à ton profil.
-                    </span>
-                  </p>
-                )}
-              </div>
-
-              <div className="resultButtondiv" id="resultButtondiv">
-                <button
-                  className="resultButton"
-                  onClick={() => showResultDetail()}
-                  style={{ opacity: loading ? 0.4 : 1 }}
-                  disabled={loading}
-                >
-                  <b>
-                    {" "}
-                    {screenshootloading
-                      ? "veuillez patienter"
-                      : "Ma liste Parcoursup"}
-                  </b>
-                </button>
-              </div>
-            </div>
-            <div></div>
-          </Grid>
-        </Grid>
-      )}
-      {resultStep == 1 && (
-        <>
-          {/* <Dialog open={open} setOpen={setOpen} /> */}
-          <InvitePopup open={openinvitepopup} setOpen={setOpenInvitepopup} />
-          <SharePopup open={opensharepopup} setOpen={setOpenSharepopup} />
-          <Grid
-            container
-            spacing={1}
-            className={`mainresultscreen ${exportLoading ? "lessopacity" : ""}`}
+      {user?.level1 == "want to change" ? (
+        <div style={{ height: "100vh", textAlign: "center", marginTop: "8%" }}>
+          <h1> Thanks we will contact you soon.</h1>{" "}
+          <button
+            className="sharebutton"
+            onClick={() => window.location.reload()}
           >
-            <Grid item xs={12} sm={12} className="">
-              <div>
-                {!loading ? (
-                  <div>
-                    {result.data ? (
-                      <div>
-                        
-                          <>
-                            {result.data ? (
-                              <TypeOfCourse
-                                type={" Available Courses for the student"}
-                                result={result?.data}
-                                // percentage={item?.percentage}
-                                courses={result?.data}
-                                user={user}
-                              />
-                            ) : (
-                              <div
-                                className=""
-                                style={{ margin: "10px", textAlign: "center" }}
-                              >
-                                <h1> Désolé pas de cours disponible</h1>
+            <b className="invitetext">Proceed</b>
+          </button>
+        </div>
+      ) : (
+        <>
+          {" "}
+          {resultStep == 0 && (
+            <Grid container spacing={2} className="mainresultscreen">
+              <Grid item xs={12} sm={12} md={5} className="">
+                <img
+                  src={MainCharacter}
+                  className="facialImgQuestionforResult"
+                  alt="maincharacter"
+                />
+              </Grid>
+              <Grid item xs={12} sm={12} md={7} className="">
+                <div
+                  className={`resultBox ${
+                    screenshootloading ? "lessopacity" : ""
+                  }`}
+                  id="resultBox"
+                >
+                  <div className="resultBoxText">
+                    <h1
+                      className="resultHeading"
+                      style={{ textAlign: "center" }}
+                    >
+                      Bravo! Tu as répondu à toutes les questions!
+                    </h1>
+                    {/* <button onClick={onButtonClick}>Download PDF</button> */}
+                    {loading ? (
+                      <p className="resultText">
+                        <CircularProgress color="inherit" />
+                      </p>
+                    ) : (
+                      <p className="resultText">
+                        <span style={{ color: "#9198A5" }}>
+                          {" "}
+                          D'après tes réponses, je pense que ton profil est
+                          tourné vers
+                        </span>
+                        <br />
+                        <b>
+                          {" "}
+                          <span
+                            style={{
+                              color: "white",
+                              fontWeight: "900",
+                              wordBreak: "break-word"
+                            }}
+                          >
+                            {loading ? (
+                              <div>
+                                <CircularProgress color="inherit" />
                               </div>
-                            )}
-                          </>
-                        
-                        <div
+                            ) : result?.type_of_job ? (
+                              result.type_of_job
+                            ) : (
+                              "Il n’y a actuellement pas de job disponible."
+                            )}{" "}
+                          </span>
+                        </b>{" "}
+                        <span style={{ color: "#9198A5" }}>
+                          comme par exemple
+                        </span>{" "}
+                        <span
                           style={{
-                            width: "70%",
-                            textAlign: "center",
-                            margin: "auto",
-                            color: "grey",
+                            color: "white",
+                            fontWeight: "900",
+                            wordBreak: "break-word"
                           }}
-                          // className="desktopView"
                         >
-                          <p>
-                            Tu ne trouves pas ce que tu t’attendais à voir dans
-                            cette liste? Pas de panique! C’est sûrement que la
-                            formation à laquelle tu penses n’est pas sur
-                            Parcousup. Tu seras contacté par la suite pour
-                            compléter cette liste avec d’autres fomations
-                            “hors-parcoursup” qui pourraient te correspondre!
-                          </p>
-                        </div>
-                        {/* <div className="desktopView goback">
+                          {" "}
+                          {loading
+                            ? "loading"
+                            : result?.example_of_job
+                            ? result.example_of_job
+                            : "Currently no example available"}
+                        </span>
+                      </p>
+                    )}
+                    {!loading && (
+                      <p className="resultText">
+                        <span style={{ color: "#9198A5" }}>
+                          Je te propose une liste de voeux Parcoursup qui
+                          correspondrait à ton profil.
+                        </span>
+                      </p>
+                    )}
+                  </div>
+
+                  <div className="resultButtondiv" id="resultButtondiv">
+                    <button
+                      className="resultButton"
+                      onClick={() => showResultDetail()}
+                      style={{ opacity: loading ? 0.4 : 1 }}
+                      disabled={loading}
+                    >
+                      <b>
+                        {" "}
+                        {screenshootloading
+                          ? "veuillez patienter"
+                          : "Ma liste Parcoursup"}
+                      </b>
+                    </button>
+                  </div>
+                </div>
+                <div></div>
+              </Grid>
+            </Grid>
+          )}
+          {resultStep == 1 && (
+            <>
+              {/* <Dialog open={open} setOpen={setOpen} /> */}
+              <InvitePopup
+                open={openinvitepopup}
+                setOpen={setOpenInvitepopup}
+              />
+              <SharePopup open={opensharepopup} setOpen={setOpenSharepopup} />
+              <Grid
+                container
+                spacing={1}
+                className={`mainresultscreen ${
+                  exportLoading ? "lessopacity" : ""
+                }`}
+              >
+                <Grid item xs={12} sm={12} className="">
+                  <div>
+                    {!loading ? (
+                      <div>
+                        {result.data ? (
+                          <div>
+                            <>
+                              {result.data ? (
+                                <TypeOfCourse
+                                  type={"Cours disponibles pour l'étudiant"}
+                                  result={result?.data}
+                                  // percentage={item?.percentage}
+                                  courses={result?.data}
+                                  user={user}
+                                />
+                              ) : (
+                                <div
+                                  className=""
+                                  style={{
+                                    margin: "10px",
+                                    textAlign: "center"
+                                  }}
+                                >
+                                  <h1> Désolé pas de cours disponible</h1>
+                                </div>
+                              )}
+                            </>
+
+                            <div
+                              style={{
+                                width: "70%",
+                                textAlign: "center",
+                                margin: "auto",
+                                color: "grey"
+                              }}
+                              // className="desktopView"
+                            >
+                              <p>
+                                Tu ne trouves pas ce que tu t’attendais à voir
+                                dans cette liste? Pas de panique! C’est sûrement
+                                que la formation à laquelle tu penses n’est pas
+                                sur Parcousup. Tu seras contacté par la suite
+                                pour compléter cette liste avec d’autres
+                                fomations “hors-parcoursup” qui pourraient te
+                                correspondre!
+                              </p>
+                            </div>
+                            {/* <div className="desktopView goback">
                           <button
                             className="goBackbutton"
                             onClick={exportPdf}
@@ -285,69 +305,72 @@ const Result = () => {
                               : "Exporter le PDF"}
                           </button>
                         </div> */}
-                        <div
-                          style={{
-                            width: "70%",
-                            textAlign: "center",
-                            margin: "auto",
-                            color: "grey",
-                          }}
-                          className="mobileView"
-                        >
-                          <p>
-                            N'hésite pas à prendre des captures d'écran de cette
-                            page. Tu peux aussi te connecter à ton ordinateur
-                            pour obtenir cette liste au format PDF.
-                          </p>
-                        </div>
+                            <div
+                              style={{
+                                width: "70%",
+                                textAlign: "center",
+                                margin: "auto",
+                                color: "grey"
+                              }}
+                              className="mobileView"
+                            >
+                              <p>
+                                N'hésite pas à prendre des captures d'écran de
+                                cette page. Tu peux aussi te connecter à ton
+                                ordinateur pour obtenir cette liste au format
+                                PDF.
+                              </p>
+                            </div>
 
-                        <div className="buttonDiv">
-                          <button
-                            className="sharebutton"
-                            onClick={() => setOpenInvitepopup(true)}
+                            <div className="buttonDiv">
+                              <button
+                                className="sharebutton"
+                                onClick={() => setOpenInvitepopup(true)}
+                              >
+                                <img src={userimg} alt="userImage" />
+                                <b className="invitetext">Invite un ami</b>
+                              </button>
+                              <button
+                                className=" partager"
+                                onClick={() => setOpenSharepopup(true)}
+                              >
+                                <img src={share} alt="share" />
+                                <b className="partagertext"> Partager </b>
+                              </button>
+                            </div>
+                            <div className="goback">
+                              <button
+                                className="goBackbutton"
+                                onClick={() => setresultStep(0)}
+                              >
+                                <b className="">Précédent</b>
+                              </button>
+                            </div>
+                          </div>
+                        ) : (
+                          <div
+                            className=""
+                            style={{ margin: "10px", textAlign: "center" }}
                           >
-                            <img src={userimg} alt="userImage" />
-                            <b className="invitetext">Invite un ami</b>
-                          </button>
-                          <button
-                            className=" partager"
-                            onClick={() => setOpenSharepopup(true)}
-                          >
-                            <img src={share} alt="share" />
-                            <b className="partagertext"> Partager </b>
-                          </button>
-                        </div>
-                        <div className="goback">
-                          <button
-                            className="goBackbutton"
-                            onClick={() => setresultStep(0)}
-                          >
-                            <b className="">Précédent</b>
-                          </button>
-                        </div>
+                            <h1> Désolé pas de cours disponible</h1>
+                          </div>
+                        )}
                       </div>
                     ) : (
                       <div
                         className=""
-                        style={{ margin: "10px", textAlign: "center" }}
+                        style={{ margin: "10%", textAlign: "center" }}
                       >
-                        <h1> Désolé pas de cours disponible</h1>
+                        <h1>Chargement en cours...</h1>
                       </div>
                     )}
                   </div>
-                ) : (
-                  <div
-                    className=""
-                    style={{ margin: "10%", textAlign: "center" }}
-                  >
-                    <h1>Chargement en cours...</h1>
-                  </div>
-                )}
-              </div>
-            </Grid>
-          </Grid>
+                </Grid>
+              </Grid>
+            </>
+          )}
         </>
-      )}</>)}
+      )}
     </>
   );
 };
