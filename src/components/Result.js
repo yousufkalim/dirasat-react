@@ -111,7 +111,6 @@ const Result = () => {
       // document.body.appendChild(canvas);
     }, 500);
   };
-  console.log("user isss", user, result);
   return (
     <>
       {user?.level1 == "want to change" ? (
@@ -256,7 +255,9 @@ const Result = () => {
                             <>
                               {result.data ? (
                                 <TypeOfCourse
-                                  type={"Cours disponibles pour l'étudiant"}
+                                  type={
+                                    "Cursus universitaire compatible avec les résultats de ton test d’orientation"
+                                  }
                                   result={result?.data}
                                   // percentage={item?.percentage}
                                   courses={result?.data}

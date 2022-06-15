@@ -89,7 +89,6 @@ let bacseriData = [
   "Langues Etrangères"
 ];
 let languageIs = ["French", "Arabic", "Both"];
-let level1data = ["Pass the test", "Not Pass the test", "Want change School"];
 let level2data = [
   "1",
   "2",
@@ -112,7 +111,6 @@ let level2data = [
   "19",
   "20"
 ];
-let level3data = ["Go to Abroad", "Stay in Algeria"];
 let timeInterval;
 
 const UserForm = ({ setStep, setActiveStep }) => {
@@ -278,12 +276,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
     if (language == "language") {
       return toast.error("please select language");
     }
-
     if (!accept_condition) {
       return toast.error("Veuillez accepter les termes et conditions");
     }
-    console.log("fomrdata", formData);
-
     setformStep(2);
   };
 
@@ -521,7 +516,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           variant="outlined"
                           className="selectformControl bacserieFormControl"
                         >
-                          {console.log("Bac serie --> ", formData.Bac_Serie)}
                           <Select
                             labelId="demo-simple-select-outlined-label"
                             id="demo-simple-select-outlined"
