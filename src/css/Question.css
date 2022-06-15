@@ -101,6 +101,13 @@
   border-radius: 100px !important;
   text-align: center !important
 }
+.disablGrid{
+  color: #c3c3c3;
+  opacity: 0.8;
+}
+.disablGrid:hover{
+  background: transparent !important
+}
 .option:hover {
   background: linear-gradient(
     265.05deg,
@@ -181,13 +188,21 @@
     width: 50% !important;
     margin: auto !important;
     margin-bottom: 25px !important;
-    border: 1px solid #6e738c !important;
+    border: none !important;
     border-radius: 100px !important;
     text-align: center !important;
   }
   .option:hover {
     background: transparent;
     cursor: pointer !important;
+  }
+  .optionSpan{
+    border: 1px solid #6e738c !important;
+    border-radius: 100px !important;
+    padding: 10px !important;
+  }
+  .lastoption{
+    border: 1px solid #6e738c !important;
   }
   /* .option:focus {
     background: linear-gradient(

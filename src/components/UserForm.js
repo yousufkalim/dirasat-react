@@ -20,7 +20,7 @@ import enGb from "date-fns/locale/fr";
 import { registerLocale } from "react-datepicker";
 import api from "../api";
 
-let class_listData = ["Seconde", "Première", "Terminal"];
+let class_listData = ["1ère AS", "2ème AS", "3ème AS", "Postbac"];
 let wilayasvalue = [
   { name: "Adrar", code: "01" },
   { name: "Chlef", code: "02" },
@@ -89,7 +89,6 @@ let bacseriData = [
   "Langues Etrangères"
 ];
 let languageIs = ["French", "Arabic", "Both"];
-let level1data = ["Pass the test", "Not Pass the test", "Want change School"];
 let level2data = [
   "1",
   "2",
@@ -112,7 +111,6 @@ let level2data = [
   "19",
   "20"
 ];
-let level3data = ["Go to Abroad", "Stay in Algeria"];
 let timeInterval;
 
 const UserForm = ({ setStep, setActiveStep }) => {
@@ -223,19 +221,22 @@ const UserForm = ({ setStep, setActiveStep }) => {
 
   // onChange Function for Input Field
   const onChange = (e) => {
+    let Temp_Bac_Serie = e.target.value == "Postbac" ? "Bac Serie" : Bac_Serie;
+
     if (e.target.name === "accept_condition") {
       setFormData({ ...formData, [e.target.name]: e.target.checked });
     } else
       setFormData({
         ...formData,
+        Bac_Serie: Temp_Bac_Serie,
         [e.target.name]: e.target.value
       });
   };
+
   // function for Date select
   const onChangeDate = (date) => {
     setFormData({ ...formData, date_of_birth: date });
   };
-
   // handleSubmit Function
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -263,8 +264,8 @@ const UserForm = ({ setStep, setActiveStep }) => {
     if (class_list == "class list") {
       return toast.error("Please Select class list");
     }
-    if (Bac_Serie == "Bac Serie") {
-      return toast.error("Please Select class list");
+    if (Bac_Serie == "Bac Serie" && class_list != "Postbac") {
+      return toast.error("Please Select Bac_Serie");
     }
     if (school_city == "") {
       return toast.error("please enter city of your school");
@@ -275,17 +276,17 @@ const UserForm = ({ setStep, setActiveStep }) => {
     if (language == "language") {
       return toast.error("please select language");
     }
-
     if (!accept_condition) {
       return toast.error("Veuillez accepter les termes et conditions");
     }
-    // console.log("onsubmit", formData);
     setformStep(2);
   };
+
   const handleSubmit3 = async (e, option) => {
     e.preventDefault();
     console.log("formdata os ,", formData, option);
     let newFormData = "";
+
     if (option == 1) {
       newFormData = { ...formData, level1: "pass" };
       if (score == "score") {
@@ -521,6 +522,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             name="Bac_Serie"
                             value={Bac_Serie}
                             defaultValue={Bac_Serie}
+                            disabled={class_list === "Postbac"}
                             onChange={onChange}
                             className={classes.select}
                             className="selectforeducation"
@@ -664,29 +666,43 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         item
                         xs={12}
                         sm={5}
-                        className="option"
-                        onClick={() => setformStep(3)}
+                        className={`${
+                          class_list === "Postbac" && "disablGrid"
+                        } option`}
+                        onClick={() => {
+                          class_list != "Postbac" && setformStep(3);
+                        }}
                       >
-                        J’ai déjà mon baccalauréat
+                        <span className="optionSpan">
+                          J’ai déjà mon baccalauréat
+                        </span>
                       </Grid>
                       <Grid
                         item
                         xs={12}
                         sm={5}
-                        className="option"
-                        onClick={(e) => handleSubmit3(e, 2)}
+                        className={`${
+                          class_list === "Postbac" && "disablGrid"
+                        } option`}
+                        onClick={(e) => {
+                          class_list != "Postbac" && handleSubmit3(e, 2);
+                        }}
                       >
-                        Je n’ai pas mon baccalauréat
+                        <span className="optionSpan">
+                          Je n’ai pas mon baccalauréat
+                        </span>
                       </Grid>
-                      <Grid
-                        item
-                        xs={12}
-                        sm={5}
-                        className="option"
-                        onClick={() => setformStep(4)}
-                      >
-                        Je veux changer d’école supérieur
-                      </Grid>
+                    </Grid>
+                    <Grid
+                      xs={12}
+                      sm={5}
+                      className="lastoption option"
+                      onClick={() => setformStep(4)}
+                    >
+                      <span className="" style={{ fontSize: "13px" }}>
+                        Je veux me réorienter ou poursuivre mes études
+                        supérieures dans un autre programme
+                      </span>
                     </Grid>
                     <Grid
                       container
@@ -741,7 +757,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
                               disabled
                               style={{ textAlign: "left !important" }}
                             >
-                              <em>{"score"}</em>
+                              <em>
+                                {"Moyenne générale obtenue au Baccalauréat"}
+                              </em>
                             </MenuItem>
                             {level2data.map((item, i) => {
                               return <MenuItem value={item}>{item}</MenuItem>;
