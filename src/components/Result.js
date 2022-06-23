@@ -115,7 +115,7 @@ const Result = () => {
     <>
       {user?.level1 == "want to change" ? (
         <div style={{ height: "100vh", textAlign: "center", marginTop: "8%" }}>
-          <h1> Thanks we will contact you soon.</h1>{" "}
+          <h1>Merci nous vous contacterons bientôt.</h1>{" "}
           <button
             className="sharebutton"
             onClick={() => window.location.reload()}
@@ -222,7 +222,7 @@ const Result = () => {
                         {" "}
                         {screenshootloading
                           ? "veuillez patienter"
-                          : "Ma liste Parcoursup"}
+                          : "Ma liste de voeux"}
                       </b>
                     </button>
                   </div>

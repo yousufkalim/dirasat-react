@@ -39,9 +39,28 @@
 .logoImage {
   cursor: pointer;
 }
+.dirasatlogoimg{
+  cursor: pointer;
+}
 .logowithicondiv {
   width: 15%;
   padding-top: 10px;
+}
+.dirasatlogo{
+  width: 9%;
+  padding: 20px 20px 2px 2px;
+}
+.dirasatimg{
+  /* background-color: #595d6f; */
+  background: linear-gradient(
+    265.05deg,
+    #fece24 0%,
+    #ff6d1a 50.66%,
+    #ff29aa 101.84%
+  );
+  padding: 0px 10px;
+  border-radius: 50px;
+  opacity: 0.9;
 }
 
 @media only screen (min-width: 613px) and (max-width: 812px) {
@@ -87,6 +106,9 @@
   .logowithicondiv {
     display: flex;
   }
+  .dirasatlogo{
+    display: flex;
+  }
   .navIconbox {
     margin: 10px 20px 0 12px;
     display: inherit;
@@ -94,6 +116,10 @@
     z-index: 1;
   }
   .logoImage {
+    margin: 11px 0px 0px 50%;
+    width: 125px !important;
+  }
+  .dirasatlogoimg{
     margin: 11px 0px 0px 50%;
     width: 125px !important;
   }
@@ -162,6 +188,9 @@
   .logowithicondiv {
     display: flex;
   }
+  .dirasatlogo{
+    display: flex;
+  }
   .navIconbox {
     margin: 10px 20px 0 12px;
     display: inherit;
@@ -171,6 +200,10 @@
   .logoImage {
     margin: 11px 0px 0px 50%;
     width: 125px !important;
+  }
+  .dirasatlogoimg{
+    margin: 0px 0px 0px 50%;
+    width: 21% !important;
   }
   .navicon {
     width: 30px;
