@@ -3,7 +3,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import logo from "../assets/img/logo1.png";
+import logo from "../assets/img/dlogot.png";
 import Navicon from "../assets/icons/navicon.png";
 import Closeicon from "../assets/icons/closeicon.png";
 import { useHistory } from "react-router-dom";
@@ -48,7 +48,7 @@ export default function Header({
   return (
     <AppBar color="inherit" position={deviceType()} className="headerRoot">
       <Toolbar color="" className="showToolbar">
-        <div className="logowithicondiv">
+        <div className=" dirasatlogo">
           <div
             edge="start"
             className="navIconbox"
@@ -68,7 +68,7 @@ export default function Header({
             <img
               src={logo}
               width="90%"
-              className="logoImage"
+              className="dirasatlogoimg dirasatimg"
               onClick={() => {
                 history.push("/");
                 if (history.location.pathname === "/") {

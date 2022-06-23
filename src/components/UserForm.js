@@ -43,7 +43,7 @@ let wilayasvalue = [
   { name: "Sétif", code: "19" },
   { name: "Saida", code: "20" },
   { name: "Skikda", code: "21" },
-  { name: "Sidi Bel Abbes", code: "22" },
+  { name: "Sidi Bel Abbès", code: "22" },
   { name: "Annaba", code: "23" },
   { name: "Guelma", code: "24" },
   { name: "Constantine", code: "25" },
@@ -60,16 +60,17 @@ let wilayasvalue = [
   { name: "El Taref", code: "36" },
   { name: "Tindouf", code: "37" },
   { name: "Tissemsilt", code: "38" },
-  { name: "MédéEl Oueda", code: "39" },
-  { name: "Khenchla", code: "40" },
-  { name: "Souk Ahrass", code: "41" },
+  { name: "El Oued", code: "39" },
+  { name: "Kenchela", code: "40" },
+  { name: "Souk Ahras", code: "41" },
   { name: "Tipaza", code: "42" },
   { name: "Mila", code: "43" },
   { name: "Aïn Defla", code: "44" },
   { name: "Nâama", code: "45" },
   { name: "Aïn Temouchent", code: "46" },
   { name: "Ghardaïa", code: "47" },
-  { name: "Relizane 49-Timimoun", code: "48" },
+  { name: "Relizane", code: "48" },
+  { name: "Timimoun", code: "49" },
   { name: " Bordj Badji Mokhtar", code: "50" },
   { name: "Ouled Djellal", code: "51" },
   { name: "Béni Abbès", code: "52" },
@@ -88,7 +89,7 @@ let bacseriData = [
   "Lettre et Philosophie",
   "Langues Etrangères"
 ];
-let languageIs = ["French", "Arabic", "Both"];
+let languageIs = ["Français", "Arabe", "Les deux"];
 let level2data = [
   "1",
   "2",
@@ -136,7 +137,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
     score: "score",
     budget: "",
     whichCountry: "",
-    stayAlgeria: false
+    stayAlgeria: false,
+    lastDiploma: "",
+    studyYear: ""
   });
   // state for address options list
   const [values, setValues] = useState([]);
@@ -169,7 +172,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
     score,
     budget,
     whichCountry,
-    stayAlgeria
+    stayAlgeria,
+    lastDiploma,
+    studyYear
   } = formData;
   // Get institutes data from API
   useEffect(() => {
@@ -286,6 +291,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
     e.preventDefault();
     console.log("formdata os ,", formData, option);
     let newFormData = "";
+    if (option == "no") {
+      newFormData = { ...formData };
+    }
 
     if (option == 1) {
       newFormData = { ...formData, level1: "pass" };
@@ -585,7 +593,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             disabled
                             style={{ textAlign: "left !important" }}
                           >
-                            <em>Langue</em>
+                            <em>Langue dans laquelle vous souhaitez étudier</em>
                           </MenuItem>
                           {languageIs.map((lang, i) => {
                             return <MenuItem value={lang}>{lang}</MenuItem>;
@@ -668,13 +676,14 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         sm={5}
                         className={`${
                           class_list === "Postbac" && "disablGrid"
-                        } option`}
+                        } option gridOptions`}
                         onClick={() => {
                           class_list != "Postbac" && setformStep(3);
                         }}
                       >
                         <span className="optionSpan">
-                          J’ai déjà mon baccalauréat
+                          J’ai déjà mon baccalauréat mais je n’ai pas encore
+                          débuté mes études supérieures
                         </span>
                       </Grid>
                       <Grid
@@ -683,7 +692,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         sm={5}
                         className={`${
                           class_list === "Postbac" && "disablGrid"
-                        } option`}
+                        } option gridOptions`}
                         onClick={(e) => {
                           class_list != "Postbac" && handleSubmit3(e, 2);
                         }}
@@ -696,12 +705,13 @@ const UserForm = ({ setStep, setActiveStep }) => {
                     <Grid
                       xs={12}
                       sm={5}
-                      className="lastoption option"
+                      className="lastoption option gridOptions"
                       onClick={() => setformStep(4)}
                     >
                       <span className="" style={{ fontSize: "13px" }}>
-                        Je veux me réorienter ou poursuivre mes études
-                        supérieures dans un autre programme
+                        J’ai déjà débuté mes études supérieures et Je veux me
+                        réorienter ou poursuivre mes études supérieures dans un
+                        autre programme
                       </span>
                     </Grid>
                     <Grid
@@ -935,23 +945,78 @@ const UserForm = ({ setStep, setActiveStep }) => {
                 )}
                 {formStep == 6 && (
                   <>
+                    <div
+                      style={{
+                        textAlign: "center",
+                        margin: "5px",
+                        width: "100%",
+                        fontSize: "13px"
+                      }}
+                    >
+                      <h1>Quel est ton dernier diplôme validé ?</h1>
+                    </div>
                     <Grid
                       container
-                      spacing={1}
+                      spacing={4}
                       className=""
                       style={{ justifyContent: "center" }}
                     >
-                      <Grid item xs={12} sm={6} className="inputGrid">
-                        <input
-                          type="text"
-                          name="budget"
-                          value={budget}
-                          onChange={onChange}
-                          placeholder="budget"
-                          className="inputField"
-                        />
+                      <Grid
+                        item
+                        xs={12}
+                        sm={5}
+                        className="Gridoptiontwo"
+                        onClick={() => {
+                          setFormData({
+                            ...formData,
+                            lastDiploma: "Baccalauréat"
+                          });
+                          setformStep(7);
+                        }}
+                      >
+                        Baccalauréat
+                      </Grid>
+                      <Grid
+                        item
+                        xs={12}
+                        sm={5}
+                        className="Gridoptiontwo"
+                        onClick={() => {
+                          setFormData({
+                            ...formData,
+                            lastDiploma: "Gridoptiontwo"
+                          });
+                          setformStep(7);
+                        }}
+                      >
+                        Licence
+                      </Grid>
+                      <Grid
+                        item
+                        xs={12}
+                        sm={5}
+                        className="Gridoptiontwo"
+                        onClick={() => {
+                          setFormData({ ...formData, lastDiploma: "Licence" });
+                          setformStep(7);
+                        }}
+                      >
+                        Master
+                      </Grid>
+                      <Grid
+                        item
+                        xs={12}
+                        sm={5}
+                        className="Gridoptiontwo"
+                        onClick={() => {
+                          setFormData({ ...formData, lastDiploma: "Master" });
+                          setformStep(7);
+                        }}
+                      >
+                        Doctorat
                       </Grid>
                     </Grid>
+
                     <Grid container spacing={2} className="formbuttonsGrid">
                       <Grid xs={12} sm={4}>
                         <div
@@ -967,30 +1032,149 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           <b> Retour</b>
                         </div>
                       </Grid>
+                    </Grid>
+                  </>
+                )}
+                {formStep == 7 && (
+                  <>
+                    <div
+                      style={{
+                        textAlign: "center",
+                        margin: "5px",
+                        width: "100%",
+                        fontSize: "13px"
+                      }}
+                    >
+                      <h1>Vous êtes en :</h1>
+                    </div>
+                    <Grid
+                      container
+                      spacing={4}
+                      className=""
+                      style={{ justifyContent: "center" }}
+                    >
+                      <Grid
+                        item
+                        xs={12}
+                        sm={4}
+                        className="Gridoptiontwo"
+                        onClick={(e) => {
+                          setFormData({
+                            ...formData,
+                            studyYear: "1ère année d’études"
+                          });
+                          handleSubmit3(e, "no");
+                        }}
+                      >
+                        1ère année d’études
+                      </Grid>
+                      <Grid
+                        item
+                        xs={12}
+                        sm={4}
+                        className="Gridoptiontwo"
+                        onClick={(e) => {
+                          setFormData({
+                            ...formData,
+                            studyYear: "2ère année d’études"
+                          });
+                          handleSubmit3(e, "no");
+                        }}
+                      >
+                        2ème année d’études
+                      </Grid>
+                      <Grid
+                        item
+                        xs={12}
+                        sm={4}
+                        className="Gridoptiontwo"
+                        onClick={(e) => {
+                          setFormData({
+                            ...formData,
+                            studyYear: "3ère année d’études"
+                          });
+                          handleSubmit3(e, "no");
+                        }}
+                      >
+                        {" "}
+                        3ème année d’études
+                      </Grid>
+                      <Grid
+                        item
+                        xs={12}
+                        sm={4}
+                        className="Gridoptiontwo"
+                        onClick={(e) => {
+                          setFormData({
+                            ...formData,
+                            studyYear: "4ère année d’études"
+                          });
+                          handleSubmit3(e, "no");
+                        }}
+                      >
+                        4ème année d’études
+                      </Grid>
+                      <Grid
+                        item
+                        xs={12}
+                        sm={4}
+                        className="Gridoptiontwo"
+                        onClick={(e) => {
+                          setFormData({
+                            ...formData,
+                            studyYear: "5ère année d’études"
+                          });
+                          handleSubmit3(e, "no");
+                        }}
+                      >
+                        5ème année d’études
+                      </Grid>
+                      <Grid
+                        item
+                        xs={12}
+                        sm={4}
+                        className="Gridoptiontwo"
+                        onClick={(e) => {
+                          setFormData({
+                            ...formData,
+                            studyYear: "6ère année d’études"
+                          });
+                          handleSubmit3(e, "no");
+                        }}
+                      >
+                        6ème année d’études
+                      </Grid>
+                      <Grid
+                        item
+                        xs={12}
+                        sm={4}
+                        className="Gridoptiontwo"
+                        onClick={(e) => {
+                          setFormData({
+                            ...formData,
+                            studyYear: "7ère année d’études"
+                          });
+                          handleSubmit3(e, "no");
+                        }}
+                      >
+                        7ème année d’études
+                      </Grid>
+                    </Grid>
 
-                      <Grid xs={12} sm={4}></Grid>
-
+                    <Grid container spacing={2} className="formbuttonsGrid">
                       <Grid xs={12} sm={4}>
-                        <button
-                          variant="contained"
-                          className="formSubmitButton"
+                        <div
                           size="large"
-                          type="submit"
-                          disabled={loading}
-                          style={{ opacity: `${loading ? "0.5" : "1"}` }}
-                          onClick={(e) => handleSubmit3(e, 6)}
+                          className="formbackbutton"
+                          onClick={() => setformStep(6)}
                         >
-                          <b>
-                            {" "}
-                            {loading ? (
-                              <div className="circulardiv">
-                                <CircularProgress size={20} className="" />
-                              </div>
-                            ) : (
-                              "Commencer le test"
-                            )}
-                          </b>
-                        </button>
+                          <img
+                            src={arrowleft}
+                            className="arrowleft"
+                            alt="arrow"
+                          />
+                          <b> Retour</b>
+                        </div>
                       </Grid>
                     </Grid>
                   </>
