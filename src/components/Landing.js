@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
-import Main from "../assets/img/a2.png";
+import Main from "../assets/img/da2.png";
 import MainCharacter from "../assets/img/MainCharacter.png";
 import video1 from "../assets/video/orientatorVideo.mp4";
 import thumbnail from "../assets/img/thumbnail.jpg";
