@@ -115,7 +115,7 @@ const Result = () => {
     <>
       {user?.level1 == "want to change" ? (
         <div style={{ height: "100vh", textAlign: "center", marginTop: "8%" }}>
-          <h1>Merci nous vous contacterons bientôt.</h1>{" "}
+          <h1>Proceed by Terminer.</h1>{" "}
           <button
             className="sharebutton"
             onClick={() => window.location.reload()}
@@ -204,8 +204,8 @@ const Result = () => {
                     {!loading && (
                       <p className="resultText">
                         <span style={{ color: "#9198A5" }}>
-                          Je te propose une liste de voeux Parcoursup qui
-                          correspondrait à ton profil.
+                          Je te propose une liste de voeux orientation wishes
+                          qui correspondrait à ton profil.
                         </span>
                       </p>
                     )}
@@ -287,11 +287,9 @@ const Result = () => {
                             >
                               <p>
                                 Tu ne trouves pas ce que tu t’attendais à voir
-                                dans cette liste? Pas de panique! C’est sûrement
-                                que la formation à laquelle tu penses n’est pas
-                                sur Parcousup. Tu seras contacté par la suite
-                                pour compléter cette liste avec d’autres
-                                fomations “hors-parcoursup” qui pourraient te
+                                dans cette liste? Pas de panique! Tu seras
+                                contacté par la suite pour compléter cette liste
+                                avec d’autres fomations qui pourraient te
                                 correspondre!
                               </p>
                             </div>

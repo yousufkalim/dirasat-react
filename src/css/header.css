@@ -47,17 +47,12 @@
   padding-top: 10px;
 }
 .dirasatlogo{
-  width: 9%;
+  width: 11%;
   padding: 20px 20px 2px 2px;
 }
 .dirasatimg{
-  /* background-color: #595d6f; */
-  background: linear-gradient(
-    265.05deg,
-    #fece24 0%,
-    #ff6d1a 50.66%,
-    #ff29aa 101.84%
-  );
+  background-color: white;
+
   padding: 0px 10px;
   border-radius: 50px;
   opacity: 0.9;

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import logo from "../assets/img/logo1.png";
+import logo from "../assets/img/dlogot.png";
 
 const MentionsLegal = () => {
   const scrollToTop = () => {

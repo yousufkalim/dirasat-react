@@ -25,8 +25,8 @@ const Footer = () => {
 
             <div>
               <p>DIRASAT</p>
-              <p>01 84 80 74 81</p>
-              <p>75116 Paris, France</p>
+              {/* <p>01 84 80 74 81</p>
+              <p>75116 Paris, France</p> */}
             </div>
           </div>
           <div className="developbydiv">
