@@ -22,12 +22,14 @@
   ) !important;
   border-radius: 20px !important;
   margin-top: 20px;
+  text-align: center;
 }
 .article1img {
   width: 100%;
   padding-top: 5px;
   height: 360px;
   object-fit: cover;
+  border-radius: 20px;
 }
 
 .latestArticleRight {

@@ -7,7 +7,8 @@ import blogImg from "../../assets/3.png";
 import { url } from "../../config";
 
 export default function LatestArticle({ blogs, loading, setLoading }) {
-  let newdata = [];
+  let newdata = [{}];
+  console.log("blogs", blogs);
 
   return (
     <div className="LatestArticlecontainer">
@@ -22,14 +23,14 @@ export default function LatestArticle({ blogs, loading, setLoading }) {
               <Link
                 to={{
                   pathname: `/blog/${blogs[0]?._id}`,
-                  state: { message: "hello, im a passed message!" },
+                  state: { message: "hello, im a passed message!" }
                 }}
                 style={{ textDecoration: "none", cursor: "pointer" }}
               >
                 <div className="latestArticleLeft">
                   <img
                     // src={blogImg}
-                    src={url + blogs[0]?.blog_images}
+                    src={blogs[0] ? url + blogs[0]?.blog_images : blogImg}
                     className="article1img"
                     alt="blogimage"
                   />

@@ -374,10 +374,13 @@ const UserForm = ({ setStep, setActiveStep }) => {
             >
               <Grid container className="userformgrid">
                 <Grid item xs={12} sm={12} className="">
-                  <h3 className="formheading">
-                    Pour mieux te conseiller, j’ai besoin <br className="br" />
-                    d’en savoir davantage sur toi!
-                  </h3>
+                  {formStep != 6 && formStep != 7 && (
+                    <h3 className="formheading">
+                      Pour mieux te conseiller, j’ai besoin{" "}
+                      <br className="br" />
+                      d’en savoir davantage sur toi!
+                    </h3>
+                  )}
                 </Grid>
                 {formStep == 1 && (
                   <>
@@ -709,9 +712,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       onClick={() => setformStep(4)}
                     >
                       <span className="" style={{ fontSize: "13px" }}>
-                        J’ai déjà débuté mes études supérieures et Je veux me
+                        J’ai déjà débuté mes études supérieures et je veux me
                         réorienter ou poursuivre mes études supérieures dans un
-                        autre programme
+                        autre programme.
                       </span>
                     </Grid>
                     <Grid
@@ -748,7 +751,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       <Grid item xs={12} sm={6} className="inputGrid">
                         <FormControl
                           variant="outlined"
-                          className="selectformControl"
+                          className="selectformControl selectformControl2"
                         >
                           <Select
                             labelId="demo-simple-select-outlined-label"
@@ -813,7 +816,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                                 <CircularProgress size={20} className="" />
                               </div>
                             ) : (
-                              "Commencer le test"
+                              "Pousuivre"
                             )}
                           </b>
                         </button>
@@ -845,7 +848,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         className="option"
                         onClick={() => setformStep(6)}
                       >
-                        Séjour en Algérie
+                        me réorienter en Algérie
                       </Grid>
                     </Grid>
                     <Grid
@@ -935,7 +938,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                                 <CircularProgress size={20} className="" />
                               </div>
                             ) : (
-                              "Commencer le test"
+                              "Pousuivre"
                             )}
                           </b>
                         </button>

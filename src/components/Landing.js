@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
-import Main from "../assets/img/a2.png";
+import Main from "../assets/img/da2.png";
 import MainCharacter from "../assets/img/MainCharacter.png";
 import video1 from "../assets/video/orientatorVideo.mp4";
 import thumbnail from "../assets/img/thumbnail.jpg";
@@ -10,15 +10,13 @@ import CookiesPopup2 from "../utils/CookiesPopup2";
 import Contactus from "../utils/Contactus";
 import RefuserPopup from "../utils/RefuserPopup";
 import { useLocation } from "react-router-dom";
-
+import axios from "axios";
 import f1 from "../assets/img/f1.png";
 import f2 from "../assets/img/f2.png";
 import f3 from "../assets/img/f3.png";
 import arrowright from "../assets/img/arrow.png";
 import Footer from "./Footer";
-
 import api from "../api";
-
 import CountUp from "react-countup";
 
 const Landing = ({ step, setStep, statetextforscroll }) => {
@@ -124,14 +122,14 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
         <img
           src={MainCharacter}
           alt="Dirasat's Mian charachter"
-          className="bodyimg formobile "
+          className="bodyimg formobile"
         />
         <Grid container spacing={2} className="body-rectangle">
           <Grid item xs={12} sm={9} className="body-rectangleGrid2">
             <h1 className="h3">Commençons le test d'orientation!</h1>
             <p className="p1">
-              À la fin de ce questionnaire, une proposition de voeux pour
-              Parcoursup te sera formulée!
+              À la fin de ce questionnaire, une proposition de voeux pour ton
+              orientation te sera formulée!
             </p>
           </Grid>
           <Grid item xs={12} sm={3} className="body-rectangleGrid3">
@@ -186,13 +184,13 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
           <Grid item xs={12} sm={4}>
             <img src={f2} className="footerimg" alt="etape2" />
             <h4 className="h4">Étape 2</h4>
-            <p className="p3">Réponds aux questions d'Dirasat.</p>
+            <p className="p3">Réponds aux questions de Dirasat.</p>
           </Grid>
           <Grid item xs={12} sm={4} id="MyElementIdHere">
             <img src={f3} className="footerimg" alt="etape3" />
             <h4 className="h4">Étape 3</h4>
             <p className="p3">
-              Dirasat te propose une liste de voeux pour ton Parcoursup!
+              Dirasat te propose une liste de voeux pour ton orientation!
             </p>
           </Grid>
         </Grid>
@@ -235,6 +233,7 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
           />
         </div>
       )}
+      {console.log("siteViews.count ", siteViews?.count)}
       <Contactus />
       <Footer />
       <CookiesPopup
