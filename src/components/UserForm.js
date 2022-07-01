@@ -19,6 +19,8 @@ import ConfirmationPopup from "./ConfirmationPopup";
 import enGb from "date-fns/locale/fr";
 import { registerLocale } from "react-datepicker";
 import api from "../api";
+import InfoIcon from "@mui/icons-material/Info";
+import Info from "./Info";
 
 let class_listData = ["1ère AS", "2ème AS", "3ème AS", "Postbac"];
 let wilayasvalue = [
@@ -81,6 +83,9 @@ let wilayasvalue = [
   { name: "El Meghaïer", code: "57" },
   { name: " El Ménia", code: "58" }
 ];
+let budgetllist = ["5 000€ - 7 500€", "5 000€ - 7 500€", "Plus de 15 000€"];
+let countrylist = ["X", "Y", "Z"];
+let villelist = ["X", "Y", "Z"];
 let bacseriData = [
   "Mathématiques",
   "Techniques Mathématiques",
@@ -89,7 +94,7 @@ let bacseriData = [
   "Lettre et Philosophie",
   "Langues Etrangères"
 ];
-let languageIs = ["Français", "Arabe", "Les deux"];
+let languageIs = ["Français", "Arabe"];
 let level2data = [
   "1",
   "2",
@@ -135,8 +140,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
     accept_condition: false,
     level1: "level1",
     score: "score",
-    budget: "",
-    whichCountry: "",
+    budget: "budget",
+    whichCountry: "whichCountry",
+    ville: "ville",
     stayAlgeria: false,
     lastDiploma: "",
     studyYear: ""
@@ -144,14 +150,16 @@ const UserForm = ({ setStep, setActiveStep }) => {
   // state for address options list
   const [values, setValues] = useState([]);
   const [confirmationOpen, SetconfirmationOpen] = useState(false);
-  const [formStep, setformStep] = useState(1);
+  const [formStep, setformStep] = useState(5);
 
   const [loading, setLoading] = useState(false);
   const [resendloading, setresendLoading] = useState(false);
   const [imgloading, setImgLoading] = useState(true);
 
-  const [otpbyemail, setOtpByemail] = useState(false);
   const [timeLeft, setTimeLeft] = useState(30);
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [text, setText] = useState(null);
 
   // Destructuring of UserForm State
   const {
@@ -171,6 +179,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
     level1,
     score,
     budget,
+    ville,
     whichCountry,
     stayAlgeria,
     lastDiploma,
@@ -256,7 +265,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
       return toast.error("Veuillez entrer votre date de naissance");
     }
     if (wilaya == "wilaya") {
-      return toast.error("Please Select wilya");
+      return toast.error("Veuillez sélectionner");
     }
     if (email == "") {
       return toast.error("Veuillez entrer votre e-mail");
@@ -267,19 +276,19 @@ const UserForm = ({ setStep, setActiveStep }) => {
       );
     }
     if (class_list == "class list") {
-      return toast.error("Please Select class list");
+      return toast.error("Veuillez sélectionner la liste des classes");
     }
     if (Bac_Serie == "Bac Serie" && class_list != "Postbac") {
-      return toast.error("Please Select Bac_Serie");
+      return toast.error("Veuillez sélectionner Bac_Serie");
     }
     if (school_city == "") {
-      return toast.error("please enter city of your school");
+      return toast.error("veuillez entrer la ville de votre école");
     }
     if (school_name == "") {
-      return toast.error("please enter chool_name");
+      return toast.error("veuillez saisir le nom de l'école");
     }
     if (language == "language") {
-      return toast.error("please select language");
+      return toast.error("veuillez saisir le nom de l'école");
     }
     if (!accept_condition) {
       return toast.error("Veuillez accepter les termes et conditions");
@@ -298,7 +307,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
     if (option == 1) {
       newFormData = { ...formData, level1: "pass" };
       if (score == "score") {
-        return toast.error("Please select score");
+        return toast.error("Veuillez sélectionner la note moyenne");
       }
     }
     if (option == 2) {
@@ -312,10 +321,10 @@ const UserForm = ({ setStep, setActiveStep }) => {
         stayAlgeria: false
       };
       if (whichCountry == "") {
-        return toast.error("Please add country ");
+        return toast.error("Veuillez ajouter un pays");
       }
       if (budget == "") {
-        return toast.error("Please add budget ");
+        return toast.error("Veuillez ajouter un budget");
       }
     }
     if (option == 6) {
@@ -326,7 +335,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
         stayAlgeria: true
       };
       if (budget == "") {
-        return toast.error("Please add budget ");
+        return toast.error("Veuillez ajouter un budget");
       }
     }
     console.log("newFormData", newFormData);
@@ -336,7 +345,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
     let res = await api("post", "/users/create", { ...newFormData });
     if (res.status === 200) {
       SetconfirmationOpen(true);
-      toast.success("OTP envoyé");
     }
     setLoading(false);
     timeInterval = setInterval(() => {
@@ -347,6 +355,11 @@ const UserForm = ({ setStep, setActiveStep }) => {
       setTimeLeft(30);
       setresendLoading(false);
     }, 30000);
+  };
+
+  const handleClickinfo = (event, text) => {
+    setAnchorEl(event.currentTarget);
+    setText(text);
   };
 
   return (
@@ -778,6 +791,16 @@ const UserForm = ({ setStep, setActiveStep }) => {
                               return <MenuItem value={item}>{item}</MenuItem>;
                             })}
                           </Select>
+                          <p
+                            style={{
+                              textAlign: "left",
+                              margin: "2px 0 0 10px",
+                              color: "white",
+                              fontSize: "13px"
+                            }}
+                          >
+                            Arrondir à l’unité inférieure
+                          </p>
                         </FormControl>
                       </Grid>
                     </Grid>
@@ -816,7 +839,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                                 <CircularProgress size={20} className="" />
                               </div>
                             ) : (
-                              "Pousuivre"
+                              "Poursuivre"
                             )}
                           </b>
                         </button>
@@ -848,7 +871,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         className="option"
                         onClick={() => setformStep(6)}
                       >
-                        me réorienter en Algérie
+                        Me réorienter en Algérie
                       </Grid>
                     </Grid>
                     <Grid
@@ -876,32 +899,112 @@ const UserForm = ({ setStep, setActiveStep }) => {
                 )}
                 {formStep == 5 && (
                   <>
+                    <Info
+                      anchorEl={anchorEl}
+                      setAnchorEl={setAnchorEl}
+                      text={text}
+                    />
                     <Grid
                       container
-                      spacing={1}
+                      spacing={2}
                       className=""
                       style={{ justifyContent: "center" }}
                     >
-                      <Grid item xs={12} sm={6} className="inputGrid emailGrid">
-                        <input
-                          type="whichCountry"
-                          name="whichCountry"
-                          value={whichCountry}
-                          onChange={onChange}
-                          placeholder="Quel pays"
-                          className="inputField"
-                        />
+                      <Grid item xs={12} sm={5} className="inputGrid emailGrid">
+                        <FormControl
+                          variant="outlined"
+                          className="selectformControl selectformControl2"
+                        >
+                          <Select
+                            labelId="demo-simple-select-outlined-label"
+                            id="demo-simple-select-outlined"
+                            name="whichCountry"
+                            value={whichCountry}
+                            defaultValue={whichCountry}
+                            onChange={onChange}
+                            className={classes.select}
+                            className="selectforeducation"
+                            // onFocus={handleBlurSchools}
+                          >
+                            <MenuItem
+                              value="whichCountry"
+                              disabled
+                              style={{ textAlign: "left !important" }}
+                            >
+                              <em>{"Quel pays"}</em>
+                            </MenuItem>
+                            {countrylist.map((item, i) => {
+                              return <MenuItem value={item}>{item}</MenuItem>;
+                            })}
+                          </Select>
+                        </FormControl>
+                      </Grid>
+
+                      <Grid item xs={12} sm={5} className="inputGrid">
+                        <FormControl
+                          variant="outlined"
+                          className="selectformControl selectformControl2"
+                        >
+                          <Select
+                            labelId="demo-simple-select-outlined-label"
+                            id="demo-simple-select-outlined"
+                            name="ville"
+                            value={ville}
+                            defaultValue={ville}
+                            onChange={onChange}
+                            className={classes.select}
+                            className="selectforeducation"
+                            // onFocus={handleBlurSchools}
+                          >
+                            <MenuItem
+                              value="ville"
+                              disabled
+                              style={{ textAlign: "left !important" }}
+                            >
+                              <em>Quelle(s) ville(s)</em>
+                            </MenuItem>
+                            {villelist.map((item, i) => {
+                              return <MenuItem value={item}>{item}</MenuItem>;
+                            })}
+                          </Select>
+                        </FormControl>
                       </Grid>
                       <Grid item xs={12} sm={6} className="inputGrid">
-                        <input
-                          type="text"
-                          name="budget"
-                          value={budget}
-                          onChange={onChange}
-                          placeholder="budget"
-                          className="inputField"
-                        />
+                        <FormControl
+                          variant="outlined"
+                          className="selectformControl selectformControl2"
+                        >
+                          <Select
+                            labelId="demo-simple-select-outlined-label"
+                            id="demo-simple-select-outlined"
+                            name="budget"
+                            value={budget}
+                            defaultValue={budget}
+                            onChange={onChange}
+                            className={classes.select}
+                            className="selectforeducation"
+                            // onFocus={handleBlurSchools}
+                          >
+                            <MenuItem
+                              value="budget"
+                              disabled
+                              style={{ textAlign: "left !important" }}
+                            >
+                              <em>{"Quel budget"}</em>
+                            </MenuItem>
+                            {budgetllist.map((item, i) => {
+                              return <MenuItem value={item}>{item}</MenuItem>;
+                            })}
+                          </Select>
+                        </FormControl>
                       </Grid>
+                      <div style={{ display: "flex", alignItems: "center" }}>
+                        {" "}
+                        <InfoIcon
+                          className="infoIcon"
+                          onClick={(e) => handleClickinfo(e, 5)}
+                        />
+                      </div>
                     </Grid>
                     <Grid container spacing={2} className="formbuttonsGrid">
                       <Grid xs={12} sm={4}>
@@ -938,7 +1041,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                                 <CircularProgress size={20} className="" />
                               </div>
                             ) : (
-                              "Pousuivre"
+                              "Poursuivre"
                             )}
                           </b>
                         </button>
@@ -969,12 +1072,12 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         xs={12}
                         sm={5}
                         className="Gridoptiontwo"
-                        onClick={() => {
+                        onClick={(e) => {
                           setFormData({
                             ...formData,
                             lastDiploma: "Baccalauréat"
                           });
-                          setformStep(7);
+                          handleSubmit3(e, "no");
                         }}
                       >
                         Baccalauréat
@@ -987,7 +1090,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         onClick={() => {
                           setFormData({
                             ...formData,
-                            lastDiploma: "Gridoptiontwo"
+                            lastDiploma: "Licence"
                           });
                           setformStep(7);
                         }}
@@ -1000,7 +1103,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         sm={5}
                         className="Gridoptiontwo"
                         onClick={() => {
-                          setFormData({ ...formData, lastDiploma: "Licence" });
+                          setFormData({ ...formData, lastDiploma: "Master" });
                           setformStep(7);
                         }}
                       >
@@ -1012,7 +1115,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         sm={5}
                         className="Gridoptiontwo"
                         onClick={() => {
-                          setFormData({ ...formData, lastDiploma: "Master" });
+                          setFormData({ ...formData, lastDiploma: "Doctorat" });
                           setformStep(7);
                         }}
                       >
@@ -1038,6 +1141,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                     </Grid>
                   </>
                 )}
+                {console.log("lastDiploma", lastDiploma)}
                 {formStep == 7 && (
                   <>
                     <div
@@ -1056,112 +1160,127 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       className=""
                       style={{ justifyContent: "center" }}
                     >
-                      <Grid
-                        item
-                        xs={12}
-                        sm={4}
-                        className="Gridoptiontwo"
-                        onClick={(e) => {
-                          setFormData({
-                            ...formData,
-                            studyYear: "1ère année d’études"
-                          });
-                          handleSubmit3(e, "no");
-                        }}
-                      >
-                        1ère année d’études
-                      </Grid>
-                      <Grid
-                        item
-                        xs={12}
-                        sm={4}
-                        className="Gridoptiontwo"
-                        onClick={(e) => {
-                          setFormData({
-                            ...formData,
-                            studyYear: "2ère année d’études"
-                          });
-                          handleSubmit3(e, "no");
-                        }}
-                      >
-                        2ème année d’études
-                      </Grid>
-                      <Grid
-                        item
-                        xs={12}
-                        sm={4}
-                        className="Gridoptiontwo"
-                        onClick={(e) => {
-                          setFormData({
-                            ...formData,
-                            studyYear: "3ère année d’études"
-                          });
-                          handleSubmit3(e, "no");
-                        }}
-                      >
-                        {" "}
-                        3ème année d’études
-                      </Grid>
-                      <Grid
-                        item
-                        xs={12}
-                        sm={4}
-                        className="Gridoptiontwo"
-                        onClick={(e) => {
-                          setFormData({
-                            ...formData,
-                            studyYear: "4ère année d’études"
-                          });
-                          handleSubmit3(e, "no");
-                        }}
-                      >
-                        4ème année d’études
-                      </Grid>
-                      <Grid
-                        item
-                        xs={12}
-                        sm={4}
-                        className="Gridoptiontwo"
-                        onClick={(e) => {
-                          setFormData({
-                            ...formData,
-                            studyYear: "5ère année d’études"
-                          });
-                          handleSubmit3(e, "no");
-                        }}
-                      >
-                        5ème année d’études
-                      </Grid>
-                      <Grid
-                        item
-                        xs={12}
-                        sm={4}
-                        className="Gridoptiontwo"
-                        onClick={(e) => {
-                          setFormData({
-                            ...formData,
-                            studyYear: "6ère année d’études"
-                          });
-                          handleSubmit3(e, "no");
-                        }}
-                      >
-                        6ème année d’études
-                      </Grid>
-                      <Grid
-                        item
-                        xs={12}
-                        sm={4}
-                        className="Gridoptiontwo"
-                        onClick={(e) => {
-                          setFormData({
-                            ...formData,
-                            studyYear: "7ère année d’études"
-                          });
-                          handleSubmit3(e, "no");
-                        }}
-                      >
-                        7ème année d’études
-                      </Grid>
+                      {lastDiploma == "Licence" && (
+                        <>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={4}
+                            className="Gridoptiontwo"
+                            onClick={(e) => {
+                              setFormData({
+                                ...formData,
+                                studyYear: "1ère année d’études"
+                              });
+                              handleSubmit3(e, "no");
+                            }}
+                          >
+                            1ère année d’études
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={4}
+                            className="Gridoptiontwo"
+                            onClick={(e) => {
+                              setFormData({
+                                ...formData,
+                                studyYear: "2ère année d’études"
+                              });
+                              handleSubmit3(e, "no");
+                            }}
+                          >
+                            2ème année d’études
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={4}
+                            className="Gridoptiontwo"
+                            onClick={(e) => {
+                              setFormData({
+                                ...formData,
+                                studyYear: "3ère année d’études"
+                              });
+                              handleSubmit3(e, "no");
+                            }}
+                          >
+                            {" "}
+                            3ème année d’études
+                          </Grid>
+                        </>
+                      )}
+
+                      {lastDiploma == "Master" && (
+                        <>
+                          {" "}
+                          <Grid
+                            item
+                            xs={12}
+                            sm={4}
+                            className="Gridoptiontwo"
+                            onClick={(e) => {
+                              setFormData({
+                                ...formData,
+                                studyYear: "4ère année d’études"
+                              });
+                              handleSubmit3(e, "no");
+                            }}
+                          >
+                            4ème année d’études
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={4}
+                            className="Gridoptiontwo"
+                            onClick={(e) => {
+                              setFormData({
+                                ...formData,
+                                studyYear: "5ère année d’études"
+                              });
+                              handleSubmit3(e, "no");
+                            }}
+                          >
+                            5ème année d’études
+                          </Grid>
+                        </>
+                      )}
+                      {lastDiploma == "Doctorat" && (
+                        <>
+                          {" "}
+                          <Grid
+                            item
+                            xs={12}
+                            sm={4}
+                            className="Gridoptiontwo"
+                            onClick={(e) => {
+                              setFormData({
+                                ...formData,
+                                studyYear: "6ère année d’études"
+                              });
+                              handleSubmit3(e, "no");
+                            }}
+                          >
+                            6ème année d’études
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={4}
+                            className="Gridoptiontwo"
+                            onClick={(e) => {
+                              setFormData({
+                                ...formData,
+                                studyYear: "7ère année d’études"
+                              });
+                              handleSubmit3(e, "no");
+                            }}
+                          >
+                            7ème année d’études
+                          </Grid>
+                        </>
+                      )}
                     </Grid>
 
                     <Grid container spacing={2} className="formbuttonsGrid">
@@ -1189,7 +1308,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
               SetconfirmationOpen={SetconfirmationOpen}
               setStep={setStep}
               setActiveStep={setActiveStep}
-              otpbyemail={otpbyemail}
               handleSubmit={handleSubmit3}
               loadingresend={resendloading}
               timeLeft={timeLeft}

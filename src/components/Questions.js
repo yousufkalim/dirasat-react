@@ -19,7 +19,7 @@ const Questions = ({ setStep, setActiveStep }) => {
   const [play] = useSound(sound);
   // init context
   const updateStore = UpdateStore();
-  const { questions, answers, history, disc_ans_id ,user} = Store();
+  const { questions, answers, history, disc_ans_id, user } = Store();
   const scrollToTop = () => {
     window.scrollTo({
       top: 60,
@@ -33,7 +33,6 @@ const Questions = ({ setStep, setActiveStep }) => {
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [text, setText] = useState(null);
-
 
   // Here we will preload all the images
   useEffect(() => {
@@ -98,8 +97,6 @@ const Questions = ({ setStep, setActiveStep }) => {
   // if show the questions by filteron the base of nextquestionId
   const getQuestion = () => {
     if (nextQuestionId == null) {
-      
-   
       setStep(3);
       // setActiveStep((prevActiveStep) => prevActiveStep + 1)
       setActiveStep(3);
@@ -266,6 +263,13 @@ const Questions = ({ setStep, setActiveStep }) => {
                     onClick={(e) => handleClickinfo(e, 3)}
                   />
                 )}
+                {getQuestion()?.question ==
+                  "À quel pays penses-tu en particulier?" && (
+                  <InfoIcon
+                    className="infoIcon"
+                    onClick={(e) => handleClickinfo(e, 4)}
+                  />
+                )}
               </h1>
             </div>
             <Grid container spacing={3} className="answerGrid">
@@ -296,7 +300,6 @@ const Questions = ({ setStep, setActiveStep }) => {
             )}
           </div>
         </Grid>
-        
       </Grid>
     </>
   );

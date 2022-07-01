@@ -204,8 +204,8 @@ const Result = () => {
                     {!loading && (
                       <p className="resultText">
                         <span style={{ color: "#9198A5" }}>
-                          Je te propose une liste de voeux orientation wishes
-                          qui correspondrait à ton profil.
+                          Je te propose une liste de vœux d’orientation qui
+                          correspondrait à ton profil.
                         </span>
                       </p>
                     )}
