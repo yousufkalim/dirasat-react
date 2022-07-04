@@ -1,30 +1,30 @@
-import React from "react";
-import { styled } from "@material-ui/core/styles";
-import Dialog from "@material-ui/core/Dialog";
-import DialogContent from "@material-ui/core/DialogContent";
-import IconButton from "@material-ui/core/IconButton";
-import Grid from "@material-ui/core/Grid";
-import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
+import React from 'react';
+import { styled } from '@material-ui/core/styles';
+import Dialog from '@material-ui/core/Dialog';
+import DialogContent from '@material-ui/core/DialogContent';
+import IconButton from '@material-ui/core/IconButton';
+import Grid from '@material-ui/core/Grid';
+import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 
 import {
   FacebookShareButton,
   TwitterShareButton,
-  EmailShareButton,
-} from "react-share";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import TwitterIcon from "@mui/icons-material/Twitter";
+  EmailShareButton
+} from 'react-share';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import TwitterIcon from '@mui/icons-material/Twitter';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
-  "& .MuDialogContent-root": {
-    padding: theme.spacing(2),
+  '& .MuDialogContent-root': {
+    padding: theme.spacing(2)
   },
-  "& .MuDialogActions-root": {
-    padding: theme.spacing(1),
-  },
+  '& .MuDialogActions-root': {
+    padding: theme.spacing(1)
+  }
 }));
 export default function InviteBox({ open, setOpen }) {
-  const url = "www.orientator.com";
+  const url = 'www.orientator.com';
   const handleClose = () => {
     setOpen(false);
   };
@@ -33,7 +33,7 @@ export default function InviteBox({ open, setOpen }) {
       <BootstrapDialog
         onClose={handleClose}
         open={open}
-        style={{ backdropFilter: "blur(20px)" }}
+        style={{ backdropFilter: 'blur(20px)' }}
       >
         <IconButton
           className="SharecloseButton"

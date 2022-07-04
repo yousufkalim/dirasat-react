@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from "react";
-import Grid from "@material-ui/core/Grid";
-import UserForm from "../components/UserForm";
-import Questions from "../components/Questions";
-import Result from "../components/Result";
-import Landing from "../components/Landing";
-import Header from "../components/Header";
-import Stepper from "../components/Stepper";
+import React, { useState, useEffect } from 'react';
+import Grid from '@material-ui/core/Grid';
+import UserForm from '../components/UserForm';
+import Questions from '../components/Questions';
+import Result from '../components/Result';
+import Landing from '../components/Landing';
+import Header from '../components/Header';
+import Stepper from '../components/Stepper';
 
 const Home = () => {
   const [activeStep, setActiveStep] = useState(1);
   const [step, setStep] = useState(0);
-  const [statetextforscroll, setStatetextforscroll] = useState("");
+  const [statetextforscroll, setStatetextforscroll] = useState('');
 
   return (
-    <div className={step == 2 ? "allComponent" : ""}>
+    <div className={step == 2 ? 'allComponent' : ''}>
       <Header
         step={step}
         setStep={setStep}

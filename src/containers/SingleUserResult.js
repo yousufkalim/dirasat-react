@@ -1,25 +1,25 @@
-import React, { useState, useEffect } from "react";
-import SingleUserTable from "../components/dashboard/SingleUserTable";
-import api from "../api";
-import { useParams } from "react-router-dom";
-import { Store, UpdateStore } from "../StoreContext";
+import React, { useState, useEffect } from 'react';
+import SingleUserTable from '../components/dashboard/SingleUserTable';
+import api from '../api';
+import { useParams } from 'react-router-dom';
+import { Store, UpdateStore } from '../StoreContext';
 
 // Single User Results Table headings
 const Heading = [
-  { id: "user", label: "Email", minWidth: 170 },
+  { id: 'user', label: 'Email', minWidth: 170 },
 
   {
-    id: "domain",
-    label: "Domain ",
+    id: 'domain',
+    label: 'Domain ',
     minWidth: 170,
-    align: "right",
+    align: 'right'
   },
   {
-    id: "example_of_job",
-    label: "Example of Job",
+    id: 'example_of_job',
+    label: 'Example of Job',
     minWidth: 170,
-    align: "right",
-  },
+    align: 'right'
+  }
   // {
   //   id: "last_answer",
   //   label: "Last Answer",
@@ -41,7 +41,7 @@ const SingleUserResult = ({}) => {
 
   let getUserResults = async () => {
     setLoading(true);
-    let res = await api("get", `/admin/results/user-results/${id}`);
+    let res = await api('get', `/admin/results/user-results/${id}`);
     if (res) {
       updateStore({ singleUserResults: res?.data?.result });
       setLoading(false);
@@ -52,13 +52,13 @@ const SingleUserResult = ({}) => {
     <>
       <div
         style={{
-          marginTop: "80px",
-          marginLeft: "254px",
-          width: "85%",
-          height: "100vh",
+          marginTop: '80px',
+          marginLeft: '254px',
+          width: '85%',
+          height: '100vh',
           background:
-            "radial-gradient(97.47% 66.83% at 50% 50%,#35384e 0%,#000000 100%)",
-          textAlign: "center",
+            'radial-gradient(97.47% 66.83% at 50% 50%,#35384e 0%,#000000 100%)',
+          textAlign: 'center'
         }}
       >
         {!loading ? (
@@ -68,14 +68,14 @@ const SingleUserResult = ({}) => {
               singleUserResults={singleUserResults}
             />
           ) : (
-            <div style={{ padding: "5px", color: "white" }}>
-              {" "}
+            <div style={{ padding: '5px', color: 'white' }}>
+              {' '}
               <h1>Aucun résultat utilisateur disponible</h1>
             </div>
           )
         ) : (
-          <div style={{ padding: "5px", color: "white" }}>
-            {" "}
+          <div style={{ padding: '5px', color: 'white' }}>
+            {' '}
             <h1>Chargement...</h1>
           </div>
         )}

@@ -1,19 +1,19 @@
 //init
-import React from "react";
-import "../css/card.css";
-import Grid from "@material-ui/core/Grid";
-import selectivity from "../assets/icons/selectivity.png";
-import cost from "../assets/icons/cost.png";
-import language from "../assets/icons/language.png";
-import duration from "../assets/icons/duration.png";
-import proximate from "../assets/icons/proximate.png";
+import React from 'react';
+import '../css/card.css';
+import Grid from '@material-ui/core/Grid';
+import selectivity from '../assets/icons/selectivity.png';
+import cost from '../assets/icons/cost.png';
+import language from '../assets/icons/language.png';
+import duration from '../assets/icons/duration.png';
+import proximate from '../assets/icons/proximate.png';
 
-import StarIcon from "@material-ui/icons/Star";
-import StarBorderIcon from "@material-ui/icons/StarBorder";
+import StarIcon from '@material-ui/icons/Star';
+import StarBorderIcon from '@material-ui/icons/StarBorder';
 
 //Component
 function DetailofCourses({ courses, open, setOpen, user }) {
-  console.log("courses", courses);
+  console.log('courses', courses);
   return (
     <>
       {courses?.length >= 1 ? (
@@ -21,9 +21,9 @@ function DetailofCourses({ courses, open, setOpen, user }) {
           <Grid container spacing={2} className="courseDetail">
             <Grid item xs={12} sm={5}>
               <p>
-                {course?.dcourseId?.Establishment} -{" "}
+                {course?.dcourseId?.Establishment} -{' '}
                 <span>
-                  {course?.dcourseId?.City + " - " + course?.dcourseId?.wilaya}{" "}
+                  {course?.dcourseId?.City + ' - ' + course?.dcourseId?.wilaya}{' '}
                 </span>
                 {/* {user?.institute} */}
               </p>
@@ -41,19 +41,19 @@ function DetailofCourses({ courses, open, setOpen, user }) {
                         if (course?.dcourseId?.cost[0] >= item) {
                           return (
                             <StarIcon
-                              style={{ width: "12px", height: "20px" }}
+                              style={{ width: '12px', height: '20px' }}
                             />
                           );
                         } else
                           return (
                             <StarBorderIcon
-                              style={{ width: "12px", height: "20px" }}
+                              style={{ width: '12px', height: '20px' }}
                             />
                           );
                       })}
                     </>
                   ) : (
-                    "N/A"
+                    'N/A'
                   )}
                 </div>
               </div>
@@ -61,26 +61,26 @@ function DetailofCourses({ courses, open, setOpen, user }) {
                 <img src={language} alt="langue" />
                 <p className="textonmobile">Langue</p>
                 <div>
-                  {" "}
+                  {' '}
                   {course?.dcourseId?.languagestar ? (
                     <>
                       {[1, 2, 3, 4, 5].map((item) => {
                         if (course?.dcourseId?.languagestar[0] >= item) {
                           return (
                             <StarIcon
-                              style={{ width: "12px", height: "20px" }}
+                              style={{ width: '12px', height: '20px' }}
                             />
                           );
                         } else
                           return (
                             <StarBorderIcon
-                              style={{ width: "12px", height: "20px" }}
+                              style={{ width: '12px', height: '20px' }}
                             />
                           );
                       })}
                     </>
                   ) : (
-                    "N/A"
+                    'N/A'
                   )}
                 </div>
               </div>
@@ -94,19 +94,19 @@ function DetailofCourses({ courses, open, setOpen, user }) {
                         if (course?.dcourseId?.duration[0] >= item) {
                           return (
                             <StarIcon
-                              style={{ width: "12px", height: "20px" }}
+                              style={{ width: '12px', height: '20px' }}
                             />
                           );
                         } else
                           return (
                             <StarBorderIcon
-                              style={{ width: "12px", height: "20px" }}
+                              style={{ width: '12px', height: '20px' }}
                             />
                           );
                       })}
                     </>
                   ) : (
-                    "N/A"
+                    'N/A'
                   )}
                 </div>
               </div>

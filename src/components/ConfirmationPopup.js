@@ -1,21 +1,21 @@
-import React, { useState } from "react";
-import { styled } from "@material-ui/core/styles";
-import Dialog from "@material-ui/core/Dialog";
-import { toast } from "react-toastify";
-import DialogContent from "@material-ui/core/DialogContent";
-import IconButton from "@material-ui/core/IconButton";
-import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
-import Grid from "@material-ui/core/Grid";
-import EmailConfirmationpopup from "./EmailConfirmationpopup";
+import React, { useState } from 'react';
+import { styled } from '@material-ui/core/styles';
+import Dialog from '@material-ui/core/Dialog';
+import { toast } from 'react-toastify';
+import DialogContent from '@material-ui/core/DialogContent';
+import IconButton from '@material-ui/core/IconButton';
+import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
+import Grid from '@material-ui/core/Grid';
+import EmailConfirmationpopup from './EmailConfirmationpopup';
 
-import { UpdateStore } from "../StoreContext";
-import api from "../api";
+import { UpdateStore } from '../StoreContext';
+import api from '../api';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
-  "& .MuDialogContent-root": {
+  '& .MuDialogContent-root': {
     padding: theme.spacing(2)
   },
-  "& .MuDialogActions-root": {
+  '& .MuDialogActions-root': {
     padding: theme.spacing(1)
   }
 }));
@@ -36,7 +36,7 @@ export default function ConfirmationPop({
   const [loading, setLoading] = useState(false);
   const [openEmailpopup, setEmailPopup] = useState(false);
   const [formData, setFormData] = useState({
-    otp: ""
+    otp: ''
   });
   // Destructuring of UserForm State
   const { otp } = formData;
@@ -51,18 +51,18 @@ export default function ConfirmationPop({
   const handleSubmitverify = async () => {
     setLoading(true);
 
-    let res = await api("post", "/users/verify", {
+    let res = await api('post', '/users/verify', {
       otp
     });
     if (res.status === 200) {
       SetconfirmationOpen(false);
       setTimeLeft(30);
-      setFormData({ otp: "" });
+      setFormData({ otp: '' });
       setEmailPopup(true);
       setLoading(false);
     } else {
       setLoading(false);
-      setFormData({ otp: "" });
+      setFormData({ otp: '' });
       toast.error("Votre OTP n'est pas correct");
     }
   };
@@ -70,7 +70,7 @@ export default function ConfirmationPop({
     SetconfirmationOpen(false);
     clearInterval(timeInterval);
     setTimeLeft(30);
-    setFormData({ otp: "" });
+    setFormData({ otp: '' });
     setresendLoading(false);
   };
   return (
@@ -79,7 +79,7 @@ export default function ConfirmationPop({
         <BootstrapDialog
           onClose={handleClose}
           open={confirmationOpen}
-          style={{ backdropFilter: "blur(20px)" }}
+          style={{ backdropFilter: 'blur(20px)' }}
         >
           <IconButton
             className="InvitecloseButton"

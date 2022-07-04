@@ -1,30 +1,30 @@
-import React, { useState, useEffect } from "react";
-import { Store, UpdateStore } from "../StoreContext";
-import api from "../api";
-import Table from "../components/dashboard/Table";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import { Store, UpdateStore } from '../StoreContext';
+import api from '../api';
+import Table from '../components/dashboard/Table';
+import axios from 'axios';
 
 const Heading = [
-  { id: "email", label: "Email", minWidth: 170 },
+  { id: 'email', label: 'Email', minWidth: 170 },
 
   {
-    id: "first_name",
-    label: "First Name",
+    id: 'first_name',
+    label: 'First Name',
     minWidth: 170,
-    align: "right",
+    align: 'right'
   },
   {
-    id: "last_name",
-    label: "Last Name",
+    id: 'last_name',
+    label: 'Last Name',
     minWidth: 170,
-    align: "right",
+    align: 'right'
   },
   {
-    id: "phone",
-    label: "Phone",
+    id: 'phone',
+    label: 'Phone',
     minWidth: 170,
-    align: "right",
-  },
+    align: 'right'
+  }
 ];
 
 const Users = () => {
@@ -44,7 +44,7 @@ const Users = () => {
   let getAllUsers = async () => {
     setLoading(true);
     let res = await api(
-      "get",
+      'get',
       `admin/users/all-users?pageNumber=${page}&pageSize=${10}`
     );
     if (res) {

@@ -1,18 +1,18 @@
 // Init
-import React, { useEffect } from "react";
-import Grid from "@material-ui/core/Grid";
-import Avatar2 from "../../assets/icons/logo.png";
-import FbIcon from "../../assets/icons/fb2.svg";
-import TwitterIcon from "../../assets/icons/twittericon.svg";
-import PintrestIcon from "../../assets/icons/pin2.svg";
-import Dot from "../../assets/icons/dot2.svg";
-import LinkedinIcon from "../../assets/icons/linkedin2.svg";
-import YouMayLike from "./YouMayLike";
-import { useParams } from "react-router-dom";
-import blogImg from "../../assets/3.png";
-import { url } from "../../config";
-import { Helmet } from "react-helmet";
-import moment from "moment";
+import React, { useEffect } from 'react';
+import Grid from '@material-ui/core/Grid';
+import Avatar2 from '../../assets/icons/logo.png';
+import FbIcon from '../../assets/icons/fb2.svg';
+import TwitterIcon from '../../assets/icons/twittericon.svg';
+import PintrestIcon from '../../assets/icons/pin2.svg';
+import Dot from '../../assets/icons/dot2.svg';
+import LinkedinIcon from '../../assets/icons/linkedin2.svg';
+import YouMayLike from './YouMayLike';
+import { useParams } from 'react-router-dom';
+import blogImg from '../../assets/3.png';
+import { url } from '../../config';
+import { Helmet } from 'react-helmet';
+import moment from 'moment';
 
 export default function ArticleBody({ singlBlog, loading, blogs }) {
   const { id } = useParams();
@@ -42,16 +42,16 @@ export default function ArticleBody({ singlBlog, loading, blogs }) {
             allowfullscreen
           />
           `
-            : ""
+            : ''
         }
       </div>
-      `,
+      `
     };
   }
   const scrollToTop = () => {
     window.scrollTo({
       top: 1,
-      behavior: "smooth",
+      behavior: 'smooth'
     });
   };
   useEffect(() => {
@@ -81,7 +81,7 @@ export default function ArticleBody({ singlBlog, loading, blogs }) {
             className="articleimg"
             alt="blog"
           />
-          <div style={{ width: "85%" }}>
+          <div style={{ width: '85%' }}>
             <h1 className="h1article">{singlBlog?.blog_title}</h1>
           </div>
           <Grid container spacing={2}>
@@ -96,7 +96,7 @@ export default function ArticleBody({ singlBlog, loading, blogs }) {
                   </p>
                   {/* <p className="articlep2">May 15・1 min read</p> */}
                   <p className="articlep2">
-                    {moment(singlBlog?.createdAt).format("DD/MM/YYYY")}
+                    {moment(singlBlog?.createdAt).format('DD/MM/YYYY')}
                   </p>
                 </div>
               </div>

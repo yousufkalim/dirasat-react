@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import InstagramIcon from "@mui/icons-material/Instagram";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 const Footer = () => {
   return (
@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="FooterDiv">
         <div className="cguBar">
           <div>
-            <h3 className="footeraccueil" style={{ textAlign: "" }}>
+            <h3 className="footeraccueil" style={{ textAlign: '' }}>
               {/* <AnchorLink
               href="#top"
               style={{
@@ -30,20 +30,20 @@ const Footer = () => {
             </div>
           </div>
           <div className="developbydiv">
-            <p className="developby" style={{ textAlign: "" }}>
+            <p className="developby" style={{ textAlign: '' }}>
               {/* Développé par */}
               <a
                 href="https:www.falconconsulting.fr"
                 target="_blank"
                 style={{
-                  textDecoration: "none",
-                  color: " gray",
-                  margin: "5px"
+                  textDecoration: 'none',
+                  color: ' gray',
+                  margin: '5px'
                 }}
               >
-                {" "}
+                {' '}
                 {/* Falcon Consulting */}
-              </a>{" "}
+              </a>{' '}
               2021. Tous droits réservés
             </p>
             <div>
@@ -53,9 +53,9 @@ const Footer = () => {
               >
                 <TwitterIcon
                   style={{
-                    padding: "0 9px",
-                    cursor: "pointer",
-                    color: "white"
+                    padding: '0 9px',
+                    cursor: 'pointer',
+                    color: 'white'
                   }}
                 />
               </a>
@@ -65,9 +65,9 @@ const Footer = () => {
               >
                 <LinkedInIcon
                   style={{
-                    padding: "0 9px",
-                    cursor: "pointer",
-                    color: "white"
+                    padding: '0 9px',
+                    cursor: 'pointer',
+                    color: 'white'
                   }}
                 />
               </a>
@@ -78,9 +78,9 @@ const Footer = () => {
               >
                 <FacebookIcon
                   style={{
-                    padding: "0 9px",
-                    cursor: "pointer",
-                    color: "white"
+                    padding: '0 9px',
+                    cursor: 'pointer',
+                    color: 'white'
                   }}
                 />
               </a>
@@ -90,9 +90,9 @@ const Footer = () => {
               >
                 <InstagramIcon
                   style={{
-                    padding: "0 9px",
-                    cursor: "pointer",
-                    color: "white"
+                    padding: '0 9px',
+                    cursor: 'pointer',
+                    color: 'white'
                   }}
                 />
               </a>
@@ -100,18 +100,18 @@ const Footer = () => {
           </div>
           {/* <div className="cguDiv"> */}
           <div>
-            <div className="footercgu" style={{ textAlign: "" }}>
+            <div className="footercgu" style={{ textAlign: '' }}>
               <Link
                 to="/CGU"
                 className="cgufont"
-                style={{ color: "white", textDecoration: "none" }}
+                style={{ color: 'white', textDecoration: 'none' }}
               >
                 CGU
               </Link>
-              <p style={{ margin: "7px" }} />
+              <p style={{ margin: '7px' }} />
               <Link
                 to="/MentionsLegal"
-                style={{ color: "white", textDecoration: "none" }}
+                style={{ color: 'white', textDecoration: 'none' }}
               >
                 Mentions légales
               </Link>

@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { TextField, Button } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import api from "../api";
+import React, { useState, useEffect } from 'react';
+import { TextField, Button } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import api from '../api';
 
 const Login = () => {
   useEffect(() => {
     if (localStorage.token) {
-      window.location = "/users";
+      window.location = '/users';
     }
   }, []);
   // initialize States
   const [formData, setFormData] = useState({
-    email: "",
-    password: "",
+    email: '',
+    password: ''
   });
   const [loading, setLoading] = useState(false);
   // Destructuring of UserForm State
@@ -21,17 +21,17 @@ const Login = () => {
   // Styles
   const useStyles = makeStyles((theme) => ({
     root: {
-      "& > *": {
+      '& > *': {
         margin: theme.spacing(1),
-        width: "35ch",
-      },
+        width: '35ch'
+      }
     },
     main: {
-      width: "50%",
-      margin: "auto",
-      marginTop: "5%",
-      textAlign: "center",
-    },
+      width: '50%',
+      margin: 'auto',
+      marginTop: '5%',
+      textAlign: 'center'
+    }
   }));
   const classes = useStyles();
   //
@@ -39,11 +39,11 @@ const Login = () => {
   // Login Function api call
   let getLogin = async (data) => {
     setLoading(true);
-    let res = await api("post", `admin/auth/login`, data);
+    let res = await api('post', `admin/auth/login`, data);
 
     if (res?.status === 200) {
-      localStorage.setItem("token", res?.data?.token);
-      window.location = "/users";
+      localStorage.setItem('token', res?.data?.token);
+      window.location = '/users';
     }
   };
 
@@ -51,7 +51,7 @@ const Login = () => {
   const onChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
   };
 
@@ -61,7 +61,7 @@ const Login = () => {
     getLogin(formData);
   };
   return (
-    <div style={{ height: "100vh" }}>
+    <div style={{ height: '100vh' }}>
       <div className="loginMain">
         <h1> Login Form</h1>
         <form
@@ -91,7 +91,7 @@ const Login = () => {
 
           <br />
           <Button size="" className="loginButton" type="submit">
-            {loading ? "Loading..." : "Login"}
+            {loading ? 'Loading...' : 'Login'}
           </Button>
         </form>
       </div>

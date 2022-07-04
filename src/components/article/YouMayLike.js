@@ -1,9 +1,9 @@
 // Init
-import React from "react";
-import Grid from "@material-ui/core/Grid";
-import { Link } from "react-router-dom";
-import blogImg from "../../assets/3.png";
-import { url } from "../../config";
+import React from 'react';
+import Grid from '@material-ui/core/Grid';
+import { Link } from 'react-router-dom';
+import blogImg from '../../assets/3.png';
+import { url } from '../../config';
 
 export default function YouMayLike({ blogs, loading }) {
   let newblog = [];
@@ -28,7 +28,7 @@ export default function YouMayLike({ blogs, loading }) {
                   <div className="blogdiv1">
                     <Link
                       to={`${item._id}`}
-                      style={{ textDecoration: "none", color: "white" }}
+                      style={{ textDecoration: 'none', color: 'white' }}
                     >
                       <img
                         // src={blogImg}
@@ -40,25 +40,25 @@ export default function YouMayLike({ blogs, loading }) {
                     <div className="blogdiv1text">
                       <h3 className="blogdiv1heading">
                         {item.blog_title.length > 90
-                          ? item.blog_title.substring(0, 89) + "..."
+                          ? item.blog_title.substring(0, 89) + '...'
                           : item.blog_title}
                       </h3>
                       <p className="bloddiv1detail">
                         {item?.blog_desc.length > 186
-                          ? item?.blog_desc.substring(0, 186) + ".."
+                          ? item?.blog_desc.substring(0, 186) + '..'
                           : item?.blog_desc}
                       </p>
                       <p>
                         <Link
                           to={`${item._id}`}
-                          style={{ textDecoration: "none", color: "white" }}
+                          style={{ textDecoration: 'none', color: 'white' }}
                         >
-                          {" "}
+                          {' '}
                           <span
                             className="seemore"
-                            style={{ color: "#E7411B" }}
+                            style={{ color: '#E7411B' }}
                           >
-                            {" "}
+                            {' '}
                             Lire l’article
                           </span>
                         </Link>

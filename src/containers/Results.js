@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Store, UpdateStore } from "../StoreContext";
-import Table from "../components/dashboard/Table";
-import api from "../api";
+import React, { useState, useEffect } from 'react';
+import { Store, UpdateStore } from '../StoreContext';
+import Table from '../components/dashboard/Table';
+import api from '../api';
 
 const Results = () => {
   const updateStore = UpdateStore();
@@ -13,20 +13,20 @@ const Results = () => {
 
   //  All Results of All Users Table Headings
   const Heading = [
-    { id: "user", label: "User", minWidth: 170 },
+    { id: 'user', label: 'User', minWidth: 170 },
 
     {
-      id: "domain",
-      label: "Domain ",
+      id: 'domain',
+      label: 'Domain ',
       minWidth: 170,
-      align: "right",
+      align: 'right'
     },
     {
-      id: "example_of_job",
-      label: "Example of Job",
+      id: 'example_of_job',
+      label: 'Example of Job',
       minWidth: 170,
-      align: "right",
-    },
+      align: 'right'
+    }
     // {
     //   id: "last_answer",
     //   label: "Last Answer",
@@ -43,7 +43,7 @@ const Results = () => {
   let getAllResults = async () => {
     setLoading(true);
     let res = await api(
-      "get",
+      'get',
       `admin/results/get-results?pageNumber=${page}&pageSize=${rowsPerPage}`
     );
 

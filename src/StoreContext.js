@@ -1,5 +1,5 @@
 // Init
-import React, { useContext, useState, createContext } from "react";
+import React, { useContext, useState, createContext } from 'react';
 
 // Initializing Create Context Hook
 const storeContext = createContext();
@@ -41,14 +41,14 @@ export function StoreProvider({ children }) {
     mainresultPage: null,
     screenshoots: [],
     blogs: [],
-    singleBlog: {},
+    singleBlog: {}
   });
 
   const updateStore = (data) => {
     setStore((prev) => {
       return {
         ...prev,
-        ...data,
+        ...data
       };
     });
   };
@@ -57,7 +57,7 @@ export function StoreProvider({ children }) {
     setStore((prev) => {
       return {
         ...prev,
-        allTypes: [...prev.allTypes, data],
+        allTypes: [...prev.allTypes, data]
       };
     });
   };

@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import AnchorLink from "react-anchor-link-smooth-scroll";
-import logo from "../assets/img/dlogot.png";
-import Navicon from "../assets/icons/navicon.png";
-import Closeicon from "../assets/icons/closeicon.png";
-import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import logo from '../assets/img/dlogot.png';
+import Navicon from '../assets/icons/navicon.png';
+import Closeicon from '../assets/icons/closeicon.png';
+import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function Header({
   step,
@@ -23,27 +23,27 @@ export default function Header({
   const scrollToTop = () => {
     window.scrollTo({
       top: 115,
-      behavior: "smooth"
+      behavior: 'smooth'
     });
   };
   const scrollToTopforComment = () => {
     window.scrollTo({
       top: 700,
-      behavior: "smooth"
+      behavior: 'smooth'
     });
   };
   const deviceType = () => {
     const ua = navigator.userAgent;
     if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
-      return "";
+      return '';
     } else if (
       /Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
         ua
       )
     ) {
-      return "sticky";
+      return 'sticky';
     }
-    return "";
+    return '';
   };
   return (
     <AppBar color="inherit" position={deviceType()} className="headerRoot">
@@ -70,9 +70,9 @@ export default function Header({
               width="90%"
               className="dirasatlogoimg dirasatimg"
               onClick={() => {
-                history.push("/");
-                if (history.location.pathname === "/") {
-                  window.location.reload("/");
+                history.push('/');
+                if (history.location.pathname === '/') {
+                  window.location.reload('/');
                 }
               }}
               alt="logo"
@@ -83,43 +83,43 @@ export default function Header({
         {(flag || window.innerWidth > 625) && (
           <>
             <AnchorLink
-              href={`${!flag && "#top"}`}
+              href={`${!flag && '#top'}`}
               style={{
-                textDecoration: "none",
-                color: "white",
-                padding: "15px 25px 0 0"
+                textDecoration: 'none',
+                color: 'white',
+                padding: '15px 25px 0 0'
               }}
             >
               <Typography
-                className={flag ? "title a" : "hidetitle a"}
+                className={flag ? 'title a' : 'hidetitle a'}
                 onClick={() => {
                   flag && scrollToTop();
                   step !== 0 && setStep(0);
                   step !== 0 && setActiveStep(1);
-                  setStatetextforscroll("Accueil");
-                  history.push("/");
+                  setStatetextforscroll('Accueil');
+                  history.push('/');
                 }}
               >
                 Accueil
               </Typography>
             </AnchorLink>
             <AnchorLink
-              href={`${!flag ? "#comment" : ""}`}
+              href={`${!flag ? '#comment' : ''}`}
               style={{
-                textDecoration: "none",
-                color: "white",
-                padding: "15px 25px 0 0"
+                textDecoration: 'none',
+                color: 'white',
+                padding: '15px 25px 0 0'
               }}
             >
               <Typography
-                className={flag ? "title b" : "hidetitle b"}
+                className={flag ? 'title b' : 'hidetitle b'}
                 onClick={() => {
                   flag && scrollToTopforComment();
                   step !== 0 && setStep(0);
                   step !== 0 && setActiveStep(1);
-                  setStatetextforscroll("Comment");
+                  setStatetextforscroll('Comment');
 
-                  history.push("/", "Comment");
+                  history.push('/', 'Comment');
                 }}
               >
                 Comment ça marche?
@@ -127,12 +127,12 @@ export default function Header({
             </AnchorLink>
             <div
               className="BlogMobileView"
-              style={{ width: "60%", textAlign: "right", marginTop: "10px" }}
+              style={{ width: '60%', textAlign: 'right', marginTop: '10px' }}
             >
               <Link
                 to="/blog"
-                style={{ color: "white", textDecoration: "none" }}
-                className={flag ? "title c" : "hidetitle c"}
+                style={{ color: 'white', textDecoration: 'none' }}
+                className={flag ? 'title c' : 'hidetitle c'}
               >
                 Blog
               </Link>

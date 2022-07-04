@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
-import { Route, Switch } from "react-router-dom";
-import Home from "../containers/Home.js";
-import Login from "../containers/Login";
-import CGU from "../containers/CGU";
-import Confidential from "../containers/Confidential";
-import MentionsLegal from "../containers/MentionsLegal";
-import Blog from "../containers/Blog";
-import Article from "../containers/Article";
-import Admin from "./Admin";
+import React, { useEffect } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import Home from '../containers/Home.js';
+import Login from '../containers/Login';
+import CGU from '../containers/CGU';
+import Confidential from '../containers/Confidential';
+import MentionsLegal from '../containers/MentionsLegal';
+import Blog from '../containers/Blog';
+import Article from '../containers/Article';
+import Admin from './Admin';
 
 const index = () => {
   return (

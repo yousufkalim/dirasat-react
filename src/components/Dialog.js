@@ -1,22 +1,22 @@
-import React, { useState } from "react";
-import { styled } from "@material-ui/core/styles";
-import Dialog from "@material-ui/core/Dialog";
-import { toast } from "react-toastify";
-import DialogContent from "@material-ui/core/DialogContent";
-import IconButton from "@material-ui/core/IconButton";
-import Grid from "@material-ui/core/Grid";
-import { Checkbox } from "@material-ui/core";
-import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
-import { Store } from "../StoreContext";
-import api from "../api";
+import React, { useState } from 'react';
+import { styled } from '@material-ui/core/styles';
+import Dialog from '@material-ui/core/Dialog';
+import { toast } from 'react-toastify';
+import DialogContent from '@material-ui/core/DialogContent';
+import IconButton from '@material-ui/core/IconButton';
+import Grid from '@material-ui/core/Grid';
+import { Checkbox } from '@material-ui/core';
+import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
+import { Store } from '../StoreContext';
+import api from '../api';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
-  "& .MuDialogContent-root": {
-    padding: theme.spacing(2),
+  '& .MuDialogContent-root': {
+    padding: theme.spacing(2)
   },
-  "& .MuDialogActions-root": {
-    padding: theme.spacing(1),
-  },
+  '& .MuDialogActions-root': {
+    padding: theme.spacing(1)
+  }
 }));
 export default function DialogBox({ open, setOpen }) {
   const { user } = Store();
@@ -24,33 +24,33 @@ export default function DialogBox({ open, setOpen }) {
     phone: user?.phone,
     email: user?.email,
     advice: true,
-    contact: true,
+    contact: true
   });
   // Destructuring of UserForm State
   const { phone, email, advice, contact } = formData;
   // onChange Function for Input Field
   const onChange = (e) => {
-    if (e.target.name === "advice" || e.target.name === "contact") {
+    if (e.target.name === 'advice' || e.target.name === 'contact') {
       setFormData({ ...formData, [e.target.name]: e.target.checked });
     } else {
       setFormData({
         ...formData,
-        [e.target.name]: e.target.value,
+        [e.target.name]: e.target.value
       });
     }
   };
   const handleSubmit = async () => {
     if (phone.length !== 10 || phone[0] !== 0) {
       return toast.error(
-        "Le numéro de téléphone doit être composé de 10 chiffres et commencer par 0"
+        'Le numéro de téléphone doit être composé de 10 chiffres et commencer par 0'
       );
     }
-    let res = await api("post", "/users/update", {
+    let res = await api('post', '/users/update', {
       ...formData,
-      id: user._id,
+      id: user._id
     });
     if (res) {
-      toast.success("Merci, vous serez contacté prochainement");
+      toast.success('Merci, vous serez contacté prochainement');
 
       setOpen(false);
     }
@@ -63,7 +63,7 @@ export default function DialogBox({ open, setOpen }) {
       <BootstrapDialog
         onClose={handleClose}
         open={open}
-        style={{ backdropFilter: "blur(20px)" }}
+        style={{ backdropFilter: 'blur(20px)' }}
       >
         <IconButton
           className="closeButton"
@@ -76,12 +76,12 @@ export default function DialogBox({ open, setOpen }) {
         <DialogContent className="modalcontent">
           <h3 className="dialogHeading">
             Besoin de plus d'informations sur <br className="br" /> ton projet
-            d'études ?{" "}
+            d'études ?{' '}
           </h3>
           <Grid container spacing={1} className="popupcheckbox">
             <Checkbox
-              inputProps={{ "aria-label": "secondary checkbox" }}
-              style={{ color: "white" }}
+              inputProps={{ 'aria-label': 'secondary checkbox' }}
+              style={{ color: 'white' }}
               className="checkboxpop"
               name="advice"
               defaultChecked
@@ -96,8 +96,8 @@ export default function DialogBox({ open, setOpen }) {
           </Grid>
           <Grid container spacing={1} className="popupcheckbox">
             <Checkbox
-              inputProps={{ "aria-label": "secondary checkbox" }}
-              style={{ color: "white" }}
+              inputProps={{ 'aria-label': 'secondary checkbox' }}
+              style={{ color: 'white' }}
               className="checkboxpop"
               name="contact"
               defaultChecked

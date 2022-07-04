@@ -1,14 +1,14 @@
 // Init
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 // import moment from "moment";
-import Grid from "@material-ui/core/Grid";
-import { Link } from "react-router-dom";
-import blogImg from "../../assets/3.png";
-import { url } from "../../config";
+import Grid from '@material-ui/core/Grid';
+import { Link } from 'react-router-dom';
+import blogImg from '../../assets/3.png';
+import { url } from '../../config';
 
 export default function LatestArticle({ blogs, loading, setLoading }) {
   let newdata = [{}];
-  console.log("blogs", blogs);
+  console.log('blogs', blogs);
 
   return (
     <div className="LatestArticlecontainer">
@@ -17,15 +17,15 @@ export default function LatestArticle({ blogs, loading, setLoading }) {
         <h1>Chargement en cours...</h1>
       ) : blogs ? (
         <>
-          {" "}
+          {' '}
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <Link
                 to={{
                   pathname: `/blog/${blogs[0]?._id}`,
-                  state: { message: "hello, im a passed message!" }
+                  state: { message: 'hello, im a passed message!' }
                 }}
-                style={{ textDecoration: "none", cursor: "pointer" }}
+                style={{ textDecoration: 'none', cursor: 'pointer' }}
               >
                 <div className="latestArticleLeft">
                   <img
@@ -37,13 +37,13 @@ export default function LatestArticle({ blogs, loading, setLoading }) {
                   <div className="articledetail">
                     <h2 className="articleheading">
                       {blogs[0]?.blog_title.length > 100
-                        ? blogs[0]?.blog_title.substring(0, 99) + "..."
+                        ? blogs[0]?.blog_title.substring(0, 99) + '...'
                         : blogs[0]?.blog_title}
                     </h2>
                     <p className="textdescription1">
                       {blogs[0]?.blog_desc.length > 150
-                        ? blogs[0]?.blog_desc.substring(0, 180) + "..."
-                        : blogs[0]?.blog_desc}{" "}
+                        ? blogs[0]?.blog_desc.substring(0, 180) + '...'
+                        : blogs[0]?.blog_desc}{' '}
                       <span className="seemore"> Lire la suite</span>
                     </p>
                     <p className="articleBy">
@@ -64,10 +64,10 @@ export default function LatestArticle({ blogs, loading, setLoading }) {
                 <>
                   <Link
                     to={`blog/${item._id}`}
-                    style={{ textDecoration: "none", color: "white" }}
+                    style={{ textDecoration: 'none', color: 'white' }}
                   >
                     <div className="latestArticleRight">
-                      {" "}
+                      {' '}
                       <img
                         // src={blogImg}
                         src={url + item.blog_images}
@@ -77,12 +77,12 @@ export default function LatestArticle({ blogs, loading, setLoading }) {
                       <div className="articleText">
                         <h3>
                           {item.blog_title.length > 80
-                            ? item.blog_title.substring(0, 79) + "..."
+                            ? item.blog_title.substring(0, 79) + '...'
                             : item?.blog_title}
                         </h3>
                         <p className="textdescription">
                           {item?.blog_desc.length > 186
-                            ? item?.blog_desc.substring(0, 186) + ".."
+                            ? item?.blog_desc.substring(0, 186) + '..'
                             : item?.blog_desc}
                         </p>
 

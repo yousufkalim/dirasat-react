@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
-import logo from "../assets/img/dlogot.png";
+import React, { useEffect } from 'react';
+import logo from '../assets/img/dlogot.png';
 
 const CGU = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 11,
-      behavior: "smooth"
+      behavior: 'smooth'
     });
   };
   useEffect(() => {
@@ -14,8 +14,8 @@ const CGU = () => {
   }, []);
   return (
     <>
-      <div style={{ minHeight: "100vh", marginTop: "-2%", color: "white" }}>
-        <div style={{ width: "60%", margin: "auto" }}>
+      <div style={{ minHeight: '100vh', marginTop: '-2%', color: 'white' }}>
+        <div style={{ width: '60%', margin: 'auto' }}>
           <p className="cguHeading">
             <img src={logo} className="cgulogo" alt="logo" />
             <br />
@@ -23,7 +23,7 @@ const CGU = () => {
             <br />
           </p>
         </div>
-        <div style={{ width: "85%", margin: "auto" }}>
+        <div style={{ width: '85%', margin: 'auto' }}>
           <h1 className="cguH1">ARTICLE 1. INFORMATIONS LÉGALES</h1>
           <p className="pmargin">
             En vertu de l'article 6 de la Loi n° 2004-575 du 21 juin 2004 pour
@@ -235,7 +235,7 @@ const CGU = () => {
           <h1 className="cguH1">
             ARTICLE 11. LOI APPLICABLE ET JURIDICTION COMPÉTENTE
           </h1>
-          <p className="pmargin" style={{ paddingBottom: "30px" }}>
+          <p className="pmargin" style={{ paddingBottom: '30px' }}>
             Les présentes Conditions Générales d'Utilisation sont régies par la
             loi française. En cas de différend et à défaut d'accord amiable, le
             litige sera porté devant les tribunaux français conformément aux
