@@ -233,7 +233,7 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
           />
         </div>
       )}
-      {console.log('siteViews.count ', siteViews?.count)}
+
       <Contactus />
       <Footer />
       <CookiesPopup

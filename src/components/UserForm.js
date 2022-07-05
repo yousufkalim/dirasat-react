@@ -287,9 +287,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
     if (school_name == '') {
       return toast.error("veuillez saisir le nom de l'école");
     }
-    if (language == 'language') {
-      return toast.error("veuillez saisir le nom de l'école");
-    }
+    // if (language == 'language') {
+    //   return toast.error("veuillez saisir le nom de l'école");
+    // }
     if (!accept_condition) {
       return toast.error('Veuillez accepter les termes et conditions');
     }
@@ -589,7 +589,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       </Grid>
                     </Grid>
 
-                    <Grid container spacing={1} className="establishGrid">
+                    {/* <Grid container spacing={1} className="establishGrid">
                       <FormControl
                         variant="outlined"
                         className="selectformControlforlanguage"
@@ -616,7 +616,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           })}
                         </Select>
                       </FormControl>
-                    </Grid>
+                    </Grid> */}
                     <Grid
                       container
                       spacing={1}
