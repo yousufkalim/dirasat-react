@@ -1,20 +1,21 @@
-import React, { useState } from "react";
-import { styled } from "@material-ui/core/styles";
-import Dialog from "@material-ui/core/Dialog";
-import { toast } from "react-toastify";
-import DialogContent from "@material-ui/core/DialogContent";
-import IconButton from "@material-ui/core/IconButton";
-import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
-import Grid from "@material-ui/core/Grid";
+import React, { useState } from 'react';
+import { styled } from '@material-ui/core/styles';
+import Dialog from '@material-ui/core/Dialog';
+import { toast } from 'react-toastify';
+import DialogContent from '@material-ui/core/DialogContent';
+import IconButton from '@material-ui/core/IconButton';
+import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
+import Grid from '@material-ui/core/Grid';
+import EmailConfirmationpopup from './EmailConfirmationpopup';
 
-import { UpdateStore } from "../StoreContext";
-import api from "../api";
+import { UpdateStore } from '../StoreContext';
+import api from '../api';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
-  "& .MuDialogContent-root": {
+  '& .MuDialogContent-root': {
     padding: theme.spacing(2)
   },
-  "& .MuDialogActions-root": {
+  '& .MuDialogActions-root': {
     padding: theme.spacing(1)
   }
 }));
@@ -23,8 +24,6 @@ export default function ConfirmationPop({
   SetconfirmationOpen,
   setStep,
   setActiveStep,
-  otpbyemail,
-  userformdata,
   handleSubmit,
   loadingresend,
   timeLeft,
@@ -35,8 +34,9 @@ export default function ConfirmationPop({
   const updateStore = UpdateStore();
 
   const [loading, setLoading] = useState(false);
+  const [openEmailpopup, setEmailPopup] = useState(false);
   const [formData, setFormData] = useState({
-    otp: ""
+    otp: ''
   });
   // Destructuring of UserForm State
   const { otp } = formData;
@@ -51,94 +51,89 @@ export default function ConfirmationPop({
   const handleSubmitverify = async () => {
     setLoading(true);
 
-    let res = await api("post", "/users/verify", {
+    let res = await api('post', '/users/verify', {
       otp
     });
     if (res.status === 200) {
       SetconfirmationOpen(false);
-      console.log("res?.data?.user",res?.data?.user)
-      updateStore({
-        questions: res?.data?.questions,
-        answers: res?.data?.answers,
-        user: res?.data?.user
-      });
+      setTimeLeft(30);
+      setFormData({ otp: '' });
+      setEmailPopup(true);
       setLoading(false);
-      setFormData({ otp: "" });
-      setStep(2);
-      setActiveStep((prevActiveStep) => prevActiveStep + 1);
     } else {
       setLoading(false);
-      setFormData({ otp: "" });
+      setFormData({ otp: '' });
       toast.error("Votre OTP n'est pas correct");
     }
-    // let res = await api("post", "/users/invite", {
-    //   ...formData,
-    // });
-    // if (res) {
-    //   toast.success("invitation envoyée avec succès");
-    //   setFormData({ email: "" });
-    //   setLoading(false);
-    //   SetconfirmationOpen(false);
-    // }
   };
   const handleClose = () => {
     SetconfirmationOpen(false);
     clearInterval(timeInterval);
-      setTimeLeft(30)
-      setresendLoading(false)
+    setTimeLeft(30);
+    setFormData({ otp: '' });
+    setresendLoading(false);
   };
   return (
-    <div>
-      <BootstrapDialog
-        onClose={handleClose}
-        open={confirmationOpen}
-        style={{ backdropFilter: "blur(20px)" }}
-      >
-        <IconButton
-          className="InvitecloseButton"
-          aria-label="close"
-          onClick={handleClose}
+    <>
+      <div>
+        <BootstrapDialog
+          onClose={handleClose}
+          open={confirmationOpen}
+          style={{ backdropFilter: 'blur(20px)' }}
         >
-          <HorizontalRuleIcon fontSize="large" />
-          {/* <img src={close} className="closeimg" /> */}
-        </IconButton>
-        <DialogContent className="modalcontent">
-          <h3 className="dialogHeading">
-            {otpbyemail
-              ? "Entrez le code de vérification reçu par e-mail"
-              : "Entrez le code de vérification à six chiffres"}
-          </h3>
-          <Grid container spacing={1} className="invitedialoginputGrid">
-            <input
-              type="text"
-              name="otp"
-              value={otp}
-              onChange={onChange}
-              placeholder="Entrez le code de vérification"
-              className="dialoginputField"
-              required
-            />
-          </Grid>
-        </DialogContent>
+          <IconButton
+            className="InvitecloseButton"
+            aria-label="close"
+            onClick={handleClose}
+          >
+            <HorizontalRuleIcon fontSize="large" />
+          </IconButton>
+          <DialogContent className="modalcontent">
+            <h3 className="dialogHeading">Entre le code reçu par SMS</h3>
+            <Grid container spacing={1} className="invitedialoginputGrid">
+              <input
+                type="text"
+                name="otp"
+                value={otp}
+                onChange={onChange}
+                placeholder="Entrez le code de vérification"
+                className="dialoginputField"
+                required
+              />
+            </Grid>
+          </DialogContent>
 
-        <div className="invitedialogAction">
-          <button
-            className="resendButton"
-            onClick={handleSubmit}
-            disabled={loadingresend}
-          >
-            Renvoyer {loadingresend && timeLeft}
-          </button>
-          <button
-            size="Large"
-            className="InvitemodalButon"
-            onClick={handleSubmitverify}
-            disabled={loading}
-          >
-            Vérifier
-          </button>
-        </div>
-      </BootstrapDialog>
-    </div>
+          <div className="invitedialogAction">
+            <button
+              className="resendButton"
+              onClick={handleSubmit}
+              disabled={loadingresend}
+            >
+              Renvoyer {loadingresend && timeLeft}
+            </button>
+            <button
+              size="Large"
+              className="InvitemodalButon"
+              onClick={handleSubmitverify}
+              disabled={loading}
+            >
+              Vérifier
+            </button>
+          </div>
+        </BootstrapDialog>
+      </div>
+      <EmailConfirmationpopup
+        openEmailpopup={openEmailpopup}
+        setEmailPopup={setEmailPopup}
+        setStep={setStep}
+        setActiveStep={setActiveStep}
+        handleSubmit={handleSubmit}
+        loadingresend={loadingresend}
+        timeLeft={timeLeft}
+        setTimeLeft={setTimeLeft}
+        timeInterval={timeInterval}
+        setresendLoading={setresendLoading}
+      />
+    </>
   );
 }

@@ -1,22 +1,22 @@
-import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Link } from "react-router-dom";
-import Paper from "@material-ui/core/Paper";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TablePagination from "@material-ui/core/TablePagination";
-import TableRow from "@material-ui/core/TableRow";
+import React, { useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
+import Paper from '@material-ui/core/Paper';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TablePagination from '@material-ui/core/TablePagination';
+import TableRow from '@material-ui/core/TableRow';
 
 const useStyles = makeStyles({
   root: {
-    width: "100%",
+    width: '100%'
   },
   container: {
-    maxHeight: 600,
-  },
+    maxHeight: 600
+  }
 });
 
 const AdminTable = ({
@@ -26,7 +26,7 @@ const AdminTable = ({
   setPage,
   rowsPerPage,
   count,
-  loading,
+  loading
 }) => {
   const classes = useStyles();
 
@@ -45,22 +45,22 @@ const AdminTable = ({
                   <TableCell
                     key={column.id}
                     align={column.align}
-                    style={{ minWidth: column.minWidth, textAlign: "center" }}
+                    style={{ minWidth: column.minWidth, textAlign: 'center' }}
                   >
                     {column.label}
                   </TableCell>
                 ))}
-                <TableCell style={{ textAlign: "center" }}>Action</TableCell>
+                <TableCell style={{ textAlign: 'center' }}>Action</TableCell>
               </TableRow>
             </TableHead>
             {loading ? (
-              <div style={{ width: "50%", margin: "auto" }}>
+              <div style={{ width: '50%', margin: 'auto' }}>
                 <h3>Chargement...</h3>
               </div>
             ) : (
               <TableBody>
                 <>
-                  {" "}
+                  {' '}
                   {Users?.map((row) => {
                     return (
                       <TableRow
@@ -71,7 +71,7 @@ const AdminTable = ({
                       >
                         {Heading.map((column) => {
                           let value;
-                          if (column.id === "user") {
+                          if (column.id === 'user') {
                             value = `${row?.user?.first_name} ${row?.user?.last_name}`;
                           } else {
                             value = row[column.id];
@@ -80,23 +80,23 @@ const AdminTable = ({
                             <TableCell
                               key={column.id}
                               align={column.align}
-                              style={{ textAlign: "center" }}
+                              style={{ textAlign: 'center' }}
                             >
                               {value}
                             </TableCell>
                           );
-                        })}{" "}
-                        {window.location.pathname === "/users" ? (
-                          <TableCell style={{ textAlign: "center" }}>
+                        })}{' '}
+                        {window.location.pathname === '/users' ? (
+                          <TableCell style={{ textAlign: 'center' }}>
                             <Link to={`users/${row?._id}`}>
-                              {" "}
+                              {' '}
                               <button>View</button>
                             </Link>
                           </TableCell>
                         ) : (
-                          <TableCell style={{ textAlign: "center" }}>
+                          <TableCell style={{ textAlign: 'center' }}>
                             <Link to={`singleresult/${row?._id}`}>
-                              {" "}
+                              {' '}
                               <button>View Result</button>
                             </Link>
                           </TableCell>

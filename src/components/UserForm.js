@@ -1,145 +1,151 @@
-import React, { useState, useEffect } from "react";
-import { toast } from "react-toastify";
-import "react-datepicker/dist/react-datepicker.css";
-import { Checkbox } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import CircularProgress from "@material-ui/core/CircularProgress";
-import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-import Autocomplete from "@material-ui/lab/Autocomplete";
-import { Store, UpdateStore } from "../StoreContext";
-import Grid from "@material-ui/core/Grid";
-import veryExcited from "../assets/img/VeryExcited.png";
-import arrowleft from "../assets/img/arrow2.png";
-import scrollToTop from "../utils/ScrollTop";
-import DatePicker from "react-datepicker";
-import ConfirmationPopup from "./ConfirmationPopup";
-import enGb from "date-fns/locale/fr";
-import { registerLocale } from "react-datepicker";
-import api from "../api";
+import React, { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
+import 'react-datepicker/dist/react-datepicker.css';
+import { Checkbox } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import Autocomplete from '@material-ui/lab/Autocomplete';
+import { Store, UpdateStore } from '../StoreContext';
+import Grid from '@material-ui/core/Grid';
+import veryExcited from '../assets/img/VeryExcited.png';
+import arrowleft from '../assets/img/arrow2.png';
+import scrollToTop from '../utils/ScrollTop';
+import DatePicker from 'react-datepicker';
+import ConfirmationPopup from './ConfirmationPopup';
+import enGb from 'date-fns/locale/fr';
+import { registerLocale } from 'react-datepicker';
+import api from '../api';
+import InfoIcon from '@mui/icons-material/Info';
+import Info from './Info';
 
-let class_listData = ["1ère AS", "2ème AS", "3ème AS", "Postbac"];
+let class_listData = ['1ère AS', '2ème AS', '3ème AS', 'Postbac'];
 let wilayasvalue = [
-  { name: "Adrar", code: "01" },
-  { name: "Chlef", code: "02" },
-  { name: "Laghouat", code: "03" },
-  { name: "Oum bouaghi", code: "04" },
-  { name: "Batna", code: "05" },
-  { name: "Béjaia", code: "06" },
-  { name: "Biskra", code: "07" },
-  { name: "Béchar", code: "08" },
-  { name: "Blida", code: "09" },
-  { name: "Bouira", code: "10" },
-  { name: "Tamanrasset", code: "11" },
-  { name: "Tébessa", code: "12" },
-  { name: "Tlemcen", code: "13" },
-  { name: "Tiaret", code: "14" },
-  { name: "Tizi ouzou", code: "15" },
-  { name: "Alger", code: "16" },
-  { name: "Djelfa", code: "17" },
-  { name: "Jijel", code: "18" },
-  { name: "Sétif", code: "19" },
-  { name: "Saida", code: "20" },
-  { name: "Skikda", code: "21" },
-  { name: "Sidi Bel Abbès", code: "22" },
-  { name: "Annaba", code: "23" },
-  { name: "Guelma", code: "24" },
-  { name: "Constantine", code: "25" },
-  { name: "Médéa", code: "26" },
-  { name: "Mostaganem", code: "27" },
-  { name: "M'sila", code: "28" },
-  { name: "Mascara", code: "29" },
-  { name: "Ouargla", code: "30" },
-  { name: "Oran", code: "31" },
-  { name: "El Baydh", code: "32" },
-  { name: "Illizi", code: "33" },
-  { name: "Bordj Bou Arreridj", code: "34" },
-  { name: "Boumerdès", code: "35" },
-  { name: "El Taref", code: "36" },
-  { name: "Tindouf", code: "37" },
-  { name: "Tissemsilt", code: "38" },
-  { name: "El Oued", code: "39" },
-  { name: "Kenchela", code: "40" },
-  { name: "Souk Ahras", code: "41" },
-  { name: "Tipaza", code: "42" },
-  { name: "Mila", code: "43" },
-  { name: "Aïn Defla", code: "44" },
-  { name: "Nâama", code: "45" },
-  { name: "Aïn Temouchent", code: "46" },
-  { name: "Ghardaïa", code: "47" },
-  { name: "Relizane", code: "48" },
-  { name: "Timimoun", code: "49" },
-  { name: " Bordj Badji Mokhtar", code: "50" },
-  { name: "Ouled Djellal", code: "51" },
-  { name: "Béni Abbès", code: "52" },
-  { name: "In Salah", code: "53" },
-  { name: " In Guezzam", code: "54" },
-  { name: "Touggourt", code: "55" },
-  { name: "Djanet", code: "56" },
-  { name: "El Meghaïer", code: "57" },
-  { name: " El Ménia", code: "58" }
+  { name: 'Adrar', code: '01' },
+  { name: 'Chlef', code: '02' },
+  { name: 'Laghouat', code: '03' },
+  { name: 'Oum bouaghi', code: '04' },
+  { name: 'Batna', code: '05' },
+  { name: 'Béjaia', code: '06' },
+  { name: 'Biskra', code: '07' },
+  { name: 'Béchar', code: '08' },
+  { name: 'Blida', code: '09' },
+  { name: 'Bouira', code: '10' },
+  { name: 'Tamanrasset', code: '11' },
+  { name: 'Tébessa', code: '12' },
+  { name: 'Tlemcen', code: '13' },
+  { name: 'Tiaret', code: '14' },
+  { name: 'Tizi ouzou', code: '15' },
+  { name: 'Alger', code: '16' },
+  { name: 'Djelfa', code: '17' },
+  { name: 'Jijel', code: '18' },
+  { name: 'Sétif', code: '19' },
+  { name: 'Saida', code: '20' },
+  { name: 'Skikda', code: '21' },
+  { name: 'Sidi Bel Abbès', code: '22' },
+  { name: 'Annaba', code: '23' },
+  { name: 'Guelma', code: '24' },
+  { name: 'Constantine', code: '25' },
+  { name: 'Médéa', code: '26' },
+  { name: 'Mostaganem', code: '27' },
+  { name: "M'sila", code: '28' },
+  { name: 'Mascara', code: '29' },
+  { name: 'Ouargla', code: '30' },
+  { name: 'Oran', code: '31' },
+  { name: 'El Baydh', code: '32' },
+  { name: 'Illizi', code: '33' },
+  { name: 'Bordj Bou Arreridj', code: '34' },
+  { name: 'Boumerdès', code: '35' },
+  { name: 'El Taref', code: '36' },
+  { name: 'Tindouf', code: '37' },
+  { name: 'Tissemsilt', code: '38' },
+  { name: 'El Oued', code: '39' },
+  { name: 'Kenchela', code: '40' },
+  { name: 'Souk Ahras', code: '41' },
+  { name: 'Tipaza', code: '42' },
+  { name: 'Mila', code: '43' },
+  { name: 'Aïn Defla', code: '44' },
+  { name: 'Nâama', code: '45' },
+  { name: 'Aïn Temouchent', code: '46' },
+  { name: 'Ghardaïa', code: '47' },
+  { name: 'Relizane', code: '48' },
+  { name: 'Timimoun', code: '49' },
+  { name: ' Bordj Badji Mokhtar', code: '50' },
+  { name: 'Ouled Djellal', code: '51' },
+  { name: 'Béni Abbès', code: '52' },
+  { name: 'In Salah', code: '53' },
+  { name: ' In Guezzam', code: '54' },
+  { name: 'Touggourt', code: '55' },
+  { name: 'Djanet', code: '56' },
+  { name: 'El Meghaïer', code: '57' },
+  { name: ' El Ménia', code: '58' }
 ];
+let budgetllist = ['5 000€ - 7 500€', '5 000€ - 7 500€', 'Plus de 15 000€'];
+let countrylist = ['X', 'Y', 'Z'];
+let villelist = ['X', 'Y', 'Z'];
 let bacseriData = [
-  "Mathématiques",
-  "Techniques Mathématiques",
-  "Sciences Expérimentales",
-  "Gestion et Economie",
-  "Lettre et Philosophie",
-  "Langues Etrangères"
+  'Mathématiques',
+  'Techniques Mathématiques',
+  'Sciences Expérimentales',
+  'Gestion et Economie',
+  'Lettre et Philosophie',
+  'Langues Etrangères'
 ];
-let languageIs = ["Français", "Arabe", "Les deux"];
+let languageIs = ['Français', 'Arabe'];
 let level2data = [
-  "1",
-  "2",
-  "3",
-  "4",
-  "5",
-  "6",
-  "7",
-  "8",
-  "9",
-  "10",
-  "11",
-  "12",
-  "13",
-  "14",
-  "15",
-  "16",
-  "17",
-  "18",
-  "19",
-  "20"
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+  '9',
+  '10',
+  '11',
+  '12',
+  '13',
+  '14',
+  '15',
+  '16',
+  '17',
+  '18',
+  '19',
+  '20'
 ];
 let timeInterval;
 
 const UserForm = ({ setStep, setActiveStep }) => {
-  registerLocale("en-gb", enGb);
+  registerLocale('en-gb', enGb);
   // initialize ContextStore
   const updateStore = UpdateStore();
   const {} = Store();
   // initialize States
   const [formData, setFormData] = useState({
-    first_name: "",
-    last_name: "",
-    date_of_birth: "",
-    class_list: "class list",
-    phone: "",
-    email: "",
-    wilaya: "wilaya",
-    Bac_Serie: "Bac Serie",
-    school_city: "",
-    school_name: "",
-    language: "language",
+    first_name: '',
+    last_name: '',
+    date_of_birth: '',
+    class_list: 'class list',
+    phone: '',
+    email: '',
+    wilaya: 'wilaya',
+    Bac_Serie: 'Bac Serie',
+    school_city: '',
+    school_name: '',
+    language: 'language',
     accept_condition: false,
-    level1: "level1",
-    score: "score",
-    budget: "",
-    whichCountry: "",
+    level1: 'level1',
+    score: 'score',
+    budget: 'budget',
+    whichCountry: 'whichCountry',
+    ville: 'ville',
     stayAlgeria: false,
-    lastDiploma: "",
-    studyYear: ""
+    lastDiploma: '',
+    studyYear: ''
   });
   // state for address options list
   const [values, setValues] = useState([]);
@@ -150,8 +156,10 @@ const UserForm = ({ setStep, setActiveStep }) => {
   const [resendloading, setresendLoading] = useState(false);
   const [imgloading, setImgLoading] = useState(true);
 
-  const [otpbyemail, setOtpByemail] = useState(false);
   const [timeLeft, setTimeLeft] = useState(30);
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [text, setText] = useState(null);
 
   // Destructuring of UserForm State
   const {
@@ -171,6 +179,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
     level1,
     score,
     budget,
+    ville,
     whichCountry,
     stayAlgeria,
     lastDiploma,
@@ -183,42 +192,42 @@ const UserForm = ({ setStep, setActiveStep }) => {
   }, []);
   const useStyles = makeStyles({
     customTextField: {
-      "& input::placeholder": {
-        color: "white",
-        "@media (max-width: 780px)": {
-          paddingLeft: "-2px"
+      '& input::placeholder': {
+        color: 'white',
+        '@media (max-width: 780px)': {
+          paddingLeft: '-2px'
         }
       }
     },
     customTextFieldestablish: {
-      "& input::placeholder": {
-        color: "white",
-        fontSize: "13px",
-        "@media (max-width: 780px)": {
-          fontSize: "12px",
-          paddingLeft: "-2px"
+      '& input::placeholder': {
+        color: 'white',
+        fontSize: '13px',
+        '@media (max-width: 780px)': {
+          fontSize: '12px',
+          paddingLeft: '-2px'
         }
       }
     },
     option: {
-      background: "#242635 ",
-      color: "white",
-      "&:hover": {
-        backgroundColor: "#9198a5 !important"
+      background: '#242635 ',
+      color: 'white',
+      '&:hover': {
+        backgroundColor: '#9198a5 !important'
       }
     },
     noOptions: {
-      display: `${values.length <= 0 ? "none" : "inherit"}`,
-      color: "white"
+      display: `${values.length <= 0 ? 'none' : 'inherit'}`,
+      color: 'white'
     },
     select: {
-      background: "#242635",
-      color: "#9198a5",
-      "&:before": {
-        borderColor: "red"
+      background: '#242635',
+      color: '#9198a5',
+      '&:before': {
+        borderColor: 'red'
       },
-      "&:after": {
-        borderColor: "yellow"
+      '&:after': {
+        borderColor: 'yellow'
       }
     }
   });
@@ -226,9 +235,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
 
   // onChange Function for Input Field
   const onChange = (e) => {
-    let Temp_Bac_Serie = e.target.value == "Postbac" ? "Bac Serie" : Bac_Serie;
+    let Temp_Bac_Serie = e.target.value == 'Postbac' ? 'Bac Serie' : Bac_Serie;
 
-    if (e.target.name === "accept_condition") {
+    if (e.target.name === 'accept_condition') {
       setFormData({ ...formData, [e.target.name]: e.target.checked });
     } else
       setFormData({
@@ -246,97 +255,96 @@ const UserForm = ({ setStep, setActiveStep }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (first_name == "") {
-      return toast.error("Veuillez entrer votre Prénom.");
+    if (first_name == '') {
+      return toast.error('Veuillez entrer votre Prénom.');
     }
-    if (last_name == "") {
-      return toast.error("Veuillez entrer votre nom.");
+    if (last_name == '') {
+      return toast.error('Veuillez entrer votre nom.');
     }
-    if (date_of_birth == "") {
-      return toast.error("Veuillez entrer votre date de naissance");
+    if (date_of_birth == '') {
+      return toast.error('Veuillez entrer votre date de naissance');
     }
-    if (wilaya == "wilaya") {
-      return toast.error("Please Select wilya");
+    if (wilaya == 'wilaya') {
+      return toast.error('Veuillez sélectionner');
     }
-    if (email == "") {
-      return toast.error("Veuillez entrer votre e-mail");
+    if (email == '') {
+      return toast.error('Veuillez entrer votre e-mail');
     }
     if (phone.length != 10 || phone[0] != 0) {
       return toast.error(
-        "Le numéro de téléphone doit être composé de 10 chiffres et commencer par 0"
+        'Le numéro de téléphone doit être composé de 10 chiffres et commencer par 0'
       );
     }
-    if (class_list == "class list") {
-      return toast.error("Please Select class list");
+    if (class_list == 'class list') {
+      return toast.error('Veuillez sélectionner la liste des classes');
     }
-    if (Bac_Serie == "Bac Serie" && class_list != "Postbac") {
-      return toast.error("Please Select Bac_Serie");
+    if (Bac_Serie == 'Bac Serie' && class_list != 'Postbac') {
+      return toast.error('Veuillez sélectionner Bac_Serie');
     }
-    if (school_city == "") {
-      return toast.error("please enter city of your school");
+    if (school_city == '') {
+      return toast.error('veuillez entrer la ville de votre école');
     }
-    if (school_name == "") {
-      return toast.error("please enter chool_name");
+    if (school_name == '') {
+      return toast.error("veuillez saisir le nom de l'école");
     }
-    if (language == "language") {
-      return toast.error("please select language");
-    }
+    // if (language == 'language') {
+    //   return toast.error("veuillez saisir le nom de l'école");
+    // }
     if (!accept_condition) {
-      return toast.error("Veuillez accepter les termes et conditions");
+      return toast.error('Veuillez accepter les termes et conditions');
     }
     setformStep(2);
   };
 
   const handleSubmit3 = async (e, option) => {
     e.preventDefault();
-    console.log("formdata os ,", formData, option);
-    let newFormData = "";
-    if (option == "no") {
+    console.log('formdata os ,', formData, option);
+    let newFormData = '';
+    if (option == 'no') {
       newFormData = { ...formData };
     }
 
     if (option == 1) {
-      newFormData = { ...formData, level1: "pass" };
-      if (score == "score") {
-        return toast.error("Please select score");
+      newFormData = { ...formData, level1: 'pass' };
+      if (score == 'score') {
+        return toast.error('Veuillez sélectionner la note moyenne');
       }
     }
     if (option == 2) {
-      newFormData = { ...formData, level1: "not pass", score: "score" };
+      newFormData = { ...formData, level1: 'not pass', score: 'score' };
     }
     if (option == 5) {
       newFormData = {
         ...formData,
-        level1: "want to change",
-        score: "score",
+        level1: 'want to change',
+        score: 'score',
         stayAlgeria: false
       };
-      if (whichCountry == "") {
-        return toast.error("Please add country ");
+      if (whichCountry == '') {
+        return toast.error('Veuillez ajouter un pays');
       }
-      if (budget == "") {
-        return toast.error("Please add budget ");
+      if (budget == '') {
+        return toast.error('Veuillez ajouter un budget');
       }
     }
     if (option == 6) {
       newFormData = {
         ...formData,
-        level1: "want to change",
-        score: "score",
+        level1: 'want to change',
+        score: 'score',
         stayAlgeria: true
       };
-      if (budget == "") {
-        return toast.error("Please add budget ");
+      if (budget == '') {
+        return toast.error('Veuillez ajouter un budget');
       }
     }
-    console.log("newFormData", newFormData);
+    console.log('newFormData', newFormData);
 
     setLoading(true);
     setresendLoading(true);
-    let res = await api("post", "/users/create", { ...newFormData });
+    let res = await api('post', '/users/create', { ...newFormData });
     if (res.status === 200) {
       SetconfirmationOpen(true);
-      toast.success("OTP envoyé");
     }
     setLoading(false);
     timeInterval = setInterval(() => {
@@ -347,6 +355,11 @@ const UserForm = ({ setStep, setActiveStep }) => {
       setTimeLeft(30);
       setresendLoading(false);
     }, 30000);
+  };
+
+  const handleClickinfo = (event, text) => {
+    setAnchorEl(event.currentTarget);
+    setText(text);
   };
 
   return (
@@ -376,7 +389,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                 <Grid item xs={12} sm={12} className="">
                   {formStep != 6 && formStep != 7 && (
                     <h3 className="formheading">
-                      Pour mieux te conseiller, j’ai besoin{" "}
+                      Pour mieux te conseiller, j’ai besoin{' '}
                       <br className="br" />
                       d’en savoir davantage sur toi!
                     </h3>
@@ -410,14 +423,14 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           selected={date_of_birth}
                           // locale={selectedDateLang}
                           // locale={locale}
-                          locale={"en-gb"}
+                          locale={'en-gb'}
                           dateFormat="dd/MM/yyyy"
                           onChange={onChangeDate}
                           className="inputField"
                           value={date_of_birth}
                           autoComplete="off"
                           placeholderText="Date de naissance"
-                          openToDate={new Date("2003/01/01")}
+                          openToDate={new Date('2003/01/01')}
                           dropdownMode="scroll"
                           // dropdownMode="select"
                           scrollableYearDropdown
@@ -452,14 +465,14 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             <MenuItem
                               value="wilaya"
                               disabled
-                              style={{ textAlign: "left !important" }}
+                              style={{ textAlign: 'left !important' }}
                             >
-                              <em>{"Wilaya"}</em>
+                              <em>{'Wilaya'}</em>
                             </MenuItem>
                             {wilayasvalue.map((w, i) => {
                               return (
                                 <MenuItem value={w}>
-                                  {w.name + " - " + w.code}
+                                  {w.name + ' - ' + w.code}
                                 </MenuItem>
                               );
                             })}
@@ -484,7 +497,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           name="phone"
                           value={phone}
                           onChange={onChange}
-                          maxlength={"10"}
+                          maxlength={'10'}
                           placeholder="Numéro de téléphone"
                           className="inputField"
                         />
@@ -512,9 +525,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             <MenuItem
                               value="class list"
                               disabled
-                              style={{ textAlign: "left !important" }}
+                              style={{ textAlign: 'left !important' }}
                             >
-                              <em>{"Classe"}</em>
+                              <em>{'Classe'}</em>
                             </MenuItem>
                             {class_listData.map((list, i) => {
                               return <MenuItem value={list}>{list}</MenuItem>;
@@ -533,7 +546,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             name="Bac_Serie"
                             value={Bac_Serie}
                             defaultValue={Bac_Serie}
-                            disabled={class_list === "Postbac"}
+                            disabled={class_list === 'Postbac'}
                             onChange={onChange}
                             className={classes.select}
                             className="selectforeducation"
@@ -542,9 +555,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             <MenuItem
                               value="Bac Serie"
                               disabled
-                              style={{ textAlign: "left !important" }}
+                              style={{ textAlign: 'left !important' }}
                             >
-                              <em>{"Série de Baccalauréat"}</em>
+                              <em>{'Série de Baccalauréat'}</em>
                             </MenuItem>
                             {bacseriData.map((item, i) => {
                               return <MenuItem value={item}>{item}</MenuItem>;
@@ -576,7 +589,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       </Grid>
                     </Grid>
 
-                    <Grid container spacing={1} className="establishGrid">
+                    {/* <Grid container spacing={1} className="establishGrid">
                       <FormControl
                         variant="outlined"
                         className="selectformControlforlanguage"
@@ -594,7 +607,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           <MenuItem
                             value="language"
                             disabled
-                            style={{ textAlign: "left !important" }}
+                            style={{ textAlign: 'left !important' }}
                           >
                             <em>Langue dans laquelle vous souhaitez étudier</em>
                           </MenuItem>
@@ -603,15 +616,15 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           })}
                         </Select>
                       </FormControl>
-                    </Grid>
+                    </Grid> */}
                     <Grid
                       container
                       spacing={1}
                       className="termsandconditionGrid"
                     >
                       <Checkbox
-                        inputProps={{ "aria-label": "secondary checkbox" }}
-                        style={{ color: "white" }}
+                        inputProps={{ 'aria-label': 'secondary checkbox' }}
+                        style={{ color: 'white' }}
                         name="accept_condition"
                         value={accept_condition}
                         checked={accept_condition}
@@ -651,13 +664,13 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           onClick={handleSubmit}
                         >
                           <b>
-                            {" "}
+                            {' '}
                             {loading ? (
                               <div className="circulardiv">
                                 <CircularProgress size={20} className="" />
                               </div>
                             ) : (
-                              "Passer au suivant"
+                              'Passer au suivant'
                             )}
                           </b>
                         </button>
@@ -671,17 +684,17 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       container
                       spacing={2}
                       className=""
-                      style={{ marginTop: "20px" }}
+                      style={{ marginTop: '20px' }}
                     >
                       <Grid
                         item
                         xs={12}
                         sm={5}
                         className={`${
-                          class_list === "Postbac" && "disablGrid"
+                          class_list === 'Postbac' && 'disablGrid'
                         } option gridOptions`}
                         onClick={() => {
-                          class_list != "Postbac" && setformStep(3);
+                          class_list != 'Postbac' && setformStep(3);
                         }}
                       >
                         <span className="optionSpan">
@@ -694,10 +707,10 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         xs={12}
                         sm={5}
                         className={`${
-                          class_list === "Postbac" && "disablGrid"
+                          class_list === 'Postbac' && 'disablGrid'
                         } option gridOptions`}
                         onClick={(e) => {
-                          class_list != "Postbac" && handleSubmit3(e, 2);
+                          class_list != 'Postbac' && handleSubmit3(e, 2);
                         }}
                       >
                         <span className="optionSpan">
@@ -711,7 +724,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       className="lastoption option gridOptions"
                       onClick={() => setformStep(4)}
                     >
-                      <span className="" style={{ fontSize: "13px" }}>
+                      <span className="" style={{ fontSize: '13px' }}>
                         J’ai déjà débuté mes études supérieures et je veux me
                         réorienter ou poursuivre mes études supérieures dans un
                         autre programme.
@@ -721,7 +734,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       container
                       spacing={1}
                       className="formbuttonsGrid"
-                      style={{ justifyContent: "center" }}
+                      style={{ justifyContent: 'center' }}
                     >
                       <Grid xs={12} sm={4}>
                         <div
@@ -746,7 +759,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       container
                       spacing={1}
                       className=""
-                      style={{ justifyContent: "center" }}
+                      style={{ justifyContent: 'center' }}
                     >
                       <Grid item xs={12} sm={6} className="inputGrid">
                         <FormControl
@@ -768,16 +781,26 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             <MenuItem
                               value="score"
                               disabled
-                              style={{ textAlign: "left !important" }}
+                              style={{ textAlign: 'left !important' }}
                             >
                               <em>
-                                {"Moyenne générale obtenue au Baccalauréat"}
+                                {'Moyenne générale obtenue au Baccalauréat'}
                               </em>
                             </MenuItem>
                             {level2data.map((item, i) => {
                               return <MenuItem value={item}>{item}</MenuItem>;
                             })}
                           </Select>
+                          <p
+                            style={{
+                              textAlign: 'left',
+                              margin: '2px 0 0 10px',
+                              color: 'white',
+                              fontSize: '13px'
+                            }}
+                          >
+                            Arrondir à l’unité inférieure
+                          </p>
                         </FormControl>
                       </Grid>
                     </Grid>
@@ -806,17 +829,17 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           size="large"
                           type="submit"
                           disabled={loading}
-                          style={{ opacity: `${loading ? "0.5" : "1"}` }}
+                          style={{ opacity: `${loading ? '0.5' : '1'}` }}
                           onClick={(e) => handleSubmit3(e, 1)}
                         >
                           <b>
-                            {" "}
+                            {' '}
                             {loading ? (
                               <div className="circulardiv">
                                 <CircularProgress size={20} className="" />
                               </div>
                             ) : (
-                              "Pousuivre"
+                              'Poursuivre'
                             )}
                           </b>
                         </button>
@@ -830,7 +853,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       container
                       spacing={2}
                       className=""
-                      style={{ marginTop: "20px" }}
+                      style={{ marginTop: '20px' }}
                     >
                       <Grid
                         item
@@ -848,14 +871,14 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         className="option"
                         onClick={() => setformStep(6)}
                       >
-                        me réorienter en Algérie
+                        Me réorienter en Algérie
                       </Grid>
                     </Grid>
                     <Grid
                       container
                       spacing={2}
                       className="formbuttonsGrid"
-                      style={{ justifyContent: "center" }}
+                      style={{ justifyContent: 'center' }}
                     >
                       <Grid xs={12} sm={4}>
                         <div
@@ -876,32 +899,112 @@ const UserForm = ({ setStep, setActiveStep }) => {
                 )}
                 {formStep == 5 && (
                   <>
+                    <Info
+                      anchorEl={anchorEl}
+                      setAnchorEl={setAnchorEl}
+                      text={text}
+                    />
                     <Grid
                       container
-                      spacing={1}
+                      spacing={2}
                       className=""
-                      style={{ justifyContent: "center" }}
+                      style={{ justifyContent: 'center' }}
                     >
-                      <Grid item xs={12} sm={6} className="inputGrid emailGrid">
-                        <input
-                          type="whichCountry"
-                          name="whichCountry"
-                          value={whichCountry}
-                          onChange={onChange}
-                          placeholder="Quel pays"
-                          className="inputField"
-                        />
+                      <Grid item xs={12} sm={5} className="inputGrid emailGrid">
+                        <FormControl
+                          variant="outlined"
+                          className="selectformControl selectformControl2"
+                        >
+                          <Select
+                            labelId="demo-simple-select-outlined-label"
+                            id="demo-simple-select-outlined"
+                            name="whichCountry"
+                            value={whichCountry}
+                            defaultValue={whichCountry}
+                            onChange={onChange}
+                            className={classes.select}
+                            className="selectforeducation"
+                            // onFocus={handleBlurSchools}
+                          >
+                            <MenuItem
+                              value="whichCountry"
+                              disabled
+                              style={{ textAlign: 'left !important' }}
+                            >
+                              <em>{'Quel pays'}</em>
+                            </MenuItem>
+                            {countrylist.map((item, i) => {
+                              return <MenuItem value={item}>{item}</MenuItem>;
+                            })}
+                          </Select>
+                        </FormControl>
+                      </Grid>
+
+                      <Grid item xs={12} sm={5} className="inputGrid">
+                        <FormControl
+                          variant="outlined"
+                          className="selectformControl selectformControl2"
+                        >
+                          <Select
+                            labelId="demo-simple-select-outlined-label"
+                            id="demo-simple-select-outlined"
+                            name="ville"
+                            value={ville}
+                            defaultValue={ville}
+                            onChange={onChange}
+                            className={classes.select}
+                            className="selectforeducation"
+                            // onFocus={handleBlurSchools}
+                          >
+                            <MenuItem
+                              value="ville"
+                              disabled
+                              style={{ textAlign: 'left !important' }}
+                            >
+                              <em>Quelle(s) ville(s)</em>
+                            </MenuItem>
+                            {villelist.map((item, i) => {
+                              return <MenuItem value={item}>{item}</MenuItem>;
+                            })}
+                          </Select>
+                        </FormControl>
                       </Grid>
                       <Grid item xs={12} sm={6} className="inputGrid">
-                        <input
-                          type="text"
-                          name="budget"
-                          value={budget}
-                          onChange={onChange}
-                          placeholder="budget"
-                          className="inputField"
-                        />
+                        <FormControl
+                          variant="outlined"
+                          className="selectformControl selectformControl2"
+                        >
+                          <Select
+                            labelId="demo-simple-select-outlined-label"
+                            id="demo-simple-select-outlined"
+                            name="budget"
+                            value={budget}
+                            defaultValue={budget}
+                            onChange={onChange}
+                            className={classes.select}
+                            className="selectforeducation"
+                            // onFocus={handleBlurSchools}
+                          >
+                            <MenuItem
+                              value="budget"
+                              disabled
+                              style={{ textAlign: 'left !important' }}
+                            >
+                              <em>{'Quel budget'}</em>
+                            </MenuItem>
+                            {budgetllist.map((item, i) => {
+                              return <MenuItem value={item}>{item}</MenuItem>;
+                            })}
+                          </Select>
+                        </FormControl>
                       </Grid>
+                      <div style={{ display: 'flex', alignItems: 'center' }}>
+                        {' '}
+                        <InfoIcon
+                          className="infoIcon"
+                          onClick={(e) => handleClickinfo(e, 5)}
+                        />
+                      </div>
                     </Grid>
                     <Grid container spacing={2} className="formbuttonsGrid">
                       <Grid xs={12} sm={4}>
@@ -928,17 +1031,17 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           size="large"
                           type="submit"
                           disabled={loading}
-                          style={{ opacity: `${loading ? "0.5" : "1"}` }}
+                          style={{ opacity: `${loading ? '0.5' : '1'}` }}
                           onClick={(e) => handleSubmit3(e, 5)}
                         >
                           <b>
-                            {" "}
+                            {' '}
                             {loading ? (
                               <div className="circulardiv">
                                 <CircularProgress size={20} className="" />
                               </div>
                             ) : (
-                              "Pousuivre"
+                              'Poursuivre'
                             )}
                           </b>
                         </button>
@@ -950,10 +1053,10 @@ const UserForm = ({ setStep, setActiveStep }) => {
                   <>
                     <div
                       style={{
-                        textAlign: "center",
-                        margin: "5px",
-                        width: "100%",
-                        fontSize: "13px"
+                        textAlign: 'center',
+                        margin: '5px',
+                        width: '100%',
+                        fontSize: '13px'
                       }}
                     >
                       <h1>Quel est ton dernier diplôme validé ?</h1>
@@ -962,19 +1065,19 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       container
                       spacing={4}
                       className=""
-                      style={{ justifyContent: "center" }}
+                      style={{ justifyContent: 'center' }}
                     >
                       <Grid
                         item
                         xs={12}
                         sm={5}
                         className="Gridoptiontwo"
-                        onClick={() => {
+                        onClick={(e) => {
                           setFormData({
                             ...formData,
-                            lastDiploma: "Baccalauréat"
+                            lastDiploma: 'Baccalauréat'
                           });
-                          setformStep(7);
+                          handleSubmit3(e, 'no');
                         }}
                       >
                         Baccalauréat
@@ -987,7 +1090,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         onClick={() => {
                           setFormData({
                             ...formData,
-                            lastDiploma: "Gridoptiontwo"
+                            lastDiploma: 'Licence'
                           });
                           setformStep(7);
                         }}
@@ -1000,7 +1103,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         sm={5}
                         className="Gridoptiontwo"
                         onClick={() => {
-                          setFormData({ ...formData, lastDiploma: "Licence" });
+                          setFormData({ ...formData, lastDiploma: 'Master' });
                           setformStep(7);
                         }}
                       >
@@ -1012,7 +1115,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         sm={5}
                         className="Gridoptiontwo"
                         onClick={() => {
-                          setFormData({ ...formData, lastDiploma: "Master" });
+                          setFormData({ ...formData, lastDiploma: 'Doctorat' });
                           setformStep(7);
                         }}
                       >
@@ -1038,14 +1141,15 @@ const UserForm = ({ setStep, setActiveStep }) => {
                     </Grid>
                   </>
                 )}
+                {console.log('lastDiploma', lastDiploma)}
                 {formStep == 7 && (
                   <>
                     <div
                       style={{
-                        textAlign: "center",
-                        margin: "5px",
-                        width: "100%",
-                        fontSize: "13px"
+                        textAlign: 'center',
+                        margin: '5px',
+                        width: '100%',
+                        fontSize: '13px'
                       }}
                     >
                       <h1>Vous êtes en :</h1>
@@ -1054,114 +1158,129 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       container
                       spacing={4}
                       className=""
-                      style={{ justifyContent: "center" }}
+                      style={{ justifyContent: 'center' }}
                     >
-                      <Grid
-                        item
-                        xs={12}
-                        sm={4}
-                        className="Gridoptiontwo"
-                        onClick={(e) => {
-                          setFormData({
-                            ...formData,
-                            studyYear: "1ère année d’études"
-                          });
-                          handleSubmit3(e, "no");
-                        }}
-                      >
-                        1ère année d’études
-                      </Grid>
-                      <Grid
-                        item
-                        xs={12}
-                        sm={4}
-                        className="Gridoptiontwo"
-                        onClick={(e) => {
-                          setFormData({
-                            ...formData,
-                            studyYear: "2ère année d’études"
-                          });
-                          handleSubmit3(e, "no");
-                        }}
-                      >
-                        2ème année d’études
-                      </Grid>
-                      <Grid
-                        item
-                        xs={12}
-                        sm={4}
-                        className="Gridoptiontwo"
-                        onClick={(e) => {
-                          setFormData({
-                            ...formData,
-                            studyYear: "3ère année d’études"
-                          });
-                          handleSubmit3(e, "no");
-                        }}
-                      >
-                        {" "}
-                        3ème année d’études
-                      </Grid>
-                      <Grid
-                        item
-                        xs={12}
-                        sm={4}
-                        className="Gridoptiontwo"
-                        onClick={(e) => {
-                          setFormData({
-                            ...formData,
-                            studyYear: "4ère année d’études"
-                          });
-                          handleSubmit3(e, "no");
-                        }}
-                      >
-                        4ème année d’études
-                      </Grid>
-                      <Grid
-                        item
-                        xs={12}
-                        sm={4}
-                        className="Gridoptiontwo"
-                        onClick={(e) => {
-                          setFormData({
-                            ...formData,
-                            studyYear: "5ère année d’études"
-                          });
-                          handleSubmit3(e, "no");
-                        }}
-                      >
-                        5ème année d’études
-                      </Grid>
-                      <Grid
-                        item
-                        xs={12}
-                        sm={4}
-                        className="Gridoptiontwo"
-                        onClick={(e) => {
-                          setFormData({
-                            ...formData,
-                            studyYear: "6ère année d’études"
-                          });
-                          handleSubmit3(e, "no");
-                        }}
-                      >
-                        6ème année d’études
-                      </Grid>
-                      <Grid
-                        item
-                        xs={12}
-                        sm={4}
-                        className="Gridoptiontwo"
-                        onClick={(e) => {
-                          setFormData({
-                            ...formData,
-                            studyYear: "7ère année d’études"
-                          });
-                          handleSubmit3(e, "no");
-                        }}
-                      >
-                        7ème année d’études
-                      </Grid>
+                      {lastDiploma == 'Licence' && (
+                        <>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={4}
+                            className="Gridoptiontwo"
+                            onClick={(e) => {
+                              // setFormData({
+                              //   ...formData,
+                              //   studyYear: '1ère année d’études'
+                              // });
+                              handleSubmit3(e, 'no');
+                            }}
+                          >
+                            1ère année d’études
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={4}
+                            className="Gridoptiontwo"
+                            onClick={(e) => {
+                              setFormData({
+                                ...formData,
+                                studyYear: '2ère année d’études'
+                              });
+                              handleSubmit3(e, 'no');
+                            }}
+                          >
+                            2ème année d’études
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={4}
+                            className="Gridoptiontwo"
+                            onClick={(e) => {
+                              setFormData({
+                                ...formData,
+                                studyYear: '3ère année d’études'
+                              });
+                              handleSubmit3(e, 'no');
+                            }}
+                          >
+                            {' '}
+                            3ème année d’études
+                          </Grid>
+                        </>
+                      )}
+
+                      {lastDiploma == 'Master' && (
+                        <>
+                          {' '}
+                          <Grid
+                            item
+                            xs={12}
+                            sm={4}
+                            className="Gridoptiontwo"
+                            onClick={(e) => {
+                              setFormData({
+                                ...formData,
+                                studyYear: '4ère année d’études'
+                              });
+                              handleSubmit3(e, 'no');
+                            }}
+                          >
+                            4ème année d’études
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={4}
+                            className="Gridoptiontwo"
+                            onClick={(e) => {
+                              setFormData({
+                                ...formData,
+                                studyYear: '5ère année d’études'
+                              });
+                              handleSubmit3(e, 'no');
+                            }}
+                          >
+                            5ème année d’études
+                          </Grid>
+                        </>
+                      )}
+                      {lastDiploma == 'Doctorat' && (
+                        <>
+                          {' '}
+                          <Grid
+                            item
+                            xs={12}
+                            sm={4}
+                            className="Gridoptiontwo"
+                            onClick={(e) => {
+                              setFormData({
+                                ...formData,
+                                studyYear: '6ère année d’études'
+                              });
+                              handleSubmit3(e, 'no');
+                            }}
+                          >
+                            6ème année d’études
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={4}
+                            className="Gridoptiontwo"
+                            onClick={(e) => {
+                              setFormData({
+                                ...formData,
+                                studyYear: '7ère année d’études'
+                              });
+                              handleSubmit3(e, 'no');
+                            }}
+                          >
+                            7ème année d’études
+                          </Grid>
+                        </>
+                      )}
                     </Grid>
 
                     <Grid container spacing={2} className="formbuttonsGrid">
@@ -1189,7 +1308,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
               SetconfirmationOpen={SetconfirmationOpen}
               setStep={setStep}
               setActiveStep={setActiveStep}
-              otpbyemail={otpbyemail}
               handleSubmit={handleSubmit3}
               loadingresend={resendloading}
               timeLeft={timeLeft}
@@ -1198,7 +1316,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
               setresendLoading={setresendLoading}
             />
           </Grid>
-        )}{" "}
+        )}{' '}
       </Grid>
     </>
   );

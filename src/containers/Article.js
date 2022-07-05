@@ -1,17 +1,17 @@
 // Init
-import React, { useState, useEffect } from "react";
-import ArticleBody from "../components/article/ArticleBody";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import ArticleBody from '../components/article/ArticleBody';
+import { useParams } from 'react-router-dom';
 // import Blog1 from "../assets/img/1.jpeg";
-import api from "../api";
-import { Store, UpdateStore } from "../StoreContext";
-import Header from "../components/Header";
-import Contactus from "../utils/Contactus";
+import api from '../api';
+import { Store, UpdateStore } from '../StoreContext';
+import Header from '../components/Header';
+import Contactus from '../utils/Contactus';
 
 export default function Article() {
   const [activeStep, setActiveStep] = useState(1);
   const [step, setStep] = useState(0);
-  const [statetextforscroll, setStatetextforscroll] = useState("");
+  const [statetextforscroll, setStatetextforscroll] = useState('');
   const [loading, setLoading] = useState(false);
   // init
   const updateStore = UpdateStore();
@@ -20,7 +20,7 @@ export default function Article() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 1,
-      behavior: "smooth",
+      behavior: 'smooth'
     });
   };
   useEffect(() => {
@@ -30,7 +30,7 @@ export default function Article() {
   }, [id]);
   let getSingleBlog = async () => {
     setLoading(true);
-    let res = await api("get", `/blogs/${id}`);
+    let res = await api('get', `/blogs/${id}`);
     if (res) {
       updateStore({ singlBlog: res?.data });
     }
@@ -38,26 +38,30 @@ export default function Article() {
   };
   return (
     <>
-    <div
-      style={{
-        backgroundColor: "black",
-        minHeight: "100vh",
-        overflowX: "hidden",
-        overflowY: "hidden",
-      }}
-    >
-      <Header
-        step={step}
-        setStep={setStep}
-        setActiveStep={setActiveStep}
-        setStatetextforscroll={setStatetextforscroll}
-      />
+      <div
+        style={{
+          backgroundColor: 'black',
+          minHeight: '100vh',
+          overflowX: 'hidden',
+          overflowY: 'hidden'
+        }}
+      >
+        <Header
+          step={step}
+          setStep={setStep}
+          setActiveStep={setActiveStep}
+          setStatetextforscroll={setStatetextforscroll}
+        />
 
-      <ArticleBody singlBlog={singlBlog} loading={loading} blogs={blogs.filter(_ => _._id != singlBlog?._id)} />
-      <Contactus />
+        <ArticleBody
+          singlBlog={singlBlog}
+          loading={loading}
+          blogs={blogs.filter((_) => _._id != singlBlog?._id)}
+        />
+        <Contactus />
 
-      {/* <Footer /> */}
-    </div>
+        {/* <Footer /> */}
+      </div>
     </>
   );
 }

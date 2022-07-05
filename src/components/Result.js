@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { Store, UpdateStore } from "../StoreContext";
-import api from "../api";
-import Grid from "@material-ui/core/Grid";
-import MainCharacter from "../assets/img/MainCharacter.png";
-import CircularProgress from "@material-ui/core/CircularProgress";
-import TypeOfCourse from "./TypeOfCourse";
-import userimg from "../assets/icons/user.png";
-import share from "../assets/icons/share.png";
-import InvitePopup from "./InvitePopup";
-import SharePopup from "./Sharepopup";
-import jsPDF from "jspdf";
-import * as html2canvas from "html2canvas";
-import logo from "../assets/img/logo1.png";
+import React, { useState, useEffect } from 'react';
+import { Store, UpdateStore } from '../StoreContext';
+import api from '../api';
+import Grid from '@material-ui/core/Grid';
+import MainCharacter from '../assets/img/MainCharacter.png';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import TypeOfCourse from './TypeOfCourse';
+import userimg from '../assets/icons/user.png';
+import share from '../assets/icons/share.png';
+import InvitePopup from './InvitePopup';
+import SharePopup from './Sharepopup';
+import jsPDF from 'jspdf';
+import * as html2canvas from 'html2canvas';
+import logo from '../assets/img/logo1.png';
 const Result = () => {
   // init
   const updateStore = UpdateStore();
@@ -43,14 +43,14 @@ const Result = () => {
     setLoading(true);
     // let lastAnswerId = history?.find((his) => his.next_question === null);
     let lastAnswerId = history?.find(
-      (his) => his.next_question == "61111167760c9840b8d2c9d2"
+      (his) => his.next_question == '61111167760c9840b8d2c9d2'
     );
     const userData = {
       disc_answers: disc_ans_id,
       user_id: user?._id,
       last_answer: lastAnswerId?._id
     };
-    let res = await api("post", "/results", userData);
+    let res = await api('post', '/results', userData);
     if (res) {
       updateStore({ result: res?.data?.result });
     }
@@ -60,62 +60,67 @@ const Result = () => {
     setScreenshootloading(true);
     setTimeout(() => {
       onButtonClick();
-      // setScreenshootloading(false);
+      setScreenshootloading(false);
       setresultStep(1);
     }, 500);
   };
   const onButtonClick = async () => {
-    let domElement = document.getElementById("resultBox");
+    let domElement = document.getElementById('resultBox');
 
     html2canvas(domElement, {
       ignoreElements: function (element) {
-        if ("resultButtondiv" === element.id) {
+        if ('resultButtondiv' === element.id) {
           return true;
         }
       },
-      backgroundColor: "#282b38"
+      backgroundColor: '#282b38'
     }).then((canvas) => {
       updateStore({ mainresultPage: canvas });
       setScreenshootloading(false);
       // document.body.appendChild(canvas);
     });
   };
+
   const exportPdf = async () => {
     setExportLoading(true);
     setTimeout(() => {
       var pdf = new jsPDF();
       pdf.setFillColor(40, 43, 56);
-      pdf.rect(0, 0, 350, 350, "F");
-      pdf.addImage(logo, "PNG", 65, 15, 80, 15);
-      pdf.addImage(MainCharacter, "PNG", 40, 38, 125, 130);
+      pdf.rect(0, 0, 350, 350, 'F');
+      pdf.addImage(logo, 'PNG', 65, 15, 80, 15);
+      pdf.addImage(MainCharacter, 'PNG', 40, 38, 125, 130);
       if (mainresultPage) {
-        pdf.addImage(mainresultPage, "PNG", 30, 165, 150, 100);
+        pdf.addImage(mainresultPage, 'PNG', 30, 165, 150, 100);
       }
       allTypes?.map((type) => {
         pdf.addPage();
         // backgroung Color
         pdf.setFillColor(40, 43, 56);
-        pdf.rect(0, 0, 350, 350, "F");
+        pdf.rect(0, 0, 350, 350, 'F');
         // for specific width height
         var width = pdf.internal.pageSize.getWidth();
         var height = pdf.internal.pageSize.getHeight();
-        pdf.addImage(type?.canvas, "PNG", 0, 0, width, height);
+        if (result?.data?.length < 7) {
+          pdf.addImage(type?.canvas, 'PNG', 0, 0, width, 90);
+        } else {
+          pdf.addImage(type?.canvas, 'PNG', 0, 0, width, height);
+        }
         // for desktop
         // pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
         // for ten result
         // pdf.addImage(btsResult, "PNG", 0, 0, 210, 300);
       });
 
-      pdf.save("Ma liste Dirasat.pdf");
+      pdf.save('Ma liste Dirasat.pdf');
       setExportLoading(false);
       // document.body.appendChild(canvas);
     }, 500);
   };
   return (
     <>
-      {user?.level1 == "want to change" ? (
-        <div style={{ height: "100vh", textAlign: "center", marginTop: "8%" }}>
-          <h1>Proceed by Terminer.</h1>{" "}
+      {user?.level1 == 'want to change' ? (
+        <div style={{ height: '100vh', textAlign: 'center', marginTop: '8%' }}>
+          <h1>Proceed by Terminer.</h1>{' '}
           <button
             className="sharebutton"
             onClick={() => window.location.reload()}
@@ -125,7 +130,7 @@ const Result = () => {
         </div>
       ) : (
         <>
-          {" "}
+          {' '}
           {resultStep == 0 && (
             <Grid container spacing={2} className="mainresultscreen">
               <Grid item xs={12} sm={12} md={5} className="">
@@ -138,14 +143,14 @@ const Result = () => {
               <Grid item xs={12} sm={12} md={7} className="">
                 <div
                   className={`resultBox ${
-                    screenshootloading ? "lessopacity" : ""
+                    screenshootloading ? 'lessopacity' : ''
                   }`}
                   id="resultBox"
                 >
                   <div className="resultBoxText">
                     <h1
                       className="resultHeading"
-                      style={{ textAlign: "center" }}
+                      style={{ textAlign: 'center' }}
                     >
                       Bravo! Tu as répondu à toutes les questions!
                     </h1>
@@ -156,19 +161,19 @@ const Result = () => {
                       </p>
                     ) : (
                       <p className="resultText">
-                        <span style={{ color: "#9198A5" }}>
-                          {" "}
+                        <span style={{ color: '#9198A5' }}>
+                          {' '}
                           D'après tes réponses, je pense que ton profil est
                           tourné vers
                         </span>
                         <br />
                         <b>
-                          {" "}
+                          {' '}
                           <span
                             style={{
-                              color: "white",
-                              fontWeight: "900",
-                              wordBreak: "break-word"
+                              color: 'white',
+                              fontWeight: '900',
+                              wordBreak: 'break-word'
                             }}
                           >
                             {loading ? (
@@ -178,34 +183,34 @@ const Result = () => {
                             ) : result?.type_of_job ? (
                               result.type_of_job
                             ) : (
-                              "Il n’y a actuellement pas de job disponible."
-                            )}{" "}
+                              'Il n’y a actuellement pas de job disponible.'
+                            )}{' '}
                           </span>
-                        </b>{" "}
-                        <span style={{ color: "#9198A5" }}>
+                        </b>{' '}
+                        <span style={{ color: '#9198A5' }}>
                           comme par exemple
-                        </span>{" "}
+                        </span>{' '}
                         <span
                           style={{
-                            color: "white",
-                            fontWeight: "900",
-                            wordBreak: "break-word"
+                            color: 'white',
+                            fontWeight: '900',
+                            wordBreak: 'break-word'
                           }}
                         >
-                          {" "}
+                          {' '}
                           {loading
-                            ? "loading"
+                            ? 'loading'
                             : result?.example_of_job
                             ? result.example_of_job
-                            : "Currently no example available"}
+                            : 'Currently no example available'}
                         </span>
                       </p>
                     )}
                     {!loading && (
                       <p className="resultText">
-                        <span style={{ color: "#9198A5" }}>
-                          Je te propose une liste de voeux orientation wishes
-                          qui correspondrait à ton profil.
+                        <span style={{ color: '#9198A5' }}>
+                          Je te propose une liste de vœux d’orientation qui
+                          correspondrait à ton profil.
                         </span>
                       </p>
                     )}
@@ -219,10 +224,10 @@ const Result = () => {
                       disabled={loading}
                     >
                       <b>
-                        {" "}
+                        {' '}
                         {screenshootloading
-                          ? "veuillez patienter"
-                          : "Ma liste de voeux"}
+                          ? 'veuillez patienter'
+                          : 'Ma liste de voeux'}
                       </b>
                     </button>
                   </div>
@@ -243,7 +248,7 @@ const Result = () => {
                 container
                 spacing={1}
                 className={`mainresultscreen ${
-                  exportLoading ? "lessopacity" : ""
+                  exportLoading ? 'lessopacity' : ''
                 }`}
               >
                 <Grid item xs={12} sm={12} className="">
@@ -256,7 +261,7 @@ const Result = () => {
                               {result.data ? (
                                 <TypeOfCourse
                                   type={
-                                    "Cursus universitaire compatible avec les résultats de ton test d’orientation"
+                                    'Cursus universitaire compatible avec les résultats de ton test d’orientation'
                                   }
                                   result={result?.data}
                                   // percentage={item?.percentage}
@@ -267,8 +272,8 @@ const Result = () => {
                                 <div
                                   className=""
                                   style={{
-                                    margin: "10px",
-                                    textAlign: "center"
+                                    margin: '10px',
+                                    textAlign: 'center'
                                   }}
                                 >
                                   <h1> Désolé pas de cours disponible</h1>
@@ -278,10 +283,10 @@ const Result = () => {
 
                             <div
                               style={{
-                                width: "70%",
-                                textAlign: "center",
-                                margin: "auto",
-                                color: "grey"
+                                width: '70%',
+                                textAlign: 'center',
+                                margin: 'auto',
+                                color: 'grey'
                               }}
                               // className="desktopView"
                             >
@@ -293,23 +298,23 @@ const Result = () => {
                                 correspondre!
                               </p>
                             </div>
-                            {/* <div className="desktopView goback">
-                          <button
-                            className="goBackbutton"
-                            onClick={exportPdf}
-                            disabled={exportLoading}
-                          >
-                            {exportLoading
-                              ? "Veuillez patienter"
-                              : "Exporter le PDF"}
-                          </button>
-                        </div> */}
+                            <div className="desktopView goback">
+                              <button
+                                className="goBackbutton"
+                                onClick={exportPdf}
+                                disabled={exportLoading}
+                              >
+                                {exportLoading
+                                  ? 'Veuillez patienter'
+                                  : 'Exporter le PDF'}
+                              </button>
+                            </div>
                             <div
                               style={{
-                                width: "70%",
-                                textAlign: "center",
-                                margin: "auto",
-                                color: "grey"
+                                width: '70%',
+                                textAlign: 'center',
+                                margin: 'auto',
+                                color: 'grey'
                               }}
                               className="mobileView"
                             >
@@ -349,7 +354,7 @@ const Result = () => {
                         ) : (
                           <div
                             className=""
-                            style={{ margin: "10px", textAlign: "center" }}
+                            style={{ margin: '10px', textAlign: 'center' }}
                           >
                             <h1> Désolé pas de cours disponible</h1>
                           </div>
@@ -358,7 +363,7 @@ const Result = () => {
                     ) : (
                       <div
                         className=""
-                        style={{ margin: "10%", textAlign: "center" }}
+                        style={{ margin: '10%', textAlign: 'center' }}
                       >
                         <h1>Chargement en cours...</h1>
                       </div>

@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { Store, UpdateStore } from "../StoreContext";
-import Card from "../components/dashboard/Card";
-import TypeOfCourse from "../components/TypeOfCourse";
-import api from "../api";
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { Store, UpdateStore } from '../StoreContext';
+import Card from '../components/dashboard/Card';
+import TypeOfCourse from '../components/TypeOfCourse';
+import api from '../api';
 
 const Result = () => {
-  let typeOfCourses = ["BTS", "BUT", "CPGE", "Ecole Post-Bac", "Licence"];
+  let typeOfCourses = ['BTS', 'BUT', 'CPGE', 'Ecole Post-Bac', 'Licence'];
   const updateStore = UpdateStore();
-  const { singleUserResult,user } = Store();
+  const { singleUserResult, user } = Store();
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
   const [flag, setFlag] = useState(true);
@@ -19,7 +19,7 @@ const Result = () => {
   }, []);
   let getUserResult = async () => {
     setLoading(true);
-    let res = await api("get", `/admin/results/single-result/${id}`);
+    let res = await api('get', `/admin/results/single-result/${id}`);
     if (res) {
       updateStore({ singleUserResult: res?.data?.result });
       setLoading(false);
@@ -31,22 +31,22 @@ const Result = () => {
       (course) => type === course?.courseId?.type_of_course
     );
   };
-  
+
   return (
     <div
       style={{
-        height: "100vh",
+        height: '100vh',
         background:
-          "radial-gradient(97.47% 66.83% at 50% 50%,#35384e 0%,#000000 100%)",
+          'radial-gradient(97.47% 66.83% at 50% 50%,#35384e 0%,#000000 100%)'
       }}
     >
       <div
         style={{
-          paddingTop: "5%",
-          marginLeft: "275px",
-          width: "80%",
-          textAlign: "center",
-          color: "white",
+          paddingTop: '5%',
+          marginLeft: '275px',
+          width: '80%',
+          textAlign: 'center',
+          color: 'white'
         }}
       >
         <h2>Domain:{singleUserResult?.domain}</h2>
@@ -54,7 +54,7 @@ const Result = () => {
       </div>
       <div style={{}}>
         {!loading ? (
-          <div style={{ padding: "5px", marginLeft: "10%" }}>
+          <div style={{ padding: '5px', marginLeft: '10%' }}>
             {singleUserResult?.courses &&
             singleUserResult?.courses.length >= 1 ? (
               <div className="">
@@ -77,15 +77,15 @@ const Result = () => {
                 ))} */}
               </div>
             ) : (
-              <div className="cardflex" style={{ color: "white" }}>
-                {" "}
+              <div className="cardflex" style={{ color: 'white' }}>
+                {' '}
                 <h1>aucun cours disponible</h1>
               </div>
             )}
           </div>
         ) : (
-          <div className="cardflex" style={{ color: "white" }}>
-            {" "}
+          <div className="cardflex" style={{ color: 'white' }}>
+            {' '}
             <h1>Chargement...</h1>
           </div>
         )}

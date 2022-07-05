@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
-import logo from "../assets/img/logo1.png";
+import React, { useEffect } from 'react';
+import logo from '../assets/img/logo1.png';
 
 const Confidential = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 11,
-      behavior: "smooth"
+      behavior: 'smooth'
     });
   };
   useEffect(() => {
@@ -14,8 +14,8 @@ const Confidential = () => {
   }, []);
   return (
     <>
-      <div style={{ minHeight: "100vh", marginTop: "-2%", color: "white" }}>
-        <div style={{ width: "60%", margin: "auto" }}>
+      <div style={{ minHeight: '100vh', marginTop: '-2%', color: 'white' }}>
+        <div style={{ width: '60%', margin: 'auto' }}>
           <p className="cguHeading">
             <img src={logo} className="cgulogo" alt="logo" />
             <br />
@@ -23,7 +23,7 @@ const Confidential = () => {
             <br />
           </p>
         </div>
-        <div style={{ width: "80%", margin: "auto" }}>
+        <div style={{ width: '80%', margin: 'auto' }}>
           <h1 className="cguH1">ARTICLE 1 : PRÉAMBULE</h1>
           <p>
             Cette politique de confidentialité s'applique au site : Dirasat.com.
@@ -220,7 +220,7 @@ const Confidential = () => {
             (contact@Dirasat.com) et par téléphone (01 84 80 74 81) lundi au
             vendredi de 9h à 19h.
           </p>
-          <p className="pmargin" style={{ paddingBottom: "30px" }}>
+          <p className="pmargin" style={{ paddingBottom: '30px' }}>
             Le responsable du traitement des données est chargé de déterminer
             les finalités et les moyens mis au service du traitement des données
             à caractère personnel.

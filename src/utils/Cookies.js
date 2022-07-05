@@ -1,14 +1,14 @@
-import * as React from "react";
-import Grid from "@material-ui/core/Grid";
-import { Link } from "react-router-dom";
+import * as React from 'react';
+import Grid from '@material-ui/core/Grid';
+import { Link } from 'react-router-dom';
 
 export default function Cookies({
   setCookies,
   setOpenCookieePopup,
-  setRefuserPopup,
+  setRefuserPopup
 }) {
   const handleCookies = () => {
-    localStorage.setItem("cookies", true);
+    localStorage.setItem('cookies', true);
     setCookies(false);
   };
   const handleCancelCookies = () => {
@@ -22,7 +22,7 @@ export default function Cookies({
             En poursuivant votre navigation sur ce site, vous acceptez
             l'utilisation de cookies afin d'optimiser votre navigation et
             réaliser des statistiques de suivis. Pour en savoir plus, consultez
-            <Link to="/CGU" style={{ color: "white", marginLeft: "4px" }}>
+            <Link to="/CGU" style={{ color: 'white', marginLeft: '4px' }}>
               notre politique de confidentialité.
             </Link>
           </p>

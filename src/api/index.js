@@ -1,8 +1,8 @@
-import axios from "axios";
-import { toast } from "react-toastify";
-import { baseUrl } from "../config";
+import axios from 'axios';
+import { toast } from 'react-toastify';
+import { baseUrl } from '../config';
 
-const api = async (method = "get", uri, body) => {
+const api = async (method = 'get', uri, body) => {
   // API Call
   const url = baseUrl + uri;
   // if (window.location.hostname === "orientator-demo.web.app") {
@@ -19,9 +19,9 @@ const api = async (method = "get", uri, body) => {
     .then((res) => res)
     .catch((err) => {
       {
-        console.log("API Error ---1-----> ", err.response);
+        console.log('API Error ---1-----> ', err.response);
         if (err.response?.status === 403) {
-          window.location = "/login";
+          window.location = '/login';
         }
         return toast.error(
           err?.response?.data ? err.response.data : err?.message

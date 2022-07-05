@@ -1,39 +1,38 @@
-import React, { useState, useEffect } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Store, UpdateStore } from "../StoreContext";
-import winkingFinal from "../assets/img/WinkingFinal.png";
-import encourageFinal from "../assets/img/EncourageFinal.png";
-import arrogantFinal from "../assets/img/ArrogantFinal.png";
-import asthonisedFinal from "../assets/img/AsthonisedFinal.png";
-import thoughtfulFinal from "../assets/img/ThoughtfulFinal.png";
-import victoriousFinal from "../assets/img/VictoriousFinal.png";
-import qarrow from "../assets/icons/qarrow.png";
-import InfoIcon from "@mui/icons-material/Info";
-import Grid from "@material-ui/core/Grid";
-import Info from "./Info";
-import useSound from "use-sound";
-import sound from "../assets/sound/sound.wav";
-import arrowleft from "../assets/img/arrow2.png";
+import React, { useState, useEffect } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import { Store, UpdateStore } from '../StoreContext';
+import winkingFinal from '../assets/img/WinkingFinal.png';
+import encourageFinal from '../assets/img/EncourageFinal.png';
+import arrogantFinal from '../assets/img/ArrogantFinal.png';
+import asthonisedFinal from '../assets/img/AsthonisedFinal.png';
+import thoughtfulFinal from '../assets/img/ThoughtfulFinal.png';
+import victoriousFinal from '../assets/img/VictoriousFinal.png';
+import qarrow from '../assets/icons/qarrow.png';
+import InfoIcon from '@mui/icons-material/Info';
+import Grid from '@material-ui/core/Grid';
+import Info from './Info';
+import useSound from 'use-sound';
+import sound from '../assets/sound/sound.wav';
+import arrowleft from '../assets/img/arrow2.png';
 
 const Questions = ({ setStep, setActiveStep }) => {
   const [play] = useSound(sound);
   // init context
   const updateStore = UpdateStore();
-  const { questions, answers, history, disc_ans_id ,user} = Store();
+  const { questions, answers, history, disc_ans_id, user } = Store();
   const scrollToTop = () => {
     window.scrollTo({
       top: 60,
-      behavior: "smooth"
+      behavior: 'smooth'
     });
   };
   // state init
-  const [nextQuestionId, setNextQuestionId] = useState("first");
+  const [nextQuestionId, setNextQuestionId] = useState('first');
   const [prevQuestion, setprevQuestion] = useState([]);
   const [currentAnswer, setCurrentAnswer] = useState(null);
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [text, setText] = useState(null);
-
 
   // Here we will preload all the images
   useEffect(() => {
@@ -58,25 +57,25 @@ const Questions = ({ setStep, setActiveStep }) => {
   // stlyes
   const useStyles = makeStyles((theme) => ({
     root: {
-      "& > *": {
+      '& > *': {
         margin: theme.spacing(1),
-        width: "35ch"
+        width: '35ch'
       }
     },
     main: {
-      margin: "auto",
-      textAlign: "center",
-      marginTop: "5%",
-      height: "70vh"
+      margin: 'auto',
+      textAlign: 'center',
+      marginTop: '5%',
+      height: '70vh'
     },
     chekbox: {
-      margin: "auto"
+      margin: 'auto'
     }
   }));
   const classes = useStyles();
   // when  select any option it will set next Q id ,update history , if Q type is discriminating update disc_ans_id
   const handleSelectOption = (ans) => {
-    if (ans?.question?.questionType === "discriminating") {
+    if (ans?.question?.questionType === 'discriminating') {
       updateStore({ disc_ans_id: [...disc_ans_id, ans?._id] });
     }
     setNextQuestionId(ans?.next_question);
@@ -98,14 +97,12 @@ const Questions = ({ setStep, setActiveStep }) => {
   // if show the questions by filteron the base of nextquestionId
   const getQuestion = () => {
     if (nextQuestionId == null) {
-      
-   
       setStep(3);
       // setActiveStep((prevActiveStep) => prevActiveStep + 1)
       setActiveStep(3);
       return;
     }
-    if (nextQuestionId === "first") {
+    if (nextQuestionId === 'first') {
       return questions?.find((question) => question.isFirst);
     } else {
       return questions?.find((question) => question._id === nextQuestionId);
@@ -185,7 +182,7 @@ const Questions = ({ setStep, setActiveStep }) => {
       (his) => his?.next_question === getQuestion()?._id
     );
     if (getprev) {
-      if (getprev?.question?.questionType === "discriminating") {
+      if (getprev?.question?.questionType === 'discriminating') {
         const disans = [...disc_ans_id];
         disans.pop();
         updateStore({
@@ -217,36 +214,36 @@ const Questions = ({ setStep, setActiveStep }) => {
             ${
               getOptions(answers)?.length >= 5 &&
               getOptions(answers)?.length <= 8
-                ? "marginBottomClass"
+                ? 'marginBottomClass'
                 : getOptions(answers)?.length === 11
-                ? ""
+                ? ''
                 : getQuestion()?.question ==
-                  "Je vois! Dans ce cas, quel rôle aimerais-tu y jouer?"
-                ? "uniquefouroptions"
-                : "questionDiv"
+                  'Je vois! Dans ce cas, quel rôle aimerais-tu y jouer?'
+                ? 'uniquefouroptions'
+                : 'questionDiv'
             }
-            ${getOptions(answers)?.length == 9 && "nineOptions"}
-            ${getOptions(answers)?.length == 6 && "sixOptions"}
+            ${getOptions(answers)?.length == 9 && 'nineOptions'}
+            ${getOptions(answers)?.length == 6 && 'sixOptions'}
             `}
           >
             <img src={qarrow} className="qboximg" alt="box" />
             <div
               className={`questionBox ${
-                getOptions(answers)?.length == 11 && "ninthoptionquestion"
+                getOptions(answers)?.length == 11 && 'ninthoptionquestion'
               }`}
             >
               <h1
                 className={`${
                   getQuestion()?.question.length >= 90
-                    ? "longquestion"
-                    : "questiontext"
+                    ? 'longquestion'
+                    : 'questiontext'
                 }`}
               >
                 {getQuestion()?.question
                   ? getQuestion()?.question
                   : "There's no Question please try again"}
                 {getQuestion()?.question ==
-                  "Encore une question, veux-tu inclure les études payantes?" && (
+                  'Encore une question, veux-tu inclure les études payantes?' && (
                   <InfoIcon
                     className="infoIcon"
                     onClick={(e) => handleClickinfo(e, 1)}
@@ -260,10 +257,17 @@ const Questions = ({ setStep, setActiveStep }) => {
                   />
                 )}
                 {getQuestion()?.question ==
-                  "Maintenant dis-moi si tu veux inclure les formations sélectives:" && (
+                  'Maintenant dis-moi si tu veux inclure les formations sélectives:' && (
                   <InfoIcon
                     className="infoIcon"
                     onClick={(e) => handleClickinfo(e, 3)}
+                  />
+                )}
+                {getQuestion()?.question ==
+                  'À quel pays penses-tu en particulier?' && (
+                  <InfoIcon
+                    className="infoIcon"
+                    onClick={(e) => handleClickinfo(e, 4)}
                   />
                 )}
               </h1>
@@ -277,9 +281,9 @@ const Questions = ({ setStep, setActiveStep }) => {
                     sm={5}
                     className={`${
                       currentAnswer?.answer === ans?.answer
-                        ? "selectedOption"
-                        : "option"
-                    } ${getOptions(answers)?.length == 11 && "ninthoption"}`}
+                        ? 'selectedOption'
+                        : 'option'
+                    } ${getOptions(answers)?.length == 11 && 'ninthoption'}`}
                     onClick={() => handleSelectOption(ans)}
                   >
                     {ans?.answer}
@@ -292,11 +296,10 @@ const Questions = ({ setStep, setActiveStep }) => {
                 <b> Retour</b>
               </div>
             ) : (
-              ""
+              ''
             )}
           </div>
         </Grid>
-        
       </Grid>
     </>
   );

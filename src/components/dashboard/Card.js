@@ -1,15 +1,15 @@
 //init
-import React from "react";
-import "../../css/card.css";
-import Grid from "@material-ui/core/Grid";
-import selectivity from "../../assets/icons/selectivity.png";
-import cost from "../../assets/icons/cost.png";
-import language from "../../assets/icons/language.png";
-import duration from "../../assets/icons/duration.png";
-import proximate from "../../assets/icons/proximate.png";
+import React from 'react';
+import '../../css/card.css';
+import Grid from '@material-ui/core/Grid';
+import selectivity from '../../assets/icons/selectivity.png';
+import cost from '../../assets/icons/cost.png';
+import language from '../../assets/icons/language.png';
+import duration from '../../assets/icons/duration.png';
+import proximate from '../../assets/icons/proximate.png';
 
-import StarIcon from "@material-ui/icons/Star";
-import StarBorderIcon from "@material-ui/icons/StarBorder";
+import StarIcon from '@material-ui/icons/Star';
+import StarBorderIcon from '@material-ui/icons/StarBorder';
 
 //Component
 function Cards({ courses }) {
@@ -29,10 +29,10 @@ function Cards({ courses }) {
                 </p>
                 <p>Séléctivité</p>
                 <div>
-                  <b style={{ fontSize: "15px" }}>4/5</b>
+                  <b style={{ fontSize: '15px' }}>4/5</b>
                 </div>
               </div>
-              <div style={{ marginTop: "4px" }}>
+              <div style={{ marginTop: '4px' }}>
                 <p>
                   <img src={cost} alt="coût" />
                 </p>
@@ -44,23 +44,23 @@ function Cards({ courses }) {
                         if (course?.courseId?.cost[0] >= item) {
                           return (
                             <StarIcon
-                              style={{ width: "12px", height: "20px" }}
+                              style={{ width: '12px', height: '20px' }}
                             />
                           );
                         } else
                           return (
                             <StarBorderIcon
-                              style={{ width: "12px", height: "20px" }}
+                              style={{ width: '12px', height: '20px' }}
                             />
                           );
                       })}
                     </>
                   ) : (
-                    "No"
+                    'No'
                   )}
                 </div>
               </div>
-              <div style={{ marginTop: "9px" }}>
+              <div style={{ marginTop: '9px' }}>
                 <p>
                   <img src={language} alt="langue" />
                 </p>

@@ -1,14 +1,14 @@
 // Init
-import React, { useState, useEffect } from "react";
-import BlogBodyimg from "../../assets/img/blogcover2.png";
-import LatestArticle from "./LatestArticle";
-import YouMayLike from "./YouMayLike";
-import api from "../../api";
-import { Store, UpdateStore } from "../../StoreContext";
-import Carousel from "react-material-ui-carousel";
-import { url } from "../../config";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import React, { useState, useEffect } from 'react';
+import BlogBodyimg from '../../assets/img/blogcover2.png';
+import LatestArticle from './LatestArticle';
+import YouMayLike from './YouMayLike';
+import api from '../../api';
+import { Store, UpdateStore } from '../../StoreContext';
+import Carousel from 'react-material-ui-carousel';
+import { url } from '../../config';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 export default function BlogBody() {
   const [loading, setLoading] = useState(false);
@@ -24,7 +24,7 @@ export default function BlogBody() {
   let getBlogs = async () => {
     setLoading(true);
 
-    let res = await api("get", "/blogs");
+    let res = await api('get', '/blogs');
     if (res) {
       updateStore({ blogs: res?.data });
     }
@@ -33,7 +33,7 @@ export default function BlogBody() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 1,
-      behavior: "smooth",
+      behavior: 'smooth'
     });
   };
 
@@ -45,7 +45,7 @@ export default function BlogBody() {
   return (
     <>
       {loading ? (
-        "Chargement en cours..."
+        'Chargement en cours...'
       ) : (
         <>
           <Helmet>

@@ -1,3 +1,4 @@
+
 let baseUrl = "";
 let url = "";
 if (window.location.host === "dirasat-demo.web.app") {
@@ -7,8 +8,8 @@ if (window.location.host === "dirasat-demo.web.app") {
   baseUrl = "https://api.dirasat.com/api/";
   url = "https://api.dirasat.com/";
 } else {
-  baseUrl = "http://localhost:5000/api/";
-  url = "http://localhost:5000/";
+  baseUrl = 'http://localhost:5000/api/';
+  url = 'http://localhost:5000/';
 }
 
 module.exports = { baseUrl, url };

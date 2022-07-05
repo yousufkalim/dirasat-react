@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 const Header = () => {
   const logout = async () => {
-    localStorage.removeItem("token");
-    window.location = "/login";
+    localStorage.removeItem('token');
+    window.location = '/login';
   };
   return (
     <div className="headera">

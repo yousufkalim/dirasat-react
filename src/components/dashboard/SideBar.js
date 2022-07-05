@@ -1,6 +1,6 @@
-import React from "react";
-import Logo from "../../assets/img/f.jpeg";
-import { Link } from "react-router-dom";
+import React from 'react';
+import Logo from '../../assets/img/f.jpeg';
+import { Link } from 'react-router-dom';
 
 const SideBar = () => {
   return (
@@ -8,7 +8,7 @@ const SideBar = () => {
       <div class="profile_info">
         <img
           src={Logo}
-          style={{ width: "25%", margin: "10px" }}
+          style={{ width: '25%', margin: '10px' }}
           alt="logosidebar"
         />
         <h4>DIRASAT</h4>
@@ -16,11 +16,11 @@ const SideBar = () => {
       <div className="options">
         <Link to="/users">
           {/* <i class="fas fa-desktop option"></i> */}
-          <span style={{ marginRight: "35px" }}>All Users</span>
+          <span style={{ marginRight: '35px' }}>All Users</span>
         </Link>
         <Link to="/results">
           {/* <i class="fas fa-desktop option "></i> */}
-          <span style={{ marginRight: "35px" }}>All Results</span>
+          <span style={{ marginRight: '35px' }}>All Results</span>
         </Link>
       </div>
     </div>

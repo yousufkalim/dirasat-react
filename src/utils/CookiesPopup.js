@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { styled } from "@material-ui/core/styles";
-import Dialog from "@material-ui/core/Dialog";
-import DialogContent from "@material-ui/core/DialogContent";
-import IconButton from "@material-ui/core/IconButton";
-import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
-import { Store, UpdateStore } from "../StoreContext";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { styled } from '@material-ui/core/styles';
+import Dialog from '@material-ui/core/Dialog';
+import DialogContent from '@material-ui/core/DialogContent';
+import IconButton from '@material-ui/core/IconButton';
+import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
+import { Store, UpdateStore } from '../StoreContext';
+import { Link } from 'react-router-dom';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
-  "& .MuDialogContent-root": {
+  '& .MuDialogContent-root': {
     padding: theme.spacing(2)
   },
-  "& .MuDialogActions-root": {
+  '& .MuDialogActions-root': {
     padding: theme.spacing(1)
   }
 }));
@@ -54,7 +54,7 @@ export default function CookiesPopup({
       return setOpenCookieePopup2(true);
     }
     if (accept) {
-      localStorage.setItem("cookies", true);
+      localStorage.setItem('cookies', true);
       setOpen(false);
     }
     setOpen(false);
@@ -64,7 +64,7 @@ export default function CookiesPopup({
       <BootstrapDialog
         onClose={handleClose}
         open={open}
-        style={{ backdropFilter: "blur(20px)" }}
+        style={{ backdropFilter: 'blur(20px)' }}
       >
         <IconButton
           className="InvitecloseButton"
@@ -75,17 +75,17 @@ export default function CookiesPopup({
           {/* <img src={close} className="closeimg" /> */}
         </IconButton>
         <DialogContent className="modalcontentcookie">
-          <p style={{ margin: "0" }} className="toptextpopup">
+          <p style={{ margin: '0' }} className="toptextpopup">
             Dirasat et ses partenaires sélectionnés traitent des données
             personnelles en lien avec votre navigation sur nos contenus pour les
             finalités listées ci-dessous.
           </p>
-          <p style={{ margin: "0" }} className="toptextpopup">
+          <p style={{ margin: '0' }} className="toptextpopup">
             Pour en savoir plus sur nos pratiques en matière de protection des
             données personnelles et la façon dont nous utilisons vos données,
             vous pouvez consulter
             <Link to="/confidentialite" target="_blank" className="cookieeLink">
-              {" "}
+              {' '}
               politique de confidentialité
             </Link>
           </p>
@@ -96,10 +96,10 @@ export default function CookiesPopup({
               Fonctionnalités basiques de navigation requises
             </li>
             <div>
-              <button className={`${"rejectbtndisabled"}`} disabled>
+              <button className={`${'rejectbtndisabled'}`} disabled>
                 Refuser
               </button>
-              <button className={`${"acceptbtnActive"}`}>Accepter</button>
+              <button className={`${'acceptbtnActive'}`}>Accepter</button>
             </div>
           </div>
           {data.map((item, i) => (
@@ -107,13 +107,13 @@ export default function CookiesPopup({
               <li className="popupli">{item.text}</li>
               <div>
                 <button
-                  className={`${item.refuse ? "rejectbtnActive" : "rejectbtn"}`}
+                  className={`${item.refuse ? 'rejectbtnActive' : 'rejectbtn'}`}
                   onClick={() => handleRefuse(item)}
                 >
                   Refuser
                 </button>
                 <button
-                  className={`${item.accept ? "acceptbtnActive" : "acceptbtn"}`}
+                  className={`${item.accept ? 'acceptbtnActive' : 'acceptbtn'}`}
                   onClick={() => handleAccept(item)}
                 >
                   Accepter
@@ -132,7 +132,7 @@ export default function CookiesPopup({
               différents terminaux.
             </p>
             <div className="popupbtndiv">
-              {" "}
+              {' '}
               <button className="popupsavebtn" onClick={handleSavepopup}>
                 Enregistrer
               </button>

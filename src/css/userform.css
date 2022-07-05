@@ -5,6 +5,7 @@
   width: 50%;
   margin: auto;
 }
+
 .stepper {
   justify-content: center !important;
   background: none !important;
@@ -223,7 +224,7 @@
   padding: 0 0 2px 5px !important;
 }
 .termsandconditionGrid {
-  margin: -5px 0 6px 10px !important;
+  margin: 10px 0 6px 10px !important;
 }
 .termsandcondition {
   color: #9198a5;
@@ -299,6 +300,9 @@
   );
   cursor: pointer !important;
 }
+.selectformControl2 {
+  width: 110% !important;
+}
 /* for big screens */
 @media only screen and (min-width: 1500px) and (max-width: 1900px) {
   .mainuserform {
@@ -348,7 +352,7 @@
     margin: 0px 0 0 0 !important;
   }
   .termsandconditionGrid {
-    margin: -5px 0 8px 20px !important;
+    margin: 10px 0 8px 20px !important;
   }
   .formbackbutton {
     margin: 20px 20px 20px 35px;

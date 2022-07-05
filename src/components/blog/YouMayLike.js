@@ -1,10 +1,10 @@
 // Init
-import React, { useEffect } from "react";
-import Grid from "@material-ui/core/Grid";
-import blogImg from "../../assets/3.png";
-import { url } from "../../config";
+import React, { useEffect } from 'react';
+import Grid from '@material-ui/core/Grid';
+import blogImg from '../../assets/3.png';
+import { url } from '../../config';
 
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 export default function YouMayLike({ blogs, loading, setLoading }) {
   let newblog = [];
@@ -30,8 +30,8 @@ export default function YouMayLike({ blogs, loading, setLoading }) {
                   <div className="blogdiv1">
                     <Link
                       to={`blog/${item._id}`}
-                      params={{ testvalue: "hello" }}
-                      style={{ textDecoration: "none", cursor: "pointer" }}
+                      params={{ testvalue: 'hello' }}
+                      style={{ textDecoration: 'none', cursor: 'pointer' }}
                     >
                       <img
                         // src={blogImg}
@@ -43,24 +43,24 @@ export default function YouMayLike({ blogs, loading, setLoading }) {
                     <div className="blogdiv1text">
                       <h3 className="blogdiv1heading">
                         {item?.blog_title.length > 90
-                          ? item?.blog_title.substring(0, 89) + "..."
+                          ? item?.blog_title.substring(0, 89) + '...'
                           : item?.blog_title}
                       </h3>
                       <p className="bloddiv1detail">
                         {item?.blog_desc.length > 147
-                          ? item?.blog_desc.substring(0, 146) + ".."
+                          ? item?.blog_desc.substring(0, 146) + '..'
                           : item?.blog_desc}
                       </p>
                       <p>
                         <Link
                           to={`blog/${item._id}`}
-                          params={{ testvalue: "hello" }}
+                          params={{ testvalue: 'hello' }}
                           style={{
-                            textDecoration: "none",
-                            cursor: "pointer",
+                            textDecoration: 'none',
+                            cursor: 'pointer'
                           }}
                         >
-                          {" "}
+                          {' '}
                           <span className="seemore"> Lire l’article</span>
                         </Link>
                       </p>

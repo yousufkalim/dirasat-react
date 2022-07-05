@@ -1,41 +1,41 @@
-import React, { useState } from "react";
-import { styled } from "@material-ui/core/styles";
-import Dialog from "@material-ui/core/Dialog";
-import { toast } from "react-toastify";
-import DialogContent from "@material-ui/core/DialogContent";
-import IconButton from "@material-ui/core/IconButton";
-import Grid from "@material-ui/core/Grid";
-import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
-import { Store } from "../StoreContext";
-import api from "../api";
+import React, { useState } from 'react';
+import { styled } from '@material-ui/core/styles';
+import Dialog from '@material-ui/core/Dialog';
+import { toast } from 'react-toastify';
+import DialogContent from '@material-ui/core/DialogContent';
+import IconButton from '@material-ui/core/IconButton';
+import Grid from '@material-ui/core/Grid';
+import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
+import { Store } from '../StoreContext';
+import api from '../api';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
-  "& .MuDialogContent-root": {
-    padding: theme.spacing(2),
+  '& .MuDialogContent-root': {
+    padding: theme.spacing(2)
   },
-  "& .MuDialogActions-root": {
-    padding: theme.spacing(1),
-  },
+  '& .MuDialogActions-root': {
+    padding: theme.spacing(1)
+  }
 }));
 export default function InviteBox({ open, setOpen }) {
   const { user } = Store();
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
-    email: "",
+    email: '',
     inviteBy: user?.email,
     firstName: user?.first_name,
-    lastName: user?.last_name,
+    lastName: user?.last_name
   });
   // Destructuring of UserForm State
   const { phone, email, advice, contact, firstName } = formData;
   // onChange Function for Input Field
   const onChange = (e) => {
-    if (e.target.name === "advice" || e.target.name === "contact") {
+    if (e.target.name === 'advice' || e.target.name === 'contact') {
       setFormData({ ...formData, [e.target.name]: e.target.checked });
     } else {
       setFormData({
         ...formData,
-        [e.target.name]: e.target.value,
+        [e.target.name]: e.target.value
       });
     }
   };
@@ -52,16 +52,16 @@ export default function InviteBox({ open, setOpen }) {
     let newData = {
       email,
       firstName: user?.first_name,
-      lastName: user?.last_name,
+      lastName: user?.last_name
     };
 
     setLoading(true);
-    let res = await api("post", "/users/invite", {
-      ...newData,
+    let res = await api('post', '/users/invite', {
+      ...newData
     });
     if (res) {
-      toast.success("Invitation envoyée avec succès");
-      setFormData({ email: "" });
+      toast.success('Invitation envoyée avec succès');
+      setFormData({ email: '' });
       setLoading(false);
       setOpen(false);
     }
@@ -74,7 +74,7 @@ export default function InviteBox({ open, setOpen }) {
       <BootstrapDialog
         onClose={handleClose}
         open={open}
-        style={{ backdropFilter: "blur(20px)" }}
+        style={{ backdropFilter: 'blur(20px)' }}
       >
         <IconButton
           className="InvitecloseButton"

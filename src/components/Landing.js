@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from "react";
-import Grid from "@material-ui/core/Grid";
-import Main from "../assets/img/da2.png";
-import MainCharacter from "../assets/img/MainCharacter.png";
-import video1 from "../assets/video/orientatorVideo.mp4";
-import thumbnail from "../assets/img/thumbnail.jpg";
-import Cookies from "../utils/Cookies";
-import CookiesPopup from "../utils/CookiesPopup";
-import CookiesPopup2 from "../utils/CookiesPopup2";
-import Contactus from "../utils/Contactus";
-import RefuserPopup from "../utils/RefuserPopup";
-import { useLocation } from "react-router-dom";
-import axios from "axios";
-import f1 from "../assets/img/f1.png";
-import f2 from "../assets/img/f2.png";
-import f3 from "../assets/img/f3.png";
-import arrowright from "../assets/img/arrow.png";
-import Footer from "./Footer";
-import api from "../api";
-import CountUp from "react-countup";
+import React, { useState, useEffect } from 'react';
+import Grid from '@material-ui/core/Grid';
+import Main from '../assets/img/da2.png';
+import MainCharacter from '../assets/img/MainCharacter.png';
+import video1 from '../assets/video/orientatorVideo.mp4';
+import thumbnail from '../assets/img/thumbnail.jpg';
+import Cookies from '../utils/Cookies';
+import CookiesPopup from '../utils/CookiesPopup';
+import CookiesPopup2 from '../utils/CookiesPopup2';
+import Contactus from '../utils/Contactus';
+import RefuserPopup from '../utils/RefuserPopup';
+import { useLocation } from 'react-router-dom';
+import axios from 'axios';
+import f1 from '../assets/img/f1.png';
+import f2 from '../assets/img/f2.png';
+import f3 from '../assets/img/f3.png';
+import arrowright from '../assets/img/arrow.png';
+import Footer from './Footer';
+import api from '../api';
+import CountUp from 'react-countup';
 
 const Landing = ({ step, setStep, statetextforscroll }) => {
   const [openCookieePopup, setOpenCookieePopup] = useState(false);
@@ -26,7 +26,7 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
   const [checkCookies, setCookies] = useState(false);
   const items = [
     {
-      text: "Fonctionnalités liées aux réseaux sociaux",
+      text: 'Fonctionnalités liées aux réseaux sociaux',
       accept: false,
       refuse: false
     },
@@ -37,32 +37,32 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
       refuse: false
     },
     {
-      text: "Stocker et/ou accéder à des informations sur un terminal",
+      text: 'Stocker et/ou accéder à des informations sur un terminal',
       accept: false,
       refuse: false
     },
     {
-      text: "Personnalisation du contenu éditorial et mesure de la performance",
+      text: 'Personnalisation du contenu éditorial et mesure de la performance',
       accept: false,
       refuse: false
     },
     {
-      text: "Personnalisation des publicités et mesure de la performance",
+      text: 'Personnalisation des publicités et mesure de la performance',
       accept: false,
       refuse: false
     },
     {
-      text: "Développer et améliorer les produits",
+      text: 'Développer et améliorer les produits',
       accept: false,
       refuse: false
     },
     {
-      text: "Utiliser des données de géolocalisation précises",
+      text: 'Utiliser des données de géolocalisation précises',
       accept: false,
       refuse: false
     },
     {
-      text: "Analyser activement les caractéristiques du terminal pour l’identification",
+      text: 'Analyser activement les caractéristiques du terminal pour l’identification',
       accept: false,
       refuse: false
     }
@@ -71,18 +71,18 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
   const [siteViews, setSiteViews] = useState(null);
   const { state } = useLocation();
   const capture1 = React.createRef();
-  const video = document.getElementById("video");
+  const video = document.getElementById('video');
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 11,
-      behavior: "smooth"
+      behavior: 'smooth'
     });
   };
   const scrollToTopforComment = () => {
     window.scrollTo({
       top: 800,
-      behavior: "smooth"
+      behavior: 'smooth'
     });
   };
 
@@ -95,9 +95,9 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
   useEffect(() => {
     video?.play();
     scrollToTop();
-    statetextforscroll === "Accueil" && scrollToTop();
-    statetextforscroll === "Comment" ||
-      (state === "Comment" &&
+    statetextforscroll === 'Accueil' && scrollToTop();
+    statetextforscroll === 'Comment' ||
+      (state === 'Comment' &&
         setTimeout(() => {
           scrollToTopforComment();
         }, 50));
@@ -109,7 +109,7 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
   }, []);
 
   const updateSiteViews = async () => {
-    const data = await api("post", "/siteViews");
+    const data = await api('post', '/siteViews');
     if (data.data) {
       setSiteViews(data.data.siteViews);
     }
@@ -149,7 +149,7 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
         <div id="comment" className="vidoSection">
           <h2 className="h2">Comment ça marche?</h2>
         </div>
-        <div style={{ margin: "10px" }}>
+        <div style={{ margin: '10px' }}>
           <video
             id="video"
             src={video1}
@@ -201,17 +201,17 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
       ) : (
         <div
           style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center"
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center'
           }}
         >
           <p
             style={{
-              fontSize: "30px",
-              fontWeight: "600",
-              color: "#D4D8E5"
+              fontSize: '30px',
+              fontWeight: '600',
+              color: '#D4D8E5'
             }}
           >
             Nombre de visiteurs
@@ -223,17 +223,17 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
             }
             duration={5}
             style={{
-              fontSize: "100px",
-              color: "#FFFFFF",
-              alignSelf: "center",
-              background: "#010F2C",
-              letterSpacing: "18px",
-              textIndent: "18px"
+              fontSize: '100px',
+              color: '#FFFFFF',
+              alignSelf: 'center',
+              background: '#010F2C',
+              letterSpacing: '18px',
+              textIndent: '18px'
             }}
           />
         </div>
       )}
-      {console.log("siteViews.count ", siteViews?.count)}
+
       <Contactus />
       <Footer />
       <CookiesPopup
@@ -256,7 +256,7 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
               setRefuserPopup={setRefuserPopup}
             />
           )
-        : ""}
+        : ''}
       <RefuserPopup
         open={reuserPopup}
         setOpen={setRefuserPopup}

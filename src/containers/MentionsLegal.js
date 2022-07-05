@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
-import logo from "../assets/img/dlogot.png";
+import React, { useEffect } from 'react';
+import logo from '../assets/img/dlogot.png';
 
 const MentionsLegal = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 11,
-      behavior: "smooth"
+      behavior: 'smooth'
     });
   };
   useEffect(() => {
@@ -14,8 +14,8 @@ const MentionsLegal = () => {
   }, []);
   return (
     <>
-      <div style={{ minHeight: "100vh", marginTop: "-2%", color: "white" }}>
-        <div style={{ width: "60%", margin: "auto" }}>
+      <div style={{ minHeight: '100vh', marginTop: '-2%', color: 'white' }}>
+        <div style={{ width: '60%', margin: 'auto' }}>
           <p className="cguHeading">
             <img src={logo} className="cgulogo" alt="logo" />
             <br />
@@ -23,7 +23,7 @@ const MentionsLegal = () => {
             <br />
           </p>
         </div>
-        <div style={{ width: "85%", margin: "auto" }}>
+        <div style={{ width: '85%', margin: 'auto' }}>
           <p className="pmargin">
             Conformément aux dispositions des Articles 6-III et 19 de la Loi
             n°2004-575 du 21 juin 2004 pour la Confiance dans l'économie
@@ -115,7 +115,7 @@ const MentionsLegal = () => {
             en vigueur.
           </p>
           <h1 className="cguH1 legalh1">ARTICLE 4 - CONTACT</h1>
-          <p className="pmargin" style={{ paddingBottom: "30px" }}>
+          <p className="pmargin" style={{ paddingBottom: '30px' }}>
             Pour tout signalement de contenus ou d'activités illicites,
             l'Utilisateur peut contacter l'Éditeur à l'adresse suivante : (mail)
             ou par courrier recommandé avec accusé de réception adressé à

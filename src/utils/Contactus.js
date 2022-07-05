@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { toast } from "react-toastify";
-import "react-datepicker/dist/react-datepicker.css";
-import { Store, UpdateStore } from "../StoreContext";
-import api from "../api";
+import React, { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
+import 'react-datepicker/dist/react-datepicker.css';
+import { Store, UpdateStore } from '../StoreContext';
+import api from '../api';
 const Contactus = () => {
   const updateStore = UpdateStore();
   const {} = Store();
@@ -10,10 +10,10 @@ const Contactus = () => {
   // initialize States
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-    description: "",
+    name: '',
+    email: '',
+    message: '',
+    description: ''
   });
   // Destructuring of UserForm State
   const { name, email, message, description } = formData;
@@ -29,26 +29,26 @@ const Contactus = () => {
     if (!email.match(mailFormat)) {
       return toast.error("s'il vous plaît entrez l'e-mail");
     }
-    if (name == "") {
-      return toast.error("Veuillez entrer Prénom et nom");
+    if (name == '') {
+      return toast.error('Veuillez entrer Prénom et nom');
     }
-    if (email == "") {
-      return toast.error("Veuillez entrer votre e-mail");
+    if (email == '') {
+      return toast.error('Veuillez entrer votre e-mail');
     }
-    if (message == "") {
-      return toast.error("Veuillez entrer Objet de votre message");
+    if (message == '') {
+      return toast.error('Veuillez entrer Objet de votre message');
     }
-    if (description == "") {
-      return toast.error("Veuillez entrer Votre message");
+    if (description == '') {
+      return toast.error('Veuillez entrer Votre message');
     }
 
     setLoading(true);
-    let res = await api("post", "/users/contact", {
-      ...formData,
+    let res = await api('post', '/users/contact', {
+      ...formData
     });
     if (res.status === 200) {
-      toast.success("Soumis avec succès");
-      setFormData({ name: "", email: "", message: "", description: "" });
+      toast.success('Soumis avec succès');
+      setFormData({ name: '', email: '', message: '', description: '' });
     }
     setLoading(false);
   };
@@ -104,7 +104,7 @@ const Contactus = () => {
         </div>
         <div className="contactsave">
           <button className="contactsavebtn" onClick={handleSubmit}>
-            {loading ? "Chargement en cours" : "Envoyer"}
+            {loading ? 'Chargement en cours' : 'Envoyer'}
           </button>
         </div>
       </div>
