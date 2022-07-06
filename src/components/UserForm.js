@@ -4,12 +4,9 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { Checkbox } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import Autocomplete from '@material-ui/lab/Autocomplete';
-import { Store, UpdateStore } from '../StoreContext';
 import Grid from '@material-ui/core/Grid';
 import veryExcited from '../assets/img/VeryExcited.png';
 import arrowleft from '../assets/img/arrow2.png';
@@ -21,6 +18,7 @@ import { registerLocale } from 'react-datepicker';
 import api from '../api';
 import InfoIcon from '@mui/icons-material/Info';
 import Info from './Info';
+import villeList from '../utils/villas';
 
 let class_listData = ['1ère AS', '2ème AS', '3ème AS', 'Postbac'];
 let wilayasvalue = [
@@ -84,8 +82,21 @@ let wilayasvalue = [
   { name: ' El Ménia', code: '58' }
 ];
 let budgetllist = ['5 000€ - 7 500€', '5 000€ - 7 500€', 'Plus de 15 000€'];
-let countrylist = ['X', 'Y', 'Z'];
-let villelist = ['X', 'Y', 'Z'];
+let countrylist = [
+  'France',
+  'United Kingdom',
+  'Allemagne',
+  'Italie',
+  'Russie',
+  'Ukraine',
+  'Espagne',
+  'Belgique',
+  'USA',
+  'Canada',
+  'Turquie',
+  'Suisse'
+];
+
 let bacseriData = [
   'Mathématiques',
   'Techniques Mathématiques',
@@ -94,7 +105,6 @@ let bacseriData = [
   'Lettre et Philosophie',
   'Langues Etrangères'
 ];
-let languageIs = ['Français', 'Arabe'];
 let level2data = [
   '1',
   '2',
@@ -121,9 +131,6 @@ let timeInterval;
 
 const UserForm = ({ setStep, setActiveStep }) => {
   registerLocale('en-gb', enGb);
-  // initialize ContextStore
-  const updateStore = UpdateStore();
-  const {} = Store();
   // initialize States
   const [formData, setFormData] = useState({
     first_name: '',
@@ -149,8 +156,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
   });
   // state for address options list
   const [values, setValues] = useState([]);
+  const [cites, setCites] = useState([]);
   const [confirmationOpen, SetconfirmationOpen] = useState(false);
-  const [formStep, setformStep] = useState(1);
+  const [formStep, setformStep] = useState(5);
 
   const [loading, setLoading] = useState(false);
   const [resendloading, setresendLoading] = useState(false);
@@ -298,7 +306,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
 
   const handleSubmit3 = async (e, option) => {
     e.preventDefault();
-    console.log('formdata os ,', formData, option);
+    // console.log('formdata os ,', formData, option);
     let newFormData = '';
     if (option == 'no') {
       newFormData = { ...formData };
@@ -361,6 +369,18 @@ const UserForm = ({ setStep, setActiveStep }) => {
     setAnchorEl(event.currentTarget);
     setText(text);
   };
+  const getCity = (country) => {
+    let selectedVille = villeList.filter((ville) => ville.country === country);
+    setCites(selectedVille[0]?.city ? selectedVille[0]?.city : []);
+    return;
+  };
+
+  useEffect(() => {
+    getCity(whichCountry);
+    setFormData({ ...formData, ville: 'ville' });
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [whichCountry]);
 
   return (
     <>
@@ -954,6 +974,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             onChange={onChange}
                             className={classes.select}
                             className="selectforeducation"
+                            disabled={whichCountry === 'whichCountry'}
                             // onFocus={handleBlurSchools}
                           >
                             <MenuItem
@@ -963,7 +984,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             >
                               <em>Quelle(s) ville(s)</em>
                             </MenuItem>
-                            {villelist.map((item, i) => {
+                            {cites.map((item, i) => {
                               return <MenuItem value={item}>{item}</MenuItem>;
                             })}
                           </Select>
@@ -1141,7 +1162,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
                     </Grid>
                   </>
                 )}
-                {console.log('lastDiploma', lastDiploma)}
                 {formStep == 7 && (
                   <>
                     <div
