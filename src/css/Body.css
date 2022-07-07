@@ -9,6 +9,7 @@
 .MuiDialog-paperWidthSm {
   max-width: 650px !important;
   justify-content: space-evenly !important;
+  margin: 10px !important;
 }
 
 .popupli{

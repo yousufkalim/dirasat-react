@@ -712,12 +712,12 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         sm={5}
                         className={`${
                           class_list === 'Postbac' && 'disablGrid'
-                        } option gridOptions`}
+                        } option gridOptions optionSpan`}
                         onClick={() => {
                           class_list != 'Postbac' && setformStep(3);
                         }}
                       >
-                        <span className="optionSpan">
+                        <span className="">
                           J’ai déjà mon baccalauréat mais je n’ai pas encore
                           débuté mes études supérieures
                         </span>
@@ -728,14 +728,12 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         sm={5}
                         className={`${
                           class_list === 'Postbac' && 'disablGrid'
-                        } option gridOptions`}
+                        } option gridOptions optionSpan`}
                         onClick={(e) => {
                           class_list != 'Postbac' && handleSubmit3(e, 2);
                         }}
                       >
-                        <span className="optionSpan">
-                          Je n’ai pas mon baccalauréat
-                        </span>
+                        <span className="">Je n’ai pas mon baccalauréat</span>
                       </Grid>
                     </Grid>
                     <Grid
@@ -744,7 +742,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       className="lastoption option gridOptions"
                       onClick={() => setformStep(4)}
                     >
-                      <span className="" style={{ fontSize: '13px' }}>
+                      <span className="" style={{ fontSize: '12px' }}>
                         J’ai déjà débuté mes études supérieures et je veux me
                         réorienter ou poursuivre mes études supérieures dans un
                         autre programme.
@@ -877,7 +875,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                     >
                       <Grid
                         item
-                        xs={12}
+                        xs={9}
                         sm={5}
                         className="option"
                         onClick={() => setformStep(5)}
@@ -886,7 +884,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       </Grid>
                       <Grid
                         item
-                        xs={12}
+                        xs={9}
                         sm={5}
                         className="option"
                         onClick={() => setformStep(6)}
@@ -1090,7 +1088,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                     >
                       <Grid
                         item
-                        xs={12}
+                        xs={9}
                         sm={5}
                         className="Gridoptiontwo"
                         onClick={(e) => {
@@ -1105,7 +1103,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       </Grid>
                       <Grid
                         item
-                        xs={12}
+                        xs={9}
                         sm={5}
                         className="Gridoptiontwo"
                         onClick={() => {
@@ -1120,7 +1118,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       </Grid>
                       <Grid
                         item
-                        xs={12}
+                        xs={9}
                         sm={5}
                         className="Gridoptiontwo"
                         onClick={() => {
@@ -1132,7 +1130,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       </Grid>
                       <Grid
                         item
-                        xs={12}
+                        xs={9}
                         sm={5}
                         className="Gridoptiontwo"
                         onClick={() => {
@@ -1184,7 +1182,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         <>
                           <Grid
                             item
-                            xs={12}
+                            xs={9}
                             sm={4}
                             className="Gridoptiontwo"
                             onClick={(e) => {
@@ -1199,7 +1197,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           </Grid>
                           <Grid
                             item
-                            xs={12}
+                            xs={9}
                             sm={4}
                             className="Gridoptiontwo"
                             onClick={(e) => {
@@ -1214,7 +1212,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           </Grid>
                           <Grid
                             item
-                            xs={12}
+                            xs={9}
                             sm={4}
                             className="Gridoptiontwo"
                             onClick={(e) => {
@@ -1236,7 +1234,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           {' '}
                           <Grid
                             item
-                            xs={12}
+                            xs={9}
                             sm={4}
                             className="Gridoptiontwo"
                             onClick={(e) => {
@@ -1251,7 +1249,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           </Grid>
                           <Grid
                             item
-                            xs={12}
+                            xs={9}
                             sm={4}
                             className="Gridoptiontwo"
                             onClick={(e) => {
@@ -1271,7 +1269,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           {' '}
                           <Grid
                             item
-                            xs={12}
+                            xs={9}
                             sm={4}
                             className="Gridoptiontwo"
                             onClick={(e) => {
@@ -1286,7 +1284,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           </Grid>
                           <Grid
                             item
-                            xs={12}
+                            xs={9}
                             sm={4}
                             className="Gridoptiontwo"
                             onClick={(e) => {
