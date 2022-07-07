@@ -189,7 +189,7 @@
     width: 50% !important;
     margin: auto !important;
     margin-bottom: 25px !important;
-    border: none !important;
+    border: 1px solid gray !important;
     border-radius: 100px !important;
     text-align: center !important;
   }
@@ -201,6 +201,7 @@
     border: 1px solid #6e738c !important;
     border-radius: 100px !important;
     padding: 10px !important;
+    font-size: 12px !important;
   }
   .lastoption{
     border: 1px solid #6e738c !important;
