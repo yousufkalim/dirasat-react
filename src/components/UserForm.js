@@ -158,7 +158,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
   const [values, setValues] = useState([]);
   const [cites, setCites] = useState([]);
   const [confirmationOpen, SetconfirmationOpen] = useState(false);
-  const [formStep, setformStep] = useState(5);
+  const [formStep, setformStep] = useState(1);
 
   const [loading, setLoading] = useState(false);
   const [resendloading, setresendLoading] = useState(false);
