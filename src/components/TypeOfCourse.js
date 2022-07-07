@@ -77,13 +77,13 @@ const TypeOfCourse = ({ type, percentage, courses, result, user }) => {
             setShowDetail(!showDetail);
           }}
         >
-          <Grid item xs={4} sm={8} className="courseType">
+          <Grid item xs={8} sm={8} className="courseType">
             {' '}
             {type}
           </Grid>
           <Grid
             item
-            xs={5}
+            xs={1}
             sm={3}
             // style={{ background: `${getPercentageColor(percentage)}` }}
             className="percentageGrid"
