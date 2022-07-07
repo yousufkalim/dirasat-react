@@ -287,7 +287,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
       return toast.error('Veuillez sélectionner la liste des classes');
     }
     if (Bac_Serie == 'Bac Serie' && class_list != 'Postbac') {
-      return toast.error('Veuillez sélectionner Bac_Serie');
+      return toast.error('Veullez sélectionner une série de Baccalauréat');
     }
     if (school_city == '') {
       return toast.error('veuillez entrer la ville de votre école');
@@ -381,6 +381,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [whichCountry]);
+  console.log('formData', formData);
 
   return (
     <>
@@ -779,7 +780,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       className=""
                       style={{ justifyContent: 'center' }}
                     >
-                      <Grid item xs={12} sm={6} className="inputGrid">
+                      <Grid item xs={12} sm={7} className="inputGrid">
                         <FormControl
                           variant="outlined"
                           className="selectformControl selectformControl2"
@@ -827,7 +828,10 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         <div
                           size="large"
                           className="formbackbutton"
-                          onClick={() => setformStep(2)}
+                          onClick={() => {
+                            setFormData({ ...formData, score: 'score' });
+                            setformStep(2);
+                          }}
                         >
                           <img
                             src={arrowleft}
