@@ -63,6 +63,7 @@
 .modalcontent {
   position: relative;
   bottom: 30px;
+  overflow: hidden;
 }
 .dialogHeading {
   text-align: center !important;
