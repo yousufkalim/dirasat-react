@@ -34,10 +34,10 @@ export default function EmailConfirmationpop({
 
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
-    otp: ''
+    emailotp: ''
   });
   // Destructuring of UserForm State
-  const { otp } = formData;
+  const { emailotp } = formData;
   // onChange Function for Input Field
   const onChange = (e) => {
     setFormData({
@@ -50,7 +50,7 @@ export default function EmailConfirmationpop({
     setLoading(true);
 
     let res = await api('post', '/users/verifybyemail', {
-      otp
+      emailotp
     });
     if (res.status === 200) {
       setEmailPopup(false);
@@ -61,12 +61,12 @@ export default function EmailConfirmationpop({
         user: res?.data?.user
       });
       setLoading(false);
-      setFormData({ otp: '' });
+      setFormData({ emailotp: '' });
       setStep(2);
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     } else {
       setLoading(false);
-      setFormData({ otp: '' });
+      setFormData({ emailotp: '' });
       toast.error("Votre OTP n'est pas correct");
     }
   };
@@ -74,7 +74,7 @@ export default function EmailConfirmationpop({
     setEmailPopup(false);
     clearInterval(timeInterval);
     setTimeLeft(30);
-    setFormData({ otp: '' });
+    setFormData({ emailotp: '' });
     setresendLoading(false);
   };
   return (
@@ -100,8 +100,8 @@ export default function EmailConfirmationpop({
           <Grid container spacing={1} className="invitedialoginputGrid">
             <input
               type="text"
-              name="otp"
-              value={otp}
+              name="emailotp"
+              value={emailotp}
               onChange={onChange}
               placeholder="Entrez le code de vérification"
               className="dialoginputField"
