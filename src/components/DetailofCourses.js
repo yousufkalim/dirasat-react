@@ -141,7 +141,7 @@ function DetailofCourses({ courses, open, setOpen, user }) {
         ))
       ) : (
         <>
-          <h4>
+          <h4 style={{ width: '90%', margin: 'auto', padding: '10px' }}>
             Il semblerait que ta spécialité au baccalauréat soit incompatible
             avec tes réponses au questionnaire, je t’invite à répondre de
             nouveau aux questions en tenant compte de la filière de ton
