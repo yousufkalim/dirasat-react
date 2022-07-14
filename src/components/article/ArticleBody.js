@@ -1,7 +1,7 @@
 // Init
 import React, { useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
-import Avatar2 from '../../assets/icons/logo.png';
+import Avatar2 from '../../assets/icons/dlogo.png';
 import FbIcon from '../../assets/icons/fb2.svg';
 import TwitterIcon from '../../assets/icons/twittericon.svg';
 import PintrestIcon from '../../assets/icons/pin2.svg';

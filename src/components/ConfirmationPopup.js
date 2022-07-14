@@ -77,7 +77,7 @@ export default function ConfirmationPop({
     <>
       <div>
         <BootstrapDialog
-          onClose={handleClose}
+          // onClose={handleClose}
           open={confirmationOpen}
           style={{ backdropFilter: 'blur(20px)' }}
         >

@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import useState from 'react-usestateref';
 import { toast } from 'react-toastify';
 import 'react-datepicker/dist/react-datepicker.css';
 import { Checkbox } from '@material-ui/core';
@@ -8,7 +9,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Grid from '@material-ui/core/Grid';
-import veryExcited from '../assets/img/VeryExcited.png';
+import veryExcited from '../assets/img/dVeryExcited.png';
 import arrowleft from '../assets/img/arrow2.png';
 import scrollToTop from '../utils/ScrollTop';
 import DatePicker from 'react-datepicker';
@@ -53,7 +54,7 @@ let wilayasvalue = [
   { name: 'Mascara', code: '29' },
   { name: 'Ouargla', code: '30' },
   { name: 'Oran', code: '31' },
-  { name: 'El Baydh', code: '32' },
+  { name: 'El Bayadh', code: '32' },
   { name: 'Illizi', code: '33' },
   { name: 'Bordj Bou Arreridj', code: '34' },
   { name: 'Boumerdès', code: '35' },
@@ -82,6 +83,16 @@ let wilayasvalue = [
   { name: ' El Ménia', code: '58' }
 ];
 let budgetllist = ['5 000€ - 7 500€', '5 000€ - 7 500€', 'Plus de 15 000€'];
+let criterianData = [
+  "J'ai déjà un logement là-bas",
+  "J'ai un ou plusieurs membres de ma famille sur qui je peux compter",
+  'Cette destination correspond à mon budget',
+  'Je pars avec des amis',
+  "L'établissement ou le programme que je vise se trouve dans cette destination",
+  "J'ai entendu de bons retours la part d'amis et de proches",
+  "J'ai entendu de bons retours de la part d;amis et de proches",
+  'Autre'
+];
 let countrylist = [
   'France',
   'United Kingdom',
@@ -132,7 +143,7 @@ let timeInterval;
 const UserForm = ({ setStep, setActiveStep }) => {
   registerLocale('en-gb', enGb);
   // initialize States
-  const [formData, setFormData] = useState({
+  const [formData, setFormData, ref] = useState({
     first_name: '',
     last_name: '',
     date_of_birth: '',
@@ -150,7 +161,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
     budget: 'budget',
     whichCountry: 'whichCountry',
     ville: 'ville',
+    motiveCriteria: 'motiveCriteria',
     stayAlgeria: false,
+    continueStudy: false,
     lastDiploma: '',
     studyYear: ''
   });
@@ -188,9 +201,12 @@ const UserForm = ({ setStep, setActiveStep }) => {
     score,
     budget,
     ville,
+    motiveCriteria,
     whichCountry,
     stayAlgeria,
+    continueStudy,
     lastDiploma,
+
     studyYear
   } = formData;
   // Get institutes data from API
@@ -305,52 +321,53 @@ const UserForm = ({ setStep, setActiveStep }) => {
   };
 
   const handleSubmit3 = async (e, option) => {
+    console.log('option', option);
     e.preventDefault();
     // console.log('formdata os ,', formData, option);
-    let newFormData = '';
-    if (option == 'no') {
-      newFormData = { ...formData };
-    }
+    // if (option == 'no') {
+    //   setFormData({ ...formData });
+    // }
 
-    if (option == 1) {
-      newFormData = { ...formData, level1: 'pass' };
-      if (score == 'score') {
-        return toast.error('Veuillez sélectionner la note moyenne');
-      }
-    }
-    if (option == 2) {
-      newFormData = { ...formData, level1: 'not pass', score: 'score' };
-    }
-    if (option == 5) {
-      newFormData = {
-        ...formData,
-        level1: 'want to change',
-        score: 'score',
-        stayAlgeria: false
-      };
-      if (whichCountry == '') {
-        return toast.error('Veuillez ajouter un pays');
-      }
-      if (budget == '') {
-        return toast.error('Veuillez ajouter un budget');
-      }
-    }
-    if (option == 6) {
-      newFormData = {
-        ...formData,
-        level1: 'want to change',
-        score: 'score',
-        stayAlgeria: true
-      };
-      if (budget == '') {
-        return toast.error('Veuillez ajouter un budget');
-      }
-    }
-    console.log('newFormData', newFormData);
+    // if (option == 1) {
+    //   setFormData({ ...formData, level1: 'pass' });
+    //   if (score == 'score') {
+    //     return toast.error('Veuillez sélectionner la note moyenne');
+    //   }
+    // }
+    // if (option == 2) {
+    //   setFormData({ ...formData, level1: 'not pass', score: 'score' });
+    // }
+    // if (option == 5) {
+    //   setFormData({
+    //     ...formData,
+    //     level1: 'want to change',
+    //     score: 'score',
+    //     stayAlgeria: false
+    //   });
+    //   if (whichCountry == '') {
+    //     return toast.error('Veuillez ajouter un pays');
+    //   }
+    //   if (budget == '') {
+    //     return toast.error('Veuillez ajouter un budget');
+    //   }
+    // }
+    // if (option == 6) {
+    //   setFormData({
+    //     ...formData,
+    //     level1: 'want to change',
+    //     score: 'score',
+    //     stayAlgeria: true
+    //   });
+    //   if (budget == '') {
+    //     return toast.error('Veuillez ajouter un budget');
+    //   }
+    // }
+    console.log('FormData', formData);
+    console.log('FormData2', ref.current);
 
     setLoading(true);
     setresendLoading(true);
-    let res = await api('post', '/users/create', { ...newFormData });
+    let res = await api('post', '/users/create', { ...ref.current });
     if (res.status === 200) {
       SetconfirmationOpen(true);
     }
@@ -381,7 +398,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [whichCountry]);
-  console.log('formData', formData);
+  // console.log('formData', formData);
 
   return (
     <>
@@ -741,7 +758,13 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       xs={12}
                       sm={5}
                       className="lastoption option gridOptions"
-                      onClick={() => setformStep(4)}
+                      onClick={() => {
+                        setFormData({
+                          ...formData,
+                          continueStudy: true
+                        });
+                        setformStep(4);
+                      }}
                     >
                       <span className="" style={{ fontSize: '12px' }}>
                         J’ai déjà débuté mes études supérieures et je veux me
@@ -882,7 +905,13 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         xs={9}
                         sm={5}
                         className="option"
-                        onClick={() => setformStep(5)}
+                        onClick={() => {
+                          setFormData({
+                            ...formData,
+                            level1: 'want to change'
+                          });
+                          setformStep(5);
+                        }}
                       >
                         Partir à l'étranger
                       </Grid>
@@ -891,7 +920,13 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         xs={9}
                         sm={5}
                         className="option"
-                        onClick={() => setformStep(6)}
+                        onClick={() => {
+                          setFormData({
+                            ...formData,
+                            stayAlgeria: true
+                          });
+                          setformStep(6);
+                        }}
                       >
                         Me réorienter en Algérie
                       </Grid>
@@ -906,7 +941,15 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         <div
                           size="large"
                           className="formbackbutton"
-                          onClick={() => setformStep(2)}
+                          onClick={() => {
+                            setFormData({
+                              ...formData,
+                              level1: 'level1',
+                              continueStudy: false
+                            });
+
+                            setformStep(2);
+                          }}
                         >
                           <img
                             src={arrowleft}
@@ -1034,7 +1077,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         <div
                           size="large"
                           className="formbackbutton"
-                          onClick={() => setformStep(4)}
+                          onClick={() => {
+                            setformStep(4);
+                          }}
                         >
                           <img
                             src={arrowleft}
@@ -1055,7 +1100,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           type="submit"
                           disabled={loading}
                           style={{ opacity: `${loading ? '0.5' : '1'}` }}
-                          onClick={(e) => handleSubmit3(e, 5)}
+                          onClick={(e) => {
+                            setformStep(8);
+                          }}
                         >
                           <b>
                             {' '}
@@ -1096,10 +1143,11 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         sm={5}
                         className="Gridoptiontwo"
                         onClick={(e) => {
-                          setFormData({
-                            ...formData,
+                          setFormData((prevState) => ({
+                            ...prevState,
                             lastDiploma: 'Baccalauréat'
-                          });
+                          }));
+
                           handleSubmit3(e, 'no');
                         }}
                       >
@@ -1152,6 +1200,14 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           size="large"
                           className="formbackbutton"
                           onClick={() => setformStep(4)}
+                          onClick={() => {
+                            setFormData({
+                              ...formData,
+                              stayAlgeria: false,
+                              lastDiploma: ''
+                            });
+                            setformStep(4);
+                          }}
                         >
                           <img
                             src={arrowleft}
@@ -1319,6 +1375,100 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           />
                           <b> Retour</b>
                         </div>
+                      </Grid>
+                    </Grid>
+                  </>
+                )}
+                {formStep == 8 && (
+                  <>
+                    <Grid
+                      container
+                      spacing={1}
+                      className=""
+                      style={{ justifyContent: 'center' }}
+                    >
+                      <Grid item xs={12} sm={7} className="inputGrid">
+                        <FormControl
+                          variant="outlined"
+                          className="selectformControl selectformControl2"
+                        >
+                          <Select
+                            labelId="demo-simple-select-outlined-label"
+                            id="demo-simple-select-outlined"
+                            name="motiveCriteria"
+                            name="motiveCriteria"
+                            value={motiveCriteria}
+                            defaultValue={motiveCriteria}
+                            onChange={onChange}
+                            className={classes.select}
+                            className="selectforeducation"
+                            // onFocus={handleBlurSchools}
+                          >
+                            <MenuItem
+                              value="motiveCriteria"
+                              disabled
+                              style={{ textAlign: 'left !important' }}
+                            >
+                              <em>
+                                {
+                                  'Quel critère a le plus motivé ton choix de pays et de villes?'
+                                }
+                              </em>
+                            </MenuItem>
+                            {criterianData.map((item, i) => {
+                              return <MenuItem value={item}>{item}</MenuItem>;
+                            })}
+                          </Select>
+                        </FormControl>
+                      </Grid>
+                    </Grid>
+                    <Grid container spacing={2} className="formbuttonsGrid">
+                      <Grid xs={12} sm={4}>
+                        <div
+                          size="large"
+                          className="formbackbutton"
+                          onClick={() => {
+                            setFormData({
+                              ...formData,
+                              motiveCriteria: 'motiveCriteria'
+                            });
+                            setformStep(5);
+                          }}
+                        >
+                          <img
+                            src={arrowleft}
+                            className="arrowleft"
+                            alt="arrow"
+                          />
+                          <b> Retour</b>
+                        </div>
+                      </Grid>
+
+                      <Grid xs={12} sm={4}></Grid>
+
+                      <Grid xs={12} sm={4}>
+                        <button
+                          variant="contained"
+                          className="formSubmitButton"
+                          size="large"
+                          type="submit"
+                          disabled={loading}
+                          style={{ opacity: `${loading ? '0.5' : '1'}` }}
+                          onClick={(e) => {
+                            handleSubmit3(e, 5);
+                          }}
+                        >
+                          <b>
+                            {' '}
+                            {loading ? (
+                              <div className="circulardiv">
+                                <CircularProgress size={20} className="" />
+                              </div>
+                            ) : (
+                              'Poursuivre'
+                            )}
+                          </b>
+                        </button>
                       </Grid>
                     </Grid>
                   </>
