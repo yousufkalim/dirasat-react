@@ -116,6 +116,9 @@ const Result = () => {
       // document.body.appendChild(canvas);
     }, 500);
   };
+  console.log('user', user);
+  console.log('result', result);
+  console.log('loading', loading);
   return (
     <>
       {user?.level1 == 'want to change' ? (
@@ -185,59 +188,80 @@ const Result = () => {
                         <CircularProgress color="inherit" />
                       </p>
                     ) : (
-                      <p className="resultText">
-                        <span style={{ color: '#9198A5' }}>
-                          {' '}
-                          D'après tes réponses, je pense que ton profil est
-                          tourné vers
-                        </span>
-                        <br />
-                        <b>
-                          {' '}
-                          <span
-                            style={{
-                              color: 'white',
-                              fontWeight: '900',
-                              wordBreak: 'break-word'
-                            }}
-                          >
-                            {loading ? (
-                              <div>
-                                <CircularProgress color="inherit" />
-                              </div>
-                            ) : result?.type_of_job ? (
-                              result.type_of_job
-                            ) : (
-                              'Il n’y a actuellement pas de job disponible.'
-                            )}{' '}
-                          </span>
-                        </b>{' '}
-                        <span style={{ color: '#9198A5' }}>
-                          comme par exemple
-                        </span>{' '}
-                        <span
-                          style={{
-                            color: 'white',
-                            fontWeight: '900',
-                            wordBreak: 'break-word'
-                          }}
-                        >
-                          {' '}
-                          {loading
-                            ? 'loading'
-                            : result?.example_of_job
-                            ? result.example_of_job
-                            : 'Currently no example available'}
-                        </span>
-                      </p>
-                    )}
-                    {!loading && (
-                      <p className="resultText">
-                        <span style={{ color: '#9198A5' }}>
-                          Je te propose une liste de vœux d’orientation qui
-                          correspondrait à ton profil.
-                        </span>
-                      </p>
+                      <>
+                        {result?.planQuestion &&
+                        user?.continueStudy &&
+                        result?.planQuestion[0]?.answer == 'Un Plan A' ? (
+                          <>
+                            <p
+                              className="resultText"
+                              style={{ color: '#9198A5' }}
+                            >
+                              Aussi, nos agents et nos partenaires vont te
+                              contacter rapidement pour te proposer des parcours
+                              d’études à l’étranger adaptés à ton profil !
+                              N’oublie pas de consulter régulièrement tes
+                              e-mails et de rester joignable par téléphone !
+                            </p>
+                          </>
+                        ) : (
+                          <>
+                            <p className="resultText">
+                              <span style={{ color: '#9198A5' }}>
+                                {' '}
+                                D'après tes réponses, je pense que ton profil
+                                est tourné vers
+                              </span>
+                              <br />
+                              <b>
+                                {' '}
+                                <span
+                                  style={{
+                                    color: 'white',
+                                    fontWeight: '900',
+                                    wordBreak: 'break-word'
+                                  }}
+                                >
+                                  {loading ? (
+                                    <div>
+                                      <CircularProgress color="inherit" />
+                                    </div>
+                                  ) : result?.type_of_job ? (
+                                    result.type_of_job
+                                  ) : (
+                                    'Il n’y a actuellement pas de job disponible.'
+                                  )}{' '}
+                                </span>
+                              </b>{' '}
+                              <span style={{ color: '#9198A5' }}>
+                                comme par exemple
+                              </span>{' '}
+                              <span
+                                style={{
+                                  color: 'white',
+                                  fontWeight: '900',
+                                  wordBreak: 'break-word'
+                                }}
+                              >
+                                {' '}
+                                {loading
+                                  ? 'loading'
+                                  : result?.example_of_job
+                                  ? result.example_of_job
+                                  : 'Currently no example available'}
+                              </span>
+                            </p>
+                            {!loading && (
+                              <p className="resultText">
+                                <span style={{ color: '#9198A5' }}>
+                                  Je te propose une liste de vœux d’orientation
+                                  qui correspondrait à ton profil.
+                                </span>
+                              </p>
+                            )}
+                          </>
+                        )}
+                      </>
                     )}
                   </div>
 

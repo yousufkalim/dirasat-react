@@ -141,7 +141,12 @@ function DetailofCourses({ courses, open, setOpen, user }) {
         ))
       ) : (
         <>
-          <h4>Désolé pas de cours disponible</h4>
+          <h4>
+            Il semblerait que ta spécialité au baccalauréat soit incompatible
+            avec tes réponses au questionnaire, je t’invite à répondre de
+            nouveau aux questions en tenant compte de la filière de ton
+            baccalauréat!
+          </h4>
         </>
       )}
     </>

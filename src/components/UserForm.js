@@ -163,6 +163,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
     ville: 'ville',
     motiveCriteria: 'motiveCriteria',
     stayAlgeria: false,
+    continueStudy: false,
     lastDiploma: '',
     studyYear: ''
   });
@@ -203,7 +204,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
     motiveCriteria,
     whichCountry,
     stayAlgeria,
+    continueStudy,
     lastDiploma,
+
     studyYear
   } = formData;
   // Get institutes data from API
@@ -364,7 +367,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
 
     setLoading(true);
     setresendLoading(true);
-    let res = await api('post', '/users/create', { ...formData });
+    let res = await api('post', '/users/create', { ...ref.current });
     if (res.status === 200) {
       SetconfirmationOpen(true);
     }
@@ -755,7 +758,13 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       xs={12}
                       sm={5}
                       className="lastoption option gridOptions"
-                      onClick={() => setformStep(4)}
+                      onClick={() => {
+                        setFormData({
+                          ...formData,
+                          continueStudy: true
+                        });
+                        setformStep(4);
+                      }}
                     >
                       <span className="" style={{ fontSize: '12px' }}>
                         J’ai déjà débuté mes études supérieures et je veux me
@@ -896,7 +905,13 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         xs={9}
                         sm={5}
                         className="option"
-                        onClick={() => setformStep(5)}
+                        onClick={() => {
+                          setFormData({
+                            ...formData,
+                            level1: 'want to change'
+                          });
+                          setformStep(5);
+                        }}
                       >
                         Partir à l'étranger
                       </Grid>
@@ -905,7 +920,13 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         xs={9}
                         sm={5}
                         className="option"
-                        onClick={() => setformStep(6)}
+                        onClick={() => {
+                          setFormData({
+                            ...formData,
+                            stayAlgeria: true
+                          });
+                          setformStep(6);
+                        }}
                       >
                         Me réorienter en Algérie
                       </Grid>
@@ -920,7 +941,15 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         <div
                           size="large"
                           className="formbackbutton"
-                          onClick={() => setformStep(2)}
+                          onClick={() => {
+                            setFormData({
+                              ...formData,
+                              level1: 'level1',
+                              continueStudy: false
+                            });
+
+                            setformStep(2);
+                          }}
                         >
                           <img
                             src={arrowleft}
@@ -1049,10 +1078,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           size="large"
                           className="formbackbutton"
                           onClick={() => {
-                            setFormData({
-                              ...formData,
-                              level1: 'level1'
-                            });
                             setformStep(4);
                           }}
                         >
@@ -1076,10 +1101,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           disabled={loading}
                           style={{ opacity: `${loading ? '0.5' : '1'}` }}
                           onClick={(e) => {
-                            setFormData({
-                              ...formData,
-                              level1: 'want to change'
-                            });
                             setformStep(8);
                           }}
                         >
@@ -1180,7 +1201,11 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           className="formbackbutton"
                           onClick={() => setformStep(4)}
                           onClick={() => {
-                            setFormData({ ...formData, lastDiploma: '' });
+                            setFormData({
+                              ...formData,
+                              stayAlgeria: false,
+                              lastDiploma: ''
+                            });
                             setformStep(4);
                           }}
                         >

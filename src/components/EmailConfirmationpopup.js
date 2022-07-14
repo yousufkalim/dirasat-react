@@ -80,7 +80,7 @@ export default function EmailConfirmationpop({
   return (
     <div>
       <BootstrapDialog
-        onClose={handleClose}
+        // onClose={handleClose}
         open={openEmailpopup}
         style={{ backdropFilter: 'blur(20px)' }}
       >
