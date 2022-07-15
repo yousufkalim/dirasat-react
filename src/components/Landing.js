@@ -18,8 +18,11 @@ import arrowright from '../assets/img/arrow.png';
 import Footer from './Footer';
 import api from '../api';
 import CountUp from 'react-countup';
+import useSound from 'use-sound';
+import sound from '../assets/sound/sound.wav';
 
 const Landing = ({ step, setStep, statetextforscroll }) => {
+  const [play] = useSound(sound);
   const [openCookieePopup, setOpenCookieePopup] = useState(false);
   const [reuserPopup, setRefuserPopup] = useState(false);
   const [openCookieePopup2, setOpenCookieePopup2] = useState(false);
@@ -136,9 +139,10 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
             <div className="partibuttondiv">
               <button
                 className="partiButton"
-                onClick={() =>
-                  localStorage.cookies ? setStep(1) : setOpenCookieePopup(true)
-                }
+                onClick={() => {
+                  localStorage.cookies ? setStep(1) : setOpenCookieePopup(true);
+                  play();
+                }}
               >
                 C'est parti!
               </button>

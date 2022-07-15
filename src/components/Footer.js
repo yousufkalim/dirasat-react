@@ -47,10 +47,7 @@ const Footer = () => {
               2021. Tous droits réservés
             </p>
             <div>
-              <a
-                href="https://mobile.twitter.com/Orientator_FR"
-                target="_blank"
-              >
+              <a href="https://mobile.twitter.com/dirasat_dz" target="_blank">
                 <TwitterIcon
                   style={{
                     padding: '0 9px',
@@ -60,7 +57,7 @@ const Footer = () => {
                 />
               </a>
               <a
-                href="https://www.linkedin.com/company/orientator/"
+                href="https://dz.linkedin.com/in/dirasat-international-075a55204"
                 target="_blank"
               >
                 <LinkedInIcon
@@ -73,7 +70,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://www.facebook.com/OrientatorFrance/"
+                href="https://www.facebook.com/Dirasat-International-168572120409315/"
                 target="_blank"
               >
                 <FacebookIcon
@@ -84,10 +81,7 @@ const Footer = () => {
                   }}
                 />
               </a>
-              <a
-                href="https://www.instagram.com/orientator_france/"
-                target="_blank"
-              >
+              <a href="https://www.instagram.com/dirasat_dz/" target="_blank">
                 <InstagramIcon
                   style={{
                     padding: '0 9px',

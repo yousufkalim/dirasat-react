@@ -20,6 +20,8 @@ import api from '../api';
 import InfoIcon from '@mui/icons-material/Info';
 import Info from './Info';
 import villeList from '../utils/villas';
+import useSound from 'use-sound';
+import sound from '../assets/sound/sound.wav';
 
 let class_listData = ['1ère AS', '2ème AS', '3ème AS', 'Postbac'];
 let wilayasvalue = [
@@ -141,6 +143,7 @@ let level2data = [
 let timeInterval;
 
 const UserForm = ({ setStep, setActiveStep }) => {
+  const [play] = useSound(sound);
   registerLocale('en-gb', enGb);
   // initialize States
   const [formData, setFormData, ref] = useState({
@@ -318,6 +321,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
       return toast.error('Veuillez accepter les termes et conditions');
     }
     setformStep(2);
+    return play();
   };
 
   const handleSubmit3 = async (e, option) => {
@@ -678,7 +682,10 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         <div
                           size="large"
                           className="formbackbutton"
-                          onClick={() => setStep(0)}
+                          onClick={() => {
+                            setStep(0);
+                            play();
+                          }}
                         >
                           <img
                             src={arrowleft}
@@ -733,6 +740,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         } option gridOptions optionSpan`}
                         onClick={() => {
                           class_list != 'Postbac' && setformStep(3);
+                          play();
                         }}
                       >
                         <span className="">
@@ -749,6 +757,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         } option gridOptions optionSpan`}
                         onClick={(e) => {
                           class_list != 'Postbac' && handleSubmit3(e, 2);
+                          play();
                         }}
                       >
                         <span className="">Je n’ai pas mon baccalauréat</span>
@@ -764,6 +773,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           continueStudy: true
                         });
                         setformStep(4);
+                        play();
                       }}
                     >
                       <span className="" style={{ fontSize: '12px' }}>
@@ -782,7 +792,10 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         <div
                           size="large"
                           className="formbackbutton"
-                          onClick={() => setformStep(1)}
+                          onClick={() => {
+                            setformStep(1);
+                            play();
+                          }}
                         >
                           <img
                             src={arrowleft}
@@ -854,6 +867,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           onClick={() => {
                             setFormData({ ...formData, score: 'score' });
                             setformStep(2);
+                            play();
                           }}
                         >
                           <img
@@ -875,7 +889,10 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           type="submit"
                           disabled={loading}
                           style={{ opacity: `${loading ? '0.5' : '1'}` }}
-                          onClick={(e) => handleSubmit3(e, 1)}
+                          onClick={(e) => {
+                            handleSubmit3(e, 1);
+                            play();
+                          }}
                         >
                           <b>
                             {' '}
@@ -911,6 +928,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             level1: 'want to change'
                           });
                           setformStep(5);
+                          play();
                         }}
                       >
                         Partir à l'étranger
@@ -926,6 +944,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             stayAlgeria: true
                           });
                           setformStep(6);
+                          play();
                         }}
                       >
                         Me réorienter en Algérie
@@ -949,6 +968,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             });
 
                             setformStep(2);
+                            play();
                           }}
                         >
                           <img
@@ -1079,6 +1099,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           className="formbackbutton"
                           onClick={() => {
                             setformStep(4);
+                            play();
                           }}
                         >
                           <img
@@ -1102,6 +1123,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           style={{ opacity: `${loading ? '0.5' : '1'}` }}
                           onClick={(e) => {
                             setformStep(8);
+                            play();
                           }}
                         >
                           <b>
@@ -1147,8 +1169,8 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             ...prevState,
                             lastDiploma: 'Baccalauréat'
                           }));
-
                           handleSubmit3(e, 'no');
+                          play();
                         }}
                       >
                         Baccalauréat
@@ -1164,6 +1186,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             lastDiploma: 'Licence'
                           });
                           setformStep(7);
+                          play();
                         }}
                       >
                         Licence
@@ -1176,6 +1199,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         onClick={() => {
                           setFormData({ ...formData, lastDiploma: 'Master' });
                           setformStep(7);
+                          play();
                         }}
                       >
                         Master
@@ -1188,6 +1212,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         onClick={() => {
                           setFormData({ ...formData, lastDiploma: 'Doctorat' });
                           setformStep(7);
+                          play();
                         }}
                       >
                         Doctorat
@@ -1207,6 +1232,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                               lastDiploma: ''
                             });
                             setformStep(4);
+                            play();
                           }}
                         >
                           <img
@@ -1251,6 +1277,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                               //   studyYear: '1ère année d’études'
                               // });
                               handleSubmit3(e, 'no');
+                              play();
                             }}
                           >
                             1ère année d’études
@@ -1266,6 +1293,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                                 studyYear: '2ère année d’études'
                               });
                               handleSubmit3(e, 'no');
+                              play();
                             }}
                           >
                             2ème année d’études
@@ -1281,6 +1309,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                                 studyYear: '3ère année d’études'
                               });
                               handleSubmit3(e, 'no');
+                              play();
                             }}
                           >
                             {' '}
@@ -1303,6 +1332,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                                 studyYear: '4ère année d’études'
                               });
                               handleSubmit3(e, 'no');
+                              play();
                             }}
                           >
                             4ème année d’études
@@ -1318,6 +1348,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                                 studyYear: '5ère année d’études'
                               });
                               handleSubmit3(e, 'no');
+                              play();
                             }}
                           >
                             5ème année d’études
@@ -1338,6 +1369,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                                 studyYear: '6ère année d’études'
                               });
                               handleSubmit3(e, 'no');
+                              play();
                             }}
                           >
                             6ème année d’études
@@ -1353,6 +1385,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                                 studyYear: '7ère année d’études'
                               });
                               handleSubmit3(e, 'no');
+                              play();
                             }}
                           >
                             7ème année d’études
@@ -1366,7 +1399,10 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         <div
                           size="large"
                           className="formbackbutton"
-                          onClick={() => setformStep(6)}
+                          onClick={() => {
+                            setformStep(6);
+                            play();
+                          }}
                         >
                           <img
                             src={arrowleft}
@@ -1387,7 +1423,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       className=""
                       style={{ justifyContent: 'center' }}
                     >
-                      <Grid item xs={12} sm={7} className="inputGrid">
+                      <Grid item xs={12} sm={8} className="inputGrid">
                         <FormControl
                           variant="outlined"
                           className="selectformControl selectformControl2"
@@ -1433,6 +1469,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                               motiveCriteria: 'motiveCriteria'
                             });
                             setformStep(5);
+                            play();
                           }}
                         >
                           <img
@@ -1456,6 +1493,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           style={{ opacity: `${loading ? '0.5' : '1'}` }}
                           onClick={(e) => {
                             handleSubmit3(e, 5);
+                            play();
                           }}
                         >
                           <b>
