@@ -1423,7 +1423,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       className=""
                       style={{ justifyContent: 'center' }}
                     >
-                      <Grid item xs={12} sm={7} className="inputGrid">
+                      <Grid item xs={12} sm={8} className="inputGrid">
                         <FormControl
                           variant="outlined"
                           className="selectformControl selectformControl2"
