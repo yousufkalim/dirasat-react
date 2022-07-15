@@ -121,7 +121,9 @@ const Result = () => {
   console.log('loading', loading);
   return (
     <>
-      {user?.level1 == 'want to change' ? (
+      {result?.planQuestion &&
+      user?.level1 == 'want to change' &&
+      result?.planQuestion[0]?.answer != 'Un Plan A' ? (
         <>
           <div
             style={{ height: '100vh', textAlign: 'center', marginTop: '8%' }}
@@ -190,7 +192,7 @@ const Result = () => {
                     ) : (
                       <>
                         {result?.planQuestion &&
-                        user?.continueStudy &&
+                        user?.level1 == 'want to change' &&
                         result?.planQuestion[0]?.answer == 'Un Plan A' ? (
                           <>
                             <p

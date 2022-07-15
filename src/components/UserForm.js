@@ -327,6 +327,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
   const handleSubmit3 = async (e, option) => {
     console.log('option', option);
     e.preventDefault();
+
     // console.log('formdata os ,', formData, option);
     // if (option == 'no') {
     //   setFormData({ ...formData });
@@ -403,6 +404,21 @@ const UserForm = ({ setStep, setActiveStep }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [whichCountry]);
   // console.log('formData', formData);
+  const handleSubmitStep5 = (e) => {
+    e.preventDefault();
+
+    if (whichCountry === 'whichCountry') {
+      return toast.error('Veuillez ajouter un pays');
+    }
+    if (ville === 'ville') {
+      return toast.error('Veuillez ajouter une villa');
+    }
+    if (budget === 'budget') {
+      return toast.error('Veuillez ajouter un bug');
+    }
+    setformStep(8);
+    play();
+  };
 
   return (
     <>
@@ -1098,6 +1114,12 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           size="large"
                           className="formbackbutton"
                           onClick={() => {
+                            setFormData({
+                              ...formData,
+                              whichCountry: 'whichCountry',
+                              ville: 'ville',
+                              budget: 'budget'
+                            });
                             setformStep(4);
                             play();
                           }}
@@ -1122,8 +1144,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           disabled={loading}
                           style={{ opacity: `${loading ? '0.5' : '1'}` }}
                           onClick={(e) => {
-                            setformStep(8);
-                            play();
+                            handleSubmitStep5(e);
                           }}
                         >
                           <b>
