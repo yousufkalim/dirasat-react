@@ -16,10 +16,11 @@ import sound from '../assets/sound/sound.wav';
 import arrowleft from '../assets/img/arrow2.png';
 
 const Questions = ({ setStep, setActiveStep }) => {
+  let getprev;
   const [play] = useSound(sound);
   // init context
   const updateStore = UpdateStore();
-  const { questions, answers, history, disc_ans_id, user } = Store();
+  const { user, questions, answers, history, disc_ans_id } = Store();
   const scrollToTop = () => {
     window.scrollTo({
       top: 60,
@@ -28,12 +29,13 @@ const Questions = ({ setStep, setActiveStep }) => {
   };
   // state init
   const [nextQuestionId, setNextQuestionId] = useState('first');
+  const [preFlag, setPrevFlag] = useState(false);
   const [prevQuestion, setprevQuestion] = useState([]);
   const [currentAnswer, setCurrentAnswer] = useState(null);
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [text, setText] = useState(null);
-
+  console.log('disc_ans_id', disc_ans_id);
   // Here we will preload all the images
   useEffect(() => {
     let imageList = [
@@ -48,6 +50,34 @@ const Questions = ({ setStep, setActiveStep }) => {
       new Image().src = image;
     });
   }, []);
+  useEffect(() => {
+    if (
+      user?.level1 == 'want to change' &&
+      getQuestion()?.question ===
+        'Veux-tu inclure les formations 100% en Arabe?' &&
+      !preFlag
+    ) {
+      let options1 = answers?.find((answer) => {
+        return (
+          answer.question?._id === getQuestion()?._id && answer?.answer == 'Non'
+        );
+      });
+      handleSelectOption(options1);
+    }
+    if (
+      user?.level1 == 'want to change' &&
+      getQuestion()?.question ===
+        'Envisages-tu des études à l’étranger directement après le Bac?' &&
+      !preFlag
+    ) {
+      let options1 = answers?.find((answer) => {
+        return (
+          answer.question?._id === getQuestion()?._id && answer?.answer == 'Oui'
+        );
+      });
+      handleSelectOption(options1);
+    }
+  }, [nextQuestionId]);
 
   useEffect(() => {
     currentans();
@@ -75,6 +105,7 @@ const Questions = ({ setStep, setActiveStep }) => {
   const classes = useStyles();
   // when  select any option it will set next Q id ,update history , if Q type is discriminating update disc_ans_id
   const handleSelectOption = (ans) => {
+    setPrevFlag(false);
     if (ans?.question?.questionType === 'discriminating') {
       updateStore({ disc_ans_id: [...disc_ans_id, ans?._id] });
     }
@@ -178,9 +209,27 @@ const Questions = ({ setStep, setActiveStep }) => {
   // it set next question id that is basically previous one which will show
   // create previous q array to get seleceted
   const handlePrev = () => {
-    const getprev = history?.find(
-      (his) => his?.next_question === getQuestion()?._id
-    );
+    setPrevFlag(true);
+    if (
+      user?.level1 == 'want to change' &&
+      getQuestion()?.question ===
+        "Let's speak English! Veux-tu inclure les formations 100% en Anglais?"
+    ) {
+      getprev = history?.find(
+        (his) => his?.next_question === '62a96a43bb109a016d565b59'
+      );
+    } else if (
+      user?.level1 == 'want to change' &&
+      getQuestion()?.question === 'À quel pays penses-tu en particulier?'
+    ) {
+      getprev = history?.find(
+        (his) => his?.next_question === '619cb0e3dc223f3845b95c27'
+      );
+    } else {
+      getprev = history?.find(
+        (his) => his?.next_question === getQuestion()?._id
+      );
+    }
     if (getprev) {
       if (getprev?.question?.questionType === 'discriminating') {
         const disans = [...disc_ans_id];
