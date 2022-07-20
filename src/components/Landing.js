@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Main from '../assets/img/da2.png';
-import MainCharacter from '../assets/img/MainCharacter.png';
+import MainCharacter from '../assets/img/dMainCharacter.png';
 import video1 from '../assets/video/orientatorVideo.mp4';
 import thumbnail from '../assets/img/thumbnail.jpg';
 import Cookies from '../utils/Cookies';
@@ -20,8 +20,12 @@ import api from '../api';
 import CountUp from 'react-countup';
 import useSound from 'use-sound';
 import sound from '../assets/sound/sound.wav';
+import { useTranslation, Trans } from 'react-i18next';
 
 const Landing = ({ step, setStep, statetextforscroll }) => {
+  const { t, i18n } = useTranslation();
+  const { language } = i18n;
+  console.log('language', language);
   const [play] = useSound(sound);
   const [openCookieePopup, setOpenCookieePopup] = useState(false);
   const [reuserPopup, setRefuserPopup] = useState(false);
@@ -129,10 +133,12 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
         />
         <Grid container spacing={2} className="body-rectangle">
           <Grid item xs={12} sm={9} className="body-rectangleGrid2">
-            <h1 className="h3">Commençons le test d'orientation!</h1>
+            <h1 className="h3">{t("Commençons le test d'orientation")}!</h1>
             <p className="p1">
-              À la fin de ce questionnaire, une proposition de voeux pour ton
-              orientation te sera formulée!
+              {t(
+                'À la fin de ce questionnaire, une proposition de voeux pour ton orientation te sera formulée'
+              )}
+              !
             </p>
           </Grid>
           <Grid item xs={12} sm={3} className="body-rectangleGrid3">

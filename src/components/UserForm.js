@@ -28,7 +28,7 @@ let wilayasvalue = [
   { name: 'Adrar', code: '01' },
   { name: 'Chlef', code: '02' },
   { name: 'Laghouat', code: '03' },
-  { name: 'Oum bouaghi', code: '04' },
+  { name: 'Oum Bouaghi', code: '04' },
   { name: 'Batna', code: '05' },
   { name: 'Béjaia', code: '06' },
   { name: 'Biskra', code: '07' },
@@ -631,7 +631,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           name="school_city"
                           value={school_city}
                           onChange={onChange}
-                          placeholder="Ville de votre école"
+                          placeholder="Ville de votre établissement scolaire"
                           className="inputField"
                         />
                       </Grid>
@@ -1464,7 +1464,11 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             <MenuItem
                               value="motiveCriteria"
                               disabled
-                              style={{ textAlign: 'left !important' }}
+                              style={{
+                                textAlign: 'left !important',
+                                fontSize: '10px',
+                                padding: '3px'
+                              }}
                             >
                               <em>
                                 {
@@ -1473,7 +1477,18 @@ const UserForm = ({ setStep, setActiveStep }) => {
                               </em>
                             </MenuItem>
                             {criterianData.map((item, i) => {
-                              return <MenuItem value={item}>{item}</MenuItem>;
+                              return (
+                                <MenuItem
+                                  style={{
+                                    textAlign: 'left !important',
+                                    fontSize: '10px',
+                                    padding: '3px'
+                                  }}
+                                  value={item}
+                                >
+                                  {item}
+                                </MenuItem>
+                              );
                             })}
                           </Select>
                         </FormControl>
