@@ -14,8 +14,11 @@ import Info from './Info';
 import useSound from 'use-sound';
 import sound from '../assets/sound/sound.wav';
 import arrowleft from '../assets/img/arrow2.png';
+import { useTranslation, Trans } from 'react-i18next';
 
 const Questions = ({ setStep, setActiveStep }) => {
+  const { t, i18n } = useTranslation();
+  const { language } = i18n;
   let getprev;
   const [play] = useSound(sound);
   // init context
@@ -289,7 +292,7 @@ const Questions = ({ setStep, setActiveStep }) => {
                 }`}
               >
                 {getQuestion()?.question
-                  ? getQuestion()?.question
+                  ? t(`${getQuestion()?.question}`)
                   : "There's no Question please try again"}
                 {getQuestion()?.question ==
                   'Encore une question, veux-tu inclure les études payantes?' && (

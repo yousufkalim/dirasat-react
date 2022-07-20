@@ -4,8 +4,14 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import { useTranslation, Trans } from 'react-i18next';
 
 const Footer = () => {
+  const { t, i18n } = useTranslation();
+  const { language } = i18n;
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
   return (
     <>
       <div className="FooterDiv">
@@ -25,6 +31,13 @@ const Footer = () => {
 
             <div>
               <p>DIRASAT</p>
+              {/* <button
+                onClick={() =>
+                  changeLanguage(`${language == 'en-GB' ? 'ar' : 'en-GB'}`)
+                }
+              >
+                {language == 'ar' ? 'French' : 'Arabic'}
+              </button> */}
               {/* <p>01 84 80 74 81</p>
               <p>75116 Paris, France</p> */}
             </div>
@@ -44,7 +57,7 @@ const Footer = () => {
                 {' '}
                 {/* Falcon Consulting */}
               </a>{' '}
-              2021. Tous droits réservés
+              2021. {t('Tous droits réservés')}
             </p>
             <div>
               <a href="https://mobile.twitter.com/dirasat_dz" target="_blank">
