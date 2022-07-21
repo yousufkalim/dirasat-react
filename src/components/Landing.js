@@ -133,11 +133,11 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
         />
         <Grid container spacing={2} className="body-rectangle">
           <Grid item xs={12} sm={9} className="body-rectangleGrid2">
-            <h1 className="h3">{t("Commençons le test d'orientation")}!</h1>
+            <h1 className="h3">{"Commençons le test d'orientation"}!</h1>
             <p className="p1">
-              {t(
+              {
                 'À la fin de ce questionnaire, une proposition de voeux pour ton orientation te sera formulée'
-              )}
+              }
               !
             </p>
           </Grid>

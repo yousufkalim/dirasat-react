@@ -293,7 +293,7 @@ const Questions = ({ setStep, setActiveStep }) => {
                 }`}
               >
                 {getQuestion()?.question
-                  ? t(`${getQuestion()?.question}`)
+                  ? `${getQuestion()?.question}`
                   : "There's no Question please try again"}
                 {getQuestion()?.question ==
                   'Encore une question, veux-tu inclure les études payantes?' && (
