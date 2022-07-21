@@ -75,7 +75,8 @@ const Questions = ({ setStep, setActiveStep }) => {
     ) {
       let options1 = answers?.find((answer) => {
         return (
-          answer.question?._id === getQuestion()?._id && answer?.answer == 'Oui'
+          answer.question?._id === '619cb1acdc223f3845b95c29' &&
+          answer?.answer == 'Un Plan A'
         );
       });
       handleSelectOption(options1);

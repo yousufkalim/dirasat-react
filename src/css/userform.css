@@ -390,6 +390,11 @@
     /* overflow-x: hidden;  */
     /* width: auto; */
   }
+  .motiveCriteriamenu{
+    font-size: 10px !important;
+    padding: 4px !important;
+    text-align: left !important;
+  }
   .facialImgQuestion {
     width: 100% !important;
     margin: auto !important;

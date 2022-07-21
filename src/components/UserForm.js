@@ -1185,12 +1185,12 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         xs={9}
                         sm={5}
                         className="Gridoptiontwo"
-                        onClick={(e) => {
-                          setFormData((prevState) => ({
-                            ...prevState,
+                        onClick={() => {
+                          setFormData({
+                            ...formData,
                             lastDiploma: 'Baccalauréat'
-                          }));
-                          handleSubmit3(e, 'no');
+                          });
+                          setformStep(7);
                           play();
                         }}
                       >
@@ -1230,9 +1230,12 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         xs={9}
                         sm={5}
                         className="Gridoptiontwo"
-                        onClick={() => {
-                          setFormData({ ...formData, lastDiploma: 'Doctorat' });
-                          setformStep(7);
+                        onClick={(e) => {
+                          setFormData((prevState) => ({
+                            ...prevState,
+                            lastDiploma: 'Doctorat'
+                          }));
+                          handleSubmit3(e, 'no');
                           play();
                         }}
                       >
@@ -1293,15 +1296,15 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             sm={4}
                             className="Gridoptiontwo"
                             onClick={(e) => {
-                              // setFormData({
-                              //   ...formData,
-                              //   studyYear: '1ère année d’études'
-                              // });
+                              setFormData({
+                                ...formData,
+                                studyYear: '1ère année de master '
+                              });
                               handleSubmit3(e, 'no');
                               play();
                             }}
                           >
-                            1ère année d’études
+                            1ère année de master
                           </Grid>
                           <Grid
                             item
@@ -1311,30 +1314,13 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             onClick={(e) => {
                               setFormData({
                                 ...formData,
-                                studyYear: '2ère année d’études'
+                                studyYear: '2ème année de master'
                               });
                               handleSubmit3(e, 'no');
                               play();
                             }}
                           >
-                            2ème année d’études
-                          </Grid>
-                          <Grid
-                            item
-                            xs={9}
-                            sm={4}
-                            className="Gridoptiontwo"
-                            onClick={(e) => {
-                              setFormData({
-                                ...formData,
-                                studyYear: '3ère année d’études'
-                              });
-                              handleSubmit3(e, 'no');
-                              play();
-                            }}
-                          >
-                            {' '}
-                            3ème année d’études
+                            2ème année de master
                           </Grid>
                         </>
                       )}
@@ -1350,13 +1336,13 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             onClick={(e) => {
                               setFormData({
                                 ...formData,
-                                studyYear: '4ère année d’études'
+                                studyYear: '1ère année de doctorat'
                               });
                               handleSubmit3(e, 'no');
                               play();
                             }}
                           >
-                            4ème année d’études
+                            1ère année de doctorat
                           </Grid>
                           <Grid
                             item
@@ -1366,17 +1352,17 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             onClick={(e) => {
                               setFormData({
                                 ...formData,
-                                studyYear: '5ère année d’études'
+                                studyYear: '2ème année de doctorat'
                               });
                               handleSubmit3(e, 'no');
                               play();
                             }}
                           >
-                            5ème année d’études
+                            2ème année de doctorat
                           </Grid>
                         </>
                       )}
-                      {lastDiploma == 'Doctorat' && (
+                      {lastDiploma == 'Baccalauréat' && (
                         <>
                           {' '}
                           <Grid
@@ -1387,13 +1373,13 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             onClick={(e) => {
                               setFormData({
                                 ...formData,
-                                studyYear: '6ère année d’études'
+                                studyYear: '1ère année de licence'
                               });
                               handleSubmit3(e, 'no');
                               play();
                             }}
                           >
-                            6ème année d’études
+                            1ère année de licence
                           </Grid>
                           <Grid
                             item
@@ -1403,13 +1389,29 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             onClick={(e) => {
                               setFormData({
                                 ...formData,
-                                studyYear: '7ère année d’études'
+                                studyYear: '2ème année de licence'
                               });
                               handleSubmit3(e, 'no');
                               play();
                             }}
                           >
-                            7ème année d’études
+                            2ème année de licence
+                          </Grid>
+                          <Grid
+                            item
+                            xs={9}
+                            sm={4}
+                            className="Gridoptiontwo"
+                            onClick={(e) => {
+                              setFormData({
+                                ...formData,
+                                studyYear: '3ème année de licence'
+                              });
+                              handleSubmit3(e, 'no');
+                              play();
+                            }}
+                          >
+                            3ème année de licence
                           </Grid>
                         </>
                       )}
@@ -1464,10 +1466,11 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             <MenuItem
                               value="motiveCriteria"
                               disabled
+                              className="motiveCriteriamenu"
                               style={{
                                 textAlign: 'left !important',
-                                fontSize: '10px',
-                                padding: '3px'
+                                // fontSize: '10px',
+                                padding: '10px'
                               }}
                             >
                               <em>
@@ -1479,10 +1482,11 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             {criterianData.map((item, i) => {
                               return (
                                 <MenuItem
+                                  className="motiveCriteriamenu"
                                   style={{
                                     textAlign: 'left !important',
-                                    fontSize: '10px',
-                                    padding: '3px'
+                                    // fontSize: '10px',
+                                    padding: '10px'
                                   }}
                                   value={item}
                                 >
