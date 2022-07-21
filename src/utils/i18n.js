@@ -30,14 +30,14 @@ i18n
       },
       ar: {
         translations: {
-          'Become Content Creator': 'Devenir un créateur de contenu',
-          'Get Early Access': "S'inscrire",
-          'Tous droits réservés': 'جميع الحقوق محفوظة',
-          "Commençons le test d'orientation": 'لنبدأ اختبار التوجيه',
-          'À la fin de ce questionnaire, une proposition de voeux pour ton orientation te sera formulée':
-            'في نهاية هذا الاستبيان ، سيتم صياغة اقتراح رغبات لتوجيهك',
-          'Pour commencer, choisis le profil dans lequel tu te reconnais le plus:':
-            'Pour commencer, choisis le profil dans lequel tu te reconnais le plus:'
+          // 'Become Content Creator': 'Devenir un créateur de contenu',
+          // 'Get Early Access': "S'inscrire",
+          // 'Tous droits réservés': 'جميع الحقوق محفوظة',
+          // "Commençons le test d'orientation": 'لنبدأ اختبار التوجيه',
+          // 'À la fin de ce questionnaire, une proposition de voeux pour ton orientation te sera formulée':
+          //   'في نهاية هذا الاستبيان ، سيتم صياغة اقتراح رغبات لتوجيهك',
+          // 'Pour commencer, choisis le profil dans lequel tu te reconnais le plus:':
+          //   'Pour commencer, choisis le profil dans lequel tu te reconnais le plus:'
         }
       }
     },

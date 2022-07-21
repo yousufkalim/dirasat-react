@@ -57,7 +57,7 @@ const Footer = () => {
                 {' '}
                 {/* Falcon Consulting */}
               </a>{' '}
-              2021. {t('Tous droits réservés')}
+              2021. {'Tous droits réservés'}
             </p>
             <div>
               <a href="https://mobile.twitter.com/dirasat_dz" target="_blank">
