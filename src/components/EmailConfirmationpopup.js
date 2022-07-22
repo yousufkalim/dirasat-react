@@ -9,6 +9,8 @@ import Grid from '@material-ui/core/Grid';
 
 import { UpdateStore } from '../StoreContext';
 import api from '../api';
+import useSound from 'use-sound';
+import sound from '../assets/sound/sound.wav';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuDialogContent-root': {
@@ -31,6 +33,7 @@ export default function EmailConfirmationpop({
   setresendLoading
 }) {
   const updateStore = UpdateStore();
+  const [play] = useSound(sound);
 
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -54,6 +57,7 @@ export default function EmailConfirmationpop({
     });
     if (res.status === 200) {
       setEmailPopup(false);
+      play();
       console.log('res?.data?.user', res?.data?.user);
       updateStore({
         questions: res?.data?.questions,
@@ -65,6 +69,7 @@ export default function EmailConfirmationpop({
       setStep(2);
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     } else {
+      play();
       setLoading(false);
       setFormData({ emailotp: '' });
       toast.error("Votre OTP n'est pas correct");
