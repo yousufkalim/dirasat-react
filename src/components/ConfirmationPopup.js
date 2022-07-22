@@ -7,6 +7,8 @@ import IconButton from '@material-ui/core/IconButton';
 import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 import Grid from '@material-ui/core/Grid';
 import EmailConfirmationpopup from './EmailConfirmationpopup';
+import useSound from 'use-sound';
+import sound from '../assets/sound/sound.wav';
 
 import { UpdateStore } from '../StoreContext';
 import api from '../api';
@@ -48,6 +50,7 @@ export default function ConfirmationPop({
     });
   };
 
+  const [play] = useSound(sound);
   const handleSubmitverify = async () => {
     setLoading(true);
 
@@ -55,6 +58,7 @@ export default function ConfirmationPop({
       otp
     });
     if (res.status === 200) {
+      play();
       SetconfirmationOpen(false);
       setTimeLeft(30);
       setFormData({ otp: '' });
@@ -63,6 +67,7 @@ export default function ConfirmationPop({
     } else {
       setLoading(false);
       setFormData({ otp: '' });
+      play();
       toast.error("Votre OTP n'est pas correct");
     }
   };
