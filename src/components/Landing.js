@@ -159,7 +159,7 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
         <div id="comment" className="vidoSection">
           <h2 className="h2">Comment ça marche?</h2>
         </div>
-        <div style={{ margin: '10px' }}>
+        {/* <div style={{ margin: '10px' }}>
           <video
             id="video"
             src={video1}
@@ -172,13 +172,8 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
             // poster={VideoImage}
           />
 
-          {/* <img src={VideoImage} className="videImage" /> */}
-        </div>
-        {/* <div className="desktopView goback">
-          <button className="goBackbutton" onClick={exportPdf}>
-            Exporter le PDF
-          </button>
         </div> */}
+        {/* <img src={VideoImage} className="videImage" /> */}
         <Grid
           container
           spacing={3}
