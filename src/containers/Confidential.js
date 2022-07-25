@@ -176,7 +176,7 @@ const Confidential = () => {
           </p>
           <p className="pmargin">
             Les traitements de données effectués sont fondés sur le consentement
-            express de l'Utilisateur. 
+            express de l'Utilisateur.
           </p>
           <p className="pmargin">
             <span className="boldText"> B.</span>TRANSMISSION DES DONNÉES À DES

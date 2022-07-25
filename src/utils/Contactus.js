@@ -3,9 +3,12 @@ import { toast } from 'react-toastify';
 import 'react-datepicker/dist/react-datepicker.css';
 import { Store, UpdateStore } from '../StoreContext';
 import api from '../api';
+import useSound from 'use-sound';
+import sound from '../assets/sound/sound.wav';
 const Contactus = () => {
   const updateStore = UpdateStore();
   const {} = Store();
+  const [play] = useSound(sound);
 
   // initialize States
   const [loading, setLoading] = useState(false);
@@ -47,6 +50,7 @@ const Contactus = () => {
       ...formData
     });
     if (res.status === 200) {
+      play();
       toast.success('Soumis avec succès');
       setFormData({ name: '', email: '', message: '', description: '' });
     }
