@@ -16,11 +16,11 @@ export default function YouMayLike({ blogs, loading }) {
   };
   return (
     <div className="articleyouMayLikecontainer">
-      <p className="youMayLikeheading">Lisez aussi</p>
       {loading ? (
         <h1>Chargement en cours...</h1>
       ) : (
         <Grid container spacing={1}>
+          {/* <p className="youMayLikeheading">Lisez aussi</p> */}
           {getblogs()?.map((item, i) => (
             <>
               <Grid item xs={12} sm={4}>
