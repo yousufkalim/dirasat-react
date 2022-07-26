@@ -72,7 +72,7 @@ export default function InviteBox({ open, setOpen }) {
                 target="_blank"
                 subject="À ton tour de faire ton test Dirasat!"
                 body={
-                  'Salut!Je viens de faire le test de Dirasat dans le cadre de mon orientation post-bac et je suis fin prêt à prendre une décision! \n\n À ton tour sur:'
+                  'Salut! Je viens de faire le test de Dirasat dans le cadre de mon orientation post-bac et je suis fin prêt à prendre une décision! \n\n À ton tour sur:'
                 }
                 quote="Dirasat"
               >
