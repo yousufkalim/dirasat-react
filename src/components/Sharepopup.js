@@ -83,7 +83,7 @@ export default function InviteBox({ open, setOpen }) {
               <TwitterShareButton
                 url={url}
                 target="_blank"
-                title="Salut!Je viens de faire le test de Dirasat dans le cadre de mon #orientation #post-bac et je suis fin prêt à prendre une décision! À ton tour sur:"
+                title="Salut! Je viens de faire le test de Dirasat dans le cadre de mon #orientation #post-bac et je suis fin prêt à prendre une décision! À ton tour sur:"
               >
                 <TwitterIcon round={true} className="socialIcons twitter" />
               </TwitterShareButton>
