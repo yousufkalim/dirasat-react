@@ -209,7 +209,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
     stayAlgeria,
     continueStudy,
     lastDiploma,
-
     studyYear
   } = formData;
   // Get institutes data from API
