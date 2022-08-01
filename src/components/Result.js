@@ -98,13 +98,22 @@ const Result = () => {
         pdf.setFillColor(40, 43, 56);
         pdf.rect(0, 0, 350, 350, 'F');
         // for specific width height
+        const imgProps = pdf.getImageProperties(type?.canvas);
+
         var width = pdf.internal.pageSize.getWidth();
         var height = pdf.internal.pageSize.getHeight();
-        if (result?.data?.length < 7) {
-          pdf.addImage(type?.canvas, 'PNG', 0, 0, width, 90);
-        } else {
+        const height1 = (imgProps.height * width) / imgProps.width;
+
+        if (result?.data?.length < 12) {
+          pdf.addImage(type?.canvas, 'PNG', 0, 0, width, height1);
+        } else if (result?.data?.length > 12 && result?.data?.length < 17) {
           pdf.addImage(type?.canvas, 'PNG', 0, 0, width, height);
+        } else if (result?.data?.length > 17 && result?.data?.length < 25) {
+          pdf.addImage(type?.canvas, 'PNG', 0, 0, width, 300);
+        } else {
+          pdf.addImage(type?.canvas, 'PNG', 0, 0, width, height1);
         }
+
         // for desktop
         // pdf.addImage(licenceResult, "PNG", 0, 0, 210, 300);
         // for ten result
@@ -122,8 +131,8 @@ const Result = () => {
   return (
     <>
       {result?.planQuestion &&
-      user?.level1 == 'want to change' &&
-      result?.planQuestion[0]?.answer != 'Un Plan A' ? (
+      // user?.level1 == 'want to change' &&
+      result?.planQuestion[0]?.answer == 'Un Plan A' ? (
         <>
           <div
             style={{ height: '100vh', textAlign: 'center', marginTop: '8%' }}
