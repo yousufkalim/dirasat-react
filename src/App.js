@@ -31,7 +31,7 @@ function App() {
   return (
     <div className={`App `}>
       <Helmet>
-        <title>Dirasat</title>
+        <title>Dirasat - Le super héros de l'orientation universitaire</title>
         <meta
           name="description"
           content="Dirasat-Le superhéro de l’orientation!"

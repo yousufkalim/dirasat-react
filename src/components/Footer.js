@@ -109,7 +109,7 @@ const Footer = () => {
           <div>
             <div className="footercgu" style={{ textAlign: '' }}>
               <Link
-                // to="/CGU"
+                to="/CGU"
                 className="cgufont"
                 style={{ color: 'white', textDecoration: 'none' }}
               >
@@ -117,7 +117,7 @@ const Footer = () => {
               </Link>
               <p style={{ margin: '7px' }} />
               <Link
-                // to="/MentionsLegal"
+                to="/MentionsLegal"
                 style={{ color: 'white', textDecoration: 'none' }}
               >
                 Mentions légales
