@@ -166,10 +166,9 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
             poster={thumbnail}
             className="videImage"
             controls="controls"
-            // autoplay={true}
-            type="video/mp4"
+            autoplay={true}
+            // type="video/mp4"
             loop
-            // poster={VideoImage}
           />
         </div>
         {/* <img src={VideoImage} className="videImage" /> */}
