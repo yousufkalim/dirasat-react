@@ -83,6 +83,10 @@
   margin: 18px 150px 0 0 !important;
   text-align: center !important;
 }
+.arabicdialoginputField{
+  direction: rtl;
+  padding-right: 15px !important;
+}
 .dialoginputField {
   border: none;
   background: #242635;

@@ -9,6 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import EmailConfirmationpopup from './EmailConfirmationpopup';
 import useSound from 'use-sound';
 import sound from '../assets/sound/sound.wav';
+import { useTranslation, Trans } from 'react-i18next';
 
 import { UpdateStore } from '../StoreContext';
 import api from '../api';
@@ -34,6 +35,8 @@ export default function ConfirmationPop({
   setresendLoading
 }) {
   const updateStore = UpdateStore();
+  const { t, i18n } = useTranslation();
+  const { language } = i18n;
 
   const [loading, setLoading] = useState(false);
   const [openEmailpopup, setEmailPopup] = useState(false);
@@ -94,15 +97,18 @@ export default function ConfirmationPop({
             <HorizontalRuleIcon fontSize="large" />
           </IconButton>
           <DialogContent className="modalcontent">
-            <h3 className="dialogHeading">Entre le code reçu par SMS</h3>
+            <h3 className="dialogHeading">{t('Entre le code reçu par SMS')}</h3>
             <Grid container spacing={1} className="invitedialoginputGrid">
               <input
                 type="text"
                 name="otp"
                 value={otp}
                 onChange={onChange}
-                placeholder="Entrez le code de vérification"
+                placeholder={t('Entrez le code de vérification')}
                 className="dialoginputField"
+                className={`${
+                  language == 'ar' && 'arabicdialoginputField'
+                } dialoginputField`}
                 required
               />
             </Grid>
@@ -114,7 +120,7 @@ export default function ConfirmationPop({
               onClick={handleSubmit}
               disabled={loadingresend}
             >
-              Renvoyer {loadingresend && timeLeft}
+              {t('Renvoyer')} {loadingresend && timeLeft}
             </button>
             <button
               size="Large"
@@ -122,7 +128,7 @@ export default function ConfirmationPop({
               onClick={handleSubmitverify}
               disabled={loading}
             >
-              Vérifier
+              {t('Vérifier')}
             </button>
           </div>
         </BootstrapDialog>

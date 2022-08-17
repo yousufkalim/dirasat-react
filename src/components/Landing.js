@@ -131,33 +131,49 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
           alt="Dirasat's Mian charachter"
           className="bodyimg formobile"
         />
-        <Grid container spacing={2} className="body-rectangle">
-          <Grid item xs={12} sm={9} className="body-rectangleGrid2">
-            <h1 className="h3">{"Commençons le test d'orientation"}!</h1>
-            <p className="p1">
-              {
+        <Grid
+          container
+          spacing={2}
+          className={`${
+            language == 'ar' && 'arabicbody-rectangleGrid2'
+          } body-rectangle`}
+        >
+          <Grid item xs={12} sm={9} className={` body-rectangleGrid2`}>
+            <h1 className={`${language == 'ar' && 'arabich3'} h3`}>
+              {t("Commençons le test d'orientation")}!
+            </h1>
+            <p className={`${language == 'ar' && 'arabicp1'}  p1`}>
+              {t(
                 'À la fin de ce questionnaire, une proposition de voeux pour ton orientation te sera formulée'
-              }
+              )}
               !
             </p>
           </Grid>
           <Grid item xs={12} sm={3} className="body-rectangleGrid3">
             <div className="partibuttondiv">
               <button
-                className="partiButton"
+                className={` ${
+                  language == 'ar' && 'arabicpartiButton'
+                }  partiButton`}
                 onClick={() => {
                   localStorage.cookies ? setStep(1) : setOpenCookieePopup(true);
                   play();
                 }}
               >
-                C'est parti!
+                {t("C'est parti")}!
               </button>
-              <img src={arrowright} className="arrowright" alt="arrowIcon" />
+              <img
+                src={arrowright}
+                className={` ${
+                  language == 'ar' && 'arabicarrowright'
+                }  arrowright`}
+                alt="arrowIcon"
+              />
             </div>
           </Grid>
         </Grid>
         <div id="comment" className="vidoSection">
-          <h2 className="h2">Comment ça marche?</h2>
+          <h2 className="h2">{t('Comment ça marche?')}</h2>
         </div>
         <div style={{ margin: '10px' }}>
           <video
@@ -175,25 +191,25 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
         <Grid
           container
           spacing={3}
-          className="footerGrid"
+          className={` ${language == 'ar' && 'arabicfooterGrid'}  footerGrid`}
           id="my-node"
           ref={capture1}
         >
           <Grid item xs={12} sm={4}>
             <img src={f1} className="footerimg" alt="footerImg" />
-            <h4 className="h4">Étape 1</h4>
-            <p className="p3">Dis à Dirasat qui tu es.</p>
+            <h4 className="h4">{t('Étape 1')}</h4>
+            <p className="p3">{t('Dis à Dirasat qui tu es.')}</p>
           </Grid>
           <Grid item xs={12} sm={4}>
             <img src={f2} className="footerimg" alt="etape2" />
-            <h4 className="h4">Étape 2</h4>
-            <p className="p3">Réponds aux questions de Dirasat.</p>
+            <h4 className="h4">{t('Étape 2')}</h4>
+            <p className="p3">{t('Réponds aux questions de Dirasat.')}</p>
           </Grid>
           <Grid item xs={12} sm={4} id="MyElementIdHere">
             <img src={f3} className="footerimg" alt="etape3" />
-            <h4 className="h4">Étape 3</h4>
+            <h4 className="h4">{t('Étape 3')}</h4>
             <p className="p3">
-              Dirasat te propose une liste de voeux pour ton orientation!
+              {t('Dirasat te propose une liste de voeux pour ton orientation!')}
             </p>
           </Grid>
         </Grid>
@@ -217,7 +233,7 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
               color: '#D4D8E5'
             }}
           >
-            Nombre de visiteurs
+            {t('Nombre de visiteurs')}
           </p>
           <CountUp
             start={1}

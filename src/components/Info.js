@@ -1,8 +1,10 @@
 import * as React from 'react';
 import Popover from '@mui/material/Popover';
 import Typography from '@mui/material/Typography';
+import { useTranslation, Trans } from 'react-i18next';
 
 export default function Info({ anchorEl, setAnchorEl, text }) {
+  const { t, i18n } = useTranslation();
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -32,7 +34,9 @@ export default function Info({ anchorEl, setAnchorEl, text }) {
           {text === 4 &&
             'Si tu hésites entre plusieurs pays, tu dois faire autant de tests que de pays souhaités.'}
           {text === 5 &&
-            'Ton budget doit inclure tes frais de logement, de transport, de fonctionnement, ainsi que les frais de scolarité de ton futur établissement. '}
+            `${t(
+              'Ton budget doit inclure tes frais de logement, de transport, de fonctionnement, ainsi que les frais de scolarité de ton futur établissement.'
+            )}`}
         </Typography>
       </Popover>
     </div>

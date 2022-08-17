@@ -12,9 +12,13 @@ const Footer = () => {
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
+  console.log('languageis', language);
   return (
     <>
-      <div className="FooterDiv">
+      <div
+        className="FooterDiv"
+        className={` ${language == 'ar' && 'arabicFooterDiv'}  FooterDiv`}
+      >
         <div className="cguBar">
           <div>
             <h3 className="footeraccueil" style={{ textAlign: '' }}>
@@ -29,15 +33,16 @@ const Footer = () => {
             </AnchorLink> */}
             </h3>
 
-            <div>
-              <p>DIRASAT</p>
-              {/* <button
+            <div style={{ textAlign: 'center' }}>
+              <p>{t(`DIRASAT`)}</p>
+              <button
                 onClick={() =>
                   changeLanguage(`${language == 'en-GB' ? 'ar' : 'en-GB'}`)
                 }
+                className="langButton"
               >
                 {language == 'ar' ? 'French' : 'Arabic'}
-              </button> */}
+              </button>
               {/* <p>01 84 80 74 81</p>
               <p>75116 Paris, France</p> */}
             </div>
@@ -57,7 +62,7 @@ const Footer = () => {
                 {' '}
                 {/* Falcon Consulting */}
               </a>{' '}
-              2021. {'Tous droits réservés'}
+              2021. {t('Tous droits réservés')}
             </p>
             <div>
               <a href="https://mobile.twitter.com/dirasat_dz" target="_blank">
@@ -113,14 +118,14 @@ const Footer = () => {
                 className="cgufont"
                 style={{ color: 'white', textDecoration: 'none' }}
               >
-                CGU
+                {t('CGU')}
               </Link>
               <p style={{ margin: '7px' }} />
               <Link
                 to="/MentionsLegal"
                 style={{ color: 'white', textDecoration: 'none' }}
               >
-                Mentions légales
+                {t('Mentions légales')}
               </Link>
             </div>
           </div>

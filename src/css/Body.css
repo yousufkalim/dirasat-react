@@ -197,7 +197,7 @@ padding: 10px;
   height: 140px !important;
   margin: auto !important;
   position: relative !important;
-  bottom: 115px !important;
+  bottom: 170px !important;
   border-radius: 18px !important;
   /* box-shadow: 0px 1px 0px 13px rgb(72 68 68 / 10%) !important; */
   box-shadow: 0px 1px 0px 13px rgb(0 0 0 / 12%) !important;
@@ -211,8 +211,14 @@ padding: 10px;
 .body-rectangleGrid1 {
   padding: 12px 3px 0 25px !important;
 }
+.arabicbody-rectangleGrid2{
+  direction: rtl;
+}
 .body-rectangleGrid2 {
   padding: 18px 0 0 40px !important;
+}
+.arabicpartiButton{
+  padding: 25px 60px 25px 60px  !important;
 }
 .partiButton {
   border: none;
@@ -240,14 +246,26 @@ padding: 10px;
     #ec58b1 101.84%
   );
 }
+.arabicarrowright{
+  /* display: none; */
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  right: -10% !important;
+}
+
 .arrowright {
   position: relative;
   top: 4px;
   right: 49px;
+  
 }
 
 .h2 {
   color: #ffffff;
+}
+.arabich3{
+  text-align: right !important;
+  margin: 10px 80px 0px 0px !important;
 }
 .h3 {
   font-size: 29px;
@@ -258,6 +276,10 @@ padding: 10px;
   color: #ffffff;
   margin: 10px 0px 0px 0px;
   font-size: 18px;
+}
+.arabicp1{
+  text-align: right !important;
+  margin: 10px 80px 0px 0px !important;
 }
 .p1 {
   font-size: 13px;
@@ -280,6 +302,9 @@ padding: 10px;
 }
 .videImage {
   width: 50%;
+}
+.arabicfooterGrid{
+  direction: rtl;
 }
 .footerGrid {
   width: 60% !important;
@@ -306,6 +331,7 @@ padding: 10px;
     height: 125px !important;
     bottom: 100px !important;
   }
+  
   .arrowright {
     position: relative;
     left: -40px;
@@ -505,6 +531,11 @@ padding: 10px;
     width: 65% !important;
     height: 150px !important;
     bottom: 150px !important;
+  }
+  .arabicarrowright{
+    left: 0px !important;
+    top: 3px !important;
+    right: -19% !important;
   }
   .arrowright {
     position: relative;
