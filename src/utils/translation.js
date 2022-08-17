@@ -616,7 +616,26 @@ const frenchAnswers = () => {
     'Une carrière de sportif': 'Une carrière de sportif',
     'Developper un projet': 'Developper un projet',
     'Gérer une entreprise dans le secteur':
-      'Gérer une entreprise dans le secteur'
+      'Gérer une entreprise dans le secteur',
+    'Medecin du sport': 'Medecin du sport',
+    'Sportif de haut niveau': 'Sportif de haut niveau',
+    Construction: 'Construction',
+    "L'univers": "L'univers",
+    'Créer mon entreprise': 'Créer mon entreprise',
+    "S'occuper de la logistique, des stocks ou du transport":
+      "S'occuper de la logistique, des stocks ou du transport",
+    'Faire de la vente et de la relation client':
+      'Faire de la vente et de la relation client',
+    'Penser à des solutions techniques': 'Penser à des solutions techniques',
+    "Améliorer la performance de l'entreprise":
+      "Améliorer la performance de l'entreprise",
+    Langue: 'Langue',
+    Coût: 'Coût',
+    Proximité: 'Proximité',
+    Belgique: 'Belgique',
+    Turquie: 'Turquie',
+    Autre: 'Autre',
+    'Sciences de la terre': 'Sciences de la terre'
   };
   return fr;
 };
@@ -720,7 +739,24 @@ const arabicAnswers = () => {
     "Gérer l'image et le son": 'إدارة الصورة والصوت',
     'Une carrière de sportif': 'مهنة رياضية',
     'Developper un projet': 'تطوير مشروع',
-    'Gérer une entreprise dans le secteur': 'إدارة الأعمال في القطاع'
+    'Gérer une entreprise dans le secteur': 'إدارة الأعمال في القطاع',
+    'Medecin du sport': 'طبيب رياضي',
+    'Sportif de haut niveau': 'أفضل رياضي',
+    Construction: 'بناء',
+    "L'univers": 'الكون',
+    'Créer mon entreprise': 'إنشاء عملي',
+    "S'occuper de la logistique, des stocks ou du transport":
+      'اعتني بالخدمات اللوجستية أو المخزون أو النقل',
+    'Faire de la vente et de la relation client':
+      'المبيعات والعلاقات مع العملاء',
+    'Penser à des solutions techniques': 'التفكير في الحلول التقنية',
+    "Améliorer la performance de l'entreprise": 'تحسين أداء الأعمال',
+    Langue: 'لغة',
+    Coût: 'كلفة',
+    Proximité: 'القرب',
+    Belgique: 'بلجيكا',
+    Turquie: 'ديك رومى',
+    'Sciences de la terre': 'علوم الأرض'
   };
   return ar;
 };
@@ -739,6 +775,118 @@ const arabicFooter = () => {
     'Tous droits réservés': 'جميع الحقوق محفوظة',
     CGU: 'شروط الإستعمال',
     'Mentions légales': 'معلومات قانونية'
+  };
+  return ar;
+};
+// country
+const frenchCountry = () => {
+  let fr = {
+    France: 'France',
+    'United Kingdom': 'United Kingdom',
+    Allemagne: 'Allemagne',
+    Italie: 'Italie',
+    Russie: 'Russie',
+    Ukraine: 'Ukraine',
+    Espagne: 'Espagne',
+    Belgique: 'Belgique',
+    USA: 'USA',
+    Canada: 'Canada',
+    Turquie: 'Turquie',
+    Suisse: 'Suisse'
+  };
+  return fr;
+};
+const arabicCountry = () => {
+  let ar = {
+    France: 'فرنسا',
+    'United Kingdom': 'المملكة المتحدة',
+    Allemagne: 'ألمانيا',
+    Italie: 'إيطاليا',
+    Russie: 'روسيا',
+    Ukraine: 'أوكرانيا',
+    Espagne: 'إسبانيا',
+    Belgique: 'بلجيكا',
+    USA: 'الولايات المتحدة الأمريكية',
+    Canada: 'كندا',
+    Turquie: 'ديك رومى',
+    Suisse: 'سويسري'
+  };
+  return ar;
+};
+// city
+const frenchCity = () => {
+  let fr = {
+    Paris: 'Paris',
+    Lyon: 'Lyon',
+    Montpellier: 'Montpellier',
+    Marseille: 'Marseille',
+    'Aix-en-Provence': 'Aix-en-Provence',
+    Nantes: 'Nantes',
+    Lille: 'Lille',
+    Toulouse: 'Toulouse',
+    Strasbourg: 'Strasbourg',
+    Bordeaux: 'Bordeaux',
+    Rennes: 'Rennes'
+  };
+  return fr;
+};
+const arabicCity = () => {
+  let ar = {
+    Paris: 'باريس',
+    Lyon: 'ليونز',
+    Montpellier: 'مونبلييه',
+    Marseille: 'مرسيليا',
+    'Aix-en-Provence': 'إيكس أون بروفانس',
+    Nantes: 'نانت',
+    Lille: 'ليل',
+    Toulouse: 'تولوز',
+    Strasbourg: 'ستراسبورغ',
+    Bordeaux: 'بوردو',
+    Rennes: 'الرنة'
+  };
+  return ar;
+};
+// formcriteria
+const frenchCriteria = () => {
+  let fr = {
+    '5 000€ - 7 500€': '5 000€ - 7 500€',
+    'Plus de 15 000€': 'Plus de 15 000€',
+    "J'ai déjà un logement là-bas": "J'ai déjà un logement là-bas",
+    "J'ai un ou plusieurs membres de ma famille sur qui je peux compter":
+      "J'ai un ou plusieurs membres de ma famille sur qui je peux compter",
+    'Cette destination correspond à mon budget':
+      'Cette destination correspond à mon budget',
+    'Je pars avec des amis': 'Je pars avec des amis',
+    "L'établissement ou le programme que je vise se trouve dans cette destination":
+      "L'établissement ou le programme que je vise se trouve dans cette destination",
+    "J'ai entendu de bons retours la part d'amis et de proches":
+      "J'ai entendu de bons retours la part d'amis et de proches",
+    Autre: 'Autre',
+    'Départ!': 'Départ!',
+    'Qui suis-je?': 'Qui suis-je?',
+    'Mon test': 'Mon test',
+    'Mes résultats': 'Mes résultats'
+  };
+  return fr;
+};
+const arabicCriteria = () => {
+  let ar = {
+    '5 000€ - 7 500€': '5000 يورو - 7500 يورو',
+    'Plus de 15 000€': 'أكثر من 15000 يورو',
+    "J'ai déjà un logement là-bas": 'لدي بالفعل سكن هناك',
+    "J'ai un ou plusieurs membres de ma famille sur qui je peux compter":
+      'لدي فرد أو أكثر من أفراد الأسرة يمكنني الاعتماد عليهم',
+    'Cette destination correspond à mon budget': 'هذه الوجهة تناسب ميزانيتي',
+    'Je pars avec des amis': 'أذهب مع الأصدقاء',
+    "L'établissement ou le programme que je vise se trouve dans cette destination":
+      'المؤسسة أو البرنامج الذي أستهدفه موجود في هذه الوجهة',
+    "J'ai entendu de bons retours la part d'amis et de proches":
+      'لقد سمعت ردود فعل جيدة من الأصدقاء والأقارب',
+    Autre: 'آخر',
+    'Départ!': 'الاقلاع!',
+    'Qui suis-je?': 'من أنا؟',
+    'Mon test': 'اختباري',
+    'Mes résultats': 'نتائجي'
   };
   return ar;
 };
@@ -769,6 +917,12 @@ export {
   arabicQuestions,
   frenchAnswers,
   arabicAnswers,
+  frenchCountry,
+  arabicCountry,
+  frenchCity,
+  arabicCity,
+  frenchCriteria,
+  arabicCriteria,
   frenchFooter,
   arabicFooter
 };

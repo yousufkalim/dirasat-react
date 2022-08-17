@@ -9,6 +9,7 @@ import StepConnector from '@material-ui/core/StepConnector';
 import editicon from '../assets/icons/Frame.png';
 import step1 from '../assets/icons/step1.png';
 import step4 from '../assets/icons/step4.png';
+import { useTranslation, Trans } from 'react-i18next';
 
 const ColorlibConnector = withStyles({
   alternativeLabel: {
@@ -87,9 +88,11 @@ function getSteps() {
 export default function CustomizedSteppers({ activeStep, setActiveStep }) {
   // const [activeStep, setActiveStep] = React.useState(1);
   const steps = getSteps();
+  const { t, i18n } = useTranslation();
+  const { language } = i18n;
 
   return (
-    <div className="stepperMain">
+    <div className={`${language == 'ar' && 'arabicstepperMain'} stepperMain`}>
       <Stepper
         alternativeLabel
         activeStep={activeStep}
@@ -105,7 +108,7 @@ export default function CustomizedSteppers({ activeStep, setActiveStep }) {
                   color: `${activeStep == index ? 'white' : 'gray'}`
                 }}
               >
-                {label}
+                {t(label)}
               </span>
             </StepLabel>
           </Step>

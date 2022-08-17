@@ -170,7 +170,6 @@ let criterianData = [
   'Je pars avec des amis',
   "L'établissement ou le programme que je vise se trouve dans cette destination",
   "J'ai entendu de bons retours la part d'amis et de proches",
-  "J'ai entendu de bons retours de la part d;amis et de proches",
   'Autre'
 ];
 let countrylist = [
@@ -1177,7 +1176,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                                   className={classes.menuitem}
                                   value={item}
                                 >
-                                  {item}
+                                  {t(item)}
                                 </MenuItem>
                               );
                             })}
@@ -1216,7 +1215,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                                   className={classes.menuitem}
                                   value={item}
                                 >
-                                  {item}
+                                  {t(item)}
                                 </MenuItem>
                               );
                             })}
@@ -1253,7 +1252,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                                   className={classes.menuitem}
                                   value={item}
                                 >
-                                  {item}
+                                  {t(item)}
                                 </MenuItem>
                               );
                             })}
@@ -1632,6 +1631,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                                 // fontSize: '10px',
                                 padding: '10px'
                               }}
+                              className={classes.menuitem}
                             >
                               <em>
                                 {t(
@@ -1648,9 +1648,10 @@ const UserForm = ({ setStep, setActiveStep }) => {
                                     // fontSize: '10px',
                                     padding: '10px'
                                   }}
+                                  className={classes.menuitem}
                                   value={item}
                                 >
-                                  {item}
+                                  {t(item)}
                                 </MenuItem>
                               );
                             })}

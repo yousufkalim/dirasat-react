@@ -18,6 +18,12 @@ import {
   arabicQuestions,
   frenchAnswers,
   arabicAnswers,
+  frenchCountry,
+  arabicCountry,
+  frenchCity,
+  arabicCity,
+  frenchCriteria,
+  arabicCriteria,
   frenchFooter,
   arabicFooter
 } from './translation';
@@ -47,6 +53,12 @@ i18n
           ...frenchQuestions(),
           // answers
           ...frenchAnswers(),
+          // country
+          ...frenchCountry(),
+          // city
+          ...frenchCity(),
+          // criteria
+          ...frenchCriteria(),
           // footer
           ...frenchFooter()
         }
@@ -74,6 +86,12 @@ i18n
           ...arabicQuestions(),
           // answers
           ...arabicAnswers(),
+          // country
+          ...arabicCountry(),
+          // city
+          ...arabicCity(),
+          // criteria
+          ...arabicCriteria(),
           // footer
           ...arabicFooter()
         }

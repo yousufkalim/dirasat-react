@@ -1,9 +1,13 @@
 .mainuserform {
   min-height: 90vh !important;
 }
+.arabicstepperMain{
+  direction: rtl;
+}
 .stepperMain {
   width: 50%;
   margin: auto;
+  
 }
 
 .stepper {
