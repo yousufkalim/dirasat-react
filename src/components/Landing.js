@@ -162,14 +162,15 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
         <div style={{ margin: '10px' }}>
           <video
             id="video"
-            src={video1}
+            // src={video1}
             poster={thumbnail}
             className="videImage"
             controls="controls"
-            autoplay={true}
-            // type="video/mp4"
+            autoplay
             loop
-          />
+          >
+            <source src={video1} type="video/mp4" poster={thumbnail} />
+          </video>
         </div>
         {/* <img src={VideoImage} className="videImage" /> */}
         <Grid
