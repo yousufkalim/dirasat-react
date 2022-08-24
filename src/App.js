@@ -31,10 +31,10 @@ function App() {
   return (
     <div className={`App `}>
       <Helmet>
-        <title>Dirasat</title>
+        <title>Dirasat - Le super héros de l'orientation universitaire</title>
         <meta
           name="description"
-          content="Commençons le test d'orientation! À la fin de ce questionnaire, une proposition de voeux pour Parcoursup te sera formulée!"
+          content="Dirasat-Le superhéro de l’orientation!"
         />
         <meta
           name="keywords"

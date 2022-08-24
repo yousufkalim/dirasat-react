@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Main from '../assets/img/da2.png';
 import MainCharacter from '../assets/img/dMainCharacter.png';
-import video1 from '../assets/video/orientatorVideo.mp4';
-import thumbnail from '../assets/img/thumbnail.jpg';
+import video1 from '../assets/video/dvideo.mp4';
+import thumbnail from '../assets/img/thumbnaild1.png';
 import Cookies from '../utils/Cookies';
 import CookiesPopup from '../utils/CookiesPopup';
 import CookiesPopup2 from '../utils/CookiesPopup2';
@@ -159,20 +159,19 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
         <div id="comment" className="vidoSection">
           <h2 className="h2">Comment ça marche?</h2>
         </div>
-        {/* <div style={{ margin: '10px' }}>
+        <div style={{ margin: '10px' }}>
           <video
             id="video"
-            src={video1}
+            // src={video1}
             poster={thumbnail}
             className="videImage"
             controls="controls"
-            // autoplay={true}
-            type="video/mp4"
+            autoplay
             loop
-            // poster={VideoImage}
-          />
-
-        </div> */}
+          >
+            <source src={video1} type="video/mp4" poster={thumbnail} />
+          </video>
+        </div>
         {/* <img src={VideoImage} className="videImage" /> */}
         <Grid
           container
