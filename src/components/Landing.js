@@ -172,7 +172,7 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
             loop
           >
             <source
-              src={`${url}uploads/dvideo.mp4`}
+              src={`https://firebasestorage.googleapis.com/v0/b/dirasat-demo.appspot.com/o/dvideo.mp4?alt=media&token=e10aecc4-dc24-495d-a19d-7dff32dc6288`}
               type="video/mp4"
               poster={thumbnail}
             />
