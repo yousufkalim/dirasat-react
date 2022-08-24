@@ -21,8 +21,10 @@ import CountUp from 'react-countup';
 import useSound from 'use-sound';
 import sound from '../assets/sound/sound.wav';
 import { useTranslation, Trans } from 'react-i18next';
+import { url } from '../config';
 
 const Landing = ({ step, setStep, statetextforscroll }) => {
+  console.log('process', `${url}/uploads/dvideo.mp4`);
   const { t, i18n } = useTranslation();
   const { language } = i18n;
   console.log('language', language);
@@ -169,7 +171,11 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
             autoplay
             loop
           >
-            <source src={video1} type="video/mp4" poster={thumbnail} />
+            <source
+              src={`${url}uploads/dvideo.mp4`}
+              type="video/mp4"
+              poster={thumbnail}
+            />
           </video>
         </div>
         {/* <img src={VideoImage} className="videImage" /> */}
