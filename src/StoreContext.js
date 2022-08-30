@@ -41,14 +41,15 @@ export function StoreProvider({ children }) {
     mainresultPage: null,
     screenshoots: [],
     blogs: [],
-    singleBlog: {}
+    singleBlog: {},
+    siteViews: null,
   });
 
   const updateStore = (data) => {
     setStore((prev) => {
       return {
         ...prev,
-        ...data
+        ...data,
       };
     });
   };
@@ -57,7 +58,7 @@ export function StoreProvider({ children }) {
     setStore((prev) => {
       return {
         ...prev,
-        allTypes: [...prev.allTypes, data]
+        allTypes: [...prev.allTypes, data],
       };
     });
   };
@@ -66,9 +67,7 @@ export function StoreProvider({ children }) {
   return (
     <storeContext.Provider value={store}>
       <storeUpdateContext.Provider value={updateStore}>
-        <typeUpdateContext.Provider value={typeUpdate}>
-          {children}
-        </typeUpdateContext.Provider>
+        <typeUpdateContext.Provider value={typeUpdate}>{children}</typeUpdateContext.Provider>
       </storeUpdateContext.Provider>
     </storeContext.Provider>
   );
