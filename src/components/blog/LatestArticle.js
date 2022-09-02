@@ -5,16 +5,19 @@ import Grid from '@material-ui/core/Grid';
 import { Link } from 'react-router-dom';
 import blogImg from '../../assets/3.png';
 import { url } from '../../config';
+import { useTranslation, Trans } from 'react-i18next';
 
 export default function LatestArticle({ blogs, loading, setLoading }) {
+  const { t, i18n } = useTranslation();
+  const { language } = i18n;
   let newdata = [{}];
   console.log('blogs', blogs);
 
   return (
     <div className="LatestArticlecontainer">
-      <p className="LatestArticleheading">Derniers articles</p>
+      <p className="LatestArticleheading">{t('Derniers articles')}</p>
       {loading ? (
-        <h1>Chargement en cours...</h1>
+        <h1>{t('Chargement en cours')}</h1>
       ) : blogs ? (
         <>
           {' '}
@@ -44,10 +47,10 @@ export default function LatestArticle({ blogs, loading, setLoading }) {
                       {blogs[0]?.blog_desc.length > 150
                         ? blogs[0]?.blog_desc.substring(0, 180) + '...'
                         : blogs[0]?.blog_desc}{' '}
-                      <span className="seemore"> Lire la suite</span>
+                      <span className="seemore"> {t('Lire la suite')}</span>
                     </p>
                     <p className="articleBy">
-                      Lire l’article
+                      {'Lire l’article'}
                       {/* By{" "}
                     <span style={{ color: "red" }}>
                       {" "}
@@ -87,7 +90,7 @@ export default function LatestArticle({ blogs, loading, setLoading }) {
                         </p>
 
                         <p className="author1">
-                          Lire l’article
+                          {t('Lire l’article')}
                           {/* By<span style={{ color: "red" }}> Moin Khan</span> */}
                         </p>
                       </div>
@@ -99,7 +102,7 @@ export default function LatestArticle({ blogs, loading, setLoading }) {
           </Grid>
         </>
       ) : (
-        <h1>No Blogs available</h1>
+        <h1>{t('No Blogs available')}</h1>
       )}
     </div>
   );

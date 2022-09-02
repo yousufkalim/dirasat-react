@@ -6,6 +6,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import IconButton from '@material-ui/core/IconButton';
 import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 import Grid from '@material-ui/core/Grid';
+import { useTranslation, Trans } from 'react-i18next';
 
 import { UpdateStore } from '../StoreContext';
 import api from '../api';
@@ -34,7 +35,8 @@ export default function EmailConfirmationpop({
 }) {
   const updateStore = UpdateStore();
   const [play] = useSound(sound);
-
+  const { t, i18n } = useTranslation();
+  const { language } = i18n;
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     emailotp: ''
@@ -72,7 +74,7 @@ export default function EmailConfirmationpop({
       play();
       setLoading(false);
       setFormData({ emailotp: '' });
-      toast.error("Votre OTP n'est pas correct");
+      toast.error(t("Votre OTP n'est pas correct"));
     }
   };
   const handleClose = () => {
@@ -99,8 +101,9 @@ export default function EmailConfirmationpop({
         </IconButton>
         <DialogContent className="modalcontent">
           <h3 className="dialogHeading">
-            Entre le code envoyé sur ton adresse e-mail. Attention, bien
-            vérifier ses courriers indésirables (spams)
+            {t(
+              'Entre le code envoyé sur ton adresse e-mail. Attention, bien vérifier ses courriers indésirables (spams)'
+            )}
           </h3>
           <Grid container spacing={1} className="invitedialoginputGrid">
             <input
@@ -108,8 +111,10 @@ export default function EmailConfirmationpop({
               name="emailotp"
               value={emailotp}
               onChange={onChange}
-              placeholder="Entrez le code de vérification"
-              className="dialoginputField"
+              placeholder={t('Entrez le code de vérification')}
+              className={`${
+                language == 'ar' && 'arabicdialoginputField'
+              } dialoginputField`}
               required
             />
           </Grid>
@@ -121,7 +126,7 @@ export default function EmailConfirmationpop({
             onClick={handleSubmit}
             disabled={loadingresend}
           >
-            Renvoyer {loadingresend && timeLeft}
+            {t('Renvoyer')} {loadingresend && timeLeft}
           </button>
           <button
             size="Large"
@@ -129,7 +134,7 @@ export default function EmailConfirmationpop({
             onClick={handleSubmitverify}
             disabled={loading}
           >
-            Vérifier
+            {t('Vérifier')}
           </button>
         </div>
       </BootstrapDialog>

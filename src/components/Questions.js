@@ -290,10 +290,12 @@ const Questions = ({ setStep, setActiveStep }) => {
                   getQuestion()?.question.length >= 90
                     ? 'longquestion'
                     : 'questiontext'
-                }`}
+                }
+                ${language == 'ar' && 'directionrtl'}
+                `}
               >
                 {getQuestion()?.question
-                  ? `${getQuestion()?.question}`
+                  ? `${t(getQuestion()?.question)}`
                   : "There's no Question please try again"}
                 {getQuestion()?.question ==
                   'Encore une question, veux-tu inclure les études payantes?' && (
@@ -339,14 +341,14 @@ const Questions = ({ setStep, setActiveStep }) => {
                     } ${getOptions(answers)?.length == 11 && 'ninthoption'}`}
                     onClick={() => handleSelectOption(ans)}
                   >
-                    {ans?.answer}
+                    {t(ans?.answer)}
                   </Grid>
                 ))}
             </Grid>
             {history.length >= 1 ? (
               <div size="large" className="prevButton" onClick={handlePrev}>
                 <img src={arrowleft} className="arrowleft" alt="leftarrow" />
-                <b> Retour</b>
+                <b> {t('Retour')}</b>
               </div>
             ) : (
               ''

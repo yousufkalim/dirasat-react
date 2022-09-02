@@ -8,6 +8,7 @@ import Navicon from '../assets/icons/navicon.png';
 import Closeicon from '../assets/icons/closeicon.png';
 import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { useTranslation, Trans } from 'react-i18next';
 
 export default function Header({
   step,
@@ -16,6 +17,8 @@ export default function Header({
   setStatetextforscroll
 }) {
   const history = useHistory();
+  const { t, i18n } = useTranslation();
+  const { language } = i18n;
 
   const [flag, setFlag] = useState(false);
   // Show navbar when page is scorlled upto given distance
@@ -46,8 +49,17 @@ export default function Header({
     return '';
   };
   return (
-    <AppBar color="inherit" position={deviceType()} className="headerRoot">
-      <Toolbar color="" className="showToolbar">
+    <AppBar
+      color="inherit"
+      position={deviceType()}
+      className={`${language == 'ar' && 'arabicheaderRoot'} 
+      headerRoot`}
+    >
+      <Toolbar
+        color=""
+        className={`${language == 'ar' && 'arabicshowToolbar'} 
+      showToolbar`}
+      >
         <div className=" dirasatlogo">
           <div
             edge="start"
@@ -100,7 +112,7 @@ export default function Header({
                   history.push('/');
                 }}
               >
-                Accueil
+                {t('Accueil')}
               </Typography>
             </AnchorLink>
             <AnchorLink
@@ -122,19 +134,19 @@ export default function Header({
                   history.push('/', 'Comment');
                 }}
               >
-                Comment ça marche?
+                {t('Comment ça marche?')}
               </Typography>
             </AnchorLink>
             <div
-              className="BlogMobileView"
-              style={{ width: '60%', textAlign: 'right', marginTop: '10px' }}
+              className={`${language == 'ar' && 'arabicBlogMobileView'} 
+              BlogMobileView`}
             >
               <Link
                 to="/blog"
                 style={{ color: 'white', textDecoration: 'none' }}
                 className={flag ? 'title c' : 'hidetitle c'}
               >
-                Blog
+                {t('Blog')}
               </Link>
             </div>
           </>

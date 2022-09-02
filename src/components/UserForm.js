@@ -22,8 +22,86 @@ import Info from './Info';
 import villeList from '../utils/villas';
 import useSound from 'use-sound';
 import sound from '../assets/sound/sound.wav';
+import { useTranslation, Trans } from 'react-i18next';
 
 let class_listData = ['1ère AS', '2ème AS', '3ème AS', 'Postbac'];
+// arabic translate function
+
+let yas;
+function arabicValue(txt) {
+  yas = txt.value;
+
+  yas = yas.replace(/`/g, 'ذ');
+  yas = yas.replace(/0/g, '۰');
+  yas = yas.replace(/1/g, '۱');
+  yas = yas.replace(/2/g, '۲');
+  yas = yas.replace(/3/g, '۳');
+  yas = yas.replace(/4/g, '٤');
+  yas = yas.replace(/5/g, '۵');
+  yas = yas.replace(/6/g, '٦');
+  yas = yas.replace(/7/g, '۷');
+  yas = yas.replace(/8/g, '۸');
+  yas = yas.replace(/9/g, '۹');
+  yas = yas.replace(/0/g, '۰');
+  yas = yas.replace(/q/g, 'ض');
+  yas = yas.replace(/w/g, 'ص');
+  yas = yas.replace(/e/g, 'ث');
+  yas = yas.replace(/r/g, 'ق');
+  yas = yas.replace(/t/g, 'ف');
+  yas = yas.replace(/y/g, 'غ');
+  yas = yas.replace(/u/g, 'ع');
+  yas = yas.replace(/i/g, 'ه');
+  yas = yas.replace(/o/g, 'خ');
+  yas = yas.replace(/p/g, 'ح');
+  yas = yas.replace(/\[/g, 'ج');
+  yas = yas.replace(/\]/g, 'د');
+  yas = yas.replace(/a/g, 'ش');
+  yas = yas.replace(/s/g, 'س');
+  yas = yas.replace(/d/g, 'ي');
+  yas = yas.replace(/f/g, 'ب');
+  yas = yas.replace(/g/g, 'ل');
+  yas = yas.replace(/h/g, 'ا');
+  yas = yas.replace(/j/g, 'ت');
+  yas = yas.replace(/k/g, 'ن');
+  yas = yas.replace(/l/g, 'م');
+  yas = yas.replace(/\;/g, 'ك');
+  yas = yas.replace(/\'/g, 'ط');
+  yas = yas.replace(/z/g, 'ئ');
+  yas = yas.replace(/x/g, 'ء');
+  yas = yas.replace(/c/g, 'ؤ');
+  yas = yas.replace(/v/g, 'ر');
+  yas = yas.replace(/b/g, 'لا');
+  yas = yas.replace(/n/g, 'ى');
+  yas = yas.replace(/m/g, 'ة');
+  yas = yas.replace(/\,/g, 'و');
+  yas = yas.replace(/\./g, 'ز');
+  yas = yas.replace(/\//g, 'ظ');
+  yas = yas.replace(/~/g, ' ّ');
+  yas = yas.replace(/Q/g, 'َ');
+  yas = yas.replace(/W/g, 'ً');
+  yas = yas.replace(/E/g, 'ُ');
+  yas = yas.replace(/R/g, 'ٌ');
+  yas = yas.replace(/T/g, 'لإ');
+  yas = yas.replace(/Y/g, 'إ');
+  yas = yas.replace(/U/g, '‘');
+  yas = yas.replace(/I/g, '÷');
+  yas = yas.replace(/O/g, '×');
+  yas = yas.replace(/P/g, '؛');
+  yas = yas.replace(/A/g, 'ِ');
+  yas = yas.replace(/S/g, 'ٍ');
+  yas = yas.replace(/G/g, 'لأ');
+  yas = yas.replace(/H/g, 'أ');
+  yas = yas.replace(/J/g, 'ـ');
+  yas = yas.replace(/K/g, '،');
+  yas = yas.replace(/L/g, '/');
+  yas = yas.replace(/Z/g, '~');
+  yas = yas.replace(/X/g, 'ْ');
+  yas = yas.replace(/B/g, 'لآ');
+  yas = yas.replace(/N/g, 'آ');
+  yas = yas.replace(/M/g, '’');
+  yas = yas.replace(/\?/g, '؟');
+  txt.value = yas;
+}
 let wilayasvalue = [
   { name: 'Adrar', code: '01' },
   { name: 'Chlef', code: '02' },
@@ -39,7 +117,7 @@ let wilayasvalue = [
   { name: 'Tébessa', code: '12' },
   { name: 'Tlemcen', code: '13' },
   { name: 'Tiaret', code: '14' },
-  { name: 'Tizi ouzou', code: '15' },
+  { name: 'Tizi Ouzou', code: '15' },
   { name: 'Alger', code: '16' },
   { name: 'Djelfa', code: '17' },
   { name: 'Jijel', code: '18' },
@@ -74,15 +152,15 @@ let wilayasvalue = [
   { name: 'Ghardaïa', code: '47' },
   { name: 'Relizane', code: '48' },
   { name: 'Timimoun', code: '49' },
-  { name: ' Bordj Badji Mokhtar', code: '50' },
+  { name: 'Bordj Badji Mokhtar', code: '50' },
   { name: 'Ouled Djellal', code: '51' },
   { name: 'Béni Abbès', code: '52' },
   { name: 'In Salah', code: '53' },
-  { name: ' In Guezzam', code: '54' },
+  { name: 'In Guezzam', code: '54' },
   { name: 'Touggourt', code: '55' },
   { name: 'Djanet', code: '56' },
   { name: 'El Meghaïer', code: '57' },
-  { name: ' El Ménia', code: '58' }
+  { name: 'El Ménia', code: '58' }
 ];
 let budgetllist = ['5 000€ - 7 500€', '5 000€ - 7 500€', 'Plus de 15 000€'];
 let criterianData = [
@@ -92,7 +170,6 @@ let criterianData = [
   'Je pars avec des amis',
   "L'établissement ou le programme que je vise se trouve dans cette destination",
   "J'ai entendu de bons retours la part d'amis et de proches",
-  "J'ai entendu de bons retours de la part d;amis et de proches",
   'Autre'
 ];
 let countrylist = [
@@ -143,6 +220,8 @@ let level2data = [
 let timeInterval;
 
 const UserForm = ({ setStep, setActiveStep }) => {
+  const { t, i18n } = useTranslation();
+  const { language } = i18n;
   const [play] = useSound(sound);
   registerLocale('en-gb', enGb);
   // initialize States
@@ -157,7 +236,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
     Bac_Serie: 'Bac Serie',
     school_city: '',
     school_name: '',
-    language: 'language',
+    languageis: 'languagee',
     accept_condition: false,
     level1: 'level1',
     score: 'score',
@@ -194,7 +273,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
     Bac_Serie,
     school_city,
     school_name,
-    language,
+    languageis,
     class_list,
     phone,
     email,
@@ -255,12 +334,20 @@ const UserForm = ({ setStep, setActiveStep }) => {
       '&:after': {
         borderColor: 'yellow'
       }
+    },
+    dropdownSelect: {
+      textAlign: 'right !important'
+    },
+    menuitem: {
+      direction: `${language == 'ar' ? 'rtl' : 'ltr'}`
     }
   });
   const classes = useStyles();
 
   // onChange Function for Input Field
   const onChange = (e) => {
+    console.log('onChange,e.target.value', e.target.value);
+
     let Temp_Bac_Serie = e.target.value == 'Postbac' ? 'Bac Serie' : Bac_Serie;
 
     if (e.target.name === 'accept_condition') {
@@ -272,6 +359,19 @@ const UserForm = ({ setStep, setActiveStep }) => {
         [e.target.name]: e.target.value
       });
   };
+  // onChange Function for Input Field
+  const handleInputChange = (e) => {
+    console.log('t', language);
+    if (typeof e.target.value == 'string' && language == 'ar') {
+      // arabicValue(e.target);
+    }
+    console.log(' handleInputChange,e.target.value', e.target.value);
+
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
 
   // function for Date select
   const onChangeDate = (date) => {
@@ -282,42 +382,44 @@ const UserForm = ({ setStep, setActiveStep }) => {
     e.preventDefault();
 
     if (first_name == '') {
-      return toast.error('Veuillez entrer votre Prénom.');
+      return toast.error(t('Veuillez entrer votre Prénom.'));
     }
     if (last_name == '') {
-      return toast.error('Veuillez entrer votre nom.');
+      return toast.error(t('Veuillez entrer votre nom.'));
     }
     if (date_of_birth == '') {
-      return toast.error('Veuillez entrer votre date de naissance');
+      return toast.error(t('Veuillez entrer votre date de naissance'));
     }
     if (wilaya == 'wilaya') {
-      return toast.error('Veuillez sélectionner');
+      return toast.error(t('Veuillez sélectionner'));
     }
     if (email == '') {
-      return toast.error('Veuillez entrer votre e-mail');
+      return toast.error(t('Veuillez entrer votre e-mail'));
     }
     if (phone.length != 10 || phone[0] != 0) {
       return toast.error(
-        'Le numéro de téléphone doit être composé de 10 chiffres et commencer par 0'
+        t(
+          'Le numéro de téléphone doit être composé de 10 chiffres et commencer par 0'
+        )
       );
     }
     if (class_list == 'class list') {
-      return toast.error('Veuillez sélectionner la liste des classes');
+      return toast.error(t('Veuillez sélectionner la liste des classes'));
     }
     if (Bac_Serie == 'Bac Serie' && class_list != 'Postbac') {
-      return toast.error('Veullez sélectionner une série de Baccalauréat');
+      return toast.error(t('Veullez sélectionner une série de Baccalauréat'));
     }
     if (school_city == '') {
-      return toast.error('veuillez entrer la ville de votre école');
+      return toast.error(t('veuillez entrer la ville de votre école'));
     }
     if (school_name == '') {
-      return toast.error("veuillez saisir le nom de l'école");
+      return toast.error(t("veuillez saisir le nom de l'école"));
     }
     // if (language == 'language') {
     //   return toast.error("veuillez saisir le nom de l'école");
     // }
     if (!accept_condition) {
-      return toast.error('Veuillez accepter les termes et conditions');
+      return toast.error(t('Veuillez accepter les termes et conditions'));
     }
     setformStep(2);
     return play();
@@ -326,46 +428,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
   const handleSubmit3 = async (e, option) => {
     console.log('option', option);
     e.preventDefault();
-
-    // console.log('formdata os ,', formData, option);
-    // if (option == 'no') {
-    //   setFormData({ ...formData });
-    // }
-
-    // if (option == 1) {
-    //   setFormData({ ...formData, level1: 'pass' });
-    //   if (score == 'score') {
-    //     return toast.error('Veuillez sélectionner la note moyenne');
-    //   }
-    // }
-    // if (option == 2) {
-    //   setFormData({ ...formData, level1: 'not pass', score: 'score' });
-    // }
-    // if (option == 5) {
-    //   setFormData({
-    //     ...formData,
-    //     level1: 'want to change',
-    //     score: 'score',
-    //     stayAlgeria: false
-    //   });
-    //   if (whichCountry == '') {
-    //     return toast.error('Veuillez ajouter un pays');
-    //   }
-    //   if (budget == '') {
-    //     return toast.error('Veuillez ajouter un budget');
-    //   }
-    // }
-    // if (option == 6) {
-    //   setFormData({
-    //     ...formData,
-    //     level1: 'want to change',
-    //     score: 'score',
-    //     stayAlgeria: true
-    //   });
-    //   if (budget == '') {
-    //     return toast.error('Veuillez ajouter un budget');
-    //   }
-    // }
     console.log('FormData', formData);
     console.log('FormData2', ref.current);
 
@@ -443,13 +505,18 @@ const UserForm = ({ setStep, setActiveStep }) => {
               // onSubmit={handleSubmit}
               className="userForm"
             >
-              <Grid container className="userformgrid">
+              <Grid
+                container
+                className={`${
+                  language == 'ar' && 'arabicuserformgrid'
+                } userformgrid`}
+              >
                 <Grid item xs={12} sm={12} className="">
                   {formStep != 6 && formStep != 7 && (
                     <h3 className="formheading">
-                      Pour mieux te conseiller, j’ai besoin{' '}
-                      <br className="br" />
-                      d’en savoir davantage sur toi!
+                      {t(
+                        'Pour mieux te conseiller, j’ai besoin d’en savoir davantage sur toi!'
+                      )}
                     </h3>
                   )}
                 </Grid>
@@ -459,19 +526,23 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       <Grid item xs={12} sm={6} className="inputGrid">
                         <input
                           name="first_name"
-                          placeholder="Prénom"
-                          className="inputField"
+                          placeholder={t('Prénom')}
+                          className={`${
+                            language == 'ar' && 'arabicinputField'
+                          } inputField`}
                           value={first_name}
-                          onChange={onChange}
+                          onChange={handleInputChange}
                         />
                       </Grid>
                       <Grid item xs={12} sm={6} className="inputGrid">
                         <input
                           name="last_name"
                           value={last_name}
-                          onChange={onChange}
-                          placeholder="Nom"
-                          className="inputField"
+                          onChange={handleInputChange}
+                          placeholder={t('Nom')}
+                          className={`${
+                            language == 'ar' && 'arabicinputField'
+                          } inputField`}
                         />
                       </Grid>
                     </Grid>
@@ -484,10 +555,12 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           locale={'en-gb'}
                           dateFormat="dd/MM/yyyy"
                           onChange={onChangeDate}
-                          className="inputField"
+                          className={`${
+                            language == 'ar' && 'arabicinputField'
+                          } inputField`}
                           value={date_of_birth}
                           autoComplete="off"
-                          placeholderText="Date de naissance"
+                          placeholderText={t('Date de naissance')}
                           openToDate={new Date('2003/01/01')}
                           dropdownMode="scroll"
                           // dropdownMode="select"
@@ -503,7 +576,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         item
                         xs={12}
                         sm={6}
-                        className="inputGrid wilayaGrid"
+                        className={`${
+                          language == 'ar' && 'arabicwilayaGrid'
+                        } wilayaGrid`}
                       >
                         <FormControl
                           variant="outlined"
@@ -523,14 +598,21 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             <MenuItem
                               value="wilaya"
                               disabled
-                              style={{ textAlign: 'left !important' }}
+                              className={classes.dropdownSelect}
+                              className={classes.menuitem}
+                              // style={{
+                              //   textAlign: 'right !important'
+                              // }}
                             >
-                              <em>{'Wilaya'}</em>
+                              <em>{t('Wilaya')}</em>
                             </MenuItem>
                             {wilayasvalue.map((w, i) => {
                               return (
-                                <MenuItem value={w}>
-                                  {w.name + ' - ' + w.code}
+                                <MenuItem
+                                  className={classes.menuitem}
+                                  value={w}
+                                >
+                                  {t(w.name) + ' - ' + w.code}
                                 </MenuItem>
                               );
                             })}
@@ -544,9 +626,11 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           type="email"
                           name="email"
                           value={email}
-                          onChange={onChange}
-                          placeholder="E-mail"
-                          className="inputField"
+                          onChange={handleInputChange}
+                          placeholder={t('E-mail')}
+                          className={`${
+                            language == 'ar' && 'arabicinputField'
+                          } inputField`}
                         />
                       </Grid>
                       <Grid item xs={12} sm={6} className="inputGrid">
@@ -554,15 +638,24 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           type="tel"
                           name="phone"
                           value={phone}
-                          onChange={onChange}
+                          onChange={handleInputChange}
                           maxlength={'10'}
-                          placeholder="Numéro de téléphone"
-                          className="inputField"
+                          placeholder={t('Numéro de téléphone')}
+                          className={`${
+                            language == 'ar' && 'arabicinputField'
+                          } inputField`}
                         />
                       </Grid>
                     </Grid>
-                    <Grid container spacing={2} className="">
-                      <Grid item xs={12} sm={6} className="inputGrid">
+                    <Grid container spacing={2}>
+                      <Grid
+                        item
+                        xs={12}
+                        sm={6}
+                        className={`${
+                          language == 'ar' && 'arabicwilayaGrid'
+                        } wilayaGrid`}
+                      >
                         <FormControl
                           variant="outlined"
                           className="selectformControl"
@@ -583,17 +676,32 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             <MenuItem
                               value="class list"
                               disabled
+                              className={classes.menuitem}
                               style={{ textAlign: 'left !important' }}
                             >
-                              <em>{'Classe'}</em>
+                              <em>{t('Classe')}</em>
                             </MenuItem>
                             {class_listData.map((list, i) => {
-                              return <MenuItem value={list}>{list}</MenuItem>;
+                              return (
+                                <MenuItem
+                                  className={classes.menuitem}
+                                  value={list}
+                                >
+                                  {t(list)}
+                                </MenuItem>
+                              );
                             })}
                           </Select>
                         </FormControl>
                       </Grid>
-                      <Grid item xs={12} sm={6} className="inputGrid">
+                      <Grid
+                        item
+                        xs={12}
+                        sm={6}
+                        className={`${
+                          language == 'ar' && 'arabicwilayaGrid'
+                        } wilayaGrid`}
+                      >
                         <FormControl
                           variant="outlined"
                           className="selectformControl bacserieFormControl"
@@ -613,12 +721,20 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             <MenuItem
                               value="Bac Serie"
                               disabled
+                              className={classes.menuitem}
                               style={{ textAlign: 'left !important' }}
                             >
-                              <em>{'Série de Baccalauréat'}</em>
+                              <em>{t('Série de Baccalauréat')}</em>
                             </MenuItem>
                             {bacseriData.map((item, i) => {
-                              return <MenuItem value={item}>{item}</MenuItem>;
+                              return (
+                                <MenuItem
+                                  className={classes.menuitem}
+                                  value={item}
+                                >
+                                  {t(item)}
+                                </MenuItem>
+                              );
                             })}
                           </Select>
                         </FormControl>
@@ -630,9 +746,13 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           type="text"
                           name="school_city"
                           value={school_city}
-                          onChange={onChange}
-                          placeholder="Ville de votre établissement scolaire"
-                          className="inputField"
+                          onChange={handleInputChange}
+                          placeholder={t(
+                            'Ville de votre établissement scolaire'
+                          )}
+                          className={`${
+                            language == 'ar' && 'arabicinputField'
+                          } inputField`}
                         />
                       </Grid>
                       <Grid item xs={12} sm={6} className="inputGrid">
@@ -640,9 +760,11 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           type="text"
                           name="school_name"
                           value={school_name}
-                          onChange={onChange}
-                          placeholder="Nom de votre école"
-                          className="inputField"
+                          onChange={handleInputChange}
+                          placeholder={t('Nom de votre école')}
+                          className={`${
+                            language == 'ar' && 'arabicinputField'
+                          } inputField`}
                         />
                       </Grid>
                     </Grid>
@@ -678,7 +800,11 @@ const UserForm = ({ setStep, setActiveStep }) => {
                     <Grid
                       container
                       spacing={1}
-                      className="termsandconditionGrid"
+                      className={`${
+                        language == 'ar'
+                          ? 'arabictermsandconditionGrid'
+                          : 'termsandconditionGrid'
+                      } `}
                     >
                       <Checkbox
                         inputProps={{ 'aria-label': 'secondary checkbox' }}
@@ -689,11 +815,17 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         onChange={onChange}
                       />
                       <span className="termsandcondition">
-                        J’accepte les termes et les conditions
+                        {t('J’accepte les termes et les conditions')}
                       </span>
                     </Grid>
 
-                    <Grid container spacing={2} className="formbuttonsGrid">
+                    <Grid
+                      container
+                      spacing={2}
+                      className={`${
+                        language == 'ar' && 'arabicformbuttonsGrid'
+                      } formbuttonsGrid`}
+                    >
                       <Grid xs={12} sm={4}>
                         <div
                           size="large"
@@ -708,7 +840,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             className="arrowleft"
                             alt="arrow"
                           />
-                          <b> Retour</b>
+                          <b> {t('Retour')}</b>
                         </div>
                       </Grid>
 
@@ -717,7 +849,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       <Grid xs={12} sm={4}>
                         <button
                           variant="contained"
-                          className="formSubmitButton"
+                          className={`${
+                            language == 'ar' && 'arabicformSubmitButton'
+                          } formSubmitButton`}
                           size="large"
                           type="submit"
                           // disabled={loading}
@@ -731,7 +865,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                                 <CircularProgress size={20} className="" />
                               </div>
                             ) : (
-                              'Passer au suivant'
+                              `${t('Passer au suivant')}`
                             )}
                           </b>
                         </button>
@@ -760,8 +894,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         }}
                       >
                         <span className="">
-                          J’ai déjà mon baccalauréat mais je n’ai pas encore
-                          débuté mes études supérieures
+                          {t(
+                            'J’ai déjà mon baccalauréat mais je n’ai pas encore débuté mes études supérieures'
+                          )}
                         </span>
                       </Grid>
                       <Grid
@@ -776,7 +911,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           play();
                         }}
                       >
-                        <span className="">Je n’ai pas mon baccalauréat</span>
+                        <span className="">
+                          {t('Je n’ai pas mon baccalauréat')}
+                        </span>
                       </Grid>
                     </Grid>
                     <Grid
@@ -793,9 +930,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       }}
                     >
                       <span className="" style={{ fontSize: '12px' }}>
-                        J’ai déjà débuté mes études supérieures et je veux me
-                        réorienter ou poursuivre mes études supérieures dans un
-                        autre programme.
+                        {t(
+                          'J’ai déjà débuté mes études supérieures et je veux me réorienter ou poursuivre mes études supérieures dans un autre programme.'
+                        )}
                       </span>
                     </Grid>
                     <Grid
@@ -818,7 +955,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             className="arrowleft"
                             alt="arrow"
                           />
-                          <b> Retour</b>
+                          <b> {t('Retour')}</b>
                         </div>
                       </Grid>
                     </Grid>
@@ -853,13 +990,21 @@ const UserForm = ({ setStep, setActiveStep }) => {
                               value="score"
                               disabled
                               style={{ textAlign: 'left !important' }}
+                              className={classes.menuitem}
                             >
                               <em>
-                                {'Moyenne générale obtenue au Baccalauréat'}
+                                {t('Moyenne générale obtenue au Baccalauréat')}
                               </em>
                             </MenuItem>
                             {level2data.map((item, i) => {
-                              return <MenuItem value={item}>{item}</MenuItem>;
+                              return (
+                                <MenuItem
+                                  className={classes.menuitem}
+                                  value={item}
+                                >
+                                  {item}
+                                </MenuItem>
+                              );
                             })}
                           </Select>
                           <p
@@ -870,12 +1015,18 @@ const UserForm = ({ setStep, setActiveStep }) => {
                               fontSize: '13px'
                             }}
                           >
-                            Arrondir à l’unité inférieure
+                            {t('Arrondir à l’unité inférieure')}
                           </p>
                         </FormControl>
                       </Grid>
                     </Grid>
-                    <Grid container spacing={2} className="formbuttonsGrid">
+                    <Grid
+                      container
+                      spacing={2}
+                      className={`${
+                        language == 'ar' && 'arabicformbuttonsGrid'
+                      } formbuttonsGrid`}
+                    >
                       <Grid xs={12} sm={4}>
                         <div
                           size="large"
@@ -891,7 +1042,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             className="arrowleft"
                             alt="arrow"
                           />
-                          <b> Retour</b>
+                          <b> {t('Retour')}</b>
                         </div>
                       </Grid>
 
@@ -917,7 +1068,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                                 <CircularProgress size={20} className="" />
                               </div>
                             ) : (
-                              'Poursuivre'
+                              `${t('Poursuivre')}`
                             )}
                           </b>
                         </button>
@@ -947,7 +1098,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           play();
                         }}
                       >
-                        Partir à l'étranger
+                        {t("Partir à l'étranger")}
                       </Grid>
                       <Grid
                         item
@@ -963,7 +1114,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           play();
                         }}
                       >
-                        Me réorienter en Algérie
+                        {t('Me réorienter en Algérie')}
                       </Grid>
                     </Grid>
                     <Grid
@@ -992,7 +1143,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             className="arrowleft"
                             alt="arrow"
                           />
-                          <b> Retour</b>
+                          <b> {t('Retour')}</b>
                         </div>
                       </Grid>
                     </Grid>
@@ -1030,12 +1181,20 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             <MenuItem
                               value="whichCountry"
                               disabled
+                              className={classes.menuitem}
                               style={{ textAlign: 'left !important' }}
                             >
-                              <em>{'Quel pays'}</em>
+                              <em>{t('Quel pays')}</em>
                             </MenuItem>
                             {countrylist.map((item, i) => {
-                              return <MenuItem value={item}>{item}</MenuItem>;
+                              return (
+                                <MenuItem
+                                  className={classes.menuitem}
+                                  value={item}
+                                >
+                                  {t(item)}
+                                </MenuItem>
+                              );
                             })}
                           </Select>
                         </FormControl>
@@ -1061,12 +1220,20 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             <MenuItem
                               value="ville"
                               disabled
+                              className={classes.menuitem}
                               style={{ textAlign: 'left !important' }}
                             >
-                              <em>Quelle(s) ville(s)</em>
+                              <em>{t('Quelle(s) ville(s)')}</em>
                             </MenuItem>
                             {cites.map((item, i) => {
-                              return <MenuItem value={item}>{item}</MenuItem>;
+                              return (
+                                <MenuItem
+                                  className={classes.menuitem}
+                                  value={item}
+                                >
+                                  {t(item)}
+                                </MenuItem>
+                              );
                             })}
                           </Select>
                         </FormControl>
@@ -1090,12 +1257,20 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             <MenuItem
                               value="budget"
                               disabled
+                              className={classes.menuitem}
                               style={{ textAlign: 'left !important' }}
                             >
-                              <em>{'Quel budget'}</em>
+                              <em>{t('Quel budget')}</em>
                             </MenuItem>
                             {budgetllist.map((item, i) => {
-                              return <MenuItem value={item}>{item}</MenuItem>;
+                              return (
+                                <MenuItem
+                                  className={classes.menuitem}
+                                  value={item}
+                                >
+                                  {t(item)}
+                                </MenuItem>
+                              );
                             })}
                           </Select>
                         </FormControl>
@@ -1108,7 +1283,13 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         />
                       </div>
                     </Grid>
-                    <Grid container spacing={2} className="formbuttonsGrid">
+                    <Grid
+                      container
+                      spacing={2}
+                      className={`${
+                        language == 'ar' && 'arabicformbuttonsGrid'
+                      } formbuttonsGrid`}
+                    >
                       <Grid xs={12} sm={4}>
                         <div
                           size="large"
@@ -1129,7 +1310,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             className="arrowleft"
                             alt="arrow"
                           />
-                          <b> Retour</b>
+                          <b> {t('Retour')}</b>
                         </div>
                       </Grid>
 
@@ -1154,7 +1335,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                                 <CircularProgress size={20} className="" />
                               </div>
                             ) : (
-                              'Poursuivre'
+                              `${t('Poursuivre')}`
                             )}
                           </b>
                         </button>
@@ -1172,7 +1353,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         fontSize: '13px'
                       }}
                     >
-                      <h1>Quel est ton dernier diplôme validé ?</h1>
+                      <h1>{t('Quel est ton dernier diplôme validé ?')}</h1>
                     </div>
                     <Grid
                       container
@@ -1194,7 +1375,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           play();
                         }}
                       >
-                        Baccalauréat
+                        {t('Baccalauréat')}
                       </Grid>
                       <Grid
                         item
@@ -1210,7 +1391,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           play();
                         }}
                       >
-                        Licence
+                        {t('Licence')}
                       </Grid>
                       <Grid
                         item
@@ -1223,7 +1404,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           play();
                         }}
                       >
-                        Master
+                        {t('Master')}
                       </Grid>
                       <Grid
                         item
@@ -1239,11 +1420,17 @@ const UserForm = ({ setStep, setActiveStep }) => {
                           play();
                         }}
                       >
-                        Doctorat
+                        {t('Doctorat')}
                       </Grid>
                     </Grid>
 
-                    <Grid container spacing={2} className="formbuttonsGrid">
+                    <Grid
+                      container
+                      spacing={2}
+                      className={`${
+                        language == 'ar' && 'arabicformbuttonsGrid'
+                      } formbuttonsGrid`}
+                    >
                       <Grid xs={12} sm={4}>
                         <div
                           size="large"
@@ -1264,7 +1451,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             className="arrowleft"
                             alt="arrow"
                           />
-                          <b> Retour</b>
+                          <b> {t('Retour')}</b>
                         </div>
                       </Grid>
                     </Grid>
@@ -1280,7 +1467,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         fontSize: '13px'
                       }}
                     >
-                      <h1>Vous êtes en :</h1>
+                      <h1>{t('Vous êtes en')}</h1>
                     </div>
                     <Grid
                       container
@@ -1304,7 +1491,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                               play();
                             }}
                           >
-                            1ère année de master
+                            {t('1ère année de master')}
                           </Grid>
                           <Grid
                             item
@@ -1320,7 +1507,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                               play();
                             }}
                           >
-                            2ème année de master
+                            {t('2ème année de master')}
                           </Grid>
                         </>
                       )}
@@ -1342,7 +1529,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                               play();
                             }}
                           >
-                            1ère année de doctorat
+                            {t('1ère année de doctorat')}
                           </Grid>
                           <Grid
                             item
@@ -1358,7 +1545,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                               play();
                             }}
                           >
-                            2ème année de doctorat
+                            {t('2ème année de doctorat')}
                           </Grid>
                         </>
                       )}
@@ -1379,7 +1566,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                               play();
                             }}
                           >
-                            1ère année de licence
+                            {t('1ère année de licence')}
                           </Grid>
                           <Grid
                             item
@@ -1395,7 +1582,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                               play();
                             }}
                           >
-                            2ème année de licence
+                            {t('2ème année de licence')}
                           </Grid>
                           <Grid
                             item
@@ -1411,13 +1598,19 @@ const UserForm = ({ setStep, setActiveStep }) => {
                               play();
                             }}
                           >
-                            3ème année de licence
+                            {t('3ème année de licence')}
                           </Grid>
                         </>
                       )}
                     </Grid>
 
-                    <Grid container spacing={2} className="formbuttonsGrid">
+                    <Grid
+                      container
+                      spacing={2}
+                      className={`${
+                        language == 'ar' && 'arabicformbuttonsGrid'
+                      } formbuttonsGrid`}
+                    >
                       <Grid xs={12} sm={4}>
                         <div
                           size="large"
@@ -1432,7 +1625,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             className="arrowleft"
                             alt="arrow"
                           />
-                          <b> Retour</b>
+                          <b> {t('Retour')}</b>
                         </div>
                       </Grid>
                     </Grid>
@@ -1472,11 +1665,12 @@ const UserForm = ({ setStep, setActiveStep }) => {
                                 // fontSize: '10px',
                                 padding: '10px'
                               }}
+                              className={classes.menuitem}
                             >
                               <em>
-                                {
+                                {t(
                                   'Quel critère a le plus motivé ton choix de pays et de villes?'
-                                }
+                                )}
                               </em>
                             </MenuItem>
                             {criterianData.map((item, i) => {
@@ -1488,9 +1682,10 @@ const UserForm = ({ setStep, setActiveStep }) => {
                                     // fontSize: '10px',
                                     padding: '10px'
                                   }}
+                                  className={classes.menuitem}
                                   value={item}
                                 >
-                                  {item}
+                                  {t(item)}
                                 </MenuItem>
                               );
                             })}
@@ -1517,7 +1712,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             className="arrowleft"
                             alt="arrow"
                           />
-                          <b> Retour</b>
+                          <b> {t('Retour')}</b>
                         </div>
                       </Grid>
 
@@ -1543,7 +1738,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                                 <CircularProgress size={20} className="" />
                               </div>
                             ) : (
-                              'Poursuivre'
+                              `${t('Poursuivre')}`
                             )}
                           </b>
                         </button>

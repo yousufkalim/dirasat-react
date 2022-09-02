@@ -12,8 +12,10 @@ import SharePopup from './Sharepopup';
 import jsPDF from 'jspdf';
 import * as html2canvas from 'html2canvas';
 import logo from '../assets/img/logo1.png';
+import { useTranslation, Trans } from 'react-i18next';
 const Result = () => {
   // init
+  const { t, i18n } = useTranslation();
   const updateStore = UpdateStore();
   const { history, user, disc_ans_id, result, mainresultPage, allTypes } =
     Store();
@@ -138,16 +140,15 @@ const Result = () => {
             style={{ height: '100vh', textAlign: 'center', marginTop: '8%' }}
           >
             <h1 style={{ width: '80%', margin: 'auto' }}>
-              Merci pour ces informations, nos agents et nos partenaires vont te
-              contacter rapidement pour te proposer des parcours d’études à
-              l’étranger adaptés à ton profil ! N’oublie pas de consulter
-              régulièrement tes e-mails et de rester joignable par téléphone!
+              {t(
+                'Merci pour ces informations, nos agents et nos partenaires vont te contacter rapidement pour te proposer des parcours d’études à l’étranger adaptés à ton profil ! N’oublie pas de consulter régulièrement tes e-mails et de rester joignable par téléphone!'
+              )}
             </h1>{' '}
             <button
               className="sharebutton"
               onClick={() => window.location.reload()}
             >
-              <b className="invitetext">Terminer</b>
+              <b className="invitetext">{t('Terminer')}</b>
             </button>
             <div className="buttonDiv">
               <button
@@ -155,14 +156,14 @@ const Result = () => {
                 onClick={() => setOpenInvitepopup(true)}
               >
                 <img src={userimg} alt="userImage" />
-                <b className="invitetext">Invite un ami</b>
+                <b className="invitetext">{t('Invite un ami')}</b>
               </button>
               <button
                 className=" partager"
                 onClick={() => setOpenSharepopup(true)}
               >
                 <img src={share} alt="share" />
-                <b className="partagertext"> Partager </b>
+                <b className="partagertext"> {t('Partager')} </b>
               </button>
             </div>
           </div>
@@ -191,7 +192,7 @@ const Result = () => {
                       className="resultHeading"
                       style={{ textAlign: 'center' }}
                     >
-                      Bravo! Tu as répondu à toutes les questions!
+                      {t('Bravo! Tu as répondu à toutes les questions!')}
                     </h1>
                     {/* <button onClick={onButtonClick}>Download PDF</button> */}
                     {loading ? (
@@ -204,8 +205,9 @@ const Result = () => {
                           <p className="resultText">
                             <span style={{ color: '#9198A5' }}>
                               {' '}
-                              D'après tes réponses, je pense que ton profil est
-                              tourné vers
+                              {t(
+                                "D'après tes réponses, je pense que ton profil est tourné vers"
+                              )}
                             </span>
                             <br />
                             <b>
@@ -222,14 +224,18 @@ const Result = () => {
                                     <CircularProgress color="inherit" />
                                   </div>
                                 ) : result?.type_of_job ? (
-                                  result.type_of_job
+                                  t(result.type_of_job)
                                 ) : (
-                                  'Il n’y a actuellement pas de job disponible.'
+                                  <>
+                                    {t(
+                                      'Il n’y a actuellement pas de job disponible.'
+                                    )}
+                                  </>
                                 )}{' '}
                               </span>
                             </b>{' '}
                             <span style={{ color: '#9198A5' }}>
-                              comme par exemple
+                              {t('comme par exemple')}
                             </span>{' '}
                             <span
                               style={{
@@ -239,18 +245,21 @@ const Result = () => {
                               }}
                             >
                               {' '}
-                              {loading
-                                ? 'loading'
-                                : result?.example_of_job
-                                ? result.example_of_job
-                                : 'Currently no example available'}
+                              {loading ? (
+                                'loading'
+                              ) : result?.example_of_job ? (
+                                t(result.example_of_job)
+                              ) : (
+                                <>{t('Currently no example available')}</>
+                              )}
                             </span>
                           </p>
                           {!loading && (
                             <p className="resultText">
                               <span style={{ color: '#9198A5' }}>
-                                Je te propose une liste de vœux d’orientation
-                                qui correspondrait à ton profil.
+                                {t(
+                                  'Je te propose une liste de vœux d’orientation qui correspondrait à ton profil.'
+                                )}
                               </span>
                             </p>
                           )}
@@ -263,12 +272,9 @@ const Result = () => {
                                 className="resultText"
                                 style={{ color: '#9198A5' }}
                               >
-                                Aussi, nos agents et nos partenaires vont te
-                                contacter rapidement pour te proposer des
-                                parcours d’études à l’étranger adaptés à ton
-                                profil ! N’oublie pas de consulter régulièrement
-                                tes e-mails et de rester joignable par téléphone
-                                !
+                                {t(
+                                  'Aussi, nos agents et nos partenaires vont te contacter rapidement pour te proposer des parcours d’études à l’étranger adaptés à ton profil ! N’oublie pas de consulter régulièrement tes e-mails et de rester joignable par téléphone!'
+                                )}
                               </p>
                             </>
                           )}
@@ -285,9 +291,11 @@ const Result = () => {
                     >
                       <b>
                         {' '}
-                        {screenshootloading
-                          ? 'veuillez patienter'
-                          : 'Ma liste de voeux'}
+                        {screenshootloading ? (
+                          <>{t('veuillez patienter')}</>
+                        ) : (
+                          <>{t('Ma liste de voeux')}</>
+                        )}
                       </b>
                     </button>
                   </div>
@@ -320,9 +328,9 @@ const Result = () => {
                             <>
                               {result.data ? (
                                 <TypeOfCourse
-                                  type={
+                                  type={t(
                                     'Cursus universitaire compatible avec les résultats de ton test d’orientation'
-                                  }
+                                  )}
                                   result={result?.data}
                                   // percentage={item?.percentage}
                                   courses={result?.data}
@@ -336,7 +344,10 @@ const Result = () => {
                                     textAlign: 'center'
                                   }}
                                 >
-                                  <h1> Désolé pas de cours disponible</h1>
+                                  <h1>
+                                    {' '}
+                                    {t('Désolé pas de cours disponible')}
+                                  </h1>
                                 </div>
                               )}
                             </>
@@ -351,11 +362,9 @@ const Result = () => {
                               // className="desktopView"
                             >
                               <p>
-                                Tu ne trouves pas ce que tu t’attendais à voir
-                                dans cette liste? Pas de panique! Tu seras
-                                contacté par la suite pour compléter cette liste
-                                avec d’autres fomations qui pourraient te
-                                correspondre!
+                                {t(
+                                  'Tu ne trouves pas ce que tu t’attendais à voir dans cette liste? Pas de panique! Tu seras contacté par la suite pour compléter cette liste avec d’autres fomations qui pourraient te correspondre!'
+                                )}
                               </p>
                             </div>
                             <div className="desktopView goback">
@@ -364,9 +373,11 @@ const Result = () => {
                                 onClick={exportPdf}
                                 disabled={exportLoading}
                               >
-                                {exportLoading
-                                  ? 'Veuillez patienter'
-                                  : 'Exporter le PDF'}
+                                {exportLoading ? (
+                                  <>{t('veuillez patienter')}</>
+                                ) : (
+                                  <>{t('Exporter le PDF')}</>
+                                )}
                               </button>
                             </div>
                             <div
@@ -379,10 +390,9 @@ const Result = () => {
                               className="mobileView"
                             >
                               <p>
-                                N'hésite pas à prendre des captures d'écran de
-                                cette page. Tu peux aussi te connecter à ton
-                                ordinateur pour obtenir cette liste au format
-                                PDF.
+                                {t(
+                                  "N'hésite pas à prendre des captures d'écran de cette page. Tu peux aussi te connecter à ton ordinateur pour obtenir cette liste au format PDF."
+                                )}
                               </p>
                             </div>
 
@@ -392,14 +402,19 @@ const Result = () => {
                                 onClick={() => setOpenInvitepopup(true)}
                               >
                                 <img src={userimg} alt="userImage" />
-                                <b className="invitetext">Invite un ami</b>
+                                <b className="invitetext">
+                                  {t('Invite un ami')}
+                                </b>
                               </button>
                               <button
                                 className=" partager"
                                 onClick={() => setOpenSharepopup(true)}
                               >
                                 <img src={share} alt="share" />
-                                <b className="partagertext"> Partager </b>
+                                <b className="partagertext">
+                                  {' '}
+                                  {t('Partager')}{' '}
+                                </b>
                               </button>
                             </div>
                             <div className="goback">
@@ -407,7 +422,7 @@ const Result = () => {
                                 className="goBackbutton"
                                 onClick={() => setresultStep(0)}
                               >
-                                <b className="">Précédent</b>
+                                <b className="">{t('Précédent')}</b>
                               </button>
                             </div>
                           </div>
@@ -416,7 +431,7 @@ const Result = () => {
                             className=""
                             style={{ margin: '10px', textAlign: 'center' }}
                           >
-                            <h1> Désolé pas de cours disponible</h1>
+                            <h1> {t('Désolé pas de cours disponible')}</h1>
                           </div>
                         )}
                       </div>
@@ -425,7 +440,7 @@ const Result = () => {
                         className=""
                         style={{ margin: '10%', textAlign: 'center' }}
                       >
-                        <h1>Chargement en cours...</h1>
+                        <h1>{t('Chargement en cours')}</h1>
                       </div>
                     )}
                   </div>

@@ -1,6 +1,36 @@
 import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
+import {
+  arabicHeader,
+  frenchHeader,
+  frenchLandingPage,
+  ArabicLandingPage,
+  frenchUserform,
+  arabicUserform,
+  frenchWillaya,
+  arabicWillaya,
+  frenchContactus,
+  arabicContactus,
+  frenchPopups,
+  arabicPopups,
+  frenchQuestions,
+  arabicQuestions,
+  frenchAnswers,
+  arabicAnswers,
+  frenchCountry,
+  arabicCountry,
+  frenchCity,
+  arabicCity,
+  frenchCriteria,
+  arabicCriteria,
+  frenchFooter,
+  arabicFooter,
+  frenchResult,
+  arabicResult,
+  frenchCourseName,
+  arabicCourseName
+} from './translation';
 
 i18n
   .use(LanguageDetector)
@@ -11,33 +41,69 @@ i18n
     resources: {
       ['en-GB']: {
         translations: {
-          'Become Content Creator': 'Become Content Creator',
-          'Get Early Access': 'Get Early Access',
-          'Tous droits réservés': 'Tous droits réservés',
-          "Commençons le test d'orientation":
-            "Commençons le test d'orientation",
-          'À la fin de ce questionnaire, une proposition de voeux pour ton orientation te sera formulée':
-            'À la fin de ce questionnaire, une proposition de voeux pour ton orientation te sera formulée',
-          'Pour commencer, choisis le profil dans lequel tu te reconnais le plus:':
-            'Pour commencer, choisis le profil dans lequel tu te reconnais le plus:'
+          // header
+          ...frenchHeader(),
+          // landing page
+          ...frenchLandingPage(),
+          // contactus
+          ...frenchContactus(),
+          // userform
+          ...frenchUserform(),
+          // willaya
+          ...frenchWillaya(),
+          // infopopups
+          ...frenchPopups(),
+          // "questions"
+          ...frenchQuestions(),
+          // answers
+          ...frenchAnswers(),
+          // country
+          ...frenchCountry(),
+          // city
+          ...frenchCity(),
+          // criteria
+          ...frenchCriteria(),
+          // footer
+          ...frenchFooter(),
+          // result
+          ...frenchResult(),
+          ...frenchCourseName()
         }
       },
       fr: {
         translations: {
-          'Become Content Creator': 'Devenir un créateur de contenu',
-          'Get Early Access': "S'inscrire"
+          'Tous droits réservés': 'Tous droits réservés'
         }
       },
       ar: {
         translations: {
-          // 'Become Content Creator': 'Devenir un créateur de contenu',
-          // 'Get Early Access': "S'inscrire",
-          // 'Tous droits réservés': 'جميع الحقوق محفوظة',
-          // "Commençons le test d'orientation": 'لنبدأ اختبار التوجيه',
-          // 'À la fin de ce questionnaire, une proposition de voeux pour ton orientation te sera formulée':
-          //   'في نهاية هذا الاستبيان ، سيتم صياغة اقتراح رغبات لتوجيهك',
-          // 'Pour commencer, choisis le profil dans lequel tu te reconnais le plus:':
-          //   'Pour commencer, choisis le profil dans lequel tu te reconnais le plus:'
+          // header
+          ...arabicHeader(),
+          // landing page
+          ...ArabicLandingPage(),
+          // contactus
+          ...arabicContactus(),
+          // userform
+          ...arabicUserform(),
+          // willaya
+          ...arabicWillaya(),
+          // infopopups
+          ...arabicPopups(),
+          // "questions"
+          ...arabicQuestions(),
+          // answers
+          ...arabicAnswers(),
+          // country
+          ...arabicCountry(),
+          // city
+          ...arabicCity(),
+          // criteria
+          ...arabicCriteria(),
+          // footer
+          ...arabicFooter(),
+          // result
+          ...arabicResult(),
+          ...arabicCourseName()
         }
       }
     },

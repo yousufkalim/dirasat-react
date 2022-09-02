@@ -36,44 +36,44 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
     {
       text: 'Fonctionnalités liées aux réseaux sociaux',
       accept: false,
-      refuse: false,
+      refuse: false
     },
     { text: "Mesure d'audience", accept: false, refuse: false },
     {
       text: "Fonctionnalités liées à l'amélioration de votre expérience",
       accept: false,
-      refuse: false,
+      refuse: false
     },
     {
       text: 'Stocker et/ou accéder à des informations sur un terminal',
       accept: false,
-      refuse: false,
+      refuse: false
     },
     {
       text: 'Personnalisation du contenu éditorial et mesure de la performance',
       accept: false,
-      refuse: false,
+      refuse: false
     },
     {
       text: 'Personnalisation des publicités et mesure de la performance',
       accept: false,
-      refuse: false,
+      refuse: false
     },
     {
       text: 'Développer et améliorer les produits',
       accept: false,
-      refuse: false,
+      refuse: false
     },
     {
       text: 'Utiliser des données de géolocalisation précises',
       accept: false,
-      refuse: false,
+      refuse: false
     },
     {
       text: 'Analyser activement les caractéristiques du terminal pour l’identification',
       accept: false,
-      refuse: false,
-    },
+      refuse: false
+    }
   ];
 
   const [data, setData] = useState(items);
@@ -85,13 +85,13 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 11,
-      behavior: 'smooth',
+      behavior: 'smooth'
     });
   };
   const scrollToTopforComment = () => {
     window.scrollTo({
       top: 800,
-      behavior: 'smooth',
+      behavior: 'smooth'
     });
   };
 
@@ -117,31 +117,54 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
     <>
       <div className="main" id="top">
         <img src={Main} className="bodyimg forweb" />
-        <img src={MainCharacter} alt="Dirasat's Mian charachter" className="bodyimg formobile" />
-        <Grid container spacing={2} className="body-rectangle">
-          <Grid item xs={12} sm={9} className="body-rectangleGrid2">
-            <h1 className="h3">{"Commençons le test d'orientation"}!</h1>
-            <p className="p1">
-              {'À la fin de ce questionnaire, une proposition de voeux pour ton orientation te sera formulée'}!
+        <img
+          src={MainCharacter}
+          alt="Dirasat's Mian charachter"
+          className="bodyimg formobile"
+        />
+        <Grid
+          container
+          spacing={2}
+          className={`${
+            language == 'ar' && 'arabicbody-rectangleGrid2'
+          } body-rectangle`}
+        >
+          <Grid item xs={12} sm={9} className={` body-rectangleGrid2`}>
+            <h1 className={`${language == 'ar' && 'arabich3'} h3`}>
+              {t("Commençons le test d'orientation")}!
+            </h1>
+            <p className={`${language == 'ar' && 'arabicp1'}  p1`}>
+              {t(
+                'À la fin de ce questionnaire, une proposition de voeux pour ton orientation te sera formulée'
+              )}
+              !
             </p>
           </Grid>
           <Grid item xs={12} sm={3} className="body-rectangleGrid3">
             <div className="partibuttondiv">
               <button
-                className="partiButton"
+                className={` ${
+                  language == 'ar' && 'arabicpartiButton'
+                }  partiButton`}
                 onClick={() => {
                   localStorage.cookies ? setStep(1) : setOpenCookieePopup(true);
                   play();
                 }}
               >
-                C'est parti!
+                {t("C'est parti")}!
               </button>
-              <img src={arrowright} className="arrowright" alt="arrowIcon" />
+              <img
+                src={arrowright}
+                className={` ${
+                  language == 'ar' && 'arabicarrowright'
+                }  arrowright`}
+                alt="arrowIcon"
+              />
             </div>
           </Grid>
         </Grid>
         <div id="comment" className="vidoSection">
-          <h2 className="h2">Comment ça marche?</h2>
+          <h2 className="h2">{t('Comment ça marche?')}</h2>
         </div>
         <div style={{ margin: '10px' }}>
           <video
@@ -161,21 +184,29 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
           </video>
         </div>
         {/* <img src={VideoImage} className="videImage" /> */}
-        <Grid container spacing={3} className="footerGrid" id="my-node" ref={capture1}>
+        <Grid
+          container
+          spacing={3}
+          className={` ${language == 'ar' && 'arabicfooterGrid'}  footerGrid`}
+          id="my-node"
+          ref={capture1}
+        >
           <Grid item xs={12} sm={4}>
             <img src={f1} className="footerimg" alt="footerImg" />
-            <h4 className="h4">Étape 1</h4>
-            <p className="p3">Dis à Dirasat qui tu es.</p>
+            <h4 className="h4">{t('Étape 1')}</h4>
+            <p className="p3">{t('Dis à Dirasat qui tu es.')}</p>
           </Grid>
           <Grid item xs={12} sm={4}>
             <img src={f2} className="footerimg" alt="etape2" />
-            <h4 className="h4">Étape 2</h4>
-            <p className="p3">Réponds aux questions de Dirasat.</p>
+            <h4 className="h4">{t('Étape 2')}</h4>
+            <p className="p3">{t('Réponds aux questions de Dirasat.')}</p>
           </Grid>
           <Grid item xs={12} sm={4} id="MyElementIdHere">
             <img src={f3} className="footerimg" alt="etape3" />
-            <h4 className="h4">Étape 3</h4>
-            <p className="p3">Dirasat te propose une liste de voeux pour ton orientation!</p>
+            <h4 className="h4">{t('Étape 3')}</h4>
+            <p className="p3">
+              {t('Dirasat te propose une liste de voeux pour ton orientation!')}
+            </p>
           </Grid>
         </Grid>
         {/* <button onClick={onButtonClick}>Download PDF</button> */}
@@ -188,21 +219,23 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            justifyContent: 'center',
+            justifyContent: 'center'
           }}
         >
           <p
             style={{
               fontSize: '30px',
               fontWeight: '600',
-              color: '#D4D8E5',
+              color: '#D4D8E5'
             }}
           >
-            Nombre de visiteurs
+            {t('Nombre de visiteurs')}
           </p>
           <CountUp
             start={1}
-            end={siteViews.count > 800 ? siteViews.count : siteViews.count + 800}
+            end={
+              siteViews.count > 800 ? siteViews.count : siteViews.count + 800
+            }
             duration={5}
             style={{
               fontSize: '100px',
@@ -210,7 +243,7 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
               alignSelf: 'center',
               background: '#010F2C',
               letterSpacing: '18px',
-              textIndent: '18px',
+              textIndent: '18px'
             }}
           />
         </div>
@@ -225,13 +258,26 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
         data={data}
         setData={setData}
       />
-      <CookiesPopup2 open={openCookieePopup2} setOpen={setOpenCookieePopup2} setData={setData} />
+      <CookiesPopup2
+        open={openCookieePopup2}
+        setOpen={setOpenCookieePopup2}
+        setData={setData}
+      />
       {checkCookies
         ? !localStorage.cookies && (
-            <Cookies setCookies={setCookies} setOpenCookieePopup={setOpenCookieePopup} setRefuserPopup={setRefuserPopup} />
+            <Cookies
+              setCookies={setCookies}
+              setOpenCookieePopup={setOpenCookieePopup}
+              setRefuserPopup={setRefuserPopup}
+            />
           )
         : ''}
-      <RefuserPopup open={reuserPopup} setOpen={setRefuserPopup} setData={setData} setOpenCookieePopup={setOpenCookieePopup} />
+      <RefuserPopup
+        open={reuserPopup}
+        setOpen={setRefuserPopup}
+        setData={setData}
+        setOpenCookieePopup={setOpenCookieePopup}
+      />
     </>
   );
 };

@@ -7,33 +7,43 @@ import cost from '../assets/icons/cost.png';
 import language from '../assets/icons/language.png';
 import duration from '../assets/icons/duration.png';
 import proximate from '../assets/icons/proximate.png';
+import { useTranslation, Trans } from 'react-i18next';
 
 import StarIcon from '@material-ui/icons/Star';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 
 //Component
 function DetailofCourses({ courses, open, setOpen, user }) {
+  const { t, i18n } = useTranslation();
   console.log('courses', courses);
   return (
     <>
       {courses?.length >= 1 ? (
         courses?.map((course) => (
-          <Grid container spacing={2} className="courseDetail">
+          <Grid
+            container
+            spacing={2}
+            className={`${
+              language == 'ar' && 'arabiccourseDetail'
+            } courseDetail`}
+          >
             <Grid item xs={12} sm={5}>
               <p>
-                {course?.dcourseId?.Establishment} -{' '}
+                {t(course?.dcourseId?.Establishment)} -{' '}
                 <span>
-                  {course?.dcourseId?.City + ' - ' + course?.dcourseId?.wilaya}{' '}
+                  {t(course?.dcourseId?.City) +
+                    ' - ' +
+                    t(course?.dcourseId?.wilaya)}{' '}
                 </span>
                 {/* {user?.institute} */}
               </p>
 
-              <h2> {course?.dcourseId?.Speciality}</h2>
+              <h2> {t(course?.dcourseId?.Speciality)}</h2>
             </Grid>
             <Grid item xs={12} sm={7} className="ratingGrid">
               <div className="costRating">
                 <img src={cost} alt="coût" />
-                <p className="textonmobile">Coût</p>
+                <p className="textonmobile">{t('Coût')}</p>
                 <div>
                   {course?.dcourseId?.cost ? (
                     <>
@@ -59,7 +69,7 @@ function DetailofCourses({ courses, open, setOpen, user }) {
               </div>
               <div className="languageRating">
                 <img src={language} alt="langue" />
-                <p className="textonmobile">Langue</p>
+                <p className="textonmobile">{t('Langue')}</p>
                 <div>
                   {' '}
                   {course?.dcourseId?.languagestar ? (
@@ -86,7 +96,7 @@ function DetailofCourses({ courses, open, setOpen, user }) {
               </div>
               <div>
                 <img src={duration} alt="durée" />
-                <p className="textonmobile">Durée</p>
+                <p className="textonmobile">{t('Durée')}</p>
                 <div>
                   {course?.dcourseId?.duration ? (
                     <>
@@ -142,10 +152,9 @@ function DetailofCourses({ courses, open, setOpen, user }) {
       ) : (
         <>
           <h4 style={{ width: '90%', margin: 'auto', padding: '10px' }}>
-            Il semblerait que ta spécialité au baccalauréat soit incompatible
-            avec tes réponses au questionnaire, je t’invite à répondre de
-            nouveau aux questions en tenant compte de la filière de ton
-            baccalauréat!
+            {t(
+              'Il semblerait que ta spécialité au baccalauréat soit incompatible avec tes réponses au questionnaire, je t’invite à répondre de nouveau aux questions en tenant compte de la filière de ton baccalauréat!'
+            )}
           </h4>
         </>
       )}

@@ -5,6 +5,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import IconButton from '@material-ui/core/IconButton';
 import Grid from '@material-ui/core/Grid';
 import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
+import { useTranslation, Trans } from 'react-i18next';
 
 import {
   FacebookShareButton,
@@ -24,6 +25,8 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   }
 }));
 export default function InviteBox({ open, setOpen }) {
+  const { t, i18n } = useTranslation();
+  const { language } = i18n;
   const url = 'https://www.dirasat-international.com/';
   const handleClose = () => {
     setOpen(false);
@@ -44,7 +47,7 @@ export default function InviteBox({ open, setOpen }) {
           {/* <img src={close} className="closeimg" /> */}
         </IconButton>
         <DialogContent className="modalcontent">
-          <h2 className="dialogHeading">Partager sur</h2>
+          <h2 className="dialogHeading">{t('Partager sur')}</h2>
           <Grid container spacing={1} className="invitedialoginputGrid">
             <Grid item sm={4}>
               <FacebookShareButton

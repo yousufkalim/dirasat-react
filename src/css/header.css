@@ -1,6 +1,9 @@
 .color {
   color: red;
 }
+.arabicheaderRoot{
+  direction: rtl;
+}
 .headerRoot {
   background: transparent !important;
   flex-grow: 1 !important;
@@ -36,6 +39,9 @@
 .showToolbar {
   margin: 0px 0px 0px 30px !important;
 }
+.arabicshowToolbar {
+  margin: 0px 90px 0px 30px !important;
+}
 .logoImage {
   cursor: pointer;
 }
@@ -56,6 +62,15 @@
   padding: 0px 10px;
   border-radius: 50px;
   opacity: 0.9;
+}
+.BlogMobileView{
+  width: 60%;
+  text-align: right;
+  margin-top: 10px;
+}
+.arabicBlogMobileView{
+  width: 72%;
+  text-align: left !important;
 }
 
 @media only screen (min-width: 613px) and (max-width: 812px) {

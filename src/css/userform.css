@@ -1,9 +1,16 @@
 .mainuserform {
   min-height: 90vh !important;
 }
+.arabicstepperMain{
+  direction: rtl;
+}
+.directionrtl{
+  direction: rtl;
+}
 .stepperMain {
   width: 50%;
   margin: auto;
+  
 }
 
 .stepper {
@@ -67,6 +74,9 @@
 .userForm {
   padding: 30px;
 }
+.arabicuserformgrid{
+  direction: rtl;
+}
 .userformgrid {
   color: white !important;
   background: #343747 !important;
@@ -80,12 +90,26 @@
 .formheading {
   font-size: 28px;
   text-align: center;
-  margin: 22px 0px 10px 0px;
+  margin: 22px auto 10px auto;
   padding: 10px;
+  width: 62%;
 }
+.arabicwilayaGrid{
+  text-align: right !important;
+}
+ .wilayaGrid{
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+    margin: 25px 0 0 0 !important;
+  text-align: left;
+  }
 .inputGrid {
   margin: 18px 0 0 0 !important;
   text-align: center !important;
+}
+.arabicinputField{
+  direction: rtl;
+  padding-right: 12px !important;
 }
 .inputField {
   border: none;
@@ -106,10 +130,17 @@
 ::placeholder {
   color: #858b96;
 }
+.dropdownform{
+  text-align: left;
+}
+.arabicdropdownform{
+  text-align: right !important;
+}
 /* for date picker */
 .react-datepicker {
   background-color: #242635 !important;
   color: white !important ;
+  direction: ltr !important;
 }
 .react-datepicker__header {
   background: #242635 !important;
@@ -164,9 +195,9 @@
   font-size: 15px !important;
   border-radius: 10px !important;
   padding: 0 0 0 0px !important;
-  width: 92% !important;
+  width: 90% !important;
   height: 45px !important;
-  margin: 3px 13px 13px 13px !important;
+  margin: 3px 13px 13px 23px !important;
 }
 .selectformControlforlanguage {
   border: none !important;
@@ -187,7 +218,7 @@
   display: none !important;
 }
 .MuiSelect-outlined.MuiSelect-outlined {
-  text-align: left !important;
+  /* text-align: left !important; */
 }
 /* education level placeholder */
 .MuiInputLabel-outlined {
@@ -223,12 +254,18 @@
   color: #9198a5 !important;
   padding: 0 0 2px 5px !important;
 }
+.arabictermsandconditionGrid{
+  margin: 10px 10px 6px 10px !important;
+}
 .termsandconditionGrid {
-  margin: 10px 0 6px 10px !important;
+  margin: 10px 0 6px 10px !important 
 }
 .termsandcondition {
   color: #9198a5;
   margin: 10px 0 0 0px;
+}
+.arabicformbuttonsGrid{
+  direction: ltr;
 }
 .formbuttonsGrid {
   text-align: center !important;
@@ -247,9 +284,13 @@
   margin: 20px 20px 20px 20px;
   padding: 13px 0px 13px 0px;
   cursor: pointer;
+  direction: ltr;
 }
 .formbackbutton:hover {
   background: linear-gradient(1deg, #ffffff -24.17%, #bac0d6 100%);
+}
+.arabicformSubmitButton{
+  padding: 16px 50px 16px 50px !important;
 }
 .formSubmitButton {
   background: linear-gradient(
@@ -334,12 +375,12 @@
   .formheading {
     font-weight: 500;
     font-size: 32px;
-
-    margin: 22px 0px 10px 0px;
+    margin: 22px auto 10px auto;
     padding: 10px;
   }
   .selectformControl {
-    width: 89% !important;
+    width: 91% !important;
+    margin: 3px 13px 13px 18px !important;
   }
   .selectformControl2 {
     width: 100% !important;
@@ -351,16 +392,22 @@
   .MuiInputLabel-outlined {
     margin: 0px 0 0 0 !important;
   }
+  .arabictermsandconditionGrid{
+    margin: 10px 10px 6px 10px !important;
+  }
   .termsandconditionGrid {
     margin: 10px 0 8px 20px !important;
   }
   .formbackbutton {
     margin: 20px 20px 20px 35px;
   }
+  .arabicformSubmitButton{
+    padding: 16px 50px 16px 50px !important;
+  }
   .formSubmitButton {
     margin: 20px 20px 20px 70px !important;
     font-size: 15px !important;
-    padding: 15px 18px 15px 18px !important;
+    padding: 15px 18px 15px 18px ;
   }
 }
 /* for mbile */
@@ -411,6 +458,10 @@
     text-align: center;
     margin: 10px;
     padding: 10px;
+  }
+  .wilayaGrid{
+    margin: 4px 0 4px 0 !important;
+    text-align: center !important;
   }
   .inputGrid {
     margin: 4px 0 4px 0 !important;
@@ -469,10 +520,7 @@
   .steplabel {
     display: none;
   }
-  .wilayaGrid{
-    margin-top: 0px !important;
-    padding-top: 0px !important;
-  }
+ 
   .emailGrid{
     margin-top: 20px !important;
   }

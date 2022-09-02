@@ -9,30 +9,7 @@ import StepConnector from '@material-ui/core/StepConnector';
 import editicon from '../assets/icons/Frame.png';
 import step1 from '../assets/icons/step1.png';
 import step4 from '../assets/icons/step4.png';
-
-const ColorlibConnector = withStyles({
-  alternativeLabel: {
-    top: 22
-  },
-  active: {
-    '& $line': {
-      backgroundImage:
-        'linear-gradient(265.05deg, #FECE24 0%, #FF6D1A 50.66%, #FF29AA 101.84%)'
-    }
-  },
-  completed: {
-    '& $line': {
-      backgroundImage:
-        'linear-gradient(265.05deg, #FECE24 0%, #FF6D1A 50.66%, #FF29AA 101.84%)'
-    }
-  },
-  line: {
-    height: 8,
-    border: 0,
-    background: '#000000',
-    borderRadius: 1
-  }
-})(StepConnector);
+import { useTranslation, Trans } from 'react-i18next';
 
 const useColorlibStepIconStyles = makeStyles({
   root: {
@@ -87,9 +64,36 @@ function getSteps() {
 export default function CustomizedSteppers({ activeStep, setActiveStep }) {
   // const [activeStep, setActiveStep] = React.useState(1);
   const steps = getSteps();
+  const { t, i18n } = useTranslation();
+  const { language } = i18n;
+  const ColorlibConnector = withStyles({
+    alternativeLabel: {
+      top: 22,
+      left: language == 'ar' && '50%',
+      right: language == 'ar' && '-50%'
+    },
+    active: {
+      '& $line': {
+        backgroundImage:
+          'linear-gradient(265.05deg, #FECE24 0%, #FF6D1A 50.66%, #FF29AA 101.84%)'
+      }
+    },
+    completed: {
+      '& $line': {
+        backgroundImage:
+          'linear-gradient(265.05deg, #FECE24 0%, #FF6D1A 50.66%, #FF29AA 101.84%)'
+      }
+    },
+    line: {
+      height: 8,
+      border: 0,
+      background: '#000000',
+      borderRadius: 1
+    }
+  })(StepConnector);
 
   return (
-    <div className="stepperMain">
+    <div className={`${language == 'ar' && 'arabicstepperMain'} stepperMain`}>
       <Stepper
         alternativeLabel
         activeStep={activeStep}
@@ -105,7 +109,7 @@ export default function CustomizedSteppers({ activeStep, setActiveStep }) {
                   color: `${activeStep == index ? 'white' : 'gray'}`
                 }}
               >
-                {label}
+                {t(label)}
               </span>
             </StepLabel>
           </Step>
