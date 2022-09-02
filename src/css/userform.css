@@ -140,6 +140,7 @@
 .react-datepicker {
   background-color: #242635 !important;
   color: white !important ;
+  direction: ltr !important;
 }
 .react-datepicker__header {
   background: #242635 !important;
