@@ -290,7 +290,9 @@ const Questions = ({ setStep, setActiveStep }) => {
                   getQuestion()?.question.length >= 90
                     ? 'longquestion'
                     : 'questiontext'
-                }`}
+                }
+                ${language == 'ar' && 'directionrtl'}
+                `}
               >
                 {getQuestion()?.question
                   ? `${t(getQuestion()?.question)}`

@@ -5,8 +5,11 @@ import blogImg from '../../assets/3.png';
 import { url } from '../../config';
 
 import { Link } from 'react-router-dom';
+import { useTranslation, Trans } from 'react-i18next';
 
 export default function YouMayLike({ blogs, loading, setLoading }) {
+  const { t, i18n } = useTranslation();
+  const { language } = i18n;
   let newblog = [];
 
   const getblogs = () => {
@@ -18,9 +21,9 @@ export default function YouMayLike({ blogs, loading, setLoading }) {
 
   return (
     <div className="youMayLikecontainer">
-      <p className="youMayLikeheading">Lisez aussi :</p>
+      <p className="youMayLikeheading">{t('Lisez aussi :')}</p>
       {loading ? (
-        <h1>Chargement en cours...</h1>
+        <h1>{t('Chargement en cours')}</h1>
       ) : (
         <Grid container spacing={1}>
           {blogs?.slice(4).map((item) => (
@@ -61,7 +64,10 @@ export default function YouMayLike({ blogs, loading, setLoading }) {
                           }}
                         >
                           {' '}
-                          <span className="seemore"> Lire l’article</span>
+                          <span className="seemore">
+                            {' '}
+                            {t('Lire l’article')}
+                          </span>
                         </Link>
                       </p>
                     </div>

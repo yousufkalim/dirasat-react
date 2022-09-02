@@ -74,7 +74,7 @@ export default function EmailConfirmationpop({
       play();
       setLoading(false);
       setFormData({ emailotp: '' });
-      toast.error("Votre OTP n'est pas correct");
+      toast.error(t("Votre OTP n'est pas correct"));
     }
   };
   const handleClose = () => {

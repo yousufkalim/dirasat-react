@@ -25,7 +25,11 @@ import {
   frenchCriteria,
   arabicCriteria,
   frenchFooter,
-  arabicFooter
+  arabicFooter,
+  frenchResult,
+  arabicResult,
+  frenchCourseName,
+  arabicCourseName
 } from './translation';
 
 i18n
@@ -60,7 +64,10 @@ i18n
           // criteria
           ...frenchCriteria(),
           // footer
-          ...frenchFooter()
+          ...frenchFooter(),
+          // result
+          ...frenchResult(),
+          ...frenchCourseName()
         }
       },
       fr: {
@@ -93,7 +100,10 @@ i18n
           // criteria
           ...arabicCriteria(),
           // footer
-          ...arabicFooter()
+          ...arabicFooter(),
+          // result
+          ...arabicResult(),
+          ...arabicCourseName()
         }
       }
     },

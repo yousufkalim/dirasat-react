@@ -9,8 +9,11 @@ import Carousel from 'react-material-ui-carousel';
 import { url } from '../../config';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import { useTranslation, Trans } from 'react-i18next';
 
 export default function BlogBody() {
+  const { t, i18n } = useTranslation();
+  const { language } = i18n;
   const [loading, setLoading] = useState(false);
   // init
   const updateStore = UpdateStore();
@@ -49,7 +52,7 @@ export default function BlogBody() {
       ) : (
         <>
           <Helmet>
-            <title>NOTRE BLOG</title>
+            <title>{t('NOTRE BLOG')}</title>
             <meta
               name="description"
               content="Commençons le test d'orientation! À la fin de ce questionnaire, une proposition de voeux pour Parcoursup te sera formulée!"
@@ -62,7 +65,7 @@ export default function BlogBody() {
           <div className="BlogBodycontainer">
             <img src={BlogBodyimg} className="BlogbodyImage" alt="blogbody" />
             <div className="BlogtextonImg">
-              <h1 className="BlogtextimgH1">NOTRE BLOG</h1>
+              <h1 className="BlogtextimgH1">{t('NOTRE BLOG')}</h1>
               {/* <p className="BlogtextonImgP">Tag Line Here</p> */}
             </div>
           </div>

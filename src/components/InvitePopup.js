@@ -8,6 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 import { Store } from '../StoreContext';
 import api from '../api';
+import { useTranslation, Trans } from 'react-i18next';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuDialogContent-root': {
@@ -18,6 +19,8 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   }
 }));
 export default function InviteBox({ open, setOpen }) {
+  const { t, i18n } = useTranslation();
+  const { language } = i18n;
   const { user } = Store();
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -60,7 +63,7 @@ export default function InviteBox({ open, setOpen }) {
       ...newData
     });
     if (res) {
-      toast.success('Invitation envoyée avec succès');
+      toast.success(t('Invitation envoyée avec succès'));
       setFormData({ email: '' });
       setLoading(false);
       setOpen(false);
@@ -85,15 +88,17 @@ export default function InviteBox({ open, setOpen }) {
           {/* <img src={close} className="closeimg" /> */}
         </IconButton>
         <DialogContent className="modalcontent">
-          <h3 className="dialogHeading">Invite un ami</h3>
+          <h3 className="dialogHeading">{t('Invite un ami')}</h3>
           <Grid container spacing={1} className="invitedialoginputGrid">
             <input
               type="email"
               name="email"
               value={email}
               onChange={onChange}
-              placeholder="E-mail"
-              className="dialoginputField"
+              placeholder={t('E-mail')}
+              className={`${
+                language == 'ar' && 'arabicinputField'
+              } dialoginputField`}
               required
             />
           </Grid>
@@ -105,7 +110,7 @@ export default function InviteBox({ open, setOpen }) {
             onClick={handleSubmit}
             disabled={loading}
           >
-            Invite
+            {t('Invite')}
           </button>
         </div>
       </BootstrapDialog>

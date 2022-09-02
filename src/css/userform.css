@@ -4,6 +4,9 @@
 .arabicstepperMain{
   direction: rtl;
 }
+.directionrtl{
+  direction: rtl;
+}
 .stepperMain {
   width: 50%;
   margin: auto;

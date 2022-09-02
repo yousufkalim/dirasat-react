@@ -6,8 +6,11 @@ import search from '../assets/icons/search.png';
 import showhide from '../assets/icons/showhide.png';
 import hide from '../assets/icons/hide.png';
 import * as html2canvas from 'html2canvas';
+import { useTranslation, Trans } from 'react-i18next';
 
 const TypeOfCourse = ({ type, percentage, courses, result, user }) => {
+  const { t, i18n } = useTranslation();
+  const { language } = i18n;
   console.log('type', type);
   const updateStore = UpdateStore();
   const typeUpdate = TypeUpdate();
@@ -67,7 +70,10 @@ const TypeOfCourse = ({ type, percentage, courses, result, user }) => {
   }, []);
   return (
     <>
-      <div className="typeOfCourses" id={type}>
+      <div
+        className={`${language == 'ar' && 'arabictypeOfCourses'} typeOfCourses`}
+        id={type}
+      >
         <Grid
           container
           spacing={3}

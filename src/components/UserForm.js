@@ -117,7 +117,7 @@ let wilayasvalue = [
   { name: 'Tébessa', code: '12' },
   { name: 'Tlemcen', code: '13' },
   { name: 'Tiaret', code: '14' },
-  { name: 'Tizi ouzou', code: '15' },
+  { name: 'Tizi Ouzou', code: '15' },
   { name: 'Alger', code: '16' },
   { name: 'Djelfa', code: '17' },
   { name: 'Jijel', code: '18' },
@@ -382,42 +382,44 @@ const UserForm = ({ setStep, setActiveStep }) => {
     e.preventDefault();
 
     if (first_name == '') {
-      return toast.error('Veuillez entrer votre Prénom.');
+      return toast.error(t('Veuillez entrer votre Prénom.'));
     }
     if (last_name == '') {
-      return toast.error('Veuillez entrer votre nom.');
+      return toast.error(t('Veuillez entrer votre nom.'));
     }
     if (date_of_birth == '') {
-      return toast.error('Veuillez entrer votre date de naissance');
+      return toast.error(t('Veuillez entrer votre date de naissance'));
     }
     if (wilaya == 'wilaya') {
-      return toast.error('Veuillez sélectionner');
+      return toast.error(t('Veuillez sélectionner'));
     }
     if (email == '') {
-      return toast.error('Veuillez entrer votre e-mail');
+      return toast.error(t('Veuillez entrer votre e-mail'));
     }
     if (phone.length != 10 || phone[0] != 0) {
       return toast.error(
-        'Le numéro de téléphone doit être composé de 10 chiffres et commencer par 0'
+        t(
+          'Le numéro de téléphone doit être composé de 10 chiffres et commencer par 0'
+        )
       );
     }
     if (class_list == 'class list') {
-      return toast.error('Veuillez sélectionner la liste des classes');
+      return toast.error(t('Veuillez sélectionner la liste des classes'));
     }
     if (Bac_Serie == 'Bac Serie' && class_list != 'Postbac') {
-      return toast.error('Veullez sélectionner une série de Baccalauréat');
+      return toast.error(t('Veullez sélectionner une série de Baccalauréat'));
     }
     if (school_city == '') {
-      return toast.error('veuillez entrer la ville de votre école');
+      return toast.error(t('veuillez entrer la ville de votre école'));
     }
     if (school_name == '') {
-      return toast.error("veuillez saisir le nom de l'école");
+      return toast.error(t("veuillez saisir le nom de l'école"));
     }
     // if (language == 'language') {
     //   return toast.error("veuillez saisir le nom de l'école");
     // }
     if (!accept_condition) {
-      return toast.error('Veuillez accepter les termes et conditions');
+      return toast.error(t('Veuillez accepter les termes et conditions'));
     }
     setformStep(2);
     return play();
@@ -988,13 +990,21 @@ const UserForm = ({ setStep, setActiveStep }) => {
                               value="score"
                               disabled
                               style={{ textAlign: 'left !important' }}
+                              className={classes.menuitem}
                             >
                               <em>
                                 {t('Moyenne générale obtenue au Baccalauréat')}
                               </em>
                             </MenuItem>
                             {level2data.map((item, i) => {
-                              return <MenuItem value={item}>{item}</MenuItem>;
+                              return (
+                                <MenuItem
+                                  className={classes.menuitem}
+                                  value={item}
+                                >
+                                  {item}
+                                </MenuItem>
+                              );
                             })}
                           </Select>
                           <p
@@ -1010,7 +1020,13 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         </FormControl>
                       </Grid>
                     </Grid>
-                    <Grid container spacing={2} className="formbuttonsGrid">
+                    <Grid
+                      container
+                      spacing={2}
+                      className={`${
+                        language == 'ar' && 'arabicformbuttonsGrid'
+                      } formbuttonsGrid`}
+                    >
                       <Grid xs={12} sm={4}>
                         <div
                           size="large"
@@ -1267,7 +1283,13 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         />
                       </div>
                     </Grid>
-                    <Grid container spacing={2} className="formbuttonsGrid">
+                    <Grid
+                      container
+                      spacing={2}
+                      className={`${
+                        language == 'ar' && 'arabicformbuttonsGrid'
+                      } formbuttonsGrid`}
+                    >
                       <Grid xs={12} sm={4}>
                         <div
                           size="large"
@@ -1402,7 +1424,13 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       </Grid>
                     </Grid>
 
-                    <Grid container spacing={2} className="formbuttonsGrid">
+                    <Grid
+                      container
+                      spacing={2}
+                      className={`${
+                        language == 'ar' && 'arabicformbuttonsGrid'
+                      } formbuttonsGrid`}
+                    >
                       <Grid xs={12} sm={4}>
                         <div
                           size="large"
@@ -1576,7 +1604,13 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       )}
                     </Grid>
 
-                    <Grid container spacing={2} className="formbuttonsGrid">
+                    <Grid
+                      container
+                      spacing={2}
+                      className={`${
+                        language == 'ar' && 'arabicformbuttonsGrid'
+                      } formbuttonsGrid`}
+                    >
                       <Grid xs={12} sm={4}>
                         <div
                           size="large"
