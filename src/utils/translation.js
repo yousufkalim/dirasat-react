@@ -39,9 +39,9 @@ const frenchLandingPage = () => {
 
 const ArabicLandingPage = () => {
   let ar = {
-    "Commençons le test d'orientation": 'لنبدأ اختبار التوجيه',
+    "Commençons le test d'orientation": 'أبدا إختبار التوجيه',
     'À la fin de ce questionnaire, une proposition de voeux pour ton orientation te sera formulée':
-      'في نهاية هذا الاستبيان ، سيتم صياغة اقتراح رغبات لتوجيهك',
+      'وفّر معلوماتك وجاوب أسئلة دراسات واكتشف المشروع الّي يناسبك الأكثر',
     "C'est parti": 'بدينا',
     'Comment ça marche?': 'فهمني كيفاش',
     'Étape 1': 'المرحلة 1',
