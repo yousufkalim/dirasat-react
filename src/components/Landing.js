@@ -10,29 +10,28 @@ import CookiesPopup2 from '../utils/CookiesPopup2';
 import Contactus from '../utils/Contactus';
 import RefuserPopup from '../utils/RefuserPopup';
 import { useLocation } from 'react-router-dom';
-import axios from 'axios';
 import f1 from '../assets/img/f1.png';
 import f2 from '../assets/img/f2.png';
 import f3 from '../assets/img/f3.png';
 import arrowright from '../assets/img/arrow.png';
 import Footer from './Footer';
-import api from '../api';
 import CountUp from 'react-countup';
 import useSound from 'use-sound';
 import sound from '../assets/sound/sound.wav';
 import { useTranslation, Trans } from 'react-i18next';
 import { url } from '../config';
+import { Store } from '../StoreContext';
 
 const Landing = ({ step, setStep, statetextforscroll }) => {
   console.log('process', `${url}/uploads/dvideo.mp4`);
   const { t, i18n } = useTranslation();
   const { language } = i18n;
-  console.log('language', language);
   const [play] = useSound(sound);
   const [openCookieePopup, setOpenCookieePopup] = useState(false);
   const [reuserPopup, setRefuserPopup] = useState(false);
   const [openCookieePopup2, setOpenCookieePopup2] = useState(false);
   const [checkCookies, setCookies] = useState(false);
+
   const items = [
     {
       text: 'Fonctionnalités liées aux réseaux sociaux',
@@ -76,11 +75,12 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
       refuse: false
     }
   ];
+
   const [data, setData] = useState(items);
-  const [siteViews, setSiteViews] = useState(null);
   const { state } = useLocation();
   const capture1 = React.createRef();
   const video = document.getElementById('video');
+  const { siteViews } = Store();
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -112,17 +112,6 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
         }, 50));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step]);
-
-  useEffect(() => {
-    updateSiteViews();
-  }, []);
-
-  const updateSiteViews = async () => {
-    const data = await api('post', '/siteViews');
-    if (data.data) {
-      setSiteViews(data.data.siteViews);
-    }
-  };
 
   return (
     <>
