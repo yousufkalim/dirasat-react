@@ -1,5 +1,6 @@
-baseUrl = 'http://localhost:5000/api/';
-url = 'http://localhost:5000/';
+let baseUrl = 'http://localhost:5000/api/';
+let url = 'http://localhost:5000/';
+
 if (window.location.host === 'dirasat-dev.falconweb.app') {
   baseUrl = 'https://dirasat-api-dev.falconweb.app/api/';
   url = 'https://dirasat-api-dev.falconweb.app/';
