@@ -9,10 +9,7 @@ import { useTranslation, Trans } from 'react-i18next';
 const Footer = () => {
   const { t, i18n } = useTranslation();
   const { language } = i18n;
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-  };
-  console.log('languageis', language);
+
   return (
     <>
       <div
@@ -35,16 +32,6 @@ const Footer = () => {
 
             <div style={{ textAlign: 'center' }}>
               <p>{t(`DIRASAT`)}</p>
-              <button
-                onClick={() =>
-                  changeLanguage(`${language == 'en-GB' ? 'ar' : 'en-GB'}`)
-                }
-                className="langButton"
-              >
-                {language == 'ar' ? 'French' : 'Arabic'}
-              </button>
-              {/* <p>01 84 80 74 81</p>
-              <p>75116 Paris, France</p> */}
             </div>
           </div>
           <div className="developbydiv">
