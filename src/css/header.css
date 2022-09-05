@@ -64,12 +64,23 @@
   opacity: 0.9;
 }
 .BlogMobileView{
-  width: 60%;
+  width: 57%;
   text-align: right;
   margin-top: 10px;
 }
+.languageMobileView{
+  text-align: right;
+  /* margin-top: 10px; */
+  margin: 10px 20px 0px 20px;
+}
+
+.arabiclanguageMobileView{
+
+  text-align: left !important;
+}
+
 .arabicBlogMobileView{
-  width: 72%;
+  width: 65%;
   text-align: left !important;
 }
 
@@ -231,4 +242,14 @@
     text-align: center !important;
     width: 100% !important;
   }
+  .languageMobileView{
+    text-align: center !important;
+    width: 100% !important;
+    margin: 10px 20px 0px 0px;
+  }
+  .arabiclanguageMobileView{
+    width: 65%;
+    text-align: left !important;
+  }
 }
+

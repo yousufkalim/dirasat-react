@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Main from '../assets/img/da2.png';
 import MainCharacter from '../assets/img/dMainCharacter.png';
+import ArabicMain from '../assets/img/arabicmain.png';
 import video1 from '../assets/video/dvideo.mp4';
 import thumbnail from '../assets/img/thumbnaild1.png';
 import Cookies from '../utils/Cookies';
@@ -116,7 +117,12 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
   return (
     <>
       <div className="main" id="top">
-        <img src={Main} className="bodyimg forweb" />
+        {language == 'ar' ? (
+          <img src={ArabicMain} className="bodyimg forweb" />
+        ) : (
+          <img src={Main} className="bodyimg forweb" />
+        )}
+
         <img
           src={MainCharacter}
           alt="Dirasat's Mian charachter"
@@ -191,17 +197,33 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
           id="my-node"
           ref={capture1}
         >
-          <Grid item xs={12} sm={4}>
+          <Grid
+            item
+            xs={12}
+            sm={4}
+            className={` ${language == 'ar' && 'directionltr'}  `}
+          >
             <img src={f1} className="footerimg" alt="footerImg" />
             <h4 className="h4">{t('Étape 1')}</h4>
             <p className="p3">{t('Dis à Dirasat qui tu es.')}</p>
           </Grid>
-          <Grid item xs={12} sm={4}>
+          <Grid
+            item
+            xs={12}
+            sm={4}
+            className={` ${language == 'ar' && 'directionltr'}  `}
+          >
             <img src={f2} className="footerimg" alt="etape2" />
             <h4 className="h4">{t('Étape 2')}</h4>
             <p className="p3">{t('Réponds aux questions de Dirasat.')}</p>
           </Grid>
-          <Grid item xs={12} sm={4} id="MyElementIdHere">
+          <Grid
+            item
+            xs={12}
+            sm={4}
+            id="MyElementIdHere"
+            className={` ${language == 'ar' && 'directionltr'}  `}
+          >
             <img src={f3} className="footerimg" alt="etape3" />
             <h4 className="h4">{t('Étape 3')}</h4>
             <p className="p3">

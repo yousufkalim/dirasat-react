@@ -9,8 +9,11 @@ import SetAuthToken from './utils/SetAuthToken';
 import api from './api';
 import { UpdateStore } from './StoreContext';
 import { setCookie, getCookie } from './utils/getAndSetCookies';
+import { useTranslation, Trans } from 'react-i18next';
 // Component
 function App() {
+  const { t, i18n } = useTranslation();
+  const { language } = i18n;
   const updateStore = UpdateStore();
 
   useEffect(() => {
@@ -37,6 +40,9 @@ function App() {
   useEffect(() => {
     updateSiteViews();
   }, []);
+  useEffect(() => {
+    i18n.changeLanguage('en-GB');
+  }, []);
 
   const updateSiteViews = async () => {
     let cookie = getCookie('siteViews');
@@ -59,14 +65,23 @@ function App() {
     <div className={`App `}>
       <Helmet>
         <title>Dirasat - Le super héros de l'orientation universitaire</title>
-        <meta name="description" content="Dirasat-Le superhéro de l’orientation!" />
+        <meta
+          name="description"
+          content="Dirasat-Le superhéro de l’orientation!"
+        />
         <meta
           name="keywords"
           content="ParcourSup,Dirasat,Post-bac,études,formation,Dirasat te propose une liste de voeux pour ton Parcoursup!"
         />
       </Helmet>
       {/* tostify Container for Notification */}
-      <ToastContainer position="bottom-right" autoClose={3000} hideProgressBar={true} transition={Flip} limit={2} />
+      <ToastContainer
+        position="bottom-right"
+        autoClose={3000}
+        hideProgressBar={true}
+        transition={Flip}
+        limit={2}
+      />
       {/* Routes */}
       <Index />
     </div>

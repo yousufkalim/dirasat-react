@@ -48,6 +48,9 @@ export default function Header({
     }
     return '';
   };
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
   return (
     <AppBar
       color="inherit"
@@ -148,6 +151,20 @@ export default function Header({
               >
                 {t('Blog')}
               </Link>
+            </div>
+
+            <div
+              className={`${language == 'ar' && 'arabiclanguageMobileView'} 
+              languageMobileView`}
+            >
+              <button
+                onClick={() =>
+                  changeLanguage(`${language == 'en-GB' ? 'ar' : 'en-GB'}`)
+                }
+                className="langButton"
+              >
+                {language == 'ar' ? 'Français' : 'العربية'}
+              </button>
             </div>
           </>
         )}
