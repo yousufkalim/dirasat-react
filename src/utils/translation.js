@@ -1184,7 +1184,7 @@ const frenchResult = () => {
     "Les métiers de la gastronomie, de la restauration et de l'hotellerie":
       "Les métiers de la gastronomie, de la restauration et de l'hotellerie",
     'Les métiers de la mode': 'Les métiers de la mode',
-    ' Les métiers de la musique': ' Les métiers de la musique',
+    'Les métiers de la musique': 'Les métiers de la musique',
     "Les métiers de l'animation du spectacle et de l'évenementiel":
       "Les métiers de l'animation du spectacle et de l'évenementiel",
     'Les métiers de la gestion artistique et culturel':
@@ -1277,25 +1277,25 @@ const arabicResult = () => {
       'يبدو أن تخصصك في البكالوريا لا يتوافق مع إجاباتك على الاستبيان ، أدعوك للإجابة على الأسئلة مرة أخرى مع مراعاة قطاع البكالوريا الخاص بك!',
     // typeofjob
     "Les métiers de l'entreprise, de la gestion et du commerce":
-      'وظائف في مجال الأعمال والإدارة والتجارة',
+      'مهن الأعمال والإدارة والتجارة',
     "Les métiers de l'ingénierie, de l'industrie et des nouvelles technologies":
-      'المهن في الهندسة والصناعة والتقنيات الحديثة',
+      'مهن الهندسة والصناعة والتقنيات الجديدة',
     "Les metiers de l'éducation, des lettres et de l'édition":
-      'مهن التعليم والآداب والنشر',
+      'مهن التربية والآداب والنشر',
     'Acteur/Producteur/Réalisateur/Scénariste/Cadreur/MonteurAnimateur/Chef de projet/Organisateur':
       'ممثل / منتج / مخرج / كاتب سيناريو / مصور / محرر رسام / مدير مشروع / منظم',
     'Les métiers de la communication et du journalisme': 'مهن الاتصال والصحافة',
     "Les métiers de la gastronomie, de la restauration et de l'hotellerie":
       'فن الطهو والمطاعم والحرف الفندقية',
     'Les métiers de la mode': 'مهن الموضة',
-    ' Les métiers de la musique': 'مهن الموسيقى',
+    'Les métiers de la musique': 'وظائف الموسيقى',
     "Les métiers de l'animation du spectacle et de l'évenementiel":
-      'صفقات الرسوم المتحركة للعرض والحدث',
+      'المهن الخاصة بالرسوم المتحركة للعروض والفعاليات',
     'Les métiers de la gestion artistique et culturel':
-      'مهن إدارة الفنون والثقافة',
+      'مهن الإدارة الفنية والثقافية',
     'Les métiers du droit': 'المهن القانونية',
     "Les métiers de l'architecture, du design, de la décoration et de l'aménagement":
-      'مهن العمارة والتصميم والديكور والتطوير',
+      'مهن العمارة والتصميم والديكور والتخطيط',
     'Les métiers de la création cinématographique et dramatique':
       'مهن الإبداع السينمائي والدرامي',
     "Les métiers de la psychologie, des ressources humaines et de l'action sociale":
@@ -1311,23 +1311,23 @@ const arabicResult = () => {
 
     // exampleofjob
     'Entrepreneur/Manager/Gestionnaire/Commercial':
-      'رائد أعمال / مدير / مدير / تجاري',
+      'صاحب مشروع / مدير / مدير / تجاري',
     'Ingénieur/Concepteur/Programmeur': 'مهندس / مصمم / مبرمج',
     'Enseignant/Instituteur/Ecrivain/Editeur/Critique':
       'مدرس / معهد / كاتب / محرر / ناقد',
-    'Reporter/Journaliste/Attaché de presse': 'مراسل / صحفي / مسؤول صحفي',
+    'Reporter/Journaliste/Attaché de presse': 'مراسل / صحفي / ملحق صحفي',
     'Chef cuisinier/Patissier/Oenologue/Restaurateur/Critique':
-      'شيف / طباخ معجنات / عالم صناعة الخمور / صاحب مطاعم / ناق',
+      'الشيف / طاهي المعجنات / اختصاصي صناعة الخمور / صاحب المطاعم / المراجع',
     'Diplomate/Interprète/Enseignant/Archéologue/Historien/Voyagiste/Stewart':
       'دبلوماسي / مترجم / مدرس / عالم آثار / مؤرخ / منظم رحلات / ستيوارت',
     'Trader/Analyste/Comptable/Consultant/Auditeur/Actuaire':
       'تاجر / محلل / محاسب / مستشار / مدقق / خبير اكتواري',
     'Dessinateur/Graphiste/Animateur 2D-3D/Artiste (peintre, sculpteur,...)':
-      'رسام / مصمم جرافيك / رسام رسوم متحركة ثنائي الأبعاد / فنان (رسام ، نحات ، إلخ)',
+      'رسام / مصمم جرافيك / رسام رسوم متحركة ثنائي الأبعاد / فنان (رسام ، نحات ، ...)',
     'Médecin/Kiné/Osthéo/Auxiliaire':
-      'طبيب / اخصائي علاج طبيعي / اوستيو / مساعد',
+      'دكتور / أخصائي علاج طبيعي / أوستيو / مساعد',
     'Agent/Créateur/Développeur/Entrepreneur/Manager':
-      'وكيل / مبتكر / مطور / رائد أعمال / مدي',
+      'وكيل / منشئ / مطور / رائد أعمال / مدير',
     'Concepteur web/Développeur/Designer': 'مصمم الويب / المطور / المصمم',
     'Psychologue/Directeur Ressources Humaines/Assistant social':
       'أخصائي نفسي / مدير موارد بشرية / أخصائي اجتماعي',
@@ -1340,7 +1340,7 @@ const arabicResult = () => {
     'Conservateur/Restaurateur/Commissaire priseur/Artiste':
       'القيم الفني / المرمم / البائع بالمزاد العلني / الفنان',
     'Animateur/Chef de projet/Organisateur':
-      'رسام رسوم متحركة / مدير مشروع / منظم',
+      'الرسوم المتحركة / مدير المشروع / المنظم',
     'Auteur/Compositeur/Interprête/Producteur/Ingénieur du son':
       'المؤلف / الملحن / المؤدي / المنتج / مهندس الصوت',
     'Fashion designer/Directeur artistique/Couturier/Chef de produit':
