@@ -77,33 +77,33 @@ i18n
       },
       ar: {
         translations: {
-          // header
-          ...arabicHeader(),
-          // landing page
-          ...ArabicLandingPage(),
-          // contactus
-          ...arabicContactus(),
-          // userform
-          ...arabicUserform(),
-          // willaya
-          ...arabicWillaya(),
-          // infopopups
-          ...arabicPopups(),
-          // "questions"
-          ...arabicQuestions(),
-          // answers
-          ...arabicAnswers(),
-          // country
-          ...arabicCountry(),
-          // city
-          ...arabicCity(),
-          // criteria
-          ...arabicCriteria(),
-          // footer
-          ...arabicFooter(),
-          // result
-          ...arabicResult(),
-          ...arabicCourseName()
+          // // header
+          // ...arabicHeader(),
+          // // landing page
+          // ...ArabicLandingPage(),
+          // // contactus
+          // ...arabicContactus(),
+          // // userform
+          // ...arabicUserform(),
+          // // willaya
+          // ...arabicWillaya(),
+          // // infopopups
+          // ...arabicPopups(),
+          // // "questions"
+          // ...arabicQuestions(),
+          // // answers
+          // ...arabicAnswers(),
+          // // country
+          // ...arabicCountry(),
+          // // city
+          // ...arabicCity(),
+          // // criteria
+          // ...arabicCriteria(),
+          // // footer
+          // ...arabicFooter(),
+          // // result
+          // ...arabicResult(),
+          // ...arabicCourseName()
         }
       }
     },
