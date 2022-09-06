@@ -105,7 +105,7 @@ export default function RefuserPopup({
               style={{ margin: '10px' }}
               onClick={() => handleAcceptAll()}
             >
-              Je change d'avis et j'accepte tous les cookies
+              Je change d'avis et j'accepte tous les cookies.
             </button>
             <button
               className={`${'secondpopupbutton '}`}

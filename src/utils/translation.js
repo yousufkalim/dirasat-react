@@ -3,7 +3,51 @@ const arabicHeader = () => {
     Accueil: 'ترحيب',
     'Comment ça marche?': 'كيف تعمل؟',
     Blog: 'المدونة',
-    DIRASAT: 'دراسات'
+    DIRASAT: 'دراسات',
+    // cookies
+    "En poursuivant votre navigation sur ce site, vous acceptez l'utilisation de cookies afin d'optimiser votre navigation et réaliser des statistiques de suivis. Pour en savoir plus, consultez":
+      "En poursuivant votre navigation sur ce site, vous acceptez l'utilisation de cookies afin d'optimiser votre navigation et réaliser des statistiques de suivis. Pour en savoir plus, consultez",
+    'notre politique de confidentialité.':
+      'notre politique de confidentialité.',
+    'Si vous refusez, vos informations de navigation ne seront pas conservées lors de votre visite. Nous apposons un seul cookie afin de mémoriser votre choix.':
+      'Si vous refusez, vos informations de navigation ne seront pas conservées lors de votre visite. Nous apposons un seul cookie afin de mémoriser votre choix.',
+    Paramétrer: 'Paramétrer',
+    Refuser: 'Refuser',
+    Accepter: 'Accepter',
+    'Dirasat et ses partenaires sélectionnés traitent des données personnelles en lien avec votre navigation sur nos contenus pour les finalités listées ci-dessous.':
+      'Dirasat et ses partenaires sélectionnés traitent des données personnelles en lien avec votre navigation sur nos contenus pour les finalités listées ci-dessous.',
+    'Pour en savoir plus sur nos pratiques en matière de protection des données personnelles et la façon dont nous utilisons vos données, vous pouvez consulter':
+      'Pour en savoir plus sur nos pratiques en matière de protection des données personnelles et la façon dont nous utilisons vos données, vous pouvez consulter',
+    'politique de confidentialité': 'politique de confidentialité',
+    'Fonctionnalités basiques de navigation requises':
+      'Fonctionnalités basiques de navigation requises',
+    'Ce site et ses partenaires pourront également réaliser les traitements de données suivants : Assurer la sécurité, Prévenir la fraude et débogguer, diffuser techniquement les publicités ou le contenu, mettre en correspondance et combiner des sources de données hors ligne, recevoir et utiliser des caractéristiques d’identification d’appareil envoyées automatiquement, et relier différents terminaux.':
+      'Ce site et ses partenaires pourront également réaliser les traitements de données suivants : Assurer la sécurité, Prévenir la fraude et débogguer, diffuser techniquement les publicités ou le contenu, mettre en correspondance et combiner des sources de données hors ligne, recevoir et utiliser des caractéristiques d’identification d’appareil envoyées automatiquement, et relier différents terminaux.',
+    Enregistrer: 'Enregistrer',
+    // cookie popup2
+    'Fonctionnalités liées aux réseaux sociaux':
+      'Fonctionnalités liées aux réseaux sociaux',
+    "Mesure d'audience": "Mesure d'audience",
+    "Fonctionnalités liées à l'amélioration de votre expérience":
+      "Fonctionnalités liées à l'amélioration de votre expérience",
+    'Stocker et/ou accéder à des informations sur un terminal':
+      'Stocker et/ou accéder à des informations sur un terminal',
+    'Personnalisation du contenu éditorial et mesure de la performance':
+      'Personnalisation du contenu éditorial et mesure de la performance',
+    'Personnalisation des publicités et mesure de la performance':
+      'Personnalisation des publicités et mesure de la performance',
+    'Développer et améliorer les produits':
+      'Développer et améliorer les produits',
+    'Utiliser des données de géolocalisation précises':
+      'Utiliser des données de géolocalisation précises',
+    'Analyser activement les caractéristiques du terminal pour l’identification':
+      'Analyser activement les caractéristiques du terminal pour l’identification',
+    'Vous avez choisi de refuser les cookies , notamment ceux nécessaires au bon déroulement de votre expérience avec Dirasat. Vous ne pourrez pas avoir accès au test, êtes-vous sûr(e) de votre choix?':
+      'Vous avez choisi de refuser les cookies , notamment ceux nécessaires au bon déroulement de votre expérience avec Dirasat. Vous ne pourrez pas avoir accès au test, êtes-vous sûr(e) de votre choix?',
+    "Je change d'avis et j'accepte tous les cookies.":
+      "Je change d'avis et j'accepte tous les cookies.",
+    'Je conserve mes choix': 'Je conserve mes choix',
+    'Je refuse toujours les cookies': 'Je refuse toujours les cookies'
   };
   return ar;
 };
@@ -46,7 +90,7 @@ const ArabicLandingPage = () => {
     'Comment ça marche?': 'فهمني كيفاش',
     'Étape 1': 'المرحلة 1',
     'Dis à Dirasat qui tu es.': '(قول لدراسات شكون أنت(ية',
-    'Étape 2': 'المرحلة 2',
+    'Étape 2': '2 المرحلة',
     'Réponds aux questions de Dirasat.': 'جاوب دراسات',
     'Étape 3': 'المرحلة 3',
     'Dirasat te propose une liste de voeux pour ton orientation!':
@@ -138,7 +182,7 @@ const arabicUserform = () => {
     'Je n’ai pas mon baccalauréat': 'ليس لدي البكالوريا',
     'J’ai déjà débuté mes études supérieures et je veux me réorienter ou poursuivre mes études supérieures dans un autre programme.':
       'لقد بدأت بالفعل دراساتي العليا وأريد إعادة توجيه نفسي أو مواصلة دراساتي العليا في برنامج آخر.',
-    "Partir à l'étranger": 'اذهب خارجا',
+    "Partir à l'étranger": 'نروح للخارج',
     'Me réorienter en Algérie': 'أعد توجيه نفسي في الجزائر',
     Baccalauréat: 'بكالوريا',
     Licence: 'ليسانس',
@@ -155,15 +199,15 @@ const arabicUserform = () => {
     'Lettre et Philosophie': 'أدب و فلسفة',
     'Langues Etrangères': 'لغات أجنبية',
     'Quel est ton dernier diplôme validé ?': 'واش نهي آخر شهادة تحصلت عليها؟',
-    '1ère année de doctorat': '1السنة ',
-    '2ème année de doctorat': '2السنة ',
+    '1ère année de doctorat': '1السنة',
+    '2ème année de doctorat': '2السنة',
     '1ère année de licence': 'ليسانس1',
     '2ème année de licence': 'ليسانس2',
     '3ème année de licence': 'ليسانس3',
     '2ème année de master': 'ماستر2',
     '1ère année de master': 'ماستر1',
-    'Quelle(s) ville(s)': 'واش من مدينة',
-    'Quel budget': 'شحال قادر تمول',
+    'Quelle(s) ville(s)': 'واش من مدينة؟',
+    'Quel budget': 'شحال قادر تمول؟',
     'Quel pays': 'أي بلد',
     'Quel critère a le plus motivé ton choix de pays et de villes?':
       'ما هو المعيار الأكثر دافعًا لاختيارك للبلدان والمدن؟',
@@ -389,11 +433,11 @@ const arabicPopups = () => {
     // confirmationpopup
     'Entre le code reçu par SMS':
       'أدخل الرمز الذي تلقيته عن طريق الرسائل القصيرة',
-    Renvoyer: 'إعادة إرسال',
+    Renvoyer: 'زيد ابعت',
     Vérifier: 'يفحص',
-    'Entrez le code de vérification': 'أدخل رمز التحقق',
+    'Entrez le code de vérification': 'اضرب رقم التحقق',
     'Entre le code envoyé sur ton adresse e-mail. Attention, bien vérifier ses courriers indésirables (spams)':
-      'أدخل الرمز المرسل إلى عنوان بريدك الإلكتروني. كن حذرًا ، تحقق من البريد غير الهام (البريد العشوائي) بعناية.',
+      '"اضرب الرقم اللي بعتهولك فالبريد الالكتروني نتاعك (Email) شوف مليح حتى فالرسائل المزعجة (Spam)",',
     'Cursus universitaire compatible avec les résultats de ton test d’orientation':
       'دورة جامعية متوافقة مع نتائج اختبار التوجيه الخاص بك',
     'Le savais-tu? Il est possible d’envisager des études payantes sans forcément payer par toi-même! En effet, il existe plein d’options pour financer tes études: alternance, apprentissage, jobs étudiants, bourses, prêts d’honneur, etc. Je te donnerai plein de conseils et de bon plans pour financer tes études si tu le souhaites!':
@@ -486,7 +530,7 @@ const arabicQuestions = () => {
     "Très bien! Du coup, dis-moi c'est quoi ta vision du business?":
       'روعا! دوكا قل(ي)لي كيفاش تشوف عالم التجارة؟',
     'Pour commencer, choisis le profil dans lequel tu te reconnais le plus:':
-      'نبداو بالجانب لي يناسبك الأفضل:',
+      'أماهو الجانب اللي يناسبك الأكثر؟',
     'Maintenant, dis-moi ce que tu préfères pour te divertir:':
       'دوكا قل(ي) لي واش تحب(ي) تدير(ي) كي يكون عندك شويّا وقت؟',
     'Je vois! Dans ce cas, quel rôle aimerais-tu y jouer?':
@@ -835,12 +879,12 @@ const arabicFooter = () => {
     'Tous droits réservés': 'جميع الحقوق محفوظة',
     CGU: 'شروط الإستعمال',
     'Mentions légales': 'معلومات قانونية',
-    'Derniers articles': 'المقالات الأخيرة',
+    'Derniers articles': 'المقالات الاخيرة',
     'Lire l’article': 'اقرأ المقال',
     'No Blogs available': 'لا توجد مدونات متاحة',
     'Lire la suite': 'اقرأ المزيد',
-    'Lisez aussi :': 'اقرأ أيضًا:',
-    'NOTRE BLOG': 'مدونتنا',
+    'Lisez aussi :': 'اقرا تانيت',
+    'NOTRE BLOG': 'أخبار',
     'Veuillez entrer votre Prénom.': 'يرجى ادخال الاسم الاول.',
     'Veuillez entrer votre nom.': 'من فضلك أدخل إسمك.',
     'Veuillez entrer votre date de naissance': 'الرجاء ادخال تاريخ ميلادك',
