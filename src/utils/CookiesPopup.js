@@ -6,6 +6,7 @@ import IconButton from '@material-ui/core/IconButton';
 import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 import { Store, UpdateStore } from '../StoreContext';
 import { Link } from 'react-router-dom';
+import { useTranslation, Trans } from 'react-i18next';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuDialogContent-root': {
@@ -22,6 +23,8 @@ export default function CookiesPopup({
   data,
   setData
 }) {
+  const { t, i18n } = useTranslation();
+  const { language } = i18n;
   const { user } = Store();
 
   const handleClose = () => {
@@ -74,67 +77,75 @@ export default function CookiesPopup({
           <HorizontalRuleIcon fontSize="large" />
           {/* <img src={close} className="closeimg" /> */}
         </IconButton>
-        <DialogContent className="modalcontentcookie">
+        <DialogContent
+          className={`${
+            language == 'ar' && 'arabicmodalcontentcookie'
+          } modalcontentcookie`}
+        >
           <p style={{ margin: '0' }} className="toptextpopup">
-            Dirasat et ses partenaires sélectionnés traitent des données
-            personnelles en lien avec votre navigation sur nos contenus pour les
-            finalités listées ci-dessous.
+            {t(
+              'Dirasat et ses partenaires sélectionnés traitent des données personnelles en lien avec votre navigation sur nos contenus pour les finalités listées ci-dessous.'
+            )}
           </p>
           <p style={{ margin: '0' }} className="toptextpopup">
-            Pour en savoir plus sur nos pratiques en matière de protection des
-            données personnelles et la façon dont nous utilisons vos données,
-            vous pouvez consulter
+            {t(
+              'Pour en savoir plus sur nos pratiques en matière de protection des données personnelles et la façon dont nous utilisons vos données, vous pouvez consulter'
+            )}
             <Link to="/confidentialite" target="_blank" className="cookieeLink">
               {' '}
-              politique de confidentialité
+              {t('politique de confidentialité')}
             </Link>
           </p>
         </DialogContent>
-        <div className="invitedialogAction">
+        <div
+          className={`${language == 'ar' && 'directionrtl'} invitedialogAction`}
+        >
           <div className="cookieeDiv">
             <li className="popupli">
-              Fonctionnalités basiques de navigation requises
+              {t('Fonctionnalités basiques de navigation requises')}
             </li>
             <div>
               <button className={`${'rejectbtndisabled'}`} disabled>
-                Refuser
+                {t('Refuser')}
               </button>
-              <button className={`${'acceptbtnActive'}`}>Accepter</button>
+              <button className={`${'acceptbtnActive'}`}>
+                {t('Accepter')}
+              </button>
             </div>
           </div>
           {data.map((item, i) => (
             <div className="cookieeDiv" key={i}>
-              <li className="popupli">{item.text}</li>
+              <li className="popupli">{t(item.text)}</li>
               <div>
                 <button
                   className={`${item.refuse ? 'rejectbtnActive' : 'rejectbtn'}`}
                   onClick={() => handleRefuse(item)}
                 >
-                  Refuser
+                  {t('Refuser')}
                 </button>
                 <button
                   className={`${item.accept ? 'acceptbtnActive' : 'acceptbtn'}`}
                   onClick={() => handleAccept(item)}
                 >
-                  Accepter
+                  {t('Accepter')}
                 </button>
               </div>
             </div>
           ))}
           <div>
             <p className="popuptext2">
-              Ce site et ses partenaires pourront également réaliser les
-              traitements de données suivants : Assurer la sécurité, Prévenir la
-              fraude et débogguer, diffuser techniquement les publicités ou le
-              contenu, mettre en correspondance et combiner des sources de
-              données hors ligne, recevoir et utiliser des caractéristiques
-              d’identification d’appareil envoyées automatiquement, et relier
-              différents terminaux.
+              {t(
+                'Ce site et ses partenaires pourront également réaliser les traitements de données suivants : Assurer la sécurité, Prévenir la fraude et débogguer, diffuser techniquement les publicités ou le contenu, mettre en correspondance et combiner des sources de données hors ligne, recevoir et utiliser des caractéristiques d’identification d’appareil envoyées automatiquement, et relier différents terminaux.'
+              )}
             </p>
-            <div className="popupbtndiv">
+            <div
+              className={`${
+                language == 'ar' && 'arabicpopupbtndiv'
+              } popupbtndiv`}
+            >
               {' '}
               <button className="popupsavebtn" onClick={handleSavepopup}>
-                Enregistrer
+                {t('Enregistrer')}
               </button>
             </div>
           </div>

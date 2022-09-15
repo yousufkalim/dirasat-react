@@ -51,7 +51,8 @@ const Contactus = ({}) => {
 
     setLoading(true);
     let res = await api('post', '/users/contact', {
-      ...formData
+      ...formData,
+      lng: language
     });
     if (res.status === 200) {
       play();

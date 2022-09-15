@@ -60,7 +60,8 @@ export default function InviteBox({ open, setOpen }) {
 
     setLoading(true);
     let res = await api('post', '/users/invite', {
-      ...newData
+      ...newData,
+      lng: language
     });
     if (res) {
       toast.success(t('Invitation envoyée avec succès'));

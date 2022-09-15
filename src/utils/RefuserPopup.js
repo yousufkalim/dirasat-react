@@ -5,6 +5,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import IconButton from '@material-ui/core/IconButton';
 import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 import { Store, UpdateStore } from '../StoreContext';
+import { useTranslation, Trans } from 'react-i18next';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuDialogContent-root': {
@@ -20,6 +21,7 @@ export default function RefuserPopup({
   setData,
   setOpenCookieePopup
 }) {
+  const { t, i18n } = useTranslation();
   const { user } = Store();
 
   const items = [
@@ -94,8 +96,9 @@ export default function RefuserPopup({
         </IconButton>
         <DialogContent className="modalcontent">
           <p style={{ margin: '0' }}>
-            Vous avez choisi de refuser les cookies. Vous ne pourrez pas accéder
-            au test, êtes-vous sûr(e) de votre choix?
+            {t(
+              'Vous avez choisi de refuser les cookies. Vous ne pourrez pas accéder au test, êtes-vous sûr(e) de votre choix?'
+            )}
           </p>
         </DialogContent>
         <div className="invitedialogAction">
@@ -105,14 +108,14 @@ export default function RefuserPopup({
               style={{ margin: '10px' }}
               onClick={() => handleAcceptAll()}
             >
-              Je change d'avis et j'accepte tous les cookies.
+              {t("Je change d'avis et j'accepte tous les cookies.")}
             </button>
             <button
               className={`${'secondpopupbutton '}`}
               style={{ margin: '10px' }}
               onClick={handleRefuse}
             >
-              Je refuse toujours les cookies
+              {t('Je refuse toujours les cookies')}
             </button>
           </div>
         </div>
