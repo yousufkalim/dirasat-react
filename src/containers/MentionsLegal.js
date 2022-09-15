@@ -97,190 +97,158 @@ const MentionsLegal = () => {
               الاستجابة
             </p>
             <h1 className="cguH1 legalh1">
-              Art. 2 - Destinataires des données collectées
+              2 - المستفيدون من البيانات المجمعة:
             </h1>
             <p className="pmargin">
-              Le personnel de notre société ainsi que nos sous-traitants, et
-              partenaires commerciaux en Algérie et à l’étranger, peuvent avoir
-              accès à vos données pour les fins citées ci-dessus.
+              قد يتمكن موظفو شركتنا وكذلك المقاولون من الباطن وشركاء الأعمال في
+              الجزائر والخارج من الوصول إلى بياناتك للأغراض المذكورة أعلاه
             </p>
             <p className="pmargin">
-              Peuvent également être destinataires de vos données à caractère
-              personnel les organismes publics Algériens, exclusivement pour
-              répondre à nos obligations légales.
+              قد تكون الهيئات العامة الجزائرية أيضًا متلقية لبياناتك الشخصية ،
+              حصريًا للوفاء بالتزاماتنا القانونية
+            </p>
+            <h1 className="cguH1 legalh1">3 - نقل البيانات الشخصية:</h1>
+            <p className="pmargin">
+              قد يتم نقل بياناتك الشخصية مجانًا أو مقابل دفع لأطراف ثالثة
+              للأغراض المذكورة أعلاه
             </p>
             <h1 className="cguH1 legalh1">
-              Art. 3 - Cession des données à caractère personnel
+              4 - مدة الاحتفاظ بالبيانات الشخصية:
             </h1>
             <p className="pmargin">
-              Vos données à caractère personnel pourront faire l’objet de
-              cessions à titre gratuit ou onéreux à des tiers en vue des fins
-              citées plus haut.
-            </p>
-            <h1 className="cguH1 legalh1">
-              Art. 4 - Durée de conservation des données à caractère personnel
-            </h1>
-            <p className="pmargin">
-              Concernant les données relatives à la gestion de clients et
-              prospects :
+              :فيما يتعلق بالبيانات المتعلقة بإدارة العملاء والتوقعات
             </p>
             <p className="pmargin">
-              - Vos données à caractère personnel ne seront pas conservées
-              au-delà de la durée strictement nécessaire à la gestion de notre
-              relation commerciale avec vous et / ou à celle nécessaire pour
-              l’exécution du contrat entre les parties ainsi que pour la
-              réalisation des finalités citées plus haut. Toutefois, les données
-              permettant d’établir la preuve d’un droit ou d’un contrat, devant
-              être conservées au titre du respect d’une obligation légale, le
-              seront pendant la durée prévue par la loi en vigueur.
+              لن يتم الاحتفاظ ببياناتك الشخصية بعد المدة اللازمة تمامًا لإدارة
+              علاقتنا التجارية معك أو لتلك اللازمة لتنفيذ العقد بين الطرفين
+              وكذلك لتحقيق الأغراض المذكورة أعلاه. ومع ذلك ، فإن البيانات التي
+              تسمح
             </p>
 
             <p className="pmargin">
-              Concernant les statistiques de mesure d’audience :
+              بإثبات إثبات الحق أو العقد ، الذي يتعين الاحتفاظ به لاحترام التزام
+              قانوني ، ستكون خلال المدة المنصوص عليها في القانون المعمول به
             </p>
             <p className="pmargin">
-              - Les informations stockées dans le terminal des utilisateurs ou
-              tout autre élément utilisé pour identifier les utilisateurs et
-              permettant leur traçabilité ou fréquentation ne seront pas
-              conservées au-delà de la durée égale à celle nécessaire pour
-              l’exécution du contrat entre les parties ainsi que pour la
-              réalisation des finalités citée ci-haut.-
+              لن يتم الاحتفاظ بالمعلومات المخزنة في محطة المستخدم أو أي عنصر آخر
+              يستخدم لتحديد هوية المستخدمين والسماح بتتبعهم أو حضورهم بعد المدة
+              التي تساوي تلك اللازمة لتنفيذ العقد بين الأطراف وكذلك لتحقيق
+              الأغراض المذكورة أعلاه.
             </p>
-            <h1 className="cguH1 legalh1">Art. 5 - Sécurité </h1>
+            <h1 className="cguH1 legalh1"> 5 - الأمن :</h1>
             <p className="pmargin">
-              Nous vous informons prendre toutes précautions utiles, mesures
-              organisationnelles et techniques appropriées pour préserver la
-              sécurité, l’intégrité et la confidentialité de vos données à
-              caractère personnel et notamment, empêcher qu’elles soient
-              déformées, endommagées ou que des tiers non autorisés y aient
-              accès. 
+              نبلغك باتخاذ جميع الاحتياطات المفيدة والتدابير التنظيمية والتقنية
+              المناسبة للحفاظ على أمن وسلامة وسرية بياناتك الشخصية وعلى وجه
+              الخصوص لمنعها من التشويه أو التلف أو وصول أطراف ثالثة غير مصرح لها
+              إليها.
             </p>
-            <h1 className="cguH1 legalh1">Art. 6 - Cookies</h1>
+            <h1 className="cguH1 legalh1"> 6 - ملفات تعريف الارتباط:</h1>
             <p className="pmargin" style={{ paddingBottom: '30px' }}>
-              Les cookies sont des fichiers textes, souvent cryptés, stockés
-              dans votre navigateur. Ils sont créés lorsque le navigateur d’un
-              utilisateur charge un site internet donné : le site envoie des
-              informations au navigateur, qui crée alors un fichier texte.
-              Chaque fois que l’utilisateur revient sur le même site, le
-              navigateur récupère ce fichier et l’envoie au serveur du site
-              internet.
+              ملفات تعريف الارتباط هي ملفات نصية ، غالبًا ما تكون مشفرة ، مخزنة
+              في متصفحك. يتم إنشاؤها عندما يقوم متصفح المستخدم بتحميل موقع ويب
+              معين: يرسل الموقع معلومات إلى المتصفح ، والذي يقوم بعد ذلك بإنشاء
+              ملف نصي. في كل مرة يعود المستخدم إلى نفس الموقع ، يقوم المتصفح
+              باسترداد هذا الملف وإرساله إلى خادم موقع الويب.
             </p>
             <p className="pmargin">
-              On peut distinguer deux types de cookies, qui n’ont pas les mêmes
-              finalités : les cookies techniques et les cookies publicitaires :
+              يمكننا التمييز بين نوعين من ملفات تعريف الارتباط ، والتي ليس لها
+              نفس الأغراض: ملفات تعريف الارتباط التقنية وملفات تعريف الارتباط
+              الإعلانية.
             </p>
             <p className="pmargin">
-              - Les cookies techniques sont utilisés tout au long de votre
-              navigation, afin de faciliter et d’exécuter certaines fonctions.
-              Un cookie technique peut par exemple être utilisé pour mémoriser
-              les réponses renseignées dans un formulaire ou encore les
-              préférences de l’utilisateur s’agissant de la langue ou de la
-              présentation d’un site internet, lorsque de telles options sont
-              disponibles.
+              تُستخدم ملفات تعريف الارتباط التقنية خلال التنقل الخاص بك ، من أجل
+              تسهيلها وأداء وظائف معينة. يمكن استخدام ملف تعريف الارتباط التقني
+              على سبيل المثال لحفظ الإجابات التي تم ملؤها في نموذج أو تفضيلات
+              المستخدم فيما يتعلق باللغة أو طريقة عرض موقع الويب ، عندما تكون
+              هذه الخيارات متاحة.
             </p>
             <p className="pmargin">
-              - Les cookies publicitaires peuvent être créés non seulement par
-              le site internet sur lequel l’utilisateur navigue, mais également
-              par d’autres sites internet diffusant des publicités, annonces,
-              widgets ou autres éléments sur la page affichée. Ces cookies
-              peuvent notamment être utilisés pour effectuer de la publicité
-              ciblée, c’est-à-dire de la publicité déterminée en fonction de la
-              navigation de l’utilisateur.
+              يمكن إنشاء ملفات تعريف الارتباط الإعلانية ليس فقط من خلال موقع
+              الويب الذي يتصفح المستخدم من خلاله ، ولكن أيضًا من خلال مواقع
+              الويب الأخرى التي تعرض إعلانات أو إعلانات أو عناصر واجهة مستخدم أو
+              عناصر أخرى على الصفحة المعروضة. يمكن استخدام ملفات تعريف الارتباط
+              هذه على وجه الخصوص لتنفيذ الإعلانات المستهدفة ، أي الإعلانات التي
+              يتم تحديدها وفقًا لتصفح المستخدم
             </p>
             <p className="pmargin">
-              Nous utilisons des cookies techniques. Ceux-ci sont stockés dans
-              votre navigateur pour une période qui ne peut excéder six mois.
+              .نحن نستخدم ملفات تعريف الارتباط التقنية. يتم تخزينها في متصفحك
+              لمدة لا تتجاوز ستة أشهر
             </p>
             <p className="pmargin">
-              L’utilisateur est informé au préalable de l’utilisation de cookies
-              publicitaires et celui-ci peut alors le cas échéant désactiver ces
-              cookies.
+              يتم إبلاغ المستخدم مسبقًا باستخدام ملفات تعريف الارتباط الإعلانية
+              ويمكنه بعد ذلك ، إذا لزم الأمر ، إلغاء تنشيط ملفات تعريف الارتباط
+              هذه.
             </p>
             <p className="pmargin">
-              Nous utilisons ou pouvons utiliser Google Analytics qui est un
-              outil statistique d’analyse d’audience qui génère un cookie
-              permettant de mesurer le nombre de visites sur le site, le nombre
-              de pages vues et l’activité des visiteurs. Votre adresse IP est
-              également collectée pour déterminer la ville depuis laquelle vous
-              vous connectez. La durée de conservation de ce cookie est
-              mentionnée à l’article 4 de la présente charte.
+              نحن نستخدم أو قد نستخدم Google Analytics ، وهي أداة تحليل إحصائية
+              للجمهور تقوم بإنشاء ملف تعريف ارتباط لقياس عدد الزيارات إلى الموقع
+              وعدد مرات مشاهدة الصفحة ونشاط الزوار. يتم أيضًا جمع عنوان IP الخاص
+              بك لتحديد المدينة التي تتصل منها تم ذكر مدة صلاحية ملف تعريف
+              الارتباط هذا في المادة 4 من هذا الميثاق.
             </p>
             <p className="pmargin">
-              Nous vous rappelons à toutes fins utiles qu’il vous est possible
-              de vous opposer au dépôt de cookies en configurant votre
-              navigateur. Un tel refus pourrait toutefois empêcher le bon
-              fonctionnement du site.
+              نذكرك لجميع الأغراض العملية أنه يمكنك معارضة إيداع ملفات تعريف
+              الارتباط من خلال تكوين متصفحك. لكن مثل هذا الرفض قد يمنع حسن سير
+              العمل في الموقع.
             </p>
-            <h1 className="cguH1 legalh1">Art. 7 - Consentement </h1>
+            <h1 className="cguH1 legalh1"> 7 - الموافقة:</h1>
             <p className="pmargin">
-              Lorsque vous choisissez de communiquer vos données à caractère
-              personnel, vous donnez expressément votre consentement  à E.MTIYAZ
-              COACHING de les collecter et les utiliser conformément à ce qui a
-              été énoncé à la présente charte et les  législations en vigueurs.
+              عندما تختار إيصال بياناتك الشخصية ، فإنك تمنح صراحة موافقتك على
+              EMTIYAZ COACHING لجمعها واستخدامها وفقًا لما هو مذكور في هذا
+              الميثاق والتشريعات السارية
             </p>
             <p className="pmargin">
-              En utilisant notre outil, l’utilisateur donne expressément son
-              consentement à la société de transmettre à ses sous-traitants et
-              ses partenaires.
+              باستخدام أداتنا ، يعطي المستخدم موافقته صراحةً على الشركة للإرسال
+              إلى المقاولين من الباطن والشركاء
             </p>
             <p className="pmargin">
-              En renseignant ses informations personnelles, l’utilisateur donne
-              son consentement afin de recevoir toute notification, alerte, sms,
-              email de la part de notre société, ses sous-traitants ou ses
-              partenaires.
+              من خلال تقديم معلوماتهم الشخصية ، يمنح المستخدم موافقته على تلقي
+              أي إخطار أو تنبيه أو رسالة نصية قصيرة أو بريد إلكتروني من شركتنا
+              أو المقاولين من الباطن أو شركائها.
             </p>
             <p className="pmargin">
-              Si vous ne désirez plus recevoir d’e-mail, notification, sms, de
-              notre part ou de la part d’un sous-traitant ou partenaire, il vous
-              suffit d’informer la société E.MTIYAZ COACHING en envoyant un
-              email à l’adresse suivante : contact@dirasat-international.com
+              إذا لم تعد ترغب في تلقي بريد إلكتروني أو إشعار أو رسالة نصية قصيرة
+              منا أو من مقاول من الباطن أو شريك ، فما عليك سوى إبلاغ شركة :
+              E.MTIYAZ COACHING contact@dirasat-international.com :عن طريق إرسال
+              بريد إلكتروني إلى العنوان التالي
             </p>
             <h1 className="cguH1 legalh1">
-              Art. 8 - Droit de porter plainte auprès de l’instance de
-              régulation{' '}
+              8 - الحق في تقديم شكوى للجهة الرقابية:
             </h1>
             <p className="pmargin">
-              L’utilisateur est informé de son droit de porter plainte auprès de
-              l’instance de régulation pour toute violation dans le traitement
-              des données à caractère personnel et ce, selon chaque pays
-              éligible selon le cas. 
+              يتم إبلاغ المستخدم بحقه في تقديم شكوى للجهة الرقابية عن أي انتهاك
+              في معالجة البيانات الشخصية وهذا حسب كل دولة مؤهلة حسب الحالة.
             </p>
-            <h1 className="cguH1 legalh1">
-              Art. 9 - Accès à vos données à caractère personnel
-            </h1>
+            <h1 className="cguH1 legalh1">9 - الوصول إلى بياناتك الشخصية:</h1>
             <p className="pmargin">
-              Nous informons que vous disposez du droit d’obtenir la
-              communication et, le cas échéant, la rectification ou la
-              suppression des données vous concernant, en vous adressant à
-              l’adresse suivante : contact@dirasat-international.com
+              نعلمك أن لديك الحق في الحصول على الاتصال ، وإذا لزم الأمر ، تصحيح
+              أو حذف البيانات المتعلقة بك ، عن طريق الاتصال بالعنوان
+              contact@dirasat-international.com التالي
             </p>
             <p className="pmargin">
-              Adresse de courrier postal : 36B Petite Provence, 16035 Hydra,
-              Alger.
+              العنوان البريدي: 36 ب بروفانس الصغيرة 16035-حيدرة
             </p>
             <p className="pmargin">
-              Il est rappelé que toute personne peut, pour des motifs légitimes,
-              s’opposer au traitement des données la concernant.
+              .وتجدر الإشارة إلى أنه يجوز لأي شخص ، لأسباب مشروعة ، معارضة
+              معالجة البيانات المتعلقة به
             </p>
-            <h1 className="cguH1 legalh1">Art. 10 - Modifications</h1>
+            <h1 className="cguH1 legalh1"> 10 - التعديلات:</h1>
             <p className="pmargin">
-              Nous nous réservons le droit de modifier la présente charte sans
-              préjudice aux lois applicables dans chacun des pays éligibles cité
-              dans le préambule
+              .نحتفظ بالحق في تعديل هذا الميثاق دون الإخلال بالقوانين المعمول
+              بها في كل من البلدان المؤهلة المذكورة في المقدمة
             </p>
             <p className="pmargin">
-              Ces modifications entreront en vigueur à compter de la publication
-              de la nouvelle charte. Votre utilisation du site web et /
-              applications suite à l’entrée en vigueur de ces modifications
-              vaudra reconnaissance et acceptation de la nouvelle charte. A
-              défaut et si cette nouvelle charte ne vous convient pas, vous ne
-              devrez plus accéder au site et / ou site web.
+              ستدخل هذه التغييرات حيز التنفيذ اعتبارًا من نشر الميثاق الجديد. إن
+              استخدامك للموقع الإلكتروني و التطبيقات بعد دخول هذه التعديلات حيز
+              التنفيذ يستحق الاعتراف والموافقة على الميثاق الجديد. إذا تعذر ذلك
+              وإذا كان هذا الميثاق الجديد لا يناسبك ، فلن تضطر بعد ذلك إلى
+              الوصول إلى الموقع أو موقع الويب
             </p>
-            <h1 className="cguH1 legalh1">Art. 11 - Entrée en vigueur</h1>
+            <h1 className="cguH1 legalh1"> 11 - الدخول حيز التنفيذ:</h1>
             <p className="pmargin">
-              La présente charte est entrée en vigueur le jour de sa date de
-              publication sur l’application, le site web
-              www.dirasat-international.com et www.e-mtiyaz.com.
+              www.dirasat-international.com و www.e-mtiyaz.com :دخل هذا الميثاق
+              حيز التنفيذ في: يوم تاريخ نشره على التطبيق و / أو الموقع
+              الإلكتروني
             </p>
           </div>
         </div>
