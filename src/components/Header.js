@@ -157,14 +157,14 @@ export default function Header({
               className={`${language == 'ar' && 'arabiclanguageMobileView'} 
               languageMobileView`}
             >
-              {/* <button
+              <button
                 onClick={() =>
                   changeLanguage(`${language == 'en-GB' ? 'ar' : 'en-GB'}`)
                 }
                 className="langButton"
               >
                 {language == 'ar' ? 'Français' : 'العربية'}
-              </button> */}
+              </button>
             </div>
           </>
         )}

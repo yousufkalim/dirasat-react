@@ -434,7 +434,10 @@ const UserForm = ({ setStep, setActiveStep }) => {
     setLoading(true);
     setresendLoading(true);
     play();
-    let res = await api('post', '/users/create', { ...ref.current });
+    let res = await api('post', '/users/create', {
+      ...ref.current,
+      lng: language
+    });
     if (res.status === 200) {
       SetconfirmationOpen(true);
     }

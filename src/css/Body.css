@@ -16,10 +16,17 @@
   text-align: left;
   font-size: 13px;
 }
+.arabicmodalcontentcookie{
+  direction: rtl;
+}
 .modalcontentcookie {
   position: relative;
   bottom: 30px;
   overflow-y: inherit !important;
+}
+.arabiccookies{
+  direction: rtl;
+  padding: 0px 20px;
 }
 .cookies {
   background-color: #0a0808;
@@ -27,6 +34,9 @@
   bottom: 0;
   z-index: 1;
   width: 100%;
+}
+.arabicpopupbtndiv{
+  text-align: center !important;
 }
 .popupbtndiv{
   width: 95%;

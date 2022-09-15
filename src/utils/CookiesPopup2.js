@@ -5,6 +5,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import IconButton from '@material-ui/core/IconButton';
 import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 import { Store, UpdateStore } from '../StoreContext';
+import { useTranslation, Trans } from 'react-i18next';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuDialogContent-root': {
@@ -15,6 +16,8 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   }
 }));
 export default function CookiesPopup({ open, setOpen, setData }) {
+  const { t, i18n } = useTranslation();
+  const { language } = i18n;
   const { user } = Store();
 
   const items = [
@@ -88,9 +91,9 @@ export default function CookiesPopup({ open, setOpen, setData }) {
         </IconButton>
         <DialogContent className="modalcontent">
           <p style={{ margin: '0' }}>
-            Vous avez choisi de refuser les cookies , notamment ceux nécessaires
-            au bon déroulement de votre expérience avec Dirasat. Vous ne pourrez
-            pas avoir accès au test, êtes-vous sûr(e) de votre choix?
+            {t(
+              'Vous avez choisi de refuser les cookies , notamment ceux nécessaires au bon déroulement de votre expérience avec Dirasat. Vous ne pourrez pas avoir accès au test, êtes-vous sûr(e) de votre choix?'
+            )}
           </p>
         </DialogContent>
         <div className="invitedialogAction">
@@ -100,14 +103,14 @@ export default function CookiesPopup({ open, setOpen, setData }) {
               style={{ margin: '10px' }}
               onClick={() => handleAcceptAll()}
             >
-              Je change d'avis et j'accepte tous les cookies.{' '}
+              {t("Je change d'avis et j'accepte tous les cookies.")}{' '}
             </button>
             <button
               className={`${'secondpopupbutton '}`}
               style={{ margin: '10px' }}
               onClick={handleRefuse}
             >
-              Je conserve mes choix
+              {t('Je conserve mes choix')}
             </button>
           </div>
         </div>

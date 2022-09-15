@@ -1,9 +1,9 @@
-const arabicHeader = () => {
-  let ar = {
-    Accueil: 'ترحيب',
-    'Comment ça marche?': 'كيف تعمل؟',
-    Blog: 'المدونة',
-    DIRASAT: 'دراسات',
+const frenchHeader = () => {
+  let fr = {
+    Accueil: 'Accueil',
+    'Comment ça marche?': 'Comment ça marche?',
+    Blog: 'Blog',
+    DIRASAT: 'DIRASAT',
     // cookies
     "En poursuivant votre navigation sur ce site, vous acceptez l'utilisation de cookies afin d'optimiser votre navigation et réaliser des statistiques de suivis. Pour en savoir plus, consultez":
       "En poursuivant votre navigation sur ce site, vous acceptez l'utilisation de cookies afin d'optimiser votre navigation et réaliser des statistiques de suivis. Pour en savoir plus, consultez",
@@ -47,18 +47,65 @@ const arabicHeader = () => {
     "Je change d'avis et j'accepte tous les cookies.":
       "Je change d'avis et j'accepte tous les cookies.",
     'Je conserve mes choix': 'Je conserve mes choix',
-    'Je refuse toujours les cookies': 'Je refuse toujours les cookies'
-  };
-  return ar;
-};
-const frenchHeader = () => {
-  let fr = {
-    Accueil: 'Accueil',
-    'Comment ça marche?': 'Comment ça marche?',
-    Blog: 'Blog',
-    DIRASAT: 'DIRASAT'
+    'Je refuse toujours les cookies': 'Je refuse toujours les cookies',
+    'Vous avez choisi de refuser les cookies. Vous ne pourrez pas accéder au test, êtes-vous sûr(e) de votre choix?':
+      'Vous avez choisi de refuser les cookies. Vous ne pourrez pas accéder au test, êtes-vous sûr(e) de votre choix?'
   };
   return fr;
+};
+const arabicHeader = () => {
+  let ar = {
+    Accueil: 'ترحيب',
+    'Comment ça marche?': 'كيف تعمل؟',
+    Blog: 'المدونة',
+    DIRASAT: 'دراسات',
+    // cookies
+    "En poursuivant votre navigation sur ce site, vous acceptez l'utilisation de cookies afin d'optimiser votre navigation et réaliser des statistiques de suivis. Pour en savoir plus, consultez":
+      '',
+    'notre politique de confidentialité.': 'سياسة الخصوصية الخاصة بنا.',
+    'Si vous refusez, vos informations de navigation ne seront pas conservées lors de votre visite. Nous apposons un seul cookie afin de mémoriser votre choix.':
+      'إذا رفضت ، فلن يتم الاحتفاظ بمعلومات التصفح الخاصة بك أثناء زيارتك. نضع ملف تعريف ارتباط واحدًا لنتذكر اختيارك.',
+    Paramétrer: ' تعيين',
+    Refuser: 'رفض',
+    Accepter: 'قبول',
+    'Dirasat et ses partenaires sélectionnés traitent des données personnelles en lien avec votre navigation sur nos contenus pour les finalités listées ci-dessous.':
+      ' تقوم دراسات وشركاؤها المختارون بمعالجة البيانات الشخصية فيما يتعلق بتصفحك للمحتوى الخاص بنا للأغراض المذكورة أدناه',
+    'Pour en savoir plus sur nos pratiques en matière de protection des données personnelles et la façon dont nous utilisons vos données, vous pouvez consulter':
+      'غراض المذكورة أدناه. "',
+    'politique de confidentialité': 'سياسة الخصوصية',
+    'Fonctionnalités basiques de navigation requises':
+      'ميزات التصفح الأساسية المطلوبة',
+    'Ce site et ses partenaires pourront également réaliser les traitements de données suivants : Assurer la sécurité, Prévenir la fraude et débogguer, diffuser techniquement les publicités ou le contenu, mettre en correspondance et combiner des sources de données hors ligne, recevoir et utiliser des caractéristiques d’identification d’appareil envoyées automatiquement, et relier différents terminaux.':
+      '، قد يقوم هذا الموقع وشركاؤه أيضًا بمعالجة البيانات التالية: ضمان الأمان ، ومنع الاحتيال وتصحيح الأخطاء ، وتوزيع الإعلانات أو المحتوى تقنيًا ، ومطابقة مصادر البيانات غير المتصلة بالإنترنت والجمع بينها ، واستلام واستخدام معرّفات الأجهزة المرسلة تلقائيًا ، وربط المحطات الطرفية المختلفة',
+    Enregistrer: 'للتسجيل',
+    // cookie popup2
+    'Fonctionnalités liées aux réseaux sociaux':
+      'ميزات وسائل التواصل الاجتماعي',
+    "Mesure d'audience": 'قياس الجمهور',
+    "Fonctionnalités liées à l'amélioration de votre expérience":
+      'الميزات المتعلقة بتحسين تجربتك',
+    'Stocker et/ou accéder à des informations sur un terminal':
+      'تخزين و / أو الوصول إلى المعلومات على محطة',
+    'Personnalisation du contenu éditorial et mesure de la performance':
+      'إضفاء الطابع الشخصي على المحتوى التحريري وقياس الأداء',
+    'Personnalisation des publicités et mesure de la performance':
+      'تخصيص الإعلانات وقياس الأداء',
+    'Développer et améliorer les produits': 'تطوير وتحسين المنتجات',
+    'Utiliser des données de géolocalisation précises':
+      'استخدام بيانات دقيقة لتحديد الموقع الجغرافي',
+    'Analyser activement les caractéristiques du terminal pour l’identification':
+      'فحص خصائص الجهاز بشكل نشط لتحديد الهوي',
+    'Vous avez choisi de refuser les cookies , notamment ceux nécessaires au bon déroulement de votre expérience avec Dirasat. Vous ne pourrez pas avoir accès au test, êtes-vous sûr(e) de votre choix?':
+      ' لقد اخترت رفض ملفات تعريف الارتباط ، لا سيما تلك الضرورية من أجل حسن سير تجربتك مع دراسات. لن تتمكن من الوصول إلى الاختبار ، هل أنت متأكد من اختيارك؟',
+    "Je change d'avis et j'accepte tous les cookies.":
+      'أغير رأيي وأقبل جميع ملفات تعريف الارتباط.',
+    'Je conserve mes choix': 'أحافظ على اختياراتي',
+    'Je refuse toujours les cookies':
+      'أغير رأيي وأقبل جميع ملفات تعريف الارتباط.',
+    'Vous avez choisi de refuser les cookies. Vous ne pourrez pas accéder au test, êtes-vous sûr(e) de votre choix?':
+      'لقد اخترت رفض ملفات تعريف الارتباط. لن تتمكن من الوصول إلى الاختبار ، هل أنت متأكد من اختيارك؟'
+  };
+  return ar;
 };
 
 // landing page
@@ -379,24 +426,24 @@ const arabicContactus = () => {
   let ar = {
     'Contactez-nous': 'اتصل بنا',
     'Prénom et nom': 'الإسم واللقب',
-    'E-mail': 'البريد الالكتروني',
-    'Objet de votre message': 'الموضوع',
-    'Votre message': 'رسالتي',
-    Envoyer: 'أبعت',
+    'E-mail': 'البريد الإلكتروني',
+    'Objet de votre message': 'ما هو موضوع رسالتك',
+    'Votre message': 'رسالتك',
+    Envoyer: ' إرسال',
     'Chargement en cours': 'جار التحميل',
-    'Veuillez entrer Prénom et nom': 'الرجاء إدخال الاسم الأول والأخير',
+    'Veuillez entrer Prénom et nom': 'الرجاء إدخال الإسم واللقب',
     'Veuillez entrer votre e-mail': 'رجاءا أدخل بريدك الإلكتروني',
     'Veuillez entrer Objet de votre message': 'الرجاء إدخال موضوع رسالتك',
     'Veuillez entrer Votre message': 'أدرج رسالتك من فضلك',
     'Soumis avec succès': 'قدمت بنجاح',
     "s'il vous plaît entrez l'e-mail": 'الرجاء إدخال البريد الإلكتروني',
-    Durée: 'مدة',
+    Durée: ' مدة',
     Langue: 'لغة',
-    Coût: 'كلفة',
+    Coût: ' كلفة',
     'Invite un ami': 'أدع صديقا',
     Invite: 'زائر',
     'Partager sur': 'مشاركه فى',
-    "Votre OTP n'est pas correct": 'OTP الخاص بك غير صحيح',
+    "Votre OTP n'est pas correct": 'رقم السرالخاص بك غير صحيح',
     'Invitation envoyée avec succès': 'تم إرسال الدعوة بنجاح'
   };
   return ar;
@@ -431,23 +478,22 @@ const arabicPopups = () => {
     'Ton budget doit inclure tes frais de logement, de transport, de fonctionnement, ainsi que les frais de scolarité de ton futur établissement.':
       'يجب أن تتضمن ميزانيتك الإقامة والنقل وتكاليف التشغيل بالإضافة إلى الرسوم الدراسية لمؤسستك المستقبلية.',
     // confirmationpopup
-    'Entre le code reçu par SMS':
-      'أدخل الرمز الذي تلقيته عن طريق الرسائل القصيرة',
-    Renvoyer: 'زيد ابعت',
-    Vérifier: 'يفحص',
-    'Entrez le code de vérification': 'اضرب رقم التحقق',
+    'Entre le code reçu par SMS': 'أدخل الرمز الذي تلقيته عن طريق الهاتف  ',
+    Renvoyer: 'عاود أبعت',
+    Vérifier: 'أدخل',
+    'Entrez le code de vérification': 'أدخل  رقم التحقق',
     'Entre le code envoyé sur ton adresse e-mail. Attention, bien vérifier ses courriers indésirables (spams)':
-      '"اضرب الرقم اللي بعتهولك فالبريد الالكتروني نتاعك (Email) شوف مليح حتى فالرسائل المزعجة (Spam)",',
+      'أدخل الرمز الذي تلقيته عن طريق البريد الإلكتروني - متنساش تشوف فال-SPAM',
     'Cursus universitaire compatible avec les résultats de ton test d’orientation':
-      'دورة جامعية متوافقة مع نتائج اختبار التوجيه الخاص بك',
+      'منهج جامعي يناسب الأجوبة نتاعك',
     'Le savais-tu? Il est possible d’envisager des études payantes sans forcément payer par toi-même! En effet, il existe plein d’options pour financer tes études: alternance, apprentissage, jobs étudiants, bourses, prêts d’honneur, etc. Je te donnerai plein de conseils et de bon plans pour financer tes études si tu le souhaites!':
-      'هل كنت تعلم؟ من الممكن أن تفكر في الدراسات المدفوعة دون أن تدفع ثمنها بنفسك بالضرورة! في الواقع ، هناك الكثير من الخيارات لتمويل دراستك: دراسة العمل ، التدريب المهني ، وظائف الطلاب ، المنح الدراسية ، القروض الفخرية ، إلخ. سأقدم لك الكثير من النصائح والخطط الجيدة لتمويل دراستك إذا كنت ترغب في ذلك!',
+      'على بالك(ي)؟ تقدر(ي) تفكر(ي) في الدراسات بالدراهم بلا ما تدفع(ي) بنفسك! خاطرش كاين بزاف الخيارات لتمويل دراستك: دراسة العمل ، التدريب المهني ، وظائف الطلاب ، المنح الدراسية ، القروض الفخرية ، إلخ. من بعد نكتبلك  باش نعطيك النصائح  باش تمول دراستك إلا حبيت! ',
     'Après avoir reçu ma proposition de liste, tu seras contacté par la suite pour recevoir le plein de conseils concernant ton projet d’études à l’international!':
-      'بعد استلام اقتراح القائمة الخاصة بي ، سيتم الاتصال بك لاحقًا لتلقي النصيحة الكاملة بشأن مشروع الدراسة الدولي الخاص بك!',
+      'بعد ما نعطيك وش يخرجلك، نتصل بيك باش نعطيك نصائح يفيدوك فالمشروع الدراسي نتاعك فالخارج',
     'Le savais-tu? Le mot sélectivité signifie que pour accéder à une formation dite “sélective”, il te sera généralement nécessaire de passer un concours ou un test, ou que ton dossier scolaire (notes, appréciations) sera pris en compte davantage que dans une formation moins sélective. Du coup, sélectivité veut généralement aussi dire prestige.':
-      'هل كنت تعلم؟ تعني كلمة انتقائية أنه للوصول إلى ما يسمى بالتدريب الانتقائي ، سيتعين عليك عمومًا اجتياز مسابقة أو اختبار ، أو أن سجل مدرستك (الدرجات ، التقييمات) سيؤخذ في الاعتبار أكثر من التدريب الأقل انتقائية . نتيجة لذلك ، تعني الانتقائية عمومًا هيبة.',
+      'منهج إنتقائي هو منهاج تدخلو بشروط: ياتنجح في إمتحان يا لازمك تكون عندك معدل كافي. تسمى إنتقائي يمشي مع إمتياز',
     'Si tu hésites entre plusieurs pays, tu dois faire autant de tests que de pays souhaités.':
-      'إذا كنت مترددًا بين عدة دول ، فيجب عليك إجراء العديد من الاختبارات كما تريد'
+      'إلا راك متردد بين بلاد وواحد آخر، لازمك تعاود الاختبار قد عدد البلدان اللي راك متردد بينهم'
   };
   return ar;
 };
@@ -885,18 +931,18 @@ const arabicFooter = () => {
     'Lire la suite': 'اقرأ المزيد',
     'Lisez aussi :': 'اقرا تانيت',
     'NOTRE BLOG': 'أخبار',
-    'Veuillez entrer votre Prénom.': 'يرجى ادخال الاسم الاول.',
-    'Veuillez entrer votre nom.': 'من فضلك أدخل إسمك.',
+    'Veuillez entrer votre Prénom.': 'الرجاء إدخال اسمك.: ',
+    'Veuillez entrer votre nom.': 'من فضلك أدخل لقبك.',
     'Veuillez entrer votre date de naissance': 'الرجاء ادخال تاريخ ميلادك',
-    'Veuillez sélectionner': 'الرجاء التحديد',
-    'Veuillez entrer votre e-mail': 'رجاءا أدخل بريدك الإلكتروني',
+    'Veuillez sélectionner': 'الرجاء تحديد',
+    'Veuillez entrer votre e-mail': 'جاءا أدخل بريدك الإلكتروني',
     'Le numéro de téléphone doit être composé de 10 chiffres et commencer par 0':
       'يجب أن يتكون رقم الهاتف من 10 أرقام وأن يبدأ بـ 0',
-    'Veuillez sélectionner la liste des classes': 'الرجاء تحديد قائمة الفصل',
+    'Veuillez sélectionner la liste des classes': 'الرجاء تحديد قسمك',
     'Veullez sélectionner une série de Baccalauréat':
-      'الرجاء اختيار سلسلة البكالوريا',
+      'الرجاء اختيار شعبة البكالوريا',
     'veuillez entrer la ville de votre école': 'الرجاء إدخال مدينة مدرستك',
-    "veuillez saisir le nom de l'école": 'الرجاء إدخال اسم المدرسة',
+    "veuillez saisir le nom de l'école": 'لرجاء إدخال اسم المدرسة',
     'Veuillez accepter les termes et conditions': 'الرجاء قبول الشروط والأحكام'
   };
   return ar;
@@ -1047,12 +1093,12 @@ const arabicCity = () => {
     Lille: 'ليل',
     Toulouse: 'تولوز',
     Strasbourg: 'ستراسبورغ',
-    Bordeaux: 'بوردو',
+    Bordeaux: 'المارون',
     Rennes: 'الرنة',
     Nancy: 'نانسي',
     Metz: 'ميتز',
     Amiens: 'اميان',
-    Tours: 'أبراج',
+    Tours: ' يتحول',
     Poitiers: 'بواتييه',
     Limoges: 'ليموج',
     Reims: 'ريمس',
@@ -1060,7 +1106,7 @@ const arabicCity = () => {
     Brest: 'بريست',
     Dijon: 'ديجون',
     Grenoble: 'غرونوبل',
-    Angers: 'أنجيه',
+    Angers: ' أنجرس',
     Autre: 'آخر',
     Manchester: 'مانشستر',
     Liverpool: 'ليفربول',
@@ -1078,19 +1124,19 @@ const arabicCity = () => {
     Hanovre: 'هانوفر',
     Dusseldorf: 'دوسلدورف',
     Stuttgart: 'شتوتغارت',
-    Cologne: 'كولونيا',
+    Cologne: ' كولن',
     Leipzig: 'لايبزيغ',
     Hamboug: 'هامبورغ',
     Rome: 'روما',
     Milan: 'ميلانو',
     Turin: 'تورينو',
-    Gènes: 'جنوة',
+    Gènes: ' الجينات',
     Bologne: 'بولونيا',
     Padoue: 'بادوفا',
     Naples: 'نابولي',
     Moscou: 'موسكو',
-    'Saint Petersbourg': 'القديس بطرسبرج',
-    Volgograd: 'فولغوغراد',
+    'Saint Petersbourg': 'سانت بطرسبرغ',
+    Volgograd: ' فولجوجراد',
     'Rostov-sur-Don': 'روستوف اون دون',
     'Nizhny Volgograd': 'نيجني فولجوجراد',
     Kazan: 'قازان',
@@ -1102,7 +1148,7 @@ const arabicCity = () => {
     Barcelone: 'برشلونة',
     Seville: 'إشبيلية',
     Salamanca: 'سالامانكا',
-    Grenade: 'قنبلة يدوية',
+    Grenade: 'رمان',
     Valladoid: 'بلد الوليد',
     Bruxelles: 'بروكسل',
     Anvers: 'أنتويرب',
@@ -2350,7 +2396,407 @@ const arabicCourseName = () => {
     "Université Mohamed Boudiaf  des sciences et de la technologie - Mohamed Boudiaf d'Oran":
       'وھران- بوضیاف محمد والتكنولوجیا العلوم جامعة',
     // missing coursename
-    'Université  de Ouargla - Kasdi Merbah': 'جامعة ورقلة - قاصدي مرباح'
+    'Université  de Ouargla - Kasdi Merbah': 'جامعة ورقلة - قاصدي مرباح',
+
+    // Spécialité column F
+    'Économie des hydrocarbures : économie pétrolière':
+      'ط اقتصاد :الھیدروكربوني الاقتص',
+    'Agriculture de précision': 'الدقیقة الزراعة',
+    'Art de l’acteur': 'الممثل فن',
+    'Énergies renouvelables en électrotechnique':
+      'الطاقات المتجددة في الھندسة الكھربائیة',
+    'Action commerciale': 'العمل التجاري',
+    'Aéronautique et mécanique de l’aviation légère':
+      'الخفیف الطیران ومیكانیك الطیران علم',
+    'Économie financière et bancaire': 'والمصرفي المالي الاقتصاد',
+    Énergétique: 'طاقة',
+    'Algèbre et géométrie': 'والھندسة الجبر',
+    'Aménagement hydroagricole': 'التنمیة المائیة والزراعیة',
+    Analyse: 'التحالیل',
+    'Archéologie, Bibliothéconomie, Histoire et Sciences de l’information et de la communication':
+      'والاتصالات المعلومات وعلوم والتاریخ والمكتبات الآثار علم',
+    Électronique: 'إلكترونیات',
+    'Électronique et maintenance biomédicale':
+      'الإلكترونیات والصیانة الطبیة الحیویة',
+    'Énergies renouvelables appliquées': 'الطاقات المتجددة التطبیقیة',
+    'Énergies renouvelables en élecrotechnique':
+      'الطاقات المتجددة في الھندسة الكھربائیة',
+    'Énergies renouvelables et environnement': ' والبیئة المتجددة الطاقة',
+    Agronomie: 'الھندسة الزراعیة',
+    'Agronomie saharienne': 'الزراعة الصحراویة',
+    'Algèbre et cryptographie': 'والتشفیر الجبر',
+    'Appareilleurs orthopédistes de santé publique':
+      'أجھزة تقویم العظام للصحة العامة',
+    'Archéologie antique': 'علم الآثار القدیمة',
+    'Archéologie Islamique': 'الآثار الإسلامیة',
+    'Archéologie préhistorique': 'علم آثار ما قبل التاریخ',
+    Architecture: 'ھندسة عامة',
+    Arts: 'الفنون',
+    'Arts plastiques / Expression picturale':
+      'الفنون التشكیلیة / التعبیر المصور',
+    'Arts plastiques / Volume matière': 'الفنون التشكیلیة / حجم المواد',
+    'Assemblages Soudés': 'المفاصل الملحومة',
+    'Assistant Social de Santé Publique': 'العامة للصحة اجتماعي أخصائي',
+    Assurances: 'التأمینات',
+    Automatique: 'آلي',
+    'Automatisation des procédés industriels : commande automatique':
+      ' الآلي التحكم :الصناعیة العملیات أتمتة',
+    'Automatisation et contrôle en industries pétrochimiques':
+      'البتروكیماویة الصناعات في والتحكم الأتمتة',
+    Avionique: 'إلكترونیات الطیران',
+    'Bibliothèque et centres de documentation': 'التوثیق ومراكز المكتبات',
+    'Budget de l’état': 'للدولة العامة الموازنة',
+    'Business English': 'اللغة الإنجلیزیة للأعمال',
+    'Chariâa et droit': 'والقانون الشریعة',
+    Chimie: 'كیمیاء',
+    'Chimie analytique': 'الكیمیاء التحلیلیة',
+    'Chimie pharmaceutique': 'الكیمیاء الصیدلانیة',
+    Civilisation: 'الحضارة',
+    'Classes préparatoires': 'الصفوف التحضیریة',
+    'Classes préparatoires en informatique': 'دروس تحضیریة في علوم الكمبیوتر',
+    'Classes préparatoires intégrés (techno-pôle)':
+      'فصول تحضیریة متكاملة (تكنو بول)',
+    'Commerce international': 'تجارة دولیة',
+    'Comptabilité - contrôle - audit': 'المحاسبة - الرقابة - التدقیق',
+    'Comptabilité et audit': 'والمراجعة المحاسبة',
+    'Comptabilité et finance': 'والتمویل المحاسبة',
+    'Comptabilité et finances': 'والتمویل المحاسبة',
+    'Comptabilité et fiscalité': 'والضرائب المحاسبة',
+    'Conduite opérationnelle de projets': 'التشغیلي المشروع إدارة',
+    'Conduite opérationnelle de projets de construction':
+      'الإنشائیة للمشاریع التشغیلیة الإدارة',
+    'Conservation et restauration en archéologie':
+      'الحفظ والترمیم في علم الآثار',
+    'Construction et architecture navale': 'البحریة والعمارة البناء',
+    'Constructions Civils et Environnement': 'والبیئة المدنیة الإنشاءات',
+    'Contrôle qualité et analyse des aliments': 'وتحلیلھا الأغذیة جودة مراقبة',
+    'Critique Théâtrale': 'النقد المسرحي',
+    'Développement Web et applications mobiles':
+      'تطویر الویب وتطبیقات الھاتف المحمول',
+    'Développement Web et infographie': 'تطویر الویب والرسومات الحاسوبیة',
+    'Design / Espace': 'التصمیم / الفضاء',
+    'Design / Image – média': 'التصمیم / الصورة - الوسائط',
+    'Diététicien de santé publique': 'اختصاصي تغذیة صحة عامة',
+    Didactique: 'وعظي',
+    Droit: 'الحقوق',
+    "Droit de l'entreprise et des affaires": 'والأعمال الشركات قانون',
+    'Droit des affaires': 'الأعمال قانون',
+    'E-Commerce et marketing numérique':
+      '،"الرقمي والتسویق الإلكترونیة التجارة',
+    'Eau et environnement': 'والبیئة المیاه',
+    'Economie et gestion de l’entreprise': 'الأعمال وإدارة الاقتصاد',
+    'Economie Islamique': 'الإسلامي الاقتصاد',
+    'Electromécanique minière': 'میكانیك التعدین الكھرومغناطیسیة',
+    Electrotechnique: 'الھندسة الكھربائیة',
+    'Emballage et qualité': 'والجودة التغلیف',
+    'Entrainement Sportif d’Elite': 'الریاضي النخبة تدریب',
+    'Environnement minier': 'بیئة التعدین',
+    'Ergothérapeute de santé publique': 'معالج مھني بالصحة العامة',
+    'Exploitation aéronautique': 'عملیة الطیران',
+    'Exploitation des mines': 'التعدین',
+    'Exploitation minière': 'تعدین',
+    'Finance d’entreprise': 'تمویل الأعمال التجاریة',
+    'Finance et banque': 'ومصرفیة مالیة',
+    'Finance islamique': 'التمویل الإسلامي',
+    Forage: 'حفر',
+    Foresterie: 'لحراجة',
+    'Génie électrique : électricité industrielle':
+      'الھندسة الكھربائیة: الكھرباء الصناعیة',
+    'Génie chimique': 'الھندسة الكیمیائیة',
+    'Génie de l’eau': 'المائیة الھندسة',
+    "Génie de l'environnent et procédés": 'البیئیة والعملیات الھندسة',
+    'Génie de la formulation': 'الصیاغة ھندسة',
+    'Génie des Polymères': 'البولیمر ھندسة',
+    'Génie des procédés': 'العملیات ھندسة',
+    'Génie des procédés pharmaceutiques': '،"الصیدلانیة العملیات ھندسة',
+    'Génie des télécommunications et réseaux': 'والشبكات الاتصالات ھندسة',
+    'Génie industriel et maintenance': 'والصیانة الصناعیة الھندسة',
+    'Génie logiciel': 'ھندسة البرمجیات',
+    'Génie mécanique : mécanique des chantiers pétroliers':
+      ' النفط حقول میكانیك :المیكانیكیة الھندسة',
+    'Génie mécanique : mécanique des unités pétrochimiques':
+      'البتروكیماویات وحدات میكانیك :المیكانیكیة الھندسة',
+    'Génie mécanique : transport des hydrocarbures':
+      'المحروقات نقل :المیكانیكیة الھندسة',
+    'Génie pétrochimique': 'ھندسة البتروكیماویات',
+    'Génie pétrolier : Forage des puits d’hydrocarbures':
+      'الھیدروكربون آبار حفر :البترول ھندسة',
+    'Génie pétrolier : production des hydrocarbures':
+      'الھیدروكربونات إنتاج :البترول ھندسة',
+    'Génie urbain': 'الھندسة الحضریة',
+    'Géographie et aménagement du territoire':
+      'الأراضي استخدام وتخطیط الجغرافیا',
+    Géologie: 'جیولوجیا',
+    'Géologie et environnement': 'والبیئة الجیولوجیا',
+    'Géomètre Topographe': 'مھندس طوبوغرافي',
+    'Géophysique : géophysique sismique': 'الجیوفیزیاء: الجیوفیزیاء الزلزالیة',
+    'Géosciences appliquées : ressources minérales et énergétiques':
+      'علوم الأرض التطبیقیة: الموارد المعدنیة والطاقة',
+    Géotechnique: 'جیوتكنیك',
+    'Gestion de l’hébergement': 'الإقامة إدارة',
+    'Gestion de la production et logistique':
+      'اللوجستیة والخدمات الإنتاج إدارة',
+    'Gestion de restauration': 'المطاعم إدارة',
+    'Gestion des agences de tourisme et de voyage':
+      'والسفر السیاحة وكالات إدارة',
+    'Gestion des déchets urbains': 'الحضریة النفایات إدارة',
+    'Gestion des Infrastructures du Sport': 'الریاضیة التحتیة البنیة إدارة',
+    'Gestion des ressources humaines': 'البشریة الموارد ادارة',
+
+    'Gestion des Techniques Urbaines': 'الحضریة التقنیات إدارة',
+    'Gestion des villes': 'المدینة إدارة',
+    'Gestion durable, traitement et valorisation des déchets':
+      'النفایات واستعادة ومعالجة المستدامة الإدارة',
+    'Gestion hôtellerie et restauration': 'والمطاعم الفنادق إدارة',
+    'Histoire et civilisation islamique': 'الإسلامیة والحضارة التاریخ',
+    Hydraulique: 'ھیدرولیكي',
+    'Hydraulique urbaine': 'الھیدرولیك الحضریة',
+    Hydrogéologie: 'الھیدروجیولوجیا',
+    'Hygiène, sécurité et environnement': 'والبیئة والسلامة الصحة',
+    'Hygiène, Sécurité et Environnement dans l’industrie pétrolière et gazière':
+      'والغاز النفط صناعة في والبیئة والسلامة الصحة',
+    'Hygiène, sécurité et santé au travail': 'العمل في والصحة والسلامة النظافة',
+    'Hygiéniste de Santé Publique': 'اختصاصي صحة الصحة العامة',
+    'Industries électroniques': 'الصناعات الإلكترونیة',
+    'Infirmier de santé publique': 'عامة صحة ممرضة',
+    Informatique: 'علوم الكمبیوتر',
+    'Informatique biomédicale et hospitalière':
+      'المعلوماتیة الطبیة الحیویة والمستشفیات',
+    'Informatique de gestion': 'إدارة تكنولوجیا المعلومات',
+    'Informatique et réseaux': 'تكنولوجیا المعلومات والشبكات',
+    'Ingénierie électrique et électronique (IEEE)':
+      '(IEEE) والإلكترونیة الكھربائیة الھندسة',
+    'Ingénierie automobile': 'ھندسة السیارات',
+    "Ingénierie des systèmes d'information et des logiciels":
+      'البرمجیات وھندسة المعلومات نظم',
+    'Ingénierie des systèmes informatiques et logiciels':
+      'والبرمجیات الكمبیوتر أنظمة ھندسة',
+    'Ingénierie des transports': 'النقل ھندسة',
+    'Ingénierie Mécanique': 'ھندسة میكانیكیة',
+    Installations: 'منشاة',
+    'Instruments et Chant': 'والغناء الموسیقیة الآلات',
+    'Kinésithérapeutes de santé publique':
+      'أخصائیو العلاج الطبیعي للصحة العامة',
+    'Laborantin de santé publique': 'العامة الصحة مختبر مساعد',
+    'Langue allemande': 'لغة المانیة',
+    'Langue anglaise': 'اللغة الإنجلیزیة',
+    'Langue anglaise des affaires': 'للأعمال الإنجلیزیة اللغة',
+    'Langue espagnole': 'اللغة الإسبانیة',
+    'Langue et Culture Amazighes': 'الأمازیغیة والثقافة اللغة',
+    'Langue et Littérature Arabes': 'وآدابھا العربیة اللغة',
+    'Langue française': 'اللغة الفرنسیة',
+    'Langue italienne': 'اللغة الایطالیة',
+    'Langue russe': 'اللغة الروسیة',
+    'Langue turque': 'اللغة التركیة',
+    'Langues étrangères appliquées à la communication en entreprise':
+      'التجاریة الاتصالات على المطبقة الأجنبیة اللغات',
+
+    Littérature: 'المؤلفات',
+    Logistique: 'الخدمات اللوجستیة',
+    'Maintenance de l’automatisme et de l’instrumentation':
+      'الأجھزة وصیانة الأتمتة',
+    'Mécanique appliquée': 'میكانیك تطبیقیة',
+    'Mécanique des chantiers pétroliers': 'النفط ساحة میكانیك',
+    Médecine: 'طب',
+    'Médecine dentaire': 'طب الأسنان',
+    Métallurgie: 'الحدادة',
+    'Métiers de la ville': 'المدینة تجارة',
+    'Métrologie et contrôle industriel': 'علم القیاس والرقابة الصناعیة',
+    'Maintenance industrielle & technologie automobile':
+      'السیارات وتكنولوجیا الصناعیة الصیانة',
+    'Maintenance industrielle et électromécanique':
+      'والكھرومیكانیكیة الصناعیة الصیانة',
+
+    'Maitrise du risque industriel': 'الصناعیة المخاطر إدارة',
+    Management: 'إدارة',
+    'Management commercial': 'ادارة تجاریة',
+    'Management des affaires': 'اعمال ادارة',
+    'Management des hôtels et du tourisme': 'والسیاحة الفنادق إدارة',
+    'Management du développement durable du tourisme':
+      'المستدامة السیاحة تنمیة إدارة',
+    'Management du tourisme': ' السیاحة إدارة',
+    'Management touristique': 'الإدارة السیاحیة',
+    'Manipulateur en imagerie médicale de santé publique':
+      'العامة للصحة الطبي التصویر معالج',
+    Marketing: 'تسویق',
+    'Marketing international': 'التسویق الدولي',
+    'Matériaux et contrôle physico-chimique':
+      'الفیزیائي الكیمیائي والتحكم المواد',
+    'Mathématiques et informatique': 'الریاضیات وعلوم الكمبیوتر',
+    'Mécanique Industrielle de Construction et d’Entretien':
+      'والصیانة الصناعیة الإنشاءات میكانیك',
+    'Mesures physiques et instrumentation scientifique':
+      'العلمیة والأجھزة الفیزیائیة القیاسات',
+    'Mesures, métrologie et qualité': 'والجودة والمترولوجیا القیاسات',
+    Musicologie: 'علم الموسیقى',
+    'Network infrastructure and cyber security (NICS)':
+      'السیبراني للشبكةوالامن التحتیة البنیة',
+    'Opérations aériennes': 'عملیات الطیران',
+    'Opticien Lunetier de santé publique': 'العامة الصحة نظارات أخصائي',
+    'Optique et mécanique de précision': 'والمیكانیك الدقیقة البصریات',
+    'Optique instrumentale et photonique': 'والضوئیات الآلیة البصریات',
+    'Optique visuelle et lunetterie': 'والنظارات البصریة البصریات',
+    Optométrie: 'البصریات',
+    'Orientation et guidance': 'والإرشاد التوجیھ',
+    'Orthoptiste de santé publique': 'أخصائي تقویم البصر بالصحة العامة',
+    'Oussoul Eddine, Charia, Langue Arabe et Civilisation Islamique':
+      'الإسلامیة والحضارة العربیة واللغة الشریعة الدین أصول',
+    'Ouvrages et amenagement hydrauliques': 'والتطویر الھیدرولیكیة الأعمال',
+    Pharmacie: 'صیدلة',
+    'Physique fondamentale': 'الفیزیاء الأساسیة',
+    'Préparateur en Pharmacie de Santé Publique': 'العامة الصحة صیدلة في معد',
+    'Prise de son': 'الصوت تسجیل',
+    'Prise de vue': 'الصورة تسجیل',
+    'Probabilités statistiques': 'الاحتمالات الإحصائیة',
+    'Probabilités-Statistique': 'الاحتمالات الإحصائیة',
+    'Procédés agroalimentaires': 'عملیات الأغذیة الزراعیة',
+    'Procédés et traitement de l’énergie électrique':
+      'الكھربائیة الطاقة ومعالجة عملیات',
+    Production: 'إنتاج',
+    'Production animale': 'إنتاج حیواني',
+    'Production aquacole': 'إنتاج الاستزراع المائي',
+    'Production végétale': 'إنتاج الخضر',
+    Productique: 'إنتاجیة',
+    'Productique mécanique et industrialisation': 'المیكانیكي والتصنیع الإنتاج',
+    'Professeur de l’École Primaire en Arabe (P.E.P.)':
+      '(.P.E.P) الابتدائیة العربیة اللغة مدرس',
+    'Professeur de l’École Primaire en Français (P.E.P.)':
+      '(.P.E.P) فرنسیة ابتدائیة مدرسة مدرس',
+    'Professeur de l’École Primaire en Langue Amazighe (P.E.P.)':
+      '(.P.E.P) الأمازیغیة باللغة ابتدائي مدرس',
+    'Professeur de l’Enseignement Moyen en Histoire - Géographie (P.E.M.)':
+      '(.P.E.M) الجغرافیا و التاریخ في المتوسط التعلیم مدرس',
+    'Professeur de l’Enseignement Moyen en Informatique (P.E.M.)':
+      '(.P.E.M) الكمبیوتر علوم في المتوسط التعلیم أستاذ',
+    'Professeur de l’Enseignement Moyen en Langue Anglaise (P.E.M.)':
+      '(.P.E.M) الانجلیزیة اللغة في المتوسط التعلیم مدرس',
+    'Professeur de l’Enseignement Moyen en Langue et Littérature Arabes (P.E.M.)':
+      '(.P.E.M) ادابھا و العربیة اللغة في المتوسط التعلیم مدرس',
+    'Professeur de l’Enseignement Moyen en Langue Française (P.E.M.)':
+      '(.P.E.M) الفرنسیة اللغة في المتوسط التعلیم مدرس',
+    'Professeur de l’Enseignement Moyen en Musique (P.E.M.)':
+      '(.P.E.M) الموسیقى في المتوسط التعلیم مدرس',
+    'Professeur de l’Enseignement Moyen en Sciences Exactes (P.E.M.)':
+      '(.P.E.M) الدقیقة العلوم في المتوسط التعلیم مدرس',
+    'Professeur de l’Enseignement Moyen en Sciences Naturelles (P.E.M.)':
+      '(.P.E.M) الطبیعیة العلوم في المتوسط التعلیم مدرس',
+    'Professeur de l’Enseignement Secondaire en en Histoire – Géographie (P.E.S.)':
+      '(P.ES) الجغرافیا - التاریخ في الثانوي التعلیم مدرس',
+    'Professeur de l’Enseignement Secondaire en Génie civil (P.E.S.)':
+      '(.P.E.S)"المدنیة الھندسة في الثانوي التعلیم مدرس',
+    'Professeur de l’Enseignement Secondaire en Génie des procédés (P.E.S.)':
+      '(.P.E.S) العملیات ھندسة في الثانوي التعلیم أستاذ',
+    'Professeur de l’Enseignement Secondaire en Génie électrique (P.E.S.)':
+      '(P.ES) الكھربائیة الھندسة في الثانوي التعلیم مدرس',
+    'Professeur de l’Enseignement Secondaire en Génie mécanique (P.E.S.)':
+      '(P.ES) المیكانیكیة الھندسة في الثانوي التعلیم مدرس',
+    'Professeur de l’Enseignement Secondaire en Histoire – Géographie (P.E.S.)':
+      '(P.ES) الجغرافیا - التاریخ في الثانوي التعلیم مدرس',
+    'Professeur de l’Enseignement Secondaire en Informatique (P.E.S.)':
+      '(.P.E.S) الكمبیوتر في الثانوي التعلیم مدرس',
+    'Professeur de l’Enseignement Secondaire en Langue et Littérature Arabes (P.E.S.)':
+      '(.P.E.S) ادابھا و العربیة اللغة في الثانوي التعلیم مدرس',
+    'Professeur de l’Enseignement Secondaire en Langue Française (P.E.S.)':
+      '(.P.E.S) الفرنسیة اللغة في الثانوي التعلیم مدرس',
+    'Professeur de l’Enseignement Secondaire en Langue Anglaise (P.E.S.)':
+      '(.P.E.S) الانجلیزیة اللغة في الثانوي التعلیم مدرس',
+    'Professeur de l’Enseignement Secondaire en Musique (P.E.S.)':
+      '(.P.E.S) الموسیقى في الثانوي التعلیم مدرس',
+    'Professeur de l’Enseignement Secondaire en Philosophioe (P.E.S.)':
+      '(.P.E.S) الفلسفة في الثانوي التعلیم مدرس',
+    'Professeur de l’Enseignement Secondaire en Philosphie (P.E.S.)':
+      '(.P.E.S) الفلسفة في الثانوي التعلیم مدرس',
+    'Professeur de l’Enseignement Secondaire en Sciences Exactes (P.E.S.)':
+      '(.P.E.S) الدقیقة العلوم في الثانوي التعلیم مدرس',
+    'Professeur de l’Enseignement Secondaire en Sciences Naturelles (P.E.S.)':
+      '(.P.E.S)الطبیعیة العلوم في الثانوي التعلیم مدرس',
+    'Propulsion avion': 'دفع الطائرات',
+    'Propulsion et hydrodynamique navale': 'الدفع البحري والدینامیك المائیة',
+    'Protection des Réseaux électriques': 'الكھربائیة الشبكات حمایة',
+    'Protection des végétaux': 'النبات حمایة',
+    'Psychologie, Orthophonie, Sciences de l’éducation, Philosophie, Sciences des Populations, Sociologie et anthropologie':
+      'والأنثروبولوجیا الاجتماع علم ، السكان علوم ، الفلسفة ، التربویة العلوم ، النطق علاج ، النفس علم',
+    'Psychomotricien de santé publique': 'معالج نفسي حركي للصحة العامة',
+    'Qualité, hygiène, sécurité et environnement':
+      'والبیئة والسلامة والصحة الجودة',
+    'Réhabilitation des constructions': 'إعادة تأھیل المنشآت',
+    'Réseaux et sécurité': 'والأمن الشبكات',
+    'Réseaux et Télécommunication': 'والاتصالات الشبكات',
+    'Réseaux et technologies web': 'الویب وتقنیات الشبكات',
+    'Raffinage et pétrochimie': 'والبتروكیماویات التكریر',
+    'Recherche opérationnelle': 'عملیة بحث',
+    'Relations Internationales': 'علاقات دولیة',
+    'Ressources en eau': 'المیاه موارد',
+    'Sécurité et administration des systèmes et réseaux':
+      'والشبكات الأنظمة وإدارة أمن',
+    'Sécurité industrielle et environnement': ' والبیئة الصناعیة السلامة',
+    'Sage-femme de Santé Publique': 'العامة للصحة قابلة',
+    Scénographie: 'سینوغرافیا',
+    'Sciences Économiques, de Gestion et Commerciales':
+      'التجاریة والعلوم والإدارة الاقتصاد',
+    'Sciences alimentaires': 'علم الطعام',
+    'Sciences de l’information': 'المعلومات علم',
+    'Sciences de l’information et de la communication': 'والاتصال الإعلام علوم',
+    'Sciences de l’informatique': 'الحاسوب علوم',
+    'Sciences de la communication': 'الاتصال علوم',
+    'Sciences de la Matière': 'المادة علم',
+    'Sciences de la Nature et de la Vie': 'والحیاة الطبیعیة العلوم',
+    'Sciences et Techniques des Activités Physiques et Sportives':
+      'والریاضیة البدنیة الأنشطة وتقنیات علوم',
+    'Sciences et Technologies': 'والتكنولوجیا العلوم',
+    'Sciences politiques': 'علوم سیاسیة',
+    'Sciences vétérinaires': 'العلوم البیطریة',
+    'Sol et eau': 'والمیاه التربة',
+    'Structure avion': 'ھیكل الطائرة',
+    'Sureté interne des établissements': 'للمنشآت الداخلي الأمن',
+    'Système d’information': 'المعلومات نظام',
+    'Systèmes autonomes et logiciels embarqués ambiants et mobiles (SALEAM)':
+      '(SALEAM) المدمجة والمتنقلة المحیطة والبرامج الذاتیة الأنظمة',
+    'Systèmes d’information': 'معلومات نظام',
+    'Systèmes de Télécoms': 'الاتصالات أنظمة',
+    'Systèmes et réseaux': 'والشبكات الأنظمة',
+    'Systèmes informatiques': 'نظم المعلومات',
+    'Systemes de Télécommunications et Réseaux':
+      'أنظمة وشبكات الاتصالات السلكیة واللاسلكیة',
+    'Télécommunications spatiales': 'اتصالات الفضاء',
+    'Télécoms et Réseaux IP': 'IP وشبكات الاتصالات',
+    'Techniques archivistiques': 'تقنیات الأرشفة',
+    'Techniques instrumentales': 'تقنیات الآلات ',
+    'Technologie de l’information et de la documentation':
+      'والتوثیق المعلومات تكنولوجیا',
+    Télécommunications: 'الاتصالات السلكیة واللاسلكیة',
+    'Télécoms et Technologies Numérique': 'الرقمیة والتقنیات الاتصالات',
+    'Techniques de commercialisation en agro-alimentaires':
+      'الزراعیة الأغذیة تسویق تقنیات',
+    'Technologie de soudage': 'اللحام تكنولوجیا',
+    'Technologie des eaux et boissons': 'والمشروبات المیاه تكنولوجیا',
+    'Technologie des matériaux': 'المواد تكنولوجیا',
+    'Technologie des produits laitiers et dérivés':
+      'ومشتقاتھا الألبان منتجات تكنولوجیا',
+    'Technologie du web': 'الویب تقنیة',
+    'Technologie en santé': 'التكنولوجیا في الصحة',
+    'Technologies de l’information': 'المعلومات تكنولوجیا',
+    'Technologies de traitement du pétrole et du gaz':
+      'والغاز النفط معالجة تقنیات',
+    'Technologies de transformation des céréales': 'الحبوب معالجة تقنیات',
+    'Technologies des céréales et dérivés': 'ومشتقاتھا الحبوب تقنیات',
+    'Technologies des huiles essentielles végétales':
+      'التقنیة للنباتات الأساسیة الزیوت',
+    'Technologies des industries laitières et fromagères':
+      ' والأجبان الألبان صناعات تقنیات',
+    'Traction électrique': 'الجر الكھربائي',
+    'Traduction/interprétariat Arabe/Français/Allemand':
+      'ترجمة عربیة / فرنسیة / ألمانیة / ترجمة فوریة',
+    'Traduction/interprétariat Arabe/Français/Anglais':
+      'ترجمة / ترجمة عربي / فرنسي / انجلیزي ',
+    'Traduction/interprétariat Arabe/Français/Espagnol':
+      'ترجمة / ترجمة عربیة / فرنسیة / إسبانیة /',
+    'Transport & Logistique': 'النقل اللوجستي',
+    Urbanisme: 'تخطیط المدن',
+    'Valorisation des ressources minérales': 'المعدنیة الثروات تقییم',
+    'Valorisation et qualité des produits agroalimentaires':
+      'الزراعیة الغذائیة المنتجات وجودة تثمین',
+    'Voies et Ouvrages d’Art': 'فنیة وأعمال طرق'
   };
   return ar;
 };
