@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Main from '../assets/img/da2.png';
 import MainCharacter from '../assets/img/dMainCharacter.png';
-import ArabicMain from '../assets/img/arabicmain.png';
+import ArabicMain from '../assets/img/arabicmain1.png';
 import video1 from '../assets/video/dvideo.mp4';
 import thumbnail from '../assets/img/thumbnaild1.png';
 import Cookies from '../utils/Cookies';
