@@ -11,7 +11,7 @@ import InvitePopup from './InvitePopup';
 import SharePopup from './Sharepopup';
 import jsPDF from 'jspdf';
 import * as html2canvas from 'html2canvas';
-import logo from '../assets/img/logo1.png';
+import logo from '../assets/img/dlogot.png';
 import { useTranslation, Trans } from 'react-i18next';
 const Result = () => {
   // init
