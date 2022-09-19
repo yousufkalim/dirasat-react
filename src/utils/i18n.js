@@ -30,7 +30,7 @@ import {
   arabicResult,
   frenchCourseName,
   arabicCourseName
-} from './translation';
+} from './arabictranslation';
 
 i18n
   .use(LanguageDetector)
