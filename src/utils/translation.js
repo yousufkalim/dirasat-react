@@ -222,7 +222,7 @@ const arabicUserform = () => {
     'Ville de votre établissement scolaire': 'مدينة المؤسسة التعليمية الحالية',
     'Nom de votre école': 'إسم المؤسسة التعليمية الحالية',
     'J’accepte les termes et les conditions': 'نتقبل بالشروط',
-    Retour: 'نولي اللور',
+    Retour: 'نولي اللور,',
     'Passer au suivant': 'نواصل',
     'J’ai déjà mon baccalauréat mais je n’ai pas encore débuté mes études supérieures':
       'لقد حصلت بالفعل على شهادة البكالوريا ولكني لم أبدأ تعليمي العالي بعد',
@@ -235,7 +235,7 @@ const arabicUserform = () => {
     Licence: 'ليسانس',
     Master: 'ماستر',
     Doctorat: 'دكتورة',
-    Mathématiques: 'رياضي',
+    Mathématiques: 'رياضيات',
     Poursuivre: 'يطارد',
     'Vous êtes en': 'أنت في',
     'Arrondir à l’unité inférieure': 'أعطيني التقريب إلى الوحدة الاسفل',
