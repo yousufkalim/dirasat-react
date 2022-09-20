@@ -77,7 +77,7 @@ const arabicHeader = () => {
     'Fonctionnalités basiques de navigation requises':
       'ميزات التصفح الأساسية المطلوبة',
     'Ce site et ses partenaires pourront également réaliser les traitements de données suivants : Assurer la sécurité, Prévenir la fraude et débogguer, diffuser techniquement les publicités ou le contenu, mettre en correspondance et combiner des sources de données hors ligne, recevoir et utiliser des caractéristiques d’identification d’appareil envoyées automatiquement, et relier différents terminaux.':
-      '، قد يقوم هذا الموقع وشركاؤه أيضًا بمعالجة البيانات التالية: ضمان الأمان ، ومنع الاحتيال وتصحيح الأخطاء ، وتوزيع الإعلانات أو المحتوى تقنيًا ، ومطابقة مصادر البيانات غير المتصلة بالإنترنت والجمع بينها ، واستلام واستخدام معرّفات الأجهزة المرسلة تلقائيًا ، وربط المحطات الطرفية المختلفة',
+      ' قد يقوم هذا الموقع وشركاؤه أيضًا بمعالجة البيانات التالية: ضمان الأمان ، ومنع الاحتيال وتصحيح الأخطاء ، وتوزيع الإعلانات أو المحتوى تقنيًا ، ومطابقة مصادر البيانات غير المتصلة بالإنترنت والجمع بينها ، واستلام واستخدام معرّفات الأجهزة المرسلة تلقائيًا ، وربط المحطات الطرفية المختلفة',
     Enregistrer: 'للتسجيل',
     // cookie popup2
     'Fonctionnalités liées aux réseaux sociaux':
@@ -133,7 +133,7 @@ const ArabicLandingPage = () => {
     "Commençons le test d'orientation": 'راك(ي) واجد(ة)؟ يالله نبداو',
     'À la fin de ce questionnaire, une proposition de voeux pour ton orientation te sera formulée':
       'كي نكملو هاذي الحصة، نعطيك مناهج الدراسات الجامعية اللي تناسبك',
-    "C'est parti": '!بدينا',
+    "C'est parti": 'بدينا',
     'Comment ça marche?': 'فهمني كيفاش',
     'Étape 1': 'المرحلة 1',
     'Dis à Dirasat qui tu es.': '(قل(ي) لدراسات شكون أنت(ي',
@@ -215,16 +215,16 @@ const arabicUserform = () => {
     Prénom: 'الإسم',
     Nom: 'اللقب',
     'Date de naissance': 'تاريخ الميلاد',
-    Wilaya: 'الولاية,',
+    Wilaya: 'الولاية',
     'Numéro de téléphone': 'رقم الهاتف',
     Classe: 'المستوى',
     'Série de Baccalauréat': 'Série de Baccalauréat',
     'Ville de votre établissement scolaire':
       'Ville de votre établissement scolaire',
-    'Nom de votre école': 'إسم المؤسسة التعليمية الحالية,',
+    'Nom de votre école': 'إسم المؤسسة التعليمية الحالية',
     'J’accepte les termes et les conditions':
       'J’accepte les termes et les conditions',
-    Retour: 'نولي اللور,',
+    Retour: 'نولي اللور',
     'Passer au suivant': 'نواصل',
     'J’ai déjà mon baccalauréat mais je n’ai pas encore débuté mes études supérieures':
       'J’ai déjà mon baccalauréat mais je n’ai pas encore débuté mes études supérieures',
@@ -480,8 +480,8 @@ const arabicPopups = () => {
     'Ton budget doit inclure tes frais de logement, de transport, de fonctionnement, ainsi que les frais de scolarité de ton futur établissement.':
       'لازمك تدير لحساب للسكنة والنقل ولمعيشة ورسوم الدراسة',
     // confirmationpopup
-    'Entre le code reçu par SMS': 'أدخل الرمز الذي تلقيته عن طريق الهاتف  ',
-    Renvoyer: 'زيد ابعت,',
+    'Entre le code reçu par SMS': 'أدخل الرمز الذي تلقيته عن طريق الهاتف',
+    Renvoyer: 'زيد ابعت',
     Vérifier: 'أدخل',
     'Entrez le code de vérification': 'أدخل  رقم التحقق',
     'Entre le code envoyé sur ton adresse e-mail. Attention, bien vérifier ses courriers indésirables (spams)':
@@ -489,7 +489,7 @@ const arabicPopups = () => {
     'Cursus universitaire compatible avec les résultats de ton test d’orientation':
       'منهج جامعي يناسب الأجوبة نتاعك',
     'Le savais-tu? Il est possible d’envisager des études payantes sans forcément payer par toi-même! En effet, il existe plein d’options pour financer tes études: alternance, apprentissage, jobs étudiants, bourses, prêts d’honneur, etc. Je te donnerai plein de conseils et de bon plans pour financer tes études si tu le souhaites!':
-      'على بالك(ي)؟ تقدر(ي) تفكر(ي) في الدراسات بالدراهم بلا ما تدفع(ي) بنفسك! خاطرش كاين بزاف الخيارات لتمويل دراستك: دراسة العمل ، التدريب المهني ، وظائف الطلاب ، المنح الدراسية ، القروض الفخرية ، إلخ. من بعد نكتبلك  باش نعطيك النصائح  باش تمول دراستك إلا حبيت! ',
+      'على بالك(ي)؟ تقدر(ي) تفكر(ي) في الدراسات بالدراهم بلا ما تدفع(ي) بنفسك! خاطرش كاين بزاف الخيارات لتمويل دراستك: دراسة العمل ، التدريب المهني ، وظائف الطلاب ، المنح الدراسية ، القروض الفخرية ، إلخ. من بعد نكتبلك  باش نعطيك النصائح  باش تمول دراستك إلا حبيت ',
     'Après avoir reçu ma proposition de liste, tu seras contacté par la suite pour recevoir le plein de conseils concernant ton projet d’études à l’international!':
       'بعد ما نعطيك وش يخرجلك، نتصل بيك باش نعطيك نصائح يفيدوك فالمشروع الدراسي نتاعك فالخارج',
     'Le savais-tu? Le mot sélectivité signifie que pour accéder à une formation dite “sélective”, il te sera généralement nécessaire de passer un concours ou un test, ou que ton dossier scolaire (notes, appréciations) sera pris en compte davantage que dans une formation moins sélective. Du coup, sélectivité veut généralement aussi dire prestige.':
@@ -928,12 +928,12 @@ const arabicFooter = () => {
     'Tous droits réservés': 'جميع الحقوق محفوظة',
     CGU: 'شروط الإستعمال',
     'Mentions légales': 'معلومات قانونية',
-    'Derniers articles': 'المقالات الاخيرة,',
+    'Derniers articles': 'المقالات الاخيرة',
     'Lire l’article': 'Lire l’article',
     'No Blogs available': 'No Blogs available',
     'Lire la suite': 'Lire la suite',
-    'Lisez aussi :': 'اقرا تانيت,',
-    'NOTRE BLOG': 'أخبار,',
+    'Lisez aussi :': 'اقرا تانيت',
+    'NOTRE BLOG': 'أخبار',
     'Veuillez entrer votre Prénom.': 'الرجاء إدخال اسمك ',
     'Veuillez entrer votre nom.': 'من فضلك أدخل لقبك',
     'Veuillez entrer votre date de naissance': 'الرجاء ادخال تاريخ ميلادك',
@@ -1224,7 +1224,7 @@ const arabicCriteria = () => {
       "J'ai entendu de bons retours la part d'amis et de proches",
     Autre: 'بلاد واحد آخر',
     'Départ!': 'Départ!',
-    'Qui suis-je?': 'شكون أنا,',
+    'Qui suis-je?': 'شكون أنا',
     'Mon test': 'إختباري',
     'Mes résultats': 'نتائجي',
     'Exporter le PDF': 'Exporter le PDF'
