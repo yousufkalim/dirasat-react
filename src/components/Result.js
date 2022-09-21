@@ -250,7 +250,9 @@ const Result = () => {
                               ) : result?.example_of_job ? (
                                 t(result.example_of_job)
                               ) : (
-                                <>{t('Currently no example available')}</>
+                                <>
+                                  {t("Pas d'exemples actuellement disponibles")}
+                                </>
                               )}
                             </span>
                           </p>
@@ -346,7 +348,9 @@ const Result = () => {
                                 >
                                   <h1>
                                     {' '}
-                                    {t('Désolé pas de cours disponible')}
+                                    {t(
+                                      "Je suis desolé, je ne trouve aucune proposition. Peut-être que ton parcours universitaire (filière du Baccalauréat, etc. n'est pas compatible avec tes réponses. Essaie encore!"
+                                    )}
                                   </h1>
                                 </div>
                               )}
@@ -431,7 +435,12 @@ const Result = () => {
                             className=""
                             style={{ margin: '10px', textAlign: 'center' }}
                           >
-                            <h1> {t('Désolé pas de cours disponible')}</h1>
+                            <h1>
+                              {' '}
+                              {t(
+                                "Je suis desolé, je ne trouve aucune proposition. Peut-être que ton parcours universitaire (filière du Baccalauréat, etc. n'est pas compatible avec tes réponses. Essaie encore!"
+                              )}
+                            </h1>
                           </div>
                         )}
                       </div>

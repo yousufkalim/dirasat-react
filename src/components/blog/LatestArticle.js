@@ -102,7 +102,7 @@ export default function LatestArticle({ blogs, loading, setLoading }) {
           </Grid>
         </>
       ) : (
-        <h1>{t('No Blogs available')}</h1>
+        <h1>{t("Pas d'article disponible")}</h1>
       )}
     </div>
   );

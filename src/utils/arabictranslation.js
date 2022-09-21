@@ -57,8 +57,8 @@ const frenchHeader = () => {
 const arabicHeader = () => {
   let ar = {
     Accueil: 'الإستقبال',
-    'Comment ça marche?': 'Comment ça marche?',
-    Blog: 'Blog',
+    'Comment ça marche?': 'فهمني كيفاش',
+    Blog: 'المدونة',
     DIRASAT: 'دراسات',
     // cookies
     "En poursuivant votre navigation sur ce site, vous acceptez l'utilisation de cookies afin d'optimiser votre navigation et réaliser des statistiques de suivis. Pour en savoir plus, consultez":
@@ -103,7 +103,7 @@ const arabicHeader = () => {
     'Je conserve mes choix': 'أحافظ على اختياراتي',
     'Je refuse toujours les cookies': '',
     'Vous avez choisi de refuser les cookies. Vous ne pourrez pas accéder au test, êtes-vous sûr(e) de votre choix?':
-      'Vous avez choisi de refuser les cookies. Vous ne pourrez pas accéder au test, êtes-vous sûr(e) de votre choix?'
+      'لقد اخترت رفض ملفات تعريف الارتباط. لن تتمكن من الوصول إلى الاختبار ، هل أنت متأكد من اختيارك؟'
   };
   return ar;
 };
@@ -218,28 +218,27 @@ const arabicUserform = () => {
     Wilaya: 'الولاية',
     'Numéro de téléphone': 'رقم الهاتف',
     Classe: 'المستوى',
-    'Série de Baccalauréat': 'Série de Baccalauréat',
-    'Ville de votre établissement scolaire':
-      'Ville de votre établissement scolaire',
+    'Série de Baccalauréat': 'شعبة  البكالوريا',
+    'Ville de votre établissement scolaire': 'مدينة مدرستك أو مؤسستك التعليمية',
     'Nom de votre école': 'إسم المؤسسة التعليمية الحالية',
     'J’accepte les termes et les conditions':
-      'J’accepte les termes et les conditions',
+      'أوافق على الشروط والأحكام لقد حصلت بالفعل على شهادة البكالوريا ولكني لم أبدأ تعليمي العالي بعد ليس لدي البكالوريا لقد بدأت بالفعل دراساتي العليا وأريد إعادة توجيه نفسي أو مواصلة دراساتي العليا في برنامج آخر. أعد توجيه نفسي في الجزائر يطارد أنت في السنة الأولى للدكتوراه 2 سنة دكتوراه سنة الترخيص الأولى السنة الثانية من الترخيص السنة الثالثة من الترخيص السنة الثانية للماجستير السنة الأولى للماجستير أي بلد ما هو المعيار الأكثر دافعًا لاختيارك للبلدان والمدن؟',
     Retour: 'نولي اللور',
     'Passer au suivant': 'نواصل',
     'J’ai déjà mon baccalauréat mais je n’ai pas encore débuté mes études supérieures':
-      'J’ai déjà mon baccalauréat mais je n’ai pas encore débuté mes études supérieures',
-    'Je n’ai pas mon baccalauréat': 'Je n’ai pas mon baccalauréat',
+      'جبت الباك بصح مابديتش لقراية فالجامعي',
+    'Je n’ai pas mon baccalauréat': 'ماعنديش الباك ولا مازلت ما جبتوش',
     'J’ai déjà débuté mes études supérieures et je veux me réorienter ou poursuivre mes études supérieures dans un autre programme.':
-      'J’ai déjà débuté mes études supérieures et je veux me réorienter ou poursuivre mes études supérieures dans un autre programme.',
+      'بديت نقرأ في الجامعي بصح حبيت نبدل ولا نتخصص',
     "Partir à l'étranger": 'نروح للخارج',
-    'Me réorienter en Algérie': 'Me réorienter en Algérie',
+    'Me réorienter en Algérie': 'نعاود ولانبدل بصح ننبقا فالجزائر',
     Baccalauréat: 'بكالوريا',
     Licence: 'ليسانس',
     Master: 'ماستر',
     Doctorat: 'دكتورة',
     Mathématiques: 'رياضيات',
-    Poursuivre: 'Poursuivre',
-    'Vous êtes en': 'Vous êtes en',
+    Poursuivre: 'نكمل',
+    'Vous êtes en': 'انت في',
     'Arrondir à l’unité inférieure': 'أعطيني التقريب إلى الوحدة الاسفل',
     'Moyenne générale obtenue au Baccalauréat': 'معدل الباك',
     'Techniques Mathématiques': 'تقني رياضي',
@@ -248,18 +247,18 @@ const arabicUserform = () => {
     'Lettre et Philosophie': 'أدب و فلسفة',
     'Langues Etrangères': 'لغات أجنبية',
     'Quel est ton dernier diplôme validé ?': 'واش نهي آخر شهادة تحصلت عليها؟',
-    '1ère année de doctorat': '1ère année de doctorat',
-    '2ème année de doctorat': '2ème année de doctorat',
-    '1ère année de licence': '1ère année de licence',
-    '2ème année de licence': '2ème année de licence',
-    '3ème année de licence': '3ème année de licence',
-    '2ème année de master': '2ème année de master',
-    '1ère année de master': '1ère année de master',
+    '1ère année de doctorat': 'السنة الأولى للدكتوراه',
+    '2ème année de doctorat': 'السنة الثانية للدكتوراه',
+    '1ère année de licence': 'السنة الأولى ليسانس',
+    '2ème année de licence': 'السنة الثانية ليسانس',
+    '3ème année de licence': 'السنة الثالثة ليسانس',
+    '2ème année de master': 'السنة الثانية ماستر',
+    '1ère année de master': 'السنة الأولى ماستر',
     'Quelle(s) ville(s)': 'واش من مدينة؟',
     'Quel budget': 'شحال قادر تمول؟',
-    'Quel pays': 'Quel pays',
+    'Quel pays': 'واش من بلاد',
     'Quel critère a le plus motivé ton choix de pays et de villes?':
-      'Quel critère a le plus motivé ton choix de pays et de villes?',
+      'واش اللي يهمك لكثر فلبلاد والمدينة؟',
     '1ère AS': 'السنة الأولى ثانوي',
     '2ème AS': 'السنة الثانية ثانوي',
     '3ème AS': 'السنة الثالثة ثانوي',
@@ -899,7 +898,7 @@ const frenchFooter = () => {
     'Mentions légales': 'Mentions légales',
     'Derniers articles': 'Derniers articles',
     'Lire l’article': 'Lire l’article',
-    'No Blogs available': 'No Blogs available',
+    "Pas d'article disponible": "Pas d'article disponible",
     'Lire la suite': 'Lire la suite',
     'Lisez aussi :': 'Lisez aussi :',
     'NOTRE BLOG': 'NOTRE BLOG',
@@ -929,9 +928,9 @@ const arabicFooter = () => {
     CGU: 'شروط الإستعمال',
     'Mentions légales': 'معلومات قانونية',
     'Derniers articles': 'المقالات الاخيرة',
-    'Lire l’article': 'Lire l’article',
-    'No Blogs available': 'No Blogs available',
-    'Lire la suite': 'Lire la suite',
+    'Lire l’article': 'قرأ المقالة',
+    "Pas d'article disponible": 'مش موجود',
+    'Lire la suite': 'إقرأ الباقي',
     'Lisez aussi :': 'اقرا تانيت',
     'NOTRE BLOG': 'أخبار',
     'Veuillez entrer votre Prénom.': 'الرجاء إدخال اسمك ',
@@ -971,14 +970,14 @@ const frenchCountry = () => {
 const arabicCountry = () => {
   let ar = {
     France: 'فرنسا',
-    'United Kingdom': 'United Kingdom',
+    'United Kingdom': 'المملكة المتحدة ',
     Allemagne: 'ألمانيا',
-    Italie: 'Italie',
+    Italie: 'إيطاليا',
     Russie: 'روسيا',
-    Ukraine: 'Ukraine',
+    Ukraine: 'أوكرانيا',
     Espagne: 'إسبانيا',
     Belgique: 'بلجيكا',
-    USA: 'USA',
+    USA: 'ا الولايات المتحدة الأمريكية',
     Canada: 'كندا',
     Turquie: 'تركيا',
     Suisse: 'سويسري'
@@ -1211,19 +1210,19 @@ const frenchCriteria = () => {
 const arabicCriteria = () => {
   let ar = {
     '5 000€ - 7 500€': '5 000€ - 7 500€',
-    'Plus de 15 000€': 'Plus de 15 000€',
-    "J'ai déjà un logement là-bas": "J'ai déjà un logement là-bas",
+    'Plus de 15 000€': 'أكثر من 15000 €',
+    "J'ai déjà un logement là-bas": 'راني عندي سكنة التم',
     "J'ai un ou plusieurs membres de ma famille sur qui je peux compter":
-      "J'ai un ou plusieurs membres de ma famille sur qui je peux compter",
+      'راني عندي العائلات التم',
     'Cette destination correspond à mon budget':
-      'Cette destination correspond à mon budget',
-    'Je pars avec des amis': 'Je pars avec des amis',
+      'تخرج عليا علا حساب الإمكانيات المادية نتاعي',
+    'Je pars avec des amis': 'رايح(ت) مع الأصدقاء',
     "L'établissement ou le programme que je vise se trouve dans cette destination":
-      "L'établissement ou le programme que je vise se trouve dans cette destination",
+      'كاين جامعت ولا مدرسة تعجبني ',
     "J'ai entendu de bons retours la part d'amis et de proches":
-      "J'ai entendu de bons retours la part d'amis et de proches",
+      'الناس لي قراو التم يهدرو عليها غير بلمليح',
     Autre: 'بلاد واحد آخر',
-    'Départ!': 'Départ!',
+    'Départ!': 'يالله!',
     'Qui suis-je?': 'شكون أنا',
     'Mon test': 'إختباري',
     'Mes résultats': 'نتائجي',
@@ -1251,7 +1250,8 @@ const frenchResult = () => {
       'Je te propose une liste de vœux d’orientation qui correspondrait à ton profil.',
     'Aussi, nos agents et nos partenaires vont te contacter rapidement pour te proposer des parcours d’études à l’étranger adaptés à ton profil ! N’oublie pas de consulter régulièrement tes e-mails et de rester joignable par téléphone!':
       'Aussi, nos agents et nos partenaires vont te contacter rapidement pour te proposer des parcours d’études à l’étranger adaptés à ton profil ! N’oublie pas de consulter régulièrement tes e-mails et de rester joignable par téléphone!',
-    'Désolé pas de cours disponible': 'Désolé pas de cours disponible',
+    "Je suis desolé, je ne trouve aucune proposition. Peut-être que ton parcours universitaire (filière du Baccalauréat, etc. n'est pas compatible avec tes réponses. Essaie encore!":
+      "Je suis desolé, je ne trouve aucune proposition. Peut-être que ton parcours universitaire (filière du Baccalauréat, etc. n'est pas compatible avec tes réponses. Essaie encore!",
     'Tu ne trouves pas ce que tu t’attendais à voir dans cette liste? Pas de panique! Tu seras contacté par la suite pour compléter cette liste avec d’autres fomations qui pourraient te correspondre!':
       'Tu ne trouves pas ce que tu t’attendais à voir dans cette liste? Pas de panique! Tu seras contacté par la suite pour compléter cette liste avec d’autres fomations qui pourraient te correspondre!',
     Précédent: 'Précédent',
@@ -1259,7 +1259,8 @@ const frenchResult = () => {
       "N'hésite pas à prendre des captures d'écran de cette page. Tu peux aussi te connecter à ton ordinateur pour obtenir cette liste au format PDF.",
     'Il n’y a actuellement pas de job disponible.':
       'Il n’y a actuellement pas de job disponible.',
-    'Currently no example available': 'Currently no example available',
+    "Pas d'exemples actuellement disponibles":
+      "Pas d'exemples actuellement disponibles",
     'Ma liste de voeux': 'Ma liste de voeux',
     'veuillez patienter': 'veuillez patienter',
     'Il semblerait que ta spécialité au baccalauréat soit incompatible avec tes réponses au questionnaire, je t’invite à répondre de nouveau aux questions en tenant compte de la filière de ton baccalauréat!':
@@ -1342,30 +1343,31 @@ const frenchResult = () => {
 const arabicResult = () => {
   let ar = {
     'Merci pour ces informations, nos agents et nos partenaires vont te contacter rapidement pour te proposer des parcours d’études à l’étranger adaptés à ton profil ! N’oublie pas de consulter régulièrement tes e-mails et de rester joignable par téléphone!':
-      'Merci pour ces informations, nos agents et nos partenaires vont te contacter rapidement pour te proposer des parcours d’études à l’étranger adaptés à ton profil ! N’oublie pas de consulter régulièrement tes e-mails et de rester joignable par téléphone!',
+      'خلاص راني فهمت مليح! شكرًا لك على هذه المعلومات! أيضًا، يتصلو بك وكلاؤنا وشركاؤنا  في أقرب وقت باش يقدمولك مناهج دراسية في الخارج تناسبك وتخرج عليك! ما تنساش تبقا موجد(ة) عبر البريد الإلكتروني والهاتف!',
 
-    Terminer: 'Terminer',
+    Terminer: 'كملت!',
     'Invite un ami': 'أدع صديقا',
     Partager: 'مشاركة',
     'Bravo! Tu as répondu à toutes les questions!':
-      'Bravo! Tu as répondu à toutes les questions!',
+      'برافو! راك جاوبت علا جميع الاسئلة',
     "D'après tes réponses, je pense que ton profil est tourné vers":
-      "D'après tes réponses, je pense que ton profil est tourné vers",
-    'comme par exemple': 'comme par exemple',
+      'على حساب الاجوبة نتاعك راني نشوف هاد المجال اللي يخرج عليك لكثر:',
+    'comme par exemple': 'مثلاً',
     'Je te propose une liste de vœux d’orientation qui correspondrait à ton profil.':
       'Je te propose une liste de vœux d’orientation qui correspondrait à ton profil.',
     'Aussi, nos agents et nos partenaires vont te contacter rapidement pour te proposer des parcours d’études à l’étranger adaptés à ton profil ! N’oublie pas de consulter régulièrement tes e-mails et de rester joignable par téléphone!':
-      'Aussi, nos agents et nos partenaires vont te contacter rapidement pour te proposer des parcours d’études à l’étranger adaptés à ton profil ! N’oublie pas de consulter régulièrement tes e-mails et de rester joignable par téléphone!',
-    Précédent: 'Précédent',
+      'أيضًا، يتصلو بك وكلاؤنا وشركاؤنا  في أقرب وقت باش يقدمولك مناهج دراسية في الخارج تناسبك وتخرج عليك! ما تنساش تبقا موجد(ة) عبر البريد الإلكتروني والهاتف!',
+    Précédent: 'الوراء',
 
-    'Désolé pas de cours disponible': 'Désolé pas de cours disponible',
+    "Je suis desolé, je ne trouve aucune proposition. Peut-être que ton parcours universitaire (filière du Baccalauréat, etc. n'est pas compatible avec tes réponses. Essaie encore!":
+      'سامحني، ما لقيتش حاجة تناسبك! بالاك الخلفية الأكاديمية  (شعبة البكالوريا...) نتاعك ما تجيش مع الأجوبة لي عطيتلي. زيد عاود!',
     'Tu ne trouves pas ce que tu t’attendais à voir dans cette liste? Pas de panique! Tu seras contacté par la suite pour compléter cette liste avec d’autres fomations qui pourraient te correspondre!':
-      'Tu ne trouves pas ce que tu t’attendais à voir dans cette liste? Pas de panique! Tu seras contacté par la suite pour compléter cette liste avec d’autres fomations qui pourraient te correspondre!',
+      'ما كانش واش جيت(ي) تحوس(ي) عليه؟ مش مشكل! أمبعد نتصل بيك باش  نزيد نعطيك معلومات خاصة بالحالة نتاعك!',
     'Il n’y a actuellement pas de job disponible.': 'لا توجد وظائف حاليا.',
     "N'hésite pas à prendre des captures d'écran de cette page. Tu peux aussi te connecter à ton ordinateur pour obtenir cette liste au format PDF.":
-      "N'hésite pas à prendre des captures d'écran de cette page. Tu peux aussi te connecter à ton ordinateur pour obtenir cette liste au format PDF.",
-    'Currently no example available': 'Currently no example available',
-    'Ma liste de voeux': 'Ma liste de voeux',
+      'لا تتردد في أخذ تصويرة من هذه الصفحة. يمكنك أيضًا إستعمال الكمبيوترللحصول على هذه القائمة بتنسيق PDF.',
+    "Pas d'exemples actuellement disponibles": 'لا توجد أمثلة متاحة حاليًا',
+    'Ma liste de voeux': 'لائحة رغباتي',
     'veuillez patienter': 'veuillez patienter',
     'Il semblerait que ta spécialité au baccalauréat soit incompatible avec tes réponses au questionnaire, je t’invite à répondre de nouveau aux questions en tenant compte de la filière de ton baccalauréat!':
       'Il semblerait que ta spécialité au baccalauréat soit incompatible avec tes réponses au questionnaire, je t’invite à répondre de nouveau aux questions en tenant compte de la filière de ton baccalauréat!',
