@@ -22,8 +22,8 @@ const CGU = () => {
           style={{
             minHeight: '100vh',
             marginTop: '-2%',
-            color: 'white',
-            direction: 'rtl'
+            color: 'white'
+            // direction: 'rtl'
           }}
         >
           <div style={{ width: '60%', margin: 'auto' }}>
@@ -35,7 +35,7 @@ const CGU = () => {
               {/* <p>Dirasat-international.com</p> */}
             </p>
           </div>
-          <div style={{ width: '85%', margin: 'auto' }}>
+          <div style={{ width: '85%', margin: 'auto', textAlign: 'end' }}>
             <h1 className="cguH1"> 1 - الغرض</h1>
             <p className="pmargin">
               الغرض من هذه الشروط العامة هو تحديد شروط وأحكام استخدام خدمة
@@ -61,7 +61,7 @@ const CGU = () => {
             </p>
             <p className="pmargin">:من يقدم خدمة التوفيق بين دراسات</p>
 
-            <p className="pmargin">
+            <p className="pmargin ">
               :خدمة الاتصال عبر منصة دراسات مقدمة من الدول التالية المؤهلة
             </p>
             <p className="pmargin">SARL E. MTIYAZ :التدريب</p>
@@ -78,7 +78,7 @@ const CGU = () => {
               contact@dirasat-international.com:عنوان البريد الإلكتروني
             </p>
             <p className="pmargin">مكتب الاتصال: 0540405115</p>
-            <h1 className="cguH1"> 2 - التعاريف:</h1>
+            <h1 className="cguH1 arabicheadinglegal"> 2 - التعاريف:</h1>
             <p className="pmargin">
               "التطبيق / التطبيقات"المتاحة يقصد به تطبيقات الويب أو تطبيقات
               الهاتف المحمول التي طورتها شركة E.MTIYAZ COACHING .والمتاحةالتطبيق
@@ -110,7 +110,9 @@ const CGU = () => {
               متوفرة على واجهة ديناميكية ل موقع الويب
               www.dirasat-international.com
             </p>
-            <h1 className="cguH1">3 - الوصول إلى التطبيق والخدمة:</h1>
+            <h1 className="cguH1 arabicheadinglegal">
+              3 - الوصول إلى التطبيق والخدمة:
+            </h1>
             <p className="pmargin">
               يمكن الوصول إلى الخدمة وفقًا للقيود الواردة في تطبيق دراسات
             </p>
@@ -139,7 +141,7 @@ const CGU = () => {
               إلحاق الضرر بشركة SARL E.MTIYAZ COACHING ، موضوع شكوى أمام المحكمة
               ذات الاختصاص الإقليمي
             </p>
-            <h1 className="cguH1">
+            <h1 className="cguH1 arabicheadinglegal">
               {' '}
               4 - التسجيل على الموقع الإلكتروني أو التطبيق:
             </h1>
@@ -159,7 +161,7 @@ const CGU = () => {
               تعريف المستخدم تلقائيًا في قاعدة بيانات المستخدم
               www.dirasat-international.com لموقع الويب
             </p>
-            <h1 className="cguH1"> 5 - وصف الخدمة:</h1>
+            <h1 className="cguH1 arabicheadinglegal"> 5 - وصف الخدمة:</h1>
             <p className="pmargin">
               تتمثل الخدمة في جعلك أنت ، المستخدم ، على اتصال مباشر مع شريك
               Dirast -International في الجزائر أو دوليًا من خلال تطبيق دراسات
@@ -173,7 +175,7 @@ const CGU = () => {
               تستخدم خدمة دراسات الدولية أدوات تحديد الموقع الجغرافي لتزويد
               المستخدم بمشروع الدراسة الذي يناسب موقعه الجغرافي
             </p>
-            <h1 className="cguH1"> 6 - سعر الخدمة:</h1>
+            <h1 className="cguH1 arabicheadinglegal"> 6 - سعر الخدمة:</h1>
             <p className="pmargin">
               استخدام خدمات دراسات العالمية مجاني. تحدد كل شركة شريكة لدراسات
               العالمية سعر خدماتها التعليمية وفقًا لشروط الاستخدام الخاصة بها
@@ -194,7 +196,7 @@ const CGU = () => {
               المحتوى الضار بطرف ثالث موضوع إخطار للشركة ، والتي تحتفظ بالحق في
               اتخاذ الإجراءات التي تراها ضرورية ، بالتنسيق مع السلطات المختصة.
             </p>
-            <h1 className="cguH1"> 7 - البيانات:</h1>
+            <h1 className="cguH1 arabicheadinglegal"> 7 - البيانات:</h1>
             <p className="pmargin">:يقر المستخدم ويقبل صراحةً</p>
             <p className="pmargin">
               أن البيانات التي تم جمعها على تطبيق Dirasat-international أو
@@ -206,7 +208,7 @@ const CGU = () => {
               ولا سيما في حالة تقديم العطاءات في إطار الالتزامات القانونية SARL
               E.MTIYAZ COACHING لشركة
             </p>
-            <h1 className="cguH1"> 8 - الملكية الفكرية:</h1>
+            <h1 className="cguH1 arabicheadinglegal"> 8 - الملكية الفكرية:</h1>
             <p className="pmargin">
               الأنظمة والبرمجيات والهياكل والبنى التحتية وقواعد البيانات
               والمحتوى من أي نوع (نصوص ، صور ، صور ، موسيقى ، شعارات ، علامات
@@ -219,13 +221,15 @@ const CGU = () => {
               إجراءات قانونية دون إذن من شركة SARL E.MTIYAZ COACHING
             </p>
 
-            <h1 className="cguH1"> 9 - البيانات الشخصية:</h1>
+            <h1 className="cguH1 arabicheadinglegal"> 9 - البيانات الشخصية:</h1>
             <p className="pmargin">
               دراسات الدولية, سياسة حماية البيانات الشخصية ، والتي يتم شرح
               خصائصها في وثيقة بعنوان "سياسة الخصوصية" ، والتي تتم دعوتك صراحة
               لقراءتها في التطبيق أو الموقع الإلكتروني
             </p>
-            <h1 className="cguH1">10 - الروابط ومواقع الطرف الثالث:</h1>
+            <h1 className="cguH1 arabicheadinglegal">
+              10 - الروابط ومواقع الطرف الثالث:
+            </h1>
             <p className="pmargin">
               لا تتحمل شركة SARL E.MTIYAZ COACHING بأي حال من الأحوال, المسؤولية
               عن التوافر التقني لمواقع الويب أو تطبيقات الهاتف االمحمول التي
@@ -246,7 +250,9 @@ const CGU = () => {
               تسليم المنتجات و / أو الخدمات والضمانات والإعلانات وأي التزامات
               أخرى تلتزم بها هذه الأطراف الثالثة.
             </p>
-            <h1 className="cguH1">11 - مدة الخدمات وإلغاء الاشتراك:</h1>
+            <h1 className="cguH1 arabicheadinglegal">
+              11 - مدة الخدمات وإلغاء الاشتراك:
+            </h1>
             <p className="pmargin">تم الاشتراك في الخدمات لفترة غير محددة</p>
             <p className="pmargin">
               SARL E.MTIYAZ COACHINGيمكن للمستخدم إلغاء الاشتراك في الخدمات في
@@ -258,7 +264,7 @@ const CGU = () => {
               لبياناتك في عناصر الاتصال الداخلية أو الخارجية (القوائم البريدية ،
               والعمليات الترويجية ، وما إلى ذلك)
             </p>
-            <h1 className="cguH1">12 - التعديلات:</h1>
+            <h1 className="cguH1 arabicheadinglegal">12 - التعديلات:</h1>
             <p className="pmargin">
               تحتفظ شركة SARL E.MTIYAZ COACHING بالحق في تعديل هذه الشروط العامة
               في أي وقت
@@ -267,7 +273,7 @@ const CGU = () => {
               .إذا استخدم المستخدم الخدمات بعد دخول الشروط العامة المعدلة حيز
               التنفيذ ، فيُعتبر موافقًا على هذه التعديلات
             </p>
-            <h1 className="cguH1">
+            <h1 className="cguH1 arabicheadinglegal">
               {' '}
               13 - القانون المعمول به والاختصاص القضائي:
             </h1>
@@ -280,7 +286,9 @@ const CGU = () => {
               يوافق الأطراف من كل بلد مؤهل مذكور في المادة 02 من هذه الاتفاقية
               على إحالة النزاع المذكور إلى المحكمة ذات الاختصاص الإقليمي.
             </p>
-            <h1 className="cguH1">المادة 14 - الدخول حيز التنفيذ</h1>
+            <h1 className="cguH1 arabicheadinglegal">
+              المادة 14 - الدخول حيز التنفيذ
+            </h1>
             <p className="pmargin">
               ستدخل هذه الشروط العامة حيز التنفيذ بمجرد أن يقوم المستخدم بالتحقق
               منها ضمنيًا بالضغط على الحقل "لنبدأ! ".
