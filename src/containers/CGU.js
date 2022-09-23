@@ -107,7 +107,7 @@ const CGU = () => {
             <p className="pmargin">Dirast International :تطبيقات</p>
             <p className="pmargin">/ أو موقع</p>
             <p className="pmargin">
-              : متوفرة على واجهة ديناميكية ل موقع الويب
+              متوفرة على واجهة ديناميكية ل موقع الويب
               www.dirasat-international.com
             </p>
             <h1 className="cguH1">3 - الوصول إلى التطبيق والخدمة:</h1>

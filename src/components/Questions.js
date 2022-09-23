@@ -281,7 +281,9 @@ const Questions = ({ setStep, setActiveStep }) => {
           >
             <img src={qarrow} className="qboximg" alt="box" />
             <div
-              className={`questionBox ${
+              className={`${
+                language == 'ar' && 'arabicquestionBox'
+              } questionBox ${
                 getOptions(answers)?.length == 11 && 'ninthoptionquestion'
               }`}
             >
