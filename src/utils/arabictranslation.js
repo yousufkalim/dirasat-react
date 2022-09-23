@@ -211,7 +211,7 @@ const frenchUserform = () => {
 const arabicUserform = () => {
   let ar = {
     'Pour mieux te conseiller, j’ai besoin d’en savoir davantage sur toi!':
-      'باش انصحك مليح، لازمني نتعرف عليك اكثر',
+      'باش انصحك مليح، لازمني نتعرف عليك اكثر!',
     Prénom: 'الإسم',
     Nom: 'اللقب',
     'Date de naissance': 'تاريخ الميلاد',
@@ -1011,6 +1011,7 @@ const frenchCity = () => {
     Grenoble: 'Grenoble',
     Angers: 'Angers',
     Autre: 'Autre',
+    London: 'London',
     Manchester: 'Manchester',
     Liverpool: 'Liverpool',
     Oxford: 'Oxford',
@@ -1110,6 +1111,7 @@ const arabicCity = () => {
     Grenoble: 'غرونوبل',
     Angers: ' أنجرس',
     Autre: 'آخر',
+    London: 'لندن',
     Manchester: 'مانشستر',
     Liverpool: 'ليفربول',
     Oxford: 'أكسفورد',
@@ -1226,7 +1228,7 @@ const arabicCriteria = () => {
     'Qui suis-je?': 'شكون أنا',
     'Mon test': 'إختباري',
     'Mes résultats': 'نتائجي',
-    'Exporter le PDF': 'Exporter le PDF'
+    'Exporter le PDF': 'تحميل النتائج'
   };
   return ar;
 };
@@ -1345,16 +1347,16 @@ const arabicResult = () => {
     'Merci pour ces informations, nos agents et nos partenaires vont te contacter rapidement pour te proposer des parcours d’études à l’étranger adaptés à ton profil ! N’oublie pas de consulter régulièrement tes e-mails et de rester joignable par téléphone!':
       'خلاص راني فهمت مليح! شكرًا لك على هذه المعلومات! أيضًا، يتصلو بك وكلاؤنا وشركاؤنا  في أقرب وقت باش يقدمولك مناهج دراسية في الخارج تناسبك وتخرج عليك! ما تنساش تبقا موجد(ة) عبر البريد الإلكتروني والهاتف!',
 
-    Terminer: 'كملت!',
+    Terminer: 'كملت',
     'Invite un ami': 'أدع صديقا',
     Partager: 'مشاركة',
     'Bravo! Tu as répondu à toutes les questions!':
-      'برافو! راك جاوبت علا جميع الاسئلة',
+      '!برافو! راك جاوبت علا جميع الاسئلة',
     "D'après tes réponses, je pense que ton profil est tourné vers":
       'على حساب الاجوبة نتاعك راني نشوف هاد المجال اللي يخرج عليك لكثر:',
     'comme par exemple': 'مثلاً',
     'Je te propose une liste de vœux d’orientation qui correspondrait à ton profil.':
-      'Je te propose une liste de vœux d’orientation qui correspondrait à ton profil.',
+      '.ليك هاذ المناهج اللي بانولي يناسبو المشروع نتاعك على حساب الأجوبة الي عطيتني',
     'Aussi, nos agents et nos partenaires vont te contacter rapidement pour te proposer des parcours d’études à l’étranger adaptés à ton profil ! N’oublie pas de consulter régulièrement tes e-mails et de rester joignable par téléphone!':
       'أيضًا، يتصلو بك وكلاؤنا وشركاؤنا  في أقرب وقت باش يقدمولك مناهج دراسية في الخارج تناسبك وتخرج عليك! ما تنساش تبقا موجد(ة) عبر البريد الإلكتروني والهاتف!',
     Précédent: 'الوراء',
@@ -1368,7 +1370,7 @@ const arabicResult = () => {
       'لا تتردد في أخذ تصويرة من هذه الصفحة. يمكنك أيضًا إستعمال الكمبيوترللحصول على هذه القائمة بتنسيق PDF.',
     "Pas d'exemples actuellement disponibles": 'لا توجد أمثلة متاحة حاليًا',
     'Ma liste de voeux': 'لائحة رغباتي',
-    'veuillez patienter': 'veuillez patienter',
+    'veuillez patienter': 'اصبر(ي) شوية من فضلك',
     'Il semblerait que ta spécialité au baccalauréat soit incompatible avec tes réponses au questionnaire, je t’invite à répondre de nouveau aux questions en tenant compte de la filière de ton baccalauréat!':
       'Il semblerait que ta spécialité au baccalauréat soit incompatible avec tes réponses au questionnaire, je t’invite à répondre de nouveau aux questions en tenant compte de la filière de ton baccalauréat!',
     // typeofjob

@@ -18,7 +18,13 @@ const MentionsLegal = () => {
   return (
     <>
       {language == 'ar' ? (
-        <div style={{ minHeight: '100vh', marginTop: '-2%', color: 'white' }}>
+        <div
+          style={{
+            minHeight: '100vh',
+            marginTop: '-2%',
+            color: 'white'
+          }}
+        >
           <div style={{ width: '60%', margin: 'auto' }}>
             <p className="cguHeading">
               {/* <img src={logo} className="cgulogo" alt="logo" /> */}
@@ -28,15 +34,19 @@ const MentionsLegal = () => {
               <p> Dirasat-international.com</p>
             </p>
           </div>
-          <div style={{ width: '85%', margin: 'auto' }}>
-            <p className="boldText">:الديباجة </p>
+          <div style={{ width: '85%', margin: 'auto', textAlign: 'end' }}>
+            <p className="boldText" style={{}}>
+              :الديباجة 
+            </p>
             <p className="pmargin">
               يخضع ميثاق السرية لحماية البيانات الشخصية للقوانين واللوائح
               المعمول بها في الجزائر ، ولا سيما القانون 18-07 بتاريخ 10-06-2018
               المتعلق بحماية الأشخاص الطبيعيين في معالجة البيانات الشخصية طبيعة
               سجية   
             </p>
-            <p className="pmargin">:تعريف وطبيعة البيانات الشخصية</p>
+            <p className="pmargin" style={{}}>
+              :تعريف وطبيعة البيانات الشخصية
+            </p>
             <p className="pmargin">
               .عندما تستخدم موقعنا ، قد نطلب منك تزويدنا ببيانات شخصية عنك
             </p>
@@ -67,9 +77,7 @@ const MentionsLegal = () => {
               contact@dirasat-international.com:عنوان البريد الإلكتروني مكتب
               الاتصال: 0540405115
             </p>
-            <h1 className="cguH1 legalh1">
-              1 - الغرض من جمع البيانات الشخصية:
-            </h1>
+            <h1 className="cguH1 ">1 - الغرض من جمع البيانات الشخصية:</h1>
             <p className="pmargin">
               <span className="boldText"> </span>: يتم جمع بياناتك الشخصية
               لتحقيق واحد أو أكثر من الأغراض التالية
@@ -96,7 +104,7 @@ const MentionsLegal = () => {
               معينة أو ما إذا كانت اختيارية نخبرك أيضًا بالنتائج المحتملة لعدم
               الاستجابة
             </p>
-            <h1 className="cguH1 legalh1">
+            <h1 className="cguH1 arabicheadinglegal">
               2 - المستفيدون من البيانات المجمعة:
             </h1>
             <p className="pmargin">
@@ -107,12 +115,14 @@ const MentionsLegal = () => {
               قد تكون الهيئات العامة الجزائرية أيضًا متلقية لبياناتك الشخصية ،
               حصريًا للوفاء بالتزاماتنا القانونية
             </p>
-            <h1 className="cguH1 legalh1">3 - نقل البيانات الشخصية:</h1>
+            <h1 className="cguH1 arabicheadinglegal">
+              3 - نقل البيانات الشخصية:
+            </h1>
             <p className="pmargin">
               قد يتم نقل بياناتك الشخصية مجانًا أو مقابل دفع لأطراف ثالثة
               للأغراض المذكورة أعلاه
             </p>
-            <h1 className="cguH1 legalh1">
+            <h1 className="cguH1 arabicheadinglegal">
               4 - مدة الاحتفاظ بالبيانات الشخصية:
             </h1>
             <p className="pmargin">
@@ -135,14 +145,17 @@ const MentionsLegal = () => {
               التي تساوي تلك اللازمة لتنفيذ العقد بين الأطراف وكذلك لتحقيق
               الأغراض المذكورة أعلاه.
             </p>
-            <h1 className="cguH1 legalh1"> 5 - الأمن :</h1>
+            <h1 className="cguH1 arabicheadinglegal"> 5 - الأمن :</h1>
             <p className="pmargin">
               نبلغك باتخاذ جميع الاحتياطات المفيدة والتدابير التنظيمية والتقنية
               المناسبة للحفاظ على أمن وسلامة وسرية بياناتك الشخصية وعلى وجه
               الخصوص لمنعها من التشويه أو التلف أو وصول أطراف ثالثة غير مصرح لها
               إليها.
             </p>
-            <h1 className="cguH1 legalh1"> 6 - ملفات تعريف الارتباط:</h1>
+            <h1 className="cguH1 arabicheadinglegal">
+              {' '}
+              6 - ملفات تعريف الارتباط:
+            </h1>
             <p className="pmargin" style={{ paddingBottom: '30px' }}>
               ملفات تعريف الارتباط هي ملفات نصية ، غالبًا ما تكون مشفرة ، مخزنة
               في متصفحك. يتم إنشاؤها عندما يقوم متصفح المستخدم بتحميل موقع ويب
@@ -191,7 +204,7 @@ const MentionsLegal = () => {
               الارتباط من خلال تكوين متصفحك. لكن مثل هذا الرفض قد يمنع حسن سير
               العمل في الموقع.
             </p>
-            <h1 className="cguH1 legalh1"> 7 - الموافقة:</h1>
+            <h1 className="cguH1 arabicheadinglegal"> 7 - الموافقة:</h1>
             <p className="pmargin">
               عندما تختار إيصال بياناتك الشخصية ، فإنك تمنح صراحة موافقتك على
               EMTIYAZ COACHING لجمعها واستخدامها وفقًا لما هو مذكور في هذا
@@ -212,14 +225,16 @@ const MentionsLegal = () => {
               E.MTIYAZ COACHING contact@dirasat-international.com :عن طريق إرسال
               بريد إلكتروني إلى العنوان التالي
             </p>
-            <h1 className="cguH1 legalh1">
+            <h1 className="cguH1 arabicheadinglegal">
               8 - الحق في تقديم شكوى للجهة الرقابية:
             </h1>
             <p className="pmargin">
               يتم إبلاغ المستخدم بحقه في تقديم شكوى للجهة الرقابية عن أي انتهاك
               في معالجة البيانات الشخصية وهذا حسب كل دولة مؤهلة حسب الحالة.
             </p>
-            <h1 className="cguH1 legalh1">9 - الوصول إلى بياناتك الشخصية:</h1>
+            <h1 className="cguH1 arabicheadinglegal">
+              9 - الوصول إلى بياناتك الشخصية:
+            </h1>
             <p className="pmargin">
               نعلمك أن لديك الحق في الحصول على الاتصال ، وإذا لزم الأمر ، تصحيح
               أو حذف البيانات المتعلقة بك ، عن طريق الاتصال بالعنوان
@@ -232,7 +247,7 @@ const MentionsLegal = () => {
               .وتجدر الإشارة إلى أنه يجوز لأي شخص ، لأسباب مشروعة ، معارضة
               معالجة البيانات المتعلقة به
             </p>
-            <h1 className="cguH1 legalh1"> 10 - التعديلات:</h1>
+            <h1 className="cguH1 arabicheadinglegal"> 10 - التعديلات:</h1>
             <p className="pmargin">
               .نحتفظ بالحق في تعديل هذا الميثاق دون الإخلال بالقوانين المعمول
               بها في كل من البلدان المؤهلة المذكورة في المقدمة
@@ -244,7 +259,10 @@ const MentionsLegal = () => {
               وإذا كان هذا الميثاق الجديد لا يناسبك ، فلن تضطر بعد ذلك إلى
               الوصول إلى الموقع أو موقع الويب
             </p>
-            <h1 className="cguH1 legalh1"> 11 - الدخول حيز التنفيذ:</h1>
+            <h1 className="cguH1 arabicheadinglegal">
+              {' '}
+              11 - الدخول حيز التنفيذ:
+            </h1>
             <p className="pmargin">
               www.dirasat-international.com و www.e-mtiyaz.com :دخل هذا الميثاق
               حيز التنفيذ في: يوم تاريخ نشره على التطبيق و / أو الموقع

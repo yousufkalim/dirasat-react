@@ -16,6 +16,7 @@ import { useTranslation, Trans } from 'react-i18next';
 const Result = () => {
   // init
   const { t, i18n } = useTranslation();
+  const { language } = i18n;
   const updateStore = UpdateStore();
   const { history, user, disc_ans_id, result, mainresultPage, allTypes } =
     Store();
@@ -136,10 +137,15 @@ const Result = () => {
       // user?.level1 == 'want to change' &&
       result?.planQuestion[0]?.answer == 'Un Plan A' ? (
         <>
+          <InvitePopup open={openinvitepopup} setOpen={setOpenInvitepopup} />
+          <SharePopup open={opensharepopup} setOpen={setOpenSharepopup} />
           <div
             style={{ height: '100vh', textAlign: 'center', marginTop: '8%' }}
           >
-            <h1 style={{ width: '80%', margin: 'auto' }}>
+            <h1
+              className={`${language == 'ar' && 'directionrtl'}`}
+              style={{ width: '80%', margin: 'auto' }}
+            >
               {t(
                 'Merci pour ces informations, nos agents et nos partenaires vont te contacter rapidement pour te proposer des parcours d’études à l’étranger adaptés à ton profil ! N’oublie pas de consulter régulièrement tes e-mails et de rester joignable par téléphone!'
               )}
@@ -346,7 +352,11 @@ const Result = () => {
                                     textAlign: 'center'
                                   }}
                                 >
-                                  <h1>
+                                  <h1
+                                    className={`${
+                                      language == 'ar' && 'directionrtl'
+                                    }`}
+                                  >
                                     {' '}
                                     {t(
                                       "Je suis desolé, je ne trouve aucune proposition. Peut-être que ton parcours universitaire (filière du Baccalauréat, etc. n'est pas compatible avec tes réponses. Essaie encore!"
@@ -365,7 +375,11 @@ const Result = () => {
                               }}
                               // className="desktopView"
                             >
-                              <p>
+                              <p
+                                className={`${
+                                  language == 'ar' && 'directionrtl'
+                                }`}
+                              >
                                 {t(
                                   'Tu ne trouves pas ce que tu t’attendais à voir dans cette liste? Pas de panique! Tu seras contacté par la suite pour compléter cette liste avec d’autres fomations qui pourraient te correspondre!'
                                 )}

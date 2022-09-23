@@ -153,7 +153,7 @@ function DetailofCourses({ courses, open, setOpen, user }) {
         <>
           <h4 style={{ width: '90%', margin: 'auto', padding: '10px' }}>
             {t(
-              'Il semblerait que ta spécialité au baccalauréat soit incompatible avec tes réponses au questionnaire, je t’invite à répondre de nouveau aux questions en tenant compte de la filière de ton baccalauréat!'
+              "Je suis desolé, je ne trouve aucune proposition. Peut-être que ton parcours universitaire (filière du Baccalauréat, etc. n'est pas compatible avec tes réponses. Essaie encore!"
             )}
           </h4>
         </>

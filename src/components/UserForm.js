@@ -340,6 +340,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
     },
     menuitem: {
       direction: `${language == 'ar' ? 'rtl' : 'ltr'}`
+    },
+    quelmenuitem: {
+      justifyContent: `${language == 'ar' ? 'end' : 'inherit'}`
     }
   });
   const classes = useStyles();
@@ -393,7 +396,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
     if (wilaya == 'wilaya') {
       return toast.error(t('Veuillez sélectionner'));
     }
-    if (email == '') {
+    var mailFormat =
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (email == '' || !email.match(mailFormat)) {
       return toast.error(t('Veuillez entrer votre e-mail'));
     }
     if (phone.length != 10 || phone[0] != 0) {
@@ -615,7 +620,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                                   className={classes.menuitem}
                                   value={w}
                                 >
-                                  {t(w.name) + ' - ' + w.code}
+                                  {w.code + ' - ' + t(w.name)}
                                 </MenuItem>
                               );
                             })}
@@ -1268,7 +1273,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                             {budgetllist.map((item, i) => {
                               return (
                                 <MenuItem
-                                  className={classes.menuitem}
+                                  className={classes.quelmenuitem}
                                   value={item}
                                 >
                                   {t(item)}
@@ -1696,7 +1701,13 @@ const UserForm = ({ setStep, setActiveStep }) => {
                         </FormControl>
                       </Grid>
                     </Grid>
-                    <Grid container spacing={2} className="formbuttonsGrid">
+                    <Grid
+                      container
+                      spacing={2}
+                      className={`${
+                        language == 'ar' && 'arabicformbuttonsGrid'
+                      } formbuttonsGrid`}
+                    >
                       <Grid xs={12} sm={4}>
                         <div
                           size="large"
