@@ -6,6 +6,9 @@
   margin: auto;
   text-align: left;
 }
+.arabicLatestArticleheading{
+  text-align: center !important;
+}
 .LatestArticleheading {
   padding: 20px 0px 0px 10px;
   font-weight: bolder;

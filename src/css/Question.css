@@ -287,12 +287,12 @@
   .questiontext {
     padding: 10px;
     font-size: 23px;
-    text-align: left;
+    text-align: initial;
   }
   .longquestion {
     padding: 0px;
     font-size: 18px;
-    text-align: left;
+    text-align: inherit;
   }
 
   .questionGrid {

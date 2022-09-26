@@ -590,7 +590,9 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       >
                         <FormControl
                           variant="outlined"
-                          className="selectformControl"
+                          className={`${
+                            language == 'ar' && 'arabicselectformControl'
+                          } selectformControl`}
                         >
                           <Select
                             labelId="demo-simple-select-outlined-label"

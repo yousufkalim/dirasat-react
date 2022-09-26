@@ -5,6 +5,7 @@ import { useTranslation, Trans } from 'react-i18next';
 
 export default function Info({ anchorEl, setAnchorEl, text }) {
   const { t, i18n } = useTranslation();
+  const { language } = i18n;
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -24,7 +25,7 @@ export default function Info({ anchorEl, setAnchorEl, text }) {
           horizontal: 'left'
         }}
       >
-        <Typography sx={{ p: 2 }}>
+        <p className={`${language == 'ar' && 'arabicinfotext'} infotext`}>
           {text === 1 &&
             `${t(
               'Le savais-tu? Il est possible d’envisager des études payantes sans forcément payer par toi-même! En effet, il existe plein d’options pour financer tes études: alternance, apprentissage, jobs étudiants, bourses, prêts d’honneur, etc. Je te donnerai plein de conseils et de bon plans pour financer tes études si tu le souhaites!'
@@ -49,7 +50,7 @@ export default function Info({ anchorEl, setAnchorEl, text }) {
             `${t(
               'Ton budget doit inclure tes frais de logement, de transport, de fonctionnement, ainsi que les frais de scolarité de ton futur établissement.'
             )}`}
-        </Typography>
+        </p>
       </Popover>
     </div>
   );
