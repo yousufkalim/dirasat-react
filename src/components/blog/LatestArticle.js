@@ -15,7 +15,13 @@ export default function LatestArticle({ blogs, loading, setLoading }) {
 
   return (
     <div className="LatestArticlecontainer">
-      <p className="LatestArticleheading">{t('Derniers articles')}</p>
+      <p
+        className={`${
+          language == 'ar' && 'arabicLatestArticleheading'
+        } LatestArticleheading`}
+      >
+        {t('Derniers articles')}
+      </p>
       {loading ? (
         <h1>{t('Chargement en cours')}</h1>
       ) : blogs ? (

@@ -1224,7 +1224,7 @@ const arabicCriteria = () => {
     "J'ai entendu de bons retours la part d'amis et de proches":
       'الناس لي قراو التم يهدرو عليها غير بلمليح',
     Autre: 'بلاد واحد آخر',
-    'Départ!': 'يالله!',
+    'Départ!': 'الإنطلاق',
     'Qui suis-je?': 'شكون أنا',
     'Mon test': 'إختباري',
     'Mes résultats': 'نتائجي',

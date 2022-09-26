@@ -21,7 +21,13 @@ export default function YouMayLike({ blogs, loading, setLoading }) {
 
   return (
     <div className="youMayLikecontainer">
-      <p className="youMayLikeheading">{t('Lisez aussi :')}</p>
+      <p
+        className={`${
+          language == 'ar' && 'arabicyouMayLikeheading'
+        } youMayLikeheading`}
+      >
+        {t('Lisez aussi :')}
+      </p>
       {loading ? (
         <h1>{t('Chargement en cours')}</h1>
       ) : (

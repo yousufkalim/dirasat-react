@@ -36,6 +36,13 @@
 .legalh1 {
   text-align: left;
 }
+.infotext{
+  padding: 0px 8px;
+  text-align: left;
+}
+.arabicinfotext{
+  text-align: end;
+}
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
   .cguHeading {

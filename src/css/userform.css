@@ -438,6 +438,11 @@
     /* overflow-x: hidden;  */
     /* width: auto; */
   }
+  .gridOptions{
+    max-width: 100% !important;
+    flex-basis: 87% !important;
+    padding: 10px !important;
+  }
   .motiveCriteriamenu{
     font-size: 10px !important;
     padding: 4px !important;
@@ -457,8 +462,10 @@
   .formheading {
     font-size: 17px;
     text-align: center;
-    margin: 10px;
     padding: 10px;
+  }
+  .arabicselectformControl{
+    width: 95% !important;
   }
   .wilayaGrid{
     margin: 4px 0 4px 0 !important;
@@ -546,5 +553,6 @@
   }
   .MuiSelect-outlined.MuiSelect-outlined {
     font-size: 12px !important;
+    text-align: justify !important;
   }
 }
