@@ -10,7 +10,10 @@ if (window.location.host === 'dirasat-dev.falconweb.app') {
 } else if (window.location.host === 'dirasat-staging.falconweb.app') {
   baseUrl = 'https://dirasat-api-staging.falconweb.app/api/';
   url = 'https://dirasat-api-staging.falconweb.app/';
-} else if (window.location.host === 'dirasat-international.com') {
+} else if (
+  window.location.host === 'dirasat-international.com' ||
+  window.location.host === 'www.dirasat-international.com'
+) {
   baseUrl = 'https://api.dirasat-international.com/api/';
   url = 'https://api.dirasat-international.com/';
 }
