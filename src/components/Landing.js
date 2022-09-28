@@ -123,47 +123,34 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
           <img src={Main} className="bodyimg forweb" />
         )}
 
-        <img
-          src={MainCharacter}
-          alt="Dirasat's Mian charachter"
-          className="bodyimg formobile"
-        />
+        <img src={MainCharacter} alt="Dirasat's Mian charachter" className="bodyimg formobile" />
         <Grid
           container
           spacing={2}
-          className={`${
-            language == 'ar' && 'arabicbody-rectangleGrid2'
-          } body-rectangle`}
-        >
+          className={`${language == 'ar' && 'arabicbody-rectangleGrid2'} body-rectangle`}>
           <Grid item xs={12} sm={9} className={` body-rectangleGrid2`}>
             <h1 className={`${language == 'ar' && 'arabich3'} h3`}>
-              {t("Commençons le test d'orientation")}!
+              {t("Commençons le test d'orientation")}
             </h1>
             <p className={`${language == 'ar' && 'arabicp1'}  p1`}>
               {t(
                 'À la fin de ce questionnaire, une proposition de voeux pour ton orientation te sera formulée'
               )}
-              !
             </p>
           </Grid>
           <Grid item xs={12} sm={3} className="body-rectangleGrid3">
             <div className="partibuttondiv">
               <button
-                className={` ${
-                  language == 'ar' && 'arabicpartiButton'
-                }  partiButton`}
+                className={` ${language == 'ar' && 'arabicpartiButton'}  partiButton`}
                 onClick={() => {
                   localStorage.cookies ? setStep(1) : setOpenCookieePopup(true);
                   play();
-                }}
-              >
-                {t("C'est parti")}!
+                }}>
+                {t("C'est parti")}
               </button>
               <img
                 src={arrowright}
-                className={` ${
-                  language == 'ar' && 'arabicarrowright'
-                }  arrowright`}
+                className={` ${language == 'ar' && 'arabicarrowright'}  arrowright`}
                 alt="arrowIcon"
               />
             </div>
@@ -180,8 +167,7 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
             className="videImage"
             controls="controls"
             autoplay
-            loop
-          >
+            loop>
             <source
               src={`https://firebasestorage.googleapis.com/v0/b/dirasat-demo.appspot.com/o/dvideo.mp4?alt=media&token=e10aecc4-dc24-495d-a19d-7dff32dc6288`}
               type="video/mp4"
@@ -195,24 +181,13 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
           spacing={3}
           className={` ${language == 'ar' && 'arabicfooterGrid'}  footerGrid`}
           id="my-node"
-          ref={capture1}
-        >
-          <Grid
-            item
-            xs={12}
-            sm={4}
-            className={` ${language == 'ar' && 'directionltr'}  `}
-          >
+          ref={capture1}>
+          <Grid item xs={12} sm={4} className={` ${language == 'ar' && 'directionltr'}  `}>
             <img src={f1} className="footerimg" alt="footerImg" />
             <h4 className="h4">{t('Étape 1')}</h4>
             <p className="p3">{t('Dis à Dirasat qui tu es.')}</p>
           </Grid>
-          <Grid
-            item
-            xs={12}
-            sm={4}
-            className={` ${language == 'ar' && 'directionltr'}  `}
-          >
+          <Grid item xs={12} sm={4} className={` ${language == 'ar' && 'directionltr'}  `}>
             <img src={f2} className="footerimg" alt="etape2" />
             <h4 className="h4">{t('Étape 2')}</h4>
             <p className="p3">{t('Réponds aux questions de Dirasat.')}</p>
@@ -222,13 +197,10 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
             xs={12}
             sm={4}
             id="MyElementIdHere"
-            className={` ${language == 'ar' && 'directionltr'}  `}
-          >
+            className={` ${language == 'ar' && 'directionltr'}  `}>
             <img src={f3} className="footerimg" alt="etape3" />
             <h4 className="h4">{t('Étape 3')}</h4>
-            <p className="p3">
-              {t('Dirasat te propose une liste de voeux pour ton orientation!')}
-            </p>
+            <p className="p3">{t('Dirasat te propose une liste de voeux pour ton orientation!')}</p>
           </Grid>
         </Grid>
         {/* <button onClick={onButtonClick}>Download PDF</button> */}
@@ -242,22 +214,18 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center'
-          }}
-        >
+          }}>
           <p
             style={{
               fontSize: '30px',
               fontWeight: '600',
               color: '#D4D8E5'
-            }}
-          >
+            }}>
             {t('Nombre de visiteurs')}
           </p>
           <CountUp
             start={1}
-            end={
-              siteViews.count > 800 ? siteViews.count : siteViews.count + 800
-            }
+            end={siteViews.count > 800 ? siteViews.count : siteViews.count + 800}
             duration={5}
             style={{
               fontSize: '100px',
@@ -280,11 +248,7 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
         data={data}
         setData={setData}
       />
-      <CookiesPopup2
-        open={openCookieePopup2}
-        setOpen={setOpenCookieePopup2}
-        setData={setData}
-      />
+      <CookiesPopup2 open={openCookieePopup2} setOpen={setOpenCookieePopup2} setData={setData} />
       {checkCookies
         ? !localStorage.cookies && (
             <Cookies

@@ -8,8 +8,7 @@ const frenchHeader = () => {
     // cookies
     "En poursuivant votre navigation sur ce site, vous acceptez l'utilisation de cookies afin d'optimiser votre navigation et réaliser des statistiques de suivis. Pour en savoir plus, consultez":
       "En poursuivant votre navigation sur ce site, vous acceptez l'utilisation de cookies afin d'optimiser votre navigation et réaliser des statistiques de suivis. Pour en savoir plus, consultez",
-    'notre politique de confidentialité.':
-      'notre politique de confidentialité.',
+    'notre politique de confidentialité.': 'notre politique de confidentialité.',
     'Si vous refusez, vos informations de navigation ne seront pas conservées lors de votre visite. Nous apposons un seul cookie afin de mémoriser votre choix.':
       'Si vous refusez, vos informations de navigation ne seront pas conservées lors de votre visite. Nous apposons un seul cookie afin de mémoriser votre choix.',
     Paramétrer: 'Paramétrer',
@@ -26,8 +25,7 @@ const frenchHeader = () => {
       'Ce site et ses partenaires pourront également réaliser les traitements de données suivants : Assurer la sécurité, Prévenir la fraude et débogguer, diffuser techniquement les publicités ou le contenu, mettre en correspondance et combiner des sources de données hors ligne, recevoir et utiliser des caractéristiques d’identification d’appareil envoyées automatiquement, et relier différents terminaux.',
     Enregistrer: 'Enregistrer',
     // cookie popup2
-    'Fonctionnalités liées aux réseaux sociaux':
-      'Fonctionnalités liées aux réseaux sociaux',
+    'Fonctionnalités liées aux réseaux sociaux': 'Fonctionnalités liées aux réseaux sociaux',
     "Mesure d'audience": "Mesure d'audience",
     "Fonctionnalités liées à l'amélioration de votre expérience":
       "Fonctionnalités liées à l'amélioration de votre expérience",
@@ -37,8 +35,7 @@ const frenchHeader = () => {
       'Personnalisation du contenu éditorial et mesure de la performance',
     'Personnalisation des publicités et mesure de la performance':
       'Personnalisation des publicités et mesure de la performance',
-    'Développer et améliorer les produits':
-      'Développer et améliorer les produits',
+    'Développer et améliorer les produits': 'Développer et améliorer les produits',
     'Utiliser des données de géolocalisation précises':
       'Utiliser des données de géolocalisation précises',
     'Analyser activement les caractéristiques du terminal pour l’identification':
@@ -74,23 +71,19 @@ const arabicHeader = () => {
     'Pour en savoir plus sur nos pratiques en matière de protection des données personnelles et la façon dont nous utilisons vos données, vous pouvez consulter':
       'غراض المذكورة أدناه',
     'politique de confidentialité': 'سياسة الخصوصية',
-    'Fonctionnalités basiques de navigation requises':
-      'ميزات التصفح الأساسية المطلوبة',
+    'Fonctionnalités basiques de navigation requises': 'ميزات التصفح الأساسية المطلوبة',
     'Ce site et ses partenaires pourront également réaliser les traitements de données suivants : Assurer la sécurité, Prévenir la fraude et débogguer, diffuser techniquement les publicités ou le contenu, mettre en correspondance et combiner des sources de données hors ligne, recevoir et utiliser des caractéristiques d’identification d’appareil envoyées automatiquement, et relier différents terminaux.':
       ' قد يقوم هذا الموقع وشركاؤه أيضًا بمعالجة البيانات التالية: ضمان الأمان ، ومنع الاحتيال وتصحيح الأخطاء ، وتوزيع الإعلانات أو المحتوى تقنيًا ، ومطابقة مصادر البيانات غير المتصلة بالإنترنت والجمع بينها ، واستلام واستخدام معرّفات الأجهزة المرسلة تلقائيًا ، وربط المحطات الطرفية المختلفة',
     Enregistrer: 'للتسجيل',
     // cookie popup2
-    'Fonctionnalités liées aux réseaux sociaux':
-      'ميزات وسائل التواصل الاجتماعي',
+    'Fonctionnalités liées aux réseaux sociaux': 'ميزات وسائل التواصل الاجتماعي',
     "Mesure d'audience": 'قياس الجمهور',
-    "Fonctionnalités liées à l'amélioration de votre expérience":
-      'الميزات المتعلقة بتحسين تجربتك',
+    "Fonctionnalités liées à l'amélioration de votre expérience": 'الميزات المتعلقة بتحسين تجربتك',
     'Stocker et/ou accéder à des informations sur un terminal':
       'تخزين و / أو الوصول إلى المعلومات على محطة',
     'Personnalisation du contenu éditorial et mesure de la performance':
       'إضفاء الطابع الشخصي على المحتوى التحريري وقياس الأداء',
-    'Personnalisation des publicités et mesure de la performance':
-      'تخصيص الإعلانات وقياس الأداء',
+    'Personnalisation des publicités et mesure de la performance': 'تخصيص الإعلانات وقياس الأداء',
     'Développer et améliorer les produits': 'تطوير وتحسين المنتجات',
     'Utiliser des données de géolocalisation précises':
       'استخدام بيانات دقيقة لتحديد الموقع الجغرافي',
@@ -98,8 +91,7 @@ const arabicHeader = () => {
       'فحص خصائص الجهاز بشكل نشط لتحديد الهوي',
     'Vous avez choisi de refuser les cookies , notamment ceux nécessaires au bon déroulement de votre expérience avec Dirasat. Vous ne pourrez pas avoir accès au test, êtes-vous sûr(e) de votre choix?':
       ' لقد اخترت رفض ملفات تعريف الارتباط ، لا سيما تلك الضرورية من أجل حسن سير تجربتك مع دراسات. لن تتمكن من الوصول إلى الاختبار ، هل أنت متأكد من اختيارك؟',
-    "Je change d'avis et j'accepte tous les cookies.":
-      'أغير رأيي وأقبل جميع ملفات تعريف الارتباط.',
+    "Je change d'avis et j'accepte tous les cookies.": 'أغير رأيي وأقبل جميع ملفات تعريف الارتباط.',
     'Je conserve mes choix': 'أحافظ على اختياراتي',
     'Je refuse toujours les cookies': '',
     'Vous avez choisi de refuser les cookies. Vous ne pourrez pas accéder au test, êtes-vous sûr(e) de votre choix?':
@@ -111,10 +103,10 @@ const arabicHeader = () => {
 // landing page update
 const frenchLandingPage = () => {
   let fr = {
-    "Commençons le test d'orientation": "Commençons le test d'orientation",
+    "Commençons le test d'orientation": "Commençons le test d'orientation!",
     'À la fin de ce questionnaire, une proposition de voeux pour ton orientation te sera formulée':
-      'À la fin de ce questionnaire, une proposition de voeux pour ton orientation te sera formulée',
-    "C'est parti": "C'est parti",
+      'À la fin de ce questionnaire, une proposition de voeux pour ton orientation te sera formulée!',
+    "C'est parti": "C'est parti!",
     'Comment ça marche?': 'Comment ça marche?',
     'Étape 1': 'Étape 1',
     'Dis à Dirasat qui tu es.': 'Dis à Dirasat qui tu es.',
@@ -130,10 +122,10 @@ const frenchLandingPage = () => {
 
 const ArabicLandingPage = () => {
   let ar = {
-    "Commençons le test d'orientation": 'راك(ي) واجد(ة)؟ يالله نبداو',
+    "Commençons le test d'orientation": '!راك(ي) واجد(ة)؟ يالله نبداو',
     'À la fin de ce questionnaire, une proposition de voeux pour ton orientation te sera formulée':
-      'كي نكملو هاذي الحصة، نعطيك مناهج الدراسات الجامعية اللي تناسبك',
-    "C'est parti": 'بدينا',
+      '!كي نكملو هاذي الحصة، نعطيك مناهج الدراسات الجامعية اللي تناسبك',
+    "C'est parti": '!بدينا',
     'Comment ça marche?': 'فهمني كيفاش',
     'Étape 1': 'المرحلة 1',
     'Dis à Dirasat qui tu es.': '(قل(ي) لدراسات شكون أنت(ي',
@@ -158,11 +150,9 @@ const frenchUserform = () => {
     'Numéro de téléphone': 'Numéro de téléphone',
     Classe: 'Classe',
     'Série de Baccalauréat': 'Série de Baccalauréat',
-    'Ville de votre établissement scolaire':
-      'Ville de votre établissement scolaire',
+    'Ville de votre établissement scolaire': 'Ville de votre établissement scolaire',
     'Nom de votre école': 'Nom de votre école',
-    'J’accepte les termes et les conditions':
-      'J’accepte les termes et les conditions',
+    'J’accepte les termes et les conditions': 'J’accepte les termes et les conditions',
     Retour: 'Retour',
     'Passer au suivant': 'Passer au suivant',
     'J’ai déjà mon baccalauréat mais je n’ai pas encore débuté mes études supérieures':
@@ -180,15 +170,13 @@ const frenchUserform = () => {
     Poursuivre: 'Poursuivre',
     'Vous êtes en': 'Vous êtes en',
     'Arrondir à l’unité inférieure': 'Arrondir à l’unité inférieure',
-    'Moyenne générale obtenue au Baccalauréat':
-      'Moyenne générale obtenue au Baccalauréat',
+    'Moyenne générale obtenue au Baccalauréat': 'Moyenne générale obtenue au Baccalauréat',
     'Techniques Mathématiques': 'Techniques Mathématiques',
     'Sciences Expérimentales': 'Sciences Expérimentales',
     'Gestion et Economie': 'Gestion et Economie',
     'Lettre et Philosophie': 'Lettre et Philosophie',
     'Langues Etrangères': 'Langues Etrangères',
-    'Quel est ton dernier diplôme validé ?':
-      'Quel est ton dernier diplôme validé ?',
+    'Quel est ton dernier diplôme validé ?': 'Quel est ton dernier diplôme validé ?',
     '1ère année de doctorat': '1ère année de doctorat',
     '2ème année de doctorat': '2ème année de doctorat',
     '1ère année de licence': '1ère année de licence',
@@ -211,7 +199,7 @@ const frenchUserform = () => {
 const arabicUserform = () => {
   let ar = {
     'Pour mieux te conseiller, j’ai besoin d’en savoir davantage sur toi!':
-      'باش انصحك مليح، لازمني نتعرف عليك اكثر!',
+      '!باش انصحك مليح، لازمني نتعرف عليك اكثر',
     Prénom: 'الإسم',
     Nom: 'اللقب',
     'Date de naissance': 'تاريخ الميلاد',
@@ -407,8 +395,7 @@ const frenchContactus = () => {
     'Chargement en cours': 'Chargement en cours',
     'Veuillez entrer Prénom et nom': 'Veuillez entrer Prénom et nom',
     'Veuillez entrer votre e-mail': 'Veuillez entrer votre e-mail',
-    'Veuillez entrer Objet de votre message':
-      'Veuillez entrer Objet de votre message',
+    'Veuillez entrer Objet de votre message': 'Veuillez entrer Objet de votre message',
     'Veuillez entrer Votre message': 'Veuillez entrer Votre message',
     'Soumis avec succès': 'Soumis avec succès',
     "s'il vous plaît entrez l'e-mail": "s'il vous plaît entrez l'e-mail",
@@ -525,8 +512,7 @@ const frenchQuestions = () => {
       'Quel est le critère le plus important dans le choix de ta formation?',
     'Envisages-tu des études à l’étranger directement après le Bac?':
       'Envisages-tu des études à l’étranger directement après le Bac?',
-    'À quel pays penses-tu en particulier?':
-      'À quel pays penses-tu en particulier?',
+    'À quel pays penses-tu en particulier?': 'À quel pays penses-tu en particulier?',
     "Dernière question, étudier à l'étranger est pour toi:":
       "Dernière question, étudier à l'étranger est pour toi:",
     "D'accord! Dis-moi dans ce cas ce qui te passionne le plus?":
@@ -537,8 +523,7 @@ const frenchQuestions = () => {
       "D'accord! Dis-moi dans ce cas quel aspect de la culture geek te passionne le plus?",
     "Très bien! Dans ce cas quel métier t'attire le plus?":
       "Très bien! Dans ce cas quel métier t'attire le plus?",
-    'Dans ce cas, tu préfèrerais être un:':
-      'Dans ce cas, tu préfèrerais être un:',
+    'Dans ce cas, tu préfèrerais être un:': 'Dans ce cas, tu préfèrerais être un:',
     'Je vois! Dans ce cas que souhaites-tu proposer?':
       'Je vois! Dans ce cas que souhaites-tu proposer?',
     'Fascinant! Dans quel type de structure voudrais-tu évoluer?':
@@ -553,20 +538,16 @@ const frenchQuestions = () => {
       'Très bien! Quel métier souhaiterais-tu faire?',
     "Fascinant! Qu'est ce qui t'intéresse en particulier?":
       "Fascinant! Qu'est ce qui t'intéresse en particulier?",
-    "D'accord! Que représente le sport pour toi?":
-      "D'accord! Que représente le sport pour toi?",
+    "D'accord! Que représente le sport pour toi?": "D'accord! Que représente le sport pour toi?",
     "J'ai compris! Ce que tu aimes en fait c'est plutôt:":
       "J'ai compris! Ce que tu aimes en fait c'est plutôt:",
-    'Je vois! Quel rôle veux-tu y jouer?':
-      'Je vois! Quel rôle veux-tu y jouer?',
+    'Je vois! Quel rôle veux-tu y jouer?': 'Je vois! Quel rôle veux-tu y jouer?',
     'Fascinant! Quel genre de produit?': 'Fascinant! Quel genre de produit?',
-    'Très bien! Alors aimerais-tu plutôt?':
-      'Très bien! Alors aimerais-tu plutôt?',
+    'Très bien! Alors aimerais-tu plutôt?': 'Très bien! Alors aimerais-tu plutôt?',
     'Très bien! Dans ce cas quel genre de roman apprécies-tu?':
       'Très bien! Dans ce cas quel genre de roman apprécies-tu?',
     'Fascinant! Quel genre de service?': 'Fascinant! Quel genre de service?',
-    "J'ai compris! Ce qui te plaît, c'est plutôt:":
-      "J'ai compris! Ce qui te plaît, c'est plutôt:",
+    "J'ai compris! Ce qui te plaît, c'est plutôt:": "J'ai compris! Ce qui te plaît, c'est plutôt:",
     "Fascinant! Maintenant dis-moi c'est quoi ton truc?":
       "Fascinant! Maintenant dis-moi c'est quoi ton truc?"
   };
@@ -588,56 +569,40 @@ const arabicQuestions = () => {
       'نزيدو وحدة! نهدرو على لقراية بالدراهم ولا لا؟',
     'Maintenant dis-moi si tu veux inclure les formations sélectives:':
       'دركا قل(ي)لي إلاكان يهمّوك المناهج لي يقبلو بشروط معينة (معدّل، مسابقة، إمتحانات، إلخ…) ',
-    'Veux-tu inclure les formations 100% en Arabe?':
-      'نحكيو على المناهج المتوفرين 100% بالعربيّة؟',
+    'Veux-tu inclure les formations 100% en Arabe?': 'نحكيو على المناهج المتوفرين 100% بالعربيّة؟',
     "Let's speak English! Veux-tu inclure les formations 100% en Anglais?":
       'نحكيو على المناهج المتوفرين 100% بالإنجليزية؟ ',
-    'Souhaites-tu faire de longues études (minimum Master)?':
-      'تحب(ي) منهج طويل (ماستر وأكثر)؟',
+    'Souhaites-tu faire de longues études (minimum Master)?': 'تحب(ي) منهج طويل (ماستر وأكثر)؟',
     'Quel est le critère le plus important dans le choix de ta formation?':
       'واشنهيّ الحاجة لي تهمّك لكثر من جهة المناهج الجامعية؟',
     'Envisages-tu des études à l’étranger directement après le Bac?':
       'مادا بيّا نقرا فالخارج طول مور الباك:',
     'À quel pays penses-tu en particulier?': 'وش من بلاد عندك في بالك؟',
-    "Dernière question, étudier à l'étranger est pour toi:":
-      'الخارج راهو بالنسبة ليك:',
-    "D'accord! Dis-moi dans ce cas ce qui te passionne le plus?":
-      'واش الحاجة لي تعجبك لكثر:',
+    "Dernière question, étudier à l'étranger est pour toi:": 'الخارج راهو بالنسبة ليك:',
+    "D'accord! Dis-moi dans ce cas ce qui te passionne le plus?": 'واش الحاجة لي تعجبك لكثر:',
     'Très bien! Que préfères-tu parmi ces 4 domaines?':
       'مليح. قل(ي) لي دوكا واش لّي تحب(ي) لكثر ما بين هاذ الميادين الرّبعة؟',
     "D'accord! Dis-moi dans ce cas quel aspect de la culture geek te passionne le plus?":
       'خلاص فهمتك. زيد(ي) فهّمني واش يعجبك لكثر في الچيك كثقافة؟',
-    "Très bien! Dans ce cas quel métier t'attire le plus?":
-      'صحّا! واش من مهنة تهمّك لكثر؟',
+    "Très bien! Dans ce cas quel métier t'attire le plus?": 'صحّا! واش من مهنة تهمّك لكثر؟',
     'Dans ce cas, tu préfèrerais être un:': 'تسمّا، تحب(ي) تكون(ي):',
-    'Je vois! Dans ce cas que souhaites-tu proposer?':
-      'تسمّا واش حاب(ا) توفّر(ي)؟',
-    'Fascinant! Dans quel type de structure voudrais-tu évoluer?':
-      'روعا!واش من مؤسسة تخرج عليك؟',
-    "Très bien! Ton truc c'est plutôt":
-      'جيّد! تسمّا الحاجة الّي تعجبك لكثر هيّ:',
+    'Je vois! Dans ce cas que souhaites-tu proposer?': 'تسمّا واش حاب(ا) توفّر(ي)؟',
+    'Fascinant! Dans quel type de structure voudrais-tu évoluer?': 'روعا!واش من مؤسسة تخرج عليك؟',
+    "Très bien! Ton truc c'est plutôt": 'جيّد! تسمّا الحاجة الّي تعجبك لكثر هيّ:',
     'Comment tu verrais les choses?': 'كيفاش راك(ي)) تشوف(ي) فيها؟',
-    "D'accord! Quel domaine te correspond le plus?":
-      'صحّا! واش من منهج يناسبك لكثر؟',
-    "Très bien! Ce qui t'attire le plus c'est plutôt:":
-      'مليح! تسمّا واش لي يعجبك لكثر؟',
-    'Très bien! Quel métier souhaiterais-tu faire?':
-      'دوكا قل(ي) لي واش من خدمة تخرج عليك الأكثر؟',
-    "Fascinant! Qu'est ce qui t'intéresse en particulier?":
-      ' روعا! حاب دوكا نعرف واش يعجبك لكثر؟',
-    "D'accord! Que représente le sport pour toi?":
-      'صحّا! واش تمثّل الرياضة بالنسبة ليك؟',
-    "J'ai compris! Ce que tu aimes en fait c'est plutôt:":
-      'فهمتك! تسمّا تعجبك:',
+    "D'accord! Quel domaine te correspond le plus?": 'صحّا! واش من منهج يناسبك لكثر؟',
+    "Très bien! Ce qui t'attire le plus c'est plutôt:": 'مليح! تسمّا واش لي يعجبك لكثر؟',
+    'Très bien! Quel métier souhaiterais-tu faire?': 'دوكا قل(ي) لي واش من خدمة تخرج عليك الأكثر؟',
+    "Fascinant! Qu'est ce qui t'intéresse en particulier?": ' روعا! حاب دوكا نعرف واش يعجبك لكثر؟',
+    "D'accord! Que représente le sport pour toi?": 'صحّا! واش تمثّل الرياضة بالنسبة ليك؟',
+    "J'ai compris! Ce que tu aimes en fait c'est plutôt:": 'فهمتك! تسمّا تعجبك:',
     'Je vois! Quel rôle veux-tu y jouer?': 'واش من دور تحب(ي) تلعب(ي):',
     'Fascinant! Quel genre de produit?': 'واش من منتوج؟',
     'Très bien! Alors aimerais-tu plutôt?': 'صحّا! تسمّا تحب(ي):',
-    'Très bien! Dans ce cas quel genre de roman apprécies-tu?':
-      'روعا! واش من رواية تعجبك لكثر:',
+    'Très bien! Dans ce cas quel genre de roman apprécies-tu?': 'روعا! واش من رواية تعجبك لكثر:',
     'Fascinant! Quel genre de service?': 'واش من خدمة حابّ(ة) توفّر(ي)؟',
     "J'ai compris! Ce qui te plaît, c'est plutôt:": 'فهمتك! تسمّا تعجبك:',
-    "Fascinant! Maintenant dis-moi c'est quoi ton truc?":
-      'دوكا قل(ي) لي وشنو چوسطوك:'
+    "Fascinant! Maintenant dis-moi c'est quoi ton truc?": 'دوكا قل(ي) لي وشنو چوسطوك:'
   };
   return ar;
 };
@@ -671,8 +636,7 @@ const frenchAnswers = () => {
     Juge: 'Juge',
     'Rien en particulier': 'Rien en particulier',
     Oui: 'Oui',
-    'Découvrir des nouveaux profils criminels':
-      'Découvrir des nouveaux profils criminels',
+    'Découvrir des nouveaux profils criminels': 'Découvrir des nouveaux profils criminels',
     Durée: 'Durée',
     'Royaume-Uni': 'Royaume-Uni',
     Romancier: 'Romancier',
@@ -698,8 +662,7 @@ const frenchAnswers = () => {
     Regarder: 'Regarder',
     'Histoire/Culture/Civilisations': 'Histoire/Culture/Civilisations',
     'La cuisine': 'La cuisine',
-    'Intégrer une start-up ou une multinationale':
-      'Intégrer une start-up ou une multinationale',
+    'Intégrer une start-up ou une multinationale': 'Intégrer une start-up ou une multinationale',
     'Recruter et gérer des carrières': 'Recruter et gérer des carrières',
     'En entreprise': 'En entreprise',
     'En banque': 'En banque',
@@ -734,8 +697,7 @@ const frenchAnswers = () => {
     Espagne: 'Espagne',
     'Un Plan B': 'Un Plan B',
     'Regarder une série policière': 'Regarder une série policière',
-    'Apprendre de nouvelles choses sur le monde':
-      'Apprendre de nouvelles choses sur le monde',
+    'Apprendre de nouvelles choses sur le monde': 'Apprendre de nouvelles choses sur le monde',
     "Echanger avec ton correspondant à l'autre bout du monde":
       "Echanger avec ton correspondant à l'autre bout du monde",
     Avocat: 'Avocat',
@@ -744,8 +706,7 @@ const frenchAnswers = () => {
     "Gérer l'image et le son": "Gérer l'image et le son",
     'Une carrière de sportif': 'Une carrière de sportif',
     'Developper un projet': 'Developper un projet',
-    'Gérer une entreprise dans le secteur':
-      'Gérer une entreprise dans le secteur',
+    'Gérer une entreprise dans le secteur': 'Gérer une entreprise dans le secteur',
     'Medecin du sport': 'Medecin du sport',
     'Sportif de haut niveau': 'Sportif de haut niveau',
     Construction: 'Construction',
@@ -753,11 +714,9 @@ const frenchAnswers = () => {
     'Créer mon entreprise': 'Créer mon entreprise',
     "S'occuper de la logistique, des stocks ou du transport":
       "S'occuper de la logistique, des stocks ou du transport",
-    'Faire de la vente et de la relation client':
-      'Faire de la vente et de la relation client',
+    'Faire de la vente et de la relation client': 'Faire de la vente et de la relation client',
     'Penser à des solutions techniques': 'Penser à des solutions techniques',
-    "Améliorer la performance de l'entreprise":
-      "Améliorer la performance de l'entreprise",
+    "Améliorer la performance de l'entreprise": "Améliorer la performance de l'entreprise",
     Langue: 'Langue',
     Coût: 'Coût',
     Proximité: 'Proximité',
@@ -796,8 +755,7 @@ const arabicAnswers = () => {
     Oui: 'نعم',
     Juge: 'قاضي',
     'Rien en particulier': 'لا شيء بالضبط',
-    'Découvrir des nouveaux profils criminels':
-      'اكتشف ملفات تعريف إجرامية جديدة',
+    'Découvrir des nouveaux profils criminels': 'اكتشف ملفات تعريف إجرامية جديدة',
     Durée: 'مدة',
     'Royaume-Uni': 'المملكة المتحدة',
     Romancier: 'الروائي',
@@ -876,8 +834,7 @@ const arabicAnswers = () => {
     'Créer mon entreprise': 'إنشاء شركة',
     "S'occuper de la logistique, des stocks ou du transport":
       'اعتني باللوجستيات أو المخزون أو النقل',
-    'Faire de la vente et de la relation client':
-      'إجراء المبيعات والعلاقات مع الزبناء',
+    'Faire de la vente et de la relation client': 'إجراء المبيعات والعلاقات مع الزبناء',
     'Penser à des solutions techniques': 'التفكير في الحلول التقنية',
     "Améliorer la performance de l'entreprise": 'تحسين أداء العملاء',
     Langue: 'الغة',
@@ -904,21 +861,17 @@ const frenchFooter = () => {
     'NOTRE BLOG': 'NOTRE BLOG',
     'Veuillez entrer votre Prénom.': 'Veuillez entrer votre Prénom.',
     'Veuillez entrer votre nom.': 'Veuillez entrer votre nom.',
-    'Veuillez entrer votre date de naissance':
-      'Veuillez entrer votre date de naissance',
+    'Veuillez entrer votre date de naissance': 'Veuillez entrer votre date de naissance',
     'Veuillez sélectionner': 'Veuillez sélectionner',
     'Veuillez entrer votre e-mail': 'Veuillez entrer votre e-mail',
     'Le numéro de téléphone doit être composé de 10 chiffres et commencer par 0':
       'Le numéro de téléphone doit être composé de 10 chiffres et commencer par 0',
-    'Veuillez sélectionner la liste des classes':
-      'Veuillez sélectionner la liste des classes',
+    'Veuillez sélectionner la liste des classes': 'Veuillez sélectionner la liste des classes',
     'Veullez sélectionner une série de Baccalauréat':
       'Veullez sélectionner une série de Baccalauréat',
-    'veuillez entrer la ville de votre école':
-      'veuillez entrer la ville de votre école',
+    'veuillez entrer la ville de votre école': 'veuillez entrer la ville de votre école',
     "veuillez saisir le nom de l'école": "veuillez saisir le nom de l'école",
-    'Veuillez accepter les termes et conditions':
-      'Veuillez accepter les termes et conditions'
+    'Veuillez accepter les termes et conditions': 'Veuillez accepter les termes et conditions'
   };
   return fr;
 };
@@ -941,8 +894,7 @@ const arabicFooter = () => {
     'Le numéro de téléphone doit être composé de 10 chiffres et commencer par 0':
       'يجب أن يتكون رقم الهاتف من 10 أرقام وأن يبدأ بـ 0',
     'Veuillez sélectionner la liste des classes': 'الرجاء تحديد قسمك',
-    'Veullez sélectionner une série de Baccalauréat':
-      'الرجاء اختيار شعبة البكالوري',
+    'Veullez sélectionner une série de Baccalauréat': 'الرجاء اختيار شعبة البكالوري',
     'veuillez entrer la ville de votre école': 'الرجاء إدخال مدينة مدرستك',
     "veuillez saisir le nom de l'école": 'الرجاء إدخال اسم المدرسة',
     'Veuillez accepter les termes et conditions': 'الرجاء قبول الشروط والأحكام'
@@ -1193,8 +1145,7 @@ const frenchCriteria = () => {
     "J'ai déjà un logement là-bas": "J'ai déjà un logement là-bas",
     "J'ai un ou plusieurs membres de ma famille sur qui je peux compter":
       "J'ai un ou plusieurs membres de ma famille sur qui je peux compter",
-    'Cette destination correspond à mon budget':
-      'Cette destination correspond à mon budget',
+    'Cette destination correspond à mon budget': 'Cette destination correspond à mon budget',
     'Je pars avec des amis': 'Je pars avec des amis',
     "L'établissement ou le programme que je vise se trouve dans cette destination":
       "L'établissement ou le programme que je vise se trouve dans cette destination",
@@ -1214,10 +1165,8 @@ const arabicCriteria = () => {
     '5 000€ - 7 500€': '5 000€ - 7 500€',
     'Plus de 15 000€': 'أكثر من 15000 €',
     "J'ai déjà un logement là-bas": 'راني عندي سكنة التم',
-    "J'ai un ou plusieurs membres de ma famille sur qui je peux compter":
-      'راني عندي العائلات التم',
-    'Cette destination correspond à mon budget':
-      'تخرج عليا علا حساب الإمكانيات المادية نتاعي',
+    "J'ai un ou plusieurs membres de ma famille sur qui je peux compter": 'راني عندي العائلات التم',
+    'Cette destination correspond à mon budget': 'تخرج عليا علا حساب الإمكانيات المادية نتاعي',
     'Je pars avec des amis': 'رايح(ت) مع الأصدقاء',
     "L'établissement ou le programme que je vise se trouve dans cette destination":
       'كاين جامعت ولا مدرسة تعجبني ',
@@ -1243,8 +1192,7 @@ const frenchResult = () => {
     Terminer: 'Terminer',
     'Invite un ami': 'Invite un ami',
     Partager: 'Partager',
-    'Bravo! Tu as répondu à toutes les questions!':
-      'Bravo! Tu as répondu à toutes les questions!',
+    'Bravo! Tu as répondu à toutes les questions!': 'Bravo! Tu as répondu à toutes les questions!',
     "D'après tes réponses, je pense que ton profil est tourné vers":
       "D'après tes réponses, je pense que ton profil est tourné vers",
     'comme par exemple': 'comme par exemple',
@@ -1259,10 +1207,8 @@ const frenchResult = () => {
     Précédent: 'Précédent',
     "N'hésite pas à prendre des captures d'écran de cette page. Tu peux aussi te connecter à ton ordinateur pour obtenir cette liste au format PDF.":
       "N'hésite pas à prendre des captures d'écran de cette page. Tu peux aussi te connecter à ton ordinateur pour obtenir cette liste au format PDF.",
-    'Il n’y a actuellement pas de job disponible.':
-      'Il n’y a actuellement pas de job disponible.',
-    "Pas d'exemples actuellement disponibles":
-      "Pas d'exemples actuellement disponibles",
+    'Il n’y a actuellement pas de job disponible.': 'Il n’y a actuellement pas de job disponible.',
+    "Pas d'exemples actuellement disponibles": "Pas d'exemples actuellement disponibles",
     'Ma liste de voeux': 'Ma liste de voeux',
     'veuillez patienter': 'veuillez patienter',
     'Il semblerait que ta spécialité au baccalauréat soit incompatible avec tes réponses au questionnaire, je t’invite à répondre de nouveau aux questions en tenant compte de la filière de ton baccalauréat!':
@@ -1296,20 +1242,17 @@ const frenchResult = () => {
     'Les métiers du sport': 'Les métiers du sport',
     'Les métiers du web': 'Les métiers du web',
     'Les métiers de la santé': 'Les métiers de la santé',
-    'Les métiers de la création artistique':
-      'Les métiers de la création artistique',
+    'Les métiers de la création artistique': 'Les métiers de la création artistique',
     'Les métiers de la finance et des statistiques appliquées':
       'Les métiers de la finance et des statistiques appliquées',
     "Les métiers des relations internationales et de l'administration":
       "Les métiers des relations internationales et de l'administration",
     // exampleofjob
-    'Entrepreneur/Manager/Gestionnaire/Commercial':
-      'Entrepreneur/Manager/Gestionnaire/Commercial',
+    'Entrepreneur/Manager/Gestionnaire/Commercial': 'Entrepreneur/Manager/Gestionnaire/Commercial',
     'Ingénieur/Concepteur/Programmeur': 'Ingénieur/Concepteur/Programmeur',
     'Enseignant/Instituteur/Ecrivain/Editeur/Critique':
       'Enseignant/Instituteur/Ecrivain/Editeur/Critique',
-    'Reporter/Journaliste/Attaché de presse':
-      'Reporter/Journaliste/Attaché de presse',
+    'Reporter/Journaliste/Attaché de presse': 'Reporter/Journaliste/Attaché de presse',
     'Chef cuisinier/Patissier/Oenologue/Restaurateur/Critique':
       'Chef cuisinier/Patissier/Oenologue/Restaurateur/Critique',
     'Diplomate/Interprète/Enseignant/Archéologue/Historien/Voyagiste/Stewart':
@@ -1321,20 +1264,17 @@ const frenchResult = () => {
     'Médecin/Kiné/Osthéo/Auxiliaire': 'Médecin/Kiné/Osthéo/Auxiliaire',
     'Agent/Créateur/Développeur/Entrepreneur/Manager':
       'Agent/Créateur/Développeur/Entrepreneur/Manager',
-    'Concepteur web/Développeur/Designer':
-      'Concepteur web/Développeur/Designer',
+    'Concepteur web/Développeur/Designer': 'Concepteur web/Développeur/Designer',
     'Psychologue/Directeur Ressources Humaines/Assistant social':
       'Psychologue/Directeur Ressources Humaines/Assistant social',
     'Acteur/Producteur/Realisateur/Scénariste/Cadreur/Monteur':
       'Acteur/Producteur/Realisateur/Scénariste/Cadreur/Monteur',
-    'Architecte/Designer/Urbaniste/Decorateur':
-      'Architecte/Designer/Urbaniste/Decorateur',
+    'Architecte/Designer/Urbaniste/Decorateur': 'Architecte/Designer/Urbaniste/Decorateur',
     'Juge/Avocat/Auxiliaire de justice (huissier, notaire, greffier)':
       'Juge/Avocat/Auxiliaire de justice (huissier, notaire, greffier)',
     'Conservateur/Restaurateur/Commissaire priseur/Artiste':
       'Conservateur/Restaurateur/Commissaire priseur/Artiste',
-    'Animateur/Chef de projet/Organisateur':
-      'Animateur/Chef de projet/Organisateur',
+    'Animateur/Chef de projet/Organisateur': 'Animateur/Chef de projet/Organisateur',
     'Auteur/Compositeur/Interprête/Producteur/Ingénieur du son':
       'Auteur/Compositeur/Interprête/Producteur/Ingénieur du son',
     'Fashion designer/Directeur artistique/Couturier/Chef de produit':
@@ -1345,26 +1285,25 @@ const frenchResult = () => {
 const arabicResult = () => {
   let ar = {
     'Merci pour ces informations, nos agents et nos partenaires vont te contacter rapidement pour te proposer des parcours d’études à l’étranger adaptés à ton profil ! N’oublie pas de consulter régulièrement tes e-mails et de rester joignable par téléphone!':
-      'خلاص راني فهمت مليح! شكرًا لك على هذه المعلومات! أيضًا، يتصلو بك وكلاؤنا وشركاؤنا  في أقرب وقت باش يقدمولك مناهج دراسية في الخارج تناسبك وتخرج عليك! ما تنساش تبقا موجد(ة) عبر البريد الإلكتروني والهاتف!',
+      '!خلاص راني فهمت مليح! شكرًا لك على هذه المعلومات! أيضًا، يتصلو بك وكلاؤنا وشركاؤنا  في أقرب وقت باش يقدمولك مناهج دراسية في الخارج تناسبك وتخرج عليك! ما تنساش تبقا موجد(ة) عبر البريد الإلكتروني والهاتف',
 
     Terminer: 'كملت',
     'Invite un ami': 'أدع صديقا',
     Partager: 'مشاركة',
-    'Bravo! Tu as répondu à toutes les questions!':
-      '!برافو! راك جاوبت علا جميع الاسئلة',
+    'Bravo! Tu as répondu à toutes les questions!': '!برافو! راك جاوبت علا جميع الاسئلة',
     "D'après tes réponses, je pense que ton profil est tourné vers":
       'على حساب الاجوبة نتاعك راني نشوف هاد المجال اللي يخرج عليك لكثر:',
     'comme par exemple': 'مثلاً',
     'Je te propose une liste de vœux d’orientation qui correspondrait à ton profil.':
       '.ليك هاذ المناهج اللي بانولي يناسبو المشروع نتاعك على حساب الأجوبة الي عطيتني',
     'Aussi, nos agents et nos partenaires vont te contacter rapidement pour te proposer des parcours d’études à l’étranger adaptés à ton profil ! N’oublie pas de consulter régulièrement tes e-mails et de rester joignable par téléphone!':
-      'أيضًا، يتصلو بك وكلاؤنا وشركاؤنا  في أقرب وقت باش يقدمولك مناهج دراسية في الخارج تناسبك وتخرج عليك! ما تنساش تبقا موجد(ة) عبر البريد الإلكتروني والهاتف!',
+      '!أيضًا، يتصلو بك وكلاؤنا وشركاؤنا  في أقرب وقت باش يقدمولك مناهج دراسية في الخارج تناسبك وتخرج عليك! ما تنساش تبقا موجد(ة) عبر البريد الإلكتروني والهاتف',
     Précédent: 'الوراء',
 
     "Je suis desolé, je ne trouve aucune proposition. Peut-être que ton parcours universitaire (filière du Baccalauréat, etc. n'est pas compatible avec tes réponses. Essaie encore!":
-      'سامحني، ما لقيتش حاجة تناسبك! بالاك الخلفية الأكاديمية  (شعبة البكالوريا...) نتاعك ما تجيش مع الأجوبة لي عطيتلي. زيد عاود!',
+      '!سامحني، ما لقيتش حاجة تناسبك! بالاك الخلفية الأكاديمية  (شعبة البكالوريا...) نتاعك ما تجيش مع الأجوبة لي عطيتلي. زيد عاود',
     'Tu ne trouves pas ce que tu t’attendais à voir dans cette liste? Pas de panique! Tu seras contacté par la suite pour compléter cette liste avec d’autres fomations qui pourraient te correspondre!':
-      'ما كانش واش جيت(ي) تحوس(ي) عليه؟ مش مشكل! أمبعد نتصل بيك باش  نزيد نعطيك معلومات خاصة بالحالة نتاعك!',
+      '!ما كانش واش جيت(ي) تحوس(ي) عليه؟ مش مشكل! أمبعد نتصل بيك باش  نزيد نعطيك معلومات خاصة بالحالة نتاعك',
     'Il n’y a actuellement pas de job disponible.': 'لا توجد وظائف حاليا.',
     "N'hésite pas à prendre des captures d'écran de cette page. Tu peux aussi te connecter à ton ordinateur pour obtenir cette liste au format PDF.":
       'لا تتردد في أخذ تصويرة من هذه الصفحة. يمكنك أيضًا إستعمال الكمبيوترللحصول على هذه القائمة بتنسيق PDF.',
@@ -1374,12 +1313,10 @@ const arabicResult = () => {
     'Il semblerait que ta spécialité au baccalauréat soit incompatible avec tes réponses au questionnaire, je t’invite à répondre de nouveau aux questions en tenant compte de la filière de ton baccalauréat!':
       'Il semblerait que ta spécialité au baccalauréat soit incompatible avec tes réponses au questionnaire, je t’invite à répondre de nouveau aux questions en tenant compte de la filière de ton baccalauréat!',
     // typeofjob
-    "Les métiers de l'entreprise, de la gestion et du commerce":
-      'مهن الأعمال والإدارة والتجارة',
+    "Les métiers de l'entreprise, de la gestion et du commerce": 'مهن الأعمال والإدارة والتجارة',
     "Les métiers de l'ingénierie, de l'industrie et des nouvelles technologies":
       'مهن الهندسة والصناعة والتقنيات الجديدة',
-    "Les metiers de l'éducation, des lettres et de l'édition":
-      'مهن التربية والآداب والنشر',
+    "Les metiers de l'éducation, des lettres et de l'édition": 'مهن التربية والآداب والنشر',
     'Acteur/Producteur/Réalisateur/Scénariste/Cadreur/MonteurAnimateur/Chef de projet/Organisateur':
       'ممثل / منتج / مخرج / كاتب سيناريو / مصور / محرر رسام / مدير مشروع / منظم',
     'Les métiers de la communication et du journalisme': 'مهن الاتصال والصحافة',
@@ -1389,30 +1326,25 @@ const arabicResult = () => {
     'Les métiers de la musique': 'وظائف الموسيقى',
     "Les métiers de l'animation du spectacle et de l'évenementiel":
       'المهن الخاصة بالرسوم المتحركة للعروض والفعاليات',
-    'Les métiers de la gestion artistique et culturel':
-      'مهن الإدارة الفنية والثقافية',
+    'Les métiers de la gestion artistique et culturel': 'مهن الإدارة الفنية والثقافية',
     'Les métiers du droit': 'المهن القانونية',
     "Les métiers de l'architecture, du design, de la décoration et de l'aménagement":
       'مهن العمارة والتصميم والديكور والتخطيط',
-    'Les métiers de la création cinématographique et dramatique':
-      'مهن الإبداع السينمائي والدرامي',
+    'Les métiers de la création cinématographique et dramatique': 'مهن الإبداع السينمائي والدرامي',
     "Les métiers de la psychologie, des ressources humaines et de l'action sociale":
       'مهن علم النفس والموارد البشرية والعمل الاجتماعي',
     'Les métiers du web': 'وظائف الويب',
     'Les métiers du sport': 'مهن الرياضة',
     'Les métiers de la santé': 'المهن الصحية',
     'Les métiers de la création artistique': 'مهن الإبداع الفني',
-    'Les métiers de la finance et des statistiques appliquées':
-      'مهن المالية والإحصاء التطبيقي',
+    'Les métiers de la finance et des statistiques appliquées': 'مهن المالية والإحصاء التطبيقي',
     "Les métiers des relations internationales et de l'administration":
       'وظائف في العلاقات الدولية والإدارة',
 
     // exampleofjob
-    'Entrepreneur/Manager/Gestionnaire/Commercial':
-      'صاحب مشروع / مدير / مدير / تجاري',
+    'Entrepreneur/Manager/Gestionnaire/Commercial': 'صاحب مشروع / مدير / مدير / تجاري',
     'Ingénieur/Concepteur/Programmeur': 'مهندس / مصمم / مبرمج',
-    'Enseignant/Instituteur/Ecrivain/Editeur/Critique':
-      'مدرس / معهد / كاتب / محرر / ناقد',
+    'Enseignant/Instituteur/Ecrivain/Editeur/Critique': 'مدرس / معهد / كاتب / محرر / ناقد',
     'Reporter/Journaliste/Attaché de presse': 'مراسل / صحفي / ملحق صحفي',
     'Chef cuisinier/Patissier/Oenologue/Restaurateur/Critique':
       'الشيف / طاهي المعجنات / اختصاصي صناعة الخمور / صاحب المطاعم / المراجع',
@@ -1424,21 +1356,18 @@ const arabicResult = () => {
       'رسام / مصمم غرافيك / رسام رسوم متحركة ثنائي الأبعاد / فنان (رسام ، نحات ، ...)',
     'Médecin/Kiné/Osthéo/Auxiliaire':
       'دكتور / أخصائي علاج طبيعي / الخبير المختص بالاعتلال العظمي/ مساعد',
-    'Agent/Créateur/Développeur/Entrepreneur/Manager':
-      'وكيل / منشئ / مطور / رائد أعمال / مسير ',
+    'Agent/Créateur/Développeur/Entrepreneur/Manager': 'وكيل / منشئ / مطور / رائد أعمال / مسير ',
     'Concepteur web/Développeur/Designer': 'مصمم الويب / المطور / المصمم',
     'Psychologue/Directeur Ressources Humaines/Assistant social':
       'أخصائي نفسي / مدير موارد بشرية / أخصائي اجتماعي',
     'Acteur/Producteur/Realisateur/Scénariste/Cadreur/Monteur':
       'ممثل / منتج / مخرج / كاتب سيناريو / مصور / محرر',
-    'Architecte/Designer/Urbaniste/Decorateur':
-      'مهندس معماري / مصمم / مخطط حضري / مصمم',
+    'Architecte/Designer/Urbaniste/Decorateur': 'مهندس معماري / مصمم / مخطط حضري / مصمم',
     'Juge/Avocat/Auxiliaire de justice (huissier, notaire, greffier)':
       'قاضي / محامي / مساعد للعدالة (عدل ، كاتب عدل ، كاتب)',
     'Conservateur/Restaurateur/Commissaire priseur/Artiste':
       'محافظ / المرمم / البائع بالمزاد العلني / الفنان',
-    'Animateur/Chef de projet/Organisateur':
-      'الرسوم المتحركة / مدير المشروع / المنظم',
+    'Animateur/Chef de projet/Organisateur': 'الرسوم المتحركة / مدير المشروع / المنظم',
     'Auteur/Compositeur/Interprête/Producteur/Ingénieur du son':
       'المؤلف / الملحن / المؤدي / المنتج / مهندس الصوت',
     'Fashion designer/Directeur artistique/Couturier/Chef de produit':
@@ -1452,33 +1381,24 @@ const frenchCourseName = () => {
   let fr = {
     'École des Hautes Etudes Commerciales de Koléa':
       'École des Hautes Etudes Commerciales de Koléa',
-    "École Nationale Polytechnique d'Oran":
-      "École Nationale Polytechnique d'Oran",
-    'École Nationale Supérieure Agronomique':
-      'École Nationale Supérieure Agronomique',
-    'École Nationale Supérieure de Biotechnologie':
-      'École Nationale Supérieure de Biotechnologie',
-    'École Nationale Supérieure de Mathématiques':
-      'École Nationale Supérieure de Mathématiques',
-    'École Nationale Supérieure de Technologie':
-      'École Nationale Supérieure de Technologie',
-    'École Nationale Supérieure des Forêts':
-      'École Nationale Supérieure des Forêts',
+    "École Nationale Polytechnique d'Oran": "École Nationale Polytechnique d'Oran",
+    'École Nationale Supérieure Agronomique': 'École Nationale Supérieure Agronomique',
+    'École Nationale Supérieure de Biotechnologie': 'École Nationale Supérieure de Biotechnologie',
+    'École Nationale Supérieure de Mathématiques': 'École Nationale Supérieure de Mathématiques',
+    'École Nationale Supérieure de Technologie': 'École Nationale Supérieure de Technologie',
+    'École Nationale Supérieure des Forêts': 'École Nationale Supérieure des Forêts',
     'École Nationale Supérieure des Mines et de la Métallurgie':
       'École Nationale Supérieure des Mines et de la Métallurgie',
     'École Nationale Supérieure des Sciences Politiques':
       'École Nationale Supérieure des Sciences Politiques',
-    'École Nationale Supérieure en Informatique':
-      'École Nationale Supérieure en Informatique',
+    'École Nationale Supérieure en Informatique': 'École Nationale Supérieure en Informatique',
     'École Nationale Supérieure en Statistique et en Economie Appliquée de Koléa':
       'École Nationale Supérieure en Statistique et en Economie Appliquée de Koléa',
-    'École Nationale Supérieure Polytechnique':
-      'École Nationale Supérieure Polytechnique',
+    'École Nationale Supérieure Polytechnique': 'École Nationale Supérieure Polytechnique',
     'École Nationale Supérieure Vétérinaire - AlgerÉcole Supérieure Agronomique':
       'École Nationale Supérieure Vétérinaire - AlgerÉcole Supérieure Agronomique',
     'École Supérieure Agronomique': 'École Supérieure Agronomique',
-    'École Supérieure de Commerce de Koléa':
-      'École Supérieure de Commerce de Koléa',
+    'École Supérieure de Commerce de Koléa': 'École Supérieure de Commerce de Koléa',
     'École Supérieure de Comptabilité et de Finance':
       'École Supérieure de Comptabilité et de Finance',
     "Centre universitaire d'El Bayadh - Nour Bachir":
@@ -1490,10 +1410,8 @@ const frenchCourseName = () => {
       'Centre Universitaire de Barika - Si El Haouès',
     'Centre universit:aire de Maghnia': 'Centre universit:aire de Maghnia',
     'Centre universitaire de Maghnia': 'Centre universitaire de Maghnia',
-    'Centre universitaire de Naama - Ahmed Salhi':
-      'Centre universitaire de Naama - Ahmed Salhi',
-    'Centre universitaire de Tindouf - Ali Kafi':
-      'Centre universitaire de Tindouf - Ali Kafi',
+    'Centre universitaire de Naama - Ahmed Salhi': 'Centre universitaire de Naama - Ahmed Salhi',
+    'Centre universitaire de Tindouf - Ali Kafi': 'Centre universitaire de Tindouf - Ali Kafi',
     'Centre universitaire de Tipaza - Abdallah Morsli':
       'Centre universitaire de Tipaza - Abdallah Morsli',
     'E.N.S Bechar': 'E.N.S Bechar',
@@ -1512,8 +1430,7 @@ const frenchCourseName = () => {
       'Ecole de Formation en Techniques de Gestion (EFTG)',
     'Ecole de Management d’Alger (E.M)': 'Ecole de Management d’Alger (E.M)',
     'Ecole de Management de Tizi Ouzou': 'Ecole de Management de Tizi Ouzou',
-    'École Nationale Polytechnique d’Alger':
-      'École Nationale Polytechnique d’Alger',
+    'École Nationale Polytechnique d’Alger': 'École Nationale Polytechnique d’Alger',
     'École Nationale Supérieure d’Hydraulique - Blida':
       'École Nationale Supérieure d’Hydraulique - Blida',
     'École Nationale Supérieure d’Intelligence Artificielle':
@@ -1531,16 +1448,13 @@ const frenchCourseName = () => {
     'École Supérieure d’Economie': 'École Supérieure d’Economie',
     'École Supérieure de Gestion et de l’Economie Numérique de Koléa':
       'École Supérieure de Gestion et de l’Economie Numérique de Koléa',
-    'École Supérieure de Management de Tlemcen':
-      'École Supérieure de Management de Tlemcen',
+    'École Supérieure de Management de Tlemcen': 'École Supérieure de Management de Tlemcen',
     "École Supérieure des Sciences Appliquée d'Alger":
       "École Supérieure des Sciences Appliquée d'Alger",
     'École Supérieure des Sciences Appliquées de Tlemcen':
       'École Supérieure des Sciences Appliquées de Tlemcen',
-    'École Supérieure des Sciences Biologiques':
-      'École Supérieure des Sciences Biologiques',
-    'École Supérieure des Sciences de Gestion':
-      'École Supérieure des Sciences de Gestion',
+    'École Supérieure des Sciences Biologiques': 'École Supérieure des Sciences Biologiques',
+    'École Supérieure des Sciences de Gestion': 'École Supérieure des Sciences de Gestion',
     'École Supérieure des Sciences de l’Aliment et des Industries Agroalimentaires':
       'École Supérieure des Sciences de l’Aliment et des Industries Agroalimentaires',
     'École Supérieure des Technologies Industrielles':
@@ -1551,8 +1465,7 @@ const frenchCourseName = () => {
       'École Supérieure en Informatique de Sidi Bel Abbes',
     "Ecole Supérieure d'Hôtellerie et de Restauration d'Alger (ESHRA)":
       "Ecole Supérieure d'Hôtellerie et de Restauration d'Alger (ESHRA)",
-    'Ecole Supérieure des Beaux-Arts (ESBA)':
-      'Ecole Supérieure des Beaux-Arts (ESBA)',
+    'Ecole Supérieure des Beaux-Arts (ESBA)': 'Ecole Supérieure des Beaux-Arts (ESBA)',
     'Ecole Supérieure des Sciences et Technologies (E.S.S.T)':
       'Ecole Supérieure des Sciences et Technologies (E.S.S.T)',
     'Ecole Supérieure en Sciences de Technologies du Sport':
@@ -1590,69 +1503,47 @@ const frenchCourseName = () => {
     'Institut de Formation d’Assurances et de Gestion (IFAG)':
       'Institut de Formation d’Assurances et de Gestion (IFAG)',
     'Institut de Management (INSIM SUP)': 'Institut de Management (INSIM SUP)',
-    'Institut de Management d’Alger (IMA)':
-      'Institut de Management d’Alger (IMA)',
+    'Institut de Management d’Alger (IMA)': 'Institut de Management d’Alger (IMA)',
     'Institut de Technologie (NUMIDIA)': 'Institut de Technologie (NUMIDIA)',
-    'Institut National de la Poste et des TIC':
-      'Institut National de la Poste et des TIC',
+    'Institut National de la Poste et des TIC': 'Institut National de la Poste et des TIC',
     'Institut National des Télécommunications et des Technologies de l’Information et de la Communication':
       'Institut National des Télécommunications et des Technologies de l’Information et de la Communication',
-    'Institut National Supérieur de Musique':
-      'Institut National Supérieur de Musique',
-    'Institut Supérieur de Commerce et de Gestion':
-      'Institut Supérieur de Commerce et de Gestion',
-    'Institut Supérieur de gestion (ISG)':
-      'Institut Supérieur de gestion (ISG)',
-    'Institut Supérieur des Langues Etrangères':
-      'Institut Supérieur des Langues Etrangères',
+    'Institut National Supérieur de Musique': 'Institut National Supérieur de Musique',
+    'Institut Supérieur de Commerce et de Gestion': 'Institut Supérieur de Commerce et de Gestion',
+    'Institut Supérieur de gestion (ISG)': 'Institut Supérieur de gestion (ISG)',
+    'Institut Supérieur des Langues Etrangères': 'Institut Supérieur des Langues Etrangères',
     'Institut Supérieur des Métiers des Arts du Spectacle et de l’Audiovisuel 1 (ISMAS)':
       'Institut Supérieur des Métiers des Arts du Spectacle et de l’Audiovisuel 1 (ISMAS)',
     'Institut vétérinaire - Blida 1': 'Institut vétérinaire - Blida 1',
     'Institut vétérinaire - El Tarf': 'Institut vétérinaire - El Tarf',
     'Institut vétérinaire - Souk Ahras': 'Institut vétérinaire - Souk Ahras',
-    'Institut vétérinaire - Univ. Batna 1':
-      'Institut vétérinaire - Univ. Batna 1',
-    'Institut vétérinaire - Univ. Constantine 1':
-      'Institut vétérinaire - Univ. Constantine 1',
-    'Institut vétérinaire - Univ. Tiaret':
-      'Institut vétérinaire - Univ. Tiaret',
-    'Instruit Supérieur des Sciences (I.S.S)':
-      'Instruit Supérieur des Sciences (I.S.S)',
+    'Institut vétérinaire - Univ. Batna 1': 'Institut vétérinaire - Univ. Batna 1',
+    'Institut vétérinaire - Univ. Constantine 1': 'Institut vétérinaire - Univ. Constantine 1',
+    'Institut vétérinaire - Univ. Tiaret': 'Institut vétérinaire - Univ. Tiaret',
+    'Instruit Supérieur des Sciences (I.S.S)': 'Instruit Supérieur des Sciences (I.S.S)',
     "Université  d'Adrar - Ahmed Draya": "Université  d'Adrar - Ahmed Draya",
-    "Université  d'Oran 2 - Mohamed Ben Ahmed":
-      "Université  d'Oran 2 - Mohamed Ben Ahmed",
-    'Université  de Annaba - Badji Mokhtar':
-      'Université  de Annaba - Badji Mokhtar',
-    'Université  de Biskra - Mohamed Khider':
-      'Université  de Biskra - Mohamed Khider',
-    'Université  de Bouira - Akli Mohand Oulhadj':
-      'Université  de Bouira - Akli Mohand Oulhadj',
+    "Université  d'Oran 2 - Mohamed Ben Ahmed": "Université  d'Oran 2 - Mohamed Ben Ahmed",
+    'Université  de Annaba - Badji Mokhtar': 'Université  de Annaba - Badji Mokhtar',
+    'Université  de Biskra - Mohamed Khider': 'Université  de Biskra - Mohamed Khider',
+    'Université  de Bouira - Akli Mohand Oulhadj': 'Université  de Bouira - Akli Mohand Oulhadj',
     'Université  de Constantine 2 - Abdelhamid Mehri':
       'Université  de Constantine 2 - Abdelhamid Mehri',
-    'Université  de Djelfa - Ziane Achour':
-      'Université  de Djelfa - Ziane Achour',
+    'Université  de Djelfa - Ziane Achour': 'Université  de Djelfa - Ziane Achour',
     'Université  de Jijel - Mohammed Seddik Benyahia':
       'Université  de Jijel - Mohammed Seddik Benyahia',
     'Université  de Khemis Miliana - Djilali Bounaama':
       'Université  de Khemis Miliana - Djilali Bounaama',
-    'Université  de Khenchela - Abbas Laghrour':
-      'Université  de Khenchela - Abbas Laghrour',
-    'Université  de Laghouat - Amar Telidji':
-      'Université  de Laghouat - Amar Telidji',
-    "Université  de M'sila - Mohamed Boudiaf":
-      "Université  de M'sila - Mohamed Boudiaf",
-    'Université  de Mascara - Mustapha Stambouli':
-      'Université  de Mascara - Mustapha Stambouli',
-    'Université  de Mascara - Mustapha Stambouli':
-      'Université  de Mascara - Mustapha Stambouli',
+    'Université  de Khenchela - Abbas Laghrour': 'Université  de Khenchela - Abbas Laghrour',
+    'Université  de Laghouat - Amar Telidji': 'Université  de Laghouat - Amar Telidji',
+    "Université  de M'sila - Mohamed Boudiaf": "Université  de M'sila - Mohamed Boudiaf",
+    'Université  de Mascara - Mustapha Stambouli': 'Université  de Mascara - Mustapha Stambouli',
+    'Université  de Mascara - Mustapha Stambouli': 'Université  de Mascara - Mustapha Stambouli',
     "Université  de Oum El Bouaghi - Larbi Ben M'hidi":
       "Université  de Oum El Bouaghi - Larbi Ben M'hidi",
-    'Université  de Sétif 1 - Ferhat Abbas':
-      'Université  de Sétif 1 - Ferhat Abbas',
+    'Université  de Sétif 1 - Ferhat Abbas': 'Université  de Sétif 1 - Ferhat Abbas',
     'Université  de Sétif 2 - Mohamed Lamine Debaghine':
       'Université  de Sétif 2 - Mohamed Lamine Debaghine',
-    'Université  de Tiaret - Ibn Khaldoun':
-      'Université  de Tiaret - Ibn Khaldoun',
+    'Université  de Tiaret - Ibn Khaldoun': 'Université  de Tiaret - Ibn Khaldoun',
     'Université  de Tiaret - Ibn Khaldoun (+ A. SOUGHEUR)':
       'Université  de Tiaret - Ibn Khaldoun (+ A. SOUGHEUR)',
     'Université  de Tiaret - Ibn Khaldoun (+ A.SOUGHEUR+A. KSAR CHELLALA)':
@@ -1660,50 +1551,36 @@ const frenchCourseName = () => {
     'Université  de Tiaret - Ibn Khaldoun (+A. KSAR CHELLALA)':
       'Université  de Tiaret - Ibn Khaldoun (+A. KSAR CHELLALA)',
     'Université  Médéa - Yahia Farès': 'Université  Médéa - Yahia Farès',
-    'Université  Sidi Bel Abbès - Djillali Liabes':
-      'Université  Sidi Bel Abbès - Djillali Liabes',
+    'Université  Sidi Bel Abbès - Djillali Liabes': 'Université  Sidi Bel Abbès - Djillali Liabes',
     'Université 8 Mai 1945 de Guelma': 'Université 8 Mai 1945 de Guelma',
-    "Université d'Alger 1 - Benyoucef Benkhedda":
-      "Université d'Alger 1 - Benyoucef Benkhedda",
+    "Université d'Alger 1 - Benyoucef Benkhedda": "Université d'Alger 1 - Benyoucef Benkhedda",
     "Université d'Alger 2 - Abou el Kacem Saâdallah":
       "Université d'Alger 2 - Abou el Kacem Saâdallah",
     "Université d'Alger 3 - Brahim Soltane Chaibout":
       "Université d'Alger 3 - Brahim Soltane Chaibout",
-    "Université d'El Oued - Hamma Lakhdar":
-      "Université d'El Oued - Hamma Lakhdar",
-    "Université d'El Tarf - Chadli Bendjedid":
-      "Université d'El Tarf - Chadli Bendjedid",
-    "Université d'Oran1 - Ahmed Ben Bella":
-      "Université d'Oran1 - Ahmed Ben Bella",
+    "Université d'El Oued - Hamma Lakhdar": "Université d'El Oued - Hamma Lakhdar",
+    "Université d'El Tarf - Chadli Bendjedid": "Université d'El Tarf - Chadli Bendjedid",
+    "Université d'Oran1 - Ahmed Ben Bella": "Université d'Oran1 - Ahmed Ben Bella",
     'Université de Aïn Témouchent': 'Université de Aïn Témouchent',
-    'Université de Béjaia - Abderrahmane Mira':
-      'Université de Béjaia - Abderrahmane Mira',
-    'Université de Batna 1 - Hadj Lakhder':
-      'Université de Batna 1 - Hadj Lakhder',
+    'Université de Béjaia - Abderrahmane Mira': 'Université de Béjaia - Abderrahmane Mira',
+    'Université de Batna 1 - Hadj Lakhder': 'Université de Batna 1 - Hadj Lakhder',
     'Université de Batna 1 - Hadj Lakhder (sciences agronomiques)':
       'Université de Batna 1 - Hadj Lakhder (sciences agronomiques)',
-    'Université de Batna 2 - Mustapha Ben Boulaid':
-      'Université de Batna 2 - Mustapha Ben Boulaid',
+    'Université de Batna 2 - Mustapha Ben Boulaid': 'Université de Batna 2 - Mustapha Ben Boulaid',
     'Université de Batna 2 - Mustapha Ben Boulaid (sciences biologiques)':
       'Université de Batna 2 - Mustapha Ben Boulaid (sciences biologiques)',
-    'Université de Bechar - Mohamed Tahri':
-      'Université de Bechar - Mohamed Tahri',
-    'Université de Blida 1 - Saad Dahlab':
-      'Université de Blida 1 - Saad Dahlab',
-    'Université de Blida 2 - Lounici Ali':
-      'Université de Blida 2 - Lounici Ali',
+    'Université de Bechar - Mohamed Tahri': 'Université de Bechar - Mohamed Tahri',
+    'Université de Blida 1 - Saad Dahlab': 'Université de Blida 1 - Saad Dahlab',
+    'Université de Blida 2 - Lounici Ali': 'Université de Blida 2 - Lounici Ali',
     'Université de Bordj Bou Arréridj - Mohamed Bachir El Ibrahimi':
       'Université de Bordj Bou Arréridj - Mohamed Bachir El Ibrahimi',
-    "Université de Boumerdès - M'hamed Bougara":
-      "Université de Boumerdès - M'hamed Bougara",
+    "Université de Boumerdès - M'hamed Bougara": "Université de Boumerdès - M'hamed Bougara",
     "Université de Boumerdès - M'hamed Bougara - Institute of Electrical and Electronic Engineering (IEEE)":
       "Université de Boumerdès - M'hamed Bougara - Institute of Electrical and Electronic Engineering (IEEE)",
-    'Université de Chlef - Hassiba Benbouali':
-      'Université de Chlef - Hassiba Benbouali',
+    'Université de Chlef - Hassiba Benbouali': 'Université de Chlef - Hassiba Benbouali',
     'Université de Constantine 1 - Frères Mentouri':
       'Université de Constantine 1 - Frères Mentouri',
-    'Université de Constantine 3 -Salah Boubnider':
-      'Université de Constantine 3 -Salah Boubnider',
+    'Université de Constantine 3 -Salah Boubnider': 'Université de Constantine 3 -Salah Boubnider',
     'Université de Ghardaia': 'Université de Ghardaia',
     'Université de Mostaganem - Abdelhamid Ibn Badis':
       'Université de Mostaganem - Abdelhamid Ibn Badis',
@@ -1711,33 +1588,27 @@ const frenchCourseName = () => {
     'Université de Saida - Tahar Moulay': 'Université de Saida - Tahar Moulay',
     'Université de Souk Ahras - Mohammed-Chérif Messaadia':
       'Université de Souk Ahras - Mohammed-Chérif Messaadia',
-    'Université de Tébessa - Larbi Tébessi':
-      'Université de Tébessa - Larbi Tébessi',
+    'Université de Tébessa - Larbi Tébessi': 'Université de Tébessa - Larbi Tébessi',
     'Université de Tamanrasset': 'Université de Tamanrasset',
     'Université de Tissemsilt': 'Université de Tissemsilt',
-    'Université de Tizi Ouzou - Mouloud Maameri':
-      'Université de Tizi Ouzou - Mouloud Maameri',
-    'Université de Tlemcen - Abou Bekr Belkaid':
-      'Université de Tlemcen - Abou Bekr Belkaid',
+    'Université de Tizi Ouzou - Mouloud Maameri': 'Université de Tizi Ouzou - Mouloud Maameri',
+    'Université de Tlemcen - Abou Bekr Belkaid': 'Université de Tlemcen - Abou Bekr Belkaid',
     "Université des sciences et de la technologie d'Alger, Houari Boumediène":
       "Université des sciences et de la technologie d'Alger, Houari Boumediène",
     'Université des sciences islamiques Emir Abdelkader de Constantine':
       'Université des sciences islamiques Emir Abdelkader de Constantine',
-    'Université du 20 Août 1955 de Skikda':
-      'Université du 20 Août 1955 de Skikda',
+    'Université du 20 Août 1955 de Skikda': 'Université du 20 Août 1955 de Skikda',
     "Université Mohamed Boudiaf  des sciences et de la technologie - Mohamed Boudiaf d'Oran":
       "Université Mohamed Boudiaf  des sciences et de la technologie - Mohamed Boudiaf d'Oran",
     // missing coursename
-    'Université  de Ouargla - Kasdi Merbah':
-      'Université  de Ouargla - Kasdi Merbah',
+    'Université  de Ouargla - Kasdi Merbah': 'Université  de Ouargla - Kasdi Merbah',
 
     // Spécialité column F
     'Économie des hydrocarbures : économie pétrolière':
       'Économie des hydrocarbures : économie pétrolière',
     'Agriculture de précision': 'Agriculture de précision',
     'Art de l’acteur': 'Art de l’acteur',
-    'Énergies renouvelables en électrotechnique':
-      'Énergies renouvelables en électrotechnique',
+    'Énergies renouvelables en électrotechnique': 'Énergies renouvelables en électrotechnique',
     'Action commerciale': 'Action commerciale',
     'Aéronautique et mécanique de l’aviation légère':
       'Aéronautique et mécanique de l’aviation légère',
@@ -1749,13 +1620,10 @@ const frenchCourseName = () => {
     'Archéologie, Bibliothéconomie, Histoire et Sciences de l’information et de la communication':
       'Archéologie, Bibliothéconomie, Histoire et Sciences de l’information et de la communication',
     Électronique: 'Électronique',
-    'Électronique et maintenance biomédicale':
-      'Électronique et maintenance biomédicale',
+    'Électronique et maintenance biomédicale': 'Électronique et maintenance biomédicale',
     'Énergies renouvelables appliquées': 'Énergies renouvelables appliquées',
-    'Énergies renouvelables en élecrotechnique':
-      'Énergies renouvelables en élecrotechnique',
-    'Énergies renouvelables et environnement':
-      'Énergies renouvelables et environnement',
+    'Énergies renouvelables en élecrotechnique': 'Énergies renouvelables en élecrotechnique',
+    'Énergies renouvelables et environnement': 'Énergies renouvelables et environnement',
     Agronomie: 'Agronomie',
     'Agronomie saharienne': 'Agronomie saharienne',
     'Algèbre et cryptographie': 'Algèbre et cryptographie',
@@ -1766,8 +1634,7 @@ const frenchCourseName = () => {
     'Archéologie préhistorique': 'Archéologie préhistorique',
     Architecture: 'Architecture',
     Arts: 'Arts',
-    'Arts plastiques / Expression picturale':
-      'Arts plastiques / Expression picturale',
+    'Arts plastiques / Expression picturale': 'Arts plastiques / Expression picturale',
     'Arts plastiques / Volume matière': 'Arts plastiques / Volume matière',
     'Assemblages Soudés': 'Assemblages Soudés',
     'Assistant Social de Santé Publique': 'Assistant Social de Santé Publique',
@@ -1778,8 +1645,7 @@ const frenchCourseName = () => {
     'Automatisation et contrôle en industries pétrochimiques':
       'Automatisation et contrôle en industries pétrochimiques',
     Avionique: 'Avionique',
-    'Bibliothèque et centres de documentation':
-      'Bibliothèque et centres de documentation',
+    'Bibliothèque et centres de documentation': 'Bibliothèque et centres de documentation',
     'Budget de l’état': 'Budget de l’état',
     'Business English': 'Business English',
     'Chariâa et droit': 'Chariâa et droit',
@@ -1788,10 +1654,8 @@ const frenchCourseName = () => {
     'Chimie pharmaceutique': 'Chimie pharmaceutique',
     Civilisation: 'Civilisation',
     'Classes préparatoires': 'Classes préparatoires',
-    'Classes préparatoires en informatique':
-      'Classes préparatoires en informatique',
-    'Classes préparatoires intégrés (techno-pôle)':
-      'Classes préparatoires intégrés (techno-pôle)',
+    'Classes préparatoires en informatique': 'Classes préparatoires en informatique',
+    'Classes préparatoires intégrés (techno-pôle)': 'Classes préparatoires intégrés (techno-pôle)',
     'Commerce international': 'Commerce international',
     'Comptabilité - contrôle - audit': 'Comptabilité - contrôle - audit',
     'Comptabilité et audit': 'Comptabilité et audit',
@@ -1801,30 +1665,23 @@ const frenchCourseName = () => {
     'Conduite opérationnelle de projets': 'Conduite opérationnelle de projets',
     'Conduite opérationnelle de projets de construction':
       'Conduite opérationnelle de projets de construction',
-    'Conservation et restauration en archéologie':
-      'Conservation et restauration en archéologie',
-    'Construction et architecture navale':
-      'Construction et architecture navale',
-    'Constructions Civils et Environnement':
-      ' Constructions Civils et Environnement',
-    'Contrôle qualité et analyse des aliments':
-      'Contrôle qualité et analyse des aliments',
+    'Conservation et restauration en archéologie': 'Conservation et restauration en archéologie',
+    'Construction et architecture navale': 'Construction et architecture navale',
+    'Constructions Civils et Environnement': ' Constructions Civils et Environnement',
+    'Contrôle qualité et analyse des aliments': 'Contrôle qualité et analyse des aliments',
     'Critique Théâtrale': 'Critique Théâtrale',
-    'Développement Web et applications mobiles':
-      'Développement Web et applications mobiles',
+    'Développement Web et applications mobiles': 'Développement Web et applications mobiles',
     'Développement Web et infographie': 'Développement Web et infographie',
     'Design / Espace': 'Design / Espace',
     'Design / Image – média': 'Design / Image – média',
     'Diététicien de santé publique': 'Diététicien de santé publique',
     Didactique: 'Didactique',
     Droit: 'Droit',
-    "Droit de l'entreprise et des affaires":
-      "Droit de l'entreprise et des affaires",
+    "Droit de l'entreprise et des affaires": "Droit de l'entreprise et des affaires",
     'Droit des affaires': 'Droit des affaires',
     'E-Commerce et marketing numérique': 'E-Commerce et marketing numérique',
     'Eau et environnement': 'Eau et environnement',
-    'Economie et gestion de l’entreprise':
-      'Economie et gestion de l’entreprise',
+    'Economie et gestion de l’entreprise': 'Economie et gestion de l’entreprise',
     'Economie Islamique': 'Economie Islamique',
     'Electromécanique minière': 'Electromécanique minière',
     Electrotechnique: 'Electrotechnique',
@@ -1840,8 +1697,7 @@ const frenchCourseName = () => {
     'Finance islamique': 'Finance islamique',
     Forage: 'Forage',
     Foresterie: 'Foresterie',
-    'Génie électrique : électricité industrielle':
-      'Génie électrique : électricité industrielle',
+    'Génie électrique : électricité industrielle': 'Génie électrique : électricité industrielle',
     'Génie chimique': 'Génie chimique',
     'Génie de l’eau': 'Génie de l’eau',
     "Génie de l'environnent et procédés": "Génie de l'environnent et procédés",
@@ -1849,8 +1705,7 @@ const frenchCourseName = () => {
     'Génie des Polymères': 'Génie des Polymères',
     'Génie des procédés': 'Génie des procédés',
     'Génie des procédés pharmaceutiques': 'Génie des procédés pharmaceutiques',
-    'Génie des télécommunications et réseaux':
-      'Génie des télécommunications et réseaux',
+    'Génie des télécommunications et réseaux': 'Génie des télécommunications et réseaux',
     'Génie industriel et maintenance': 'Génie industriel et maintenance',
     'Génie logiciel': 'Génie logiciel',
     'Génie mécanique : mécanique des chantiers pétroliers':
@@ -1865,8 +1720,7 @@ const frenchCourseName = () => {
     'Génie pétrolier : production des hydrocarbures':
       'Génie pétrolier : production des hydrocarbures',
     'Génie urbain': 'Génie urbain',
-    'Géographie et aménagement du territoire':
-      'Géographie et aménagement du territoire',
+    'Géographie et aménagement du territoire': 'Géographie et aménagement du territoire',
     Géologie: 'Géologie',
     'Géologie et environnement': 'Géologie et environnement',
     'Géomètre Topographe': 'Géomètre Topographe',
@@ -1875,14 +1729,11 @@ const frenchCourseName = () => {
       'Géosciences appliquées : ressources minérales et énergétiques',
     Géotechnique: 'Géotechnique',
     'Gestion de l’hébergement': 'Gestion de l’hébergement',
-    'Gestion de la production et logistique':
-      'Gestion de la production et logistique',
+    'Gestion de la production et logistique': 'Gestion de la production et logistique',
     'Gestion de restauration': 'Gestion de restauration',
-    'Gestion des agences de tourisme et de voyage':
-      'Gestion des agences de tourisme et de voyage',
+    'Gestion des agences de tourisme et de voyage': 'Gestion des agences de tourisme et de voyage',
     'Gestion des déchets urbains': 'Gestion des déchets urbains',
-    'Gestion des Infrastructures du Sport':
-      'Gestion des Infrastructures du Sport',
+    'Gestion des Infrastructures du Sport': 'Gestion des Infrastructures du Sport',
     'Gestion des ressources humaines': 'Gestion des ressources humaines',
     'Gestion des Techniques Urbaines': 'Gestion des Techniques Urbaines',
     'Gestion des villes': 'Gestion des villes',
@@ -1896,18 +1747,15 @@ const frenchCourseName = () => {
     'Hygiène, sécurité et environnement': 'Hygiène, sécurité et environnement',
     'Hygiène, Sécurité et Environnement dans l’industrie pétrolière et gazière':
       'Hygiène, Sécurité et Environnement dans l’industrie pétrolière et gazière',
-    'Hygiène, sécurité et santé au travail':
-      'Hygiène, sécurité et santé au travail',
+    'Hygiène, sécurité et santé au travail': 'Hygiène, sécurité et santé au travail',
     'Hygiéniste de Santé Publique': 'Hygiéniste de Santé Publique',
     'Industries électroniques': 'Industries électroniques',
     'Infirmier de santé publique': 'Infirmier de santé publique',
     Informatique: 'Informatique',
-    'Informatique biomédicale et hospitalière':
-      'Informatique biomédicale et hospitalière',
+    'Informatique biomédicale et hospitalière': 'Informatique biomédicale et hospitalière',
     'Informatique de gestion': 'Informatique de gestion',
     'Informatique et réseaux': 'Informatique et réseaux',
-    'Ingénierie électrique et électronique (IEEE)':
-      'Ingénierie électrique et électronique (IEEE)',
+    'Ingénierie électrique et électronique (IEEE)': 'Ingénierie électrique et électronique (IEEE)',
     'Ingénierie automobile': 'Ingénierie automobile',
     "Ingénierie des systèmes d'information et des logiciels":
       "Ingénierie des systèmes d'information et des logiciels",
@@ -1917,8 +1765,7 @@ const frenchCourseName = () => {
     'Ingénierie Mécanique': 'Ingénierie Mécanique',
     Installations: 'Installations',
     'Instruments et Chant': 'Instruments et Chant',
-    'Kinésithérapeutes de santé publique':
-      'Kinésithérapeutes de santé publique',
+    'Kinésithérapeutes de santé publique': 'Kinésithérapeutes de santé publique',
     'Laborantin de santé publique': 'Laborantin de santé publique',
     'Langue allemande': 'Langue allemande',
     'Langue anglaise': 'Langue anglaise',
@@ -1945,14 +1792,12 @@ const frenchCourseName = () => {
     'Métrologie et contrôle industriel': 'Métrologie et contrôle industriel',
     'Maintenance industrielle & technologie automobile':
       'Maintenance industrielle & technologie automobile',
-    'Maintenance industrielle et électromécanique':
-      'Maintenance industrielle et électromécanique',
+    'Maintenance industrielle et électromécanique': 'Maintenance industrielle et électromécanique',
     'Maitrise du risque industriel': 'Maitrise du risque industriel',
     Management: 'Management',
     'Management commercial': 'Management commercial',
     'Management des affaires': 'Management des affaires',
-    'Management des hôtels et du tourisme':
-      'Management des hôtels et du tourisme',
+    'Management des hôtels et du tourisme': 'Management des hôtels et du tourisme',
     'Management du développement durable du tourisme':
       'Management du développement durable du tourisme',
     'Management du tourisme': 'Management du tourisme',
@@ -1961,8 +1806,7 @@ const frenchCourseName = () => {
       'Manipulateur en imagerie médicale de santé publique',
     Marketing: 'Marketing',
     'Marketing international': 'Marketing international',
-    'Matériaux et contrôle physico-chimique':
-      'Matériaux et contrôle physico-chimique',
+    'Matériaux et contrôle physico-chimique': 'Matériaux et contrôle physico-chimique',
     'Mathématiques et informatique': 'Mathématiques et informatique',
     'Mécanique Industrielle de Construction et d’Entretien':
       'Mécanique Industrielle de Construction et d’Entretien',
@@ -1973,23 +1817,19 @@ const frenchCourseName = () => {
     'Network infrastructure and cyber security (NICS)':
       'Network infrastructure and cyber security (NICS)',
     'Opérations aériennes': 'Opérations aériennes',
-    'Opticien Lunetier de santé publique':
-      'Opticien Lunetier de santé publique',
+    'Opticien Lunetier de santé publique': 'Opticien Lunetier de santé publique',
     'Optique et mécanique de précision': 'Optique et mécanique de précision',
-    'Optique instrumentale et photonique':
-      'Optique instrumentale et photonique',
+    'Optique instrumentale et photonique': 'Optique instrumentale et photonique',
     'Optique visuelle et lunetterie': 'Optique visuelle et lunetterie',
     Optométrie: 'Optométrie',
     'Orientation et guidance': 'Orientation et guidance',
     'Orthoptiste de santé publique': 'Orthoptiste de santé publique',
     'Oussoul Eddine, Charia, Langue Arabe et Civilisation Islamique':
       'Oussoul Eddine, Charia, Langue Arabe et Civilisation Islamique',
-    'Ouvrages et amenagement hydrauliques':
-      'Ouvrages et amenagement hydrauliques',
+    'Ouvrages et amenagement hydrauliques': 'Ouvrages et amenagement hydrauliques',
     Pharmacie: 'Pharmacie',
     'Physique fondamentale': 'Physique fondamentale',
-    'Préparateur en Pharmacie de Santé Publique':
-      'Préparateur en Pharmacie de Santé Publique',
+    'Préparateur en Pharmacie de Santé Publique': 'Préparateur en Pharmacie de Santé Publique',
     'Prise de son': 'Prise de son',
     'Prise de vue': 'Prise de vue',
     'Probabilités statistiques': 'Probabilités statistiques',
@@ -2002,8 +1842,7 @@ const frenchCourseName = () => {
     'Production aquacole': 'Production aquacole',
     'Production végétale': 'Production végétale',
     Productique: 'Productique',
-    'Productique mécanique et industrialisation':
-      'Productique mécanique et industrialisation',
+    'Productique mécanique et industrialisation': 'Productique mécanique et industrialisation',
     'Professeur de l’École Primaire en Arabe (P.E.P.)':
       'Professeur de l’École Primaire en Arabe (P.E.P.)',
     'Professeur de l’École Primaire en Français (P.E.P.)':
@@ -2057,15 +1896,13 @@ const frenchCourseName = () => {
     'Professeur de l’Enseignement Secondaire en Sciences Naturelles (P.E.S.)':
       'Professeur de l’Enseignement Secondaire en Sciences Naturelles (P.E.S.)',
     'Propulsion avion': 'Propulsion avion',
-    'Propulsion et hydrodynamique navale':
-      'Propulsion et hydrodynamique navale',
+    'Propulsion et hydrodynamique navale': 'Propulsion et hydrodynamique navale',
     'Protection des Réseaux électriques': 'Protection des Réseaux électriques',
     'Protection des végétaux': 'Protection des végétaux',
     'Psychologie, Orthophonie, Sciences de l’éducation, Philosophie, Sciences des Populations, Sociologie et anthropologie':
       'Psychologie, Orthophonie, Sciences de l’éducation, Philosophie, Sciences des Populations, Sociologie et anthropologie',
     'Psychomotricien de santé publique': 'Psychomotricien de santé publique',
-    'Qualité, hygiène, sécurité et environnement':
-      'Qualité, hygiène, sécurité et environnement',
+    'Qualité, hygiène, sécurité et environnement': 'Qualité, hygiène, sécurité et environnement',
     'Réhabilitation des constructions': 'Réhabilitation des constructions',
     'Réseaux et sécurité': 'Réseaux et sécurité',
     'Réseaux et Télécommunication': 'Réseaux et Télécommunication',
@@ -2076,8 +1913,7 @@ const frenchCourseName = () => {
     'Ressources en eau': 'Ressources en eau',
     'Sécurité et administration des systèmes et réseaux':
       'Sécurité et administration des systèmes et réseaux',
-    'Sécurité industrielle et environnement':
-      'Sécurité industrielle et environnement',
+    'Sécurité industrielle et environnement': 'Sécurité industrielle et environnement',
     'Sage-femme de Santé Publique': 'Sage-femme de Santé Publique',
     Scénographie: 'Scénographie',
     'Sciences Économiques, de Gestion et Commerciales':
@@ -2105,8 +1941,7 @@ const frenchCourseName = () => {
     'Systèmes de Télécoms': 'Systèmes de Télécoms',
     'Systèmes et réseaux': 'Systèmes et réseaux',
     'Systèmes informatiques': 'Systèmes informatiques',
-    'Systemes de Télécommunications et Réseaux':
-      'Systemes de Télécommunications et Réseaux',
+    'Systemes de Télécommunications et Réseaux': 'Systemes de Télécommunications et Réseaux',
     'Télécommunications spatiales': 'Télécommunications spatiales',
     'Télécoms et Réseaux IP': 'Télécoms et Réseaux IP',
     'Techniques archivistiques': 'Techniques archivistiques',
@@ -2120,17 +1955,14 @@ const frenchCourseName = () => {
     'Technologie de soudage': 'Technologie de soudage',
     'Technologie des eaux et boissons': 'Technologie des eaux et boissons',
     'Technologie des matériaux': 'Technologie des matériaux',
-    'Technologie des produits laitiers et dérivés':
-      'Technologie des produits laitiers et dérivés',
+    'Technologie des produits laitiers et dérivés': 'Technologie des produits laitiers et dérivés',
     'Technologie du web': 'Technologie du web',
     'Technologie en santé': 'Technologie en santé',
     'Technologies de l’information': 'Technologies de l’information',
     'Technologies de traitement du pétrole et du gaz':
       'Technologies de traitement du pétrole et du gaz',
-    'Technologies de transformation des céréales':
-      'Technologies de transformation des céréales',
-    'Technologies des céréales et dérivés':
-      'Technologies des céréales et dérivés',
+    'Technologies de transformation des céréales': 'Technologies de transformation des céréales',
+    'Technologies des céréales et dérivés': 'Technologies des céréales et dérivés',
     'Technologies des huiles essentielles végétales':
       'Technologies des huiles essentielles végétales',
     'Technologies des industries laitières et fromagères':
@@ -2144,8 +1976,7 @@ const frenchCourseName = () => {
       'Traduction/interprétariat Arabe/Français/Espagnol',
     'Transport & Logistique': 'Transport & Logistique',
     Urbanisme: 'Urbanisme',
-    'Valorisation des ressources minérales':
-      'Valorisation des ressources minérales',
+    'Valorisation des ressources minérales': 'Valorisation des ressources minérales',
     'Valorisation et qualité des produits agroalimentaires':
       'Valorisation et qualité des produits agroalimentaires',
     'Voies et Ouvrages d’Art': 'Voies et Ouvrages d’Art'
@@ -2154,39 +1985,28 @@ const frenchCourseName = () => {
 };
 const arabicCourseName = () => {
   let ar = {
-    'École des Hautes Etudes Commerciales de Koléa':
-      'مدرسة الدراسات التجارية العليا-القليعة',
-    "École Nationale Polytechnique d'Oran":
-      'المدرسة الوطنية للفنون التطبيقية -وهران',
+    'École des Hautes Etudes Commerciales de Koléa': 'مدرسة الدراسات التجارية العليا-القليعة',
+    "École Nationale Polytechnique d'Oran": 'المدرسة الوطنية للفنون التطبيقية -وهران',
 
     'École Nationale Supérieure Agronomique': 'المدرسة الوطنية للزراعة -الحراش',
-    'École Nationale Supérieure de Biotechnologie':
-      'المدرسة الوطنية العليا للبيوتكنولوجيا-قسنطينة',
+    'École Nationale Supérieure de Biotechnologie': 'المدرسة الوطنية العليا للبيوتكنولوجيا-قسنطينة',
 
     'École Nationale Supérieure de Mathématiques': 'المدرسة الوطنية للرياضيات',
-    'École Nationale Supérieure de Technologie':
-      'المدرسة الوطنية للتكنولوجيا-الجزائر',
+    'École Nationale Supérieure de Technologie': 'المدرسة الوطنية للتكنولوجيا-الجزائر',
     'École Nationale Supérieure des Forêts': 'المدرسة الوطنية للغابات',
-    'École Nationale Supérieure des Mines et de la Métallurgie':
-      'المدرسة الوطنية للتعدين والمعادن',
-    'École Nationale Supérieure des Sciences Politiques':
-      'المدرسة الوطنية للعلوم السياسية-الجزائر',
-    'École Nationale Supérieure des Travaux Publics':
-      'المدرسة الوطنية للأشغال العامة-الجزائر',
-    'École Nationale Supérieure en Informatique':
-      'المدرسة الوطنية لعلوم الكمبيوتر-الجزائر',
+    'École Nationale Supérieure des Mines et de la Métallurgie': 'المدرسة الوطنية للتعدين والمعادن',
+    'École Nationale Supérieure des Sciences Politiques': 'المدرسة الوطنية للعلوم السياسية-الجزائر',
+    'École Nationale Supérieure des Travaux Publics': 'المدرسة الوطنية للأشغال العامة-الجزائر',
+    'École Nationale Supérieure en Informatique': 'المدرسة الوطنية لعلوم الكمبيوتر-الجزائر',
     'École Nationale Supérieure en Statistique et en Economie Appliquée de Koléa':
       'المدرسة الوطنية للإحصاء والاقتصاد التطبيقي-القليعة',
-    'École Nationale Supérieure Polytechnique':
-      'المدرسة الوطنية للفنون التطبيقية-الجزائر',
+    'École Nationale Supérieure Polytechnique': 'المدرسة الوطنية للفنون التطبيقية-الجزائر',
     'École Nationale Supérieure Vétérinaire - AlgerÉcole Supérieure Agronomique':
       'المدرسة الوطنية العليا للبيطرية-المدرسة العليا للزراعة  - الجزائر العاصمة ',
     'École Supérieure Agronomique': 'المدرسة العليا لعلوم الزراعة',
     'École Supérieure de Commerce de Koléa': 'كلية إدارة الأعمال- القليعة',
-    'École Supérieure de Comptabilité et de Finance':
-      'المدرسة العليا للمحاسبة والمالية-قسنطينة',
-    "Centre universitaire d'El Bayadh - Nour Bachir":
-      'المركز الجامعي نور البشير-البيض ',
+    'École Supérieure de Comptabilité et de Finance': 'المدرسة العليا للمحاسبة والمالية-قسنطينة',
+    "Centre universitaire d'El Bayadh - Nour Bachir": 'المركز الجامعي نور البشير-البيض ',
     "Centre universitaire d'Aflou": 'المركز الجامعي-شريف بوشوشة- آفلو ',
     "Centre Universitaire d'Illizi-Cheikh Amoud ben Mokhtar":
       'المركز الجامعي الشيخ أمود بن مختاراليزي ',
@@ -2194,12 +2014,9 @@ const arabicCourseName = () => {
       'المركز الجامعي أحمدبن عبد الرزاق حمودة-سي الحواس-بريكة',
     'Centre universit:aire de Maghnia': 'المركز الجامعي-مغنية',
     'Centre universitaire de Maghnia': 'المركز الجامعي-مغنية',
-    'Centre universitaire de Naama - Ahmed Salhi':
-      'المركز الجامعي صالحي أحمد- النعامة',
-    'Centre universitaire de Tindouf - Ali Kafi':
-      'المركز الجامعي صالحي أحمد- النعامة',
-    'Centre universitaire de Tipaza - Abdallah Morsli':
-      'المركز الجامعي عبد الله مرسلي - تيبازة',
+    'Centre universitaire de Naama - Ahmed Salhi': 'المركز الجامعي صالحي أحمد- النعامة',
+    'Centre universitaire de Tindouf - Ali Kafi': 'المركز الجامعي صالحي أحمد- النعامة',
+    'Centre universitaire de Tipaza - Abdallah Morsli': 'المركز الجامعي عبد الله مرسلي - تيبازة',
     'E.N.S Bechar': 'المدرسة العليا للأساتذة ببشار‏',
 
     'E.N.S Bou Saada': 'المدرسة العليا للأساتذة-بوسعادة',
@@ -2211,15 +2028,11 @@ const arabicCourseName = () => {
     'E.N.S Oran': 'المدرسة العليا للأساتذة-وهران',
     'E.N.S Ouargla': 'المدرسة العليا للأساتذة-ورقلة',
     'E.N.S Sétif': 'المدرسة العليا للأساتذة-سطيف',
-    'E.N.S. Skikda (E.N.S.E.T)':
-      'المدرسة العليا لأساتذة التعليم التكنولوجي-سكيكدة',
-    'Ecole de Formation en Techniques de Gestion (EFTG)':
-      'مدرسة التدريب في تقنيات الإدارة (EFTG)',
-    'Ecole de Management d’Alger (E.M)':
-      'المدرسة العليا للادارة-الجزائر العاصمة',
+    'E.N.S. Skikda (E.N.S.E.T)': 'المدرسة العليا لأساتذة التعليم التكنولوجي-سكيكدة',
+    'Ecole de Formation en Techniques de Gestion (EFTG)': 'مدرسة التدريب في تقنيات الإدارة (EFTG)',
+    'Ecole de Management d’Alger (E.M)': 'المدرسة العليا للادارة-الجزائر العاصمة',
     'Ecole de Management de Tizi Ouzou': 'مدرسة تيزي وزو للإدارة',
-    'École Nationale Polytechnique d’Alger':
-      'المدرسة الوطنية للفنون التطبيقية -الجزائر',
+    'École Nationale Polytechnique d’Alger': 'المدرسة الوطنية للفنون التطبيقية -الجزائر',
     'École Nationale Supérieure d’Hydraulique - Blida':
       'المدرسة الوطنية العليا للهيدروليك -البليدة',
     'École Nationale Supérieure d’Intelligence Artificielle':
@@ -2237,19 +2050,16 @@ const arabicCourseName = () => {
     'École Supérieure d’Economie': 'كلية الدراسات العليا للاقتصاد',
     'École Supérieure de Gestion et de l’Economie Numérique de Koléa':
       'المدرسة العليا للإدارة والاقتصاد الرقمي-القليعة',
-    'École Supérieure de Management de Tlemcen':
-      'المدرسة العليا للإدارة -تلمسان',
+    'École Supérieure de Management de Tlemcen': 'المدرسة العليا للإدارة -تلمسان',
     "École Supérieure des Sciences Appliquée d'Alger":
       'المدرسة العليا للعلوم التطبيقية -الجزائر العاصمة',
     'École Supérieure des Sciences Appliquées de Tlemcen':
       'المدرسة العليا للعلوم التطبيقية -تلمسان ',
     'École Supérieure des Sciences Biologiques': 'المدرسة العليا لعلوم الأحياء',
-    'École Supérieure des Sciences de Gestion':
-      'المدرسة العليا لعلوم التسيير- عنابة',
+    'École Supérieure des Sciences de Gestion': 'المدرسة العليا لعلوم التسيير- عنابة',
     'École Supérieure des Sciences de l’Aliment et des Industries Agroalimentaires':
       'المدرسة العليا لعلوم الغذاء والصناعات الغذائية الفلاحية-الجزائر',
-    'École Supérieure des Technologies Industrielles':
-      'المدرسة العليا للتقنيات الصناعية-عنابة',
+    'École Supérieure des Technologies Industrielles': 'المدرسة العليا للتقنيات الصناعية-عنابة',
     'École Supérieure en Génie Electrique et Energétique':
       'كلية الدراسات العليا في الهندسة الكهربائية والطاقة',
     'École Supérieure en Informatique de Sidi Bel Abbes':
@@ -2257,16 +2067,14 @@ const arabicCourseName = () => {
     "Ecole Supérieure d'Hôtellerie et de Restauration d'Alger (ESHRA)":
       'المدرسة العليا للضيافة وتقديم الطعام إشرا -الجزائر العاصمة',
     'Ecole Supérieure des Beaux-Arts (ESBA)': 'مدرسة الفنون الجميلة',
-    'Ecole Supérieure des Sciences et Technologies (E.S.S.T)':
-      'المدرسة العليا للعلوم والتكنولوجيا',
+    'Ecole Supérieure des Sciences et Technologies (E.S.S.T)': 'المدرسة العليا للعلوم والتكنولوجيا',
     'Ecole Supérieure en Sciences de Technologies du Sport':
       'المدرسة العليا لعلوم الرياضة و تكنولوجياتها – رشيد حرايق– دالي براهيم',
     'École Supérieure en Sciences et Technologies de l’Informatique et du Numérique':
       'المدرسة العليا للحاسوب والعلوم الرقمية والتكنولوجيا',
 
     'INFSPM Adrar': 'المعهد الوطني للتكوين العالي شبه الطبي -ادرار',
-    'INFSPM Ain Defla':
-      'المعهد الوطني للتكوين العالي شبه الطبي (INFSPM)-عين الدفلى',
+    'INFSPM Ain Defla': 'المعهد الوطني للتكوين العالي شبه الطبي (INFSPM)-عين الدفلى',
     'INFSPM Alger': 'المعهد الوطني للتكوين العالي شبه الطبي-الجزائر',
     'INFSPM Béjaia': 'المعهد الوطني للتكوين العالي شبه الطبي-بجاية',
     'INFSPM Batna': 'المعهد الوطني للتكوين العالي شبه الطبي-باتنة',
@@ -2278,15 +2086,12 @@ const arabicCourseName = () => {
     "INFSPM M'sila": 'المعهد الوطني للتكوين العالي شبه الطبي-المسيلة',
     'INFSPM Médea': 'المعهد الوطني للتكوين العالي شبه الطبي-المدية',
     'INFSPM Mostaganem': 'المعهد الوطني للتكوين العالي شبه الطبي-مستغانم',
-    'INFSPM Oran - GUEABI DJEDIA':
-      'المعهد الوطني للتكوين العالي شبه الطبي- قعابي جدية-وهران',
-    'INFSPM Oran - HAI SALAM':
-      'المعهد الوطني للتكوين العالي شبه الطبي- حي السلام -وهران',
+    'INFSPM Oran - GUEABI DJEDIA': 'المعهد الوطني للتكوين العالي شبه الطبي- قعابي جدية-وهران',
+    'INFSPM Oran - HAI SALAM': 'المعهد الوطني للتكوين العالي شبه الطبي- حي السلام -وهران',
     'INFSPM Ouargla': 'المعهد الوطني للتكوين العالي شبه الطبي- ورقلة',
     'INFSPM Sétif': 'المعهد الوطني للتكوين العالي شبه الطبي- سطيف',
     'INFSPM Saida': 'المعهد الوطني للتكوين العالي شبه الطبي- سعيدة',
-    'INFSPM Sidi Bel Abbes':
-      'المعهد الوطني للتكوين العالي شبه الطبي- سيدي بلعباس',
+    'INFSPM Sidi Bel Abbes': 'المعهد الوطني للتكوين العالي شبه الطبي- سيدي بلعباس',
     'INFSPM Skikda': 'المعهد الوطني للتكوين العالي شبه الطبي- سكيكدة',
     // left
     'INFSPM Tebessa': 'المعهد الوطني للتكوين العالي شبه الطبي-تبسة',
@@ -2306,8 +2111,7 @@ const arabicCourseName = () => {
     'Institut National des Télécommunications et des Technologies de l’Information et de la Communication':
       'المعهد الوطني للاتصالات وتكنولوجيا المعلومات والاتصالات',
     'Institut National Supérieur de Musique': 'المعهد الوطني العالي للموسيقى ',
-    'Institut Supérieur de Commerce et de Gestion':
-      'المعهد العالي للتجارة والتسيير',
+    'Institut Supérieur de Commerce et de Gestion': 'المعهد العالي للتجارة والتسيير',
     'Institut Supérieur de gestion (ISG)': 'المعهد العالي للادارة',
     'Institut Supérieur des Langues Etrangères': 'المعهد العالي للغات الأجنبية',
     'Institut Supérieur des Métiers des Arts du Spectacle et de l’Audiovisuel 1 (ISMAS)':
@@ -2316,52 +2120,38 @@ const arabicCourseName = () => {
     'Institut vétérinaire - El Tarf': 'المعهد البيطري - الطارف',
     'Institut vétérinaire - Souk Ahras': 'المعهد البيطري - سوق أهراس',
     'Institut vétérinaire - Univ. Batna 1': 'المعهد البيطري - جامعة باتنة 1',
-    'Institut vétérinaire - Univ. Constantine 1':
-      'المعهد البيطري - جامعة قسنطينة 1',
+    'Institut vétérinaire - Univ. Constantine 1': 'المعهد البيطري - جامعة قسنطينة 1',
     'Institut vétérinaire - Univ. Tiaret': 'المعهد البيطري - جامعة تيارت',
     'Instruit Supérieur des Sciences (I.S.S)': 'التعليم العالي في العلوم i.s.s',
     "Université  d'Adrar - Ahmed Draya": 'جامعة أحمد دراية - أدرار',
     "Université  d'Oran 2 - Mohamed Ben Ahmed": 'جامعة وهران 2 محمد بن أحمد',
     'Université  de Annaba - Badji Mokhtar': 'جامعة باجي مختار- عنابة',
     'Université  de Biskra - Mohamed Khider': 'جامعة محمد خيضر- بسكرة',
-    'Université  de Bouira - Akli Mohand Oulhadj':
-      'جامعة آكلي محند أولحاج-البويرة',
-    'Université  de Constantine 2 - Abdelhamid Mehri':
-      'جامعة عبد الحميد مهري – قسنطينة 2',
+    'Université  de Bouira - Akli Mohand Oulhadj': 'جامعة آكلي محند أولحاج-البويرة',
+    'Université  de Constantine 2 - Abdelhamid Mehri': 'جامعة عبد الحميد مهري – قسنطينة 2',
     'Université  de Djelfa - Ziane Achour': 'جامعة زيان عاشور- الجلفة',
-    'Université  de Jijel - Mohammed Seddik Benyahia':
-      'جامعة محمد الصديق بن يحيى- جيجل',
-    'Université  de Khemis Miliana - Djilali Bounaama':
-      'جامعة الجيلالي بونعامة- خميس مليانة',
+    'Université  de Jijel - Mohammed Seddik Benyahia': 'جامعة محمد الصديق بن يحيى- جيجل',
+    'Université  de Khemis Miliana - Djilali Bounaama': 'جامعة الجيلالي بونعامة- خميس مليانة',
     'Université  de Khenchela - Abbas Laghrour': ' جامعة عباس لغرور- خنشلة',
     'Université  de Laghouat - Amar Telidji': 'جامعة عمار ثليجي- الأغواط',
     "Université  de M'sila - Mohamed Boudiaf": 'جامعة محمد بوضياف -المسيلة',
-    'Université  de Mascara - Mustapha Stambouli':
-      'جامعة مصطفى اسطمبولي -معسكـــــــــر ',
-    'Université  de Mascara - Mustapha Stambouli':
-      'جامعة مصطفى اسطمبولي -معسكـــــــــر ',
-    "Université  de Oum El Bouaghi - Larbi Ben M'hidi":
-      ' جامعة العربي بن مهيدي- أم البواقي ',
+    'Université  de Mascara - Mustapha Stambouli': 'جامعة مصطفى اسطمبولي -معسكـــــــــر ',
+    'Université  de Mascara - Mustapha Stambouli': 'جامعة مصطفى اسطمبولي -معسكـــــــــر ',
+    "Université  de Oum El Bouaghi - Larbi Ben M'hidi": ' جامعة العربي بن مهيدي- أم البواقي ',
     'Université  de Sétif 1 - Ferhat Abbas': 'جامعة فرحات عباس- سطيف1',
-    'Université  de Sétif 2 - Mohamed Lamine Debaghine':
-      'جامعة محمد لمين دباغين -سطيف2',
+    'Université  de Sétif 2 - Mohamed Lamine Debaghine': 'جامعة محمد لمين دباغين -سطيف2',
     'Université  de Tiaret - Ibn Khaldoun': 'جامعة ابن خلدون- تيارت',
-    'Université  de Tiaret - Ibn Khaldoun (+ A. SOUGHEUR)':
-      'جامعة ابن خلدون- تيارت -السوقر',
+    'Université  de Tiaret - Ibn Khaldoun (+ A. SOUGHEUR)': 'جامعة ابن خلدون- تيارت -السوقر',
     'Université  de Tiaret - Ibn Khaldoun (+ A.SOUGHEUR+A. KSAR CHELLALA)':
       'جامعة ابن خلدون- تيارت -السوقر-قصرالشلالة',
     'Université  de Tiaret - Ibn Khaldoun (+A. KSAR CHELLALA)':
       'جامعة ابن خلدون- تيارت -قصرالشلالة',
     'Université  Médéa - Yahia Farès': 'جامعة يحي فارس- المدية',
-    'Université  Sidi Bel Abbès - Djillali Liabes':
-      'جامعة جيلالي ليابس- سيدي بلعباس',
+    'Université  Sidi Bel Abbès - Djillali Liabes': 'جامعة جيلالي ليابس- سيدي بلعباس',
     'Université 8 Mai 1945 de Guelma': 'جامعة 08 ماي1945-قالمة',
-    "Université d'Alger 1 - Benyoucef Benkhedda ":
-      'جامعة  بن يوسف بن خدة- الجزائر 1',
-    "Université d'Alger 2 - Abou el Kacem Saâdallah":
-      'جامعة  أبو القاسم سعد الله- الجزائر 2',
-    "Université d'Alger 3 - Brahim Soltane Chaibout":
-      'جامعة  ابراهيم سلطان شيبوط- الجزائر 3',
+    "Université d'Alger 1 - Benyoucef Benkhedda ": 'جامعة  بن يوسف بن خدة- الجزائر 1',
+    "Université d'Alger 2 - Abou el Kacem Saâdallah": 'جامعة  أبو القاسم سعد الله- الجزائر 2',
+    "Université d'Alger 3 - Brahim Soltane Chaibout": 'جامعة  ابراهيم سلطان شيبوط- الجزائر 3',
     "Université d'El Oued - Hamma Lakhdar": 'جامعة الشهيد حمة لخضر - الوادي ',
     "Université d'El Tarf - Chadli Bendjedid": 'جامعة الشاذلي بن جديد- الطارف',
     "Université d'Oran1 - Ahmed Ben Bella": 'جامعة أحمد بن بلّة- وهران1',
@@ -2370,8 +2160,7 @@ const arabicCourseName = () => {
     'Université de Batna 1 - Hadj Lakhder': 'جامعة الحاج لخضر- باتنة1',
     'Université de Batna 1 - Hadj Lakhder (sciences agronomiques)':
       'جامعة الحاج لخضر (علوم زراعية)-جامعة باتنة 1 ',
-    'Université de Batna 2 - Mustapha Ben Boulaid ':
-      'جامعة الشهيد مصطفى بن بولعيد- باتنة 2',
+    'Université de Batna 2 - Mustapha Ben Boulaid ': 'جامعة الشهيد مصطفى بن بولعيد- باتنة 2',
     'Université de Batna 2 - Mustapha Ben Boulaid (sciences biologiques)':
       'جامعة مصطفى بن بولعيد (علوم بيولوجية)- باتنة 2',
     'Université de Bechar - Mohamed Tahri': 'جامعة طاهري محمد -بشار',
@@ -2383,17 +2172,13 @@ const arabicCourseName = () => {
     "Université de Boumerdès - M'hamed Bougara - Institute of Electrical and Electronic Engineering (IEEE)":
       'جامعة محمد بوقرة - معهد الهندسة الكهربائية والإلكترونية-بومرداس',
     'Université de Chlef - Hassiba Benbouali': 'جامعة حسيبة بن بوعلي -الشلف',
-    'Université de Constantine 1 - Frères Mentouri':
-      'جامعة الاخوة منتوري -قسنطينة1',
-    'Université de Constantine 3 -Salah Boubnider':
-      'جامعة صالح بوبنيدر-قسنطينة3',
+    'Université de Constantine 1 - Frères Mentouri': 'جامعة الاخوة منتوري -قسنطينة1',
+    'Université de Constantine 3 -Salah Boubnider': 'جامعة صالح بوبنيدر-قسنطينة3',
     'Université de Ghardaia': 'جامعة غرداية',
-    'Université de Mostaganem - Abdelhamid Ibn Badis':
-      'جامعة عبد الحميد بن باديس- مستغانم',
+    'Université de Mostaganem - Abdelhamid Ibn Badis': 'جامعة عبد الحميد بن باديس- مستغانم',
     'Université de Relizane': 'جامعة غليزان',
     'Université de Saida - Tahar Moulay': 'جامعة الدكتور مولاي الطاهر- سعيدة ',
-    'Université de Souk Ahras - Mohammed-Chérif Messaadia':
-      'جامعة محمد شريف مساعدية- سوق أهراس',
+    'Université de Souk Ahras - Mohammed-Chérif Messaadia': 'جامعة محمد شريف مساعدية- سوق أهراس',
     'Université de Tébessa - Larbi Tébessi': 'جامعة العربي التبسي -تبسة',
     'Université de Tamanrasset': 'جامعة تمنراست',
     'Université de Tissemsilt': 'جامعة تيسمسيلت',
@@ -2407,19 +2192,15 @@ const arabicCourseName = () => {
     "Université Mohamed Boudiaf  des sciences et de la technologie - Mohamed Boudiaf d'Oran":
       'جامعة العلوم والتكنولوجيا محمد بوضياف -وهران',
     // missing coursename
-    'Université  de Ouargla - Kasdi Merbah':
-      'Université  de Ouargla - Kasdi Merbah',
+    'Université  de Ouargla - Kasdi Merbah': 'Université  de Ouargla - Kasdi Merbah',
 
     // Spécialité column F update
-    'Économie des hydrocarbures : économie pétrolière':
-      'الاقتصاد الهيدروكربوني: اقتصاد النفط',
+    'Économie des hydrocarbures : économie pétrolière': 'الاقتصاد الهيدروكربوني: اقتصاد النفط',
     'Agriculture de précision': 'الزراعة الدقيقة',
     'Art de l’acteur': 'فن الممثل',
-    'Énergies renouvelables en électrotechnique':
-      'الطاقات المتجددة في الهندسة الكهربائية',
+    'Énergies renouvelables en électrotechnique': 'الطاقات المتجددة في الهندسة الكهربائية',
     'Action commerciale': 'العمل التجاري',
-    'Aéronautique et mécanique de l’aviation légère':
-      'علم الطيران وميكانيك الطيران الخفيف',
+    'Aéronautique et mécanique de l’aviation légère': 'علم الطيران وميكانيك الطيران الخفيف',
     'Économie financière et bancaire': 'الاقتصاد المالي والمصرفي',
     Énergétique: 'طاقة',
     'Algèbre et géométrie': 'الجبر والهندسة',
@@ -2428,24 +2209,20 @@ const arabicCourseName = () => {
     'Archéologie, Bibliothéconomie, Histoire et Sciences de l’information et de la communication':
       'علم الآثار والمكتبات والتاريخ وعلوم المعلومات والاتصالات',
     Électronique: 'إلكترونيات',
-    'Électronique et maintenance biomédicale':
-      'الإلكترونيات والصيانة الطبية الحيوية ',
+    'Électronique et maintenance biomédicale': 'الإلكترونيات والصيانة الطبية الحيوية ',
     'Énergies renouvelables appliquées': 'الطاقات المتجددة التطبيقية',
-    'Énergies renouvelables en élecrotechnique':
-      'الطاقات المتجددة في الهندسة الكهربائية',
+    'Énergies renouvelables en élecrotechnique': 'الطاقات المتجددة في الهندسة الكهربائية',
     'Énergies renouvelables et environnement': 'الطاقة المتجددة والبيئة ',
     Agronomie: 'الهندسة الزراعية',
     'Agronomie saharienne': 'الزراعة الصحراوية',
     'Algèbre et cryptographie': 'الجبر والتشفير',
-    'Appareilleurs orthopédistes de santé publique':
-      'أجهزة تقويم العظام للصحة العامة',
+    'Appareilleurs orthopédistes de santé publique': 'أجهزة تقويم العظام للصحة العامة',
     'Archéologie antique': 'علم الآثار القديمة',
     'Archéologie Islamique': 'الآثار الإسلامية',
     'Archéologie préhistorique': 'علم آثار ما قبل التاريخ',
     Architecture: 'هندسة عامة',
     Arts: 'الفنون',
-    'Arts plastiques / Expression picturale':
-      'الفنون التشكيلية / التعبير المصور',
+    'Arts plastiques / Expression picturale': 'الفنون التشكيلية / التعبير المصور',
     'Arts plastiques / Volume matière': 'الفنون التشكيلية / حجم المواد',
     'Assemblages Soudés': 'المفاصل الملحومة',
     'Assistant Social de Santé Publique': 'أخصائي اجتماعي للصحة العامة',
@@ -2466,8 +2243,7 @@ const arabicCourseName = () => {
     Civilisation: 'الحضارة',
     'Classes préparatoires': 'الصفوف التحضيرية',
     'Classes préparatoires en informatique': 'دروس تحضيرية في علوم الكمبيوتر',
-    'Classes préparatoires intégrés (techno-pôle)':
-      'فصول تحضيرية متكاملة (تكنو بول)',
+    'Classes préparatoires intégrés (techno-pôle)': 'فصول تحضيرية متكاملة (تكنو بول)',
     'Commerce international': 'تجارة دولية',
     'Comptabilité - contrôle - audit': 'المحاسبة - الرقابة - التدقيق',
     'Comptabilité et audit': 'المحاسبة والمراجعة',
@@ -2475,16 +2251,13 @@ const arabicCourseName = () => {
     'Comptabilité et finances': 'المحاسبة والتمويل',
     'Comptabilité et fiscalité': 'المحاسبة والضرائب',
     'Conduite opérationnelle de projets': 'إدارة المشروع التشغيلي',
-    'Conduite opérationnelle de projets de construction':
-      'الإدارة التشغيلية للمشاريع الإنشائية',
-    'Conservation et restauration en archéologie':
-      'الحفظ والترميم في علم الآثار',
+    'Conduite opérationnelle de projets de construction': 'الإدارة التشغيلية للمشاريع الإنشائية',
+    'Conservation et restauration en archéologie': 'الحفظ والترميم في علم الآثار',
     'Construction et architecture navale': 'البناء والعمارة البحرية',
     'Constructions Civils et Environnement': 'الإنشاءات المدنية والبيئة',
     'Contrôle qualité et analyse des aliments': 'مراقبة جودة الأغذية وتحليلها',
     'Critique Théâtrale': 'النقد المسرحي',
-    'Développement Web et applications mobiles':
-      'تطوير الويب وتطبيقات الهاتف المحمول',
+    'Développement Web et applications mobiles': 'تطوير الويب وتطبيقات الهاتف المحمول',
     'Développement Web et infographie': 'تطوير الويب والرسومات الحاسوبية',
     'Design / Espace': 'التصميم / الفضاء',
     'Design / Image – média': 'التصميم / الصورة - الوسائط',
@@ -2511,8 +2284,7 @@ const arabicCourseName = () => {
     'Finance islamique': 'التمويل الإسلامي',
     Forage: 'حفر',
     Foresterie: 'الحراجة',
-    'Génie électrique : électricité industrielle':
-      'الهندسة الكهربائية: الكهرباء الصناعية ',
+    'Génie électrique : électricité industrielle': 'الهندسة الكهربائية: الكهرباء الصناعية ',
     'Génie chimique': 'الهندسة الكيميائية',
     'Génie de l’eau': 'الهندسة المائية',
     "Génie de l'environnent et procédés": 'الهندسة والعمليات البيئية',
@@ -2527,16 +2299,12 @@ const arabicCourseName = () => {
       'الهندسة الميكانيكية: ميكانيك حقول النفط ',
     'Génie mécanique : mécanique des unités pétrochimiques':
       'الهندسة الميكانيكية: ميكانيك وحدات البتروكيماويات',
-    'Génie mécanique : transport des hydrocarbures':
-      'الهندسة الميكانيكية: نقل المحروقات',
+    'Génie mécanique : transport des hydrocarbures': 'الهندسة الميكانيكية: نقل المحروقات',
     'Génie pétrochimique': 'هندسة البتروكيماويات',
-    'Génie pétrolier : Forage des puits d’hydrocarbures':
-      'هندسة البترول: حفر آبار الهيدروكربون',
-    'Génie pétrolier : production des hydrocarbures':
-      'هندسة البترول: إنتاج الهيدروكربونات',
+    'Génie pétrolier : Forage des puits d’hydrocarbures': 'هندسة البترول: حفر آبار الهيدروكربون',
+    'Génie pétrolier : production des hydrocarbures': 'هندسة البترول: إنتاج الهيدروكربونات',
     'Génie urbain': 'الهندسة الحضرية',
-    'Géographie et aménagement du territoire':
-      'الجغرافيا وتخطيط استخدام الأراضي ',
+    'Géographie et aménagement du territoire': 'الجغرافيا وتخطيط استخدام الأراضي ',
     Géologie: 'جيولوجيا',
     'Géologie et environnement': 'الجيولوجيا والبيئة',
     'Géomètre Topographe': 'مهندس طوبوغرافي',
@@ -2545,11 +2313,9 @@ const arabicCourseName = () => {
       'علوم الأرض التطبيقية: الموارد المعدنية والطاقة',
     Géotechnique: 'جيوتكنيك',
     'Gestion de l’hébergement': 'إدارة الإقامة',
-    'Gestion de la production et logistique':
-      'إدارة الإنتاج والخدمات اللوجستية ',
+    'Gestion de la production et logistique': 'إدارة الإنتاج والخدمات اللوجستية ',
     'Gestion de restauration': 'إدارة المطاعم',
-    'Gestion des agences de tourisme et de voyage':
-      'إدارة وكالات السياحة والسفر',
+    'Gestion des agences de tourisme et de voyage': 'إدارة وكالات السياحة والسفر',
     'Gestion des déchets urbains': 'إدارة النفايات الحضرية',
     'Gestion des Infrastructures du Sport': 'إدارة البنية التحتية الرياضية',
     'Gestion des ressources humaines': 'ادارة الموارد البشرية',
@@ -2571,23 +2337,18 @@ const arabicCourseName = () => {
     'Industries électroniques': 'الصناعات الإلكترونية',
     'Infirmier de santé publique': 'ممرضة صحة عامة',
     Informatique: 'علوم الكمبيوتر',
-    'Informatique biomédicale et hospitalière':
-      'المعلوماتية الطبية الحيوية والمستشفيات',
+    'Informatique biomédicale et hospitalière': 'المعلوماتية الطبية الحيوية والمستشفيات',
     'Informatique de gestion': 'إدارة تكنولوجيا المعلومات',
     'Informatique et réseaux': 'تكنولوجيا المعلومات والشبكات',
-    'Ingénierie électrique et électronique (IEEE)':
-      'الهندسة الكهربائية والإلكترونية (IEEE)',
+    'Ingénierie électrique et électronique (IEEE)': 'الهندسة الكهربائية والإلكترونية (IEEE)',
     'Ingénierie automobile': 'هندسة السيارات ',
-    "Ingénierie des systèmes d'information et des logiciels":
-      'نظم المعلومات وهندسة البرمجيات',
-    'Ingénierie des systèmes informatiques et logiciels':
-      'هندسة أنظمة الكمبيوتر والبرمجيات',
+    "Ingénierie des systèmes d'information et des logiciels": 'نظم المعلومات وهندسة البرمجيات',
+    'Ingénierie des systèmes informatiques et logiciels': 'هندسة أنظمة الكمبيوتر والبرمجيات',
     'Ingénierie des transports': 'هندسة النقل',
     'Ingénierie Mécanique': 'هندسة ميكانيكية',
     Installations: 'منشاة',
     'Instruments et Chant': 'الآلات الموسيقية والغناء',
-    'Kinésithérapeutes de santé publique':
-      'أخصائيو العلاج الطبيعي للصحة العامة ',
+    'Kinésithérapeutes de santé publique': 'أخصائيو العلاج الطبيعي للصحة العامة ',
     'Laborantin de santé publique': 'مساعد مختبر الصحة العامة',
     'Langue allemande': 'لغة المانية',
     'Langue anglaise': 'اللغة الإنجليزية',
@@ -2604,8 +2365,7 @@ const arabicCourseName = () => {
 
     Littérature: 'المؤلفات',
     Logistique: 'الخدمات اللوجستية',
-    'Maintenance de l’automatisme et de l’instrumentation':
-      'الأتمتة وصيانة الأجهزة',
+    'Maintenance de l’automatisme et de l’instrumentation': 'الأتمتة وصيانة الأجهزة',
     'Mécanique appliquée': 'ميكانيك تطبيقية',
     'Mécanique des chantiers pétroliers': 'ميكانيك ساحة النفط',
     Médecine: 'طب',
@@ -2613,35 +2373,27 @@ const arabicCourseName = () => {
     Métallurgie: 'الحدادة',
     'Métiers de la ville': 'تجارة المدينة',
     'Métrologie et contrôle industriel': 'علم القياس والرقابة الصناعية ',
-    'Maintenance industrielle & technologie automobile':
-      'الصيانة الصناعية وتكنولوجيا السيارات',
-    'Maintenance industrielle et électromécanique':
-      'الصيانة الصناعية والكهروميكانيكية',
+    'Maintenance industrielle & technologie automobile': 'الصيانة الصناعية وتكنولوجيا السيارات',
+    'Maintenance industrielle et électromécanique': 'الصيانة الصناعية والكهروميكانيكية',
 
     'Maitrise du risque industriel': 'إدارة المخاطر الصناعية',
     Management: 'إدارة',
     'Management commercial': 'ادارة تجارية',
     'Management des affaires': 'ادارة اعمال',
     'Management des hôtels et du tourisme': 'إدارة الفنادق والسياحة',
-    'Management du développement durable du tourisme':
-      'إدارة تنمية السياحة المستدامة ',
+    'Management du développement durable du tourisme': 'إدارة تنمية السياحة المستدامة ',
     'Management du tourisme': 'إدارة السياحة ',
     'Management touristique': 'الإدارة السياحية',
-    'Manipulateur en imagerie médicale de santé publique':
-      'معالج التصوير الطبي للصحة العامة',
+    'Manipulateur en imagerie médicale de santé publique': 'معالج التصوير الطبي للصحة العامة',
     Marketing: 'تسويق',
     'Marketing international': 'التسويق الدولي',
-    'Matériaux et contrôle physico-chimique':
-      'المواد والتحكم الكيميائي الفيزيائي',
+    'Matériaux et contrôle physico-chimique': 'المواد والتحكم الكيميائي الفيزيائي',
     'Mathématiques et informatique': 'الرياضيات وعلوم الكمبيوتر ',
-    'Mécanique Industrielle de Construction et d’Entretien':
-      'ميكانيك الإنشاءات الصناعية والصيانة',
-    'Mesures physiques et instrumentation scientifique':
-      'القياسات الفيزيائية والأجهزة العلمية',
+    'Mécanique Industrielle de Construction et d’Entretien': 'ميكانيك الإنشاءات الصناعية والصيانة',
+    'Mesures physiques et instrumentation scientifique': 'القياسات الفيزيائية والأجهزة العلمية',
     'Mesures, métrologie et qualité': '"القياسات والمترولوجيا والجودة',
     Musicologie: 'علم الموسيقى',
-    'Network infrastructure and cyber security (NICS)':
-      'البنية التحتية للشبكةوالامن السيبراني',
+    'Network infrastructure and cyber security (NICS)': 'البنية التحتية للشبكةوالامن السيبراني',
     'Opérations aériennes': 'عمليات الطيران',
     'Opticien Lunetier de santé publique': 'أخصائي نظارات الصحة العامة',
     'Optique et mécanique de précision': 'البصريات الدقيقة والميكانيك ',
@@ -2661,18 +2413,15 @@ const arabicCourseName = () => {
     'Probabilités statistiques': 'الاحتمالات الإحصائية',
     'Probabilités-Statistique': 'الاحتمالات الإحصائية',
     'Procédés agroalimentaires': 'عمليات الأغذية الزراعية',
-    'Procédés et traitement de l’énergie électrique':
-      'عمليات ومعالجة الطاقة الكهربائية ',
+    'Procédés et traitement de l’énergie électrique': 'عمليات ومعالجة الطاقة الكهربائية ',
     Production: 'إنتاج',
     'Production animale': 'إنتاج حيواني',
     'Production aquacole': 'إنتاج الاستزراع المائي',
     'Production végétale': 'إنتاج الخضر',
     Productique: 'إنتاجية',
     'Productique mécanique et industrialisation': 'الإنتاج والتصنيع الميكانيكي',
-    'Professeur de l’École Primaire en Arabe (P.E.P.)':
-      'مدرس اللغة العربية الابتدائية (P.E.P.)',
-    'Professeur de l’École Primaire en Français (P.E.P.)':
-      'مدرس مدرسة ابتدائية فرنسية (P.E.P.)',
+    'Professeur de l’École Primaire en Arabe (P.E.P.)': 'مدرس اللغة العربية الابتدائية (P.E.P.)',
+    'Professeur de l’École Primaire en Français (P.E.P.)': 'مدرس مدرسة ابتدائية فرنسية (P.E.P.)',
     'Professeur de l’École Primaire en Langue Amazighe (P.E.P.)':
       'مدرس ابتدائي باللغة الأمازيغية (P.E.P.)',
     'Professeur de l’Enseignement Moyen en Histoire - Géographie (P.E.M.)':
@@ -2728,8 +2477,7 @@ const arabicCourseName = () => {
     'Psychologie, Orthophonie, Sciences de l’éducation, Philosophie, Sciences des Populations, Sociologie et anthropologie':
       'علم النفس ، علاج النطق ، العلوم التربوية ، الفلسفة ، علوم السكان ، علم الاجتماع والأنثروبولوجيا',
     'Psychomotricien de santé publique': 'معالج نفسي حركي للصحة العامة',
-    'Qualité, hygiène, sécurité et environnement':
-      'الجودة والصحة والسلامة والبيئة',
+    'Qualité, hygiène, sécurité et environnement': 'الجودة والصحة والسلامة والبيئة',
     'Réhabilitation des constructions': 'إعادة تأهيل المنشآت',
     'Réseaux et sécurité': 'الشبكات والأمن ',
     'Réseaux et Télécommunication': 'الشبكات والاتصالات',
@@ -2738,13 +2486,11 @@ const arabicCourseName = () => {
     'Recherche opérationnelle': 'عملية بحث',
     'Relations Internationales': 'علاقات دولية',
     'Ressources en eau': 'موارد المياه',
-    'Sécurité et administration des systèmes et réseaux':
-      'أمن وإدارة الأنظمة والشبكات',
+    'Sécurité et administration des systèmes et réseaux': 'أمن وإدارة الأنظمة والشبكات',
     'Sécurité industrielle et environnement': 'السلامة الصناعية والبيئة ',
     'Sage-femme de Santé Publique': 'قابلة للصحة العامة',
     Scénographie: 'سينوغرافيا',
-    'Sciences Économiques, de Gestion et Commerciales':
-      'الاقتصاد والإدارة والعلوم التجارية ',
+    'Sciences Économiques, de Gestion et Commerciales': 'الاقتصاد والإدارة والعلوم التجارية ',
     'Sciences alimentaires': 'علم الطعام',
     'Sciences de l’information': 'علم المعلومات',
     'Sciences de l’information et de la communication': 'علوم الإعلام والاتصال',
@@ -2767,41 +2513,32 @@ const arabicCourseName = () => {
     'Systèmes de Télécoms': 'أنظمة الاتصالات',
     'Systèmes et réseaux': 'الأنظمة والشبكات',
     'Systèmes informatiques': 'نظم المعلومات',
-    'Systemes de Télécommunications et Réseaux':
-      'أنظمة وشبكات الاتصالات السلكية واللاسلكية',
+    'Systemes de Télécommunications et Réseaux': 'أنظمة وشبكات الاتصالات السلكية واللاسلكية',
     'Télécommunications spatiales': 'اتصالات الفضاء',
     'Télécoms et Réseaux IP': 'الاتصالات وشبكات IP',
     'Techniques archivistiques': 'تقنيات الأرشفة',
     'Techniques instrumentales': 'تقنيات الآلات ',
-    'Technologie de l’information et de la documentation':
-      'تكنولوجيا المعلومات والتوثيق ',
+    'Technologie de l’information et de la documentation': 'تكنولوجيا المعلومات والتوثيق ',
     Télécommunications: 'الاتصالات السلكية واللاسلكية',
     'Télécoms et Technologies Numérique': 'الاتصالات والتقنيات الرقمية',
-    'Techniques de commercialisation en agro-alimentaires':
-      'تقنيات تسويق الأغذية الزراعية',
+    'Techniques de commercialisation en agro-alimentaires': 'تقنيات تسويق الأغذية الزراعية',
     'Technologie de soudage': 'تكنولوجيا اللحام',
     'Technologie des eaux et boissons': 'تكنولوجيا المياه والمشروبات',
     'Technologie des matériaux': 'تكنولوجيا المواد',
-    'Technologie des produits laitiers et dérivés':
-      'تكنولوجيا منتجات الألبان ومشتقاتها',
+    'Technologie des produits laitiers et dérivés': 'تكنولوجيا منتجات الألبان ومشتقاتها',
     'Technologie du web': 'تقنية الويب ',
     'Technologie en santé': 'التكنولوجيا في الصحة',
     'Technologies de l’information': 'تكنولوجيا المعلومات',
-    'Technologies de traitement du pétrole et du gaz':
-      'تقنيات معالجة النفط والغاز',
+    'Technologies de traitement du pétrole et du gaz': 'تقنيات معالجة النفط والغاز',
     'Technologies de transformation des céréales': 'تقنيات معالجة الحبوب',
     'Technologies des céréales et dérivés': 'تقنيات الحبوب ومشتقاتها',
-    'Technologies des huiles essentielles végétales':
-      'الزيوت الأساسية للنباتات التقنية',
-    'Technologies des industries laitières et fromagères':
-      'تقنيات صناعات الألبان والأجبان ',
+    'Technologies des huiles essentielles végétales': 'الزيوت الأساسية للنباتات التقنية',
+    'Technologies des industries laitières et fromagères': 'تقنيات صناعات الألبان والأجبان ',
     'Traction électrique': 'الجر الكهربائي',
     'Traduction/interprétariat Arabe/Français/Allemand':
       'ترجمة عربية / فرنسية / ألمانية / ترجمة فورية',
-    'Traduction/interprétariat Arabe/Français/Anglais':
-      'ترجمة / ترجمة عربي / فرنسي / انجليزي ',
-    'Traduction/interprétariat Arabe/Français/Espagnol':
-      'ترجمة / ترجمة عربية / فرنسية / إسبانية',
+    'Traduction/interprétariat Arabe/Français/Anglais': 'ترجمة / ترجمة عربي / فرنسي / انجليزي ',
+    'Traduction/interprétariat Arabe/Français/Espagnol': 'ترجمة / ترجمة عربية / فرنسية / إسبانية',
     'Transport & Logistique': 'النقل اللوجستي',
     Urbanisme: 'تخطيط المدن',
     'Valorisation des ressources minérales': 'تقييم الثروات المعدنية',
